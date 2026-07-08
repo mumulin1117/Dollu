@@ -1,0 +1,559 @@
+[
+  {
+    "customPath": "/pfbbqqrbdbelz/lyjmij",
+    "resReplace": {
+      "outfitBlueprint": "userId",
+      "sleeveCut": "vipExpireTime",
+      "buttonFastener": "equipmentNo",
+      "sewingProfile": "userGender",
+      "textilePattern": "userBirthday",
+      "aestheticTheme": "userAttention",
+      "pocketPlacement": "userType",
+      "garmentTexturedoliu": "userImgUrl",
+      "closetInventory": "userFriends",
+      "liningMaterial": "createUserId",
+      "styleJournal": "userFans",
+      "hemlineFinish": "userLocation",
+      "ribbonBow": "userBalance",
+      "hangerStorage": "userWeight",
+      "mannequinForm": "userHeight",
+      "miniatureStitch": "userBrief",
+      "collarAccent": "userVipStatus",
+      "laceTrim": "bundleId",
+      "wardrobeArray": "userName",
+      "coutureDetails": "userPassword",
+      "zipperClosure": "userStatus",
+      "fabricWeave": "userEmail"
+    },
+    "reqReplace": {
+      "apparelTemplate": "bundleId"
+    },
+    "systemPath": "/sj/user/selectUserIndexList"
+  },
+  {
+    "customPath": "/mtflggpmwz/hecwpfsoynw",
+    "resReplace": {
+      "embroideryStitch": "dynamicImgList",
+      "organzaCrisp": "storeNum",
+      "cottonWeave": "userName",
+      "sequinSparkle": "dynamicImgList",
+      "fringeDetail": "storeFlag",
+      "denimWash": "dynamicContent",
+      "designerSeries": "dynamicType",
+      "satinGlow": "dynamicTitle",
+      "linenThread": "userImgUrl",
+      "leatherGrain": "userId",
+      "tulleVolume": "forwardNum",
+      "editionType": "dynamicClassify",
+      "beadWork": "attentionFlag",
+      "chiffonLayer": "commentNum",
+      "silkSheendoliu": "dynamicId",
+      "brocadeWeaveterinda": "bundleId",
+      "damaskMotif": "createDate",
+      "tasselAccent": "commentVoList",
+      "commentVoList": {
+        "itemRegistry": "beReplyCommentId",
+        "pleatFold": "dynamicId",
+        "fittingSession": "beReplyUserId",
+        "ruffleEdge": "commentId",
+        "tailorMeasure": "praiseNum",
+        "dartFitting": "replyUserName",
+        "seamAllowance": "replyUserImgUrl",
+        "collectionLog": "beReplyContent",
+        "rarityStatus": "bundleId",
+        "gatherWaist": "replyUserId",
+        "patternDraft": "replyContent",
+        "lookbookPage": "beReplyUserName"
+      },
+      "brandLabel": "fileTimes",
+      "limitedRun": "friendFlag",
+      "woolKnit": "praiseNum",
+      "releaseYear": "videoImgUrl"
+    },
+    "reqReplace": {
+      "hueContrast": "bundleId",
+      "glossyVeneer": "selectVersion",
+      "shadingDepth": "userId",
+      "matteFinish": "size",
+      "toneSaturation": "dynamicType",
+      "velvetTexture": "dynamicClassify",
+      "paletteScheme": "selectType",
+      "fabricLuster": "current"
+    },
+    "systemPath": "/sj/dynamic/selectDynamicList"
+  },
+  {
+    "customPath": "/nfesmwz/yxtuhwobrfzo",
+    "reqReplace": {
+      "vaultedItem": "dynamicId",
+      "grailSearch": "version",
+      "wishlistTrack": "dynamicUserId"
+    },
+    "systemPath": "/sj/dynamic/updateDynamicStore"
+  },
+  {
+    "customPath": "/kpuisihjtieqfz/yjbkb",
+    "reqReplace": {
+      "conditionReport": "beHandleUserName",
+      "acquiredDate": "beHandleUserId",
+      "displayCase": "hanldeType",
+      "backdropSetup": "version",
+      "mintStatus": "beHandleUserImg",
+      "shelfArrangement": "dynamicId"
+    },
+    "systemPath": "/sj/user/updateUserRelation"
+  },
+  {
+    "customPath": "/tykksz/pgrosqqifihgq",
+    "resReplace": {
+      "messageUserVoList": {
+        "contrastRatio": "content",
+        "avantGarde": "readFlag",
+        "retroVibe": "sendUserImgUrl",
+        "grainEffect": "sendUserId",
+        "vintageFilter": "sendUserName",
+        "saturationLevel": "title",
+        "vibranceBoost": "receiveUserImg",
+        "macroLens": "messageId",
+        "exposureSetting": "receiveUserName",
+        "modernChic": "createDate",
+        "depthField": "receiveUserId"
+      },
+      "cameraFocus": "messageUserVoList"
+    },
+    "reqReplace": {
+      "shadowFilter": "receiveUserId",
+      "lightingAngle": "bundleId"
+    },
+    "systemPath": "/sj/message/selectMessageInfo"
+  },
+  {
+    "customPath": "/xtoubtqjatdtssuz/jdesrfwlg",
+    "resReplace": {
+      "steampunkGear": "userId",
+      "bridalDressterinda": "userFans",
+      "loungeweardoliu": "labelList",
+      "culturalAttire": "userBirthday",
+      "springPalette": "userGender",
+      "sleepWear": "friendFlag",
+      "holidayTheme": "attentionFlag",
+      "blouseCut": "userImgList",
+      "sportyLook": "historyNum",
+      "skirtLength": "frameId",
+      "uniformStyle": "userAttention",
+      "formalGown": "userFriends",
+      "topDesign": "userFrameImg",
+      "streetWear": "likeNum",
+      "periodCostume": "userBrief",
+      "cyberpunkChic": "userName",
+      "userDynamicVoList": {
+        "embroideryStitch": "dynamicImgList",
+        "organzaCrisp": "storeNum",
+        "cottonWeave": "userName",
+        "sequinSparkle": "dynamicImgList",
+        "fringeDetail": "storeFlag",
+        "denimWash": "dynamicContent",
+        "designerSeries": "dynamicType",
+        "satinGlow": "dynamicTitle",
+        "linenThread": "userImgUrl",
+        "leatherGrain": "userId",
+        "tulleVolume": "forwardNum",
+        "editionType": "dynamicClassify",
+        "beadWork": "attentionFlag",
+        "chiffonLayer": "commentNum",
+        "silkSheendoliu": "dynamicId",
+        "brocadeWeaveterinda": "bundleId",
+        "damaskMotif": "createDate",
+        "tasselAccent": "commentVoList",
+        "commentVoList": {
+          "itemRegistry": "beReplyCommentId",
+          "pleatFold": "dynamicId",
+          "fittingSession": "beReplyUserId",
+          "ruffleEdge": "commentId",
+          "tailorMeasure": "praiseNum",
+          "dartFitting": "replyUserName",
+          "seamAllowance": "replyUserImgUrl",
+          "collectionLog": "beReplyContent",
+          "rarityStatus": "bundleId",
+          "gatherWaist": "replyUserId",
+          "patternDraft": "replyContent",
+          "lookbookPage": "beReplyUserName"
+        },
+        "brandLabel": "fileTimes",
+        "limitedRun": "friendFlag",
+        "woolKnit": "praiseNum",
+        "releaseYear": "videoImgUrl"
+      },
+      "summerVibe": "userLocation",
+      "labelList": {
+        "sweaterWeave": "sort",
+        "swimSuit": "userLabelId",
+        "cardiganKnit": "labelLog",
+        "vestAccent": "labelName",
+        "outerwearCoat": "labelId",
+        "jacketLayer": "userId"
+      },
+      "festivalGarb": "userDynamicVoList",
+      "seasonalOutfit": "vipExpireTime",
+      "fantasyGarb": "userImgUrl",
+      "historicalDress": "userEmail",
+      "autumnTone": "userHeight",
+      "shirtStyle": "userImgList",
+      "winterWrap": "userWeight"
+    },
+    "reqReplace": {
+      "bohoStyle": "userId",
+      "gothicFlair": "version"
+    },
+    "systemPath": "/sj/user/selectUserInfo"
+  },
+  {
+    "customPath": "/etfbwedpxlnbvdrz/ezqnfrhkcn",
+    "resReplace": {
+      "leggingsStretch": "userWeight",
+      "romperFit": "userImgUrl",
+      "pantSilhouettedoliu": "userId",
+      "cloakWrap": "userLocation",
+      "shortsCut": "userName",
+      "glovesFit": "userStatus",
+      "socksPattern": "token",
+      "apronDetail": "userBirthday",
+      "jumpsuitStyle": "userEmail",
+      "scarfKnot": "equipmentNo",
+      "overallsPocket": "userBrief",
+      "stockingMesh": "userType",
+      "tightsOpaque": "userHeight",
+      "capeDrape": "userGender",
+      "shawlFold": "vipExpireTime",
+      "mittenWarmth": "bundleId"
+    },
+    "reqReplace": {},
+    "systemPath": "/sj/user/getUseInfo"
+  },
+  {
+    "customPath": "/opjnlejz/idsgooisikr",
+    "reqReplace": {},
+    "systemPath": "/sj/user/selectUserBalance"
+  },
+  {
+    "customPath": "/lenxzpgzjeloz/hvoplqqcnu",
+    "resReplace": {
+      "leggingsStretch": "userWeight",
+      "romperFit": "userImgUrl",
+      "pantSilhouettedoliu": "userId",
+      "cloakWrap": "userLocation",
+      "shortsCut": "userName",
+      "glovesFit": "userStatus",
+      "socksPattern": "token",
+      "apronDetail": "userBirthday",
+      "jumpsuitStyle": "userEmail",
+      "scarfKnot": "equipmentNo",
+      "overallsPocket": "userBrief",
+      "stockingMesh": "userType",
+      "tightsOpaque": "userHeight",
+      "capeDrape": "userGender",
+      "shawlFold": "vipExpireTime",
+      "mittenWarmth": "bundleId"
+    },
+    "reqReplace": {
+      "bootsLeather": "password",
+      "slippersSoft": "userImgUrl",
+      "heelsStiletto": "bundleId",
+      "sandalsStrap": "userBrief",
+      "shoesPair": "userEmail",
+      "flatsComfort": "type",
+      "sneakersCasual": "userName"
+    },
+    "systemPath": "/sj/user/emailLogin"
+  },
+  {
+    "customPath": "/wsonrntcyncrdycz/pcoysnzrarmdn",
+    "resReplace": {
+      "scrunchieFabric": "liveCoverImg",
+      "earringDrop": "liveTitle",
+      "tieKnot": "bundleId",
+      "hairpinClip": "liveId",
+      "braceletBand": "liveStatus",
+      "ringSparkle": "liveLocation",
+      "necklaceChain": "liveTime",
+      "bangleRing": "liveUserNum",
+      "beltBuckle": "videoTimes",
+      "suspendersClip": "userList",
+      "userList": {
+        "glassesFrame": "liveUserId",
+        "fanFold": "bundleId",
+        "sunglassesTint": "liveId",
+        "maskDesign": "userImgUrl",
+        "veilMesh": "userId",
+        "gogglesGear": "userName"
+      },
+      "pendantCharm": "liveIncome",
+      "barretteDesign": "userId",
+      "parasolShade": "liveClassify",
+      "broochPin": "userName",
+      "badgeToken": "userImgUrl",
+      "sashTie": "videoUrl",
+      "bowtieAccent": "createDate",
+      "umbrellaCanopy": "livePassword"
+    },
+    "reqReplace": {
+      "tiaraSparkle": "bundleId",
+      "crownJewel": "selectType",
+      "headbandRibbon": "liveClassify",
+      "beretTilt": "current",
+      "bonnetLace": "size",
+      "capVisor": "liveStatus"
+    },
+    "systemPath": "/sj/live/selectLivePage"
+  },
+  {
+    "customPath": "/gvrjqrabiscaz/pwrzxnxcdoxd",
+    "resReplace": {
+      "walletPocket": "attentionFlag",
+      "toteBag": "userBrief",
+      "trunkStorage": "userBirthday",
+      "clutchSleek": "userImgUrl",
+      "suitcaseTravel": "userLocation",
+      "boxPackaging": "friendFlag",
+      "backpackCanvas": "userName",
+      "handbagLeather": "userId"
+    },
+    "reqReplace": {
+      "purseStrap": "selectType"
+    },
+    "systemPath": "/sj/user/selectUserRelation"
+  },
+  {
+    "customPath": "/qdlmfagneqwppuzz/qkyrr",
+    "resReplace": {
+      "swapOption": "activityId",
+      "eyeChip": "activityUserNum",
+      "bangsCut": "activityCoverImg",
+      "braidWeave": "createDate",
+      "donationLog": "activityIntroduce",
+      "bunStyling": "userImgUrl",
+      "activityUserVoList": {
+        "wavesSoft": "userId",
+        "straightSleek": "userName",
+        "highlightStreak": "attentionFlag",
+        "colorBlend": "userImgUrl"
+      },
+      "hairStyle": "activityLableImg",
+      "customSculpt": "activityDate",
+      "ponytailHigh": "userName",
+      "ombréEffect": "addFlag",
+      "partingLine": "userId",
+      "faceupArt": "activityDetailsTime",
+      "curlsVolume": "activityUserVoList",
+      "giftIdea": "activityTitle",
+      "makeupPalette": "activityLocation",
+      "tressesLength": "activityPhoneNum",
+      "wigFiber": "activityLable"
+    },
+    "reqReplace": {
+      "valueEstimate": "activityLable",
+      "receiptRecord": "activityId",
+      "certificateAuthentic": "beSelectUserId",
+      "tradeWish": "version",
+      "priceTrackdoliu": "selectType",
+      "tagLabel": "bundleId"
+    },
+    "systemPath": "/sj/activity/selectActivityPage"
+  },
+  {
+    "customPath": "/bnuikdymopikz/jygfxodfzieexe",
+    "reqReplace": {
+      "glitterAccent": "activityId"
+    },
+    "systemPath": "/sj/activity/joinQuitActivity"
+  },
+  {
+    "customPath": "/bjkrgvpavtjz/ptcxrvc",
+    "reqReplace": {
+      "blushTone": "bundleId"
+    },
+    "systemPath": "/sj/activity/selectAcLabel"
+  },
+  {
+    "customPath": "/raanbunxz/tuhdgbxaijneewv",
+    "reqReplace": {
+      "eyelinerWing": "type",
+      "eyeshadowPalette": "password",
+      "lipstickShade": "equipmentNo"
+    },
+    "systemPath": "/sj/user/selectUpdateUser"
+  },
+  {
+    "customPath": "/kckfcz/mufsrlzuwyjci",
+    "resReplace": {
+      "highlightGlow": "labelLog",
+      "contourShadow": "labelName",
+      "freckleDot": "topicContent",
+      "resinMaterial": "bundleId",
+      "vinylSkin": "createDate",
+      "plasticMold": "praiseFlag",
+      "beautyMark": "topicImg",
+      "eyebrowArch": "topicId"
+    },
+    "reqReplace": {
+      "mascaraLashtended": "bundleId"
+    },
+    "systemPath": "/sj/topic/selectTopicPage"
+  },
+  {
+    "customPath": "/trytxuz/azeiuieomuxtlm",
+    "resReplace": {
+      "userLabelInfoVos": {
+        "sweaterWeave": "sort",
+        "swimSuit": "userLabelId",
+        "cardiganKnit": "labelLog",
+        "vestAccent": "labelName",
+        "outerwearCoat": "labelId",
+        "jacketLayer": "userId"
+      },
+      "articulationJoint": "userImgUrl",
+      "claySculpt": "userId",
+      "ballSocket": "userLabelInfoVos",
+      "woodCarve": "userName"
+    },
+    "reqReplace": {
+      "porcelainFinish": "bundleId"
+    },
+    "systemPath": "/sj/user/selectMatchUser"
+  },
+  {
+    "customPath": "/uvkgbudsfntaqokz/ubulfrfrbh",
+    "reqReplace": {
+      "poseStability": "messageId"
+    },
+    "systemPath": "/sj/message/updateMsgRead"
+  },
+  {
+    "customPath": "/biqiwzmkfnz/prijvzwgzx",
+    "resReplace": {
+      "contrastRatio": "content",
+      "avantGarde": "readFlag",
+      "retroVibe": "sendUserImgUrl",
+      "grainEffect": "sendUserId",
+      "vintageFilter": "sendUserName",
+      "saturationLevel": "title",
+      "vibranceBoost": "receiveUserImg",
+      "macroLens": "messageId",
+      "exposureSetting": "receiveUserName",
+      "modernChic": "createDate",
+      "depthField": "receiveUserId"
+    },
+    "reqReplace": {},
+    "systemPath": "/sj/message/selectNotifyMsg"
+  },
+  {
+    "customPath": "/crwtnwgwbqxrkwz/ittgfiitluyzka",
+    "reqReplace": {
+      "standSupport": "userSecondId",
+      "baseMount": "userSecondName",
+      "backdropPanel": "userSecondImgUrl",
+      "propMiniature": "matchStatus"
+    },
+    "systemPath": "/sj/matchrecord/addMatchRecord"
+  },
+  {
+    "customPath": "/khqbnqfnndsimz/ggfhvr",
+    "resReplace": {
+      "chairSeat": "userId",
+      "sofaCushion": "userImgUrl",
+      "tableSurface": "userName",
+      "bedLinen": "userSecondId",
+      "rugPattern": "userSecondName",
+      "curtainDrape": "userSecondImgUrl"
+    },
+    "reqReplace": {
+      "furnitureScale": "matchStatus"
+    },
+    "systemPath": "/sj/matchrecord/selectMatchRecord"
+  },
+  {
+    "customPath": "/fsaiwvzz/applgrubr",
+    "resReplace": {
+      "chandelierSparkle": "dictType",
+      "lampGlow": "dictName",
+      "clockFace": "dictSort",
+      "bookStack": "dictRemkar",
+      "toyVibe": "imgList",
+      "petCompanion": "imgList"
+    },
+    "reqReplace": {
+      "flooringTexture": "version",
+      "wallpaperDesign": "bundleId"
+    },
+    "systemPath": "/sj/dict/selectDictListForFive"
+  },
+  {
+    "customPath": "/ofciiebtcloyz/wexdvrfuib",
+    "resReplace": {
+      "envelopeSeal": "attentionFlag",
+      "stampMark": "userImgList",
+      "sculptureStatue": "labelEntityList",
+      "paintingCanvas": "showLabelUrl",
+      "userImgList": {
+        "compassGear": "userId",
+        "mapScroll": "userImagesId",
+        "telescopeLens": "imgUrl",
+        "globeWorld": "bundleId"
+      },
+      "utensilTool": "userName",
+      "framePicture": "userFans",
+      "platePattern": "userImgUrl",
+      "labelEntityList": {
+        "cameraMini": "userId",
+        "phoneDevice": "labelName",
+        "stationeryPen": "sort",
+        "laptopModel": "labelLog",
+        "letterPaper": "bundleId",
+        "instrumentMusic": "userLabelId"
+      },
+      "trayServe": "userAge",
+      "mirrorReflection": "userLocation",
+      "drinkCup": "matchUserId"
+    },
+    "reqReplace": {
+      "flowerBouquet": "endAge",
+      "plantGreenery": "startAge",
+      "foodMini": "bundleId"
+    },
+    "systemPath": "/sj/matchuser/selectMatchUserList"
+  },
+  {
+    "customPath": "/sypsvysloxxz/afwmwvst",
+    "reqReplace": {
+      "keyRing": "bundleId"
+    },
+    "systemPath": "/sj/user/selectUseIosBuy"
+  },
+  {
+    "customPath": "/pajqdqwqyhlngomz/ofzvjiuawxbjjh",
+    "resReplace": {
+      "leggingsStretch": "userWeight",
+      "romperFit": "userImgUrl",
+      "pantSilhouettedoliu": "userId",
+      "cloakWrap": "userLocation",
+      "shortsCut": "userName",
+      "glovesFit": "userStatus",
+      "socksPattern": "token",
+      "apronDetail": "userBirthday",
+      "jumpsuitStyle": "userEmail",
+      "scarfKnot": "equipmentNo",
+      "overallsPocket": "userBrief",
+      "stockingMesh": "userType",
+      "tightsOpaque": "userHeight",
+      "capeDrape": "userGender",
+      "shawlFold": "vipExpireTime",
+      "mittenWarmth": "bundleId"
+    },
+    "reqReplace": {
+      "basketWeave": "bundleId",
+      "boxTreasure": "equipmentNo",
+      "lockMechanism": "identityToken"
+    },
+    "systemPath": "/vse/user/appleSsoLogin"
+  }
+]
