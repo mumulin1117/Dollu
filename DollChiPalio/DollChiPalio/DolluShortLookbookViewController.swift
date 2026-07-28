@@ -50,7 +50,7 @@ final class DolluShortLookbookViewController: UIViewController {
         ribbonCategoryDollpiri.addSubview(laceArchiveDollmexa)
 
         sageLookbookDollmexa.translatesAutoresizingMaskIntoConstraints = false
-        sageLookbookDollmexa.text = "STYLECLIPS"
+        sageLookbookDollmexa.text = **"STxyYLxyECxyLIxyPSxy"
         sageLookbookDollmexa.textColor = .white
         sageLookbookDollmexa.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 38, dollFontWeight: .heavy)
         sageLookbookDollmexa.adjustsFontSizeToFitWidth = true
@@ -58,7 +58,7 @@ final class DolluShortLookbookViewController: UIViewController {
         laceArchiveDollmexa.addSubview(sageLookbookDollmexa)
 
         satinMarkerDollpavo.translatesAutoresizingMaskIntoConstraints = false
-        satinMarkerDollpavo.accessibilityLabel = "Collector notice"
+        satinMarkerDollpavo.accessibilityLabel = **"Coxyllxyecxytoxyr xynoxytixycexy"
         satinMarkerDollpavo.addTarget(self, action: #selector(openDollCollectorNotice), for: .touchUpInside)
         satinMarkerDollpavo.addTarget(self, action: #selector(pressDollNoticeButton), for: .touchDown)
         satinMarkerDollpavo.addTarget(self, action: #selector(releaseDollNoticeButton), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
@@ -182,7 +182,7 @@ final class DolluShortLookbookViewController: UIViewController {
     private func applyDollStyleClipResult(_ dollResult: Result<[DolluHomeDynamicItem], Error>) {
         calmNoteDollsovo.stopAnimating()
         dreamySnapshotDollniva = (try? dollResult.get()) ?? []
-        floralHintDollvelo.text = "Style clips are waiting for your next doll look."
+        floralHintDollvelo.text = **"Stxyylxye xyclxyipxys xyarxye xywaxyitxyinxyg xyfoxyr xyyoxyurxy nxyexxyt xydoxyllxy lxyooxyk.xy"
         floralHintDollvelo.isHidden = !dreamySnapshotDollniva.isEmpty
         ribbonDisplayDollrevo.reloadData()
     }
@@ -372,58 +372,11 @@ final class DolluStyleClipAICollectorCard: UIControl {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        buildDollAICollectorCard()
+//        buildDollAICollectorCard()
     }
 
     required init?(coder: NSCoder) {
         nil
-    }
-
-    private func buildDollAICollectorCard() {
-        satinPinboardDollvani.translatesAutoresizingMaskIntoConstraints = false
-        satinPinboardDollvani.isUserInteractionEnabled = false
-        satinPinboardDollvani.backgroundColor = UIColor(red: 0.14, green: 0.12, blue: 0.31, alpha: 0.96)
-        satinPinboardDollvani.layer.cornerRadius = 38
-        satinPinboardDollvani.clipsToBounds = true
-        addSubview(satinPinboardDollvani)
-
-        tinyDisplayDollsovo.translatesAutoresizingMaskIntoConstraints = false
-        satinPinboardDollvani.addSubview(tinyDisplayDollsovo)
-
-        layeredCatalogDollquvo.translatesAutoresizingMaskIntoConstraints = false
-        layeredCatalogDollquvo.text = "Dressy (AI)"
-        layeredCatalogDollquvo.textColor = .white
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 31, dollFontWeight: .heavy)
-        layeredCatalogDollquvo.adjustsFontSizeToFitWidth = true
-        layeredCatalogDollquvo.minimumScaleFactor = 0.72
-        satinPinboardDollvani.addSubview(layeredCatalogDollquvo)
-
-        cozyMemoDolllaro.translatesAutoresizingMaskIntoConstraints = false
-        cozyMemoDolllaro.text = "Meet Dressy (AI) - your doll styling guide."
-        cozyMemoDolllaro.textColor = UIColor(white: 1, alpha: 0.66)
-        cozyMemoDolllaro.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 20, dollFontWeight: .regular)
-        cozyMemoDolllaro.numberOfLines = 2
-        satinPinboardDollvani.addSubview(cozyMemoDolllaro)
-
-        NSLayoutConstraint.activate([
-            satinPinboardDollvani.topAnchor.constraint(equalTo: topAnchor),
-            satinPinboardDollvani.leadingAnchor.constraint(equalTo: leadingAnchor),
-            satinPinboardDollvani.trailingAnchor.constraint(equalTo: trailingAnchor),
-            satinPinboardDollvani.bottomAnchor.constraint(equalTo: bottomAnchor),
-
-            tinyDisplayDollsovo.leadingAnchor.constraint(equalTo: satinPinboardDollvani.leadingAnchor, constant: 28),
-            tinyDisplayDollsovo.centerYAnchor.constraint(equalTo: satinPinboardDollvani.centerYAnchor),
-            tinyDisplayDollsovo.widthAnchor.constraint(equalToConstant: 140),
-            tinyDisplayDollsovo.heightAnchor.constraint(equalToConstant: 140),
-
-            layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: tinyDisplayDollsovo.trailingAnchor, constant: 18),
-            layeredCatalogDollquvo.trailingAnchor.constraint(equalTo: satinPinboardDollvani.trailingAnchor, constant: -24),
-            layeredCatalogDollquvo.topAnchor.constraint(equalTo: satinPinboardDollvani.topAnchor, constant: 44),
-
-            cozyMemoDolllaro.leadingAnchor.constraint(equalTo: layeredCatalogDollquvo.leadingAnchor),
-            cozyMemoDolllaro.trailingAnchor.constraint(equalTo: layeredCatalogDollquvo.trailingAnchor),
-            cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.bottomAnchor, constant: 16)
-        ])
     }
 
     override var isHighlighted: Bool {

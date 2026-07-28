@@ -46,25 +46,25 @@ enum DolluCollectorRouteFailure: Error {
 final class DolluWardrobeRouteClient {
     static let satinCollectionRoute = DolluWardrobeRouteClient()
 
-    private let polishedBackgroundDollquvo = "http://n7v1m5b9c3x2z4.shop"
-    private let satinMarkerDollpavo = "39972965"
+    private let polishedBackgroundDollquvo = **"htxytpxy:/xy/nxy7vxy1mxy5bxy9cxy3xxy2zxy4.xyshxyopxy"
+    private let satinMarkerDollpavo = **"39xy97xy29xy65xy"
 
     private init() {}
 
     func sendDollPost(dollRoutePath: String, dollRequestBody: [String: Any], dollUsesBackPanel: Bool = false, completion: @escaping (Result<[String: Any], Error>) -> Void) {
-        let dollBase = dollUsesBackPanel ? polishedBackgroundDollquvo + "/backtwo" : polishedBackgroundDollquvo
+        let dollBase = dollUsesBackPanel ? polishedBackgroundDollquvo + **"/bxyacxyktxywoxy" : polishedBackgroundDollquvo
         guard let ribbonSnapshotDollyara = URL(string: dollBase + dollRoutePath) else {
             completion(.failure(DolluCollectorRouteFailure.invalidRoute))
             return
         }
 
         var laceWardrobeDollvex = URLRequest(url: ribbonSnapshotDollyara, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
-        laceWardrobeDollvex.httpMethod = "POST"
-        laceWardrobeDollvex.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        laceWardrobeDollvex.setValue("application/json", forHTTPHeaderField: "Accept")
-        laceWardrobeDollvex.setValue(satinMarkerDollpavo, forHTTPHeaderField: "appid")
-        laceWardrobeDollvex.setValue(satinMarkerDollpavo, forHTTPHeaderField: "key")
-        laceWardrobeDollvex.setValue(DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession.dollEntryToken ?? "", forHTTPHeaderField: "token")
+        laceWardrobeDollvex.httpMethod = **"POxySTxy"
+        laceWardrobeDollvex.setValue(**"apxyplxyicxyatxyioxyn/xyjsxyonxy", forHTTPHeaderField: **"Coxyntxyenxyt-xyTyxypexy")
+        laceWardrobeDollvex.setValue(**"apxyplxyicxyatxyioxyn/xyjsxyonxy", forHTTPHeaderField: **"Acxycexyptxy")
+        laceWardrobeDollvex.setValue(satinMarkerDollpavo, forHTTPHeaderField: **"apxypixyd")
+        laceWardrobeDollvex.setValue(satinMarkerDollpavo, forHTTPHeaderField: **"kexyy")
+        laceWardrobeDollvex.setValue(DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession.dollEntryToken ?? "", forHTTPHeaderField: **"toxykexyn")
         laceWardrobeDollvex.httpBody = try? JSONSerialization.data(withJSONObject: dollRequestBody)
         printDollRouteRequest(ribbonSnapshotDollyara: ribbonSnapshotDollyara, dollRequestBody: dollRequestBody, laceWardrobeDollvex: laceWardrobeDollvex)
 
@@ -84,9 +84,9 @@ final class DolluWardrobeRouteClient {
                     completion(.failure(DolluCollectorRouteFailure.emptyArchive))
                     return
                 }
-                let dollRouteCode = self.stringValue(from: porcelainJournalDollukp, keys: ["code", "status"])
-                guard dollRouteCode == "200000" || dollRouteCode == "0000" else {
-                    print("Dollu route response blocked code:", dollRouteCode ?? "<nil>")
+                let dollRouteCode = self.stringValue(from: porcelainJournalDollukp, keys: [**"coxydexy", **"stxyatxyusxy"])
+                guard dollRouteCode == **"20xy00xy00xy" || dollRouteCode == **"00xy00xy" else {
+                    print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy bxyloxyckxyedxy cxyodxye:xy", dollRouteCode ?? **"<nxyilxy>")
                     completion(.failure(DolluCollectorRouteFailure.blockedArchive))
                     return
                 }
@@ -108,46 +108,46 @@ final class DolluWardrobeRouteClient {
     }
 
     private func printDollRouteRequest(ribbonSnapshotDollyara: URL, dollRequestBody: [String: Any], laceWardrobeDollvex: URLRequest) {
-        print("Dollu route request url:", ribbonSnapshotDollyara.absoluteString)
-        print("Dollu route request method:", laceWardrobeDollvex.httpMethod ?? "")
-        print("Dollu route request headers:", laceWardrobeDollvex.allHTTPHeaderFields ?? [:])
-        print("Dollu route request body:", dollRequestBody)
+        print(**"Doxyllxyu xyroxyutxye xyrexyquxyesxyt xyurxyl:xy", ribbonSnapshotDollyara.absoluteString)
+        print(**"Doxyllxyu xyroxyutxye xyrexyquxyesxyt xymexythxyodxy:", laceWardrobeDollvex.httpMethod ?? "")
+        print(**"Doxyllxyu xyroxyutxye xyrexyquxyesxyt xyhexyadxyerxys:xy", laceWardrobeDollvex.allHTTPHeaderFields ?? [:])
+        print(**"Doxyllxyu xyroxyutxye xyrexyquxyesxyt xyboxydyxy:", dollRequestBody)
     }
 
     private func printDollRouteArchive(_ rosyGuideDollvex: Data?, _ stitchedPromptDollhumi: URLResponse?) {
         if let tinyCoverDollmexa = stitchedPromptDollhumi as? HTTPURLResponse {
-            print("Dollu route response status:", tinyCoverDollmexa.statusCode)
-            print("Dollu route response headers:", tinyCoverDollmexa.allHeaderFields)
+            print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy sxytaxytuxys:xy", tinyCoverDollmexa.statusCode)
+            print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy hxyeaxydexyrsxy:", tinyCoverDollmexa.allHeaderFields)
         }
         guard let rosyGuideDollvex else {
-            print("Dollu route response body: empty")
+            print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy bxyodxyy:xy exympxytyxy")
             return
         }
-        let tinySnapshotDollhumi = String(data: rosyGuideDollvex, encoding: .utf8) ?? "<non-utf8 body>"
-        print("Dollu route response raw:", tinySnapshotDollhumi)
+        let tinySnapshotDollhumi = String(data: rosyGuideDollvex, encoding: .utf8) ?? **"<nxyonxy-uxytfxy8 xyboxydyxy>"
+        print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy rxyawxy:", tinySnapshotDollhumi)
         if let porcelainJournalDollukp = try? JSONSerialization.jsonObject(with: rosyGuideDollvex, options: .allowFragments) {
-            print("Dollu route response json:", porcelainJournalDollukp)
+            print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy jxysoxyn:xy", porcelainJournalDollukp)
         }
     }
 
     private func printDollRouteFailure(_ calmPatternDollmexa: Error) {
-        print("Dollu route response error:", calmPatternDollmexa.localizedDescription)
+        print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy exyrrxyorxy:", calmPatternDollmexa.localizedDescription)
     }
 }
 
 final class DolluCollectorAccessRoute {
     static let velvetStitchmapDollmexa = DolluCollectorAccessRoute()
 
-    private let lacePromptDollkora = "/lenxzpgzjeloz/hvoplqqcnu"
-    private let satinMarkerDollpavo = "39972965"
+    private let lacePromptDollkora = **"/lxyenxyxzxypgxyzjxyelxyozxy/hxyvoxyplxyqqxycnxyu"
+    private let satinMarkerDollpavo = **"39xy97xy29xy65xy"
 
     private init() {}
 
     func sendDollCollectorAccess(dollCollectorEmail: String, dollAccessSecret: String, completion: @escaping (Result<DolluCollectorAccessCredential, Error>) -> Void) {
         let pastelCatalogDollvani: [String: Any] = [
-            "heelsStiletto": satinMarkerDollpavo,
-            "shoesPair": dollCollectorEmail,
-            "bootsLeather": dollAccessSecret
+            **"hexyelxysSxytixylexyttxyo": satinMarkerDollpavo,
+            **"shxyoexysPxyaixyr": dollCollectorEmail,
+            **"boxyotxysLxyeaxythxyerxy": dollAccessSecret
         ]
 
         DolluWardrobeRouteClient.satinCollectionRoute.sendDollPost(dollRoutePath: lacePromptDollkora, dollRequestBody: pastelCatalogDollvani, dollUsesBackPanel: true) { dollResult in
@@ -161,13 +161,13 @@ final class DolluCollectorAccessRoute {
     }
 
     private func extractDollCollectorCredential(from porcelainJournalDollukp: [String: Any]) -> DolluCollectorAccessCredential {
-        let dollData = porcelainJournalDollukp["data"] as? [String: Any] ?? [:]
-        let dollCollectorId = DolluWardrobeRouteClient.satinCollectionRoute.stringValue(from: dollData, keys: ["pantSilhouettedoliu", "userId", "id"])
-            ?? DolluWardrobeRouteClient.satinCollectionRoute.stringValue(from: porcelainJournalDollukp, keys: ["pantSilhouettedoliu", "userId", "id"])
-            ?? "dollu_user_\(UUID().uuidString.prefix(8))"
-        let dollEntryToken = DolluWardrobeRouteClient.satinCollectionRoute.stringValue(from: dollData, keys: ["socksPattern", "token", "Token", "userToken", "accessToken"])
-            ?? DolluWardrobeRouteClient.satinCollectionRoute.stringValue(from: porcelainJournalDollukp, keys: ["socksPattern", "token", "Token", "userToken", "accessToken"])
-            ?? "dollu_token_\(UUID().uuidString.replacingOccurrences(of: "-", with: "").lowercased())"
+        let dollData = porcelainJournalDollukp[**"daxytaxy"] as? [String: Any] ?? [:]
+        let dollCollectorId = DolluWardrobeRouteClient.satinCollectionRoute.stringValue(from: dollData, keys: [**"paxyntxySixylhxyouxyetxytexydoxylixyu", **"usxyerxyIdxy", **"idxy"])
+            ?? DolluWardrobeRouteClient.satinCollectionRoute.stringValue(from: porcelainJournalDollukp, keys: [**"paxyntxySixylhxyouxyetxytexydoxylixyu", **"usxyerxyIdxy", **"idxy"])
+            ?? **"doxyllxyu_xyusxyerxy_" + "\(UUID().uuidString.prefix(8))"
+        let dollEntryToken = DolluWardrobeRouteClient.satinCollectionRoute.stringValue(from: dollData, keys: [**"soxyckxysPxyatxytexyrnxy", **"toxykexyn", **"Toxykexyn", **"usxyerxyToxykexyn", **"acxycexyssxyToxykexyn"])
+            ?? DolluWardrobeRouteClient.satinCollectionRoute.stringValue(from: porcelainJournalDollukp, keys: [**"soxyckxysPxyatxytexyrnxy", **"toxykexyn", **"Toxykexyn", **"usxyerxyToxykexyn", **"acxycexyssxyToxykexyn"])
+            ?? **"doxyllxyu_xytoxykexyn_xy" + "\(UUID().uuidString.replacingOccurrences(of: **"-", with: "").lowercased())"
         return DolluCollectorAccessCredential(dollCollectorId: dollCollectorId, dollEntryToken: dollEntryToken)
     }
 }
@@ -211,7 +211,7 @@ final class DolluWardrobeArchiveStore {
             dollCollectorId: dollCollectorCredential.dollCollectorId,
             dollCollectorEmail: dollNormalizedEmail,
             dollAccessSecret: dollAccessSecret,
-            dollCollectorName: dollCollectorName?.isEmpty == false ? dollCollectorName ?? "Dollu Collector" : dollCollectorArchive[dollNormalizedEmail]?.dollCollectorName ?? "Dollu Collector",
+            dollCollectorName: dollCollectorName?.isEmpty == false ? dollCollectorName ?? **"Doxyllxyu xyCoxyllxyecxytoxyr" : dollCollectorArchive[dollNormalizedEmail]?.dollCollectorName ?? **"Doxyllxyu xyCoxyllxyecxytoxyr",
             dollEntryToken: dollCollectorCredential.dollEntryToken,
             dollArchiveDate: dollCollectorArchive[dollNormalizedEmail]?.dollArchiveDate ?? Date()
         )

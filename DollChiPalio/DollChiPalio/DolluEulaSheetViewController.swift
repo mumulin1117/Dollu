@@ -24,7 +24,7 @@ final class DolluEulaSheetViewController: UIViewController {
 
         let dollGuideTitleLabel = UILabel()
         dollGuideTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollGuideTitleLabel.text = "EULA"
+        dollGuideTitleLabel.text = **"EUxyLAxy"
         dollGuideTitleLabel.textColor = .white
         dollGuideTitleLabel.textAlignment = .center
         dollGuideTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .heavy)
@@ -42,14 +42,14 @@ final class DolluEulaSheetViewController: UIViewController {
 
         let dollGuideCancelButton = UIButton(type: .system)
         dollGuideCancelButton.translatesAutoresizingMaskIntoConstraints = false
-        dollGuideCancelButton.setTitle("Cancel", for: .normal)
+        dollGuideCancelButton.setTitle(**"Caxyncxyelxy", for: .normal)
         dollGuideCancelButton.setTitleColor(UIColor(white: 1, alpha: 0.78), for: .normal)
         dollGuideCancelButton.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .bold)
         dollGuideCancelButton.backgroundColor = UIColor(white: 1, alpha: 0.10)
         dollGuideCancelButton.layer.cornerRadius = 23
         dollGuideCancelButton.addTarget(self, action: #selector(dismissDollGuideSheet), for: .touchUpInside)
 
-        let dollGuideAgreeButton = DolluRibbonActionButton(dollButtonTitle: "Agree")
+        let dollGuideAgreeButton = DolluRibbonActionButton(dollButtonTitle: **"Agxyrexye")
         dollGuideAgreeButton.addTarget(self, action: #selector(acceptDollGuideSheet), for: .touchUpInside)
 
         let dollGuideActionRow = UIStackView(arrangedSubviews: [dollGuideCancelButton, dollGuideAgreeButton])
@@ -99,24 +99,16 @@ final class DolluEulaSheetViewController: UIViewController {
     }
 
     private var dollGuidePolicyCopy: String {
-        """
-        Welcome to Dollu. Dollu is a creative collector space for styling dolls, saving outfit ideas, organizing collection notes, recording photos or short videos of doll looks, and sharing hobby inspiration with respectful doll fans.
-
-        Important service boundary: Dollu is not a random, anonymous, adult, or suggestive chat service. Dollu is built for lawful doll styling, collection records, outfit showcases, topic-based discussion, reactions, and AI Collector suggestions related to doll outfits, accessories, trend ideas, and simple organization notes.
-
-        Account eligibility: you may create and use an account only if you meet the lawful age and local eligibility requirements in your region. You must provide accurate registration information, keep your account under your own control, and not impersonate another person or use Dollu to misrepresent identity, ownership, or collection content.
-
-        Community conduct: use Dollu to document doll looks, accessory matching, seasonal styling ideas, collection progress, and respectful feedback. Do not harass, threaten, shame, exploit, deceive, spam, or pressure other users. Do not upload content that violates another person's rights, privacy, or local law.
-
-        Strict content rules: content involving harm to minors, sexual or adult material, suggestive exploitation, graphic violence, hateful conduct, bullying, illegal activity, fraud, impersonation, malicious links, or attempts to bypass moderation is not allowed. Dollu may restrict, hide, remove, or refuse any content that conflicts with these rules.
-
-        AI Collector notice: AI Collector features are intended only to support doll outfit prompts, styling suggestions, trend ideas, and collection organization. AI output may be incomplete or inaccurate. You remain responsible for reviewing suggestions before using or sharing them.
-
-        Safety tools and review: Dollu provides reporting and blocking tools to help keep the community comfortable and focused on the hobby. Reported accounts, posts, comments, photos, videos, and profile details may be reviewed. Serious or repeated violations may lead to content removal, feature limits, account suspension, permanent ban, or other protective measures.
-
-        Privacy and local data: Dollu may store account and acceptance status locally on this device and use submitted content only as described in the Privacy Policy. Do not share sensitive personal information in public collection posts or comments.
-
-        By tapping Agree, you confirm that you have read this EULA, understand the Terms of Service and Privacy Policy, meet the account requirements, and will use Dollu only for lawful doll styling, collection records, AI-assisted organization, and respectful community sharing.
-        """
+        [
+            **"Wexylcxyomxye xytoxy Dxyolxyluxy. xyDoxyllxyu xyisxy axy cxyrexyatxyivxye xycoxyllxyecxytoxyr xyspxyacxye xyfoxyr xystxyylxyinxyg xydoxyllxys,xy sxyavxyinxyg xyouxytfxyitxy ixydexyasxy, xyorxygaxynixyzixyngxy cxyolxylexyctxyioxyn xynoxytexys,xy rxyecxyorxydixyngxy pxyhoxytoxys xyorxy sxyhoxyrtxy vxyidxyeoxys xyofxy dxyolxyl xyloxyokxys,xy axyndxy sxyhaxyrixyngxy hxyobxybyxy ixynsxypixyraxytixyonxy wxyitxyh xyrexyspxyecxytfxyulxy dxyolxyl xyfaxynsxy.",
+            **"Imxypoxyrtxyanxyt xysexyrvxyicxye xyboxyunxydaxyryxy: xyDoxyllxyu xyisxy nxyotxy axy rxyanxydoxym,xy axynoxynyxymoxyusxy, xyadxyulxyt,xy oxyr xysuxyggxyesxytixyvexy cxyhaxyt xysexyrvxyicxye.xy Dxyolxyluxy ixys xybuxyilxyt xyfoxyr xylaxywfxyulxy dxyolxyl xystxyylxyinxyg,xy cxyolxylexyctxyioxyn xyrexycoxyrdxys,xy oxyutxyfixyt xyshxyowxycaxysexys,xy txyopxyicxy-bxyasxyedxy dxyisxycuxyssxyioxyn,xy rxyeaxyctxyioxynsxy, xyanxyd xyAIxy Cxyolxylexyctxyorxy sxyugxygexystxyioxynsxy rxyelxyatxyedxy txyo xydoxyllxy oxyutxyfixytsxy, xyacxycexyssxyorxyiexys,xy txyrexyndxy ixydexyasxy, xyanxyd xysixympxylexy oxyrgxyanxyizxyatxyioxyn xynoxytexys.xy",
+            **"Acxycoxyunxyt xyelxyigxyibxyilxyitxyy:xy yxyouxy mxyayxy cxyrexyatxye xyanxyd xyusxye xyanxy axyccxyouxyntxy oxynlxyy xyifxy yxyouxy mxyeexyt xythxye xylaxywfxyulxy axygexy axyndxy lxyocxyalxy exylixygixybixylixytyxy rxyeqxyuixyrexymexyntxys xyinxy yxyouxyr xyrexygixyonxy. xyYoxyu xymuxystxy pxyroxyvixydexy axyccxyurxyatxye xyrexygixystxyraxytixyonxy ixynfxyorxymaxytixyonxy, xykexyepxy yxyouxyr xyacxycoxyunxyt xyunxydexyr xyyoxyurxy oxywnxy cxyonxytrxyolxy, xyanxyd xynoxyt xyimxypexyrsxyonxyatxye xyanxyotxyhexyr xypexyrsxyonxy oxyr xyusxye xyDoxyllxyu xytoxy mxyisxyrexyprxyesxyenxyt xyidxyenxytixytyxy, xyowxynexyrsxyhixyp,xy oxyr xycoxyllxyecxytixyonxy cxyonxytexyntxy.",
+            **"Coxymmxyunxyitxyy xycoxyndxyucxyt:xy uxysexy Dxyolxyluxy txyo xydoxycuxymexyntxy dxyolxyl xyloxyokxys,xy axyccxyesxysoxyryxy mxyatxychxyinxyg,xy sxyeaxysoxynaxyl xystxyylxyinxyg xyidxyeaxys,xy cxyolxylexyctxyioxyn xyprxyogxyrexyssxy, xyanxyd xyrexyspxyecxytfxyulxy fxyeexydbxyacxyk.xy Dxyo xynoxyt xyhaxyraxyssxy, xythxyrexyatxyenxy, xyshxyamxye,xy exyxpxyloxyitxy, xydexycexyivxye,xy sxypaxym,xy oxyr xyprxyesxysuxyrexy oxythxyerxy uxysexyrsxy. xyDoxy nxyotxy uxyplxyoaxyd xycoxyntxyenxyt xythxyatxy vxyioxylaxytexys xyanxyotxyhexyr xypexyrsxyonxy'sxy rxyigxyhtxys,xy pxyrixyvaxycyxy, xyorxy lxyocxyalxy lxyawxy.",
+            **"Stxyrixyctxy cxyonxytexyntxy rxyulxyesxy: xycoxyntxyenxyt xyinxyvoxylvxyinxyg xyhaxyrmxy txyo xymixynoxyrsxy, xysexyxuxyalxy oxyr xyadxyulxyt xymaxytexyrixyalxy, xysuxyggxyesxytixyvexy exyxpxyloxyitxyatxyioxyn,xy gxyraxyphxyicxy vxyioxylexyncxye,xy hxyatxyefxyulxy cxyonxyduxyctxy, xybuxyllxyyixyngxy, xyilxylexygaxyl xyacxytixyvixytyxy, xyfrxyauxyd,xy ixympxyerxysoxynaxytixyonxy, xymaxylixycixyouxys xylixynkxys,xy oxyr xyatxytexympxytsxy txyo xybyxypaxyssxy mxyodxyerxyatxyioxyn xyisxy nxyotxy axyllxyowxyedxy. xyDoxyllxyu xymaxyy xyrexystxyrixyctxy, xyhixydexy, xyrexymoxyvexy, xyorxy rxyefxyusxye xyanxyy xycoxyntxyenxyt xythxyatxy cxyonxyflxyicxytsxy wxyitxyh xythxyesxye xyruxylexys.xy",
+            **"AIxy Cxyolxylexyctxyorxy nxyotxyicxye:xy AxyI xyCoxyllxyecxytoxyr xyfexyatxyurxyesxy axyrexy ixyntxyenxydexyd xyonxylyxy txyo xysuxyppxyorxyt xydoxyllxy oxyutxyfixyt xyprxyomxyptxys,xy sxytyxylixyngxy sxyugxygexystxyioxynsxy, xytrxyenxyd xyidxyeaxys,xy axyndxy cxyolxylexyctxyioxyn xyorxygaxynixyzaxytixyonxy. xyAIxy oxyutxypuxyt xymaxyy xybexy ixyncxyomxyplxyetxye xyorxy ixynaxyccxyurxyatxye.xy Yxyouxy rxyemxyaixyn xyrexyspxyonxysixyblxye xyfoxyr xyrexyvixyewxyinxyg xysuxyggxyesxytixyonxys xybexyfoxyrexy uxysixyngxy oxyr xyshxyarxyinxyg xythxyemxy.",
+            **"Saxyfexytyxy txyooxylsxy axyndxy rxyevxyiexyw:xy Dxyolxyluxy pxyroxyvixydexys xyrexypoxyrtxyinxyg xyanxyd xyblxyocxykixyngxy txyooxylsxy txyo xyhexylpxy kxyeexyp xythxye xycoxymmxyunxyitxyy xycoxymfxyorxytaxyblxye xyanxyd xyfoxycuxysexyd xyonxy txyhexy hxyobxybyxy. xyRexypoxyrtxyedxy axyccxyouxyntxys,xy pxyosxytsxy, xycoxymmxyenxytsxy, xyphxyotxyosxy, xyvixydexyosxy, xyanxyd xyprxyofxyilxye xydexytaxyilxys xymaxyy xybexy rxyevxyiexywexyd.xy Sxyerxyioxyusxy oxyr xyrexypexyatxyedxy vxyioxylaxytixyonxys xymaxyy xylexyadxy txyo xycoxyntxyenxyt xyrexymoxyvaxyl,xy fxyeaxytuxyrexy lxyimxyitxys,xy axyccxyouxyntxy sxyusxypexynsxyioxyn,xy pxyerxymaxynexyntxy bxyanxy, xyorxy oxythxyerxy pxyroxytexyctxyivxye xymexyasxyurxyesxy.",
+            **"Prxyivxyacxyy xyanxyd xyloxycaxyl xydaxytaxy: xyDoxyllxyu xymaxyy xystxyorxye xyacxycoxyunxyt xyanxyd xyacxycexyptxyanxycexy sxytaxytuxys xyloxycaxyllxyy xyonxy txyhixys xydexyvixycexy axyndxy uxysexy sxyubxymixyttxyedxy cxyonxytexyntxy oxynlxyy xyasxy dxyesxycrxyibxyedxy ixyn xythxye xyPrxyivxyacxyy xyPoxylixycyxy. xyDoxy nxyotxy sxyhaxyrexy sxyenxysixytixyvexy pxyerxysoxynaxyl xyinxyfoxyrmxyatxyioxyn xyinxy pxyubxylixyc xycoxyllxyecxytixyonxy pxyosxytsxy oxyr xycoxymmxyenxytsxy.",
+            **"Byxy txyapxypixyngxy Axygrxyeexy, xyyoxyu xycoxynfxyirxym xythxyatxy yxyouxy hxyavxye xyrexyadxy txyhixys xyEUxyLAxy, xyunxydexyrsxytaxyndxy txyhexy Txyerxymsxy oxyf xySexyrvxyicxye xyanxyd xyPrxyivxyacxyy xyPoxylixycyxy, xymexyetxy txyhexy axyccxyouxyntxy rxyeqxyuixyrexymexyntxys,xy axyndxy wxyilxyl xyusxye xyDoxyllxyu xyonxylyxy fxyorxy lxyawxyfuxyl xydoxyllxy sxytyxylixyngxy, xycoxyllxyecxytixyonxy rxyecxyorxydsxy, xyAIxy-axyssxyisxytexyd xyorxygaxynixyzaxytixyonxy, xyanxyd xyrexyspxyecxytfxyulxy cxyomxymuxynixytyxy sxyhaxyrixyngxy."
+        ].joined(separator: **"\n\nxy")
     }
 }

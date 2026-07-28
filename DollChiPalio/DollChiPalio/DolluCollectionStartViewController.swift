@@ -1,10 +1,12 @@
 import UIKit
 
-final class DolluCollectionStartViewController: DolluAuthBaseViewController {
-    private let porcelainCollectorNameField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_name_icon", dollPromptCopy: "Enter your name")
-    private let pastelCatalogEmailField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: "Enter email address", dollInputBoard: .emailAddress)
-    private let velvetAccessSecretField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: "Enter password", dollUsesSecretEntry: true)
-    private let frillyCapsuleDollvani = DolluRibbonActionButton(dollButtonTitle: "Sign Up")
+final class DolluCollectionStartViewController: DolluAuthBaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    private let porcelainCollectorNameField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_name_icon", dollPromptCopy: **"Enxytexyr xyyoxyurxy nxyamxye")
+    private let pastelCatalogEmailField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: **"Enxytexyr xyemxyaixyl xyadxydrxyesxys", dollInputBoard: .emailAddress)
+    private let velvetAccessSecretField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: **"Enxytexyr xypaxyssxywoxyrdxy", dollUsesSecretEntry: true)
+    private let frillyCapsuleDollvani = DolluRibbonActionButton(dollButtonTitle: **"Sixygnxy Uxyp")
+    private let tinySnapshotDollhumi = UIButton(type: .system)
+    private var dreamySnapshotDollniva: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,18 +25,24 @@ final class DolluCollectionStartViewController: DolluAuthBaseViewController {
         dollReturnButton.addTarget(self, action: #selector(returnToDollEntry), for: .touchUpInside)
         view.addSubview(dollReturnButton)
 
-        let dollProfileMarkerButton = UIButton(type: .system)
-        dollProfileMarkerButton.translatesAutoresizingMaskIntoConstraints = false
-        dollProfileMarkerButton.backgroundColor = .white
-        dollProfileMarkerButton.setTitle("+", for: .normal)
-        dollProfileMarkerButton.setTitleColor(UIColor(white: 0.60, alpha: 1), for: .normal)
-        dollProfileMarkerButton.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 48, dollFontWeight: .regular)
-        dollProfileMarkerButton.layer.cornerRadius = 60
-        dollWardrobeContentView.addSubview(dollProfileMarkerButton)
+        tinySnapshotDollhumi.translatesAutoresizingMaskIntoConstraints = false
+        tinySnapshotDollhumi.backgroundColor = .white
+        tinySnapshotDollhumi.setTitle("+", for: .normal)
+        tinySnapshotDollhumi.setTitleColor(UIColor(white: 0.60, alpha: 1), for: .normal)
+        tinySnapshotDollhumi.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 48, dollFontWeight: .regular)
+        tinySnapshotDollhumi.layer.cornerRadius = 60
+        tinySnapshotDollhumi.layer.borderWidth = 2
+        tinySnapshotDollhumi.layer.borderColor = UIColor(white: 1, alpha: 0.35).cgColor
+        tinySnapshotDollhumi.clipsToBounds = true
+        tinySnapshotDollhumi.adjustsImageWhenHighlighted = false
+        tinySnapshotDollhumi.addTarget(self, action: #selector(openDollProfileSourceOptions), for: .touchUpInside)
+        tinySnapshotDollhumi.addTarget(self, action: #selector(pressDollProfileMarker), for: [.touchDown, .touchDragEnter])
+        tinySnapshotDollhumi.addTarget(self, action: #selector(releaseDollProfileMarker), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
+        dollWardrobeContentView.addSubview(tinySnapshotDollhumi)
 
         let dollStartTitleLabel = UILabel()
         dollStartTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollStartTitleLabel.text = "Sign Up"
+        dollStartTitleLabel.text = **"Sixygnxy Uxyp"
         dollStartTitleLabel.textColor = .white
         dollStartTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 38, dollFontWeight: .heavy)
         dollStartTitleLabel.textAlignment = .center
@@ -59,10 +67,10 @@ final class DolluCollectionStartViewController: DolluAuthBaseViewController {
             dollReturnButton.widthAnchor.constraint(equalToConstant: 44),
             dollReturnButton.heightAnchor.constraint(equalToConstant: 44),
 
-            dollProfileMarkerButton.centerXAnchor.constraint(equalTo: dollWardrobeContentView.centerXAnchor),
-            dollProfileMarkerButton.centerYAnchor.constraint(equalTo: dollLookbookHeaderImageView.bottomAnchor, constant: -140),
-            dollProfileMarkerButton.widthAnchor.constraint(equalToConstant: 120),
-            dollProfileMarkerButton.heightAnchor.constraint(equalToConstant: 120),
+            tinySnapshotDollhumi.centerXAnchor.constraint(equalTo: dollWardrobeContentView.centerXAnchor),
+            tinySnapshotDollhumi.bottomAnchor.constraint(equalTo: dollStartTitleLabel.topAnchor, constant: -40),
+            tinySnapshotDollhumi.widthAnchor.constraint(equalToConstant: 120),
+            tinySnapshotDollhumi.heightAnchor.constraint(equalToConstant: 120),
 
             dollStartTitleLabel.centerXAnchor.constraint(equalTo: dollCollectionPanelView.centerXAnchor),
             dollStartTitleLabel.topAnchor.constraint(equalTo: dollCollectionPanelView.topAnchor, constant: -20),
@@ -78,15 +86,66 @@ final class DolluCollectionStartViewController: DolluAuthBaseViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    @objc private func openDollProfileSourceOptions() {
+        view.endEditing(true)
+        let dollPanel = DolluCheckinImageSourcePanel(
+            dollTitle: **"Adxyd xyprxyofxyilxye xyphxyotxyo",
+            dollCopy: **"Chxyooxysexy axy pxyhoxytoxy oxyr xytaxykexy axy nxyewxy oxynexy fxyorxy yxyouxyr xyDoxyllxyu xyacxycoxyunxytyxy.",
+            dollShowsCamera: UIImagePickerController.isSourceTypeAvailable(.camera)
+        )
+        dollPanel.dollAlbumTapped = { [weak self, weak dollPanel] in
+            dollPanel?.removeFromSuperview()
+            self?.presentDollProfilePicker(.photoLibrary)
+        }
+        dollPanel.dollCameraTapped = { [weak self, weak dollPanel] in
+            dollPanel?.removeFromSuperview()
+            self?.presentDollProfilePicker(.camera)
+        }
+        dollPanel.dollCancelTapped = { [weak dollPanel] in
+            dollPanel?.removeFromSuperview()
+        }
+        view.addSubview(dollPanel)
+        NSLayoutConstraint.activate([
+            dollPanel.topAnchor.constraint(equalTo: view.topAnchor),
+            dollPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            dollPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            dollPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+
+    private func presentDollProfilePicker(_ dollSourceType: UIImagePickerController.SourceType) {
+        guard UIImagePickerController.isSourceTypeAvailable(dollSourceType) else { return }
+        let dollPicker = UIImagePickerController()
+        dollPicker.sourceType = dollSourceType
+        dollPicker.allowsEditing = true
+        dollPicker.delegate = self
+        present(dollPicker, animated: true)
+    }
+
+    @objc private func pressDollProfileMarker() {
+        UIView.animate(withDuration: 0.12) {
+            self.tinySnapshotDollhumi.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
+            self.tinySnapshotDollhumi.alpha = 0.86
+        }
+    }
+
+    @objc private func releaseDollProfileMarker() {
+        UIView.animate(withDuration: 0.18) {
+            self.tinySnapshotDollhumi.transform = .identity
+            self.tinySnapshotDollhumi.alpha = 1
+        }
+    }
+
     @objc private func createDollWardrobeArchive() {
         let dollCollectorName = porcelainCollectorNameField.dollPromptTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let dollCollectorEmail = pastelCatalogEmailField.dollPromptTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let dollAccessSecret = velvetAccessSecretField.dollPromptTextField.text ?? ""
 
-        guard !dollCollectorName.isEmpty else { presentDollSafetyNotice("Please enter your name."); return }
-        guard !dollCollectorEmail.isEmpty else { presentDollSafetyNotice("Please enter email address."); return }
-        guard isDollCollectorEmail(dollCollectorEmail) else { presentDollSafetyNotice("Please enter a valid email address."); return }
-        guard dollAccessSecret.count >= 6 else { presentDollSafetyNotice("Password must be at least 6 characters."); return }
+        guard !dollCollectorName.isEmpty else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy yxyouxyr xynaxymexy."); return }
+        guard !dollCollectorEmail.isEmpty else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy exymaxyilxy axyddxyrexyssxy."); return }
+        guard isDollCollectorEmail(dollCollectorEmail) else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy axy vxyalxyidxy exymaxyilxy axyddxyrexyssxy."); return }
+        guard dollAccessSecret.count >= 6 else { presentDollSafetyNotice(**"Paxyssxywoxyrdxy mxyusxyt xybexy axyt xylexyasxyt xy6 xychxyarxyacxytexyrsxy."); return }
+        guard DolluWardrobeArchiveStore.satinCollectionArchive.dollGuideAccepted else { presentDollSafetyNotice(**"Plxyeaxysexy axygrxyeexy txyo xyDoxyllxyu xyEUxyLAxy bxyefxyorxye xycoxyntxyinxyuixyngxy."); return }
         setDollStartLoading(true)
         DolluCollectorAccessRoute.velvetStitchmapDollmexa.sendDollCollectorAccess(dollCollectorEmail: dollCollectorEmail, dollAccessSecret: dollAccessSecret) { [weak self] dollResult in
             guard let self else { return }
@@ -96,7 +155,7 @@ final class DolluCollectionStartViewController: DolluAuthBaseViewController {
                 DolluWardrobeArchiveStore.satinCollectionArchive.syncDollCollectorAfterRoute(dollCollectorEmail: dollCollectorEmail, dollAccessSecret: dollAccessSecret, dollCollectorName: dollCollectorName, dollCollectorCredential: dollCollectorCredential)
                 self.revealDollCollectorGallery()
             case .failure:
-                self.presentDollSafetyNotice("Dollu collection could not be created. Please try again.")
+                self.presentDollSafetyNotice(**"Doxyllxyu xycoxyllxyecxytixyonxy cxyouxyldxy nxyotxy bxye xycrxyeaxytexyd.xy Pxylexyasxye xytrxyy xyagxyaixyn.xy")
             }
         }
     }
@@ -104,7 +163,7 @@ final class DolluCollectionStartViewController: DolluAuthBaseViewController {
     private func setDollStartLoading(_ dollIsLoading: Bool) {
         frillyCapsuleDollvani.isEnabled = !dollIsLoading
         frillyCapsuleDollvani.alpha = dollIsLoading ? 0.62 : 1
-        frillyCapsuleDollvani.setTitle(dollIsLoading ? "Creating..." : "Sign Up", for: .normal)
+        frillyCapsuleDollvani.setTitle(dollIsLoading ? **"Crxyeaxytixyngxy..xy." : **"Sixygnxy Uxyp", for: .normal)
     }
 
     private func revealDollCollectorGallery() {
@@ -114,5 +173,20 @@ final class DolluCollectionStartViewController: DolluAuthBaseViewController {
 
     private func isDollCollectorEmail(_ dollEmailCandidate: String) -> Bool {
         dollEmailCandidate.range(of: #"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"#, options: .regularExpression) != nil
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        let dollImage = (info[.editedImage] ?? info[.originalImage]) as? UIImage
+        dreamySnapshotDollniva = dollImage
+        if let dollImage {
+            tinySnapshotDollhumi.setTitle(nil, for: .normal)
+            tinySnapshotDollhumi.setBackgroundImage(dollImage, for: .normal)
+            tinySnapshotDollhumi.layer.borderColor = DolluWardrobePalette.dollRibbonPurple.cgColor
+        }
+        picker.dismiss(animated: true)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
     }
 }

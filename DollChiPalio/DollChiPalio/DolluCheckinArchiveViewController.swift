@@ -8,7 +8,7 @@ final class DolluCheckinArchiveViewController: UIViewController {
     private let glossyIdeaDollsovo = DolluCheckinHonorBadgeButton()
     private let calmNoteDollsovo = UIActivityIndicatorView(style: .large)
     private let floralHintDollvelo = UILabel()
-    private let satinMarkerDollpavo = DolluRibbonActionButton(dollButtonTitle: "Retry", dollUsesLightStyle: true)
+    private let satinMarkerDollpavo = DolluRibbonActionButton(dollButtonTitle: **"Rexytrxyy", dollUsesLightStyle: true)
     private let velvetPoseDollsero = DolluCheckinAvatarStrip()
     private let cottonFrameDollukp = DolluCheckinStreakCard()
     private let patternedCollectionDollbop = DolluCheckinBuddyFeatureCard()
@@ -34,7 +34,7 @@ final class DolluCheckinArchiveViewController: UIViewController {
         view.addSubview(polishedBackgroundDollquvo)
 
         sageLookbookDollmexa.translatesAutoresizingMaskIntoConstraints = false
-        sageLookbookDollmexa.text = "CHECK-IN"
+        sageLookbookDollmexa.text = **"CHxyECxyK-xyINxy"
         sageLookbookDollmexa.textColor = .white
         sageLookbookDollmexa.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 32, dollFontWeight: .heavy)
         sageLookbookDollmexa.adjustsFontSizeToFitWidth = true
@@ -71,9 +71,9 @@ final class DolluCheckinArchiveViewController: UIViewController {
 
         satinPinboardDollvani.addArrangedSubview(velvetPoseDollsero)
         satinPinboardDollvani.addArrangedSubview(cottonFrameDollukp)
-        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: "Buddy Check-in", dollTrail: "Challenge"))
+        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: **"Buxyddxyy xyChxyecxyk-xyinxy", dollTrail: **"Chxyalxylexyngxye"))
         satinPinboardDollvani.addArrangedSubview(patternedCollectionDollbop)
-        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: "Today's Check-ins", dollTrail: "Partner invites"))
+        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: **"Toxydaxyy'xys xyChxyecxyk-xyinxys", dollTrail: **"Paxyrtxynexyr xyinxyvixytexys"))
         satinPinboardDollvani.addArrangedSubview(bowChecklistDollmora)
 
         calmNoteDollsovo.translatesAutoresizingMaskIntoConstraints = false
@@ -175,7 +175,7 @@ final class DolluCheckinArchiveViewController: UIViewController {
     private func applyDollCheckinFailed() {
         calmNoteDollsovo.stopAnimating()
         ribbonDisplayDollrevo.alpha = 1
-        floralHintDollvelo.text = "Check-in archive could not be loaded."
+        floralHintDollvelo.text = **"Chxyecxyk-xyinxy axyrcxyhixyvexy cxyouxyldxy nxyotxy bxye xyloxyadxyedxy."
         floralHintDollvelo.isHidden = false
         satinMarkerDollpavo.isHidden = false
     }
@@ -185,7 +185,7 @@ final class DolluCheckinArchiveViewController: UIViewController {
         cottonFrameDollukp.configure(dollCollector: dollArchive.dollCollector, dollDays: dollArchive.dollStreakDays)
 
         bowChecklistDollmora.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        let dollTodayInvites = dollArchive.dollPartners.filter { !$0.dollName.hasPrefix("Your ") }
+        let dollTodayInvites = dollArchive.dollPartners.filter { !$0.dollName.hasPrefix(**"Yoxyurxy ") }
         dollTodayInvites.forEach { dollPartner in
             let dollCard = DolluCheckinTaskCard()
             dollCard.configure(dollPartner)
@@ -230,7 +230,7 @@ final class DolluCheckinArchiveViewController: UIViewController {
             dollPartnerPreviewURL: dollPartner.dollPreviewURL,
             dollPartnerAvatarAssetName: dollPartner.dollAvatarAssetName,
             dollPartnerPreviewAssetName: dollPartner.dollPreviewAssetName,
-            dollThemeName: "Pastel Day",
+            dollThemeName: **"Paxystxyelxy Dxyayxy",
             dollHonorPointCount: dollPartner.dollStreakCount,
             dollCurrentUploadState: dollPartner.dollIsJoined ? .localReady : .empty,
             dollPartnerUploadState: .localReady,
@@ -279,11 +279,11 @@ final class DolluCheckinArchiveViewController: UIViewController {
     private func makeDollCollectorRoute(dollPeerId: String) -> URL {
         let dollSession = DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession
         return makeDollHashRoute(
-            dollFragmentPath: "pages/homepage/index",
+            dollFragmentPath: **"paxygexys/xyhoxymexypaxygexy/ixyndxyexxy",
             dollPairs: [
-                URLQueryItem(name: "userId", value: dollPeerId),
-                URLQueryItem(name: "token", value: dollSession.dollEntryToken ?? ""),
-                URLQueryItem(name: "appID", value: "39972965")
+                URLQueryItem(name: **"usxyerxyIdxy", value: dollPeerId),
+                URLQueryItem(name: **"toxykexyn", value: dollSession.dollEntryToken ?? ""),
+                URLQueryItem(name: **"apxypIxyD", value: **"39xy97xy29xy65xy")
             ]
         )
     }
@@ -292,10 +292,11 @@ final class DolluCheckinArchiveViewController: UIViewController {
         var dollComponents = URLComponents()
         dollComponents.queryItems = dollPairs
         let dollQuery = dollComponents.percentEncodedQuery ?? ""
+        let dollRouteBase = **"htxytpxy:/xy/nxy7vxy1mxy5bxy9cxy3xxy2zxy4.xyshxyopxy/#xy/"
         let dollRoute = dollQuery.isEmpty
-        ? "http://n7v1m5b9c3x2z4.shop/#/\(dollFragmentPath)"
-        : "http://n7v1m5b9c3x2z4.shop/#/\(dollFragmentPath)?\(dollQuery)"
-        return URL(string: dollRoute) ?? URL(string: "http://n7v1m5b9c3x2z4.shop")!
+        ? dollRouteBase + dollFragmentPath
+        : dollRouteBase + dollFragmentPath + **"?" + dollQuery
+        return URL(string: dollRoute) ?? URL(string: **"htxytpxy:/xy/nxy7vxy1mxy5bxy9cxy3xxy2zxy4.xyshxyopxy")!
     }
 
     @objc private func retryDollCheckinArchive() {
@@ -320,7 +321,7 @@ final class DolluCheckinArchiveViewController: UIViewController {
 
         if let dollTrail {
             let dollTrailLabel = UILabel()
-            dollTrailLabel.text = "\(dollTrail) ›"
+            dollTrailLabel.text = dollTrail + **" ›xy"
             dollTrailLabel.textColor = UIColor(red: 0.84, green: 0.75, blue: 1, alpha: 1)
             dollTrailLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .heavy)
             dollTrailLabel.setContentCompressionResistancePriority(.required, for: .horizontal)

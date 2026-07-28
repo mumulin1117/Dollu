@@ -21,7 +21,7 @@ final class DolluAuthLandingViewController: DolluAuthBaseViewController {
     private func buildDollEntryLookbook() {
         let dollTermsBadgeButton = UIButton(type: .system)
         dollTermsBadgeButton.translatesAutoresizingMaskIntoConstraints = false
-        dollTermsBadgeButton.setTitle("EULA", for: .normal)
+        dollTermsBadgeButton.setTitle(**"EUxyLAxy", for: .normal)
         dollTermsBadgeButton.setTitleColor(DolluWardrobePalette.dollRibbonPurple, for: .normal)
         dollTermsBadgeButton.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .heavy)
         dollTermsBadgeButton.backgroundColor = UIColor(white: 1, alpha: 0.92)
@@ -36,14 +36,14 @@ final class DolluAuthLandingViewController: DolluAuthBaseViewController {
         dollEntryEmblemView.layer.cornerRadius = 22
         dollCollectionPanelView.addSubview(dollEntryEmblemView)
 
-        let dollCollectorAccessButton = DolluRibbonActionButton(dollButtonTitle: "Sign in", dollUsesLightStyle: true)
+        let dollCollectorAccessButton = DolluRibbonActionButton(dollButtonTitle: **"Sixygnxy ixxn", dollUsesLightStyle: true)
         dollCollectorAccessButton.addTarget(self, action: #selector(enterDollCollectorAccess), for: .touchUpInside)
-        let dollCollectionStartButton = DolluRibbonActionButton(dollButtonTitle: "I'm new")
+        let dollCollectionStartButton = DolluRibbonActionButton(dollButtonTitle: **"I'erm xynexyw")
         dollCollectionStartButton.addTarget(self, action: #selector(startDollCollectionEntry), for: .touchUpInside)
 
         let dollChoiceDividerLabel = UILabel()
         dollChoiceDividerLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollChoiceDividerLabel.text = "or"
+        dollChoiceDividerLabel.text = **"orxy"
         dollChoiceDividerLabel.textColor = UIColor(white: 1, alpha: 0.42)
         dollChoiceDividerLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .regular)
         dollChoiceDividerLabel.textAlignment = .center
@@ -94,10 +94,20 @@ final class DolluAuthLandingViewController: DolluAuthBaseViewController {
     }
 
     @objc private func enterDollCollectorAccess() {
+        guard canOpenDollEntryRoute() else { return }
         navigationController?.pushViewController(DolluCollectorAccessViewController(), animated: true)
     }
 
     @objc private func startDollCollectionEntry() {
+        guard canOpenDollEntryRoute() else { return }
         navigationController?.pushViewController(DolluCollectionStartViewController(), animated: true)
+    }
+
+    private func canOpenDollEntryRoute() -> Bool {
+        guard dollGuidelineConsentView.dollGuideIsAccepted else {
+            presentDollSafetyNotice(**"Plxyeaxysexy axygrxyeexy txyo xyDoxyllxyu xyEUxyLAxy bxyefxyorxye xycoxyntxyinxyuixyngxy.")
+            return false
+        }
+        return true
     }
 }

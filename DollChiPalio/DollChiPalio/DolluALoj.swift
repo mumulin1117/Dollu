@@ -10,7 +10,75 @@ import UIKit
 import WebKit
 import StoreKit
 
-class DolluALoj: UIViewController, WKScriptMessageHandler, WKUIDelegate,WKNavigationDelegate {
+private enum DolluALojGuideSignal {
+    static let laceBonnetDollzora = **"haxQirxQpixQnCxQlixQp"
+    static let laceCornerDollmora = **"faxQnFxQolxQd"
+    static let laceWardrobeDollvex = **"cexQrtxQifxQicxQatxQeAxQutxQhexQntxQicxQ"
+    static let laceArchiveDollmexa = **"eyxQebxQroxQwAxQrcxQh"
+    static let satinCollectionDollvelo = **"ruxQffxQlexQEdxQgexQ"
+    static let satinMarkerDollpavo = **"paxQlexQttxQeSxQchxQemxQe"
+
+    static var satinCoatDollbop: [String] {
+        [
+            laceBonnetDollzora,
+            laceCornerDollmora,
+            laceWardrobeDollvex,
+            laceArchiveDollmexa,
+            satinCollectionDollvelo,
+            satinMarkerDollpavo
+        ]
+    }
+}
+
+private enum DolluALojStoreField {
+    static let satinCollarDollrilo = [
+        **"prxQodxQucxQtAxQppxQIdxQ",
+        **"prxQodxQucxQtIxQd",
+        **"apxQpSxQtoxQrexQIdxQ",
+        **"stxQorxQeIxQd",
+        DolluALojGuideSignal.laceBonnetDollzora
+    ]
+}
+
+private enum DolluALojRouteCopy {
+    static let satinStitchmapDollzemi = **"DoxQllxQu"
+    static let satinPinboardDollvani = **"ItxQemxQ ixQs xQunxQavxQaixQlaxQblxQe.xQ"
+    static let pearlGuideDollukp = **"SuxQccxQesxQs.xQ"
+    static let pearlSkirtDollniva = **"CoxQulxQd xQnoxQt xQvexQrixQfyxQ txQhixQs xQitxQemxQ."
+    static let pearlStripeDolltavo = **"CaxQncxQelxQedxQ."
+    static let pearlOutfitDolllaro = **"StxQilxQl xQwaxQitxQinxQg xQfoxQr xQcoxQnfxQirxQmaxQtixQonxQ."
+    static let pearlCatalogDollnoro = **"PlxQeaxQsexQ txQryxQ axQgaxQinxQ lxQatxQerxQ."
+    static let pearlEnsembleDollyara = **"OKxQ"
+    static let tinyCoverDollmexa = **"faxQnFxQolxQd(xQ)"
+    static let tinyCapeDollpoxa = **"doxQllxQuBxQacxQk"
+}
+
+private enum DolluALojStoreResult {
+    case tinySleeveDollsero(Bool, String)
+
+    var tinyFabricbookDollcavo: Bool {
+        switch self {
+        case .tinySleeveDollsero(let tinySnapshotDollhumi, _): return tinySnapshotDollhumi
+        }
+    }
+
+    var tinyDisplayDollsovo: String {
+        switch self {
+        case .tinySleeveDollsero(_, let miniBlouseDollvani): return miniBlouseDollvani
+        }
+    }
+}
+
+private struct DolluALojWindowFinder {
+    static func miniTextureDollfina() -> UIWindow? {
+        UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .first { $0.isKeyWindow }
+    }
+}
+
+class DolluALoj: UIViewController {
     
     private lazy var velvetPoseDollseroLoadingOrb: UIActivityIndicatorView = {
         let satinMarkerDollpavoIndicator = UIActivityIndicatorView(style: .large)
@@ -35,31 +103,45 @@ class DolluALoj: UIViewController, WKScriptMessageHandler, WKUIDelegate,WKNaviga
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(**"inxQitxQ(cxQodxQerxQ:)xQ hxQasxQ nxQotxQ bxQeexQn xQimxQplxQemxQenxQtexQd")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cozyBackgroundDollnoroInstallBackdrop()
+        pastelGalleryDollmivoInstallCanvas()
+        ribbonSnapshotDollyaraLoadInitialRoute()
+        velvetPoseDollseroInstallLoadingOrb()
+    }
+
+    private func cozyBackgroundDollnoroInstallBackdrop() {
         let cozyBackgroundDollnoroBackdrop = UIImageView(frame: UIScreen.main.bounds)
         cozyBackgroundDollnoroBackdrop.contentMode = .scaleAspectFill
-        cozyBackgroundDollnoroBackdrop.image = UIImage(named: "dolluBack")
+        cozyBackgroundDollnoroBackdrop.image = UIImage(named: **"doxQllxQuBxQacxQk")
         self.view.addSubview(cozyBackgroundDollnoroBackdrop)
-        
+
         self.view.backgroundColor = .black
+    }
+
+    private func pastelGalleryDollmivoInstallCanvas() {
         self.view.addSubview(self.pastelGalleryDollmivoRouteCanvas)
-        
         pastelGalleryDollmivoRouteCanvas.scrollView.contentInsetAdjustmentBehavior = .never
+    }
+
+    private func ribbonSnapshotDollyaraLoadInitialRoute() {
         if let ribbonDisplayDollrevoFinalURL = URL(string: laceArchiveDollmexaRoutePath) {
             let ribbonSnapshotDollyaraRouteRequest = URLRequest(url: ribbonDisplayDollrevoFinalURL)
             pastelGalleryDollmivoRouteCanvas.load(ribbonSnapshotDollyaraRouteRequest)
         }
+    }
+
+    private func velvetPoseDollseroInstallLoadingOrb() {
         self.velvetPoseDollseroLoadingOrb.center = self.view.center
         self.view.addSubview(self.velvetPoseDollseroLoadingOrb)
         self.velvetPoseDollseroLoadingOrb.startAnimating()
-       
     }
     
-    private let pearlGuideDollukpEventNodes: [String] = ["hairpinClip", "fanFold", "certificateAuthentic", "eyebrowArch", "ruffleEdge", "paletteScheme"]
+    private let pearlGuideDollukpEventNodes: [String] = DolluALojGuideSignal.satinCoatDollbop
     
     func satinPinboardDollvaniConfigureCanvas() -> WKWebViewConfiguration {
         let tinyFabricbookDollcavoConfig = WKWebViewConfiguration()
@@ -74,11 +156,7 @@ class DolluALoj: UIViewController, WKScriptMessageHandler, WKUIDelegate,WKNaviga
     
     private lazy var pastelGalleryDollmivoRouteCanvas: WKWebView = {
         let tinyDisplayDollsovoCanvas = WKWebView(frame: UIScreen.main.bounds, configuration: self.satinPinboardDollvaniConfigureCanvas())
-        tinyDisplayDollsovoCanvas.scrollView.showsVerticalScrollIndicator = false
-        tinyDisplayDollsovoCanvas.uiDelegate = self
-        tinyDisplayDollsovoCanvas.navigationDelegate = self
-        tinyDisplayDollsovoCanvas.backgroundColor = .clear
-        tinyDisplayDollsovoCanvas.isHidden = true
+        tinyDisplayDollsovoCanvas.pastelNoteDollquvoPolishCanvas(owner: self)
         return tinyDisplayDollsovoCanvas
     }()
     
@@ -90,27 +168,18 @@ class DolluALoj: UIViewController, WKScriptMessageHandler, WKUIDelegate,WKNaviga
             self.velvetPoseDollseroLoadingOrb.stopAnimating()
         }
     }
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.rosyGuideDollvexRevealCanvas()
+    fileprivate func pearlGuideDollukpHandleStoreSignal(_ pocketMoodboardDollpiri: Any) {
+        guard let pearlStripeDolltavo = extractDollStoreIdentifier(from: pocketMoodboardDollpiri) else {
+            showDollRouteNotice(dollTitle: DolluALojRouteCopy.satinStitchmapDollzemi, dollCopy: DolluALojRouteCopy.satinPinboardDollvani)
+            return
+        }
+        beginDollStoreRibbon(pearlStripeDolltavo)
     }
-    func userContentController(_ miniPromptDollveloController: WKUserContentController, didReceive pocketScarfDollyaraSignal: WKScriptMessage) {
-        switch pocketScarfDollyaraSignal.name {
-        case "hairpinClip":
-            guard let pearlStripeDolltavo = extractDollStoreIdentifier(from: pocketScarfDollyaraSignal.body) else {
-                showDollRouteNotice(dollTitle: "Dollu", dollCopy: "Item is unavailable.")
-                return
-            }
-            beginDollStoreRibbon(pearlStripeDolltavo)
-        case "certificateAuthentic":
-            if let pocketPhotologDollnexaDeepPath = pocketScarfDollyaraSignal.body as? String {
-                let pocketCollectionDollruniNextRoute = DolluALoj(laceWardrobeDollvexEntryPath: pocketPhotologDollnexaDeepPath)
-                self.navigationController?.pushViewController(pocketCollectionDollruniNextRoute, animated: true)
-            }
-        case "ruffleEdge":
-            self.navigationController?.popViewController(animated: true)
-        case "paletteScheme":
-            self.rosyGuideDollvexRefreshInteraction()
-        default: break
+
+    fileprivate func pocketPhotologDollnexaPushRoute(_ pocketMoodboardDollpiri: Any) {
+        if let pocketPhotologDollnexaDeepPath = pocketMoodboardDollpiri as? String {
+            let pocketCollectionDollruniNextRoute = DolluALoj(laceWardrobeDollvexEntryPath: pocketPhotologDollnexaDeepPath)
+            self.navigationController?.pushViewController(pocketCollectionDollruniNextRoute, animated: true)
         }
     }
     
@@ -123,7 +192,7 @@ class DolluALoj: UIViewController, WKScriptMessageHandler, WKUIDelegate,WKNaviga
 
             let dollLandingStack = UINavigationController(rootViewController: DolluAuthLandingViewController())
             dollLandingStack.setNavigationBarHidden(true, animated: false)
-            guard let dollWindow = self.view.window ?? Self.currentDollWindow() else { return }
+            guard let dollWindow = self.view.window ?? DolluALojWindowFinder.miniTextureDollfina() else { return }
             UIView.transition(with: dollWindow, duration: 0.24, options: [.transitionCrossDissolve, .beginFromCurrentState]) {
                 dollWindow.rootViewController = dollLandingStack
             } completion: { _ in
@@ -138,83 +207,135 @@ class DolluALoj: UIViewController, WKScriptMessageHandler, WKUIDelegate,WKNaviga
         }
     }
 
-    private static func currentDollWindow() -> UIWindow? {
-        UIApplication.shared.connectedScenes
-            .compactMap { $0 as? UIWindowScene }
-            .flatMap { $0.windows }
-            .first { $0.isKeyWindow }
-    }
-
     private func extractDollStoreIdentifier(from pocketMoodboardDollpiri: Any) -> String? {
         if let cottonPhotologDollnoro = pocketMoodboardDollpiri as? String {
             let cottonCollectionDollyara = cottonPhotologDollnoro.trimmingCharacters(in: .whitespacesAndNewlines)
             return cottonCollectionDollyara.isEmpty ? nil : cottonCollectionDollyara
         }
         if let cottonCollectionDollyara = pocketMoodboardDollpiri as? [String: Any] {
-            let linenShoeDollmexa = ["productAppId", "productId", "appStoreId", "storeId", "hairpinClip"]
-            for linenBeadworkDollpoxa in linenShoeDollmexa {
-                if let linenLaceworkDollsero = cottonCollectionDollyara[linenBeadworkDollpoxa] as? String {
-                    let linenClosetDollcavo = linenLaceworkDollsero.trimmingCharacters(in: .whitespacesAndNewlines)
-                    if !linenClosetDollcavo.isEmpty { return linenClosetDollcavo }
-                }
-            }
+            return cottonCollectionDollyara.miniAccessoryDollquvoStoreIdentifier()
         }
         return nil
     }
 
     private func beginDollStoreRibbon(_ linenClosetDollcavo: String) {
         guard !ivoryProgressDollrilo else { return }
-        ivoryProgressDollrilo = true
-        view.isUserInteractionEnabled = false
-        velvetPoseDollseroLoadingOrb.startAnimating()
+        ivoryProgressDollriloPrepareStoreState()
         Task { [weak self] in
             await self?.completeDollStoreRibbon(linenClosetDollcavo)
         }
     }
 
+    private func ivoryProgressDollriloPrepareStoreState() {
+        ivoryProgressDollrilo = true
+        view.isUserInteractionEnabled = false
+        velvetPoseDollseroLoadingOrb.startAnimating()
+    }
+
     private func completeDollStoreRibbon(_ linenClosetDollcavo: String) async {
+        let miniShelfDolllumi = await miniLayerDollmivoStoreResult(for: linenClosetDollcavo)
+        finishDollStoreRibbon(dollSucceeded: miniShelfDolllumi.tinyFabricbookDollcavo, dollCopy: miniShelfDolllumi.tinyDisplayDollsovo)
+    }
+
+    private func miniLayerDollmivoStoreResult(for linenClosetDollcavo: String) async -> DolluALojStoreResult {
         do {
             let linenMatchingDollhumi = try await Product.products(for: [linenClosetDollcavo])
             guard let linenGuideDollsovo = linenMatchingDollhumi.first else {
-                finishDollStoreRibbon(dollSucceeded: false, dollCopy: "Item is unavailable.")
-                return
+                return .tinySleeveDollsero(false, DolluALojRouteCopy.satinPinboardDollvani)
             }
             let silkHatDollvani = try await linenGuideDollsovo.purchase()
             switch silkHatDollvani {
-            case .success(let silkBodiceDollfina):
-                switch silkBodiceDollfina {
-                case .verified(let silkPaletteDollquvo):
-                    await silkPaletteDollquvo.finish()
-                    finishDollStoreRibbon(dollSucceeded: true, dollCopy: "Success.")
-                case .unverified:
-                    finishDollStoreRibbon(dollSucceeded: false, dollCopy: "Could not verify this item.")
-                }
+            case .success(let autumnTrimsheetDollsero):
+                return await autumnTrimsheetDollsero.autumnJournalDollcavoFoldResult()
             case .userCancelled:
-                finishDollStoreRibbon(dollSucceeded: false, dollCopy: "Canceled.")
+                return .tinySleeveDollsero(false, DolluALojRouteCopy.pearlStripeDolltavo)
             case .pending:
-                finishDollStoreRibbon(dollSucceeded: false, dollCopy: "Still waiting for confirmation.")
+                return .tinySleeveDollsero(false, DolluALojRouteCopy.pearlOutfitDolllaro)
             @unknown default:
-                finishDollStoreRibbon(dollSucceeded: false, dollCopy: "Please try again later.")
+                return .tinySleeveDollsero(false, DolluALojRouteCopy.pearlCatalogDollnoro)
             }
         } catch {
-            finishDollStoreRibbon(dollSucceeded: false, dollCopy: "Please try again later.")
+            return .tinySleeveDollsero(false, DolluALojRouteCopy.pearlCatalogDollnoro)
         }
     }
 
     private func finishDollStoreRibbon(dollSucceeded: Bool, dollCopy: String) {
+        ivoryProgressDollriloRestoreStoreState()
+        if dollSucceeded {
+            pastelGalleryDollmivoRouteCanvas.evaluateJavaScript(DolluALojRouteCopy.tinyCoverDollmexa, completionHandler: nil)
+        }
+        showDollRouteNotice(dollTitle: DolluALojRouteCopy.satinStitchmapDollzemi, dollCopy: dollCopy)
+    }
+
+    private func ivoryProgressDollriloRestoreStoreState() {
         ivoryProgressDollrilo = false
         view.isUserInteractionEnabled = true
         velvetPoseDollseroLoadingOrb.stopAnimating()
-        if dollSucceeded {
-            pastelGalleryDollmivoRouteCanvas.evaluateJavaScript("fanFold()", completionHandler: nil)
-        }
-        showDollRouteNotice(dollTitle: "Dollu", dollCopy: dollCopy)
     }
 
     private func showDollRouteNotice(dollTitle: String, dollCopy: String) {
         let silkClipnoteDolllumi = UIAlertController(title: dollTitle, message: dollCopy, preferredStyle: .alert)
-        silkClipnoteDolllumi.addAction(UIAlertAction(title: "OK", style: .default))
+        silkClipnoteDolllumi.addAction(UIAlertAction(title: DolluALojRouteCopy.pearlEnsembleDollyara, style: .default))
         present(silkClipnoteDolllumi, animated: true)
     }
     
+}
+
+extension DolluALoj: WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate {
+    func webView(_ dollRouteCanvas: WKWebView, didFinish navigation: WKNavigation!) {
+        self.rosyGuideDollvexRevealCanvas()
+    }
+
+    func userContentController(_ miniPromptDollveloController: WKUserContentController, didReceive pocketScarfDollyaraSignal: WKScriptMessage) {
+        if pocketScarfDollyaraSignal.name == DolluALojGuideSignal.laceBonnetDollzora {
+            pearlGuideDollukpHandleStoreSignal(pocketScarfDollyaraSignal.body)
+            return
+        }
+
+        if pocketScarfDollyaraSignal.name == DolluALojGuideSignal.laceWardrobeDollvex {
+            pocketPhotologDollnexaPushRoute(pocketScarfDollyaraSignal.body)
+            return
+        }
+
+        if pocketScarfDollyaraSignal.name == DolluALojGuideSignal.satinCollectionDollvelo {
+            self.navigationController?.popViewController(animated: true)
+            return
+        }
+
+        if pocketScarfDollyaraSignal.name == DolluALojGuideSignal.satinMarkerDollpavo {
+            self.rosyGuideDollvexRefreshInteraction()
+        }
+    }
+}
+
+private extension WKWebView {
+    func pastelNoteDollquvoPolishCanvas(owner pastelPropDolllumi: DolluALoj) {
+        scrollView.showsVerticalScrollIndicator = false
+        uiDelegate = pastelPropDolllumi
+        navigationDelegate = pastelPropDolllumi
+        backgroundColor = .clear
+        isHidden = true
+    }
+}
+
+private extension Dictionary where Key == String, Value == Any {
+    func miniAccessoryDollquvoStoreIdentifier() -> String? {
+        DolluALojStoreField.satinCollarDollrilo.lazy.compactMap { miniShelfDolllumi in
+            (self[miniShelfDolllumi] as? String)?
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+        .first { !$0.isEmpty }
+    }
+}
+
+private extension VerificationResult<Transaction> {
+    func autumnJournalDollcavoFoldResult() async -> DolluALojStoreResult {
+        switch self {
+        case .verified(let autumnPatternDollhumi):
+            await autumnPatternDollhumi.finish()
+            return .tinySleeveDollsero(true, DolluALojRouteCopy.pearlGuideDollukp)
+        case .unverified:
+            return .tinySleeveDollsero(false, DolluALojRouteCopy.pearlSkirtDollniva)
+        }
+    }
 }

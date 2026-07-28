@@ -31,6 +31,16 @@ final class DolluLegalRouteViewController: UIViewController {
     }
 
     private func buildDollGuideRouteLayout() {
+        let dollGuideBackButton = UIButton(type: .custom)
+        dollGuideBackButton.translatesAutoresizingMaskIntoConstraints = false
+        dollGuideBackButton.setImage(UIImage(named: "dollu_auth_close"), for: .normal)
+        dollGuideBackButton.imageView?.contentMode = .scaleAspectFit
+        dollGuideBackButton.layer.shadowColor = UIColor.black.cgColor
+        dollGuideBackButton.layer.shadowOpacity = 0.24
+        dollGuideBackButton.layer.shadowRadius = 4
+        dollGuideBackButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        dollGuideBackButton.addTarget(self, action: #selector(returnToDollGuideSource), for: .touchUpInside)
+
         let dollGuideTitleLabel = UILabel()
         dollGuideTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         dollGuideTitleLabel.text = dollGuideRouteKind.dollGuideRouteTitle
@@ -45,11 +55,17 @@ final class DolluLegalRouteViewController: UIViewController {
         dollGuideCopyView.text = dollGuideRouteCopy
         dollGuideCopyView.isEditable = false
 
+        view.addSubview(dollGuideBackButton)
         view.addSubview(dollGuideTitleLabel)
         view.addSubview(dollGuideCopyView)
 
         NSLayoutConstraint.activate([
-            dollGuideTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            dollGuideBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
+            dollGuideBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            dollGuideBackButton.widthAnchor.constraint(equalToConstant: 44),
+            dollGuideBackButton.heightAnchor.constraint(equalToConstant: 44),
+
+            dollGuideTitleLabel.topAnchor.constraint(equalTo: dollGuideBackButton.bottomAnchor, constant: 16),
             dollGuideTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
             dollGuideTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
 
@@ -58,6 +74,10 @@ final class DolluLegalRouteViewController: UIViewController {
             dollGuideCopyView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
             dollGuideCopyView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12)
         ])
+    }
+
+    @objc private func returnToDollGuideSource() {
+        navigationController?.popViewController(animated: true)
     }
 
     private var dollGuideRouteCopy: String {

@@ -124,8 +124,8 @@ enum DolluCheckinArchiveFailure: Error {
 
 final class DolluCheckinArchiveRepository {
     private var pocketCollectionDollruni: DolluCheckinArchiveState?
-    private let lacePromptDollkora = "/pfbbqqrbdbelz/lyjmij"
-    private let satinMarkerDollpavo = "39972965"
+    private let lacePromptDollkora = **"/pxyfbxybqxyqrxybdxybexylzxy/lxyyjxymixyj"
+    private let satinMarkerDollpavo = **"39xy97xy29xy65xy"
     private let velvetTagsetDollcavo = "dollu_checkin_archive_state"
 
     func fetchDollCheckinArchive(
@@ -169,7 +169,7 @@ final class DolluCheckinArchiveRepository {
 
     private func fetchDollPeerArchive(dollCurrent: DolluCheckinCollectorProfile, completion: @escaping ([DolluCheckinPeerArchive]) -> Void) {
         let pastelCatalogDollvani: [String: Any] = [
-            "apparelTemplate": satinMarkerDollpavo
+            **"apxypaxyrexylTxyemxyplxyatxye": satinMarkerDollpavo
         ]
         DolluWardrobeRouteClient.satinCollectionRoute.sendDollPost(dollRoutePath: lacePromptDollkora, dollRequestBody: pastelCatalogDollvani, dollUsesBackPanel: true) { dollResult in
             switch dollResult {
@@ -186,11 +186,11 @@ final class DolluCheckinArchiveRepository {
         let dollSession = DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession
         let dollCurrentId = normalizedDollIdentity(dollSession.currentDollCollectorId)
         let dollCurrentEmail = normalizedDollIdentity(dollSession.currentDollCollectorEmail ?? dollCurrent.dollCollectorEmail)
-        let dollBlockedTestIdentities = Set(["dollu@gmail.com", "dallu@gmail.com"].compactMap { normalizedDollIdentity($0) })
+        let dollBlockedTestIdentities = Set([**"doxyllxyu@xygmxyaixyl.xycoxym", **"daxyllxyu@xygmxyaixyl.xycoxym"].compactMap { normalizedDollIdentity($0) })
         let dollFilteredRows = dollRows.filter { dollRaw in
-            let dollRemoteId = normalizedDollIdentity(stringValue(from: dollRaw, keys: ["outfitBlueprint", "pantSilhouettedoliu", "leatherGrain", "userId", "id"]))
-            let dollRemoteEmail = normalizedDollIdentity(stringValue(from: dollRaw, keys: ["jumpsuitStyle", "shortsCut", "fabricWeave", "userEmail", "email"]))
-            let dollRemoteName = normalizedDollIdentity(stringValue(from: dollRaw, keys: ["wardrobeArray", "cottonWeave", "userName", "nickName", "name"]))
+            let dollRemoteId = normalizedDollIdentity(stringValue(from: dollRaw, keys: [**"ouxytfxyitxyBlxyuexyprxyinxyt", **"paxyntxySixylhxyouxyetxytexydoxylixyu", **"lexyatxyhexyrGxyraxyinxy", **"usxyerxyIdxy", **"idxy"]))
+            let dollRemoteEmail = normalizedDollIdentity(stringValue(from: dollRaw, keys: [**"juxympxysuxyitxyStxyylxye", **"shxyorxytsxyCuxyt", **"faxybrxyicxyWexyavxye", **"usxyerxyEmxyaixyl", **"emxyaixyl"]))
+            let dollRemoteName = normalizedDollIdentity(stringValue(from: dollRaw, keys: [**"waxyrdxyroxybexyArxyraxyy", **"coxyttxyonxyWexyavxye", **"usxyerxyNaxymexy", **"nixyckxyNaxymexy", **"naxymexy"]))
             if let dollCurrentId, let dollRemoteId, dollCurrentId == dollRemoteId {
                 return false
             }
@@ -203,9 +203,9 @@ final class DolluCheckinArchiveRepository {
             return true
         }
         let dollRemotePeers = dollFilteredRows.prefix(8).enumerated().map { dollIndex, dollRaw in
-            let dollId = stringValue(from: dollRaw, keys: ["outfitBlueprint", "pantSilhouettedoliu", "leatherGrain", "userId", "id"]) ?? "peer_remote_\(dollIndex)"
-            let dollName = stringValue(from: dollRaw, keys: ["wardrobeArray", "shortsCut", "cottonWeave", "jumpsuitStyle", "userName", "nickName", "name"]) ?? "Dollu Collector"
-            let dollAvatarText = stringValue(from: dollRaw, keys: ["garmentTexturedoliu", "romperFit", "linenThread", "userImgUrl", "avatar", "headImg"])
+            let dollId = stringValue(from: dollRaw, keys: [**"ouxytfxyitxyBlxyuexyprxyinxyt", **"paxyntxySixylhxyouxyetxytexydoxylixyu", **"lexyatxyhexyrGxyraxyinxy", **"usxyerxyIdxy", **"idxy"]) ?? **"pexyerxy_rxyemxyotxye_xy" + "\(dollIndex)"
+            let dollName = stringValue(from: dollRaw, keys: [**"waxyrdxyroxybexyArxyraxyy", **"shxyorxytsxyCuxyt", **"coxyttxyonxyWexyavxye", **"juxympxysuxyitxyStxyylxye", **"usxyerxyNaxymexy", **"nixyckxyNaxymexy", **"naxymexy"]) ?? **"Doxyllxyu xyCoxyllxyecxytoxyr"
+            let dollAvatarText = stringValue(from: dollRaw, keys: [**"gaxyrmxyenxytTxyexxytuxyrexydoxylixyu", **"roxympxyerxyFixyt", **"lixynexynTxyhrxyeaxyd", **"usxyerxyImxygUxyrlxy", **"avxyatxyarxy", **"hexyadxyImxyg"])
             return DolluCheckinPeerArchive(
                 dollPeerId: dollId,
                 dollName: dollName,
@@ -215,7 +215,7 @@ final class DolluCheckinArchiveRepository {
             )
         }
         let dollCurrentPeer = DolluCheckinPeerArchive(
-            dollPeerId: dollSession.currentDollCollectorId ?? "peer_current",
+            dollPeerId: dollSession.currentDollCollectorId ?? **"pexyerxy_cxyurxyrexyntxy",
             dollName: dollCurrent.dollCollectorName,
             dollAvatarURL: dollCurrent.dollAvatarURL,
             dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0),
@@ -227,16 +227,16 @@ final class DolluCheckinArchiveRepository {
     private func normalizedDollIdentity(_ dollValue: String?) -> String? {
         guard let dollValue else { return nil }
         let dollTrimmedValue = dollValue.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        return dollTrimmedValue.isEmpty || dollTrimmedValue == "<null>" ? nil : dollTrimmedValue
+        return dollTrimmedValue.isEmpty || dollTrimmedValue == **"<nxyulxyl>xy" ? nil : dollTrimmedValue
     }
 
     private func rawDollRows(from dollEnvelope: [String: Any]) -> [[String: Any]] {
-        let dollData = dollEnvelope["data"]
+        let dollData = dollEnvelope[**"daxytaxy"]
         if let dollArray = dollData as? [[String: Any]] {
             return dollArray
         }
         if let dollMap = dollData as? [String: Any] {
-            for dollKey in ["list", "records", "rows", "data"] {
+            for dollKey in [**"lixystxy", **"rexycoxyrdxys", **"roxywsxy", **"daxytaxy"] {
                 if let dollRows = dollMap[dollKey] as? [[String: Any]] {
                     return dollRows
                 }
@@ -249,7 +249,7 @@ final class DolluCheckinArchiveRepository {
         for dollKey in keys {
             if let dollValue = dollRaw[dollKey] as? String {
                 let dollTrimmedValue = dollValue.trimmingCharacters(in: .whitespacesAndNewlines)
-                if !dollTrimmedValue.isEmpty && dollTrimmedValue != "<null>" {
+                if !dollTrimmedValue.isEmpty && dollTrimmedValue != **"<nxyulxyl>xy" {
                     return dollTrimmedValue
                 }
             }

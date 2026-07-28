@@ -2,9 +2,9 @@ import UIKit
 
 final class DolluCollectorAccessViewController: DolluAuthBaseViewController {
     private let dollGuidelineConsentView = DolluGuideAgreementView()
-    private let satinCollectionEmailField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: "Enter email address", dollInputBoard: .emailAddress)
-    private let ribbonSecretPromptField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: "Enter password", dollUsesSecretEntry: true)
-    private let glossyClosetDollvex = DolluRibbonActionButton(dollButtonTitle: "Sign in now")
+    private let satinCollectionEmailField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: **"Enxytexyr xyemxyaixyl xyadxydrxyesxys", dollInputBoard: .emailAddress)
+    private let ribbonSecretPromptField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: **"Enxytexyr xypaxyssxywoxyrdxy", dollUsesSecretEntry: true)
+    private let glossyClosetDollvex = DolluRibbonActionButton(dollButtonTitle: **"Sixygnxy ixyn xynoxyw")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ final class DolluCollectorAccessViewController: DolluAuthBaseViewController {
 
         let dollAccessTitleLabel = UILabel()
         dollAccessTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollAccessTitleLabel.text = "Login"
+        dollAccessTitleLabel.text = **"Loxygixyn"
         dollAccessTitleLabel.textColor = .white
         dollAccessTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 38, dollFontWeight: .heavy)
         dollAccessTitleLabel.textAlignment = .center
@@ -73,10 +73,10 @@ final class DolluCollectorAccessViewController: DolluAuthBaseViewController {
         let dollCollectorEmail = satinCollectionEmailField.dollPromptTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let dollAccessSecret = ribbonSecretPromptField.dollPromptTextField.text ?? ""
 
-        guard !dollCollectorEmail.isEmpty else { presentDollSafetyNotice("Please enter email address."); return }
-        guard !dollAccessSecret.isEmpty else { presentDollSafetyNotice("Please enter password."); return }
-        guard isDollCollectorEmail(dollCollectorEmail) else { presentDollSafetyNotice("Please enter a valid email address."); return }
-        guard dollGuidelineConsentView.dollGuideIsAccepted else { presentDollSafetyNotice("Please agree to Terms of Service and Privacy Policy."); return }
+        guard !dollCollectorEmail.isEmpty else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy exymaxyilxy axyddxyrexyssxy."); return }
+        guard !dollAccessSecret.isEmpty else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy pxyasxyswxyorxyd.xy"); return }
+        guard isDollCollectorEmail(dollCollectorEmail) else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy axy vxyalxyidxy exymaxyilxy axyddxyrexyssxy."); return }
+        guard dollGuidelineConsentView.dollGuideIsAccepted else { presentDollSafetyNotice(**"Plxyeaxysexy axygrxyeexy txyo xyTexyrmxys xyofxy Sxyerxyvixycexy axyndxy Pxyrixyvaxycyxy Pxyolxyicxyy.xy"); return }
 
         setDollAccessLoading(true)
         DolluCollectorAccessRoute.velvetStitchmapDollmexa.sendDollCollectorAccess(dollCollectorEmail: dollCollectorEmail, dollAccessSecret: dollAccessSecret) { [weak self] dollResult in
@@ -87,7 +87,7 @@ final class DolluCollectorAccessViewController: DolluAuthBaseViewController {
                 DolluWardrobeArchiveStore.satinCollectionArchive.syncDollCollectorAfterRoute(dollCollectorEmail: dollCollectorEmail, dollAccessSecret: dollAccessSecret, dollCollectorName: nil, dollCollectorCredential: dollCollectorCredential)
                 self.revealDollCollectorGallery()
             case .failure:
-                self.presentDollSafetyNotice("Dollu access could not be completed. Please try again.")
+                self.presentDollSafetyNotice(**"Doxyllxyu xyacxycexyssxy cxyouxyldxy nxyotxy bxye xycoxympxylexytexyd.xy Pxylexyasxye xytrxyy xyagxyaixyn.xy")
             }
         }
     }
@@ -95,7 +95,7 @@ final class DolluCollectorAccessViewController: DolluAuthBaseViewController {
     private func setDollAccessLoading(_ dollIsLoading: Bool) {
         glossyClosetDollvex.isEnabled = !dollIsLoading
         glossyClosetDollvex.alpha = dollIsLoading ? 0.62 : 1
-        glossyClosetDollvex.setTitle(dollIsLoading ? "Signing in..." : "Sign in now", for: .normal)
+        glossyClosetDollvex.setTitle(dollIsLoading ? **"Sixygnxyinxyg xyinxy..xy." : **"Sixygnxy ixyn xynoxyw", for: .normal)
     }
 
     private func revealDollCollectorGallery() {

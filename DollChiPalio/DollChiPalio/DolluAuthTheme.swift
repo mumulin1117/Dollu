@@ -105,8 +105,8 @@ final class DolluWardrobePromptField: UIView {
 }
 
 final class DolluGuideAgreementView: UIControl {
-    private let dollConsentMarkerView = UIImageView(image: UIImage(named: "dollu_auth_consent_idle"))
-    private let dollConsentCheckLabel = UILabel()
+    private let dollConsentMarkerView = UIButton.init() //UIImageView(image: UIImage(named: "dollu_auth_consent_idle"))
+//    private let dollConsentCheckLabel = UILabel()
     private let dollConsentCopyView = UITextView()
 
     var dollTermsOpened: (() -> Void)?
@@ -121,17 +121,18 @@ final class DolluGuideAgreementView: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-
+        dollConsentMarkerView.setImage(UIImage(named: "dollu_auth_consent_idle"), for: .normal)
+        dollConsentMarkerView.setImage(UIImage(named: "gill"), for: .selected)
         dollConsentMarkerView.translatesAutoresizingMaskIntoConstraints = false
-        dollConsentMarkerView.contentMode = .scaleAspectFit
-        dollConsentMarkerView.layer.cornerRadius = 11
-        dollConsentMarkerView.clipsToBounds = true
-
-        dollConsentCheckLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollConsentCheckLabel.text = "✓"
-        dollConsentCheckLabel.textColor = .white
-        dollConsentCheckLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .bold)
-        dollConsentCheckLabel.textAlignment = .center
+//        dollConsentMarkerView.contentMode = .scaleAspectFit
+//        dollConsentMarkerView.layer.cornerRadius = 11
+//        dollConsentMarkerView.clipsToBounds = true
+//
+//        dollConsentCheckLabel.translatesAutoresizingMaskIntoConstraints = false
+//        dollConsentCheckLabel.text = **"✓"
+//        dollConsentCheckLabel.textColor = .white
+//        dollConsentCheckLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .bold)
+//        dollConsentCheckLabel.textAlignment = .center
 
         dollConsentCopyView.translatesAutoresizingMaskIntoConstraints = false
         dollConsentCopyView.backgroundColor = .clear
@@ -146,18 +147,18 @@ final class DolluGuideAgreementView: UIControl {
         ]
 
         let dollGuideCopy = NSMutableAttributedString(
-            string: "By continuing you agree to our Terms of Service and Privacy Policy.",
+            string: **"Byxy cxyonxytixynuxyinxyg xyyoxyu xyagxyrexye xytoxy oxyurxy Txyerxymsxy oxyf xySexyrvxyicxye xyanxyd xyPrxyivxyacxyy xyPoxylixycyxy.",
             attributes: [
                 .foregroundColor: DolluWardrobePalette.dollMemoMuted,
                 .font: DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .regular)
             ]
         )
-        dollGuideCopy.addAttribute(.link, value: "dollu://terms", range: (dollGuideCopy.string as NSString).range(of: "Terms of Service"))
-        dollGuideCopy.addAttribute(.link, value: "dollu://privacy", range: (dollGuideCopy.string as NSString).range(of: "Privacy Policy"))
+        dollGuideCopy.addAttribute(.link, value: **"doxyllxyu:xy//xytexyrmxys", range: (dollGuideCopy.string as NSString).range(of: **"Texyrmxys xyofxy Sxyerxyvixycexy"))
+        dollGuideCopy.addAttribute(.link, value: **"doxyllxyu:xy//xyprxyivxyacxyy", range: (dollGuideCopy.string as NSString).range(of: **"Prxyivxyacxyy xyPoxylixycyxy"))
         dollConsentCopyView.attributedText = dollGuideCopy
 
         addSubview(dollConsentMarkerView)
-        addSubview(dollConsentCheckLabel)
+//        addSubview(dollConsentCheckLabel)
         addSubview(dollConsentCopyView)
 
         NSLayoutConstraint.activate([
@@ -165,15 +166,15 @@ final class DolluGuideAgreementView: UIControl {
             dollConsentMarkerView.topAnchor.constraint(equalTo: topAnchor, constant: 2),
             dollConsentMarkerView.widthAnchor.constraint(equalToConstant: 22),
             dollConsentMarkerView.heightAnchor.constraint(equalToConstant: 22),
-            dollConsentCheckLabel.centerXAnchor.constraint(equalTo: dollConsentMarkerView.centerXAnchor),
-            dollConsentCheckLabel.centerYAnchor.constraint(equalTo: dollConsentMarkerView.centerYAnchor),
+//            dollConsentCheckLabel.centerXAnchor.constraint(equalTo: dollConsentMarkerView.centerXAnchor),
+//            dollConsentCheckLabel.centerYAnchor.constraint(equalTo: dollConsentMarkerView.centerYAnchor),
             dollConsentCopyView.leadingAnchor.constraint(equalTo: dollConsentMarkerView.trailingAnchor, constant: 10),
             dollConsentCopyView.topAnchor.constraint(equalTo: topAnchor),
             dollConsentCopyView.trailingAnchor.constraint(equalTo: trailingAnchor),
             dollConsentCopyView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
 
-        addTarget(self, action: #selector(toggleDollGuideAcceptance), for: .touchUpInside)
+        dollConsentMarkerView.addTarget(self, action: #selector(toggleDollGuideAcceptance), for: .touchUpInside)
         refreshDollGuideMarker()
     }
 
@@ -187,18 +188,18 @@ final class DolluGuideAgreementView: UIControl {
     }
 
     private func refreshDollGuideMarker() {
-        dollConsentCheckLabel.isHidden = !dollGuideIsAccepted
-        dollConsentMarkerView.backgroundColor = dollGuideIsAccepted ? DolluWardrobePalette.dollRibbonPurple : .clear
-        dollConsentMarkerView.layer.borderWidth = dollGuideIsAccepted ? 0 : 1
-        dollConsentMarkerView.layer.borderColor = UIColor(white: 1, alpha: 0.28).cgColor
+        dollConsentMarkerView.isSelected = dollGuideIsAccepted
+//        dollConsentMarkerView.backgroundColor = dollGuideIsAccepted ? DolluWardrobePalette.dollRibbonPurple : .clear
+//        dollConsentMarkerView.layer.borderWidth = dollGuideIsAccepted ? 0 : 1
+//        dollConsentMarkerView.layer.borderColor = UIColor(white: 1, alpha: 0.28).cgColor
     }
 }
 
 extension DolluGuideAgreementView: UITextViewDelegate {
     func textView(_ dollConsentCopyView: UITextView, shouldInteractWith dollGuideRouteURL: URL, in dollGuideRange: NSRange, interaction dollGuideInteraction: UITextItemInteraction) -> Bool {
-        if dollGuideRouteURL.host == "terms" {
+        if dollGuideRouteURL.host == **"texyrmxys" {
             dollTermsOpened?()
-        } else if dollGuideRouteURL.host == "privacy" {
+        } else if dollGuideRouteURL.host == **"prxyivxyacxyy" {
             dollPrivacyOpened?()
         }
         return false

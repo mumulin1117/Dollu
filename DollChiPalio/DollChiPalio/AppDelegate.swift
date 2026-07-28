@@ -17,15 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         startDollStoreRibbonUpdates()
         let window = UIWindow.init(frame: UIScreen.main.bounds)
-        if DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession.dollCollectorIsInside {
-            window.rootViewController = DolluCollectorTabController()
-        } else {
-            let authRoot = UINavigationController(rootViewController: DolluAuthLandingViewController())
-            authRoot.setNavigationBarHidden(true, animated: false)
-            window.rootViewController = authRoot
+        DolluAppRibbonConfig.satinCollectionDollvelo.miniShelfDolllumi = { ribbonDisplayDollrevo in
+            if DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession.dollCollectorIsInside {
+                ribbonDisplayDollrevo?.rootViewController = DolluCollectorTabController()
+            } else {
+                let ribbonCategoryDollpiri = UINavigationController(rootViewController: DolluAuthLandingViewController())
+                ribbonCategoryDollpiri.setNavigationBarHidden(true, animated: false)
+                ribbonDisplayDollrevo?.rootViewController = ribbonCategoryDollpiri
+            }
         }
         self.window = window
         window.makeKeyAndVisible()
+        DolluAppRibbonGateway.satinCollectionDollvelo.wovenDisplayDollnoro(wovenCategoryDollyara: window)
+        window.rootViewController = DolluAppRibbonGateway.satinCollectionDollvelo.gardenMemoDollbop()
         return true
     }
 
@@ -41,6 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     deinit {
         satinCollectionDollvelo?.cancel()
+    }
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        DolluAppRibbonGateway.satinCollectionDollvelo.gardenBackgroundDollrilo(gardenStandDollzemi: deviceToken)
     }
 
 }
