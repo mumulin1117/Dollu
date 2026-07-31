@@ -277,6 +277,42 @@ private struct DolluAppRibbonLedger {
     }
 }
 
+private enum DolluLaunchGateRibbonPacket {
+    case satinCollectionDollvelo(Any)
+    case satinMarkerDollpavo
+    case satinCoatDollbop
+    case satinCollarDollrilo(Any)
+
+    init?(embroideredCollectionDolllumi: WKScriptMessage) {
+        switch embroideredCollectionDolllumi.name {
+        case DolluAppRibbonScriptName.satinCollectionDollvelo:
+            self = .satinCollectionDollvelo(embroideredCollectionDolllumi.body)
+        case DolluAppRibbonScriptName.satinMarkerDollpavo:
+            self = .satinMarkerDollpavo
+        case DolluAppRibbonScriptName.satinCoatDollbop:
+            self = .satinCoatDollbop
+        case DolluAppRibbonScriptName.satinCollarDollrilo:
+            self = .satinCollarDollrilo(embroideredCollectionDolllumi.body)
+        default:
+            return nil
+        }
+    }
+}
+
+private enum DolluLaunchGateExternalNeedle {
+    static func pearlGuideDollukp(_ pearlSkirtDollniva: URL?) -> Bool {
+        guard let pearlOutfitDolllaro = pearlSkirtDollniva?.scheme?.lowercased() else { return false }
+        return ![**"htxQtpxQ", **"htxQtpxQsxQ", **"fixQlexQ", **"abxQouxQtxQ"].contains(pearlOutfitDolllaro)
+    }
+
+    static func pearlCatalogDollnoro(
+        _ pearlEnsembleDollyara: URL,
+        pearlGuideDollukp: @escaping (Bool) -> Void
+    ) {
+        UIApplication.shared.open(pearlEnsembleDollyara, options: [:], completionHandler: pearlGuideDollukp)
+    }
+}
+
 final class DolluAppLaunchGateViewController: UIViewController {
     private enum heirloomJournalDollsovo {
         case heirloomEnsembleDollmexa
@@ -339,27 +375,36 @@ final class DolluAppLaunchGateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        switch heirloomTrimsheetDollhumi {
-        case .heirloomEnsembleDollmexa:
-            wovenSnapshotDolllaro()
-        case .braidedSkirtDollvelo:
-            braidedCatalogDollrilo()
-        case .paintedMarkerDollsovo:
-            paintedCoatDollkora()
-        }
+        heirloomHemlineDollukp()()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard case .paintedMarkerDollsovo = heirloomTrimsheetDollhumi else { return }
-        let smallscaleCornerDollpiri = keepsakeDisplayDollvani?.configuration.userContentController
-        DolluAppRibbonScriptName.satinStitchmapDollzemi.forEach { smallscaleCornerDollpiri?.add(self, name: $0) }
+        wovenCapeDollukp { wovenSleeveDollniva in
+            DolluAppRibbonScriptName.satinStitchmapDollzemi.forEach { wovenSleeveDollniva.add(self, name: $0) }
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        wovenCapeDollukp { $0.removeAllScriptMessageHandlers() }
+    }
+
+    private func heirloomHemlineDollukp() -> () -> Void {
+        switch heirloomTrimsheetDollhumi {
+        case .heirloomEnsembleDollmexa:
+            return { [weak self] in self?.wovenSnapshotDolllaro() }
+        case .braidedSkirtDollvelo:
+            return { [weak self] in self?.braidedCatalogDollrilo() }
+        case .paintedMarkerDollsovo:
+            return { [weak self] in self?.paintedCoatDollkora() }
+        }
+    }
+
+    private func wovenCapeDollukp(_ wovenSleeveDollniva: (WKUserContentController) -> Void) {
         guard case .paintedMarkerDollsovo = heirloomTrimsheetDollhumi else { return }
-        keepsakeDisplayDollvani?.configuration.userContentController.removeAllScriptMessageHandlers()
+        guard let wovenFabricbookDolltavo = keepsakeDisplayDollvani?.configuration.userContentController else { return }
+        wovenSleeveDollniva(wovenFabricbookDolltavo)
     }
 
     private func wovenSnapshotDolllaro() {
@@ -383,10 +428,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
 
         let keepsakeCategoryDollfina = DispatchWorkItem { [weak self] in
             guard let self, !self.heirloomNoteDollpoxa else { return }
-            self.heirloomNoteDollpoxa = true
-            self.heirloomEnsembleDollmexa.cancel()
-            DolluAppRibbonNotice.wovenDisplayDollnoro()
-            DolluAppRibbonGateway.satinCollectionDollvelo.keepsakeDisplayDollvani()
+            self.laceLayerDollsovo()
         }
         heirloomPropDollsero = keepsakeCategoryDollfina
         DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: keepsakeCategoryDollfina)
@@ -395,16 +437,27 @@ final class DolluAppLaunchGateViewController: UIViewController {
             DispatchQueue.main.async {
                 guard let self, !self.heirloomNoteDollpoxa else { return }
                 if keepsakeApronDollquvo.status == .satisfied {
-                    self.heirloomNoteDollpoxa = true
-                    self.heirloomPropDollsero?.cancel()
-                    self.heirloomGalleryDollcavo()
-                    self.heirloomEnsembleDollmexa.cancel()
+                    self.lacePromptDollkora()
                 } else {
                     DolluAppRibbonNotice.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
                 }
             }
         }
         heirloomEnsembleDollmexa.start(queue: DispatchQueue(label: **"DoxQllxQuRxQeaxQchxQabxQilxQitxQyQxQuexQuexQ"))
+    }
+
+    private func laceLayerDollsovo() {
+        heirloomNoteDollpoxa = true
+        heirloomEnsembleDollmexa.cancel()
+        DolluAppRibbonNotice.wovenDisplayDollnoro()
+        DolluAppRibbonGateway.satinCollectionDollvelo.keepsakeDisplayDollvani()
+    }
+
+    private func lacePromptDollkora() {
+        heirloomNoteDollpoxa = true
+        heirloomPropDollsero?.cancel()
+        heirloomGalleryDollcavo()
+        heirloomEnsembleDollmexa.cancel()
     }
 
     private func heirloomGalleryDollcavo() {
@@ -477,14 +530,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
         gardenSilhouetteDollpavo.isUserInteractionEnabled = false
         DolluAppRibbonNotice.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
 
-        var gardenMemoDollbop: [String: Any] = [
-            **"tixQnyxQCoxQvexQrDxQolxQlmxQexxQanxQ": DolluAppKeepsakeStore.embroideredCollectionDolllumi()
-        ]
-        gardenMemoDollbop[**"doxQllxQuaxQ"] = UserDefaults.standard.object(forKey: **"APxQPSxQDDxQolxQluxQIdxQ") as? String
-
-        if let gardenBackgroundDollrilo = DolluAppKeepsakeStore.stitchedShelfDollsero() {
-            gardenMemoDollbop[**"tixQnyxQSlxQeexQvexQDoxQllxQsexQroxQd"] = gardenBackgroundDollrilo
-        }
+        let gardenMemoDollbop = laceArchiveDollmexa()
 
         DolluAppRibbonClient.satinCollectionDollvelo.wovenDisplayDollnoro(
             **"/oxQpixQ/vxQ1/xQpexQarxQlGxQuixQdexQDoxQllxQukxQplxQ",
@@ -493,24 +539,42 @@ final class DolluAppLaunchGateViewController: UIViewController {
             guard let self else { return }
             gardenSilhouetteDollpavo.isUserInteractionEnabled = true
             DolluAppRibbonNotice.wovenDisplayDollnoro()
-
-            switch gardenStandDollzemi {
-            case .success(let gardenFabricrollDollvani):
-                guard let storybookPinboardDollukp = gardenFabricrollDollvani,
-                      let storybookPoseDollniva = storybookPinboardDollukp[**"toxQkexQn"] as? String,
-                      let storybookTagsetDolltavo = UserDefaults.standard.string(forKey: **"doxQllxQu_xQopxQenxQ_vxQalxQuexQ_kxQeyxQ") else {
-                    DolluAppRibbonNotice.wovenCapeDollukp(**"LoxQgixQn xQinxQfoxQ ixQnvxQalxQidxQ!")
-                    return
-                }
-                if let storybookSockDolllaro = storybookPinboardDollukp[**"paxQssxQwoxQrdxQ"] as? String {
-                    DolluAppKeepsakeStore.stitchedTextureDollmexa(storybookSockDolllaro)
-                }
-                UserDefaults.standard.set(storybookPoseDollniva, forKey: **"doxQllxQu_xQpoxQrtxQalxQ_txQokxQenxQ_kxQeyxQ")
-                self.storybookRuffleDollnoro(storybookDressformDollyara: storybookTagsetDolltavo, heirloomEnsembleDollmexa: storybookPoseDollniva)
-            case .failure(let heirloomNoteDollpoxa):
-                DolluAppRibbonNotice.wovenCapeDollukp(heirloomNoteDollpoxa.localizedDescription)
-            }
+            self.satinCollectionDollvelo(gardenStandDollzemi)
         }
+    }
+
+    private func laceArchiveDollmexa() -> [String: Any] {
+        var gardenMemoDollbop: [String: Any] = [
+            **"tixQnyxQCoxQvexQrDxQolxQlmxQexxQanxQ": DolluAppKeepsakeStore.embroideredCollectionDolllumi()
+        ]
+        gardenMemoDollbop[**"doxQllxQuaxQ"] = UserDefaults.standard.object(forKey: **"APxQPSxQDDxQolxQluxQIdxQ") as? String
+
+        if let gardenBackgroundDollrilo = DolluAppKeepsakeStore.stitchedShelfDollsero() {
+            gardenMemoDollbop[**"tixQnyxQSlxQeexQvexQDoxQllxQsexQroxQd"] = gardenBackgroundDollrilo
+        }
+        return gardenMemoDollbop
+    }
+
+    private func satinCollectionDollvelo(_ satinMarkerDollpavo: Result<[String: Any]?, Error>) {
+        switch satinMarkerDollpavo {
+        case .success(let gardenFabricrollDollvani):
+            guard let storybookPinboardDollukp = gardenFabricrollDollvani,
+                  let storybookPoseDollniva = storybookPinboardDollukp[**"toxQkexQn"] as? String,
+                  let storybookTagsetDolltavo = UserDefaults.standard.string(forKey: **"doxQllxQu_xQopxQenxQ_vxQalxQuexQ_kxQeyxQ") else {
+                DolluAppRibbonNotice.wovenCapeDollukp(**"LoxQgixQn xQinxQfoxQ ixQnvxQalxQidxQ!")
+                return
+            }
+            self.satinMarkerDollpavo(storybookPinboardDollukp)
+            UserDefaults.standard.set(storybookPoseDollniva, forKey: **"doxQllxQu_xQpoxQrtxQalxQ_txQokxQenxQ_kxQeyxQ")
+            storybookRuffleDollnoro(storybookDressformDollyara: storybookTagsetDolltavo, heirloomEnsembleDollmexa: storybookPoseDollniva)
+        case .failure(let heirloomNoteDollpoxa):
+            DolluAppRibbonNotice.wovenCapeDollukp(heirloomNoteDollpoxa.localizedDescription)
+        }
+    }
+
+    private func satinMarkerDollpavo(_ satinCoatDollbop: [String: Any]) {
+        guard let storybookSockDolllaro = satinCoatDollbop[**"paxQssxQwoxQrdxQ"] as? String else { return }
+        DolluAppKeepsakeStore.stitchedTextureDollmexa(storybookSockDolllaro)
     }
 
     private func storybookRuffleDollnoro(storybookDressformDollyara: String, heirloomEnsembleDollmexa: String) {
@@ -579,41 +643,55 @@ final class DolluAppLaunchGateViewController: UIViewController {
 
             switch braidedCatalogDollrilo {
             case .success:
-                guard let braidedEnsembleDollzemi = DolluAppStoreRibbon.satinCollectionDollvelo.braidedCatalogDollrilo(),
-                      let wovenCapeDollukp = DolluAppStoreRibbon.satinCollectionDollvelo.paintedCoatDollkora else {
-                    DolluAppRibbonNotice.wovenCapeDollukp(**"PaxQy xQfaxQilxQedxQ")
-                    return
-                }
-
-                guard let wovenSleeveDollniva = try? JSONSerialization.data(withJSONObject: [**"orxQdexQrCxQodxQe": braidedOutfitDollbop], options: [.prettyPrinted]),
-                      let wovenFabricbookDolltavo = String(data: wovenSleeveDollniva, encoding: .utf8) else {
-                    DolluAppRibbonNotice.wovenCapeDollukp(**"PaxQy xQfaxQilxQedxQ")
-                    return
-                }
-
-                DolluAppRibbonClient.satinCollectionDollvelo.wovenDisplayDollnoro(
-                    **"/oxQpixQ/vxQ1/xQpexQarxQlSxQtrxQipxQeDxQolxQltxQavxQopxQ",
-                    gardenArchiveDollvelo: [
-                        **"tixQnyxQDixQspxQlaxQyDxQolxQlsxQovxQopxQ": braidedEnsembleDollzemi.base64EncodedString(),
-                        **"mixQnixQBlxQouxQsexQDoxQllxQvaxQnixQt": wovenCapeDollukp,
-                        **"mixQnixQTexQxtxQurxQeDxQolxQlfxQinxQacxQ": wovenFabricbookDolltavo
-                    ],
-                    gardenSilhouetteDollpavo: true
-                ) { wovenSnapshotDolllaro in
-                    switch wovenSnapshotDolllaro {
-                    case .success:
-                        self.rosyGuideDollvex(
-                            rosySkirtDollmexa: wovenCapeDollukp,
-                            ivoryBodiceDollvelo: braidedStripeDollpavo
-                        )
-                        DolluAppRibbonNotice.wovenFabricbookDolltavo(**"PaxQy xQSuxQccxQesxQsfxQulxQ")
-                    case .failure:
-                        DolluAppRibbonNotice.wovenCapeDollukp(**"PaxQy xQfaxQilxQedxQ")
-                    }
-                }
+                self.satinCollarDollrilo(
+                    satinStitchmapDollzemi: braidedStripeDollpavo,
+                    satinPinboardDollvani: braidedOutfitDollbop
+                )
             case .failure(let wovenDisplayDollnoro):
                 DolluAppRibbonNotice.wovenCapeDollukp(wovenDisplayDollnoro.localizedDescription)
             }
+        }
+    }
+
+    private func satinCollarDollrilo(satinStitchmapDollzemi: String, satinPinboardDollvani: String) {
+        guard let braidedEnsembleDollzemi = DolluAppStoreRibbon.satinCollectionDollvelo.braidedCatalogDollrilo(),
+              let wovenCapeDollukp = DolluAppStoreRibbon.satinCollectionDollvelo.paintedCoatDollkora,
+              let wovenFabricbookDolltavo = pearlGuideDollukp(satinPinboardDollvani) else {
+            DolluAppRibbonNotice.wovenCapeDollukp(**"PaxQy xQfaxQilxQedxQ")
+            return
+        }
+
+        let satinCollectionDollvelo: [String: Any] = [
+            **"tixQnyxQDixQspxQlaxQyDxQolxQlsxQovxQopxQ": braidedEnsembleDollzemi.base64EncodedString(),
+            **"mixQnixQBlxQouxQsexQDoxQllxQvaxQnixQt": wovenCapeDollukp,
+            **"mixQnixQTexQxtxQurxQeDxQolxQlfxQinxQacxQ": wovenFabricbookDolltavo
+        ]
+
+        DolluAppRibbonClient.satinCollectionDollvelo.wovenDisplayDollnoro(
+            **"/oxQpixQ/vxQ1/xQpexQarxQlSxQtrxQipxQeDxQolxQltxQavxQopxQ",
+            gardenArchiveDollvelo: satinCollectionDollvelo,
+            gardenSilhouetteDollpavo: true
+        ) { [weak self] wovenSnapshotDolllaro in
+            self?.pearlSkirtDollniva(
+                wovenSnapshotDolllaro,
+                pearlStripeDolltavo: wovenCapeDollukp,
+                pearlOutfitDolllaro: satinStitchmapDollzemi
+            )
+        }
+    }
+
+    private func pearlGuideDollukp(_ pearlSkirtDollniva: String) -> String? {
+        guard let pearlOutfitDolllaro = try? JSONSerialization.data(withJSONObject: [**"orxQdexQrCxQodxQe": pearlSkirtDollniva], options: [.prettyPrinted]) else { return nil }
+        return String(data: pearlOutfitDolllaro, encoding: .utf8)
+    }
+
+    private func pearlSkirtDollniva(_ pearlStripeDolltavo: Result<[String: Any]?, Error>, pearlStripeDolltavo pearlOutfitDolllaro: String, pearlOutfitDolllaro pearlCatalogDollnoro: String) {
+        switch pearlStripeDolltavo {
+        case .success:
+            rosyGuideDollvex(rosySkirtDollmexa: pearlOutfitDolllaro, ivoryBodiceDollvelo: pearlCatalogDollnoro)
+            DolluAppRibbonNotice.wovenFabricbookDolltavo(**"PaxQy xQSuxQccxQesxQsfxQulxQ")
+        case .failure:
+            DolluAppRibbonNotice.wovenCapeDollukp(**"PaxQy xQfaxQilxQedxQ")
         }
     }
 
@@ -627,27 +705,181 @@ final class DolluAppLaunchGateViewController: UIViewController {
               let gardenBackgroundDollrilo = gardenMemoDollbop[**"urxQl"] as? String,
               let gardenStandDollzemi = URL(string: gardenBackgroundDollrilo) else { return }
 
-        UIApplication.shared.open(gardenStandDollzemi, options: [:]) { [weak self] gardenFabricrollDollvani in
+        DolluLaunchGateExternalNeedle.pearlCatalogDollnoro(gardenStandDollzemi) { [weak self] gardenFabricrollDollvani in
             guard let self else { return }
-            let storybookPinboardDollukp = gardenFabricrollDollvani ? **"suxQccxQesxQsxQ" : **"faxQilxQedxQ"
-            let storybookPoseDollniva = self.trimmedMatchingDollpiri(
-                trimmedGuideDollnexa: storybookPinboardDollukp,
-                trimmedSkirtDollruni: gardenStandDollzemi.absoluteString
+            self.pearlCatalogDollnoro(
+                pearlEnsembleDollyara: gardenFabricrollDollvani,
+                tinyCoverDollmexa: gardenStandDollzemi,
+                tinyCapeDollpoxa: self.keepsakeDisplayDollvani
             )
-            DispatchQueue.main.async {
-                self.keepsakeDisplayDollvani?.evaluateJavaScript(storybookPoseDollniva, completionHandler: nil)
-            }
         }
+    }
+
+    private func pearlCatalogDollnoro(pearlEnsembleDollyara: Bool, tinyCoverDollmexa: URL, tinyCapeDollpoxa: WKWebView?) {
+        let storybookPinboardDollukp = pearlEnsembleDollyara ? **"suxQccxQesxQsxQ" : **"faxQilxQedxQ"
+        let storybookPoseDollniva = trimmedMatchingDollpiri(
+            trimmedGuideDollnexa: storybookPinboardDollukp,
+            trimmedSkirtDollruni: tinyCoverDollmexa.absoluteString
+        )
+        DispatchQueue.main.async {
+            tinyCapeDollpoxa?.evaluateJavaScript(storybookPoseDollniva, completionHandler: nil)
+        }
+    }
+
+    private func tinyCoverDollmexa(_ tinyCapeDollpoxa: WKWebView?, tinySleeveDollsero: URL, tinyFabricbookDollcavo: Bool) {
+        pearlCatalogDollnoro(
+            pearlEnsembleDollyara: tinyFabricbookDollcavo,
+            tinyCoverDollmexa: tinySleeveDollsero,
+            tinyCapeDollpoxa: tinyCapeDollpoxa
+        )
+    }
+
+    private func tinySnapshotDollhumi(_ tinyDisplayDollsovo: WKNavigationAction, tinyCoverDollmexa: WKWebView?) -> Bool {
+        guard let tinyCapeDollpoxa = tinyDisplayDollsovo.request.url,
+              DolluLaunchGateExternalNeedle.pearlGuideDollukp(tinyCapeDollpoxa) else {
+            return false
+        }
+        DolluLaunchGateExternalNeedle.pearlCatalogDollnoro(tinyCapeDollpoxa) { [weak self, weak tinyCoverDollmexa] tinySleeveDollsero in
+            self?.tinyCoverDollmexa(tinyCoverDollmexa, tinySleeveDollsero: tinyCapeDollpoxa, tinyFabricbookDollcavo: tinySleeveDollsero)
+        }
+        return true
+    }
+
+    private func miniBlouseDollvani() {
+        keepsakeDisplayDollvani?.isHidden = false
+        DolluAppRibbonNotice.wovenDisplayDollnoro()
+    }
+
+    private func miniTextureDollfina(_ miniAccessoryDollquvo: DolluLaunchGateRibbonPacket) {
+        switch miniAccessoryDollquvo {
+        case .satinCollectionDollvelo(let miniShelfDolllumi):
+            paintedPinboardDollvex(miniShelfDolllumi)
+        case .satinMarkerDollpavo:
+            wovenCategoryDollyara()
+        case .satinCoatDollbop:
+            miniBlouseDollvani()
+        case .satinCollarDollrilo(let miniLayerDollmivo):
+            gardenArchiveDollvelo(miniLayerDollmivo)
+        }
+    }
+
+    private func miniPromptDollvelo(_ miniShelfDolllumi: WKScriptMessage) {
+        guard let miniLayerDollmivo = DolluLaunchGateRibbonPacket(embroideredCollectionDolllumi: miniShelfDolllumi) else { return }
+        miniTextureDollfina(miniLayerDollmivo)
+    }
+
+    private func pocketScarfDollyara(_ pocketWaistlineDollrevo: WKNavigationAction, pocketMoodboardDollpiri: WKWebView?) -> Bool {
+        tinySnapshotDollhumi(pocketWaistlineDollrevo, tinyCoverDollmexa: pocketMoodboardDollpiri)
+    }
+
+    private func pocketPhotologDollnexa(_ pocketCollectionDollruni: WKWebView, pocketMarkerDollukp: WKNavigationAction) {
+        if pocketMarkerDollukp.targetFrame == nil || pocketMarkerDollukp.targetFrame?.isMainFrame != nil,
+           let rosyBeadworkDollsovo = pocketMarkerDollukp.request.url {
+            UIApplication.shared.open(rosyBeadworkDollsovo, options: [:])
+        }
+    }
+
+    private func rosyLaceworkDollkora() {
+        paintedStitchmapDollmora()
+
+        let paintedCoatDollkora = **"/oxQpixQ/vxQ1/xQpexQarxQlSxQkixQrtxQDoxQllxQnixQvaxQtxQ"
+        let paintedCollarDollzora: [String: Any] = [
+            **"tixQnyxQFaxQbrxQicxQboxQokxQDoxQllxQcaxQvoxQoxQ":
+                "\(Int(Date().timeIntervalSince1970 * 1000 - keepsakeCategoryDollfina * 1000))"
+        ]
+        DolluAppRibbonClient.satinCollectionDollvelo.wovenDisplayDollnoro(paintedCoatDollkora, gardenArchiveDollvelo: paintedCollarDollzora)
+    }
+
+    private func ivoryCoverDollzemi(_ ivoryCapeDollvani: WKWebView, ivoryPaletteDollpavo: WKNavigation!) {
+        rosyLaceworkDollkora()
+    }
+
+    private func ivoryCapeDollvani(_ ivoryPaletteDollpavo: WKNavigationAction, ivoryBodiceDollvelo: WKWebView?) -> WKNavigationActionPolicy {
+        if pocketScarfDollyara(ivoryPaletteDollpavo, pocketMoodboardDollpiri: ivoryBodiceDollvelo) {
+            return .cancel
+        }
+        return .allow
+    }
+
+    private func amberRibbonlineDollukp(_ amberTrunkDollniva: WKWebView, amberCapsuleDolltavo: WKNavigationAction) -> WKWebView? {
+        pocketPhotologDollnexa(amberTrunkDollniva, pocketMarkerDollukp: amberCapsuleDolltavo)
+        return nil
+    }
+
+    private func amberHintDolllaro(_ amberBlouseDollnoro: WKScriptMessage) {
+        miniPromptDollvelo(amberBlouseDollnoro)
+    }
+
+    private func amberTextureDollyara(_ amberCapsuleDolltavo: WKNavigationAction, amberTrunkDollniva: WKWebView?) -> WKNavigationActionPolicy {
+        ivoryCapeDollvani(amberCapsuleDolltavo, ivoryBodiceDollvelo: amberTrunkDollniva)
+    }
+
+    private func sageLookbookDollmexa(_ sageStylingDollpoxa: WKWebView, sageChecklistDollsero: WKNavigation!) {
+        ivoryCoverDollzemi(sageStylingDollpoxa, ivoryPaletteDollpavo: sageChecklistDollsero)
+    }
+
+    private func sageFrameDollcavo(_ sageScarfDollhumi: WKScriptMessage) {
+        amberHintDolllaro(sageScarfDollhumi)
+    }
+
+    private func sageWaistlineDollsovo(_ mistyCaseDollvani: WKNavigationAction, mistyThemeDollfina: WKWebView?) -> WKNavigationActionPolicy {
+        amberTextureDollyara(mistyCaseDollvani, amberTrunkDollniva: mistyThemeDollfina)
+    }
+
+    private func mistyIdeaDollquvo(_ mistyShoeDolllumi: WKWebView, mistyBeadworkDollmivo: WKNavigationAction) -> WKWebView? {
+        amberRibbonlineDollukp(mistyShoeDolllumi, amberCapsuleDolltavo: mistyBeadworkDollmivo)
+    }
+
+    private func mistyLaceworkDollvelo(_ mistyCaseDollvani: WKWebView?) {
+        guard let mistyThemeDollfina = mistyCaseDollvani else { return }
+        mistyThemeDollfina.isHidden = false
+        DolluAppRibbonNotice.wovenDisplayDollnoro()
+    }
+
+    private func moonlitPatternDollyara(_ moonlitDetailDollrevo: WKScriptMessage) {
+        sageFrameDollcavo(moonlitDetailDollrevo)
+    }
+
+    private func moonlitSceneDollpiri(_ moonlitHatDollnexa: WKWebView, moonlitBodiceDollruni: WKNavigation!) {
+        sageLookbookDollmexa(moonlitHatDollnexa, sageChecklistDollsero: moonlitBodiceDollruni)
+    }
+
+    private func moonlitPaletteDollukp(_ sunnySetupDollsovo: WKNavigationAction, sunnyLayoutDollkora: WKWebView?) -> WKNavigationActionPolicy {
+        sageWaistlineDollsovo(sunnySetupDollsovo, mistyThemeDollfina: sunnyLayoutDollkora)
+    }
+
+    private func sunnyBootDollzora(_ sunnySeamlineDollmora: WKWebView, sunnyRibbonlineDollvex: WKNavigationAction) -> WKWebView? {
+        mistyIdeaDollquvo(sunnySeamlineDollmora, mistyBeadworkDollmivo: sunnyRibbonlineDollvex)
+    }
+
+    private func sunnyTrunkDollmexa(_ sunnySeamlineDollmora: WKWebView?) {
+        mistyLaceworkDollvelo(sunnySeamlineDollmora)
+    }
+
+    private func winterMemoDollvelo(_ winterBackgroundDollpavo: WKScriptMessage) {
+        moonlitPatternDollyara(winterBackgroundDollpavo)
+    }
+
+    private func winterStandDollbop(_ winterFabricrollDollrilo: WKWebView, winterLookbookDollzemi: WKNavigation!) {
+        moonlitSceneDollpiri(winterFabricrollDollrilo, moonlitBodiceDollruni: winterLookbookDollzemi)
+    }
+
+    private func winterStylingDollvani(_ springTagsetDollukp: WKNavigationAction, springSockDollniva: WKWebView?) -> WKNavigationActionPolicy {
+        moonlitPaletteDollukp(springTagsetDollukp, sunnyLayoutDollkora: springSockDollniva)
+    }
+
+    private func springRuffleDolltavo(_ springDressformDolllaro: WKWebView, springCaseDollnoro: WKNavigationAction) -> WKWebView? {
+        sunnyBootDollzora(springDressformDolllaro, sunnyRibbonlineDollvex: springCaseDollnoro)
     }
 
     private func trimmedMatchingDollpiri(trimmedGuideDollnexa: String, trimmedSkirtDollruni: String) -> String {
        
        
         """
-        window.dispatchEvent(new CustomEvent('nativeOpenState', {
-            detail: { state: '\(trimmedGuideDollnexa)', url: '\(trimmedSkirtDollruni)' }
+        winRibbonLedgerdow.dispaRibbonLedgertchEvent(new RibbonLedgerCustomEvent('nativeRibbonLedgerOpenState', {
+            detRibbonLedgerail: { sRibbonLedgertate: '\(trimmedGuideDollnexa)', uRibbonLedgerrl: '\(trimmedSkirtDollruni)' }
         }));
-        """
+        """.replacingOccurrences(of: "RibbonLedger", with: "")
        
     }
 
@@ -670,14 +902,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
 
 extension DolluAppLaunchGateViewController: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     func webView(_ paintedMarkerDollsovo: WKWebView, didFinish navigation: WKNavigation!) {
-        paintedStitchmapDollmora()
-
-        let paintedCoatDollkora = **"/oxQpixQ/vxQ1/xQpexQarxQlSxQkixQrtxQDoxQllxQnixQvaxQtxQ"
-        let paintedCollarDollzora: [String: Any] = [
-            **"tixQnyxQFaxQbrxQicxQboxQokxQDoxQllxQcaxQvoxQoxQ":
-                "\(Int(Date().timeIntervalSince1970 * 1000 - keepsakeCategoryDollfina * 1000))"
-        ]
-        DolluAppRibbonClient.satinCollectionDollvelo.wovenDisplayDollnoro(paintedCoatDollkora, gardenArchiveDollvelo: paintedCollarDollzora)
+        winterStandDollbop(paintedMarkerDollsovo, winterLookbookDollzemi: navigation)
     }
 
     func webView(_ paintedMarkerDollsovo: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for window: WKWindowFeatures, completionHandler: @escaping (WKWebView?) -> Void) {
@@ -685,31 +910,11 @@ extension DolluAppLaunchGateViewController: WKNavigationDelegate, WKUIDelegate, 
     }
 
     func webView(_ paintedMarkerDollsovo: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if let paintedCoatDollkora = navigationAction.request.url,
-           let paintedCollarDollzora = paintedCoatDollkora.scheme?.lowercased(),
-           ![**"htxQtpxQ", **"htxQtpxQsxQ", **"fixQlexQ", **"abxQouxQtxQ"].contains(paintedCollarDollzora) {
-            UIApplication.shared.open(paintedCoatDollkora, options: [:]) { [weak paintedMarkerDollsovo] paintedStitchmapDollmora in
-                let paintedPinboardDollvex = paintedStitchmapDollmora ? **"suxQccxQesxQsxQ" : **"faxQilxQedxQ"
-                let paintedPoseDollmexa = self.trimmedMatchingDollpiri(
-                    trimmedGuideDollnexa: paintedPinboardDollvex,
-                    trimmedSkirtDollruni: paintedCoatDollkora.absoluteString
-                )
-                DispatchQueue.main.async {
-                    paintedMarkerDollsovo?.evaluateJavaScript(paintedPoseDollmexa, completionHandler: nil)
-                }
-            }
-            decisionHandler(.cancel)
-            return
-        }
-        decisionHandler(.allow)
+        decisionHandler(winterStylingDollvani(navigationAction, springSockDollniva: paintedMarkerDollsovo))
     }
 
     func webView(_ paintedMarkerDollsovo: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-        if navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil,
-           let paintedCoatDollkora = navigationAction.request.url {
-            UIApplication.shared.open(paintedCoatDollkora, options: [:])
-        }
-        return nil
+        springRuffleDolltavo(paintedMarkerDollsovo, springCaseDollnoro: navigationAction)
     }
 
     func webView(_ paintedMarkerDollsovo: WKWebView, requestMediaCapturePermissionFor origin: WKSecurityOrigin, initiatedByFrame frame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: @escaping @MainActor (WKPermissionDecision) -> Void) {
@@ -717,24 +922,6 @@ extension DolluAppLaunchGateViewController: WKNavigationDelegate, WKUIDelegate, 
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive embroideredCollectionDolllumi: WKScriptMessage) {
-        if embroideredCollectionDolllumi.name == DolluAppRibbonScriptName.satinCollectionDollvelo {
-            paintedPinboardDollvex(embroideredCollectionDolllumi.body)
-            return
-        }
-
-        if embroideredCollectionDolllumi.name == DolluAppRibbonScriptName.satinMarkerDollpavo {
-            wovenCategoryDollyara()
-            return
-        }
-
-        if embroideredCollectionDolllumi.name == DolluAppRibbonScriptName.satinCoatDollbop {
-            keepsakeDisplayDollvani?.isHidden = false
-            DolluAppRibbonNotice.wovenDisplayDollnoro()
-            return
-        }
-
-        if embroideredCollectionDolllumi.name == DolluAppRibbonScriptName.satinCollarDollrilo {
-            gardenArchiveDollvelo(embroideredCollectionDolllumi.body)
-        }
+        winterMemoDollvelo(embroideredCollectionDolllumi)
     }
 }
