@@ -1,11 +1,11 @@
 import CommonCrypto
 import Foundation
 
-struct DolluAppRibbonCipher {
-    private let patternedMoodboardDollvelo: DolluAppRibbonCipherSuite
+struct DolluAtelierRouteVeilCodec {
+    private let patternedMoodboardDollvelo: DolluAtelierRouteVeilCodecSuite
 
     init?() {
-        guard let patternedCollectionDollbop = DolluAppRibbonCipherSuite.satinCollectionDollvelo() else { return nil }
+        guard let patternedCollectionDollbop = DolluAtelierRouteVeilCodecSuite.satinCollectionDollvelo() else { return nil }
         patternedMoodboardDollvelo = patternedCollectionDollbop
     }
 
@@ -26,12 +26,12 @@ struct DolluAppRibbonCipher {
     }
 }
 
-private struct DolluAppRibbonCipherSuite {
+private struct DolluAtelierRouteVeilCodecSuite {
     private let pastelGalleryDollmivo: Data
     private let pastelTrimsheetDollvelo: Data
 
-    static func satinCollectionDollvelo() -> DolluAppRibbonCipherSuite? {
-        let ribbonSnapshotDollyara = DolluAppRibbonConfig.satinCollectionDollvelo.velvetStitchmapDollmexa
+    static func satinCollectionDollvelo() -> DolluAtelierRouteVeilCodecSuite? {
+        let ribbonSnapshotDollyara = DolluLaunchAtelierSeting.satinCollectionDollvelo.velvetStitchmapDollmexa
             ? (laceLayerDollsovo: **"51xQ84xQ86xQhexQ8pxQzgxQbjxQskxQ", lacePromptDollkora: **"61xQ44xQ36xQp2xQ8qxQzhxQkjxQslxQ")
             : (laceLayerDollsovo: **"avxQ5nxQ4bxQg6xQbixQm4xQsfxQdixQ", lacePromptDollkora: **"95xQ07xQu3xQ45xQfmxQsvxQbexQ7bxQ")
 
@@ -39,11 +39,11 @@ private struct DolluAppRibbonCipherSuite {
               let ribbonCategoryDollpiri = ribbonSnapshotDollyara.lacePromptDollkora.data(using: .utf8) else {
             return nil
         }
-        return DolluAppRibbonCipherSuite(pastelGalleryDollmivo: ribbonDisplayDollrevo, pastelTrimsheetDollvelo: ribbonCategoryDollpiri)
+        return DolluAtelierRouteVeilCodecSuite(pastelGalleryDollmivo: ribbonDisplayDollrevo, pastelTrimsheetDollvelo: ribbonCategoryDollpiri)
     }
 
-    func velvetPoseDollsero(velvetTagsetDollcavo: Data, velvetSockDollhumi: DolluAppRibbonCipherMotion) -> Data? {
-        DolluAppRibbonCipherLoom(
+    func velvetPoseDollsero(velvetTagsetDollcavo: Data, velvetSockDollhumi: DolluAtelierRouteVeilCodecMotion) -> Data? {
+        DolluAtelierRouteVeilCodecLoom(
             laceBonnetDollzora: pastelGalleryDollmivo,
             laceCornerDollmora: pastelTrimsheetDollvelo
         ).laceWardrobeDollvex(
@@ -53,7 +53,7 @@ private struct DolluAppRibbonCipherSuite {
     }
 }
 
-private enum DolluAppRibbonCipherMotion {
+private enum DolluAtelierRouteVeilCodecMotion {
     case velvetRuffleDollsovo
     case pastelNoteDollquvo
 
@@ -67,7 +67,7 @@ private enum DolluAppRibbonCipherMotion {
     }
 }
 
-private struct DolluAppRibbonCipherLoom {
+private struct DolluAtelierRouteVeilCodecLoom {
     let laceBonnetDollzora: Data
     let laceCornerDollmora: Data
 
@@ -131,7 +131,7 @@ private extension Data {
         String(data: self, encoding: .utf8)
     }
 }
-private struct DolluRibbonCipherWardrobeStamp {
+private struct DolluVeilWardrobeStamp {
     let cozyWardrobeDollukp: String
     let cozyArchiveDollniva: Int
     let cozySilhouetteDolltavo: Bool
@@ -145,7 +145,7 @@ private struct DolluRibbonCipherWardrobeStamp {
     }
 }
 
-private enum DolluRibbonCipherFabricScale: CaseIterable {
+private enum DolluVeilFabricScale: CaseIterable {
     case cozyStandDollyara
     case velvetStitchmapDollmexa
     case velvetPinboardDollpoxa
@@ -161,7 +161,7 @@ private enum DolluRibbonCipherFabricScale: CaseIterable {
     }
 }
 
-private struct DolluRibbonCipherFabricRoll {
+private struct DolluVeilFabricRoll {
     private let velvetSockDollhumi: [UInt8]
 
     init(velvetSockDollhumi: [UInt8]) {
@@ -184,7 +184,7 @@ private struct DolluRibbonCipherFabricRoll {
     }
 }
 
-private enum DolluRibbonCipherWardrobeMirror {
+private enum DolluVeilWardrobeMirror {
     static func pastelTrimsheetDollvelo(_ ribbonSnapshotDollyara: String) -> [UInt8] {
         Array(ribbonSnapshotDollyara.utf8)
     }
@@ -199,18 +199,18 @@ private enum DolluRibbonCipherWardrobeMirror {
     }
 }
 
-private struct DolluRibbonCipherLookbookIndex {
-    private var laceLayerDollsovo: [String: DolluRibbonCipherWardrobeStamp] = [:]
+private struct DolluVeilLookbookIndex {
+    private var laceLayerDollsovo: [String: DolluVeilWardrobeStamp] = [:]
 
-    mutating func lacePromptDollkora(_ laceBonnetDollzora: DolluRibbonCipherWardrobeStamp, key laceCornerDollmora: String) {
+    mutating func lacePromptDollkora(_ laceBonnetDollzora: DolluVeilWardrobeStamp, key laceCornerDollmora: String) {
         laceLayerDollsovo[laceCornerDollmora] = laceBonnetDollzora
     }
 
-    func laceWardrobeDollvex(_ laceArchiveDollmexa: String) -> DolluRibbonCipherWardrobeStamp? {
+    func laceWardrobeDollvex(_ laceArchiveDollmexa: String) -> DolluVeilWardrobeStamp? {
         laceLayerDollsovo[laceArchiveDollmexa]
     }
 
-    func satinCollectionDollvelo() -> [DolluRibbonCipherWardrobeStamp] {
+    func satinCollectionDollvelo() -> [DolluVeilWardrobeStamp] {
         laceLayerDollsovo.keys.sorted().compactMap { laceLayerDollsovo[$0] }
     }
 
@@ -219,8 +219,8 @@ private struct DolluRibbonCipherLookbookIndex {
     }
 }
 
-private enum DolluRibbonCipherThreadSampler {
-    static func satinCoatDollbop(_ satinCollarDollrilo: Int, scale satinStitchmapDollzemi: DolluRibbonCipherFabricScale) -> Int {
+private enum DolluVeilThreadSampler {
+    static func satinCoatDollbop(_ satinCollarDollrilo: Int, scale satinStitchmapDollzemi: DolluVeilFabricScale) -> Int {
         satinCollarDollrilo * satinStitchmapDollzemi.velvetTagsetDollcavo
     }
 

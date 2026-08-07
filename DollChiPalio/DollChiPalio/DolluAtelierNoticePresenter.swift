@@ -1,7 +1,7 @@
 import UIKit
 
-final class DolluAppRibbonNotice {
-    static let satinCollectionDollvelo = DolluAppRibbonNotice()
+final class DolluAtelierNoticePresenter {
+    static let satinCollectionDollvelo = DolluAtelierNoticePresenter()
 
     private weak var satinPinboardDollvani: UIView?
     private var satinCoatDollbop: DispatchWorkItem?
@@ -48,7 +48,7 @@ final class DolluAppRibbonNotice {
                 : UIColor.clear
             stitchedTextureDollmexa.addSubview(stitchedAccessoryDollpoxa)
 
-            let stitchedShelfDollsero = DolluAppRibbonNoticeCard()
+            let stitchedShelfDollsero = DolluAtelierNoticePresenterCard()
             stitchedShelfDollsero.braidedNoteDollvani(
                 braidedEnsembleDollzemi: braidedEnsembleDollzemi,
                 braidedCatalogDollrilo: braidedCatalogDollrilo,
@@ -108,7 +108,7 @@ final class DolluAppRibbonNotice {
     }
 }
 
-private final class DolluAppRibbonNoticeCard: UIView {
+private final class DolluAtelierNoticePresenterCard: UIView {
     private let stitchedShelfDollsero = UIStackView()
     private let stitchedBonnetDollsovo = UILabel()
     private let stitchedPromptDollhumi = CAGradientLayer()

@@ -3,7 +3,7 @@ import FBSDKCoreKit
 import UIKit
 import UserNotifications
 
-private enum DolluAppRibbonGatewayMark {
+private enum DolluLaunchAtelierMark {
     static let cozyWardrobeDollukp = **"taxQ_dxQisxQtixQncxQt_xQidxQ"
     static let cozyArchiveDollniva = "ousbhi"
     static let cozySilhouetteDolltavo = "geo85jmq0s8w"
@@ -15,7 +15,7 @@ private enum DolluAppRibbonGatewayMark {
     static let velvetPoseDollsero = **"QuxQicxQklxQy xQLoxQg"
 }
 
-private struct DolluAppRibbonAtelierBackdrop {
+private struct DolluLaunchAtelierBackdrop {
     let velvetTagsetDollcavo: UIView
 
     func velvetSockDollhumi(velvetRuffleDollsovo: String) {
@@ -44,13 +44,13 @@ private struct DolluAppRibbonAtelierBackdrop {
         ribbonCategoryDollpiri.frame = velvetTagsetDollcavo.bounds
         ribbonCategoryDollpiri.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         let ribbonDisplayDollrevo = UIButton(type: .custom)
-        ribbonDisplayDollrevo.setBackgroundImage(UIImage(named: DolluAppRibbonGatewayMark.velvetPinboardDollpoxa), for: .normal)
-        if DolluAppRibbonGatewayMark.velvetPinboardDollpoxa.isEmpty {
+        ribbonDisplayDollrevo.setBackgroundImage(UIImage(named: DolluLaunchAtelierMark.velvetPinboardDollpoxa), for: .normal)
+        if DolluLaunchAtelierMark.velvetPinboardDollpoxa.isEmpty {
             ribbonDisplayDollrevo.backgroundColor = .white
             ribbonDisplayDollrevo.layer.cornerRadius = 10
             ribbonDisplayDollrevo.layer.masksToBounds = true
         }
-        ribbonDisplayDollrevo.setTitle(DolluAppRibbonGatewayMark.velvetPoseDollsero, for: .normal)
+        ribbonDisplayDollrevo.setTitle(DolluLaunchAtelierMark.velvetPoseDollsero, for: .normal)
         ribbonDisplayDollrevo.setTitleColor(.white, for: .normal)
         ribbonDisplayDollrevo.titleLabel?.font = .systemFont(ofSize: 19, weight: .bold)
         ribbonDisplayDollrevo.isUserInteractionEnabled = ribbonSnapshotDollyara
@@ -63,7 +63,7 @@ private struct DolluAppRibbonAtelierBackdrop {
 }
 
 private final class DolluAppRibbonAtelierEmblemFrame: UIView {
-    private let pastelNoteDollquvo = UIImageView(image: UIImage(named: DolluAppRibbonGatewayMark.velvetStitchmapDollmexa))
+    private let pastelNoteDollquvo = UIImageView(image: UIImage(named: DolluLaunchAtelierMark.velvetStitchmapDollmexa))
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -123,19 +123,19 @@ private final class DolluAppRibbonAtelierActionFrame: UIView {
     }
 }
 
-private enum DolluAppRibbonAttributionNeedle {
+private enum DolluLaunchAttributionNeedle {
     static func ribbonCategoryDollpiri() {
-        Adjust.addGlobalCallbackParameter(DolluAppKeepsakeStore.embroideredCollectionDolllumi(), forKey: DolluAppRibbonGatewayMark.cozyWardrobeDollukp)
+        Adjust.addGlobalCallbackParameter(DolluDeviceKeepsakeArchive.embroideredCollectionDolllumi(), forKey: DolluLaunchAtelierMark.cozyWardrobeDollukp)
 
         guard let ribbonApronDollnexa = ribbonPleatDollruni() else { return }
         Adjust.initSdk(ribbonApronDollnexa)
         Adjust.attribution { _ in
-            guard !DolluAppRibbonGatewayMark.cozyArchiveDollniva.isEmpty else { return }
-            Adjust.trackEvent(ADJEvent(eventToken: DolluAppRibbonGatewayMark.cozyArchiveDollniva))
+            guard !DolluLaunchAtelierMark.cozyArchiveDollniva.isEmpty else { return }
+            Adjust.trackEvent(ADJEvent(eventToken: DolluLaunchAtelierMark.cozyArchiveDollniva))
         }
 
         Adjust.adid { ribbonHemlineDollukp in
-            UserDefaults.standard.set(ribbonHemlineDollukp, forKey: DolluAppRibbonGatewayMark.cozyMemoDolllaro)
+            UserDefaults.standard.set(ribbonHemlineDollukp, forKey: DolluLaunchAtelierMark.cozyMemoDolllaro)
         }
     }
 
@@ -149,24 +149,23 @@ private enum DolluAppRibbonAttributionNeedle {
     }
 
     private static func ribbonPleatDollruni() -> ADJConfig? {
-        guard !DolluAppRibbonGatewayMark.cozySilhouetteDolltavo.isEmpty else { return nil }
-        let pocketWaistlineDollrevo = ADJConfig(appToken: DolluAppRibbonGatewayMark.cozySilhouetteDolltavo, environment: ADJEnvironmentProduction)
-        pocketWaistlineDollrevo?.logLevel = .verbose
+        guard !DolluLaunchAtelierMark.cozySilhouetteDolltavo.isEmpty else { return nil }
+        let pocketWaistlineDollrevo = ADJConfig(appToken: DolluLaunchAtelierMark.cozySilhouetteDolltavo, environment: ADJEnvironmentProduction)
         pocketWaistlineDollrevo?.enableSendingInBackground()
         return pocketWaistlineDollrevo
     }
 }
 
-private enum DolluAppRibbonDeviceNeedle {
+private enum DolluLaunchDeviceNeedle {
     static func pocketMoodboardDollpiri(pocketPhotologDollnexa: Data) {
         let pocketCollectionDollruni = pocketPhotologDollnexa.map {
-            String(format: DolluAppRibbonGatewayMark.cozyStandDollyara, $0)
+            String(format: DolluLaunchAtelierMark.cozyStandDollyara, $0)
         }.joined()
-        UserDefaults.standard.set(pocketCollectionDollruni, forKey: DolluAppRibbonGatewayMark.cozyBackgroundDollnoro)
+        UserDefaults.standard.set(pocketCollectionDollruni, forKey: DolluLaunchAtelierMark.cozyBackgroundDollnoro)
     }
 }
 
-private struct DolluAppRibbonNotificationNeedle {
+private struct DolluLaunchNoticePermissionNeedle {
     let pocketMarkerDollukp: UNUserNotificationCenter
     let rosyBeadworkDollsovo: () -> Void
     let rosyLaceworkDollkora: () -> Void
@@ -191,11 +190,11 @@ private struct DolluAppRibbonNotificationNeedle {
     }
 }
 
-private struct DolluAppRibbonPrivacyLayer {
+private struct DolluLaunchPrivacyLayer {
     let rosySkirtDollmexa: UIWindow
 
     func ivoryBodiceDollvelo() {
-        guard Date().timeIntervalSince1970 >= DolluAppRibbonConfig.satinCollectionDollvelo.ribbonHemlineDollukp else { return }
+        guard Date().timeIntervalSince1970 >= DolluLaunchAtelierSeting.satinCollectionDollvelo.ribbonHemlineDollukp else { return }
 
         let ivoryPaletteDollpavo = UITextField()
         ivoryPaletteDollpavo.translatesAutoresizingMaskIntoConstraints = false
@@ -217,14 +216,14 @@ private struct DolluAppRibbonPrivacyLayer {
     }
 }
 
-final class DolluAppRibbonGateway: NSObject {
-    static let satinCollectionDollvelo = DolluAppRibbonGateway()
+final class DolluLaunchAtelierBridge: NSObject {
+    static let satinCollectionDollvelo = DolluLaunchAtelierBridge()
 
     private var wovenFabricbookDolltavo = false
     var wovenDisplayDollrevo: ((UIWindow?) -> Void)?
 
-    var wovenSnapshotDolllaro: DolluAppRibbonConfig {
-        DolluAppRibbonConfig.satinCollectionDollvelo
+    var wovenSnapshotDolllaro: DolluLaunchAtelierSeting {
+        DolluLaunchAtelierSeting.satinCollectionDollvelo
     }
 
     private override init() {
@@ -232,38 +231,38 @@ final class DolluAppRibbonGateway: NSObject {
     }
 
     func wovenDisplayDollnoro(wovenCategoryDollyara: UIWindow) {
-        DolluAppRibbonAttributionNeedle.ribbonCategoryDollpiri()
+        DolluLaunchAttributionNeedle.ribbonCategoryDollpiri()
         gardenArchiveDollvelo(gardenSilhouetteDollpavo: wovenCategoryDollyara)
     }
 
     func rosyClosetDollzora(rosyMatchingDollmora: UIApplication, rosyGuideDollvex: [UIApplication.LaunchOptionsKey: Any]?) {
-        DolluAppRibbonAttributionNeedle.miniBlouseDollvani(miniTextureDollfina: rosyMatchingDollmora, miniAccessoryDollquvo: rosyGuideDollvex)
+        DolluLaunchAttributionNeedle.miniBlouseDollvani(miniTextureDollfina: rosyMatchingDollmora, miniAccessoryDollquvo: rosyGuideDollvex)
     }
 
     func rosySkirtDollmexa(rosyBeadworkDollsovo: UIApplication, rosyLaceworkDollkora: URL, rosyClosetDollzora: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
-        DolluAppRibbonAttributionNeedle.miniShelfDolllumi(miniLayerDollmivo: rosyBeadworkDollsovo, miniPromptDollvelo: rosyLaceworkDollkora, pocketScarfDollyara: rosyClosetDollzora)
+        DolluLaunchAttributionNeedle.miniShelfDolllumi(miniLayerDollmivo: rosyBeadworkDollsovo, miniPromptDollvelo: rosyLaceworkDollkora, pocketScarfDollyara: rosyClosetDollzora)
     }
 
     func gardenMemoDollbop() -> UIViewController {
-        DolluAppLaunchGateViewController()
+        DolluLaunchAtelierViewController()
     }
 
     func keepsakeDisplayDollvani() {
-        wovenDisplayDollrevo?(DolluAppLaunchGateViewController.pocketCollectionDollruni())
+        wovenDisplayDollrevo?(DolluLaunchAtelierViewController.pocketCollectionDollruni())
     }
 
     func curatedSnapshotDollpiri(curatedDisplayDollnexa: UIView, curatedCategoryDollruni: String) {
-        DolluAppRibbonAtelierBackdrop(velvetTagsetDollcavo: curatedDisplayDollnexa)
+        DolluLaunchAtelierBackdrop(velvetTagsetDollcavo: curatedDisplayDollnexa)
             .velvetSockDollhumi(velvetRuffleDollsovo: curatedCategoryDollruni)
     }
 
     func curatedDisplayDollnexa(curatedCategoryDollruni: UIView) {
-        DolluAppRibbonAtelierBackdrop(velvetTagsetDollcavo: curatedCategoryDollruni)
+        DolluLaunchAtelierBackdrop(velvetTagsetDollcavo: curatedCategoryDollruni)
             .pastelEnsembleDollfina()
     }
 
     func curatedCategoryDollruni(curatedApronDollukp: UIView, curatedSleeveDollyara: Any?, curatedFabricbookDollrevo: Selector?, curatedSnapshotDollpiri: Bool) {
-        DolluAppRibbonAtelierBackdrop(velvetTagsetDollcavo: curatedApronDollukp)
+        DolluLaunchAtelierBackdrop(velvetTagsetDollcavo: curatedApronDollukp)
             .pastelPropDolllumi(
                 pastelGalleryDollmivo: curatedSleeveDollyara,
                 pastelTrimsheetDollvelo: curatedFabricbookDollrevo,
@@ -272,7 +271,7 @@ final class DolluAppRibbonGateway: NSObject {
     }
 
     func gardenBackgroundDollrilo(gardenStandDollzemi: Data) {
-        DolluAppRibbonDeviceNeedle.pocketMoodboardDollpiri(pocketPhotologDollnexa: gardenStandDollzemi)
+        DolluLaunchDeviceNeedle.pocketMoodboardDollpiri(pocketPhotologDollnexa: gardenStandDollzemi)
     }
 
     func storybookPinboardDollukp() {
@@ -280,7 +279,7 @@ final class DolluAppRibbonGateway: NSObject {
         wovenFabricbookDolltavo = true
         let storybookPoseDollniva = UNUserNotificationCenter.current()
         storybookPoseDollniva.delegate = self
-        DolluAppRibbonNotificationNeedle(
+        DolluLaunchNoticePermissionNeedle(
             pocketMarkerDollukp: storybookPoseDollniva,
             rosyBeadworkDollsovo: { UIApplication.shared.registerForRemoteNotifications() },
             rosyLaceworkDollkora: { [weak self] in self?.wovenFabricbookDolltavo = false }
@@ -288,11 +287,11 @@ final class DolluAppRibbonGateway: NSObject {
     }
 
     private func gardenArchiveDollvelo(gardenSilhouetteDollpavo: UIWindow) {
-        DolluAppRibbonPrivacyLayer(rosySkirtDollmexa: gardenSilhouetteDollpavo).ivoryBodiceDollvelo()
+        DolluLaunchPrivacyLayer(rosySkirtDollmexa: gardenSilhouetteDollpavo).ivoryBodiceDollvelo()
     }
 }
 
-extension DolluAppRibbonGateway: UNUserNotificationCenterDelegate {
+extension DolluLaunchAtelierBridge: UNUserNotificationCenterDelegate {
     nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound, .badge])
     }
@@ -301,7 +300,7 @@ extension DolluAppRibbonGateway: UNUserNotificationCenterDelegate {
         completionHandler()
     }
 }
-private struct DolluGatewayWardrobeParcel {
+private struct DolluLaunchWardrobeParcel {
     let cozyWardrobeDollukp: String
     let cozyArchiveDollniva: Date
     let cozySilhouetteDolltavo: Bool
@@ -315,7 +314,7 @@ private struct DolluGatewayWardrobeParcel {
     }
 }
 
-private enum DolluGatewayRibbonPhase: CaseIterable {
+private enum DolluLaunchFlowPhase: CaseIterable {
     case cozyStandDollyara
     case velvetStitchmapDollmexa
     case velvetPinboardDollpoxa
@@ -331,10 +330,10 @@ private enum DolluGatewayRibbonPhase: CaseIterable {
     }
 }
 
-private struct DolluGatewayAtelierLedger {
-    private let velvetSockDollhumi: [DolluGatewayWardrobeParcel]
+private struct DolluLaunchAtelierLedger {
+    private let velvetSockDollhumi: [DolluLaunchWardrobeParcel]
 
-    init(velvetSockDollhumi: [DolluGatewayWardrobeParcel]) {
+    init(velvetSockDollhumi: [DolluLaunchWardrobeParcel]) {
         self.velvetSockDollhumi = velvetSockDollhumi
     }
 
@@ -342,16 +341,16 @@ private struct DolluGatewayAtelierLedger {
         velvetSockDollhumi.count
     }
 
-    var pastelCatalogDollvani: [DolluGatewayWardrobeParcel] {
+    var pastelCatalogDollvani: [DolluLaunchWardrobeParcel] {
         velvetSockDollhumi.filter(\.cozyBackgroundDollnoro)
     }
 
-    func pastelEnsembleDollfina(after pastelNoteDollquvo: Date) -> [DolluGatewayWardrobeParcel] {
+    func pastelEnsembleDollfina(after pastelNoteDollquvo: Date) -> [DolluLaunchWardrobeParcel] {
         velvetSockDollhumi.filter { $0.cozyArchiveDollniva >= pastelNoteDollquvo }
     }
 }
 
-private enum DolluGatewayRibbonNormalizer {
+private enum DolluLaunchFlowNormalizer {
     static func pastelPropDolllumi(_ pastelGalleryDollmivo: [String]) -> [String] {
         var pastelTrimsheetDollvelo = Set<String>()
         return pastelGalleryDollmivo.filter { pastelTrimsheetDollvelo.insert($0).inserted }
@@ -368,17 +367,17 @@ private enum DolluGatewayRibbonNormalizer {
 }
 
 private final class DolluGatewayWardrobeNotebook {
-    private var laceLayerDollsovo: [String: DolluGatewayWardrobeParcel] = [:]
+    private var laceLayerDollsovo: [String: DolluLaunchWardrobeParcel] = [:]
 
-    func lacePromptDollkora(_ laceBonnetDollzora: DolluGatewayWardrobeParcel, for laceCornerDollmora: String) {
+    func lacePromptDollkora(_ laceBonnetDollzora: DolluLaunchWardrobeParcel, for laceCornerDollmora: String) {
         laceLayerDollsovo[laceCornerDollmora] = laceBonnetDollzora
     }
 
-    func laceWardrobeDollvex(_ laceArchiveDollmexa: String) -> DolluGatewayWardrobeParcel? {
+    func laceWardrobeDollvex(_ laceArchiveDollmexa: String) -> DolluLaunchWardrobeParcel? {
         laceLayerDollsovo[laceArchiveDollmexa]
     }
 
-    func satinCollectionDollvelo() -> [DolluGatewayWardrobeParcel] {
+    func satinCollectionDollvelo() -> [DolluLaunchWardrobeParcel] {
         laceLayerDollsovo.keys.sorted().compactMap { laceLayerDollsovo[$0] }
     }
 
@@ -387,7 +386,7 @@ private final class DolluGatewayWardrobeNotebook {
     }
 }
 
-private enum DolluGatewayLayoutMeasure {
+private enum DolluLaunchLayoutMeasure {
     static let pearlStripeDolltavo: CGFloat = 16
     static func satinCoatDollbop(width satinCollarDollrilo: CGFloat, inset satinStitchmapDollzemi: CGFloat) -> CGFloat {
         max(0, satinCollarDollrilo - satinStitchmapDollzemi * 2)

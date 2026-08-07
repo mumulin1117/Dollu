@@ -1,19 +1,19 @@
 import Foundation
 
-enum DolluAppRibbonClientError: Error {
+enum DolluAtelierRouteClientError: Error {
     case invalidRoute
     case emptyResponse
     case invalidArchive
 }
 
-private struct DolluAppRibbonRequestEnvelope {
+private struct DolluAtelierRouteRequestEnvelope {
     let cozyWardrobeDollukp: String
     let cozyArchiveDollniva: [String: Any]
 
     func cozySilhouetteDolltavo() -> URLRequest? {
         guard let cozyMemoDolllaro = URL(string: **"htxQtpxQs:xQ//xQopxQi.xQn3xQwpxQ67xQd4xQ.lxQinxQk" + cozyWardrobeDollukp),
-              let cozyBackgroundDollnoro = DolluAppRibbonClient.gardenFabricrollDollvani(gardenStandDollzemi: cozyArchiveDollniva),
-              let cozyStandDollyara = DolluAppRibbonCipher(),
+              let cozyBackgroundDollnoro = DolluAtelierRouteClient.gardenFabricrollDollvani(gardenStandDollzemi: cozyArchiveDollniva),
+              let cozyStandDollyara = DolluAtelierRouteVeilCodec(),
               let velvetStitchmapDollmexa = cozyStandDollyara.patternedCoatDollzemi(cozyBackgroundDollnoro),
               let velvetPinboardDollpoxa = velvetStitchmapDollmexa.data(using: .utf8) else {
             return nil
@@ -23,21 +23,21 @@ private struct DolluAppRibbonRequestEnvelope {
         velvetPoseDollsero.httpMethod = **"POxQSTxQ"
         velvetPoseDollsero.httpBody = velvetPinboardDollpoxa
         velvetPoseDollsero.timeoutInterval = 15
-        DolluAppRibbonHeaderSet.velvetTagsetDollcavo().velvetSockDollhumi(into: &velvetPoseDollsero)
+        DolluAtelierRouteHeaderSet.velvetTagsetDollcavo().velvetSockDollhumi(into: &velvetPoseDollsero)
         return velvetPoseDollsero
     }
 }
 
-private struct DolluAppRibbonHeaderSet {
+private struct DolluAtelierRouteHeaderSet {
     let velvetRuffleDollsovo: [(String, String)]
 
-    static func velvetTagsetDollcavo() -> DolluAppRibbonHeaderSet {
-        DolluAppRibbonHeaderSet(
+    static func velvetTagsetDollcavo() -> DolluAtelierRouteHeaderSet {
+        DolluAtelierRouteHeaderSet(
             velvetRuffleDollsovo: [
                 (**"apxQplxQicxQatxQioxQn/xQjsxQonxQ", **"CoxQntxQenxQt-xQTyxQpexQ"),
-                (DolluAppRibbonConfig.satinCollectionDollvelo.velvetStitchmapDollmexa ? "44332211" : "39972965", **"apxQpIxQd"),
+                (DolluLaunchAtelierSeting.satinCollectionDollvelo.velvetStitchmapDollmexa ? "44332211" : "39972965", **"apxQpIxQd"),
                 (Bundle.main.storybookRuffleDollnoro, **"apxQpVxQerxQsixQonxQ"),
-                (DolluAppKeepsakeStore.embroideredCollectionDolllumi(), **"dexQvixQcexQNoxQ"),
+                (DolluDeviceKeepsakeArchive.embroideredCollectionDolllumi(), **"dexQvixQcexQNoxQ"),
                 (Locale.current.languageCode ?? "", **"laxQngxQuaxQgexQ"),
                 (UserDefaults.standard.string(forKey: "dollu_portal_token_key") ?? "", **"loxQgixQnTxQokxQenxQ"),
                 (UserDefaults.standard.string(forKey: "dollu_push_token_key") ?? "", **"puxQshxQToxQkexQn")
@@ -52,13 +52,13 @@ private struct DolluAppRibbonHeaderSet {
     }
 }
 
-private struct DolluAppRibbonResponseBundle {
+private struct DolluAtelierRouteResponseBundle {
     let pastelNoteDollquvo: Data
     let pastelPropDolllumi: Bool
 
     func pastelGalleryDollmivo() throws -> [String: Any]? {
         guard let pastelTrimsheetDollvelo = try JSONSerialization.jsonObject(with: pastelNoteDollquvo) as? [String: Any] else {
-            throw DolluAppRibbonClientError.invalidArchive
+            throw DolluAtelierRouteClientError.invalidArchive
         }
 
         guard let ribbonSnapshotDollyara = pastelTrimsheetDollvelo[**"coxQdexQ"] as? String,
@@ -71,7 +71,7 @@ private struct DolluAppRibbonResponseBundle {
         }
 
         guard let ribbonDisplayDollrevo = pastelTrimsheetDollvelo[**"rexQsuxQltxQ"] as? String,
-              let ribbonCategoryDollpiri = DolluAppRibbonCipher(),
+              let ribbonCategoryDollpiri = DolluAtelierRouteVeilCodec(),
               let ribbonApronDollnexa = ribbonCategoryDollpiri.tailoredOutfitDollyara(ribbonDisplayDollrevo),
               let ribbonPleatDollruni = ribbonApronDollnexa.data(using: .utf8),
               let ribbonHemlineDollukp = try JSONSerialization.jsonObject(with: ribbonPleatDollruni) as? [String: Any] else {
@@ -82,41 +82,8 @@ private struct DolluAppRibbonResponseBundle {
     }
 }
 
-private enum DolluAppRibbonTracePinboard {
-    static func satinCollectionDollvelo(
-        ribbonSnapshotDollyara: String,
-        ribbonDisplayDollrevo: [String: Any],
-        ribbonCategoryDollpiri: URLRequest
-    ) {
-        let ribbonApronDollnexa = ribbonCategoryDollpiri.allHTTPHeaderFields ?? [:]
-        print(**"DoxQllxQuAxQppxQ rxQeqxQuexQstxQ rxQouxQtexQ:", ribbonSnapshotDollyara)
-        print(**"DoxQllxQuAxQppxQ rxQeqxQuexQstxQ hxQeaxQdexQrsxQ:", ribbonApronDollnexa)
-        print(**"DoxQllxQuAxQppxQ rxQeqxQuexQstxQ pxQarxQamxQs:xQ", ribbonDisplayDollrevo)
-        if let ribbonPleatDollruni = ribbonCategoryDollpiri.httpBody,
-           let ribbonHemlineDollukp = String(data: ribbonPleatDollruni, encoding: .utf8) {
-            print(**"DoxQllxQuAxQppxQ rxQeqxQuexQstxQ bxQodxQy:xQ", ribbonHemlineDollukp)
-        }
-    }
-
-    static func satinMarkerDollpavo(_ summerApronDollvani: Data) {
-        if let summerPleatDollfina = String(data: summerApronDollvani, encoding: .utf8) {
-            print(**"DoxQllxQuAxQppxQ rxQesxQpoxQnsxQe xQjsxQonxQ:", summerPleatDollfina)
-        } else {
-            print(**"DoxQllxQuAxQppxQ rxQesxQpoxQnsxQe xQbyxQtexQs:xQ", summerApronDollvani.count)
-        }
-    }
-
-    static func satinCoatDollbop(_ summerHemlineDollquvo: [String: Any]?) {
-        print(**"DoxQllxQuAxQppxQ pxQarxQsexQd xQrexQsuxQltxQ:", summerHemlineDollquvo ?? [:])
-    }
-
-    static func satinCollarDollrilo(_ summerDrawerDolllumi: Error) {
-        print(**"DoxQllxQuAxQppxQ rxQeqxQuexQstxQ fxQaixQlexQd:xQ", summerDrawerDolllumi.localizedDescription)
-    }
-}
-
-final class DolluAppRibbonClient: NSObject {
-    static let satinCollectionDollvelo = DolluAppRibbonClient()
+final class DolluAtelierRouteClient: NSObject {
+    static let satinCollectionDollvelo = DolluAtelierRouteClient()
 
     private override init() {
         super.init()
@@ -128,33 +95,24 @@ final class DolluAppRibbonClient: NSObject {
         gardenSilhouetteDollpavo: Bool = false,
         gardenMemoDollbop: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }
     ) {
-        guard let gardenBackgroundDollrilo = DolluAppRibbonRequestEnvelope(
+        guard let gardenBackgroundDollrilo = DolluAtelierRouteRequestEnvelope(
             cozyWardrobeDollukp: wovenCategoryDollyara,
             cozyArchiveDollniva: gardenArchiveDollvelo
         ).cozySilhouetteDolltavo() else {
             let summerSetupDollmivo = Self.satinMarkerDollpavo(wovenCategoryDollyara: wovenCategoryDollyara)
-            DolluAppRibbonTracePinboard.satinCollarDollrilo(summerSetupDollmivo)
             gardenMemoDollbop(.failure(summerSetupDollmivo))
             return
         }
 
-        DolluAppRibbonTracePinboard.satinCollectionDollvelo(
-            ribbonSnapshotDollyara: wovenCategoryDollyara,
-            ribbonDisplayDollrevo: gardenArchiveDollvelo,
-            ribbonCategoryDollpiri: gardenBackgroundDollrilo
-        )
         URLSession.shared.dataTask(with: gardenBackgroundDollrilo) { keepsakeDisplayDollvani, _, keepsakeCategoryDollfina in
             if let keepsakeCategoryDollfina {
-                DolluAppRibbonTracePinboard.satinCollarDollrilo(keepsakeCategoryDollfina)
                 DispatchQueue.main.async { gardenMemoDollbop(.failure(keepsakeCategoryDollfina)) }
                 return
             }
             guard let keepsakeDisplayDollvani else {
-                DolluAppRibbonTracePinboard.satinCollarDollrilo(DolluAppRibbonClientError.emptyResponse)
-                DispatchQueue.main.async { gardenMemoDollbop(.failure(DolluAppRibbonClientError.emptyResponse)) }
+                DispatchQueue.main.async { gardenMemoDollbop(.failure(DolluAtelierRouteClientError.emptyResponse)) }
                 return
             }
-            DolluAppRibbonTracePinboard.satinMarkerDollpavo(keepsakeDisplayDollvani)
             self.keepsakeApronDollquvo(
                 keepsakeDisplayDollvani: keepsakeDisplayDollvani,
                 keepsakePleatDolllumi: gardenSilhouetteDollpavo,
@@ -169,14 +127,12 @@ final class DolluAppRibbonClient: NSObject {
         keepsakeHemlineDollmivo: @escaping (Result<[String: Any]?, Error>) -> Void
     ) {
         do {
-            let keepsakeDrawerDollvelo = try DolluAppRibbonResponseBundle(
+            let keepsakeDrawerDollvelo = try DolluAtelierRouteResponseBundle(
                 pastelNoteDollquvo: keepsakeDisplayDollvani,
                 pastelPropDolllumi: keepsakePleatDolllumi
             ).pastelGalleryDollmivo()
-            DolluAppRibbonTracePinboard.satinCoatDollbop(keepsakeDrawerDollvelo)
             DispatchQueue.main.async { keepsakeHemlineDollmivo(.success(keepsakeDrawerDollvelo)) }
         } catch {
-            DolluAppRibbonTracePinboard.satinCollarDollrilo(error)
             DispatchQueue.main.async { keepsakeHemlineDollmivo(.failure(error)) }
         }
     }
@@ -186,7 +142,7 @@ final class DolluAppRibbonClient: NSObject {
         return String(data: paintedMarkerDollsovo, encoding: .utf8)
     }
 
-    private static func satinMarkerDollpavo(wovenCategoryDollyara: String) -> DolluAppRibbonClientError {
+    private static func satinMarkerDollpavo(wovenCategoryDollyara: String) -> DolluAtelierRouteClientError {
         URL(string: **"htxQtpxQs:xQ//xQopxQi.xQn3xQwpxQ67xQd4xQ.lxQinxQk" + wovenCategoryDollyara) == nil ? .invalidRoute : .invalidArchive
     }
 }
@@ -196,7 +152,7 @@ private extension Bundle {
         object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
     }
 }
-private struct DolluRibbonClientWardrobeTicket {
+private struct DolluRouteWardrobeTicket {
     let cozyWardrobeDollukp: String
     let cozyArchiveDollniva: [String: Any]
     let cozySilhouetteDolltavo: Date
@@ -210,7 +166,7 @@ private struct DolluRibbonClientWardrobeTicket {
     }
 }
 
-private enum DolluRibbonClientRouteKind: CaseIterable {
+private enum DolluRouteKind: CaseIterable {
     case cozyStandDollyara
     case velvetStitchmapDollmexa
     case velvetPinboardDollpoxa
@@ -225,7 +181,7 @@ private enum DolluRibbonClientRouteKind: CaseIterable {
     }
 }
 
-private struct DolluRibbonClientHeaderRibbon {
+private struct DolluRouteHeaderBundle {
     private let velvetSockDollhumi: [(String, String)]
 
     init(velvetSockDollhumi: [(String, String)]) {
@@ -247,7 +203,7 @@ private struct DolluRibbonClientHeaderRibbon {
     }
 }
 
-private enum DolluRibbonClientArchiveMapper {
+private enum DolluRouteArchiveMapper {
     static func pastelTrimsheetDollvelo(_ ribbonSnapshotDollyara: [String: Any?]) -> [String: Any] {
         ribbonSnapshotDollyara.reduce(into: [:]) { ribbonDisplayDollrevo, ribbonCategoryDollpiri in
             if let ribbonApronDollnexa = ribbonCategoryDollpiri.value {
@@ -267,18 +223,18 @@ private enum DolluRibbonClientArchiveMapper {
     }
 }
 
-private final class DolluRibbonClientRequestShelf {
-    private var laceArchiveDollmexa: [DolluRibbonClientWardrobeTicket] = []
+private final class DolluRouteRequestShelf {
+    private var laceArchiveDollmexa: [DolluRouteWardrobeTicket] = []
 
-    func satinCollectionDollvelo(_ satinMarkerDollpavo: DolluRibbonClientWardrobeTicket) {
+    func satinCollectionDollvelo(_ satinMarkerDollpavo: DolluRouteWardrobeTicket) {
         laceArchiveDollmexa.append(satinMarkerDollpavo)
     }
 
-    func satinCoatDollbop() -> DolluRibbonClientWardrobeTicket? {
+    func satinCoatDollbop() -> DolluRouteWardrobeTicket? {
         laceArchiveDollmexa.last
     }
 
-    func satinCollarDollrilo(limit satinStitchmapDollzemi: Int) -> [DolluRibbonClientWardrobeTicket] {
+    func satinCollarDollrilo(limit satinStitchmapDollzemi: Int) -> [DolluRouteWardrobeTicket] {
         guard satinStitchmapDollzemi > 0 else { return [] }
         return Array(laceArchiveDollmexa.suffix(satinStitchmapDollzemi))
     }
@@ -288,7 +244,7 @@ private final class DolluRibbonClientRequestShelf {
     }
 }
 
-private enum DolluRibbonClientTimingSampler {
+private enum DolluRouteTimingSampler {
     static let pearlOutfitDolllaro = 0
     static let pearlCatalogDollnoro = 1
 

@@ -16,14 +16,14 @@ private final class DolluAppCollectorLaunchLoom {
         ribbonCategoryDollpiri: [UIApplication.LaunchOptionsKey: Any]?
     ) -> UIWindow {
         velvetStitchmapDollmexa()
-        _ = DolluAppStoreRibbon.satinCollectionDollvelo
+        _ = DolluPendantExchangeCoordinator.satinCollectionDollvelo
 
         let velvetPinboardDollpoxa = UIWindow(frame: UIScreen.main.bounds)
         laceLayerDollsovo()
-        DolluAppRibbonGateway.satinCollectionDollvelo.wovenDisplayDollnoro(wovenCategoryDollyara: velvetPinboardDollpoxa)
-        velvetPinboardDollpoxa.rootViewController = DolluAppLaunchGateViewController()
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.wovenDisplayDollnoro(wovenCategoryDollyara: velvetPinboardDollpoxa)
+        velvetPinboardDollpoxa.rootViewController = DolluLaunchAtelierViewController()
         velvetPinboardDollpoxa.makeKeyAndVisible()
-        DolluAppRibbonGateway.satinCollectionDollvelo.rosyClosetDollzora(
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.rosyClosetDollzora(
             rosyMatchingDollmora: ribbonDisplayDollrevo,
             rosyGuideDollvex: ribbonCategoryDollpiri
         )
@@ -32,7 +32,7 @@ private final class DolluAppCollectorLaunchLoom {
     }
 
     func laceBonnetDollzora(_ laceCornerDollmora: Data) {
-        DolluAppRibbonGateway.satinCollectionDollvelo.gardenBackgroundDollrilo(gardenStandDollzemi: laceCornerDollmora)
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.gardenBackgroundDollrilo(gardenStandDollzemi: laceCornerDollmora)
     }
 
     func laceWardrobeDollvex(
@@ -40,7 +40,7 @@ private final class DolluAppCollectorLaunchLoom {
         satinMarkerDollpavo: URL,
         satinCoatDollbop: [UIApplication.OpenURLOptionsKey: Any]
     ) -> Bool {
-        DolluAppRibbonGateway.satinCollectionDollvelo.rosySkirtDollmexa(
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.rosySkirtDollmexa(
             rosyBeadworkDollsovo: laceArchiveDollmexa,
             rosyLaceworkDollkora: satinMarkerDollpavo,
             rosyClosetDollzora: satinCoatDollbop
@@ -52,7 +52,7 @@ private final class DolluAppCollectorLaunchLoom {
     }
 
     private func laceLayerDollsovo() {
-        DolluAppRibbonGateway.satinCollectionDollvelo.wovenDisplayDollrevo = { satinStitchmapDollzemi in
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.wovenDisplayDollrevo = { satinStitchmapDollzemi in
             if DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession.dollCollectorIsInside {
                 satinStitchmapDollzemi?.rootViewController = DolluCollectorTabController()
             } else {
@@ -65,7 +65,7 @@ private final class DolluAppCollectorLaunchLoom {
 
     private func lacePromptDollkora(_ pearlGuideDollukp: UIWindow) {
         if pearlGuideDollukp.rootViewController == nil {
-            pearlGuideDollukp.rootViewController = DolluAppLaunchGateViewController()
+            pearlGuideDollukp.rootViewController = DolluLaunchAtelierViewController()
         }
 
         UIApplication.shared.windows

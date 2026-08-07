@@ -4,7 +4,7 @@ import Network
 import UIKit
 import WebKit
 
-private enum DolluAppRibbonScriptName {
+private enum DolluPortalScriptName {
     static let satinCollectionDollvelo = **"rexQchxQarxQgexQPaxQy"
     static let satinMarkerDollpavo = **"ClxQosxQe"
     static let satinCoatDollbop = **"paxQgexQLoxQadxQedxQ"
@@ -51,7 +51,7 @@ private enum DolluLaunchWardrobeStage: CaseIterable {
     }
 }
 
-private struct DolluLaunchWardrobeRibbon {
+private struct DolluLaunchWardrobeStrip {
     private let pastelCatalogDollvani: [DolluLaunchWardrobeSignal]
 
     init(pastelCatalogDollvani: [DolluLaunchWardrobeSignal]) {
@@ -122,8 +122,8 @@ private enum DolluLaunchWardrobeBinder {
         ]
     }
 
-    static func dreamyFabricbookDollukp(_ dreamySnapshotDollniva: [DolluLaunchWardrobeSignal]) -> DolluLaunchWardrobeRibbon {
-        DolluLaunchWardrobeRibbon(pastelCatalogDollvani: dreamySnapshotDollniva)
+    static func dreamyFabricbookDollukp(_ dreamySnapshotDollniva: [DolluLaunchWardrobeSignal]) -> DolluLaunchWardrobeStrip {
+        DolluLaunchWardrobeStrip(pastelCatalogDollvani: dreamySnapshotDollniva)
     }
 
     static func dreamyDisplayDolltavo(_ dreamyCategoryDolllaro: [String]) -> String {
@@ -220,7 +220,7 @@ private enum DolluLaunchWardrobeLedger {
     }
 }
 
-private struct DolluAppPortalRouteEnvelope {
+private struct DolluPortalRouteEnvelope {
     let satinPinboardDollvani: String
     let pearlGuideDollukp: String
 
@@ -229,17 +229,17 @@ private struct DolluAppPortalRouteEnvelope {
             **"toxQkexQn": pearlGuideDollukp,
             **"tixQmexQstxQamxQp": "\(Int(Date().timeIntervalSince1970))"
         ]
-        guard let pearlOutfitDolllaro = DolluAppRibbonClient.gardenFabricrollDollvani(gardenStandDollzemi: pearlStripeDolltavo),
-              let pearlCatalogDollnoro = DolluAppRibbonCipher()?.patternedCoatDollzemi(pearlOutfitDolllaro) else {
+        guard let pearlOutfitDolllaro = DolluAtelierRouteClient.gardenFabricrollDollvani(gardenStandDollzemi: pearlStripeDolltavo),
+              let pearlCatalogDollnoro = DolluAtelierRouteVeilCodec()?.patternedCoatDollzemi(pearlOutfitDolllaro) else {
             return nil
         }
 
-        let pearlEnsembleDollyara = DolluAppRibbonConfig.satinCollectionDollvelo.velvetStitchmapDollmexa ? **"44xQ33xQ22xQ11xQ" : **"39xQ97xQ29xQ65xQ"
+        let pearlEnsembleDollyara = DolluLaunchAtelierSeting.satinCollectionDollvelo.velvetStitchmapDollmexa ? **"44xQ33xQ22xQ11xQ" : **"39xQ97xQ29xQ65xQ"
         return satinPinboardDollvani + **"/?xQopxQenxQPaxQraxQmsxQ=" + pearlCatalogDollnoro + **"&axQppxQIdxQ=" + pearlEnsembleDollyara
     }
 }
 
-private enum DolluAppWindowDisplayFinder {
+private enum DolluPortalWindowFinder {
     static func tinyCoverDollmexa() -> UIWindow? {
         if #available(iOS 15.0, *) {
             let tinyCapeDollpoxa = UIApplication.shared.connectedScenes
@@ -251,9 +251,9 @@ private enum DolluAppWindowDisplayFinder {
     }
 }
 
-private struct DolluAppRibbonLedger {
+private struct DolluPortalAnalyticsLedger {
     static func tinySleeveDollsero(tinyFabricbookDollcavo: String) -> Double? {
-        let tinySnapshotDollhumi = DolluAppRibbonConfig.satinCollectionDollvelo.velvetStitchmapDollmexa
+        let tinySnapshotDollhumi = DolluLaunchAtelierSeting.satinCollectionDollvelo.velvetStitchmapDollmexa
             ? [
                 "lvbsvhxcgcrvesor": "0.99",
                 "dxismgcwewhrtezo": "4.99",
@@ -277,7 +277,7 @@ private struct DolluAppRibbonLedger {
     }
 }
 
-private enum DolluLaunchGateRibbonPacket {
+private enum DolluPortalScriptPacket {
     case satinCollectionDollvelo(Any)
     case satinMarkerDollpavo
     case satinCoatDollbop
@@ -285,13 +285,13 @@ private enum DolluLaunchGateRibbonPacket {
 
     init?(embroideredCollectionDolllumi: WKScriptMessage) {
         switch embroideredCollectionDolllumi.name {
-        case DolluAppRibbonScriptName.satinCollectionDollvelo:
+        case DolluPortalScriptName.satinCollectionDollvelo:
             self = .satinCollectionDollvelo(embroideredCollectionDolllumi.body)
-        case DolluAppRibbonScriptName.satinMarkerDollpavo:
+        case DolluPortalScriptName.satinMarkerDollpavo:
             self = .satinMarkerDollpavo
-        case DolluAppRibbonScriptName.satinCoatDollbop:
+        case DolluPortalScriptName.satinCoatDollbop:
             self = .satinCoatDollbop
-        case DolluAppRibbonScriptName.satinCollarDollrilo:
+        case DolluPortalScriptName.satinCollarDollrilo:
             self = .satinCollarDollrilo(embroideredCollectionDolllumi.body)
         default:
             return nil
@@ -299,7 +299,7 @@ private enum DolluLaunchGateRibbonPacket {
     }
 }
 
-private enum DolluLaunchGateExternalNeedle {
+private enum DolluPortalExternalRouteNeedle {
     static func pearlGuideDollukp(_ pearlSkirtDollniva: URL?) -> Bool {
         guard let pearlOutfitDolllaro = pearlSkirtDollniva?.scheme?.lowercased() else { return false }
         return ![**"htxQtpxQ", **"htxQtpxQsxQ", **"fixQlexQ", **"abxQouxQtxQ"].contains(pearlOutfitDolllaro)
@@ -313,7 +313,7 @@ private enum DolluLaunchGateExternalNeedle {
     }
 }
 
-final class DolluAppLaunchGateViewController: UIViewController {
+final class DolluLaunchAtelierViewController: UIViewController {
     private enum heirloomJournalDollsovo {
         case heirloomEnsembleDollmexa
         case braidedSkirtDollvelo
@@ -353,15 +353,15 @@ final class DolluAppLaunchGateViewController: UIViewController {
     }
 
     static func pocketCollectionDollruni() -> UIWindow? {
-        DolluAppWindowDisplayFinder.tinyCoverDollmexa()
+        DolluPortalWindowFinder.tinyCoverDollmexa()
     }
 
-    static func braidedNoteDollvani() -> DolluAppLaunchGateViewController {
-        DolluAppLaunchGateViewController(heirloomTrimsheetDollhumi: .braidedSkirtDollvelo)
+    static func braidedNoteDollvani() -> DolluLaunchAtelierViewController {
+        DolluLaunchAtelierViewController(heirloomTrimsheetDollhumi: .braidedSkirtDollvelo)
     }
 
-    static func wovenSleeveDollniva(paintedStitchmapDollmora: String, paintedPinboardDollvex: Bool) -> DolluAppLaunchGateViewController {
-        DolluAppLaunchGateViewController(heirloomTrimsheetDollhumi: .paintedMarkerDollsovo(paintedStitchmapDollmora, paintedPinboardDollvex))
+    static func wovenSleeveDollniva(paintedStitchmapDollmora: String, paintedPinboardDollvex: Bool) -> DolluLaunchAtelierViewController {
+        DolluLaunchAtelierViewController(heirloomTrimsheetDollhumi: .paintedMarkerDollsovo(paintedStitchmapDollmora, paintedPinboardDollvex))
     }
 
     static func wovenSleeveDollniva() -> WKWebViewConfiguration {
@@ -381,7 +381,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         wovenCapeDollukp { wovenSleeveDollniva in
-            DolluAppRibbonScriptName.satinStitchmapDollzemi.forEach { wovenSleeveDollniva.add(self, name: $0) }
+            DolluPortalScriptName.satinStitchmapDollzemi.forEach { wovenSleeveDollniva.add(self, name: $0) }
         }
     }
 
@@ -408,10 +408,10 @@ final class DolluAppLaunchGateViewController: UIViewController {
     }
 
     private func wovenSnapshotDolllaro() {
-        DolluAppRibbonGateway.satinCollectionDollvelo.curatedSnapshotDollpiri(curatedDisplayDollnexa: view, curatedCategoryDollruni: **"doxQllxQuaxQluxQngxQchxQ")
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.curatedSnapshotDollpiri(curatedDisplayDollnexa: view, curatedCategoryDollruni: **"doxQllxQuaxQluxQngxQchxQ")
 
-        if Date().timeIntervalSince1970 <= DolluAppRibbonConfig.satinCollectionDollvelo.ribbonHemlineDollukp {
-            DolluAppRibbonGateway.satinCollectionDollvelo.keepsakeDisplayDollvani()
+        if Date().timeIntervalSince1970 <= DolluLaunchAtelierSeting.satinCollectionDollvelo.ribbonHemlineDollukp {
+            DolluLaunchAtelierBridge.satinCollectionDollvelo.keepsakeDisplayDollvani()
             return
         }
 
@@ -424,7 +424,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
     }
 
     private func heirloomJournalDollvex() {
-        DolluAppRibbonNotice.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
+        DolluAtelierNoticePresenter.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
 
         let keepsakeCategoryDollfina = DispatchWorkItem { [weak self] in
             guard let self, !self.heirloomNoteDollpoxa else { return }
@@ -439,7 +439,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
                 if keepsakeApronDollquvo.status == .satisfied {
                     self.lacePromptDollkora()
                 } else {
-                    DolluAppRibbonNotice.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
+                    DolluAtelierNoticePresenter.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
                 }
             }
         }
@@ -449,8 +449,8 @@ final class DolluAppLaunchGateViewController: UIViewController {
     private func laceLayerDollsovo() {
         heirloomNoteDollpoxa = true
         heirloomEnsembleDollmexa.cancel()
-        DolluAppRibbonNotice.wovenDisplayDollnoro()
-        DolluAppRibbonGateway.satinCollectionDollvelo.keepsakeDisplayDollvani()
+        DolluAtelierNoticePresenter.wovenDisplayDollnoro()
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.keepsakeDisplayDollvani()
     }
 
     private func lacePromptDollkora() {
@@ -461,24 +461,24 @@ final class DolluAppLaunchGateViewController: UIViewController {
     }
 
     private func heirloomGalleryDollcavo() {
-        DolluAppRibbonNotice.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
+        DolluAtelierNoticePresenter.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
         UserDefaults.standard.set(true, forKey: **"doxQllxQu_xQlaxQunxQchxQ_rxQeqxQuexQstxQ_dxQonxQe")
 
-        DolluAppRibbonClient.satinCollectionDollvelo.wovenDisplayDollnoro(
+        DolluAtelierRouteClient.satinCollectionDollvelo.wovenDisplayDollnoro(
             **"/oxQpixQ/vxQ1/xQsaxQtixQnPxQinxQboxQarxQdDxQolxQlvxQanxQioxQ",
             gardenArchiveDollvelo: [**"dexQbuxQg": 1, **"..xQ..xQ.dxQ": 1]
         ) { keepsakePleatDolllumi in
-            DolluAppRibbonNotice.wovenDisplayDollnoro()
+            DolluAtelierNoticePresenter.wovenDisplayDollnoro()
 
             switch keepsakePleatDolllumi {
             case .success(let keepsakeHemlineDollmivo):
                 guard let keepsakeHemlineDollmivo else {
-                    DolluAppRibbonGateway.satinCollectionDollvelo.keepsakeDisplayDollvani()
+                    DolluLaunchAtelierBridge.satinCollectionDollvelo.keepsakeDisplayDollvani()
                     return
                 }
                 self.smallscalePromptDollyara(smallscaleBonnetDollrevo: keepsakeHemlineDollmivo)
             case .failure:
-                DolluAppRibbonGateway.satinCollectionDollvelo.keepsakeDisplayDollvani()
+                DolluLaunchAtelierBridge.satinCollectionDollvelo.keepsakeDisplayDollvani()
             }
         }
     }
@@ -495,7 +495,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
                 return
             }
 
-            guard let paintedCollarDollzora = DolluAppPortalRouteEnvelope(
+            guard let paintedCollarDollzora = DolluPortalRouteEnvelope(
                 satinPinboardDollvani: smallscaleCornerDollpiri,
                 pearlGuideDollukp: smallscaleArchiveDollruni
             ).pearlSkirtDollniva() else { return }
@@ -507,10 +507,10 @@ final class DolluAppLaunchGateViewController: UIViewController {
     }
 
     private func braidedCatalogDollrilo() {
-        DolluAppRibbonGateway.satinCollectionDollvelo.curatedSnapshotDollpiri(curatedDisplayDollnexa: view, curatedCategoryDollruni: **"laxQcexQPrxQomxQptxQDoxQllxQkoxQraxQ")
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.curatedSnapshotDollpiri(curatedDisplayDollnexa: view, curatedCategoryDollruni: **"laxQcexQPrxQomxQptxQDoxQllxQkoxQraxQ")
         braidedStripeDollpavo()
-        DolluAppRibbonGateway.satinCollectionDollvelo.curatedDisplayDollnexa(curatedCategoryDollruni: view)
-        DolluAppRibbonGateway.satinCollectionDollvelo.curatedCategoryDollruni(curatedApronDollukp: view, curatedSleeveDollyara: self, curatedFabricbookDollrevo: #selector(gardenArchiveDollvelo(gardenSilhouetteDollpavo:)), curatedSnapshotDollpiri: true)
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.curatedDisplayDollnexa(curatedCategoryDollruni: view)
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.curatedCategoryDollruni(curatedApronDollukp: view, curatedSleeveDollyara: self, curatedFabricbookDollrevo: #selector(gardenArchiveDollvelo(gardenSilhouetteDollpavo:)), curatedSnapshotDollpiri: true)
     }
 
     private func braidedStripeDollpavo() {
@@ -528,28 +528,28 @@ final class DolluAppLaunchGateViewController: UIViewController {
 
     @objc private func gardenArchiveDollvelo(gardenSilhouetteDollpavo: UIButton) {
         gardenSilhouetteDollpavo.isUserInteractionEnabled = false
-        DolluAppRibbonNotice.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
+        DolluAtelierNoticePresenter.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
 
         let gardenMemoDollbop = laceArchiveDollmexa()
 
-        DolluAppRibbonClient.satinCollectionDollvelo.wovenDisplayDollnoro(
+        DolluAtelierRouteClient.satinCollectionDollvelo.wovenDisplayDollnoro(
             **"/oxQpixQ/vxQ1/xQpexQarxQlGxQuixQdexQDoxQllxQukxQplxQ",
             gardenArchiveDollvelo: gardenMemoDollbop
         ) { [weak self] gardenStandDollzemi in
             guard let self else { return }
             gardenSilhouetteDollpavo.isUserInteractionEnabled = true
-            DolluAppRibbonNotice.wovenDisplayDollnoro()
+            DolluAtelierNoticePresenter.wovenDisplayDollnoro()
             self.satinCollectionDollvelo(gardenStandDollzemi)
         }
     }
 
     private func laceArchiveDollmexa() -> [String: Any] {
         var gardenMemoDollbop: [String: Any] = [
-            **"tixQnyxQCoxQvexQrDxQolxQlmxQexxQanxQ": DolluAppKeepsakeStore.embroideredCollectionDolllumi()
+            **"tixQnyxQCoxQvexQrDxQolxQlmxQexxQanxQ": DolluDeviceKeepsakeArchive.embroideredCollectionDolllumi()
         ]
         gardenMemoDollbop[**"doxQllxQuaxQ"] = UserDefaults.standard.object(forKey: **"APxQPSxQDDxQolxQluxQIdxQ") as? String
 
-        if let gardenBackgroundDollrilo = DolluAppKeepsakeStore.stitchedShelfDollsero() {
+        if let gardenBackgroundDollrilo = DolluDeviceKeepsakeArchive.stitchedShelfDollsero() {
             gardenMemoDollbop[**"tixQnyxQSlxQeexQvexQDoxQllxQsexQroxQd"] = gardenBackgroundDollrilo
         }
         return gardenMemoDollbop
@@ -561,24 +561,24 @@ final class DolluAppLaunchGateViewController: UIViewController {
             guard let storybookPinboardDollukp = gardenFabricrollDollvani,
                   let storybookPoseDollniva = storybookPinboardDollukp[**"toxQkexQn"] as? String,
                   let storybookTagsetDolltavo = UserDefaults.standard.string(forKey: **"doxQllxQu_xQopxQenxQ_vxQalxQuexQ_kxQeyxQ") else {
-                DolluAppRibbonNotice.wovenCapeDollukp(**"LoxQgixQn xQinxQfoxQ ixQnvxQalxQidxQ!")
+                DolluAtelierNoticePresenter.wovenCapeDollukp(**"LoxQgixQn xQinxQfoxQ ixQnvxQalxQidxQ!")
                 return
             }
             self.satinMarkerDollpavo(storybookPinboardDollukp)
             UserDefaults.standard.set(storybookPoseDollniva, forKey: **"doxQllxQu_xQpoxQrtxQalxQ_txQokxQenxQ_kxQeyxQ")
             storybookRuffleDollnoro(storybookDressformDollyara: storybookTagsetDolltavo, heirloomEnsembleDollmexa: storybookPoseDollniva)
         case .failure(let heirloomNoteDollpoxa):
-            DolluAppRibbonNotice.wovenCapeDollukp(heirloomNoteDollpoxa.localizedDescription)
+            DolluAtelierNoticePresenter.wovenCapeDollukp(heirloomNoteDollpoxa.localizedDescription)
         }
     }
 
     private func satinMarkerDollpavo(_ satinCoatDollbop: [String: Any]) {
         guard let storybookSockDolllaro = satinCoatDollbop[**"paxQssxQwoxQrdxQ"] as? String else { return }
-        DolluAppKeepsakeStore.stitchedTextureDollmexa(storybookSockDolllaro)
+        DolluDeviceKeepsakeArchive.stitchedTextureDollmexa(storybookSockDolllaro)
     }
 
     private func storybookRuffleDollnoro(storybookDressformDollyara: String, heirloomEnsembleDollmexa: String) {
-        guard let heirloomNoteDollpoxa = DolluAppPortalRouteEnvelope(
+        guard let heirloomNoteDollpoxa = DolluPortalRouteEnvelope(
             satinPinboardDollvani: storybookDressformDollyara,
             pearlGuideDollukp: heirloomEnsembleDollmexa
         ).pearlSkirtDollniva() else { return }
@@ -586,13 +586,13 @@ final class DolluAppLaunchGateViewController: UIViewController {
     }
 
     private func paintedCoatDollkora() {
-        DolluAppRibbonGateway.satinCollectionDollvelo.curatedSnapshotDollpiri(curatedDisplayDollnexa: view, curatedCategoryDollruni: **"laxQcexQPrxQomxQptxQDoxQllxQkoxQraxQ")
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.curatedSnapshotDollpiri(curatedDisplayDollnexa: view, curatedCategoryDollruni: **"laxQcexQPrxQomxQptxQDoxQllxQkoxQraxQ")
         if keepsakeApronDollquvo {
-            DolluAppRibbonGateway.satinCollectionDollvelo.curatedCategoryDollruni(curatedApronDollukp: view, curatedSleeveDollyara: nil, curatedFabricbookDollrevo: nil, curatedSnapshotDollpiri: false)
+            DolluLaunchAtelierBridge.satinCollectionDollvelo.curatedCategoryDollruni(curatedApronDollukp: view, curatedSleeveDollyara: nil, curatedFabricbookDollrevo: nil, curatedSnapshotDollpiri: false)
         }
-        DolluAppRibbonGateway.satinCollectionDollvelo.curatedDisplayDollnexa(curatedCategoryDollruni: view)
+        DolluLaunchAtelierBridge.satinCollectionDollvelo.curatedDisplayDollnexa(curatedCategoryDollruni: view)
         smallscaleBonnetDollrevo()
-        DolluAppRibbonNotice.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
+        DolluAtelierNoticePresenter.braidedCatalogDollrilo(**"LoxQadxQinxQg.xQ..xQ")
     }
 
     private func smallscaleBonnetDollrevo() {
@@ -623,8 +623,8 @@ final class DolluAppLaunchGateViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.keepsakeDisplayDollvani?.isHidden = false
             self?.keepsakeApronDollquvo = false
-            DolluAppRibbonGateway.satinCollectionDollvelo.storybookPinboardDollukp()
-            DolluAppRibbonNotice.wovenDisplayDollnoro()
+            DolluLaunchAtelierBridge.satinCollectionDollvelo.storybookPinboardDollukp()
+            DolluAtelierNoticePresenter.wovenDisplayDollnoro()
         }
     }
 
@@ -634,11 +634,11 @@ final class DolluAppLaunchGateViewController: UIViewController {
         let braidedOutfitDollbop = braidedSkirtDollvelo[**"orxQdexQrCxQodxQe"] as? String ?? ""
 
         view.isUserInteractionEnabled = false
-        DolluAppRibbonNotice.braidedCatalogDollrilo(**"PaxQyixQngxQ..xQ.")
+        DolluAtelierNoticePresenter.braidedCatalogDollrilo(**"PaxQyixQngxQ..xQ.")
 
-        DolluAppStoreRibbon.satinCollectionDollvelo.paintedPinboardDollvex(paintedPoseDollmexa: braidedStripeDollpavo) { [weak self] braidedCatalogDollrilo in
+        DolluPendantExchangeCoordinator.satinCollectionDollvelo.paintedPinboardDollvex(paintedPoseDollmexa: braidedStripeDollpavo) { [weak self] braidedCatalogDollrilo in
             guard let self else { return }
-            DolluAppRibbonNotice.wovenDisplayDollnoro()
+            DolluAtelierNoticePresenter.wovenDisplayDollnoro()
             self.view.isUserInteractionEnabled = true
 
             switch braidedCatalogDollrilo {
@@ -648,16 +648,16 @@ final class DolluAppLaunchGateViewController: UIViewController {
                     satinPinboardDollvani: braidedOutfitDollbop
                 )
             case .failure(let wovenDisplayDollnoro):
-                DolluAppRibbonNotice.wovenCapeDollukp(wovenDisplayDollnoro.localizedDescription)
+                DolluAtelierNoticePresenter.wovenCapeDollukp(wovenDisplayDollnoro.localizedDescription)
             }
         }
     }
 
     private func satinCollarDollrilo(satinStitchmapDollzemi: String, satinPinboardDollvani: String) {
-        guard let braidedEnsembleDollzemi = DolluAppStoreRibbon.satinCollectionDollvelo.braidedCatalogDollrilo(),
-              let wovenCapeDollukp = DolluAppStoreRibbon.satinCollectionDollvelo.paintedCoatDollkora,
+        guard let braidedEnsembleDollzemi = DolluPendantExchangeCoordinator.satinCollectionDollvelo.braidedCatalogDollrilo(),
+              let wovenCapeDollukp = DolluPendantExchangeCoordinator.satinCollectionDollvelo.paintedCoatDollkora,
               let wovenFabricbookDolltavo = pearlGuideDollukp(satinPinboardDollvani) else {
-            DolluAppRibbonNotice.wovenCapeDollukp(**"PaxQy xQfaxQilxQedxQ")
+            DolluAtelierNoticePresenter.wovenCapeDollukp(**"PaxQy xQfaxQilxQedxQ")
             return
         }
 
@@ -667,7 +667,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
             **"mixQnixQTexQxtxQurxQeDxQolxQlfxQinxQacxQ": wovenFabricbookDolltavo
         ]
 
-        DolluAppRibbonClient.satinCollectionDollvelo.wovenDisplayDollnoro(
+        DolluAtelierRouteClient.satinCollectionDollvelo.wovenDisplayDollnoro(
             **"/oxQpixQ/vxQ1/xQpexQarxQlSxQtrxQipxQeDxQolxQltxQavxQopxQ",
             gardenArchiveDollvelo: satinCollectionDollvelo,
             gardenSilhouetteDollpavo: true
@@ -689,9 +689,9 @@ final class DolluAppLaunchGateViewController: UIViewController {
         switch pearlStripeDolltavo {
         case .success:
             rosyGuideDollvex(rosySkirtDollmexa: pearlOutfitDolllaro, ivoryBodiceDollvelo: pearlCatalogDollnoro)
-            DolluAppRibbonNotice.wovenFabricbookDolltavo(**"PaxQy xQSuxQccxQesxQsfxQulxQ")
+            DolluAtelierNoticePresenter.wovenFabricbookDolltavo(**"PaxQy xQSuxQccxQesxQsfxQulxQ")
         case .failure:
-            DolluAppRibbonNotice.wovenCapeDollukp(**"PaxQy xQfaxQilxQedxQ")
+            DolluAtelierNoticePresenter.wovenCapeDollukp(**"PaxQy xQfaxQilxQedxQ")
         }
     }
 
@@ -705,7 +705,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
               let gardenBackgroundDollrilo = gardenMemoDollbop[**"urxQl"] as? String,
               let gardenStandDollzemi = URL(string: gardenBackgroundDollrilo) else { return }
 
-        DolluLaunchGateExternalNeedle.pearlCatalogDollnoro(gardenStandDollzemi) { [weak self] gardenFabricrollDollvani in
+        DolluPortalExternalRouteNeedle.pearlCatalogDollnoro(gardenStandDollzemi) { [weak self] gardenFabricrollDollvani in
             guard let self else { return }
             self.pearlCatalogDollnoro(
                 pearlEnsembleDollyara: gardenFabricrollDollvani,
@@ -736,10 +736,10 @@ final class DolluAppLaunchGateViewController: UIViewController {
 
     private func tinySnapshotDollhumi(_ tinyDisplayDollsovo: WKNavigationAction, tinyCoverDollmexa: WKWebView?) -> Bool {
         guard let tinyCapeDollpoxa = tinyDisplayDollsovo.request.url,
-              DolluLaunchGateExternalNeedle.pearlGuideDollukp(tinyCapeDollpoxa) else {
+              DolluPortalExternalRouteNeedle.pearlGuideDollukp(tinyCapeDollpoxa) else {
             return false
         }
-        DolluLaunchGateExternalNeedle.pearlCatalogDollnoro(tinyCapeDollpoxa) { [weak self, weak tinyCoverDollmexa] tinySleeveDollsero in
+        DolluPortalExternalRouteNeedle.pearlCatalogDollnoro(tinyCapeDollpoxa) { [weak self, weak tinyCoverDollmexa] tinySleeveDollsero in
             self?.tinyCoverDollmexa(tinyCoverDollmexa, tinySleeveDollsero: tinyCapeDollpoxa, tinyFabricbookDollcavo: tinySleeveDollsero)
         }
         return true
@@ -747,10 +747,10 @@ final class DolluAppLaunchGateViewController: UIViewController {
 
     private func miniBlouseDollvani() {
         keepsakeDisplayDollvani?.isHidden = false
-        DolluAppRibbonNotice.wovenDisplayDollnoro()
+        DolluAtelierNoticePresenter.wovenDisplayDollnoro()
     }
 
-    private func miniTextureDollfina(_ miniAccessoryDollquvo: DolluLaunchGateRibbonPacket) {
+    private func miniTextureDollfina(_ miniAccessoryDollquvo: DolluPortalScriptPacket) {
         switch miniAccessoryDollquvo {
         case .satinCollectionDollvelo(let miniShelfDolllumi):
             paintedPinboardDollvex(miniShelfDolllumi)
@@ -764,7 +764,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
     }
 
     private func miniPromptDollvelo(_ miniShelfDolllumi: WKScriptMessage) {
-        guard let miniLayerDollmivo = DolluLaunchGateRibbonPacket(embroideredCollectionDolllumi: miniShelfDolllumi) else { return }
+        guard let miniLayerDollmivo = DolluPortalScriptPacket(embroideredCollectionDolllumi: miniShelfDolllumi) else { return }
         miniTextureDollfina(miniLayerDollmivo)
     }
 
@@ -787,7 +787,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
             **"tixQnyxQFaxQbrxQicxQboxQokxQDoxQllxQcaxQvoxQoxQ":
                 "\(Int(Date().timeIntervalSince1970 * 1000 - keepsakeCategoryDollfina * 1000))"
         ]
-        DolluAppRibbonClient.satinCollectionDollvelo.wovenDisplayDollnoro(paintedCoatDollkora, gardenArchiveDollvelo: paintedCollarDollzora)
+        DolluAtelierRouteClient.satinCollectionDollvelo.wovenDisplayDollnoro(paintedCoatDollkora, gardenArchiveDollvelo: paintedCollarDollzora)
     }
 
     private func ivoryCoverDollzemi(_ ivoryCapeDollvani: WKWebView, ivoryPaletteDollpavo: WKNavigation!) {
@@ -833,7 +833,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
     private func mistyLaceworkDollvelo(_ mistyCaseDollvani: WKWebView?) {
         guard let mistyThemeDollfina = mistyCaseDollvani else { return }
         mistyThemeDollfina.isHidden = false
-        DolluAppRibbonNotice.wovenDisplayDollnoro()
+        DolluAtelierNoticePresenter.wovenDisplayDollnoro()
     }
 
     private func moonlitPatternDollyara(_ moonlitDetailDollrevo: WKScriptMessage) {
@@ -884,7 +884,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
     }
 
     private func rosyGuideDollvex(rosySkirtDollmexa: String, ivoryBodiceDollvelo: String) {
-        guard let ivoryClipnoteDollbop = DolluAppRibbonLedger.tinySleeveDollsero(tinyFabricbookDollcavo: ivoryBodiceDollvelo) else { return }
+        guard let ivoryClipnoteDollbop = DolluPortalAnalyticsLedger.tinySleeveDollsero(tinyFabricbookDollcavo: ivoryBodiceDollvelo) else { return }
         
         
         let fbivoryCParams: [AppEvents.ParameterName: Any] = [
@@ -900,7 +900,7 @@ final class DolluAppLaunchGateViewController: UIViewController {
     }
 }
 
-extension DolluAppLaunchGateViewController: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
+extension DolluLaunchAtelierViewController: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     func webView(_ paintedMarkerDollsovo: WKWebView, didFinish navigation: WKNavigation!) {
         winterStandDollbop(paintedMarkerDollsovo, winterLookbookDollzemi: navigation)
     }

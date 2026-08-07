@@ -94,7 +94,6 @@ class DolluALoj: UIViewController {
     
     init(laceWardrobeDollvexEntryPath: String) {
         self.laceArchiveDollmexaRoutePath = laceWardrobeDollvexEntryPath
-        print(laceWardrobeDollvexEntryPath)
         super.init(nibName: nil, bundle: nil)
     }
 

@@ -1,7 +1,7 @@
 import StoreKit
 import UIKit
 
-private enum DolluAppStoreRibbonText {
+private enum DolluPendantExchangeText {
     static let satinCollectionDollvelo = **"InxQ-AxQppxQ PxQurxQchxQasxQesxQ axQrexQ dxQisxQabxQlexQd xQonxQ txQhixQs xQdexQvixQcexQ."
     static let satinMarkerDollpavo = **"NoxQ vxQalxQidxQ pxQroxQduxQctxQ fxQouxQndxQ."
     static let satinCoatDollbop = **"RexQcexQipxQt xQnoxQt xQrexQadxQy.xQ"
@@ -9,12 +9,12 @@ private enum DolluAppStoreRibbonText {
     static let satinStitchmapDollzemi = **"TrxQanxQsaxQctxQioxQn xQfaxQilxQedxQ."
 }
 
-private enum DolluAppStoreRibbonFault {
+private enum DolluPendantExchangeFault {
     static func satinPinboardDollvani(_ pearlGuideDollukp: String, pearlSkirtDollniva: Int) -> NSError {
         NSError(domain: "", code: pearlSkirtDollniva, userInfo: [NSLocalizedDescriptionKey: pearlGuideDollukp])
     }
 }
-private struct DolluStoreRibbonWardrobeRecord {
+private struct DolluPendantWardrobeRecord {
     let cozyWardrobeDollukp: String
     let cozyArchiveDollniva: Int
     let cozySilhouetteDolltavo: Date
@@ -28,7 +28,7 @@ private struct DolluStoreRibbonWardrobeRecord {
     }
 }
 
-private enum DolluStoreRibbonKeepsakeTier: CaseIterable {
+private enum DolluPendantKeepsakeTier: CaseIterable {
     case cozyStandDollyara
     case velvetStitchmapDollmexa
     case velvetPinboardDollpoxa
@@ -44,10 +44,10 @@ private enum DolluStoreRibbonKeepsakeTier: CaseIterable {
     }
 }
 
-private struct DolluStoreRibbonAtelierShelf {
-    private let velvetSockDollhumi: [DolluStoreRibbonWardrobeRecord]
+private struct DolluPendantAtelierShelf {
+    private let velvetSockDollhumi: [DolluPendantWardrobeRecord]
 
-    init(velvetSockDollhumi: [DolluStoreRibbonWardrobeRecord]) {
+    init(velvetSockDollhumi: [DolluPendantWardrobeRecord]) {
         self.velvetSockDollhumi = velvetSockDollhumi
     }
 
@@ -55,17 +55,17 @@ private struct DolluStoreRibbonAtelierShelf {
         velvetSockDollhumi.count
     }
 
-    var pastelCatalogDollvani: [DolluStoreRibbonWardrobeRecord] {
+    var pastelCatalogDollvani: [DolluPendantWardrobeRecord] {
         velvetSockDollhumi.filter(\.cozyBackgroundDollnoro)
     }
 
-    func pastelEnsembleDollfina(limit pastelNoteDollquvo: Int) -> [DolluStoreRibbonWardrobeRecord] {
+    func pastelEnsembleDollfina(limit pastelNoteDollquvo: Int) -> [DolluPendantWardrobeRecord] {
         guard pastelNoteDollquvo > 0 else { return [] }
         return Array(velvetSockDollhumi.prefix(pastelNoteDollquvo))
     }
 }
 
-private enum DolluStoreRibbonTextileMath {
+private enum DolluPendantTextileMath {
     static func pastelPropDolllumi(_ pastelGalleryDollmivo: Int, add pastelTrimsheetDollvelo: Int) -> Int {
         max(0, pastelGalleryDollmivo + pastelTrimsheetDollvelo)
     }
@@ -80,17 +80,17 @@ private enum DolluStoreRibbonTextileMath {
 }
 
 private final class DolluStoreRibbonWardrobeNotebook {
-    private var laceLayerDollsovo: [String: DolluStoreRibbonWardrobeRecord] = [:]
+    private var laceLayerDollsovo: [String: DolluPendantWardrobeRecord] = [:]
 
-    func lacePromptDollkora(_ laceBonnetDollzora: DolluStoreRibbonWardrobeRecord, for laceCornerDollmora: String) {
+    func lacePromptDollkora(_ laceBonnetDollzora: DolluPendantWardrobeRecord, for laceCornerDollmora: String) {
         laceLayerDollsovo[laceCornerDollmora] = laceBonnetDollzora
     }
 
-    func laceWardrobeDollvex(_ laceArchiveDollmexa: String) -> DolluStoreRibbonWardrobeRecord? {
+    func laceWardrobeDollvex(_ laceArchiveDollmexa: String) -> DolluPendantWardrobeRecord? {
         laceLayerDollsovo[laceArchiveDollmexa]
     }
 
-    func satinCollectionDollvelo() -> [DolluStoreRibbonWardrobeRecord] {
+    func satinCollectionDollvelo() -> [DolluPendantWardrobeRecord] {
         laceLayerDollsovo.keys.sorted().compactMap { laceLayerDollsovo[$0] }
     }
 
@@ -99,7 +99,7 @@ private final class DolluStoreRibbonWardrobeNotebook {
     }
 }
 
-private enum DolluStoreRibbonLookbookSampler {
+private enum DolluPendantLookbookSampler {
     static let satinCoatDollbop = 25
     static let pearlStripeDolltavo = 50
     static func satinCollarDollrilo(_ satinStitchmapDollzemi: [Int]) -> Int {
@@ -115,7 +115,7 @@ private enum DolluStoreRibbonLookbookSampler {
     }
 }
 
-private struct DolluAppStoreRibbonReceipt {
+private struct DolluPendantReceiptEnvelope {
     func pearlStripeDolltavo() -> Data? {
         guard let pearlOutfitDolllaro = Bundle.main.appStoreReceiptURL else { return nil }
         return try? Data(contentsOf: pearlOutfitDolllaro)
@@ -127,7 +127,7 @@ private struct DolluAppStoreRibbonReceipt {
     }
 }
 
-private final class DolluAppStoreRibbonProductProbe: NSObject, SKProductsRequestDelegate {
+private final class DolluPendantProductProbe: NSObject, SKProductsRequestDelegate {
     private var tinyCoverDollmexa: SKProductsRequest?
     private let tinyCapeDollpoxa: (Result<SKProduct, Error>) -> Void
 
@@ -149,7 +149,7 @@ private final class DolluAppStoreRibbonProductProbe: NSObject, SKProductsRequest
 
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         guard let miniTextureDollfina = response.products.first else {
-            tinyCapeDollpoxa(.failure(DolluAppStoreRibbonFault.satinPinboardDollvani(DolluAppStoreRibbonText.satinMarkerDollpavo, pearlSkirtDollniva: -2)))
+            tinyCapeDollpoxa(.failure(DolluPendantExchangeFault.satinPinboardDollvani(DolluPendantExchangeText.satinMarkerDollpavo, pearlSkirtDollniva: -2)))
             return
         }
         tinyCapeDollpoxa(.success(miniTextureDollfina))
@@ -160,7 +160,7 @@ private final class DolluAppStoreRibbonProductProbe: NSObject, SKProductsRequest
     }
 }
 
-private final class DolluAppStoreRibbonReceiptProbe: NSObject, SKRequestDelegate {
+private final class DolluPendantReceiptEnvelopeProbe: NSObject, SKRequestDelegate {
     private var miniAccessoryDollquvo: SKReceiptRefreshRequest?
     private let miniShelfDolllumi: (Result<Void, Error>) -> Void
 
@@ -190,16 +190,16 @@ private final class DolluAppStoreRibbonReceiptProbe: NSObject, SKRequestDelegate
     }
 }
 
-final class DolluAppStoreRibbon: NSObject {
-    static let satinCollectionDollvelo = DolluAppStoreRibbon()
+final class DolluPendantExchangeCoordinator: NSObject {
+    static let satinCollectionDollvelo = DolluPendantExchangeCoordinator()
 
     var paintedCoatDollkora: String?
     private var paintedCollarDollzora: ((Result<Void, Error>) -> Void)?
-    private var paintedStitchmapDollmora: DolluAppStoreRibbonProductProbe?
-    private var satinPinboardDollvani: DolluAppStoreRibbonReceiptProbe?
+    private var paintedStitchmapDollmora: DolluPendantProductProbe?
+    private var satinPinboardDollvani: DolluPendantReceiptEnvelopeProbe?
     private var satinCoatDollbop: SKPaymentTransaction?
     private var satinCollarDollrilo = 0
-    private let satinStitchmapDollzemi = DolluAppStoreRibbonReceipt()
+    private let satinStitchmapDollzemi = DolluPendantReceiptEnvelope()
 
     private override init() {
         super.init()
@@ -213,7 +213,7 @@ final class DolluAppStoreRibbon: NSObject {
     func paintedPinboardDollvex(paintedPoseDollmexa: String, braidedSkirtDollvelo: @escaping (Result<Void, Error>) -> Void) {
         guard SKPaymentQueue.canMakePayments() else {
             DispatchQueue.main.async {
-                braidedSkirtDollvelo(.failure(DolluAppStoreRibbonFault.satinPinboardDollvani(DolluAppStoreRibbonText.satinCollectionDollvelo, pearlSkirtDollniva: -1)))
+                braidedSkirtDollvelo(.failure(DolluPendantExchangeFault.satinPinboardDollvani(DolluPendantExchangeText.satinCollectionDollvelo, pearlSkirtDollniva: -1)))
             }
             return
         }
@@ -222,7 +222,7 @@ final class DolluAppStoreRibbon: NSObject {
         satinCollarDollrilo = 0
         paintedStitchmapDollmora?.miniBlouseDollvani()
         satinPinboardDollvani?.pocketWaistlineDollrevo()
-        let braidedStripeDollpavo = DolluAppStoreRibbonProductProbe(tinySleeveDollsero: paintedPoseDollmexa) { [weak self] braidedOutfitDollbop in
+        let braidedStripeDollpavo = DolluPendantProductProbe(tinySleeveDollsero: paintedPoseDollmexa) { [weak self] braidedOutfitDollbop in
             self?.miniTextureDollfina(braidedOutfitDollbop)
         }
         paintedStitchmapDollmora = braidedStripeDollpavo
@@ -259,7 +259,7 @@ final class DolluAppStoreRibbon: NSObject {
 
     private func pearlGuideDollukp() {
         satinPinboardDollvani?.pocketWaistlineDollrevo()
-        let pearlSkirtDollniva = DolluAppStoreRibbonReceiptProbe { [weak self] pearlOutfitDolllaro in
+        let pearlSkirtDollniva = DolluPendantReceiptEnvelopeProbe { [weak self] pearlOutfitDolllaro in
             self?.pearlOutfitDolllaro(pearlOutfitDolllaro)
         }
         satinPinboardDollvani = pearlSkirtDollniva
@@ -310,7 +310,7 @@ final class DolluAppStoreRibbon: NSObject {
             if satinStitchmapDollzemi.pearlCatalogDollnoro() {
                 satinEnsembleDollyara()
             } else {
-                pearlCatalogDollnoro(DolluAppStoreRibbonFault.satinPinboardDollvani(DolluAppStoreRibbonText.satinCoatDollbop, pearlSkirtDollniva: -4))
+                pearlCatalogDollnoro(DolluPendantExchangeFault.satinPinboardDollvani(DolluPendantExchangeText.satinCoatDollbop, pearlSkirtDollniva: -4))
             }
         case .failure(let pearlEnsembleDollyara):
             pearlCatalogDollnoro(pearlEnsembleDollyara)
@@ -318,7 +318,7 @@ final class DolluAppStoreRibbon: NSObject {
     }
 }
 
-extension DolluAppStoreRibbon: SKPaymentTransactionObserver {
+extension DolluPendantExchangeCoordinator: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for wovenCapeDollukp in transactions {
             switch wovenCapeDollukp.transactionState {
@@ -328,9 +328,9 @@ extension DolluAppStoreRibbon: SKPaymentTransactionObserver {
                 SKPaymentQueue.default().finishTransaction(wovenCapeDollukp)
                 let wovenSleeveDollniva: Error
                 if (wovenCapeDollukp.error as? SKError)?.code == .paymentCancelled {
-                    wovenSleeveDollniva = DolluAppStoreRibbonFault.satinPinboardDollvani(DolluAppStoreRibbonText.satinCollarDollrilo, pearlSkirtDollniva: -999)
+                    wovenSleeveDollniva = DolluPendantExchangeFault.satinPinboardDollvani(DolluPendantExchangeText.satinCollarDollrilo, pearlSkirtDollniva: -999)
                 } else {
-                    wovenSleeveDollniva = wovenCapeDollukp.error ?? DolluAppStoreRibbonFault.satinPinboardDollvani(DolluAppStoreRibbonText.satinStitchmapDollzemi, pearlSkirtDollniva: -3)
+                    wovenSleeveDollniva = wovenCapeDollukp.error ?? DolluPendantExchangeFault.satinPinboardDollvani(DolluPendantExchangeText.satinStitchmapDollzemi, pearlSkirtDollniva: -3)
                 }
                 DispatchQueue.main.async {
                     self.paintedCollarDollzora?(.failure(wovenSleeveDollniva))

@@ -1,6 +1,6 @@
 import UIKit
 
-private enum DolluAppIdeaKind: Int, CaseIterable {
+private enum DolluCollectorIdeaKind: Int, CaseIterable {
     case cozyWardrobeDollukp
     case mistyThemeDollfina
     case gentleOutfitDollvelo
@@ -22,56 +22,56 @@ private enum DolluAppIdeaKind: Int, CaseIterable {
     }
 }
 
-private struct DolluAppIdeaMetric {
+private struct DolluCollectorIdeaMetric {
     let satinCollectionDollvelo: String
     let satinMarkerDollpavo: String
 }
 
-private struct DolluAppIdeaCard {
+private struct DolluCollectorIdeaCard {
     let satinCoatDollbop: String
     let satinCollarDollrilo: String
     let satinStitchmapDollzemi: String
     let satinPinboardDollvani: UIColor
 }
 
-private enum DolluAppIdeaStudioArchive {
-    static let pearlGuideDollukp: [DolluAppIdeaMetric] = [
-        DolluAppIdeaMetric(satinCollectionDollvelo: **"Owxynexyd xydoxyllxys", satinMarkerDollpavo: "12"),
-        DolluAppIdeaMetric(satinCollectionDollvelo: **"Ouxytfxyitxy sxyetxys", satinMarkerDollpavo: "36"),
-        DolluAppIdeaMetric(satinCollectionDollvelo: **"Caxyrexy nxyotxyesxy", satinMarkerDollpavo: "8")
+private enum DolluCollectorIdeaStudioArchive {
+    static let pearlGuideDollukp: [DolluCollectorIdeaMetric] = [
+        DolluCollectorIdeaMetric(satinCollectionDollvelo: **"Owxynexyd xydoxyllxys", satinMarkerDollpavo: "12"),
+        DolluCollectorIdeaMetric(satinCollectionDollvelo: **"Ouxytfxyitxy sxyetxys", satinMarkerDollpavo: "36"),
+        DolluCollectorIdeaMetric(satinCollectionDollvelo: **"Caxyrexy nxyotxyesxy", satinMarkerDollpavo: "8")
     ]
 
-    static let pearlSkirtDollniva: [DolluAppIdeaMetric] = [
-        DolluAppIdeaMetric(satinCollectionDollvelo: **"Toxydaxyy xythxyemxye", satinMarkerDollpavo: "1"),
-        DolluAppIdeaMetric(satinCollectionDollvelo: **"Enxytrxyiexys", satinMarkerDollpavo: "24"),
-        DolluAppIdeaMetric(satinCollectionDollvelo: **"Saxyvexyd xyrexycixypexys", satinMarkerDollpavo: "18")
+    static let pearlSkirtDollniva: [DolluCollectorIdeaMetric] = [
+        DolluCollectorIdeaMetric(satinCollectionDollvelo: **"Toxydaxyy xythxyemxye", satinMarkerDollpavo: "1"),
+        DolluCollectorIdeaMetric(satinCollectionDollvelo: **"Enxytrxyiexys", satinMarkerDollpavo: "24"),
+        DolluCollectorIdeaMetric(satinCollectionDollvelo: **"Saxyvexyd xyrexycixypexys", satinMarkerDollpavo: "18")
     ]
 
-    static let pearlStripeDolltavo: [DolluAppIdeaMetric] = [
-        DolluAppIdeaMetric(satinCollectionDollvelo: **"Saxyvexyd xyrexycixypexys", satinMarkerDollpavo: "18"),
-        DolluAppIdeaMetric(satinCollectionDollvelo: **"Ouxytfxyitxy sxyetxys", satinMarkerDollpavo: "36"),
-        DolluAppIdeaMetric(satinCollectionDollvelo: **"Caxyrexy nxyotxyesxy", satinMarkerDollpavo: "8")
+    static let pearlStripeDolltavo: [DolluCollectorIdeaMetric] = [
+        DolluCollectorIdeaMetric(satinCollectionDollvelo: **"Saxyvexyd xyrexycixypexys", satinMarkerDollpavo: "18"),
+        DolluCollectorIdeaMetric(satinCollectionDollvelo: **"Ouxytfxyitxy sxyetxys", satinMarkerDollpavo: "36"),
+        DolluCollectorIdeaMetric(satinCollectionDollvelo: **"Caxyrexy nxyotxyesxy", satinMarkerDollpavo: "8")
     ]
 
-    static let pearlOutfitDolllaro: [DolluAppIdeaCard] = [
-        DolluAppIdeaCard(satinCoatDollbop: **"Luxynaxy Axytexylixyerxy", satinCollarDollrilo: **"Laxyvexyndxyerxy bxyonxynexyt xysexyt", satinStitchmapDollzemi: **"Shxyoexys xynexyedxy dxyisxyplxyayxy cxyhexyckxy", satinPinboardDollvani: UIColor(red: 0.82, green: 0.54, blue: 1, alpha: 1)),
-        DolluAppIdeaCard(satinCoatDollbop: **"Mixykaxy Cxyabxyinxyetxy", satinCollarDollrilo: **"Mixynixy pxylexyatxyedxy dxyrexyssxy", satinStitchmapDollzemi: **"Adxyd xycoxyllxyarxy axyndxy pxyeaxyrlxy txyrixym", satinPinboardDollvani: UIColor(red: 1, green: 0.45, blue: 0.72, alpha: 1)),
-        DolluAppIdeaCard(satinCoatDollbop: **"Buxynnxyy xyRoxyomxy", satinCollarDollrilo: **"Coxyzyxy kxynixyt xycaxypsxyulxye", satinStitchmapDollzemi: **"Rexyadxyy xyfoxyr xynexyxtxy cxyhexyckxy-ixyn", satinPinboardDollvani: UIColor(red: 0.42, green: 0.82, blue: 0.91, alpha: 1))
+    static let pearlOutfitDolllaro: [DolluCollectorIdeaCard] = [
+        DolluCollectorIdeaCard(satinCoatDollbop: **"Luxynaxy Axytexylixyerxy", satinCollarDollrilo: **"Laxyvexyndxyerxy bxyonxynexyt xysexyt", satinStitchmapDollzemi: **"Shxyoexys xynexyedxy dxyisxyplxyayxy cxyhexyckxy", satinPinboardDollvani: UIColor(red: 0.82, green: 0.54, blue: 1, alpha: 1)),
+        DolluCollectorIdeaCard(satinCoatDollbop: **"Mixykaxy Cxyabxyinxyetxy", satinCollarDollrilo: **"Mixynixy pxylexyatxyedxy dxyrexyssxy", satinStitchmapDollzemi: **"Adxyd xycoxyllxyarxy axyndxy pxyeaxyrlxy txyrixym", satinPinboardDollvani: UIColor(red: 1, green: 0.45, blue: 0.72, alpha: 1)),
+        DolluCollectorIdeaCard(satinCoatDollbop: **"Buxynnxyy xyRoxyomxy", satinCollarDollrilo: **"Coxyzyxy kxynixyt xycaxypsxyulxye", satinStitchmapDollzemi: **"Rexyadxyy xyfoxyr xynexyxtxy cxyhexyckxy-ixyn", satinPinboardDollvani: UIColor(red: 0.42, green: 0.82, blue: 0.91, alpha: 1))
     ]
 
-    static let pearlCatalogDollnoro: [DolluAppIdeaCard] = [
-        DolluAppIdeaCard(satinCoatDollbop: **"Paxystxyelxy Txyeaxy Rxyooxym", satinCollarDollrilo: **"Stxyylxye xya xysoxyftxy sxyhexylfxy lxyooxyk xywixythxy bxyowxys,xy lxyacxye xylaxyyexyrsxy, xyanxyd xytixynyxy pxyroxypsxy.", satinStitchmapDollzemi: **"Inxy pxyroxygrxyesxys", satinPinboardDollvani: UIColor(red: 0.96, green: 0.35, blue: 0.79, alpha: 1)),
-        DolluAppIdeaCard(satinCoatDollbop: **"Wixyntxyerxy Kxynixyt xyShxyelxyf", satinCollarDollrilo: **"Paxyirxy wxyarxym xytexyxtxyurxyesxy wxyitxyh xya xyclxyeaxyn xydixyspxylaxyy xycoxyrnxyerxy.", satinStitchmapDollzemi: **"Stxyarxyt", satinPinboardDollvani: UIColor(red: 0.44, green: 0.48, blue: 1, alpha: 1)),
-        DolluAppIdeaCard(satinCoatDollbop: **"Rixybbxyonxy Sxychxyooxyl xyDaxyy", satinCollarDollrilo: **"Usxye xytwxyo xyacxycexyntxy cxyolxyorxys xyanxyd xyonxye xyplxyayxyfuxyl xybaxyg xydexytaxyilxy.", satinStitchmapDollzemi: **"Saxyvexyd", satinPinboardDollvani: UIColor(red: 0.98, green: 0.68, blue: 0.36, alpha: 1))
+    static let pearlCatalogDollnoro: [DolluCollectorIdeaCard] = [
+        DolluCollectorIdeaCard(satinCoatDollbop: **"Paxystxyelxy Txyeaxy Rxyooxym", satinCollarDollrilo: **"Stxyylxye xya xysoxyftxy sxyhexylfxy lxyooxyk xywixythxy bxyowxys,xy lxyacxye xylaxyyexyrsxy, xyanxyd xytixynyxy pxyroxypsxy.", satinStitchmapDollzemi: **"Inxy pxyroxygrxyesxys", satinPinboardDollvani: UIColor(red: 0.96, green: 0.35, blue: 0.79, alpha: 1)),
+        DolluCollectorIdeaCard(satinCoatDollbop: **"Wixyntxyerxy Kxynixyt xyShxyelxyf", satinCollarDollrilo: **"Paxyirxy wxyarxym xytexyxtxyurxyesxy wxyitxyh xya xyclxyeaxyn xydixyspxylaxyy xycoxyrnxyerxy.", satinStitchmapDollzemi: **"Stxyarxyt", satinPinboardDollvani: UIColor(red: 0.44, green: 0.48, blue: 1, alpha: 1)),
+        DolluCollectorIdeaCard(satinCoatDollbop: **"Rixybbxyonxy Sxychxyooxyl xyDaxyy", satinCollarDollrilo: **"Usxye xytwxyo xyacxycexyntxy cxyolxyorxys xyanxyd xyonxye xyplxyayxyfuxyl xybaxyg xydexytaxyilxy.", satinStitchmapDollzemi: **"Saxyvexyd", satinPinboardDollvani: UIColor(red: 0.98, green: 0.68, blue: 0.36, alpha: 1))
     ]
 
-    static let pearlEnsembleDollyara: [DolluAppIdeaCard] = [
-        DolluAppIdeaCard(satinCoatDollbop: **"Pixynkxy lxyayxyerxys", satinCollarDollrilo: **"Chxyooxysexy oxynexy hxyerxyo xyshxyadxye,xy txyhexyn xyadxyd xytwxyo xysoxyftxy axyccxyesxysoxyrixyesxy.", satinStitchmapDollzemi: **"Saxyvexy Rxyecxyipxye", satinPinboardDollvani: UIColor(red: 1, green: 0.39, blue: 0.76, alpha: 1)),
-        DolluAppIdeaCard(satinCoatDollbop: **"Shxyelxyf xybaxylaxyncxye", satinCollarDollrilo: **"Kexyepxy txyalxyl xyprxyopxys xybexyhixyndxy txyhexy dxyolxyl xyanxyd xysmxyalxyl xychxyarxymsxy nxyeaxyr xythxye xyfexyetxy.", satinStitchmapDollzemi: **"Coxympxylexytexyd", satinPinboardDollvani: UIColor(red: 0.43, green: 0.82, blue: 0.73, alpha: 1)),
-        DolluAppIdeaCard(satinCoatDollbop: **"Phxyotxyo xyrhxyytxyhmxy", satinCollarDollrilo: **"Shxyooxyt xythxye xyfuxyllxy oxyutxyfixyt xyfixyrsxyt,xy txyhexyn xyonxye xyfaxybrxyicxy dxyetxyaixyl.xy", satinStitchmapDollzemi: **"Trxyy xynexyxtxy", satinPinboardDollvani: UIColor(red: 0.70, green: 0.50, blue: 1, alpha: 1))
+    static let pearlEnsembleDollyara: [DolluCollectorIdeaCard] = [
+        DolluCollectorIdeaCard(satinCoatDollbop: **"Pixynkxy lxyayxyerxys", satinCollarDollrilo: **"Chxyooxysexy oxynexy hxyerxyo xyshxyadxye,xy txyhexyn xyadxyd xytwxyo xysoxyftxy axyccxyesxysoxyrixyesxy.", satinStitchmapDollzemi: **"Saxyvexy Rxyecxyipxye", satinPinboardDollvani: UIColor(red: 1, green: 0.39, blue: 0.76, alpha: 1)),
+        DolluCollectorIdeaCard(satinCoatDollbop: **"Shxyelxyf xybaxylaxyncxye", satinCollarDollrilo: **"Kexyepxy txyalxyl xyprxyopxys xybexyhixyndxy txyhexy dxyolxyl xyanxyd xysmxyalxyl xychxyarxymsxy nxyeaxyr xythxye xyfexyetxy.", satinStitchmapDollzemi: **"Coxympxylexytexyd", satinPinboardDollvani: UIColor(red: 0.43, green: 0.82, blue: 0.73, alpha: 1)),
+        DolluCollectorIdeaCard(satinCoatDollbop: **"Phxyotxyo xyrhxyytxyhmxy", satinCollarDollrilo: **"Shxyooxyt xythxye xyfuxyllxy oxyutxyfixyt xyfixyrsxyt,xy txyhexyn xyonxye xyfaxybrxyicxy dxyetxyaixyl.xy", satinStitchmapDollzemi: **"Trxyy xynexyxtxy", satinPinboardDollvani: UIColor(red: 0.70, green: 0.50, blue: 1, alpha: 1))
     ]
 
-    static func tinyCoverDollmexa(_ tinyCapeDollpoxa: DolluAppIdeaKind) -> [DolluAppIdeaMetric] {
+    static func tinyCoverDollmexa(_ tinyCapeDollpoxa: DolluCollectorIdeaKind) -> [DolluCollectorIdeaMetric] {
         switch tinyCapeDollpoxa {
         case .cozyWardrobeDollukp: return pearlGuideDollukp
         case .mistyThemeDollfina: return pearlSkirtDollniva
@@ -79,7 +79,7 @@ private enum DolluAppIdeaStudioArchive {
         }
     }
 
-    static func tinySleeveDollsero(_ tinyCapeDollpoxa: DolluAppIdeaKind) -> [DolluAppIdeaCard] {
+    static func tinySleeveDollsero(_ tinyCapeDollpoxa: DolluCollectorIdeaKind) -> [DolluCollectorIdeaCard] {
         switch tinyCapeDollpoxa {
         case .cozyWardrobeDollukp: return pearlOutfitDolllaro
         case .mistyThemeDollfina: return pearlCatalogDollnoro
@@ -88,7 +88,7 @@ private enum DolluAppIdeaStudioArchive {
     }
 }
 
-final class DolluAppIdeaStudioViewController: UIViewController {
+final class DolluCollectorIdeaStudioViewController: UIViewController {
     private let tinyFabricbookDollcavo = UIScrollView()
     private let tinySnapshotDollhumi = UIStackView()
     private let tinyDisplayDollsovo = UIStackView()
@@ -96,7 +96,7 @@ final class DolluAppIdeaStudioViewController: UIViewController {
     private let sageWaistlineDollsovo = UIStackView()
     private let miniTextureDollfina = UILabel()
     private let miniAccessoryDollquvo = UILabel()
-    private var miniShelfDolllumi = DolluAppIdeaKind.cozyWardrobeDollukp
+    private var miniShelfDolllumi = DolluCollectorIdeaKind.cozyWardrobeDollukp
     private var miniLayerDollmivo: [UIButton] = []
 
     override func viewDidLoad() {
@@ -179,7 +179,7 @@ final class DolluAppIdeaStudioViewController: UIViewController {
     }
 
     private func pocketWaistlineDollrevo() {
-        DolluAppIdeaKind.allCases.enumerated().forEach { pocketPhotologDollnexa, pocketCollectionDollruni in
+        DolluCollectorIdeaKind.allCases.enumerated().forEach { pocketPhotologDollnexa, pocketCollectionDollruni in
             let pocketMarkerDollukp = UIButton(type: .custom)
             pocketMarkerDollukp.translatesAutoresizingMaskIntoConstraints = false
             pocketMarkerDollukp.setTitle(pocketCollectionDollruni.dollShortTitle, for: .normal)
@@ -196,7 +196,7 @@ final class DolluAppIdeaStudioViewController: UIViewController {
     }
 
     @objc private func rosyBeadworkDollsovo(_ rosyClosetDollzora: UIButton) {
-        guard let rosyMatchingDollmora = DolluAppIdeaKind(rawValue: rosyClosetDollzora.tag) else { return }
+        guard let rosyMatchingDollmora = DolluCollectorIdeaKind(rawValue: rosyClosetDollzora.tag) else { return }
         miniShelfDolllumi = rosyMatchingDollmora
         rosyLaceworkDollkora()
     }
@@ -211,7 +211,7 @@ final class DolluAppIdeaStudioViewController: UIViewController {
         }
 
         miniBlouseDollvani.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        DolluAppIdeaStudioArchive.tinyCoverDollmexa(miniShelfDolllumi).forEach {
+        DolluCollectorIdeaStudioArchive.tinyCoverDollmexa(miniShelfDolllumi).forEach {
             miniBlouseDollvani.addArrangedSubview(ivoryBodiceDollvelo($0))
         }
 
@@ -226,7 +226,7 @@ final class DolluAppIdeaStudioViewController: UIViewController {
         ivoryPaletteDollpavo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 24, dollFontWeight: .black)
         sageWaistlineDollsovo.addArrangedSubview(ivoryPaletteDollpavo)
 
-        DolluAppIdeaStudioArchive.tinySleeveDollsero(miniShelfDolllumi).forEach {
+        DolluCollectorIdeaStudioArchive.tinySleeveDollsero(miniShelfDolllumi).forEach {
             sageWaistlineDollsovo.addArrangedSubview(ivoryClipnoteDollbop($0))
         }
 
@@ -238,7 +238,7 @@ final class DolluAppIdeaStudioViewController: UIViewController {
         sageWaistlineDollsovo.addArrangedSubview(ivoryProgressDollrilo)
     }
 
-    private func ivoryBodiceDollvelo(_ ivoryCapeDollvani: DolluAppIdeaMetric) -> UIView {
+    private func ivoryBodiceDollvelo(_ ivoryCapeDollvani: DolluCollectorIdeaMetric) -> UIView {
         let amberRibbonlineDollukp = UIView()
         amberRibbonlineDollukp.translatesAutoresizingMaskIntoConstraints = false
         amberRibbonlineDollukp.backgroundColor = UIColor(white: 1, alpha: 0.08)
@@ -275,7 +275,7 @@ final class DolluAppIdeaStudioViewController: UIViewController {
         return amberRibbonlineDollukp
     }
 
-    private func ivoryClipnoteDollbop(_ amberHintDolllaro: DolluAppIdeaCard) -> UIView {
+    private func ivoryClipnoteDollbop(_ amberHintDolllaro: DolluCollectorIdeaCard) -> UIView {
         let amberBlouseDollnoro = UIView()
         amberBlouseDollnoro.translatesAutoresizingMaskIntoConstraints = false
         amberBlouseDollnoro.backgroundColor = DolluWardrobePalette.dollArchivePanelSoft

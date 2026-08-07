@@ -66,7 +66,6 @@ final class DolluWardrobeRouteClient {
         laceWardrobeDollvex.setValue(satinMarkerDollpavo, forHTTPHeaderField: **"kexyy")
         laceWardrobeDollvex.setValue(DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession.dollEntryToken ?? "", forHTTPHeaderField: **"toxykexyn")
         laceWardrobeDollvex.httpBody = try? JSONSerialization.data(withJSONObject: dollRequestBody)
-        printDollRouteRequest(ribbonSnapshotDollyara: ribbonSnapshotDollyara, dollRequestBody: dollRequestBody, laceWardrobeDollvex: laceWardrobeDollvex)
 
         let dreamyFabricbookDollukp = URLSessionConfiguration.default
         dreamyFabricbookDollukp.timeoutIntervalForRequest = 30
@@ -74,11 +73,9 @@ final class DolluWardrobeRouteClient {
         URLSession(configuration: dreamyFabricbookDollukp).dataTask(with: laceWardrobeDollvex) { rosyGuideDollvex, stitchedPromptDollhumi, calmPatternDollmexa in
             DispatchQueue.main.async {
                 if let calmPatternDollmexa {
-                    self.printDollRouteFailure(calmPatternDollmexa)
                     completion(.failure(calmPatternDollmexa))
                     return
                 }
-                self.printDollRouteArchive(rosyGuideDollvex, stitchedPromptDollhumi)
                 guard let rosyGuideDollvex,
                       let porcelainJournalDollukp = try? JSONSerialization.jsonObject(with: rosyGuideDollvex, options: .allowFragments) as? [String: Any] else {
                     completion(.failure(DolluCollectorRouteFailure.emptyArchive))
@@ -86,7 +83,6 @@ final class DolluWardrobeRouteClient {
                 }
                 let dollRouteCode = self.stringValue(from: porcelainJournalDollukp, keys: [**"coxydexy", **"stxyatxyusxy"])
                 guard dollRouteCode == **"20xy00xy00xy" || dollRouteCode == **"00xy00xy" else {
-                    print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy bxyloxyckxyedxy cxyodxye:xy", dollRouteCode ?? **"<nxyilxy>")
                     completion(.failure(DolluCollectorRouteFailure.blockedArchive))
                     return
                 }
@@ -105,33 +101,6 @@ final class DolluWardrobeRouteClient {
             }
         }
         return nil
-    }
-
-    private func printDollRouteRequest(ribbonSnapshotDollyara: URL, dollRequestBody: [String: Any], laceWardrobeDollvex: URLRequest) {
-        print(**"Doxyllxyu xyroxyutxye xyrexyquxyesxyt xyurxyl:xy", ribbonSnapshotDollyara.absoluteString)
-        print(**"Doxyllxyu xyroxyutxye xyrexyquxyesxyt xymexythxyodxy:", laceWardrobeDollvex.httpMethod ?? "")
-        print(**"Doxyllxyu xyroxyutxye xyrexyquxyesxyt xyhexyadxyerxys:xy", laceWardrobeDollvex.allHTTPHeaderFields ?? [:])
-        print(**"Doxyllxyu xyroxyutxye xyrexyquxyesxyt xyboxydyxy:", dollRequestBody)
-    }
-
-    private func printDollRouteArchive(_ rosyGuideDollvex: Data?, _ stitchedPromptDollhumi: URLResponse?) {
-        if let tinyCoverDollmexa = stitchedPromptDollhumi as? HTTPURLResponse {
-            print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy sxytaxytuxys:xy", tinyCoverDollmexa.statusCode)
-            print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy hxyeaxydexyrsxy:", tinyCoverDollmexa.allHeaderFields)
-        }
-        guard let rosyGuideDollvex else {
-            print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy bxyodxyy:xy exympxytyxy")
-            return
-        }
-        let tinySnapshotDollhumi = String(data: rosyGuideDollvex, encoding: .utf8) ?? **"<nxyonxy-uxytfxy8 xyboxydyxy>"
-        print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy rxyawxy:", tinySnapshotDollhumi)
-        if let porcelainJournalDollukp = try? JSONSerialization.jsonObject(with: rosyGuideDollvex, options: .allowFragments) {
-            print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy jxysoxyn:xy", porcelainJournalDollukp)
-        }
-    }
-
-    private func printDollRouteFailure(_ calmPatternDollmexa: Error) {
-        print(**"Doxyllxyu xyroxyutxye xyrexyspxyonxysexy exyrrxyorxy:", calmPatternDollmexa.localizedDescription)
     }
 }
 
