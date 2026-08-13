@@ -189,7 +189,7 @@ class DolluALoj: UIViewController {
             self.velvetPoseDollseroLoadingOrb.stopAnimating()
             self.view.isUserInteractionEnabled = true
 
-            let dollLandingStack = UINavigationController(rootViewController: DolluAuthLandingViewController())
+            let dollLandingStack = UINavigationController(rootViewController: DollupearlSkirtDController())
             dollLandingStack.setNavigationBarHidden(true, animated: false)
             guard let dollWindow = self.view.window ?? DolluALojWindowFinder.miniTextureDollfina() else { return }
             UIView.transition(with: dollWindow, duration: 0.24, options: [.transitionCrossDissolve, .beginFromCurrentState]) {

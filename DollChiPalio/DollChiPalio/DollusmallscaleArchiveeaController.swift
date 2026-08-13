@@ -1,11 +1,11 @@
 import UIKit
 
-private enum DolluCollectorIdeaKind: Int, CaseIterable {
+private enum DollugardenBackgroundIdeaKind: Int, CaseIterable {
     case cozyWardrobeDollukp
     case mistyThemeDollfina
     case gentleOutfitDollvelo
 
-    var dollTitle: String {
+    var dollgardenFabricrollDollvani: String {
         switch self {
         case .cozyWardrobeDollukp: return **"Doxyllxy Cxyloxysexyt"
         case .mistyThemeDollfina: return **"Thxyemxye xyChxyalxylexyngxye"
@@ -13,7 +13,7 @@ private enum DolluCollectorIdeaKind: Int, CaseIterable {
         }
     }
 
-    var dollShortTitle: String {
+    var dollgardenStandDollzemiTitle: String {
         switch self {
         case .cozyWardrobeDollukp: return **"Clxyosxyetxy"
         case .mistyThemeDollfina: return **"Chxyalxylexyngxye"
@@ -71,7 +71,7 @@ private enum DolluCollectorIdeaStudioArchive {
         DolluCollectorIdeaCard(satinCoatDollbop: **"Phxyotxyo xyrhxyytxyhmxy", satinCollarDollrilo: **"Shxyooxyt xythxye xyfuxyllxy oxyutxyfixyt xyfixyrsxyt,xy txyhexyn xyonxye xyfaxybrxyicxy dxyetxyaixyl.xy", satinStitchmapDollzemi: **"Trxyy xynexyxtxy", satinPinboardDollvani: UIColor(red: 0.70, green: 0.50, blue: 1, alpha: 1))
     ]
 
-    static func tinyCoverDollmexa(_ tinyCapeDollpoxa: DolluCollectorIdeaKind) -> [DolluCollectorIdeaMetric] {
+    static func tinyCoverDollmexa(_ tinyCapeDollpoxa: DollugardenBackgroundIdeaKind) -> [DolluCollectorIdeaMetric] {
         switch tinyCapeDollpoxa {
         case .cozyWardrobeDollukp: return pearlGuideDollukp
         case .mistyThemeDollfina: return pearlSkirtDollniva
@@ -79,7 +79,7 @@ private enum DolluCollectorIdeaStudioArchive {
         }
     }
 
-    static func tinySleeveDollsero(_ tinyCapeDollpoxa: DolluCollectorIdeaKind) -> [DolluCollectorIdeaCard] {
+    static func tinySleeveDollsero(_ tinyCapeDollpoxa: DollugardenBackgroundIdeaKind) -> [DolluCollectorIdeaCard] {
         switch tinyCapeDollpoxa {
         case .cozyWardrobeDollukp: return pearlOutfitDolllaro
         case .mistyThemeDollfina: return pearlCatalogDollnoro
@@ -88,7 +88,7 @@ private enum DolluCollectorIdeaStudioArchive {
     }
 }
 
-final class DolluCollectorIdeaStudioViewController: UIViewController {
+final class DollusmallscaleArchiveeaController: UIViewController {
     private let tinyFabricbookDollcavo = UIScrollView()
     private let tinySnapshotDollhumi = UIStackView()
     private let tinyDisplayDollsovo = UIStackView()
@@ -96,7 +96,7 @@ final class DolluCollectorIdeaStudioViewController: UIViewController {
     private let sageWaistlineDollsovo = UIStackView()
     private let miniTextureDollfina = UILabel()
     private let miniAccessoryDollquvo = UILabel()
-    private var miniShelfDolllumi = DolluCollectorIdeaKind.cozyWardrobeDollukp
+    private var miniShelfDolllumi = DollugardenBackgroundIdeaKind.cozyWardrobeDollukp
     private var miniLayerDollmivo: [UIButton] = []
 
     override func viewDidLoad() {
@@ -179,10 +179,10 @@ final class DolluCollectorIdeaStudioViewController: UIViewController {
     }
 
     private func pocketWaistlineDollrevo() {
-        DolluCollectorIdeaKind.allCases.enumerated().forEach { pocketPhotologDollnexa, pocketCollectionDollruni in
+        DollugardenBackgroundIdeaKind.allCases.enumerated().forEach { pocketPhotologDollnexa, pocketCollectionDollruni in
             let pocketMarkerDollukp = UIButton(type: .custom)
             pocketMarkerDollukp.translatesAutoresizingMaskIntoConstraints = false
-            pocketMarkerDollukp.setTitle(pocketCollectionDollruni.dollShortTitle, for: .normal)
+            pocketMarkerDollukp.setTitle(pocketCollectionDollruni.dollgardenStandDollzemiTitle, for: .normal)
             pocketMarkerDollukp.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .bold)
             pocketMarkerDollukp.layer.cornerRadius = 18
             pocketMarkerDollukp.layer.borderWidth = 1
@@ -196,7 +196,7 @@ final class DolluCollectorIdeaStudioViewController: UIViewController {
     }
 
     @objc private func rosyBeadworkDollsovo(_ rosyClosetDollzora: UIButton) {
-        guard let rosyMatchingDollmora = DolluCollectorIdeaKind(rawValue: rosyClosetDollzora.tag) else { return }
+        guard let rosyMatchingDollmora = DollugardenBackgroundIdeaKind(rawValue: rosyClosetDollzora.tag) else { return }
         miniShelfDolllumi = rosyMatchingDollmora
         rosyLaceworkDollkora()
     }
@@ -221,7 +221,7 @@ final class DolluCollectorIdeaStudioViewController: UIViewController {
         }
 
         let ivoryPaletteDollpavo = UILabel()
-        ivoryPaletteDollpavo.text = miniShelfDolllumi.dollTitle
+        ivoryPaletteDollpavo.text = miniShelfDolllumi.dollgardenFabricrollDollvani
         ivoryPaletteDollpavo.textColor = .white
         ivoryPaletteDollpavo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 24, dollFontWeight: .black)
         sageWaistlineDollsovo.addArrangedSubview(ivoryPaletteDollpavo)

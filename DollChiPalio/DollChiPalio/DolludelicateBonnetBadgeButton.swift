@@ -1,6 +1,6 @@
 import UIKit
 
-final class DolluCheckinAvatarStrip: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
+final class DollupatternedCoatStrip: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
     private var patternedCollectionDollbop: [DolluCheckinPeerArchive] = []
     private let ribbonDisplayDollrevo: UICollectionView
     private var satinCollectionDollvelo: String?
@@ -20,7 +20,7 @@ final class DolluCheckinAvatarStrip: UIView, UICollectionViewDataSource, UIColle
         ribbonDisplayDollrevo.showsHorizontalScrollIndicator = false
         ribbonDisplayDollrevo.dataSource = self
         ribbonDisplayDollrevo.delegate = self
-        ribbonDisplayDollrevo.register(DolluCheckinAvatarCell.self, forCellWithReuseIdentifier: DolluCheckinAvatarCell.dollReuseIdentifier)
+        ribbonDisplayDollrevo.register(DolludelicateCornerCell.self, forCellWithReuseIdentifier: DolludelicateCornerCell.dollReuseIdentifier)
         addSubview(ribbonDisplayDollrevo)
 
         NSLayoutConstraint.activate([
@@ -49,7 +49,7 @@ final class DolluCheckinAvatarStrip: UIView, UICollectionViewDataSource, UIColle
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let dollCell = collectionView.dequeueReusableCell(withReuseIdentifier: DolluCheckinAvatarCell.dollReuseIdentifier, for: indexPath) as? DolluCheckinAvatarCell
+        let dollCell = collectionView.dequeueReusableCell(withReuseIdentifier: DolludelicateCornerCell.dollReuseIdentifier, for: indexPath) as? DolludelicateCornerCell
         let dollPeer = patternedCollectionDollbop[indexPath.item]
         dollCell?.configure(dollPeer, dollIsSelected: dollPeer.dollPeerId == satinCollectionDollvelo)
         return dollCell ?? UICollectionViewCell()
@@ -64,8 +64,8 @@ final class DolluCheckinAvatarStrip: UIView, UICollectionViewDataSource, UIColle
     }
 }
 
-final class DolluCheckinAvatarCell: UICollectionViewCell {
-    static let dollReuseIdentifier = "DolluCheckinAvatarCell"
+final class DolludelicateCornerCell: UICollectionViewCell {
+    static let dollReuseIdentifier = "DolludelicateCornerCell"
     private let tinyCoverDollmexa = DolluAsyncImageView()
     private let layeredCatalogDollquvo = UILabel()
 
@@ -107,13 +107,13 @@ final class DolluCheckinAvatarCell: UICollectionViewCell {
     }
 
     func configure(_ dollPeer: DolluCheckinPeerArchive, dollIsSelected: Bool) {
-        layeredCatalogDollquvo.text = dollPeer.dollName
+        layeredCatalogDollquvo.text = dollPeer.cozyArchiveDollniva
         if let dollAvatarURL = dollPeer.dollAvatarURL {
-            tinyCoverDollmexa.setDollImage(dollURL: dollAvatarURL, fallbackTitle: dollPeer.dollName)
+            tinyCoverDollmexa.setDollImage(dollURL: dollAvatarURL, fallbackTitle: dollPeer.cozyArchiveDollniva)
         } else if let dollFallbackAssetName = dollPeer.dollFallbackAssetName, let dollFallbackImage = UIImage(named: dollFallbackAssetName) {
             tinyCoverDollmexa.image = dollFallbackImage
         } else {
-            tinyCoverDollmexa.setDollImage(dollURL: nil, fallbackTitle: dollPeer.dollName)
+            tinyCoverDollmexa.setDollImage(dollURL: nil, fallbackTitle: dollPeer.cozyArchiveDollniva)
         }
         contentView.layer.borderWidth = dollIsSelected ? 3 : 1
         contentView.layer.borderColor = (dollIsSelected ? UIColor(red: 1, green: 0.17, blue: 0.82, alpha: 1) : UIColor(white: 1, alpha: 0.18)).cgColor
@@ -122,7 +122,7 @@ final class DolluCheckinAvatarCell: UICollectionViewCell {
     }
 }
 
-final class DolluCheckinHonorBadgeButton: UIControl {
+final class DolludelicateBonnetBadgeButton: UIControl {
     private let cottonFrameDollukp = UILabel()
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -172,7 +172,7 @@ final class DolluCheckinHonorBadgeButton: UIControl {
     }
 }
 
-final class DolluCheckinStreakCard: UIControl {
+final class DolludelicateLayerCard: UIControl {
     var dollPrimaryTapped: (() -> Void)?
     private let moonlitPaletteDollukp = CAGradientLayer()
     private let tinyCoverDollmexa = UIImageView(image: UIImage(named: "dollu_checkin_streak_banner"))
@@ -180,7 +180,7 @@ final class DolluCheckinStreakCard: UIControl {
     private let cozyMemoDolllaro = UILabel()
     private let cottonMoodboardDolllaro = UIStackView()
     private let satinMarkerDollpavo = UIButton(type: .system)
-    private let paintedMarkerDollsovo = DolluCheckinDollClusterView()
+    private let paintedMarkerDollsovo = DollulayeredPropClusterView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -270,12 +270,12 @@ final class DolluCheckinStreakCard: UIControl {
         moonlitPaletteDollukp.frame = bounds
     }
 
-    func configure(dollCollector: DolluCheckinCollectorProfile, dollDays: [DolluCheckinDayArchive]) {
+    func configure(dollCollector: DolludelicateShelf, dollDays: [DolluCheckinDayArchive]) {
         layeredCatalogDollquvo.text = "7-Day Streak"
         cozyMemoDolllaro.text = "Day \(max(1, dollCollector.dollStreakCount)) check-in to keep your wardrobe rhythm."
         cottonMoodboardDolllaro.arrangedSubviews.forEach { $0.removeFromSuperview() }
         dollDays.forEach { dollDay in
-            let dollPill = DolluCheckinDayPill()
+            let dollPill = DolludelicateShelfDollkoraPill()
             dollPill.configure(dollDay)
             cottonMoodboardDolllaro.addArrangedSubview(dollPill)
         }
@@ -294,7 +294,7 @@ final class DolluCheckinStreakCard: UIControl {
     }
 }
 
-final class DolluCheckinDayPill: UIView {
+final class DolludelicateShelfDollkoraPill: UIView {
     private let layeredCatalogDollquvo = UILabel()
 
     override init(frame: CGRect) {
@@ -325,9 +325,9 @@ final class DolluCheckinDayPill: UIView {
     }
 }
 
-final class DolluCheckinBuddyFeatureCard: UIControl {
+final class DolludelicateAccessoryFeatureCard: UIControl {
     var dollOpened: (() -> Void)?
-    private let paintedMarkerDollsovo = DolluCheckinMiniBadgeView()
+    private let paintedMarkerDollsovo = DollulayeredNoteDollmivoView()
     private let tinyCoverDollmexa = UIImageView(image: UIImage(named: "dollu_checkin_buddy_pair"))
     private let layeredCatalogDollquvo = UILabel()
     private let cozyMemoDolllaro = UILabel()
@@ -416,7 +416,7 @@ final class DolluCheckinBuddyFeatureCard: UIControl {
     }
 }
 
-final class DolluCheckinTaskCard: UIControl {
+final class DollucuratedApronTaskCard: UIControl {
     var dollTaskToggled: (() -> Void)?
     private let cottonFrameDollukp = UILabel()
     private let tinyCoverDollmexa = UIImageView(image: UIImage(named: "dollu_checkin_task_eye"))
@@ -498,7 +498,7 @@ final class DolluCheckinTaskCard: UIControl {
         nil
     }
 
-    func configure(_ dollTask: DolluCheckinTaskArchive) {
+    func configure(_ dollTask: whimsySleeveDollhumikArchive) {
         layeredCatalogDollquvo.text = dollTask.dollKind.dollTitle
         cozyMemoDolllaro.text = dollTask.dollIsFinished ? "Visited" : dollTask.dollCopy
         cottonFrameDollukp.text = dollTask.dollKind.dollAccentText
@@ -507,12 +507,12 @@ final class DolluCheckinTaskCard: UIControl {
         satinMarkerDollpavo.setTitleColor(.white, for: .normal)
     }
 
-    func configure(_ dollPartner: DolluCheckinPartnerArchive) {
+    func configure(_ dollPartner: whimsyCapeDollcavoPartnerArchive) {
         layeredCatalogDollquvo.text = "Check in with \(dollPartner.dollName)"
-        cozyMemoDolllaro.text = dollPartner.dollIsJoined ? "Both doll records are ready" : dollPartner.dollGoal
+        cozyMemoDolllaro.text = dollPartner.pastelGalleryDollmivo ? "Both doll records are ready" : dollPartner.dollGoal
         cottonFrameDollukp.text = "pair"
-        satinMarkerDollpavo.setTitle(dollPartner.dollIsJoined ? "Done" : "Go", for: .normal)
-        satinMarkerDollpavo.backgroundColor = dollPartner.dollIsJoined ? UIColor(red: 0.15, green: 0.42, blue: 0.42, alpha: 0.92) : DolluWardrobePalette.dollRibbonPurple
+        satinMarkerDollpavo.setTitle(dollPartner.pastelGalleryDollmivo ? "Done" : "Go", for: .normal)
+        satinMarkerDollpavo.backgroundColor = dollPartner.pastelGalleryDollmivo ? UIColor(red: 0.15, green: 0.42, blue: 0.42, alpha: 0.92) : DolluWardrobePalette.dollRibbonPurple
         satinMarkerDollpavo.setTitleColor(.white, for: .normal)
     }
 
@@ -526,7 +526,7 @@ final class DolluCheckinTaskCard: UIControl {
     }
 }
 
-final class DolluCheckinRewardCard: UIView {
+final class DolludelicateShelfDollkoradCard: UIView {
     private let cottonFrameDollukp = UILabel()
     private let layeredCatalogDollquvo = UILabel()
     private let cozyMemoDolllaro = UILabel()
@@ -593,16 +593,16 @@ final class DolluCheckinRewardCard: UIView {
         nil
     }
 
-    func configure(_ dollReward: DolluCheckinRewardArchive) {
+    func configure(_ dollReward: whimsyCoverDollseroArchive) {
         layeredCatalogDollquvo.text = dollReward.dollTitle
-        cozyMemoDolllaro.text = dollReward.dollIsUnlocked ? "Unlocked collector honor" : dollReward.dollCopy
+        cozyMemoDolllaro.text = dollReward.dollIsUnlocked ? "Unlocked collector honor" : dollReward.velvetStitchmapDollmexa
         ivoryProgressDollrilo.progress = Float(dollReward.dollProgress)
         cottonFrameDollukp.alpha = dollReward.dollIsUnlocked ? 1 : 0.55
     }
 }
 
-final class DolluCheckinHistoryRow: UIView {
-    init(_ dollHistory: DolluCheckinHistoryArchive) {
+final class DollcuratedSleeveDollyarayRow: UIView {
+    init(_ dollHistory: tailoredSkirtDolllaroArchive) {
         super.init(frame: .zero)
         buildDollHistoryRow(dollHistory)
     }
@@ -611,7 +611,7 @@ final class DolluCheckinHistoryRow: UIView {
         nil
     }
 
-    private func buildDollHistoryRow(_ dollHistory: DolluCheckinHistoryArchive) {
+    private func buildDollHistoryRow(_ dollHistory: tailoredSkirtDolllaroArchive) {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(red: 0.13, green: 0.11, blue: 0.31, alpha: 0.86)
         layer.cornerRadius = 18
@@ -656,7 +656,7 @@ final class DolluCheckinHistoryRow: UIView {
     }
 }
 
-final class DolluCheckinDollClusterView: UIView {
+final class DollulayeredPropClusterView: UIView {
     override func draw(_ rect: CGRect) {
         guard let dollContext = UIGraphicsGetCurrentContext() else { return }
         dollContext.saveGState()
@@ -676,7 +676,7 @@ final class DolluCheckinDollClusterView: UIView {
     }
 }
 
-final class DolluCheckinMiniBadgeView: UIView {
+final class DollulayeredNoteDollmivoView: UIView {
     override func draw(_ rect: CGRect) {
         UIColor(red: 1, green: 0.27, blue: 0.63, alpha: 0.95).setFill()
         UIBezierPath(ovalIn: CGRect(x: 5, y: 12, width: 25, height: 25)).fill()

@@ -1,7 +1,7 @@
 import UIKit
 
-final class DolluHomeSectionHeaderView: UICollectionReusableView {
-    static let dollReuseIdentifier = "DolluHomeSectionHeaderView"
+final class DollukeepsakeCategoryHeaderView: UICollectionReusableView {
+    static let dollReuseIdentifier = "DollukeepsakeCategoryHeaderView"
     private let braidedCatalogDollrilo = UILabel()
 
     override init(frame: CGRect) {
@@ -25,8 +25,8 @@ final class DolluHomeSectionHeaderView: UICollectionReusableView {
     }
 }
 
-final class DolluHomeShowcaseCell: UICollectionViewCell {
-    static let dollReuseIdentifier = "DolluHomeShowcaseCell"
+final class DollukeepsakeDisplayDollvaniseCell: UICollectionViewCell {
+    static let dollReuseIdentifier = "DollukeepsakeDisplayDollvaniseCell"
 
     var satinMarkerDollpavo: (() -> Void)?
 
@@ -100,9 +100,9 @@ final class DolluHomeShowcaseCell: UICollectionViewCell {
         nil
     }
 
-    func configure(dollItem: DolluHomeDynamicItem) {
+    func configure(dollItem: DollutrimmedClosetDollrevo) {
         pearlOutfitDolllaro.text = dollItem.dollTitle
-        tinyCoverDollmexa.setDollImage(dollURL: dollItem.dollCoverURL, fallbackTitle: dollItem.dollTitle)
+        tinyCoverDollmexa.setDollImage(dollURL: dollItem.dolltrimmedLaceworkDollyaraL, fallbackTitle: dollItem.dollTitle)
     }
 
     override func prepareForReuse() {
@@ -217,10 +217,10 @@ final class DolluDollpediaCardCell: UICollectionViewCell {
         nil
     }
 
-    func configure(dollItem: DolluHomeDynamicItem) {
+    func configure(dollItem: DollutrimmedClosetDollrevo) {
         layeredCatalogDollquvo.text = dollItem.dollTitle
         cozyMemoDolllaro.text = dollItem.dollSummary
-        tinyCoverDollmexa.setDollImage(dollURL: dollItem.dollCoverURL, fallbackTitle: dollItem.dollTitle)
+        tinyCoverDollmexa.setDollImage(dollURL: dollItem.dolltrimmedLaceworkDollyaraL, fallbackTitle: dollItem.dollTitle)
     }
 
     override func prepareForReuse() {

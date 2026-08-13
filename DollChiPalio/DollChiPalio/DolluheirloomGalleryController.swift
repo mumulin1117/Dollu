@@ -1,20 +1,20 @@
 import UIKit
 
-final class DolluCollectorHomeViewController: UIViewController {
+final class DolluheirloomGalleryController: UIViewController {
     private enum DolluHomeSection: Int, CaseIterable {
         case showcase
         case dollpedia
     }
 
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let sageLookbookDollmexa = UILabel()
     private let satinMarkerDollpavo = UIButton()
     private let calmNoteDollsovo = UIActivityIndicatorView(style: .large)
     private let floralHintDollvelo = UILabel()
-    private let pearlGuideDollukp = DolluHomeRepository()
+    private let pearlGuideDollukp = DollukeepsakeHemlineDollmivository()
     private var ribbonDisplayDollrevo: UICollectionView!
-    private var dreamySnapshotDollniva: [DolluHomeDynamicItem] = []
-    private var petiteCategoryDollvelo: [DolluHomeDynamicItem] = []
+    private var dreamySnapshotDollniva: [DollutrimmedClosetDollrevo] = []
+    private var petiteCategoryDollvelo: [DollutrimmedClosetDollrevo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +55,9 @@ final class DolluCollectorHomeViewController: UIViewController {
         ribbonDisplayDollrevo.delegate = self
         ribbonDisplayDollrevo.alwaysBounceVertical = true
         ribbonDisplayDollrevo.contentInset.bottom = 126
-        ribbonDisplayDollrevo.register(DolluHomeShowcaseCell.self, forCellWithReuseIdentifier: DolluHomeShowcaseCell.dollReuseIdentifier)
+        ribbonDisplayDollrevo.register(DollukeepsakeDisplayDollvaniseCell.self, forCellWithReuseIdentifier: DollukeepsakeDisplayDollvaniseCell.dollReuseIdentifier)
         ribbonDisplayDollrevo.register(DolluDollpediaCardCell.self, forCellWithReuseIdentifier: DolluDollpediaCardCell.dollReuseIdentifier)
-        ribbonDisplayDollrevo.register(DolluHomeSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DolluHomeSectionHeaderView.dollReuseIdentifier)
+        ribbonDisplayDollrevo.register(DollukeepsakeCategoryHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DollukeepsakeCategoryHeaderView.dollReuseIdentifier)
         view.addSubview(ribbonDisplayDollrevo)
 
         calmNoteDollsovo.translatesAutoresizingMaskIntoConstraints = false
@@ -159,8 +159,8 @@ final class DolluCollectorHomeViewController: UIViewController {
 
     private func loadDollCollectorGallery() {
         let dollGroup = DispatchGroup()
-        var dollShowcaseResult: Result<[DolluHomeDynamicItem], Error>?
-        var dollpediaResult: Result<[DolluHomeDynamicItem], Error>?
+        var dollShowcaseResult: Result<[DollutrimmedClosetDollrevo], Error>?
+        var dollpediaResult: Result<[DollutrimmedClosetDollrevo], Error>?
 
         dollGroup.enter()
         pearlGuideDollukp.fetchDolluDynamicItems(dollKind: .showcaseInspiration) { dollResult in
@@ -184,10 +184,10 @@ final class DolluCollectorHomeViewController: UIViewController {
         calmNoteDollsovo.startAnimating()
     }
 
-    private func applyDollGalleryResult(dollShowcaseResult: Result<[DolluHomeDynamicItem], Error>?, dollpediaResult: Result<[DolluHomeDynamicItem], Error>?) {
+    private func applyDollGalleryResult(dollShowcaseResult: Result<[DollutrimmedClosetDollrevo], Error>?, dollpediaResult: Result<[DollutrimmedClosetDollrevo], Error>?) {
         calmNoteDollsovo.stopAnimating()
-        dreamySnapshotDollniva = (try? dollShowcaseResult?.get()) ?? DolluHomeDynamicItem.showcaseFallbackItems
-        petiteCategoryDollvelo = (try? dollpediaResult?.get()) ?? DolluHomeDynamicItem.dollpediaFallbackItems
+        dreamySnapshotDollniva = (try? dollShowcaseResult?.get()) ?? DollutrimmedClosetDollrevo.showcaseFallbackItems
+        petiteCategoryDollvelo = (try? dollpediaResult?.get()) ?? DollutrimmedClosetDollrevo.dollpediaFallbackItems
 
         if dreamySnapshotDollniva.isEmpty && petiteCategoryDollvelo.isEmpty {
             floralHintDollvelo.text = "Doll inspiration is waiting to be collected."
@@ -216,18 +216,18 @@ final class DolluCollectorHomeViewController: UIViewController {
         }
     }
 
-    private func openDollRoute(for dollItem: DolluHomeDynamicItem) {
-        let dollRouteURL = dollItem.dollRouteURL ?? DolluCollectorRouteBuilder.detailRoute(dollArchiveId: dollItem.dollArchiveId)
+    private func openDollRoute(for dollItem: DollutrimmedClosetDollrevo) {
+        let dollRouteURL = dollItem.trimmedClosetDollrevoURL ?? DolluCollectorRouteBuilder.detailRoute(dollArchiveId: dollItem.dollArchiveId)
         navigationController?.pushViewController(DolluALoj(dollRouteURL: dollRouteURL), animated: true)
     }
 
-    private func openDollSafetyRoute(for dollItem: DolluHomeDynamicItem) {
+    private func openDollSafetyRoute(for dollItem: DollutrimmedClosetDollrevo) {
         let dollRouteURL = DolluCollectorRouteBuilder.safetyRoute(dollArchiveId: dollItem.dollArchiveId)
         navigationController?.pushViewController(DolluALoj(dollRouteURL: dollRouteURL), animated: true)
     }
 }
 
-extension DolluCollectorHomeViewController: UICollectionViewDataSource {
+extension DolluheirloomGalleryController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         DolluHomeSection.allCases.count
     }
@@ -246,7 +246,7 @@ extension DolluCollectorHomeViewController: UICollectionViewDataSource {
         guard let dollSection = DolluHomeSection(rawValue: indexPath.section) else { return UICollectionViewCell() }
         switch dollSection {
         case .showcase:
-            let dollCell = collectionView.dequeueReusableCell(withReuseIdentifier: DolluHomeShowcaseCell.dollReuseIdentifier, for: indexPath) as? DolluHomeShowcaseCell
+            let dollCell = collectionView.dequeueReusableCell(withReuseIdentifier: DollukeepsakeDisplayDollvaniseCell.dollReuseIdentifier, for: indexPath) as? DollukeepsakeDisplayDollvaniseCell
             let dollItem = dreamySnapshotDollniva[indexPath.item]
             dollCell?.configure(dollItem: dollItem)
             dollCell?.satinMarkerDollpavo = { [weak self] in
@@ -265,14 +265,14 @@ extension DolluCollectorHomeViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let dollHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DolluHomeSectionHeaderView.dollReuseIdentifier, for: indexPath) as? DolluHomeSectionHeaderView
+        let dollHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DollukeepsakeCategoryHeaderView.dollReuseIdentifier, for: indexPath) as? DollukeepsakeCategoryHeaderView
         let dollTitle = DolluHomeSection(rawValue: indexPath.section) == .showcase ? "Showcase" : "Dollpedia"
         dollHeader?.configure(dollTitle: dollTitle)
         return dollHeader ?? UICollectionReusableView()
     }
 }
 
-extension DolluCollectorHomeViewController: UICollectionViewDelegate {
+extension DolluheirloomGalleryController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let dollSection = DolluHomeSection(rawValue: indexPath.section) else { return }
         switch dollSection {

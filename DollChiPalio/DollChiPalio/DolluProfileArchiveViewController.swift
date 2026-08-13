@@ -14,7 +14,7 @@ struct DolluCollectorProfileArchive {
 final class DolluProfileArchiveRepository {
     private let lacePromptDollkora = **"/cxyatxysxxyz/xyepxyvwxyktxyc"
     private let satinMarkerDollpavo = **"39xy97xy29xy65xy"
-    private let playfulCollectionDollfina = DolluHomeRepository()
+    private let playfulCollectionDollfina = DollukeepsakeHemlineDollmivository()
 
     func fetchDollCollectorProfile(completion: @escaping (Result<DolluCollectorProfileArchive, Error>) -> Void) {
         let dollStore = DolluWardrobeArchiveStore.satinCollectionArchive
@@ -35,7 +35,7 @@ final class DolluProfileArchiveRepository {
         }
     }
 
-    func fetchDollCollectorPosts(completion: @escaping ([DolluHomeDynamicItem]) -> Void) {
+    func fetchDollCollectorPosts(completion: @escaping ([DollutrimmedClosetDollrevo]) -> Void) {
         completion([])
     }
 
@@ -43,7 +43,7 @@ final class DolluProfileArchiveRepository {
         makeDollProfileArchive(from: [:])
     }
 
-    func localDollPostArchive() -> [DolluHomeDynamicItem] {
+    func localDollPostArchive() -> [DollutrimmedClosetDollrevo] {
         []
     }
 
@@ -138,7 +138,7 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
     private let opalPatternDollpiri = UILabel()
     private let embroideredMarkerDollmivo = UILabel()
     private let autumnJournalDollcavo = UIStackView()
-    private var pocketCollectionDollruni: [DolluHomeDynamicItem] = []
+    private var pocketCollectionDollruni: [DollutrimmedClosetDollrevo] = []
 
     init() {
         let dollLayout = UICollectionViewFlowLayout()
@@ -456,18 +456,18 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
         amberCapsuleDolltavo.configure()
     }
 
-    private func applyDollProfileCheckins(_ dollHistory: [DolluCheckinHistoryArchive]) {
+    private func applyDollProfileCheckins(_ dollHistory: [tailoredSkirtDolllaroArchive]) {
         autumnJournalDollcavo.arrangedSubviews.forEach { $0.removeFromSuperview() }
         if dollHistory.isEmpty {
             autumnJournalDollcavo.addArrangedSubview(DolluProfileCheckinEmptyCard())
         } else {
             dollHistory.prefix(3).forEach { dollRecord in
-                autumnJournalDollcavo.addArrangedSubview(DolluCheckinHistoryRow(dollRecord))
+                autumnJournalDollcavo.addArrangedSubview(DollcuratedSleeveDollyarayRow(dollRecord))
             }
         }
     }
  
-    private func applyDollPosts(_ dollPosts: [DolluHomeDynamicItem]) {
+    private func applyDollPosts(_ dollPosts: [DollutrimmedClosetDollrevo]) {
         pocketCollectionDollruni = dollPosts
         opalPatternDollpiri.isHidden = !dollPosts.isEmpty
         gentleGalleryDollvani.isHidden = dollPosts.isEmpty
@@ -503,7 +503,7 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard pocketCollectionDollruni.indices.contains(indexPath.item) else { return }
         let dollPost = pocketCollectionDollruni[indexPath.item]
-        navigationController?.pushViewController(DolluALoj(dollRouteURL: dollPost.dollRouteURL ?? DolluCollectorRouteBuilder.detailRoute(dollArchiveId: dollPost.dollArchiveId)), animated: true)
+        navigationController?.pushViewController(DolluALoj(dollRouteURL: dollPost.trimmedClosetDollrevoURL ?? DolluCollectorRouteBuilder.detailRoute(dollArchiveId: dollPost.dollArchiveId)), animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -511,7 +511,7 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
         return CGSize(width: dollWidth, height: collectionView.bounds.height)
     }
 
-    private func openDollPostSafety(_ dollPost: DolluHomeDynamicItem) {
+    private func openDollPostSafety(_ dollPost: DollutrimmedClosetDollrevo) {
         navigationController?.pushViewController(DolluALoj(dollRouteURL: DolluCollectorRouteBuilder.safetyRoute(dollArchiveId: dollPost.dollArchiveId)), animated: true)
     }
 
@@ -787,9 +787,9 @@ final class DolluProfilePostCardCell: UICollectionViewCell {
         nil
     }
 
-    func configure(_ dollPost: DolluHomeDynamicItem) {
+    func configure(_ dollPost: DollutrimmedClosetDollrevo) {
         layeredCatalogDollquvo.text = dollPost.dollTitle
-        tinyCoverDollmexa.setDollImage(dollURL: dollPost.dollCoverURL, fallbackTitle: dollPost.dollTitle)
+        tinyCoverDollmexa.setDollImage(dollURL: dollPost.dolltrimmedLaceworkDollyaraL, fallbackTitle: dollPost.dollTitle)
     }
 
     override func prepareForReuse() {

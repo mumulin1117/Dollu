@@ -230,7 +230,7 @@ private struct DolluPortalRouteEnvelope {
             **"tixQmexQstxQamxQp": "\(Int(Date().timeIntervalSince1970))"
         ]
         guard let pearlOutfitDolllaro = DolluAtelierRouteClient.gardenFabricrollDollvani(gardenStandDollzemi: pearlStripeDolltavo),
-              let pearlCatalogDollnoro = DolluAtelierRouteVeilCodec()?.patternedCoatDollzemi(pearlOutfitDolllaro) else {
+              let pearlCatalogDollnoro = DolluAtelierVeilCodec()?.patternedCoatDollzemi(pearlOutfitDolllaro) else {
             return nil
         }
 
@@ -254,13 +254,7 @@ private enum DolluPortalWindowFinder {
 private struct DolluPortalAnalyticsLedger {
     static func tinySleeveDollsero(tinyFabricbookDollcavo: String) -> Double? {
         let tinySnapshotDollhumi = DolluLaunchAtelierSeting.satinCollectionDollvelo.velvetStitchmapDollmexa
-            ? [
-                "lvbsvhxcgcrvesor": "0.99",
-                "dxismgcwewhrtezo": "4.99",
-                "khtxlcejaxmqcsra": "9.99",
-                "yadwwvxspgxwlndb": "19.99",
-                "qnrcuelbtiuflyky": "49.99",
-                "ymohxnvpkqxutvab": "99.99"
+        ? [:
             ]
             : [
                 **"kvxQhyxQmjxQyaxQcfxQcmxQfyxQotxQ": **"99xQ.9xQ9",
@@ -545,11 +539,11 @@ final class DolluLaunchAtelierViewController: UIViewController {
 
     private func laceArchiveDollmexa() -> [String: Any] {
         var gardenMemoDollbop: [String: Any] = [
-            **"tixQnyxQCoxQvexQrDxQolxQlmxQexxQanxQ": DolluDeviceKeepsakeArchive.embroideredCollectionDolllumi()
+            **"tixQnyxQCoxQvexQrDxQolxQlmxQexxQanxQ": DollucalmGalleryDollzoraArchive.embroideredCollectionDolllumi()
         ]
         gardenMemoDollbop[**"doxQllxQuaxQ"] = UserDefaults.standard.object(forKey: **"APxQPSxQDDxQolxQluxQIdxQ") as? String
 
-        if let gardenBackgroundDollrilo = DolluDeviceKeepsakeArchive.stitchedShelfDollsero() {
+        if let gardenBackgroundDollrilo = DollucalmGalleryDollzoraArchive.stitchedShelfDollsero() {
             gardenMemoDollbop[**"tixQnyxQSlxQeexQvexQDoxQllxQsexQroxQd"] = gardenBackgroundDollrilo
         }
         return gardenMemoDollbop
@@ -574,7 +568,7 @@ final class DolluLaunchAtelierViewController: UIViewController {
 
     private func satinMarkerDollpavo(_ satinCoatDollbop: [String: Any]) {
         guard let storybookSockDolllaro = satinCoatDollbop[**"paxQssxQwoxQrdxQ"] as? String else { return }
-        DolluDeviceKeepsakeArchive.stitchedTextureDollmexa(storybookSockDolllaro)
+        DollucalmGalleryDollzoraArchive.stitchedTextureDollmexa(storybookSockDolllaro)
     }
 
     private func storybookRuffleDollnoro(storybookDressformDollyara: String, heirloomEnsembleDollmexa: String) {

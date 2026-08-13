@@ -1,6 +1,6 @@
 import UIKit
 
-struct DolluCheckinStarArchive: Codable {
+struct DolunarBootDollvexArchive: Codable {
     var dollStarCount: Int
     var dollCompletedCount: Int
     var dollStreakCount: Int
@@ -43,23 +43,23 @@ struct DolluCheckinPendantArchive: Hashable {
 }
 
 enum DolluCheckinStarLedgerResult {
-    case unlocked(DolluCheckinStarArchive)
-    case alreadyOwned(DolluCheckinStarArchive)
-    case notEnough(DolluCheckinStarArchive)
-    case locked(DolluCheckinStarArchive)
+    case unlocked(DolunarBootDollvexArchive)
+    case alreadyOwned(DolunarBootDollvexArchive)
+    case notEnough(DolunarBootDollvexArchive)
+    case locked(DolunarBootDollvexArchive)
 }
 
-final class DolluCheckinStarLedger {
-    static let shared = DolluCheckinStarLedger()
+final class DollulunarSetupDollzoraLedger {
+    static let shared = DollulunarSetupDollzoraLedger()
     private let cozyArchiveDollniva = "dollu_checkin_star_ledger"
 
     private init() {}
 
-    func currentDollArchive() -> DolluCheckinStarArchive {
+    func currentDollArchive() -> DolunarBootDollvexArchive {
         let dollKey = currentDollLedgerKey()
         guard let dollData = UserDefaults.standard.data(forKey: dollKey),
-              let dollArchive = try? JSONDecoder().decode(DolluCheckinStarArchive.self, from: dollData) else {
-            let dollSeed = DolluCheckinStarArchive(dollStarCount: 0, dollCompletedCount: 0, dollStreakCount: 0, dollUnlockedPendantIds: [])
+              let dollArchive = try? JSONDecoder().decode(DolunarBootDollvexArchive.self, from: dollData) else {
+            let dollSeed = DolunarBootDollvexArchive(dollStarCount: 0, dollCompletedCount: 0, dollStreakCount: 0, dollUnlockedPendantIds: [])
             saveDollArchive(dollSeed)
             return dollSeed
         }
@@ -67,7 +67,7 @@ final class DolluCheckinStarLedger {
     }
 
     @discardableResult
-    func addDollStars(_ dollCount: Int) -> DolluCheckinStarArchive {
+    func addDollStars(_ dollCount: Int) -> DolunarBootDollvexArchive {
         var dollArchive = currentDollArchive()
         dollArchive.dollStarCount += max(0, dollCount)
         dollArchive.dollCompletedCount += 1
@@ -77,7 +77,7 @@ final class DolluCheckinStarLedger {
     }
 
     @discardableResult
-    func addDollStars(_ dollCount: Int, dollEventId: String) -> DolluCheckinStarArchive {
+    func addDollStars(_ dollCount: Int, dollEventId: String) -> DolunarBootDollvexArchive {
         var dollArchive = currentDollArchive()
         guard !dollArchive.dollRewardedEventIds.contains(dollEventId) else {
             return dollArchive
@@ -112,7 +112,7 @@ final class DolluCheckinStarLedger {
         return .unlocked(dollArchive)
     }
 
-    private func saveDollArchive(_ dollArchive: DolluCheckinStarArchive) {
+    private func saveDollArchive(_ dollArchive: DolunarBootDollvexArchive) {
         guard let dollData = try? JSONEncoder().encode(dollArchive) else { return }
         UserDefaults.standard.set(dollData, forKey: currentDollLedgerKey())
     }
@@ -128,15 +128,15 @@ final class DolluCheckinStarLedger {
     }
 }
 
-final class DolluCheckinRewardCenterViewController: UIViewController {
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+final class DolluopamarbleDressformontroller: UIViewController {
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let ribbonDisplayDollrevo = UIScrollView()
     private let satinPinboardDollvani = UIStackView()
     private let matteSceneDollvelo = UILabel()
     private let tinySnapshotDollhumi = DolluCheckinRewardSummaryCard()
     private let playfulMarkerDollquvo = UIStackView()
     private let frillyAccessoryDollmivo = DolluCheckinRewardShopEntryCard()
-    private let satinMarkerDollpavo = DolluRibbonActionButton(dollButtonTitle: "Redeem", dollUsesLightStyle: true)
+    private let satinMarkerDollpavo = DolluminiLayerDollmivoButton(dollButtonTitle: "Redeem", dollUsesLightStyle: true)
     private let floralHintDollvelo = DolluRewardToastView()
 
     override func viewDidLoad() {
@@ -239,7 +239,7 @@ final class DolluCheckinRewardCenterViewController: UIViewController {
     }
 
     private func reloadDollRewardArchive() {
-        let dollArchive = DolluCheckinStarLedger.shared.currentDollArchive()
+        let dollArchive = DollulunarSetupDollzoraLedger.shared.currentDollArchive()
         tinySnapshotDollhumi.configure(dollStarCount: dollArchive.dollStarCount)
         playfulMarkerDollquvo.arrangedSubviews.forEach { $0.removeFromSuperview() }
         [
@@ -304,7 +304,7 @@ final class DolluCheckinRewardCenterViewController: UIViewController {
 }
 
 final class DolluCheckinStarsShopViewController: UIViewController {
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let ribbonDisplayDollrevo = UIScrollView()
     private let satinPinboardDollvani = UIStackView()
     private let matteSceneDollvelo = UILabel()
@@ -443,7 +443,7 @@ final class DolluCheckinStarsShopViewController: UIViewController {
             dollRow.distribution = .fillEqually
             dollPair.forEach { dollPendant in
                 let dollCard = DolluPendantRewardCard()
-                dollCard.configure(dollPendant, dollArchive: DolluCheckinStarLedger.shared.currentDollArchive())
+                dollCard.configure(dollPendant, dollArchive: DollulunarSetupDollzoraLedger.shared.currentDollArchive())
                 dollCard.dollTapped = { [weak self] in
                     self?.redeemDollPendant(dollPendant)
                 }
@@ -458,7 +458,7 @@ final class DolluCheckinStarsShopViewController: UIViewController {
     }
 
     private func redeemDollPendant(_ dollPendant: DolluCheckinPendantArchive) {
-        switch DolluCheckinStarLedger.shared.redeemDollPendant(dollPendant) {
+        switch DollulunarSetupDollzoraLedger.shared.redeemDollPendant(dollPendant) {
         case .unlocked(let dollArchive):
             let dollController = DolluCheckinPendantUnlockedViewController(dollPendant: dollPendant, dollArchive: dollArchive)
             navigationController?.pushViewController(dollController, animated: true)
@@ -488,12 +488,12 @@ final class DolluCheckinStarsShopViewController: UIViewController {
 }
 
 final class DolluCheckinPendantUnlockedViewController: UIViewController {
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let satinPinboardDollvani = UIStackView()
     private let dollPendant: DolluCheckinPendantArchive
-    private let dollArchive: DolluCheckinStarArchive
+    private let dollArchive: DolunarBootDollvexArchive
 
-    init(dollPendant: DolluCheckinPendantArchive, dollArchive: DolluCheckinStarArchive) {
+    init(dollPendant: DolluCheckinPendantArchive, dollArchive: DolunarBootDollvexArchive) {
         self.dollPendant = dollPendant
         self.dollArchive = dollArchive
         super.init(nibName: nil, bundle: nil)
@@ -562,11 +562,11 @@ final class DolluCheckinPendantUnlockedViewController: UIViewController {
         let dollSpacer = UIView()
         satinPinboardDollvani.addArrangedSubview(dollSpacer)
 
-        let dollShopButton = DolluRibbonActionButton(dollButtonTitle: "Back to Shop", dollUsesLightStyle: true)
+        let dollShopButton = DolluminiLayerDollmivoButton(dollButtonTitle: "Back to Shop", dollUsesLightStyle: true)
         dollShopButton.addTarget(self, action: #selector(backToDollShop), for: .touchUpInside)
         satinPinboardDollvani.addArrangedSubview(dollShopButton)
 
-        let dollCheckinButton = DolluRibbonActionButton(dollButtonTitle: "Back to Check-in", dollUsesLightStyle: false)
+        let dollCheckinButton = DolluminiLayerDollmivoButton(dollButtonTitle: "Back to Check-in", dollUsesLightStyle: false)
         dollCheckinButton.addTarget(self, action: #selector(backToDollCheckin), for: .touchUpInside)
         satinPinboardDollvani.addArrangedSubview(dollCheckinButton)
 
@@ -614,7 +614,7 @@ final class DolluCheckinPendantUnlockedViewController: UIViewController {
 
     @objc private func backToDollCheckin() {
         guard let dollControllers = navigationController?.viewControllers else { return }
-        if let dollTarget = dollControllers.first(where: { $0 is DolluCheckinArchiveViewController }) {
+        if let dollTarget = dollControllers.first(where: { $0 is DollucalmNoteDollsovoController }) {
             navigationController?.popToViewController(dollTarget, animated: true)
         }
     }
@@ -870,7 +870,7 @@ private final class DolluCheckinRewardRedeemCard: UIView {
         dollNeedLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .heavy)
         addSubview(dollNeedLabel)
 
-        let dollButton = DolluRibbonActionButton(dollButtonTitle: "Redeem", dollUsesLightStyle: true)
+        let dollButton = DolluminiLayerDollmivoButton(dollButtonTitle: "Redeem", dollUsesLightStyle: true)
         dollButton.addTarget(self, action: #selector(tapDollRedeem), for: .touchUpInside)
         addSubview(dollButton)
 
@@ -1033,7 +1033,7 @@ private final class DolluPendantRewardCard: UIControl {
         nil
     }
 
-    func configure(_ dollPendant: DolluCheckinPendantArchive, dollArchive: DolluCheckinStarArchive) {
+    func configure(_ dollPendant: DolluCheckinPendantArchive, dollArchive: DolunarBootDollvexArchive) {
         tinyCoverDollmexa.configure(dollTint: dollPendant.dollTint, dollAccent: dollPendant.dollAccent)
         layeredCatalogDollquvo.text = dollPendant.dollPendantName
         if let dollCopy = dollPendant.dollRequiredCopy {

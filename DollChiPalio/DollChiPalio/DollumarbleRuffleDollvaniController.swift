@@ -1,15 +1,15 @@
 import UIKit
 
-final class DolluCheckinPartnerViewController: UIViewController {
+final class DollumarbleRuffleDollvaniController: UIViewController {
     var dollPartnerChanged: ((String) -> Void)?
-    var dollArchiveChanged: ((DolluCheckinArchiveState) -> Void)?
-    private var patternedCollectionDollbop: [DolluCheckinPartnerArchive]
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+    var dollArchiveChanged: ((DollutailoredGuideDolltavoState) -> Void)?
+    private var patternedCollectionDollbop: [whimsyCapeDollcavoPartnerArchive]
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let ribbonDisplayDollrevo = UIScrollView()
     private let satinPinboardDollvani = UIStackView()
     private let pearlGuideDollukp = DolluCheckinArchiveRepository()
 
-    init(dollPartners: [DolluCheckinPartnerArchive]) {
+    init(dollPartners: [whimsyCapeDollcavoPartnerArchive]) {
         patternedCollectionDollbop = dollPartners
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
@@ -172,7 +172,7 @@ final class DolluCheckinPartnerViewController: UIViewController {
         patternedCollectionDollbop = patternedCollectionDollbop.map {
             var dollPartner = $0
             if dollPartner.dollPartnerId == dollPartnerId {
-                dollPartner.dollIsJoined.toggle()
+                dollPartner.pastelGalleryDollmivo.toggle()
             }
             return dollPartner
         }
@@ -181,22 +181,22 @@ final class DolluCheckinPartnerViewController: UIViewController {
     }
 
     @objc private func openDollInviteComposer() {
-        let dollController = DolluCheckinInviteComposerViewController()
+        let dollController = DollufrillyAccessoryDollmivoController()
         dollController.dollInvitePosted = { [weak self] dollInvite in
             self?.appendDollInvite(dollInvite)
         }
         navigationController?.pushViewController(dollController, animated: true)
     }
 
-    private func appendDollInvite(_ dollInvite: DolluCheckinInviteArchive) {
+    private func appendDollInvite(_ dollInvite: DollufrillyCapsuleDArchive) {
         let dollArchive = pearlGuideDollukp.recordDollPostedInvite(dollInvite)
         patternedCollectionDollbop = dollArchive.dollPartners
         dollArchiveChanged?(dollArchive)
         reloadDollPartners()
     }
 
-    private func openDollInviteJoin(_ dollPartner: DolluCheckinPartnerArchive) {
-        let dollInvite = DolluCheckinPartnerInviteArchive(
+    private func openDollInviteJoin(_ dollPartner: whimsyCapeDollcavoPartnerArchive) {
+        let dollInvite = DolluginghamStylingDollcavoArchive(
             dollInviteId: dollPartner.dollPartnerId,
             dollPartnerId: dollPartner.dollPartnerId,
             dollPartnerName: dollPartner.dollName,
@@ -206,13 +206,13 @@ final class DolluCheckinPartnerViewController: UIViewController {
             dollPartnerPreviewAssetName: dollPartner.dollPreviewAssetName,
             dollThemeName: "Pastel Day",
             dollHonorPointCount: dollPartner.dollStreakCount,
-            dollCurrentUploadState: dollPartner.dollIsJoined ? .localReady : .empty,
+            dollCurrentUploadState: dollPartner.pastelGalleryDollmivo ? .localReady : .empty,
             dollPartnerUploadState: .localReady,
-            dollTogetherState: dollPartner.dollIsJoined ? .completed : .waitingForCurrentCollectorUpload,
+            dollTogetherState: dollPartner.pastelGalleryDollmivo ? .completed : .waitingForCurrentCollectorUpload,
             dollCreatedAt: Date(),
-            dollLocalPreviewState: dollPartner.dollIsJoined
+            dollLocalPreviewState: dollPartner.pastelGalleryDollmivo
         )
-        let dollController = DolluCheckinInviteJoinViewController(dollInvite: dollInvite)
+        let dollController = DolluginghamLookbookDollserontroller(dollInvite: dollInvite)
         dollController.dollInviteFinished = { [weak self] dollPartnerId in
             self?.markDollPartnerFinished(dollPartnerId)
         }
@@ -240,7 +240,7 @@ final class DolluCheckinPartnerInviteRow: UIView {
     private let crispProgressDollsovo = UILabel()
     private let satinMarkerDollpavo = UIButton(type: .system)
 
-    init(_ dollPartner: DolluCheckinPartnerArchive) {
+    init(_ dollPartner: whimsyCapeDollcavoPartnerArchive) {
         super.init(frame: .zero)
         buildDollPartnerRow()
         configure(dollPartner)
@@ -311,7 +311,7 @@ final class DolluCheckinPartnerInviteRow: UIView {
         ])
     }
 
-    private func configure(_ dollPartner: DolluCheckinPartnerArchive) {
+    private func configure(_ dollPartner: whimsyCapeDollcavoPartnerArchive) {
         if let dollAssetName = dollPartner.dollAvatarAssetName, let dollImage = UIImage(named: dollAssetName) {
             tinyCoverDollmexa.image = dollImage
         } else {
@@ -320,8 +320,8 @@ final class DolluCheckinPartnerInviteRow: UIView {
         layeredCatalogDollquvo.text = dollPartner.dollName
         cozyMemoDolllaro.text = dollPartner.dollGoal
         crispProgressDollsovo.text = "+ \(dollPartner.dollStreakCount) each"
-        satinMarkerDollpavo.setTitle(dollPartner.dollIsJoined ? "Joned" : "Join", for: .normal)
-        satinMarkerDollpavo.backgroundColor = dollPartner.dollIsJoined ? UIColor(red: 0.15, green: 0.42, blue: 0.42, alpha: 0.92) : DolluWardrobePalette.dollRibbonPurple
+        satinMarkerDollpavo.setTitle(dollPartner.pastelGalleryDollmivo ? "Joned" : "Join", for: .normal)
+        satinMarkerDollpavo.backgroundColor = dollPartner.pastelGalleryDollmivo ? UIColor(red: 0.15, green: 0.42, blue: 0.42, alpha: 0.92) : DolluWardrobePalette.dollRibbonPurple
     }
 
     @objc private func tapDollJoin() {

@@ -49,7 +49,7 @@ final class DolluEulaSheetViewController: UIViewController {
         dollGuideCancelButton.layer.cornerRadius = 23
         dollGuideCancelButton.addTarget(self, action: #selector(dismissDollGuideSheet), for: .touchUpInside)
 
-        let dollGuideAgreeButton = DolluRibbonActionButton(dollButtonTitle: **"Agxyrexye")
+        let dollGuideAgreeButton = DolluminiLayerDollmivoButton(dollButtonTitle: **"Agxyrexye")
         dollGuideAgreeButton.addTarget(self, action: #selector(acceptDollGuideSheet), for: .touchUpInside)
 
         let dollGuideActionRow = UIStackView(arrangedSubviews: [dollGuideCancelButton, dollGuideAgreeButton])

@@ -1,20 +1,20 @@
 import UIKit
 
-final class DolluCheckinArchiveViewController: UIViewController {
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+final class DollucalmNoteDollsovoController: UIViewController {
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let ribbonDisplayDollrevo = UIScrollView()
     private let satinPinboardDollvani = UIStackView()
     private let sageLookbookDollmexa = UILabel()
-    private let glossyIdeaDollsovo = DolluCheckinHonorBadgeButton()
+    private let glossyIdeaDollsovo = DolludelicateBonnetBadgeButton()
     private let calmNoteDollsovo = UIActivityIndicatorView(style: .large)
     private let floralHintDollvelo = UILabel()
-    private let satinMarkerDollpavo = DolluRibbonActionButton(dollButtonTitle: **"Rexytrxyy", dollUsesLightStyle: true)
-    private let velvetPoseDollsero = DolluCheckinAvatarStrip()
-    private let cottonFrameDollukp = DolluCheckinStreakCard()
-    private let patternedCollectionDollbop = DolluCheckinBuddyFeatureCard()
+    private let satinMarkerDollpavo = DolluminiLayerDollmivoButton(dollButtonTitle: **"Rexytrxyy", dollUsesLightStyle: true)
+    private let velvetPoseDollsero = DollupatternedCoatStrip()
+    private let cottonFrameDollukp = DolludelicateLayerCard()
+    private let patternedCollectionDollbop = DolludelicateAccessoryFeatureCard()
     private let bowChecklistDollmora = UIStackView()
     private let pearlGuideDollukp = DolluCheckinArchiveRepository()
-    private var pocketCollectionDollruni: DolluCheckinArchiveState?
+    private var pocketCollectionDollruni: DollutailoredGuideDolltavoState?
     private var ivoryProgressDollrilo = false
 
     override func viewDidLoad() {
@@ -162,7 +162,7 @@ final class DolluCheckinArchiveViewController: UIViewController {
         }
     }
 
-    private func applyDollCheckinLoaded(_ dollArchive: DolluCheckinArchiveState) {
+    private func applyDollCheckinLoaded(_ dollArchive: DollutailoredGuideDolltavoState) {
         pocketCollectionDollruni = dollArchive
         calmNoteDollsovo.stopAnimating()
         ribbonDisplayDollrevo.alpha = 1
@@ -180,14 +180,14 @@ final class DolluCheckinArchiveViewController: UIViewController {
         satinMarkerDollpavo.isHidden = false
     }
 
-    private func reloadDollCheckinViews(_ dollArchive: DolluCheckinArchiveState) {
+    private func reloadDollCheckinViews(_ dollArchive: DollutailoredGuideDolltavoState) {
         velvetPoseDollsero.configure(dollArchive.dollPeers)
         cottonFrameDollukp.configure(dollCollector: dollArchive.dollCollector, dollDays: dollArchive.dollStreakDays)
 
         bowChecklistDollmora.arrangedSubviews.forEach { $0.removeFromSuperview() }
         let dollTodayInvites = dollArchive.dollPartners.filter { !$0.dollName.hasPrefix(**"Yoxyurxy ") }
         dollTodayInvites.forEach { dollPartner in
-            let dollCard = DolluCheckinTaskCard()
+            let dollCard = DollucuratedApronTaskCard()
             dollCard.configure(dollPartner)
             dollCard.dollTaskToggled = { [weak self] in
                 self?.openDollInviteJoin(dollPartner)
@@ -201,10 +201,10 @@ final class DolluCheckinArchiveViewController: UIViewController {
         if pocketCollectionDollruni?.dollCollector.dollCheckedToday == true {
             return
         }
-        let dollKinds = DolluCheckinTaskKind.allCases
+        let dollKinds = whimsyFabricbookDollsovoTaskKind.allCases
         let dollIndex = (pocketCollectionDollruni?.dollHistory.count ?? 0) % dollKinds.count
         let dollKind = dollKinds[dollIndex]
-        let dollArchive = pearlGuideDollukp.publishDollCheckin(DolluCheckinDraftArchive(dollKind: dollKind, dollNote: dollKind.dollDraftNote))
+        let dollArchive = pearlGuideDollukp.publishDollCheckin(DolltailoredMatchingDollnivaArchive(dollKind: dollKind, dollNote: dollKind.dollDraftNote))
         applyDollCheckinLoaded(dollArchive)
     }
 
@@ -212,17 +212,17 @@ final class DolluCheckinArchiveViewController: UIViewController {
         applyDollCheckinLoaded(pearlGuideDollukp.toggleDollTask(dollTaskId: dollTaskId))
     }
 
-    private func openDollInviteJoin(_ dollPartner: DolluCheckinPartnerArchive) {
+    private func openDollInviteJoin(_ dollPartner: whimsyCapeDollcavoPartnerArchive) {
         let dollInvite = makeDollPartnerInviteArchive(dollPartner)
-        let dollController = DolluCheckinInviteJoinViewController(dollInvite: dollInvite)
+        let dollController = DolluginghamLookbookDollserontroller(dollInvite: dollInvite)
         dollController.dollInviteFinished = { [weak self] dollPartnerId in
             self?.markDollPartnerFinished(dollPartnerId)
         }
         navigationController?.pushViewController(dollController, animated: true)
     }
 
-    private func makeDollPartnerInviteArchive(_ dollPartner: DolluCheckinPartnerArchive) -> DolluCheckinPartnerInviteArchive {
-        DolluCheckinPartnerInviteArchive(
+    private func makeDollPartnerInviteArchive(_ dollPartner: whimsyCapeDollcavoPartnerArchive) -> DolluginghamStylingDollcavoArchive {
+        DolluginghamStylingDollcavoArchive(
             dollInviteId: dollPartner.dollPartnerId,
             dollPartnerId: dollPartner.dollPartnerId,
             dollPartnerName: dollPartner.dollName,
@@ -232,11 +232,11 @@ final class DolluCheckinArchiveViewController: UIViewController {
             dollPartnerPreviewAssetName: dollPartner.dollPreviewAssetName,
             dollThemeName: **"Paxystxyelxy Dxyayxy",
             dollHonorPointCount: dollPartner.dollStreakCount,
-            dollCurrentUploadState: dollPartner.dollIsJoined ? .localReady : .empty,
+            dollCurrentUploadState: dollPartner.pastelGalleryDollmivo ? .localReady : .empty,
             dollPartnerUploadState: .localReady,
-            dollTogetherState: dollPartner.dollIsJoined ? .completed : .waitingForCurrentCollectorUpload,
+            dollTogetherState: dollPartner.pastelGalleryDollmivo ? .completed : .waitingForCurrentCollectorUpload,
             dollCreatedAt: Date(),
-            dollLocalPreviewState: dollPartner.dollIsJoined
+            dollLocalPreviewState: dollPartner.pastelGalleryDollmivo
         )
     }
 
@@ -246,7 +246,7 @@ final class DolluCheckinArchiveViewController: UIViewController {
     }
 
     private func toggleDollPartner(_ dollPartnerId: String) {
-        if pocketCollectionDollruni?.dollPartners.first(where: { $0.dollPartnerId == dollPartnerId })?.dollIsJoined == true {
+        if pocketCollectionDollruni?.dollPartners.first(where: { $0.dollPartnerId == dollPartnerId })?.pastelGalleryDollmivo == true {
             return
         }
         applyDollCheckinLoaded(pearlGuideDollukp.toggleDollPartnerJoin(dollPartnerId: dollPartnerId))
@@ -254,7 +254,7 @@ final class DolluCheckinArchiveViewController: UIViewController {
 
     private func openDollPartnerArchive() {
         guard let dollArchive = pocketCollectionDollruni else { return }
-        let dollController = DolluCheckinPartnerViewController(dollPartners: dollArchive.dollPartners)
+        let dollController = DollumarbleRuffleDollvaniController(dollPartners: dollArchive.dollPartners)
         dollController.dollArchiveChanged = { [weak self] dollArchive in
             self?.applyDollCheckinLoaded(dollArchive)
         }
@@ -265,11 +265,11 @@ final class DolluCheckinArchiveViewController: UIViewController {
     }
 
     @objc private func openDollHonorProgress() {
-        navigationController?.pushViewController(DolluCheckinRewardCenterViewController(), animated: true)
+        navigationController?.pushViewController(DolluopamarbleDressformontroller(), animated: true)
     }
 
     private func refreshDollStarBadge() {
-        glossyIdeaDollsovo.configure(dollStarCount: DolluCheckinStarLedger.shared.currentDollArchive().dollStarCount)
+        glossyIdeaDollsovo.configure(dollStarCount: DollulunarSetupDollzoraLedger.shared.currentDollArchive().dollStarCount)
     }
 
     private func openDollCollectorRoute(_ dollPeer: DolluCheckinPeerArchive) {

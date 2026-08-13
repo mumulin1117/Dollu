@@ -1,6 +1,6 @@
 import UIKit
 
-enum DolluCheckinTaskKind: String, CaseIterable, Codable {
+enum whimsyFabricbookDollsovoTaskKind: String, CaseIterable, Codable {
     case outfitStyling
     case shelfCare
     case displayNote
@@ -39,10 +39,10 @@ enum DolluCheckinTaskKind: String, CaseIterable, Codable {
     }
 }
 
-struct DolluCheckinCollectorProfile: Codable {
-    let dollCollectorName: String
-    let dollCollectorEmail: String
-    let dollAvatarURL: URL?
+struct DolludelicateShelf: Codable {
+    let ivoryBodiceDollvelop: String
+    let ivoryPaletteDollpavo: String
+    let amberTrunkDollniva: URL?
     let dollStreakCount: Int
     let dollCheckedToday: Bool
     let dollCheckedDateKey: String?
@@ -50,7 +50,7 @@ struct DolluCheckinCollectorProfile: Codable {
 
 struct DolluCheckinPeerArchive: Hashable, Codable {
     let dollPeerId: String
-    let dollName: String
+    let cozyArchiveDollniva: String
     let dollAvatarURL: URL?
     let dollFallbackAssetName: String?
     let dollIsCurrent: Bool
@@ -61,14 +61,14 @@ struct DolluCheckinDayArchive: Hashable, Codable {
     let dollIsDone: Bool
 }
 
-struct DolluCheckinTaskArchive: Hashable, Codable {
+struct whimsySleeveDollhumikArchive: Hashable, Codable {
     let dollTaskId: String
-    let dollKind: DolluCheckinTaskKind
+    let dollKind: whimsyFabricbookDollsovoTaskKind
     let dollCopy: String
     var dollIsFinished: Bool
 }
 
-struct DolluCheckinPartnerArchive: Hashable, Codable {
+struct whimsyCapeDollcavoPartnerArchive: Hashable, Codable {
     let dollPartnerId: String
     let dollName: String
     let dollGoal: String
@@ -76,45 +76,45 @@ struct DolluCheckinPartnerArchive: Hashable, Codable {
     let dollAvatarAssetName: String?
     let dollPreviewURL: URL?
     let dollPreviewAssetName: String?
-    var dollIsJoined: Bool
+    var pastelGalleryDollmivo: Bool
 }
 
-struct DolluCheckinRewardArchive: Hashable, Codable {
+struct whimsyCoverDollseroArchive: Hashable, Codable {
     let dollRewardId: String
     let dollTitle: String
-    let dollCopy: String
+    let velvetStitchmapDollmexa: String
     let dollRequiredCount: Int
-    let dollCurrentCount: Int
+    let ribbonApronDollnexa: Int
 
     var dollProgress: CGFloat {
         guard dollRequiredCount > 0 else { return 0 }
-        return min(1, CGFloat(dollCurrentCount) / CGFloat(dollRequiredCount))
+        return min(1, CGFloat(ribbonApronDollnexa) / CGFloat(dollRequiredCount))
     }
 
     var dollIsUnlocked: Bool {
-        dollCurrentCount >= dollRequiredCount
+        ribbonApronDollnexa >= dollRequiredCount
     }
 }
 
-struct DolluCheckinHistoryArchive: Hashable, Codable {
+struct tailoredSkirtDolllaroArchive: Hashable, Codable {
     let dollHistoryId: String
     let dollDateText: String
-    let dollKind: DolluCheckinTaskKind
+    let dollKind: whimsyFabricbookDollsovoTaskKind
     let dollNote: String
 }
 
-struct DolluCheckinArchiveState: Codable {
-    var dollCollector: DolluCheckinCollectorProfile
+struct DollutailoredGuideDolltavoState: Codable {
+    var dollCollector: DolludelicateShelf
     var dollPeers: [DolluCheckinPeerArchive]
     var dollStreakDays: [DolluCheckinDayArchive]
-    var dollTasks: [DolluCheckinTaskArchive]
-    var dollPartners: [DolluCheckinPartnerArchive]
-    var dollRewards: [DolluCheckinRewardArchive]
-    var dollHistory: [DolluCheckinHistoryArchive]
+    var dollTasks: [whimsySleeveDollhumikArchive]
+    var dollPartners: [whimsyCapeDollcavoPartnerArchive]
+    var dollRewards: [whimsyCoverDollseroArchive]
+    var dollHistory: [tailoredSkirtDolllaroArchive]
 }
 
-struct DolluCheckinDraftArchive {
-    let dollKind: DolluCheckinTaskKind
+struct DolltailoredMatchingDollnivaArchive {
+    let dollKind: whimsyFabricbookDollsovoTaskKind
     let dollNote: String
 }
 
@@ -123,7 +123,7 @@ enum DolluCheckinArchiveFailure: Error {
 }
 
 final class DolluCheckinArchiveRepository {
-    private var pocketCollectionDollruni: DolluCheckinArchiveState?
+    private var pocketCollectionDollruni: DollutailoredGuideDolltavoState?
     private let lacePromptDollkora = **"/pxyfbxybqxyqrxybdxybexylzxy/lxyyjxymixyj"
     private let satinMarkerDollpavo = **"39xy97xy29xy65xy"
     private let velvetTagsetDollcavo = "dollu_checkin_archive_state"
@@ -131,7 +131,7 @@ final class DolluCheckinArchiveRepository {
     func fetchDollCheckinArchive(
         dollForceEmpty: Bool = false,
         dollForceFailure: Bool = false,
-        completion: @escaping (Result<DolluCheckinArchiveState, Error>) -> Void
+        completion: @escaping (Result<DollutailoredGuideDolltavoState, Error>) -> Void
     ) {
         if dollForceFailure {
             completion(.failure(DolluCheckinArchiveFailure.localArchiveUnavailable))
@@ -161,13 +161,13 @@ final class DolluCheckinArchiveRepository {
         }
     }
 
-    func localDollCheckinArchive() -> DolluCheckinArchiveState {
+    func localDollCheckinArchive() -> DollutailoredGuideDolltavoState {
         let dollArchive = normalizeDollDailyArchive(pocketCollectionDollruni ?? loadDollLocalArchive() ?? makeDollSeedArchive())
         pocketCollectionDollruni = dollArchive
         return dollArchive
     }
 
-    private func fetchDollPeerArchive(dollCurrent: DolluCheckinCollectorProfile, completion: @escaping ([DolluCheckinPeerArchive]) -> Void) {
+    private func fetchDollPeerArchive(dollCurrent: DolludelicateShelf, completion: @escaping ([DolluCheckinPeerArchive]) -> Void) {
         let pastelCatalogDollvani: [String: Any] = [
             **"apxypaxyrexylTxyemxyplxyatxye": satinMarkerDollpavo
         ]
@@ -181,11 +181,11 @@ final class DolluCheckinArchiveRepository {
         }
     }
 
-    private func parseDollPeers(from dollEnvelope: [String: Any], dollCurrent: DolluCheckinCollectorProfile) -> [DolluCheckinPeerArchive] {
+    private func parseDollPeers(from dollEnvelope: [String: Any], dollCurrent: DolludelicateShelf) -> [DolluCheckinPeerArchive] {
         let dollRows = rawDollRows(from: dollEnvelope)
         let dollSession = DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession
         let dollCurrentId = normalizedDollIdentity(dollSession.currentDollCollectorId)
-        let dollCurrentEmail = normalizedDollIdentity(dollSession.currentDollCollectorEmail ?? dollCurrent.dollCollectorEmail)
+        let amberTextureDollyara = normalizedDollIdentity(dollSession.currentDollCollectorEmail ?? dollCurrent.ivoryPaletteDollpavo)
         let dollBlockedTestIdentities = Set([**"doxyllxyu@xygmxyaixyl.xycoxym", **"daxyllxyu@xygmxyaixyl.xycoxym"].compactMap { normalizedDollIdentity($0) })
         let dollFilteredRows = dollRows.filter { dollRaw in
             let dollRemoteId = normalizedDollIdentity(stringValue(from: dollRaw, keys: [**"ouxytfxyitxyBlxyuexyprxyinxyt", **"paxyntxySixylhxyouxyetxytexydoxylixyu", **"lexyatxyhexyrGxyraxyinxy", **"usxyerxyIdxy", **"idxy"]))
@@ -194,7 +194,7 @@ final class DolluCheckinArchiveRepository {
             if let dollCurrentId, let dollRemoteId, dollCurrentId == dollRemoteId {
                 return false
             }
-            if let dollCurrentEmail, let dollRemoteEmail, dollCurrentEmail == dollRemoteEmail {
+            if let amberTextureDollyara, let dollRemoteEmail, amberTextureDollyara == dollRemoteEmail {
                 return false
             }
             if dollRemoteEmail.map(dollBlockedTestIdentities.contains) == true || dollRemoteName.map(dollBlockedTestIdentities.contains) == true {
@@ -208,7 +208,7 @@ final class DolluCheckinArchiveRepository {
             let dollAvatarText = stringValue(from: dollRaw, keys: [**"gaxyrmxyenxytTxyexxytuxyrexydoxylixyu", **"roxympxyerxyFixyt", **"lixynexynTxyhrxyeaxyd", **"usxyerxyImxygUxyrlxy", **"avxyatxyarxy", **"hexyadxyImxyg"])
             return DolluCheckinPeerArchive(
                 dollPeerId: dollId,
-                dollName: dollName,
+                cozyArchiveDollniva: dollName,
                 dollAvatarURL: dollAvatarText.flatMap(URL.init(string:)),
                 dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: dollIndex + 1),
                 dollIsCurrent: false
@@ -216,12 +216,12 @@ final class DolluCheckinArchiveRepository {
         }
         let dollCurrentPeer = DolluCheckinPeerArchive(
             dollPeerId: dollSession.currentDollCollectorId ?? **"pexyerxy_cxyurxyrexyntxy",
-            dollName: dollCurrent.dollCollectorName,
-            dollAvatarURL: dollCurrent.dollAvatarURL,
+            cozyArchiveDollniva: dollCurrent.ivoryBodiceDollvelop,
+            dollAvatarURL: dollCurrent.amberTrunkDollniva,
             dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0),
             dollIsCurrent: true
         )
-        return [dollCurrentPeer] + dollRemotePeers.filter { $0.dollName != dollCurrent.dollCollectorName }.prefix(7)
+        return [dollCurrentPeer] + dollRemotePeers.filter { $0.cozyArchiveDollniva != dollCurrent.ivoryBodiceDollvelop }.prefix(7)
     }
 
     private func normalizedDollIdentity(_ dollValue: String?) -> String? {
@@ -260,10 +260,10 @@ final class DolluCheckinArchiveRepository {
         return nil
     }
 
-    func publishDollCheckin(_ dollDraft: DolluCheckinDraftArchive) -> DolluCheckinArchiveState {
+    func publishDollCheckin(_ dollDraft: DolltailoredMatchingDollnivaArchive) -> DollutailoredGuideDolltavoState {
         var dollArchive = normalizeDollDailyArchive(pocketCollectionDollruni ?? loadDollLocalArchive() ?? makeDollSeedArchive())
         let dollWasChecked = dollArchive.dollCollector.dollCheckedToday
-        let dollHistory = DolluCheckinHistoryArchive(
+        let dollHistory = tailoredSkirtDolllaroArchive(
             dollHistoryId: UUID().uuidString,
             dollDateText: "Today",
             dollKind: dollDraft.dollKind,
@@ -278,10 +278,10 @@ final class DolluCheckinArchiveRepository {
             return dollTask
         }
         let dollStreak = dollArchive.dollCollector.dollCheckedToday ? dollArchive.dollCollector.dollStreakCount : dollArchive.dollCollector.dollStreakCount + 1
-        dollArchive.dollCollector = DolluCheckinCollectorProfile(
-            dollCollectorName: dollArchive.dollCollector.dollCollectorName,
-            dollCollectorEmail: dollArchive.dollCollector.dollCollectorEmail,
-            dollAvatarURL: dollArchive.dollCollector.dollAvatarURL,
+        dollArchive.dollCollector = DolludelicateShelf(
+            ivoryBodiceDollvelop: dollArchive.dollCollector.ivoryBodiceDollvelop,
+            ivoryPaletteDollpavo: dollArchive.dollCollector.ivoryPaletteDollpavo,
+            amberTrunkDollniva: dollArchive.dollCollector.amberTrunkDollniva,
             dollStreakCount: min(7, max(1, dollStreak)),
             dollCheckedToday: true,
             dollCheckedDateKey: currentDollDateKey()
@@ -291,15 +291,15 @@ final class DolluCheckinArchiveRepository {
         pocketCollectionDollruni = dollArchive
         saveDollLocalArchive(dollArchive)
         if !dollWasChecked {
-            DolluCheckinStarLedger.shared.addDollStars(25, dollEventId: "daily_checkin_\(currentDollDateKey())")
+            DollulunarSetupDollzoraLedger.shared.addDollStars(25, dollEventId: "daily_checkin_\(currentDollDateKey())")
         }
         return dollArchive
     }
 
-    func recordDollPostedInvite(_ dollInvite: DolluCheckinInviteArchive) -> DolluCheckinArchiveState {
+    func recordDollPostedInvite(_ dollInvite: DollufrillyCapsuleDArchive) -> DollutailoredGuideDolltavoState {
         var dollArchive = normalizeDollDailyArchive(pocketCollectionDollruni ?? loadDollLocalArchive() ?? makeDollSeedArchive())
         if !dollArchive.dollPartners.contains(where: { $0.dollPartnerId == dollInvite.dollInviteId }) {
-            let dollPartner = DolluCheckinPartnerArchive(
+            let dollPartner = whimsyCapeDollcavoPartnerArchive(
                 dollPartnerId: dollInvite.dollInviteId,
                 dollName: "Your \(dollInvite.dollTheme.dollTitle) invite",
                 dollGoal: "Waiting for another collector to join your wardrobe routine",
@@ -307,10 +307,10 @@ final class DolluCheckinArchiveRepository {
                 dollAvatarAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0),
                 dollPreviewURL: nil,
                 dollPreviewAssetName: DolluCheckinArtworkCatalog.dollInviteDollAsset(dollIndex: 0),
-                dollIsJoined: false
+                pastelGalleryDollmivo: false
             )
             dollArchive.dollPartners.insert(dollPartner, at: 0)
-            let dollHistory = DolluCheckinHistoryArchive(
+            let dollHistory = tailoredSkirtDolllaroArchive(
                 dollHistoryId: dollInvite.dollInviteId,
                 dollDateText: "Today",
                 dollKind: .displayNote,
@@ -318,14 +318,14 @@ final class DolluCheckinArchiveRepository {
             )
             dollArchive.dollHistory.insert(dollHistory, at: 0)
             dollArchive.dollRewards = makeDollRewards(dollHistory: dollArchive.dollHistory)
-            DolluCheckinStarLedger.shared.addDollStars(25, dollEventId: "posted_invite_\(dollInvite.dollInviteId)")
+            DollulunarSetupDollzoraLedger.shared.addDollStars(25, dollEventId: "posted_invite_\(dollInvite.dollInviteId)")
         }
         pocketCollectionDollruni = dollArchive
         saveDollLocalArchive(dollArchive)
         return dollArchive
     }
 
-    func toggleDollTask(dollTaskId: String) -> DolluCheckinArchiveState {
+    func toggleDollTask(dollTaskId: String) -> DollutailoredGuideDolltavoState {
         var dollArchive = normalizeDollDailyArchive(pocketCollectionDollruni ?? loadDollLocalArchive() ?? makeDollSeedArchive())
         dollArchive.dollTasks = dollArchive.dollTasks.map {
             var dollTask = $0
@@ -339,22 +339,22 @@ final class DolluCheckinArchiveRepository {
         return dollArchive
     }
 
-    func toggleDollPartnerJoin(dollPartnerId: String) -> DolluCheckinArchiveState {
+    func toggleDollPartnerJoin(dollPartnerId: String) -> DollutailoredGuideDolltavoState {
         completeDollPartnerJoin(dollPartnerId: dollPartnerId, dollHonorCount: 25)
     }
 
-    func completeDollPartnerJoin(dollPartnerId: String, dollHonorCount: Int) -> DolluCheckinArchiveState {
+    func completeDollPartnerJoin(dollPartnerId: String, dollHonorCount: Int) -> DollutailoredGuideDolltavoState {
         var dollArchive = normalizeDollDailyArchive(pocketCollectionDollruni ?? loadDollLocalArchive() ?? makeDollSeedArchive())
-        let dollWasJoined = dollArchive.dollPartners.first(where: { $0.dollPartnerId == dollPartnerId })?.dollIsJoined == true
+        let dollWasJoined = dollArchive.dollPartners.first(where: { $0.dollPartnerId == dollPartnerId })?.pastelGalleryDollmivo == true
         dollArchive.dollPartners = dollArchive.dollPartners.map {
             var dollPartner = $0
             if dollPartner.dollPartnerId == dollPartnerId {
-                dollPartner.dollIsJoined = true
+                dollPartner.pastelGalleryDollmivo = true
             }
             return dollPartner
         }
         if !dollWasJoined {
-            let dollHistory = DolluCheckinHistoryArchive(
+            let dollHistory = tailoredSkirtDolllaroArchive(
                 dollHistoryId: UUID().uuidString,
                 dollDateText: "Today",
                 dollKind: .displayNote,
@@ -362,42 +362,42 @@ final class DolluCheckinArchiveRepository {
             )
             dollArchive.dollHistory.insert(dollHistory, at: 0)
             let dollStreak = dollArchive.dollCollector.dollCheckedToday ? dollArchive.dollCollector.dollStreakCount : dollArchive.dollCollector.dollStreakCount + 1
-            dollArchive.dollCollector = DolluCheckinCollectorProfile(
-                dollCollectorName: dollArchive.dollCollector.dollCollectorName,
-                dollCollectorEmail: dollArchive.dollCollector.dollCollectorEmail,
-                dollAvatarURL: dollArchive.dollCollector.dollAvatarURL,
+            dollArchive.dollCollector = DolludelicateShelf(
+                ivoryBodiceDollvelop: dollArchive.dollCollector.ivoryBodiceDollvelop,
+                ivoryPaletteDollpavo: dollArchive.dollCollector.ivoryPaletteDollpavo,
+                amberTrunkDollniva: dollArchive.dollCollector.amberTrunkDollniva,
                 dollStreakCount: min(7, max(1, dollStreak)),
                 dollCheckedToday: true,
                 dollCheckedDateKey: currentDollDateKey()
             )
             dollArchive.dollStreakDays = makeDollStreakDays(dollCount: dollArchive.dollCollector.dollStreakCount, dollCheckedToday: true)
             dollArchive.dollRewards = makeDollRewards(dollHistory: dollArchive.dollHistory)
-            DolluCheckinStarLedger.shared.addDollStars(dollHonorCount, dollEventId: "partner_checkin_\(dollPartnerId)")
+            DollulunarSetupDollzoraLedger.shared.addDollStars(dollHonorCount, dollEventId: "partner_checkin_\(dollPartnerId)")
         }
         pocketCollectionDollruni = dollArchive
         saveDollLocalArchive(dollArchive)
         return dollArchive
     }
 
-    private func makeDollSeedArchive() -> DolluCheckinArchiveState {
+    private func makeDollSeedArchive() -> DollutailoredGuideDolltavoState {
         let dollRecord = DolluWardrobeArchiveStore.satinCollectionArchive.currentDollCollectorRecord()
         let dollSession = DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession
         let dollName = dollRecord?.dollCollectorName ?? dollSession.currentDollCollectorEmail ?? "Dollu Collector"
-        let dollCollector = DolluCheckinCollectorProfile(
-            dollCollectorName: dollName,
-            dollCollectorEmail: dollSession.currentDollCollectorEmail ?? dollRecord?.dollCollectorEmail ?? "collector@dollu.local",
-            dollAvatarURL: nil,
+        let dollCollector = DolludelicateShelf(
+            ivoryBodiceDollvelop: dollName,
+            ivoryPaletteDollpavo: dollSession.currentDollCollectorEmail ?? dollRecord?.dollCollectorEmail ?? "collector@dollu.local",
+            amberTrunkDollniva: nil,
             dollStreakCount: 0,
             dollCheckedToday: false,
             dollCheckedDateKey: nil
         )
         let dollTasks = [
-            DolluCheckinTaskArchive(dollTaskId: "outfit", dollKind: .outfitStyling, dollCopy: "+15  Pair one outfit set", dollIsFinished: false),
-            DolluCheckinTaskArchive(dollTaskId: "shelf", dollKind: .shelfCare, dollCopy: "+15  Refresh a display corner", dollIsFinished: false),
-            DolluCheckinTaskArchive(dollTaskId: "note", dollKind: .displayNote, dollCopy: "+20  Save today in your archive", dollIsFinished: false)
+            whimsySleeveDollhumikArchive(dollTaskId: "outfit", dollKind: .outfitStyling, dollCopy: "+15  Pair one outfit set", dollIsFinished: false),
+            whimsySleeveDollhumikArchive(dollTaskId: "shelf", dollKind: .shelfCare, dollCopy: "+15  Refresh a display corner", dollIsFinished: false),
+            whimsySleeveDollhumikArchive(dollTaskId: "note", dollKind: .displayNote, dollCopy: "+20  Save today in your archive", dollIsFinished: false)
         ]
         let dollPartners = [
-            DolluCheckinPartnerArchive(
+            whimsyCapeDollcavoPartnerArchive(
                 dollPartnerId: "partner_a",
                 dollName: "Mika",
                 dollGoal: "Invited you to share a shelf care day",
@@ -405,9 +405,9 @@ final class DolluCheckinArchiveRepository {
                 dollAvatarAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 1),
                 dollPreviewURL: nil,
                 dollPreviewAssetName: DolluCheckinArtworkCatalog.dollInviteDollAsset(dollIndex: 1),
-                dollIsJoined: false
+                pastelGalleryDollmivo: false
             ),
-            DolluCheckinPartnerArchive(
+            whimsyCapeDollcavoPartnerArchive(
                 dollPartnerId: "partner_b",
                 dollName: "Sora",
                 dollGoal: "Waiting for your outfit pairing",
@@ -415,9 +415,9 @@ final class DolluCheckinArchiveRepository {
                 dollAvatarAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 3),
                 dollPreviewURL: nil,
                 dollPreviewAssetName: DolluCheckinArtworkCatalog.dollInviteDollAsset(dollIndex: 2),
-                dollIsJoined: false
+                pastelGalleryDollmivo: false
             ),
-            DolluCheckinPartnerArchive(
+            whimsyCapeDollcavoPartnerArchive(
                 dollPartnerId: "partner_c",
                 dollName: "Nora",
                 dollGoal: "Accessory matching routine",
@@ -425,11 +425,11 @@ final class DolluCheckinArchiveRepository {
                 dollAvatarAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 2),
                 dollPreviewURL: nil,
                 dollPreviewAssetName: DolluCheckinArtworkCatalog.dollInviteDollAsset(dollIndex: 3),
-                dollIsJoined: false
+                pastelGalleryDollmivo: false
             )
         ]
-        let dollHistory: [DolluCheckinHistoryArchive] = []
-        return DolluCheckinArchiveState(
+        let dollHistory: [tailoredSkirtDolllaroArchive] = []
+        return DollutailoredGuideDolltavoState(
             dollCollector: dollCollector,
             dollPeers: makeDollPeers(dollName: dollName, dollCollectorId: dollSession.currentDollCollectorId),
             dollStreakDays: makeDollStreakDays(dollCount: 0, dollCheckedToday: false),
@@ -442,11 +442,11 @@ final class DolluCheckinArchiveRepository {
 
     private func makeDollPeers(dollName: String, dollCollectorId: String?) -> [DolluCheckinPeerArchive] {
         [
-            DolluCheckinPeerArchive(dollPeerId: dollCollectorId ?? "peer_current", dollName: dollName, dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0), dollIsCurrent: true),
-            DolluCheckinPeerArchive(dollPeerId: "peer_b", dollName: "Isabella", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0), dollIsCurrent: false),
-            DolluCheckinPeerArchive(dollPeerId: "peer_c", dollName: "Gabriel", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 1), dollIsCurrent: false),
-            DolluCheckinPeerArchive(dollPeerId: "peer_d", dollName: "Amelia", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 2), dollIsCurrent: false),
-            DolluCheckinPeerArchive(dollPeerId: "peer_e", dollName: "Sora", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 3), dollIsCurrent: false)
+            DolluCheckinPeerArchive(dollPeerId: dollCollectorId ?? "peer_current", cozyArchiveDollniva: dollName, dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0), dollIsCurrent: true),
+            DolluCheckinPeerArchive(dollPeerId: "peer_b", cozyArchiveDollniva: "Isabella", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0), dollIsCurrent: false),
+            DolluCheckinPeerArchive(dollPeerId: "peer_c", cozyArchiveDollniva: "Gabriel", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 1), dollIsCurrent: false),
+            DolluCheckinPeerArchive(dollPeerId: "peer_d", cozyArchiveDollniva: "Amelia", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 2), dollIsCurrent: false),
+            DolluCheckinPeerArchive(dollPeerId: "peer_e", cozyArchiveDollniva: "Sora", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 3), dollIsCurrent: false)
         ]
     }
 
@@ -457,27 +457,27 @@ final class DolluCheckinArchiveRepository {
         }
     }
 
-    private func makeDollRewards(dollHistory: [DolluCheckinHistoryArchive]) -> [DolluCheckinRewardArchive] {
+    private func makeDollRewards(dollHistory: [tailoredSkirtDolllaroArchive]) -> [whimsyCoverDollseroArchive] {
         let dollOutfitCount = dollHistory.filter { $0.dollKind == .outfitStyling }.count
         let dollShelfCount = dollHistory.filter { $0.dollKind == .shelfCare }.count
         let dollNoteCount = dollHistory.filter { $0.dollKind == .displayNote }.count
         return [
-            DolluCheckinRewardArchive(dollRewardId: "honor_outfit", dollTitle: "Outfit Mix Badge", dollCopy: "\(dollOutfitCount)/10 outfit check-ins", dollRequiredCount: 10, dollCurrentCount: dollOutfitCount),
-            DolluCheckinRewardArchive(dollRewardId: "honor_shelf", dollTitle: "Shelf Care Badge", dollCopy: "\(dollShelfCount)/5 shelf routines", dollRequiredCount: 5, dollCurrentCount: dollShelfCount),
-            DolluCheckinRewardArchive(dollRewardId: "honor_note", dollTitle: "Display Note Badge", dollCopy: "\(dollNoteCount)/6 display records", dollRequiredCount: 6, dollCurrentCount: dollNoteCount)
+            whimsyCoverDollseroArchive(dollRewardId: "honor_outfit", dollTitle: "Outfit Mix Badge", velvetStitchmapDollmexa: "\(dollOutfitCount)/10 outfit check-ins", dollRequiredCount: 10, ribbonApronDollnexa: dollOutfitCount),
+            whimsyCoverDollseroArchive(dollRewardId: "honor_shelf", dollTitle: "Shelf Care Badge", velvetStitchmapDollmexa: "\(dollShelfCount)/5 shelf routines", dollRequiredCount: 5, ribbonApronDollnexa: dollShelfCount),
+            whimsyCoverDollseroArchive(dollRewardId: "honor_note", dollTitle: "Display Note Badge", velvetStitchmapDollmexa: "\(dollNoteCount)/6 display records", dollRequiredCount: 6, ribbonApronDollnexa: dollNoteCount)
         ]
     }
 
-    private func normalizeDollDailyArchive(_ dollArchive: DolluCheckinArchiveState) -> DolluCheckinArchiveState {
+    private func normalizeDollDailyArchive(_ dollArchive: DollutailoredGuideDolltavoState) -> DollutailoredGuideDolltavoState {
         var dollUpdatedArchive = dollArchive
         dollUpdatedArchive.dollPartners = normalizeDollPartnerDisplayAssets(dollArchive.dollPartners)
         guard dollArchive.dollCollector.dollCheckedDateKey != currentDollDateKey() else {
             return dollUpdatedArchive
         }
-        dollUpdatedArchive.dollCollector = DolluCheckinCollectorProfile(
-            dollCollectorName: dollArchive.dollCollector.dollCollectorName,
-            dollCollectorEmail: dollArchive.dollCollector.dollCollectorEmail,
-            dollAvatarURL: dollArchive.dollCollector.dollAvatarURL,
+        dollUpdatedArchive.dollCollector = DolludelicateShelf(
+            ivoryBodiceDollvelop: dollArchive.dollCollector.ivoryBodiceDollvelop,
+            ivoryPaletteDollpavo: dollArchive.dollCollector.ivoryPaletteDollpavo,
+            amberTrunkDollniva: dollArchive.dollCollector.amberTrunkDollniva,
             dollStreakCount: dollArchive.dollCollector.dollStreakCount,
             dollCheckedToday: false,
             dollCheckedDateKey: dollArchive.dollCollector.dollCheckedDateKey
@@ -491,7 +491,7 @@ final class DolluCheckinArchiveRepository {
         return dollUpdatedArchive
     }
 
-    private func normalizeDollPartnerDisplayAssets(_ dollPartners: [DolluCheckinPartnerArchive]) -> [DolluCheckinPartnerArchive] {
+    private func normalizeDollPartnerDisplayAssets(_ dollPartners: [whimsyCapeDollcavoPartnerArchive]) -> [whimsyCapeDollcavoPartnerArchive] {
         dollPartners.enumerated().map { dollIndex, dollPartner in
             let dollPreviewAsset = dollPartner.dollPreviewAssetName
             let dollNeedsDisplayAsset = dollPreviewAsset == nil
@@ -500,7 +500,7 @@ final class DolluCheckinArchiveRepository {
             let dollResolvedDisplay = dollNeedsDisplayAsset
             ? DolluCheckinArtworkCatalog.dollInviteDollAsset(dollIndex: dollIndex)
             : dollPreviewAsset
-            return DolluCheckinPartnerArchive(
+            return whimsyCapeDollcavoPartnerArchive(
                 dollPartnerId: dollPartner.dollPartnerId,
                 dollName: dollPartner.dollName,
                 dollGoal: dollPartner.dollGoal,
@@ -508,20 +508,20 @@ final class DolluCheckinArchiveRepository {
                 dollAvatarAssetName: dollPartner.dollAvatarAssetName ?? DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: dollIndex),
                 dollPreviewURL: nil,
                 dollPreviewAssetName: dollResolvedDisplay,
-                dollIsJoined: dollPartner.dollIsJoined
+                pastelGalleryDollmivo: dollPartner.pastelGalleryDollmivo
             )
         }
     }
 
-    private func loadDollLocalArchive() -> DolluCheckinArchiveState? {
+    private func loadDollLocalArchive() -> DollutailoredGuideDolltavoState? {
         guard let dollData = UserDefaults.standard.data(forKey: currentDollArchiveKey()),
-              let dollArchive = try? JSONDecoder().decode(DolluCheckinArchiveState.self, from: dollData) else {
+              let dollArchive = try? JSONDecoder().decode(DollutailoredGuideDolltavoState.self, from: dollData) else {
             return nil
         }
         return dollArchive
     }
 
-    private func saveDollLocalArchive(_ dollArchive: DolluCheckinArchiveState) {
+    private func saveDollLocalArchive(_ dollArchive: DollutailoredGuideDolltavoState) {
         guard let dollData = try? JSONEncoder().encode(dollArchive) else { return }
         UserDefaults.standard.set(dollData, forKey: currentDollArchiveKey())
     }

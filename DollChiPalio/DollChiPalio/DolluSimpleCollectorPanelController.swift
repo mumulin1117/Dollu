@@ -3,7 +3,7 @@ import UIKit
 class DolluSimpleCollectorPanelController: UIViewController {
     private let dollTitle: String
     private let dollCopy: String
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
 
     init(dollTitle: String, dollCopy: String) {
         self.dollTitle = dollTitle

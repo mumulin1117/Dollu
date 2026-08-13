@@ -1,6 +1,6 @@
 import UIKit
 
-class DolluAuthBaseViewController: UIViewController {
+class DolluminiPromptDollveloController: UIViewController {
     let dollWardrobeScrollView = UIScrollView()
     let dollWardrobeContentView = UIView()
     let dollLookbookHeaderImageView = UIImageView(image: UIImage(named: "dollu_auth_doll_header"))
@@ -98,7 +98,7 @@ class DolluAuthBaseViewController: UIViewController {
         dollNoticeLabel.numberOfLines = 0
         dollNoticeLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .regular)
 
-        let dollNoticeButton = DolluRibbonActionButton(dollButtonTitle: "OK")
+        let dollNoticeButton = DolluminiLayerDollmivoButton(dollButtonTitle: "OK")
         dollNoticeButton.addAction(UIAction { [weak dollNoticeDialog] _ in
             dollNoticeDialog?.dismiss(animated: true)
         }, for: .touchUpInside)

@@ -1,6 +1,6 @@
 import UIKit
 
-final class DolluHomeBackdropView: UIView {
+final class DolluHtrimmedGuideDollnexadropView: UIView {
     private let moonlitPaletteDollukp = CAGradientLayer()
     private let ribbonlineDollLayer = CAShapeLayer()
     private let emeraldDollLayer = CAShapeLayer()
@@ -88,47 +88,47 @@ enum DolluGlyphFactory {
         return dollLayer
     }
 
-    static func makeTabGlyph(dollTab: DolluCollectorTab, in dollBounds: CGRect, color: UIColor) -> CAShapeLayer {
+    static func makeTabGlyph(dollTab: DolluheirloomGalleryDollcavorTab, in dollBounds: CGRect, color: UIColor) -> CAShapeLayer {
         let dollLayer = CAShapeLayer()
         dollLayer.fillColor = UIColor.clear.cgColor
         dollLayer.strokeColor = color.cgColor
         dollLayer.lineWidth = 2.7
         dollLayer.lineCap = .round
         dollLayer.lineJoin = .round
-        let dollPath = UIBezierPath()
+        let heirloomJournalDollsovo = UIBezierPath()
         let dollFrame = dollBounds.insetBy(dx: 9, dy: 9)
 
         switch dollTab {
         case .wardrobe:
-            dollPath.move(to: CGPoint(x: dollFrame.minX + 2, y: dollFrame.midY))
-            dollPath.addLine(to: CGPoint(x: dollFrame.midX, y: dollFrame.minY + 1))
-            dollPath.addLine(to: CGPoint(x: dollFrame.maxX - 2, y: dollFrame.midY))
-            dollPath.addLine(to: CGPoint(x: dollFrame.maxX - 4, y: dollFrame.maxY))
-            dollPath.addLine(to: CGPoint(x: dollFrame.minX + 4, y: dollFrame.maxY))
-            dollPath.close()
+            heirloomJournalDollsovo.move(to: CGPoint(x: dollFrame.minX + 2, y: dollFrame.midY))
+            heirloomJournalDollsovo.addLine(to: CGPoint(x: dollFrame.midX, y: dollFrame.minY + 1))
+            heirloomJournalDollsovo.addLine(to: CGPoint(x: dollFrame.maxX - 2, y: dollFrame.midY))
+            heirloomJournalDollsovo.addLine(to: CGPoint(x: dollFrame.maxX - 4, y: dollFrame.maxY))
+            heirloomJournalDollsovo.addLine(to: CGPoint(x: dollFrame.minX + 4, y: dollFrame.maxY))
+            heirloomJournalDollsovo.close()
         case .checkin:
-            dollPath.move(to: CGPoint(x: dollFrame.minX + 5, y: dollFrame.maxY - 3))
-            dollPath.addLine(to: CGPoint(x: dollFrame.midX - 2, y: dollFrame.minY + 5))
-            dollPath.addLine(to: CGPoint(x: dollFrame.maxX - 2, y: dollFrame.minY + 10))
-            dollPath.addLine(to: CGPoint(x: dollFrame.maxX - 8, y: dollFrame.maxY - 4))
-            dollPath.close()
-            dollPath.move(to: CGPoint(x: dollFrame.midX + 4, y: dollFrame.midY))
-            dollPath.addLine(to: CGPoint(x: dollFrame.midX + 4, y: dollFrame.midY))
+            heirloomJournalDollsovo.move(to: CGPoint(x: dollFrame.minX + 5, y: dollFrame.maxY - 3))
+            heirloomJournalDollsovo.addLine(to: CGPoint(x: dollFrame.midX - 2, y: dollFrame.minY + 5))
+            heirloomJournalDollsovo.addLine(to: CGPoint(x: dollFrame.maxX - 2, y: dollFrame.minY + 10))
+            heirloomJournalDollsovo.addLine(to: CGPoint(x: dollFrame.maxX - 8, y: dollFrame.maxY - 4))
+            heirloomJournalDollsovo.close()
+            heirloomJournalDollsovo.move(to: CGPoint(x: dollFrame.midX + 4, y: dollFrame.midY))
+            heirloomJournalDollsovo.addLine(to: CGPoint(x: dollFrame.midX + 4, y: dollFrame.midY))
         case .lookbook:
-            dollPath.append(UIBezierPath(roundedRect: CGRect(x: dollFrame.minX + 3, y: dollFrame.minY + 5, width: dollFrame.width - 6, height: dollFrame.height - 10), cornerRadius: 4))
-            dollPath.move(to: CGPoint(x: dollFrame.midX - 3, y: dollFrame.midY - 5))
-            dollPath.addLine(to: CGPoint(x: dollFrame.midX + 6, y: dollFrame.midY))
-            dollPath.addLine(to: CGPoint(x: dollFrame.midX - 3, y: dollFrame.midY + 5))
-            dollPath.close()
-            dollPath.move(to: CGPoint(x: dollFrame.midX, y: dollFrame.maxY - 5))
-            dollPath.addLine(to: CGPoint(x: dollFrame.midX, y: dollFrame.maxY + 2))
-        case .profile:
-            dollPath.append(UIBezierPath(ovalIn: CGRect(x: dollFrame.midX - 6, y: dollFrame.minY + 2, width: 12, height: 12)))
-            dollPath.move(to: CGPoint(x: dollFrame.minX + 4, y: dollFrame.maxY - 2))
-            dollPath.addCurve(to: CGPoint(x: dollFrame.maxX - 4, y: dollFrame.maxY - 2), controlPoint1: CGPoint(x: dollFrame.minX + 4, y: dollFrame.midY + 8), controlPoint2: CGPoint(x: dollFrame.maxX - 4, y: dollFrame.midY + 8))
+            heirloomJournalDollsovo.append(UIBezierPath(roundedRect: CGRect(x: dollFrame.minX + 3, y: dollFrame.minY + 5, width: dollFrame.width - 6, height: dollFrame.height - 10), cornerRadius: 4))
+            heirloomJournalDollsovo.move(to: CGPoint(x: dollFrame.midX - 3, y: dollFrame.midY - 5))
+            heirloomJournalDollsovo.addLine(to: CGPoint(x: dollFrame.midX + 6, y: dollFrame.midY))
+            heirloomJournalDollsovo.addLine(to: CGPoint(x: dollFrame.midX - 3, y: dollFrame.midY + 5))
+            heirloomJournalDollsovo.close()
+            heirloomJournalDollsovo.move(to: CGPoint(x: dollFrame.midX, y: dollFrame.maxY - 5))
+            heirloomJournalDollsovo.addLine(to: CGPoint(x: dollFrame.midX, y: dollFrame.maxY + 2))
+        case .heirloomTrimsheetDollhumifile:
+            heirloomJournalDollsovo.append(UIBezierPath(ovalIn: CGRect(x: dollFrame.midX - 6, y: dollFrame.minY + 2, width: 12, height: 12)))
+            heirloomJournalDollsovo.move(to: CGPoint(x: dollFrame.minX + 4, y: dollFrame.maxY - 2))
+            heirloomJournalDollsovo.addCurve(to: CGPoint(x: dollFrame.maxX - 4, y: dollFrame.maxY - 2), controlPoint1: CGPoint(x: dollFrame.minX + 4, y: dollFrame.midY + 8), controlPoint2: CGPoint(x: dollFrame.maxX - 4, y: dollFrame.midY + 8))
         }
 
-        dollLayer.path = dollPath.cgPath
+        dollLayer.path = heirloomJournalDollsovo.cgPath
         return dollLayer
     }
 }

@@ -1,10 +1,10 @@
 import UIKit
 
-final class DolluCollectionStartViewController: DolluAuthBaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+final class DollulunarSeamlineaController: DolluminiPromptDollveloController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private let porcelainCollectorNameField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_name_icon", dollPromptCopy: **"Enxytexyr xyyoxyurxy nxyamxye")
     private let pastelCatalogEmailField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: **"Enxytexyr xyemxyaixyl xyadxydrxyesxys", dollInputBoard: .emailAddress)
     private let velvetAccessSecretField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: **"Enxytexyr xypaxyssxywoxyrdxy", dollUsesSecretEntry: true)
-    private let frillyCapsuleDollvani = DolluRibbonActionButton(dollButtonTitle: **"Sixygnxy Uxyp")
+    private let frillyCapsuleDollvani = DolluminiLayerDollmivoButton(dollButtonTitle: **"Sixygnxy Uxyp")
     private let tinySnapshotDollhumi = UIButton(type: .system)
     private var dreamySnapshotDollniva: UIImage?
 
@@ -167,7 +167,7 @@ final class DolluCollectionStartViewController: DolluAuthBaseViewController, UII
     }
 
     private func revealDollCollectorGallery() {
-        view.window?.rootViewController = DolluCollectorTabController()
+        view.window?.rootViewController = DolluheirloomPropDollseroController()
         view.window?.makeKeyAndVisible()
     }
 

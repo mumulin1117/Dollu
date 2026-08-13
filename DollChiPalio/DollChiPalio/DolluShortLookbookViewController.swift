@@ -1,17 +1,17 @@
 import UIKit
 
 final class DolluShortLookbookViewController: UIViewController {
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let sageLookbookDollmexa = UILabel()
     private let satinMarkerDollpavo = UIButton(type: .custom)
-    private let pearlGuideDollukp = DolluHomeRepository()
+    private let pearlGuideDollukp = DollukeepsakeHemlineDollmivository()
     private let calmNoteDollsovo = UIActivityIndicatorView(style: .large)
     private let floralHintDollvelo = UILabel()
     private let ribbonCategoryDollpiri = UIScrollView()
     private let laceArchiveDollmexa = UIView()
     private let satinPinboardDollvani = UIButton()
     private var ribbonDisplayDollrevo: UICollectionView!
-    private var dreamySnapshotDollniva: [DolluHomeDynamicItem] = []
+    private var dreamySnapshotDollniva: [DollutrimmedClosetDollrevo] = []
     private var ivoryProgressDollrilo = false
 
     init() {
@@ -179,7 +179,7 @@ final class DolluShortLookbookViewController: UIViewController {
         }
     }
 
-    private func applyDollStyleClipResult(_ dollResult: Result<[DolluHomeDynamicItem], Error>) {
+    private func applyDollStyleClipResult(_ dollResult: Result<[DollutrimmedClosetDollrevo], Error>) {
         calmNoteDollsovo.stopAnimating()
         dreamySnapshotDollniva = (try? dollResult.get()) ?? []
         floralHintDollvelo.text = **"Stxyylxye xyclxyipxys xyarxye xywaxyitxyinxyg xyfoxyr xyyoxyurxy nxyexxyt xydoxyllxy lxyooxyk.xy"
@@ -227,11 +227,11 @@ extension DolluShortLookbookViewController: UICollectionViewDataSource, UICollec
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let dollItem = dreamySnapshotDollniva[indexPath.item]
-        let dollRouteURL = dollItem.dollRouteURL ?? DolluCollectorRouteBuilder.detailRoute(dollArchiveId: dollItem.dollArchiveId)
+        let dollRouteURL = dollItem.trimmedClosetDollrevoURL ?? DolluCollectorRouteBuilder.detailRoute(dollArchiveId: dollItem.dollArchiveId)
         navigationController?.pushViewController(DolluALoj(dollRouteURL: dollRouteURL), animated: true)
     }
 
-    private func openDollSafetyRoute(for dollItem: DolluHomeDynamicItem) {
+    private func openDollSafetyRoute(for dollItem: DollutrimmedClosetDollrevo) {
         let dollRouteURL = DolluCollectorRouteBuilder.safetyRoute(dollArchiveId: dollItem.dollArchiveId)
         navigationController?.pushViewController(DolluALoj(dollRouteURL: dollRouteURL), animated: true)
     }
@@ -332,10 +332,10 @@ final class DolluStyleClipCardCell: UICollectionViewCell {
         nil
     }
 
-    func configure(dollItem: DolluHomeDynamicItem) {
+    func configure(dollItem: DollutrimmedClosetDollrevo) {
         layeredCatalogDollquvo.text = dollItem.dollTitle
         cozyMemoDolllaro.text = dollItem.dollSummary
-        ivoryCoverDollzemi.setDollImage(dollURL: dollItem.dollCoverURL, fallbackTitle: dollItem.dollTitle)
+        ivoryCoverDollzemi.setDollImage(dollURL: dollItem.dolltrimmedLaceworkDollyaraL, fallbackTitle: dollItem.dollTitle)
     }
 
     override func prepareForReuse() {

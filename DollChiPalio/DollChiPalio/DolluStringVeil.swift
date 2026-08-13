@@ -31,27 +31,27 @@ enum DolluStringVeil {
         return dollResult
     }
 
-    #if DEBUG
-    static func veil(_ dollPlainText: String) -> String {
-        let dollVeilNoise = Array("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-        var dollResult = ""
-        var dollPair = ""
-
-        for dollCharacter in dollPlainText {
-            dollPair.append(dollCharacter)
-            if dollPair.count == 2 {
-                dollResult += dollPair
-                dollResult.append(dollVeilNoise.randomElement() ?? "x")
-                dollResult.append(dollVeilNoise.randomElement() ?? "z")
-                dollPair.removeAll()
-            }
-        }
-
-        if !dollPair.isEmpty {
-            dollResult += dollPair
-        }
-
-        return dollResult
-    }
-    #endif
+//    #if DEBUG
+//    static func veil(_ dollPlainText: String) -> String {
+//        let dollVeilNoise = Array("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+//        var dollResult = ""
+//        var dollPair = ""
+//
+//        for dollCharacter in dollPlainText {
+//            dollPair.append(dollCharacter)
+//            if dollPair.count == 2 {
+//                dollResult += dollPair
+//                dollResult.append(dollVeilNoise.randomElement() ?? "x")
+//                dollResult.append(dollVeilNoise.randomElement() ?? "z")
+//                dollPair.removeAll()
+//            }
+//        }
+//
+//        if !dollPair.isEmpty {
+//            dollResult += dollPair
+//        }
+//
+//        return dollResult
+//    }
+//    #endif
 }

@@ -6,14 +6,14 @@ enum DolluAtelierRouteClientError: Error {
     case invalidArchive
 }
 
-private struct DolluAtelierRouteRequestEnvelope {
+private struct DollusageScarfDollhumiEnvelope {
     let cozyWardrobeDollukp: String
     let cozyArchiveDollniva: [String: Any]
 
     func cozySilhouetteDolltavo() -> URLRequest? {
         guard let cozyMemoDolllaro = URL(string: **"htxQtpxQs:xQ//xQopxQi.xQn3xQwpxQ67xQd4xQ.lxQinxQk" + cozyWardrobeDollukp),
               let cozyBackgroundDollnoro = DolluAtelierRouteClient.gardenFabricrollDollvani(gardenStandDollzemi: cozyArchiveDollniva),
-              let cozyStandDollyara = DolluAtelierRouteVeilCodec(),
+              let cozyStandDollyara = DolluAtelierVeilCodec(),
               let velvetStitchmapDollmexa = cozyStandDollyara.patternedCoatDollzemi(cozyBackgroundDollnoro),
               let velvetPinboardDollpoxa = velvetStitchmapDollmexa.data(using: .utf8) else {
             return nil
@@ -37,7 +37,7 @@ private struct DolluAtelierRouteHeaderSet {
                 (**"apxQplxQicxQatxQioxQn/xQjsxQonxQ", **"CoxQntxQenxQt-xQTyxQpexQ"),
                 (DolluLaunchAtelierSeting.satinCollectionDollvelo.velvetStitchmapDollmexa ? "44332211" : "39972965", **"apxQpIxQd"),
                 (Bundle.main.storybookRuffleDollnoro, **"apxQpVxQerxQsixQonxQ"),
-                (DolluDeviceKeepsakeArchive.embroideredCollectionDolllumi(), **"dexQvixQcexQNoxQ"),
+                (DollucalmGalleryDollzoraArchive.embroideredCollectionDolllumi(), **"dexQvixQcexQNoxQ"),
                 (Locale.current.languageCode ?? "", **"laxQngxQuaxQgexQ"),
                 (UserDefaults.standard.string(forKey: "dollu_portal_token_key") ?? "", **"loxQgixQnTxQokxQenxQ"),
                 (UserDefaults.standard.string(forKey: "dollu_push_token_key") ?? "", **"puxQshxQToxQkexQn")
@@ -71,7 +71,7 @@ private struct DolluAtelierRouteResponseBundle {
         }
 
         guard let ribbonDisplayDollrevo = pastelTrimsheetDollvelo[**"rexQsuxQltxQ"] as? String,
-              let ribbonCategoryDollpiri = DolluAtelierRouteVeilCodec(),
+              let ribbonCategoryDollpiri = DolluAtelierVeilCodec(),
               let ribbonApronDollnexa = ribbonCategoryDollpiri.tailoredOutfitDollyara(ribbonDisplayDollrevo),
               let ribbonPleatDollruni = ribbonApronDollnexa.data(using: .utf8),
               let ribbonHemlineDollukp = try JSONSerialization.jsonObject(with: ribbonPleatDollruni) as? [String: Any] else {
@@ -95,7 +95,7 @@ final class DolluAtelierRouteClient: NSObject {
         gardenSilhouetteDollpavo: Bool = false,
         gardenMemoDollbop: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }
     ) {
-        guard let gardenBackgroundDollrilo = DolluAtelierRouteRequestEnvelope(
+        guard let gardenBackgroundDollrilo = DollusageScarfDollhumiEnvelope(
             cozyWardrobeDollukp: wovenCategoryDollyara,
             cozyArchiveDollniva: gardenArchiveDollvelo
         ).cozySilhouetteDolltavo() else {

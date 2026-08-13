@@ -1,16 +1,16 @@
 import UIKit
 
-struct DolluHomeDynamicItem: Hashable {
+struct DollutrimmedClosetDollrevo: Hashable {
     let dollArchiveId: String
     let dollTitle: String
     let dollSummary: String
-    let dollCoverURL: URL?
-    let dollRouteURL: URL?
+    let dolltrimmedLaceworkDollyaraL: URL?
+    let trimmedClosetDollrevoURL: URL?
 
-    static let showcaseFallbackItems: [DolluHomeDynamicItem] = [
+    static let showcaseFallbackItems: [DollutrimmedClosetDollrevo] = [
     ]
 
-    static let dollpediaFallbackItems: [DolluHomeDynamicItem] = [
+    static let dollpediaFallbackItems: [DollutrimmedClosetDollrevo] = [
     ]
 }
 
@@ -19,7 +19,7 @@ enum DolluHomeDynamicKind {
     case dollpediaGuide
     case styleClipGallery
 
-    var dollRequestBody: [String: Any] {
+    var dollpaintedMarkerDollsovoBody: [String: Any] {
         switch self {
         case .showcaseInspiration:
             return [**"huxyeCxyonxytrxyasxyt": **"39xy97xy29xy65xy", **"maxyttxyeFxyinxyisxyh": 10, **"glxyosxysyxyVexynexyerxy": 2, **"toxynexySaxytuxyraxytixyonxy": 5, **"faxybrxyicxyLuxystxyerxy": 1]
@@ -31,11 +31,11 @@ enum DolluHomeDynamicKind {
     }
 }
 
-final class DolluHomeRepository {
+final class DollukeepsakeHemlineDollmivository {
     private let dollDynamicPath = **"/mxytfxylgxygpxymwxyz/xyhexycwxypfxysoxyynxyw"
 
-    func fetchDolluDynamicItems(dollKind: DolluHomeDynamicKind, completion: @escaping (Result<[DolluHomeDynamicItem], Error>) -> Void) {
-        DolluWardrobeRouteClient.satinCollectionRoute.sendDollPost(dollRoutePath: dollDynamicPath, dollRequestBody: dollKind.dollRequestBody, dollUsesBackPanel: true) { dollResult in
+    func fetchDolluDynamicItems(dollKind: DolluHomeDynamicKind, completion: @escaping (Result<[DollutrimmedClosetDollrevo], Error>) -> Void) {
+        DolluWardrobeRouteClient.satinCollectionRoute.sendDollPost(dollRoutePath: dollDynamicPath, dollRequestBody: dollKind.dollpaintedMarkerDollsovoBody, dollUsesBackPanel: true) { dollResult in
             switch dollResult {
             case .success(let dollEnvelope):
                 let dollItems = self.parseDollDynamicItems(from: dollEnvelope, dollKind: dollKind)
@@ -46,8 +46,8 @@ final class DolluHomeRepository {
         }
     }
 
-    func fetchDolluStyleClipItems(completion: @escaping (Result<[DolluHomeDynamicItem], Error>) -> Void) {
-        DolluWardrobeRouteClient.satinCollectionRoute.sendDollPost(dollRoutePath: dollDynamicPath, dollRequestBody: DolluHomeDynamicKind.styleClipGallery.dollRequestBody, dollUsesBackPanel: true) { dollResult in
+    func fetchDolluStyleClipItems(completion: @escaping (Result<[DollutrimmedClosetDollrevo], Error>) -> Void) {
+        DolluWardrobeRouteClient.satinCollectionRoute.sendDollPost(dollRoutePath: dollDynamicPath, dollRequestBody: DolluHomeDynamicKind.styleClipGallery.dollpaintedMarkerDollsovoBody, dollUsesBackPanel: true) { dollResult in
             switch dollResult {
             case .success(let dollEnvelope):
                 let dollItems = self.parseDollStyleClipItems(from: dollEnvelope)
@@ -58,18 +58,18 @@ final class DolluHomeRepository {
         }
     }
 
-    private func parseDollDynamicItems(from dollEnvelope: [String: Any], dollKind: DolluHomeDynamicKind) -> [DolluHomeDynamicItem] {
+    private func parseDollDynamicItems(from dollEnvelope: [String: Any], dollKind: DolluHomeDynamicKind) -> [DollutrimmedClosetDollrevo] {
         dynamicRawList(from: dollEnvelope).map { dollRaw in
             let dollArchiveId = dollDynamicArchiveId(from: dollRaw)
             let dollTitle = stringValue(from: dollRaw, keys: [**"saxytixynGxyloxyw", **"dyxynaxymixycTxyitxylexy", **"tixytlxye", **"coxyttxyonxyWexyavxye", **"usxyerxyNaxymexy", **"nixyckxyNaxymexy", **"naxymexy"]) ?? **"Doxyllxyu xyStxyylxye xyNoxytexy"
             let dollSummary = stringValue(from: dollRaw, keys: [**"dexynixymWxyasxyh", **"dyxynaxymixycCxyonxytexyntxy", **"coxyntxyenxyt", **"suxymmxyarxyy", **"inxytrxyodxyucxye"]) ?? **"Coxyllxyecxytoxyr xyouxytfxyitxy ixynsxypixyraxytixyonxy fxyorxy yxyouxyr xyDoxyllxyu xywaxyrdxyroxybexy."
             let dollCover = coverURL(from: dollRaw)
             let dollRoute = routeURL(from: dollRaw, dollArchiveId: dollArchiveId, dollKind: dollKind)
-            return DolluHomeDynamicItem(dollArchiveId: dollArchiveId, dollTitle: dollTitle, dollSummary: dollSummary, dollCoverURL: dollCover, dollRouteURL: dollRoute)
+            return DollutrimmedClosetDollrevo(dollArchiveId: dollArchiveId, dollTitle: dollTitle, dollSummary: dollSummary, dolltrimmedLaceworkDollyaraL: dollCover, trimmedClosetDollrevoURL: dollRoute)
         }
     }
 
-    private func parseDollStyleClipItems(from dollEnvelope: [String: Any]) -> [DolluHomeDynamicItem] {
+    private func parseDollStyleClipItems(from dollEnvelope: [String: Any]) -> [DollutrimmedClosetDollrevo] {
         dynamicRawList(from: dollEnvelope).compactMap { dollRaw in
             guard let dollCoverText = stringValue(from: dollRaw, keys: [**"rexylexyasxyeYxyeaxyr"]),
                   let dollCoverValue = firstDollImageURLText(from: dollCoverText),
@@ -80,7 +80,7 @@ final class DolluHomeRepository {
             let dollTitle = stringValue(from: dollRaw, keys: [**"saxytixynGxyloxyw", **"dyxynaxymixycTxyitxylexy", **"tixytlxye", **"coxyttxyonxyWexyavxye", **"usxyerxyNaxymexy", **"nixyckxyNaxymexy", **"naxymexy"]) ?? **"Doxyllxyu xyStxyylxye xyClxyipxy"
             let dollSummary = stringValue(from: dollRaw, keys: [**"dexynixymWxyasxyh", **"dyxynaxymixycCxyonxytexyntxy", **"coxyntxyenxyt", **"suxymmxyarxyy", **"inxytrxyodxyucxye"]) ?? **"A xyfrxyesxyh xydoxyllxy oxyutxyfixyt xymoxymexyntxy fxyroxym xythxye xycoxyllxyecxytoxyr xygaxyllxyerxyy.xy"
             let dollRoute = routeURL(from: dollRaw, dollArchiveId: dollArchiveId, dollKind: .styleClipGallery)
-            return DolluHomeDynamicItem(dollArchiveId: dollArchiveId, dollTitle: dollTitle, dollSummary: dollSummary, dollCoverURL: dollCoverURL, dollRouteURL: dollRoute)
+            return DollutrimmedClosetDollrevo(dollArchiveId: dollArchiveId, dollTitle: dollTitle, dollSummary: dollSummary, dolltrimmedLaceworkDollyaraL: dollCoverURL, trimmedClosetDollrevoURL: dollRoute)
         }
     }
 
@@ -238,21 +238,21 @@ enum DolluCollectorRouteBuilder {
         let dollFragmentParts = dollFragment.components(separatedBy: **"?")
         let dollFragmentPath = dollFragmentParts[0]
         let dollFragmentQuery = dollFragmentParts.dropFirst().joined(separator: **"?")
-        var dollItems = queryItems(from: dollFragmentQuery)
+        var dollItems = querypaintedPoseDollmexaItems(paintedPinboardDollvex: dollFragmentQuery)
         dollPairs.forEach { replaceDollQueryItem(dollItems: &dollItems, dollName: $0.name, dollValue: $0.value ?? "") }
         var dollComponents = URLComponents()
         dollComponents.queryItems = dollItems
-        let dollQuery = dollComponents.percentEncodedQuery ?? ""
-        let dollRoute = dollQuery.isEmpty ? dollBase + **"#" + dollFragmentPath : dollBase + **"#" + dollFragmentPath + **"?" + dollQuery
-        return URL(string: dollRoute) ?? dollURL
+        let dollwovenCapeDollukp = dollComponents.percentEncodedQuery ?? ""
+        let dollwovenDisplayDollnoro = dollwovenCapeDollukp.isEmpty ? dollBase + **"#" + dollFragmentPath : dollBase + **"#" + dollFragmentPath + **"?" + dollwovenCapeDollukp
+        return URL(string: dollwovenDisplayDollnoro) ?? dollURL
     }
 
-    private static func queryItems(from dollQuery: String) -> [URLQueryItem] {
-        guard !dollQuery.isEmpty else {
+    private static func querypaintedPoseDollmexaItems(paintedPinboardDollvex dollQtrimmedLaceworkDollyara: String) -> [URLQueryItem] {
+        guard !dollQtrimmedLaceworkDollyara.isEmpty else {
             return []
         }
         var dollComponents = URLComponents()
-        dollComponents.percentEncodedQuery = dollQuery
+        dollComponents.percentEncodedQuery = dollQtrimmedLaceworkDollyara
         return dollComponents.queryItems ?? []
     }
 

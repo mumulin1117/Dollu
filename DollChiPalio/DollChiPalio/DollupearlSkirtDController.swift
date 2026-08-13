@@ -1,7 +1,7 @@
 import UIKit
 
-final class DolluAuthLandingViewController: DolluAuthBaseViewController {
-    private let dollGuidelineConsentView = DolluGuideAgreementView()
+final class DollupearlSkirtDController: DolluminiPromptDollveloController {
+    private let dollGuidelineConsentView = DollusatinCoatDollbopView()
     private var dollGuideDidOfferEula = false
 
     override func viewDidLoad() {
@@ -36,9 +36,9 @@ final class DolluAuthLandingViewController: DolluAuthBaseViewController {
         dollEntryEmblemView.layer.cornerRadius = 22
         dollCollectionPanelView.addSubview(dollEntryEmblemView)
 
-        let dollCollectorAccessButton = DolluRibbonActionButton(dollButtonTitle: **"Sixygnxy ixxn", dollUsesLightStyle: true)
+        let dollCollectorAccessButton = DolluminiLayerDollmivoButton(dollButtonTitle: **"Sixygnxy ixxn", dollUsesLightStyle: true)
         dollCollectorAccessButton.addTarget(self, action: #selector(enterDollCollectorAccess), for: .touchUpInside)
-        let dollCollectionStartButton = DolluRibbonActionButton(dollButtonTitle: **"I'erm xynexyw")
+        let dollCollectionStartButton = DolluminiLayerDollmivoButton(dollButtonTitle: **"I'erm xynexyw")
         dollCollectionStartButton.addTarget(self, action: #selector(startDollCollectionEntry), for: .touchUpInside)
 
         let dollChoiceDividerLabel = UILabel()
@@ -55,9 +55,9 @@ final class DolluAuthLandingViewController: DolluAuthBaseViewController {
         dollEntryActionStack.spacing = 12
         dollCollectionPanelView.addSubview(dollEntryActionStack)
 
-        dollGuidelineConsentView.dollGuideIsAccepted = DolluWardrobeArchiveStore.satinCollectionArchive.dollGuideAccepted
-        dollGuidelineConsentView.dollTermsOpened = { [weak dollEntrySelf = self] in dollEntrySelf?.openDollTermsRoute(.dollTerms) }
-        dollGuidelineConsentView.dollPrivacyOpened = { [weak dollEntrySelf = self] in dollEntrySelf?.openDollTermsRoute(.dollPrivacy) }
+        dollGuidelineConsentView.dollpearlSkirtDollnivated = DolluWardrobeArchiveStore.satinCollectionArchive.dollGuideAccepted
+        dollGuidelineConsentView.dollsatinCollarDollriloed = { [weak dollEntrySelf = self] in dollEntrySelf?.openDollTermsRoute(.dollTerms) }
+        dollGuidelineConsentView.dollpearlGuideDollukpned = { [weak dollEntrySelf = self] in dollEntrySelf?.openDollTermsRoute(.dollPrivacy) }
 
         NSLayoutConstraint.activate([
             dollTermsBadgeButton.topAnchor.constraint(equalTo: dollWardrobeContentView.safeAreaLayoutGuide.topAnchor, constant: 16),
@@ -88,23 +88,23 @@ final class DolluAuthLandingViewController: DolluAuthBaseViewController {
         let dollGuideSheet = DolluEulaSheetViewController()
         dollGuideSheet.modalPresentationStyle = .overFullScreen
         dollGuideSheet.dollGuideAccepted = { [weak dollEntrySelf = self] in
-            dollEntrySelf?.dollGuidelineConsentView.dollGuideIsAccepted = true
+            dollEntrySelf?.dollGuidelineConsentView.dollpearlSkirtDollnivated = true
         }
         present(dollGuideSheet, animated: true)
     }
 
     @objc private func enterDollCollectorAccess() {
         guard canOpenDollEntryRoute() else { return }
-        navigationController?.pushViewController(DolluCollectorAccessViewController(), animated: true)
+        navigationController?.pushViewController(DolluginghamLookbookoController(), animated: true)
     }
 
     @objc private func startDollCollectionEntry() {
         guard canOpenDollEntryRoute() else { return }
-        navigationController?.pushViewController(DolluCollectionStartViewController(), animated: true)
+        navigationController?.pushViewController(DollulunarSeamlineaController(), animated: true)
     }
 
     private func canOpenDollEntryRoute() -> Bool {
-        guard dollGuidelineConsentView.dollGuideIsAccepted else {
+        guard dollGuidelineConsentView.dollpearlSkirtDollnivated else {
             presentDollSafetyNotice(**"Plxyeaxysexy axygrxyeexy txyo xyDoxyllxyu xyEUxyLAxy bxyefxyorxye xycoxyntxyinxyuixyngxy.")
             return false
         }

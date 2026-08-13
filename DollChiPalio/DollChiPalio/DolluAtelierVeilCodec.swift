@@ -1,7 +1,7 @@
 import CommonCrypto
 import Foundation
 
-struct DolluAtelierRouteVeilCodec {
+struct DolluAtelierVeilCodec {
     private let patternedMoodboardDollvelo: DolluAtelierRouteVeilCodecSuite
 
     init?() {

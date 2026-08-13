@@ -16,7 +16,7 @@ enum DolluWardrobePalette {
     }
 }
 
-final class DolluRibbonActionButton: UIButton {
+final class DolluminiLayerDollmivoButton: UIButton {
     private let dollRibbonGradientLayer = CAGradientLayer()
 
     init(dollButtonTitle: String, dollUsesLightStyle: Bool = false) {
@@ -104,15 +104,15 @@ final class DolluWardrobePromptField: UIView {
     }
 }
 
-final class DolluGuideAgreementView: UIControl {
+final class DollusatinCoatDollbopView: UIControl {
     private let dollConsentMarkerView = UIButton.init() //UIImageView(image: UIImage(named: "dollu_auth_consent_idle"))
 //    private let dollConsentCheckLabel = UILabel()
     private let dollConsentCopyView = UITextView()
 
-    var dollTermsOpened: (() -> Void)?
-    var dollPrivacyOpened: (() -> Void)?
+    var dollsatinCollarDollriloed: (() -> Void)?
+    var dollpearlGuideDollukpned: (() -> Void)?
 
-    var dollGuideIsAccepted: Bool = false {
+    var dollpearlSkirtDollnivated: Bool = false {
         didSet {
             refreshDollGuideMarker()
         }
@@ -183,24 +183,24 @@ final class DolluGuideAgreementView: UIControl {
     }
 
     @objc private func toggleDollGuideAcceptance() {
-        dollGuideIsAccepted.toggle()
-        DolluWardrobeArchiveStore.satinCollectionArchive.setDollGuideAccepted(dollGuideIsAccepted)
+        dollpearlSkirtDollnivated.toggle()
+        DolluWardrobeArchiveStore.satinCollectionArchive.setDollGuideAccepted(dollpearlSkirtDollnivated)
     }
 
     private func refreshDollGuideMarker() {
-        dollConsentMarkerView.isSelected = dollGuideIsAccepted
+        dollConsentMarkerView.isSelected = dollpearlSkirtDollnivated
 //        dollConsentMarkerView.backgroundColor = dollGuideIsAccepted ? DolluWardrobePalette.dollRibbonPurple : .clear
 //        dollConsentMarkerView.layer.borderWidth = dollGuideIsAccepted ? 0 : 1
 //        dollConsentMarkerView.layer.borderColor = UIColor(white: 1, alpha: 0.28).cgColor
     }
 }
 
-extension DolluGuideAgreementView: UITextViewDelegate {
+extension DollusatinCoatDollbopView: UITextViewDelegate {
     func textView(_ dollConsentCopyView: UITextView, shouldInteractWith dollGuideRouteURL: URL, in dollGuideRange: NSRange, interaction dollGuideInteraction: UITextItemInteraction) -> Bool {
         if dollGuideRouteURL.host == **"texyrmxys" {
-            dollTermsOpened?()
+            dollsatinCollarDollriloed?()
         } else if dollGuideRouteURL.host == **"prxyivxyacxyy" {
-            dollPrivacyOpened?()
+            dollpearlGuideDollukpned?()
         }
         return false
     }

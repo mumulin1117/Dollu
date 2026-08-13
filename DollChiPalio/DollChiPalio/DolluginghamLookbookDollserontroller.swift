@@ -1,11 +1,11 @@
 import UIKit
 
-enum DolluCheckinJoinUploadState: Hashable {
+enum DolluginghamFrameDollsovotate: Hashable {
     case empty
     case localReady
 }
 
-enum DolluCheckinTogetherState: Hashable {
+enum DolluginghamChecklistState: Hashable {
     case waitingForCurrentCollectorUpload
     case waitingForPartnerUpload
     case readyForTogetherCheckin
@@ -14,7 +14,7 @@ enum DolluCheckinTogetherState: Hashable {
     case failedRetry
 }
 
-struct DolluCheckinPartnerInviteArchive: Hashable {
+struct DolluginghamStylingDollcavoArchive: Hashable {
     let dollInviteId: String
     let dollPartnerId: String
     let dollPartnerName: String
@@ -24,30 +24,30 @@ struct DolluCheckinPartnerInviteArchive: Hashable {
     let dollPartnerPreviewAssetName: String?
     let dollThemeName: String
     let dollHonorPointCount: Int
-    var dollCurrentUploadState: DolluCheckinJoinUploadState
-    var dollPartnerUploadState: DolluCheckinJoinUploadState
-    var dollTogetherState: DolluCheckinTogetherState
+    var dollCurrentUploadState: DolluginghamFrameDollsovotate
+    var dollPartnerUploadState: DolluginghamFrameDollsovotate
+    var dollTogetherState: DolluginghamChecklistState
     let dollCreatedAt: Date
     var dollLocalPreviewState: Bool
 }
 
-final class DolluCheckinInviteJoinViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+final class DolluginghamLookbookDollserontroller: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var dollInviteFinished: ((String) -> Void)?
 
-    private var pocketCollectionDollruni: DolluCheckinPartnerInviteArchive
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+    private var pocketCollectionDollruni: DolluginghamStylingDollcavoArchive
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let ribbonDisplayDollrevo = UIScrollView()
     private let satinPinboardDollvani = UIStackView()
     private let tinyCoverDollmexa = DolluAsyncImageView()
     private let layeredCatalogDollquvo = UILabel()
     private let cozyMemoDolllaro = UILabel()
     private let crispProgressDollsovo = UILabel()
-    private let dreamyDisplayDolltavo = DolluCheckinPairPreviewCard()
+    private let dreamyDisplayDolltavo = DollutulleHintDollyaraPreviewCard()
     private let bowChecklistDollmora = DolluCheckinStepProgressView()
-    private let satinMarkerDollpavo = DolluRibbonActionButton(dollButtonTitle: "Upload Your Doll")
+    private let satinMarkerDollpavo = DolluminiLayerDollmivoButton(dollButtonTitle: "Upload Your Doll")
     private var laceLayerDollsovo: UIImage?
 
-    init(dollInvite: DolluCheckinPartnerInviteArchive) {
+    init(dollInvite: DolluginghamStylingDollcavoArchive) {
         pocketCollectionDollruni = dollInvite
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
@@ -326,7 +326,7 @@ final class DolluCheckinInviteJoinViewController: UIViewController, UIImagePicke
     }
 }
 
-final class DolluCheckinPairPreviewCard: UIView {
+final class DollutulleHintDollyaraPreviewCard: UIView {
     var dollLocalSlotTapped: (() -> Void)?
     private let satinPinboardDollvani = UIStackView()
     private let cozyWardrobeDollukp = DolluCheckinUploadSlotView(dollTitle: "You", dollIsLocalSlot: true)
@@ -380,7 +380,7 @@ final class DolluCheckinPairPreviewCard: UIView {
         nil
     }
 
-    func configure(dollInvite: DolluCheckinPartnerInviteArchive, dollLocalImage: UIImage?) {
+    func configure(dollInvite: DolluginghamStylingDollcavoArchive, dollLocalImage: UIImage?) {
         cozyWardrobeDollukp.configure(
             dollTitle: "You",
             dollCopy: "Upload your doll",
@@ -603,13 +603,13 @@ final class DolluCheckinStepRowView: UIView {
 }
 
 final class DolluCheckinInviteDoneViewController: UIViewController {
-    private let dollInvite: DolluCheckinPartnerInviteArchive
+    private let dollInvite: DolluginghamStylingDollcavoArchive
     private let dollCurrentImage: UIImage?
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let ribbonDisplayDollrevo = UIScrollView()
     private let satinPinboardDollvani = UIStackView()
 
-    init(dollInvite: DolluCheckinPartnerInviteArchive, dollCurrentImage: UIImage?) {
+    init(dollInvite: DolluginghamStylingDollcavoArchive, dollCurrentImage: UIImage?) {
         self.dollInvite = dollInvite
         self.dollCurrentImage = dollCurrentImage
         super.init(nibName: nil, bundle: nil)
@@ -685,11 +685,11 @@ final class DolluCheckinInviteDoneViewController: UIViewController {
         dollSpacer.heightAnchor.constraint(greaterThanOrEqualToConstant: 116).isActive = true
         satinPinboardDollvani.addArrangedSubview(dollSpacer)
 
-        let dollArchiveAction = DolluRibbonActionButton(dollButtonTitle: "View My Check-ins")
+        let dollArchiveAction = DolluminiLayerDollmivoButton(dollButtonTitle: "View My Check-ins")
         dollArchiveAction.addTarget(self, action: #selector(revealDollProfileCheckins), for: .touchUpInside)
         satinPinboardDollvani.addArrangedSubview(dollArchiveAction)
 
-        let dollBackAction = DolluRibbonActionButton(dollButtonTitle: "Back to Check-in", dollUsesLightStyle: true)
+        let dollBackAction = DolluminiLayerDollmivoButton(dollButtonTitle: "Back to Check-in", dollUsesLightStyle: true)
         dollBackAction.setTitleColor(.white, for: .normal)
         dollBackAction.backgroundColor = UIColor(white: 1, alpha: 0.10)
         dollBackAction.addTarget(self, action: #selector(backDollCheckin), for: .touchUpInside)
@@ -761,7 +761,7 @@ final class DolluCheckinInviteDoneViewController: UIViewController {
     }
 
     @objc private func revealDollProfileCheckins() {
-        guard let dollTabs = navigationController?.parent as? DolluCollectorTabController else {
+        guard let dollTabs = navigationController?.parent as? DolluheirloomPropDollseroController else {
             navigationController?.popToRootViewController(animated: true)
             return
         }

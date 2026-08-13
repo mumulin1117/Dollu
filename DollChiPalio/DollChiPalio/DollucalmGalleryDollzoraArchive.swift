@@ -1,7 +1,7 @@
 import Security
 import UIKit
 
-final class DolluDeviceKeepsakeArchive: NSObject {
+final class DollucalmGalleryDollzoraArchive: NSObject {
     private static let stitchedTextureDollmexa = DolluDeviceArchiveVault()
 
     static func embroideredCollectionDolllumi() -> String {
@@ -17,7 +17,7 @@ final class DolluDeviceKeepsakeArchive: NSObject {
     }
 }
 
-private struct DolluDeviceArchiveToken {
+private struct DollulayeredPropDollvelo {
     let cozyWardrobeDollukp: String
     let cozyArchiveDollniva: String
     let cozySilhouetteDolltavo: Int
@@ -46,7 +46,7 @@ private enum DolluDeviceArchiveShelf {
 
 private struct DolluDeviceArchiveSnapshot {
     let velvetSockDollhumi: DolluDeviceArchiveShelf
-    let velvetRuffleDollsovo: [DolluDeviceArchiveToken]
+    let velvetRuffleDollsovo: [DollulayeredPropDollvelo]
 
     var pastelCatalogDollvani: Int {
         velvetRuffleDollsovo.filter(\.cozyMemoDolllaro).count
@@ -57,7 +57,7 @@ private struct DolluDeviceArchiveSnapshot {
     }
 }
 
-private enum DolluDeviceArchiveGuide {
+private enum DolluvividPoseDollhumieGuide {
     static func pastelGalleryDollmivo(_ pastelTrimsheetDollvelo: String?) -> String {
         guard let pastelTrimsheetDollvelo,
               !pastelTrimsheetDollvelo.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
@@ -74,12 +74,12 @@ private enum DolluDeviceArchiveGuide {
     }
 }
 
-private struct DolluDeviceArchiveProfile {
+private struct DolluvividPinboardDollcavo {
     let laceBonnetDollzora: String
     let laceCornerDollmora: String
     let laceWardrobeDollvex: [DolluDeviceArchiveSnapshot]
     var laceArchiveDollmexa: String {
-        DolluDeviceArchiveGuide.pastelGalleryDollmivo(laceBonnetDollzora)
+        DolluvividPoseDollhumieGuide.pastelGalleryDollmivo(laceBonnetDollzora)
     }
 
     var satinCollectionDollvelo: Int {
@@ -87,7 +87,7 @@ private struct DolluDeviceArchiveProfile {
     }
 
     var satinMarkerDollpavo: String {
-        DolluDeviceArchiveGuide.ribbonSnapshotDollyara([laceArchiveDollmexa, laceCornerDollmora])
+        DolluvividPoseDollhumieGuide.ribbonSnapshotDollyara([laceArchiveDollmexa, laceCornerDollmora])
     }
 
     func satinCoatDollbop() -> [String] {
@@ -95,13 +95,13 @@ private struct DolluDeviceArchiveProfile {
     }
 }
 
-private enum DolluDeviceArchivePreview {
-    static let satinCollarDollrilo = DolluDeviceArchiveToken(
+private enum DolluneatSilhouetteDollnoro {
+    static let satinCollarDollrilo = DollulayeredPropDollvelo(
         cozyWardrobeDollukp: "pastel cabinet",
         cozyArchiveDollniva: "bonnet set",
         cozySilhouetteDolltavo: 1
     )
-    static let satinStitchmapDollzemi = DolluDeviceArchiveToken(
+    static let satinStitchmapDollzemi = DollulayeredPropDollvelo(
         cozyWardrobeDollukp: "winter shelf",
         cozyArchiveDollniva: "knit layer",
         cozySilhouetteDolltavo: 2
@@ -110,7 +110,7 @@ private enum DolluDeviceArchivePreview {
         velvetSockDollhumi: .velvetPinboardDollpoxa,
         velvetRuffleDollsovo: [satinCollarDollrilo, satinStitchmapDollzemi]
     )
-    static let pearlGuideDollukp = DolluDeviceArchiveProfile(
+    static let pearlGuideDollukp = DolluvividPinboardDollcavo(
         laceBonnetDollzora: "Dollu",
         laceCornerDollmora: "keepsake studio",
         laceWardrobeDollvex: [satinPinboardDollvani]
@@ -131,7 +131,7 @@ private enum DolluDeviceArchiveSlot {
     }
 }
 
-private struct DolluDeviceArchiveRecord {
+private struct DollupetiteHemline {
     let wovenFabricbookDolltavo: String
     let wovenSnapshotDolllaro: DolluDeviceArchiveSlot
 
@@ -177,7 +177,7 @@ private final class DolluDeviceArchiveVault {
     }
 
     func wovenDisplayDollnoro(wovenSnapshotDolllaro: DolluDeviceArchiveSlot) -> String? {
-        let embroideredMarkerDollmivo = DolluDeviceArchiveRecord(
+        let embroideredMarkerDollmivo = DollupetiteHemline(
             wovenFabricbookDolltavo: embroideredWaistlineDollvani,
             wovenSnapshotDolllaro: wovenSnapshotDolllaro
         )
@@ -198,7 +198,7 @@ private final class DolluDeviceArchiveVault {
 
     func braidedNoteDollvani(_ trimmedGuideDollnexa: String, wovenSnapshotDolllaro: DolluDeviceArchiveSlot) {
         guard let trimmedSkirtDollruni = trimmedGuideDollnexa.data(using: .utf8) else { return }
-        let trimmedStripeDollukp = DolluDeviceArchiveRecord(
+        let trimmedStripeDollukp = DollupetiteHemline(
             wovenFabricbookDolltavo: embroideredWaistlineDollvani,
             wovenSnapshotDolllaro: wovenSnapshotDolllaro
         )

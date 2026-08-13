@@ -1,10 +1,10 @@
 import UIKit
 
-final class DolluCollectorAccessViewController: DolluAuthBaseViewController {
-    private let dollGuidelineConsentView = DolluGuideAgreementView()
+final class DolluginghamLookbookoController: DolluminiPromptDollveloController {
+    private let dollGuidelineConsentView = DollusatinCoatDollbopView()
     private let satinCollectionEmailField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: **"Enxytexyr xyemxyaixyl xyadxydrxyesxys", dollInputBoard: .emailAddress)
     private let ribbonSecretPromptField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: **"Enxytexyr xypaxyssxywoxyrdxy", dollUsesSecretEntry: true)
-    private let glossyClosetDollvex = DolluRibbonActionButton(dollButtonTitle: **"Sixygnxy ixyn xynoxyw")
+    private let glossyClosetDollvex = DolluminiLayerDollmivoButton(dollButtonTitle: **"Sixygnxy ixyn xynoxyw")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +43,9 @@ final class DolluCollectorAccessViewController: DolluAuthBaseViewController {
         dollAccessPromptStack.spacing = 16
         dollCollectionPanelView.addSubview(dollAccessPromptStack)
 
-        dollGuidelineConsentView.dollGuideIsAccepted = DolluWardrobeArchiveStore.satinCollectionArchive.dollGuideAccepted
-        dollGuidelineConsentView.dollTermsOpened = { [weak dollAccessSelf = self] in dollAccessSelf?.openDollTermsRoute(.dollTerms) }
-        dollGuidelineConsentView.dollPrivacyOpened = { [weak dollAccessSelf = self] in dollAccessSelf?.openDollTermsRoute(.dollPrivacy) }
+        dollGuidelineConsentView.dollpearlSkirtDollnivated = DolluWardrobeArchiveStore.satinCollectionArchive.dollGuideAccepted
+        dollGuidelineConsentView.dollsatinCollarDollriloed = { [weak dollAccessSelf = self] in dollAccessSelf?.openDollTermsRoute(.dollTerms) }
+        dollGuidelineConsentView.dollpearlGuideDollukpned = { [weak dollAccessSelf = self] in dollAccessSelf?.openDollTermsRoute(.dollPrivacy) }
         dollAccessPromptStack.setCustomSpacing(56, after: ribbonSecretPromptField)
         dollAccessPromptStack.setCustomSpacing(60, after: glossyClosetDollvex)
 
@@ -76,7 +76,7 @@ final class DolluCollectorAccessViewController: DolluAuthBaseViewController {
         guard !dollCollectorEmail.isEmpty else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy exymaxyilxy axyddxyrexyssxy."); return }
         guard !dollAccessSecret.isEmpty else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy pxyasxyswxyorxyd.xy"); return }
         guard isDollCollectorEmail(dollCollectorEmail) else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy axy vxyalxyidxy exymaxyilxy axyddxyrexyssxy."); return }
-        guard dollGuidelineConsentView.dollGuideIsAccepted else { presentDollSafetyNotice(**"Plxyeaxysexy axygrxyeexy txyo xyTexyrmxys xyofxy Sxyerxyvixycexy axyndxy Pxyrixyvaxycyxy Pxyolxyicxyy.xy"); return }
+        guard dollGuidelineConsentView.dollpearlSkirtDollnivated else { presentDollSafetyNotice(**"Plxyeaxysexy axygrxyeexy txyo xyTexyrmxys xyofxy Sxyerxyvixycexy axyndxy Pxyrixyvaxycyxy Pxyolxyicxyy.xy"); return }
 
         setDollAccessLoading(true)
         DolluCollectorAccessRoute.velvetStitchmapDollmexa.sendDollCollectorAccess(dollCollectorEmail: dollCollectorEmail, dollAccessSecret: dollAccessSecret) { [weak self] dollResult in
@@ -99,7 +99,7 @@ final class DolluCollectorAccessViewController: DolluAuthBaseViewController {
     }
 
     private func revealDollCollectorGallery() {
-        view.window?.rootViewController = DolluCollectorTabController()
+        view.window?.rootViewController = DolluheirloomPropDollseroController()
         view.window?.makeKeyAndVisible()
     }
 

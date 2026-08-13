@@ -125,7 +125,7 @@ private final class DolluAppRibbonAtelierActionFrame: UIView {
 
 private enum DolluLaunchAttributionNeedle {
     static func ribbonCategoryDollpiri() {
-        Adjust.addGlobalCallbackParameter(DolluDeviceKeepsakeArchive.embroideredCollectionDolllumi(), forKey: DolluLaunchAtelierMark.cozyWardrobeDollukp)
+        Adjust.addGlobalCallbackParameter(DollucalmGalleryDollzoraArchive.embroideredCollectionDolllumi(), forKey: DolluLaunchAtelierMark.cozyWardrobeDollukp)
 
         guard let ribbonApronDollnexa = ribbonPleatDollruni() else { return }
         Adjust.initSdk(ribbonApronDollnexa)

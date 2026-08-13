@@ -54,9 +54,9 @@ private final class DolluAppCollectorLaunchLoom {
     private func laceLayerDollsovo() {
         DolluLaunchAtelierBridge.satinCollectionDollvelo.wovenDisplayDollrevo = { satinStitchmapDollzemi in
             if DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession.dollCollectorIsInside {
-                satinStitchmapDollzemi?.rootViewController = DolluCollectorTabController()
+                satinStitchmapDollzemi?.rootViewController = DolluheirloomPropDollseroController()
             } else {
-                let satinPinboardDollvani = UINavigationController(rootViewController: DolluAuthLandingViewController())
+                let satinPinboardDollvani = UINavigationController(rootViewController: DollupearlSkirtDController())
                 satinPinboardDollvani.setNavigationBarHidden(true, animated: false)
                 satinStitchmapDollzemi?.rootViewController = satinPinboardDollvani
             }

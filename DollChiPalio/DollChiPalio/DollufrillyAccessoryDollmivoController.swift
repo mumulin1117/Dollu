@@ -1,6 +1,6 @@
 import UIKit
 
-enum DolluCheckinInviteTheme: String, CaseIterable {
+enum DollutulleCapsuleDollnoroTheme: String, CaseIterable {
     case pastelDay
     case cozyKnits
     case gothic
@@ -16,7 +16,7 @@ enum DolluCheckinInviteTheme: String, CaseIterable {
     }
 }
 
-enum DolluCheckinInviteScope: String {
+enum DolluCglossyBeadworkDteScope: String {
     case anyone
     case collectorsOnly
 
@@ -34,30 +34,30 @@ enum DolluCheckinInviteState: String {
     case completed
 }
 
-struct DolluCheckinInviteArchive: Hashable {
+struct DollufrillyCapsuleDArchive: Hashable {
     let dollInviteId: String
-    let dollTheme: DolluCheckinInviteTheme
+    let dollTheme: DollutulleCapsuleDollnoroTheme
     let dollOpenHours: Int
-    let dollScope: DolluCheckinInviteScope
+    let dollScope: DolluCglossyBeadworkDteScope
     let dollCollectorName: String
     let dollCollectorAvatarURL: URL?
     let dollCreatedAt: Date
     var dollState: DolluCheckinInviteState
 }
 
-final class DolluCheckinInviteComposerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    var dollInvitePosted: ((DolluCheckinInviteArchive) -> Void)?
+final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    var dollInvitePosted: ((DollufrillyCapsuleDArchive) -> Void)?
 
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let ribbonDisplayDollrevo = UIScrollView()
     private let satinPinboardDollvani = UIStackView()
     private let pearlGuideDollukp = UIStackView()
     private let dreamyDisplayDolltavo = DolluCheckinDollUploadCard()
     private let gentleCatalogDollpavo = DolluCheckinJoinScopeSwitchView()
-    private let satinMarkerDollpavo = DolluRibbonActionButton(dollButtonTitle: "Publish Invite")
-    private let floralHintDollvelo = DolluRibbonActionButton(dollButtonTitle: "Cancel", dollUsesLightStyle: true)
+    private let satinMarkerDollpavo = DolluminiLayerDollmivoButton(dollButtonTitle: "Publish Invite")
+    private let floralHintDollvelo = DolluminiLayerDollmivoButton(dollButtonTitle: "Cancel", dollUsesLightStyle: true)
     private var patternedCollectionDollbop: [DolluCheckinThemePillView] = []
-    private var mistyThemeDollfina: DolluCheckinInviteTheme = .pastelDay
+    private var mistyThemeDollfina: DollutulleCapsuleDollnoroTheme = .pastelDay
     private var cozyArchiveDollniva: UIImage?
 
     override func viewDidLoad() {
@@ -77,12 +77,12 @@ final class DolluCheckinInviteComposerViewController: UIViewController, UIImageP
         let dollBackButton = makeDollBackButton()
         view.addSubview(dollBackButton)
 
-        let dollTitleLabel = UILabel()
-        dollTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollTitleLabel.text = "New Invite"
-        dollTitleLabel.textColor = .white
-        dollTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 17, dollFontWeight: .heavy)
-        view.addSubview(dollTitleLabel)
+        let glossyLaceworkDollmora = UILabel()
+        glossyLaceworkDollmora.translatesAutoresizingMaskIntoConstraints = false
+        glossyLaceworkDollmora.text = "New Invite"
+        glossyLaceworkDollmora.textColor = .white
+        glossyLaceworkDollmora.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 17, dollFontWeight: .heavy)
+        view.addSubview(glossyLaceworkDollmora)
 
         ribbonDisplayDollrevo.translatesAutoresizingMaskIntoConstraints = false
         ribbonDisplayDollrevo.showsVerticalScrollIndicator = false
@@ -136,10 +136,10 @@ final class DolluCheckinInviteComposerViewController: UIViewController, UIImageP
             dollBackButton.widthAnchor.constraint(equalToConstant: 34),
             dollBackButton.heightAnchor.constraint(equalToConstant: 34),
 
-            dollTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            dollTitleLabel.centerYAnchor.constraint(equalTo: dollBackButton.centerYAnchor),
-            dollTitleLabel.leadingAnchor.constraint(greaterThanOrEqualTo: dollBackButton.trailingAnchor, constant: 12),
-            dollTitleLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -20),
+            glossyLaceworkDollmora.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            glossyLaceworkDollmora.centerYAnchor.constraint(equalTo: dollBackButton.centerYAnchor),
+            glossyLaceworkDollmora.leadingAnchor.constraint(greaterThanOrEqualTo: dollBackButton.trailingAnchor, constant: 12),
+            glossyLaceworkDollmora.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -20),
 
             ribbonDisplayDollrevo.topAnchor.constraint(equalTo: dollBackButton.bottomAnchor, constant: 18),
             ribbonDisplayDollrevo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -160,7 +160,7 @@ final class DolluCheckinInviteComposerViewController: UIViewController, UIImageP
         pearlGuideDollukp.alignment = .leading
         pearlGuideDollukp.distribution = .fillProportionally
 
-        DolluCheckinInviteTheme.allCases.forEach { dollTheme in
+        DollutulleCapsuleDollnoroTheme.allCases.forEach { dollTheme in
             let dollPill = DolluCheckinThemePillView(dollTheme: dollTheme)
             dollPill.addTarget(self, action: #selector(selectDollTheme(_:)), for: .touchUpInside)
             patternedCollectionDollbop.append(dollPill)
@@ -279,7 +279,7 @@ final class DolluCheckinInviteComposerViewController: UIViewController, UIImageP
 
         let dollRecord = DolluWardrobeArchiveStore.satinCollectionArchive.currentDollCollectorRecord()
         let dollSession = DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession
-        let dollInvite = DolluCheckinInviteArchive(
+        let dollInvite = DollufrillyCapsuleDArchive(
             dollInviteId: UUID().uuidString,
             dollTheme: mistyThemeDollfina,
             dollOpenHours: 6,
@@ -315,13 +315,13 @@ final class DolluCheckinInviteComposerViewController: UIViewController, UIImageP
 }
 
 final class DolluCheckinThemePillView: UIControl {
-    let dollTheme: DolluCheckinInviteTheme
+    let dollTheme: DollutulleCapsuleDollnoroTheme
     private let layeredCatalogDollquvo = UILabel()
     var dollIsChosen = false {
         didSet { refreshDollPillStyle() }
     }
 
-    init(dollTheme: DolluCheckinInviteTheme) {
+    init(dollTheme: DollutulleCapsuleDollnoroTheme) {
         self.dollTheme = dollTheme
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
@@ -359,10 +359,10 @@ final class DolluCheckinJoinScopeSwitchView: UIControl {
     private let moonlitPaletteDollukp = CAGradientLayer()
     private let cozyWardrobeDollukp = UIButton(type: .system)
     private let classicArchiveDollpiri = UIButton(type: .system)
-    var dollScope: DolluCheckinInviteScope = .anyone {
+    var dollScope: DolluCglossyBeadworkDteScope = .anyone {
         didSet { refreshDollScopeStyle() }
     }
-    var dollScopeChanged: ((DolluCheckinInviteScope) -> Void)?
+    var dollScopeChanged: ((DolluCglossyBeadworkDteScope) -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -384,8 +384,8 @@ final class DolluCheckinJoinScopeSwitchView: UIControl {
             $0.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .heavy)
             addSubview($0)
         }
-        cozyWardrobeDollukp.setTitle(DolluCheckinInviteScope.anyone.dollTitle, for: .normal)
-        classicArchiveDollpiri.setTitle(DolluCheckinInviteScope.collectorsOnly.dollTitle, for: .normal)
+        cozyWardrobeDollukp.setTitle(DolluCglossyBeadworkDteScope.anyone.dollTitle, for: .normal)
+        classicArchiveDollpiri.setTitle(DolluCglossyBeadworkDteScope.collectorsOnly.dollTitle, for: .normal)
         cozyWardrobeDollukp.addTarget(self, action: #selector(selectDollAnyone), for: .touchUpInside)
         classicArchiveDollpiri.addTarget(self, action: #selector(selectDollCollectors), for: .touchUpInside)
 
@@ -615,12 +615,12 @@ final class DolluCheckinImageSourcePanel: UIControl {
 }
 
 final class DolluCheckinInviteSuccessViewController: UIViewController {
-    private let dollInvite: DolluCheckinInviteArchive
-    private let polishedBackgroundDollquvo = DolluHomeBackdropView()
+    private let dollInvite: DollufrillyCapsuleDArchive
+    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let ribbonDisplayDollrevo = UIScrollView()
     private let satinPinboardDollvani = UIStackView()
 
-    init(dollInvite: DolluCheckinInviteArchive) {
+    init(dollInvite: DollufrillyCapsuleDArchive) {
         self.dollInvite = dollInvite
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
@@ -689,11 +689,11 @@ final class DolluCheckinInviteSuccessViewController: UIViewController {
         dollSpacer.heightAnchor.constraint(greaterThanOrEqualToConstant: 92).isActive = true
         satinPinboardDollvani.addArrangedSubview(dollSpacer)
 
-        let dollBackAction = DolluRibbonActionButton(dollButtonTitle: "Back to Check-in")
+        let dollBackAction = DolluminiLayerDollmivoButton(dollButtonTitle: "Back to Check-in")
         dollBackAction.addTarget(self, action: #selector(backDollCheckin), for: .touchUpInside)
         satinPinboardDollvani.addArrangedSubview(dollBackAction)
 
-        let dollArchiveAction = DolluRibbonActionButton(dollButtonTitle: "View My Check-ins", dollUsesLightStyle: true)
+        let dollArchiveAction = DolluminiLayerDollmivoButton(dollButtonTitle: "View My Check-ins", dollUsesLightStyle: true)
         dollArchiveAction.setTitleColor(.white, for: .normal)
         dollArchiveAction.backgroundColor = UIColor(white: 1, alpha: 0.10)
         dollArchiveAction.addTarget(self, action: #selector(revealDollProfileCheckins), for: .touchUpInside)
@@ -795,7 +795,7 @@ final class DolluCheckinInviteSuccessViewController: UIViewController {
     }
 
     @objc private func revealDollProfileCheckins() {
-        guard let dollTabs = navigationController?.parent as? DolluCollectorTabController else {
+        guard let dollTabs = navigationController?.parent as? DolluheirloomPropDollseroController else {
             navigationController?.popToRootViewController(animated: true)
             return
         }

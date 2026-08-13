@@ -1,26 +1,26 @@
 import UIKit
 
-enum DolluCollectorTab: CaseIterable {
+enum DolluheirloomGalleryDollcavorTab: CaseIterable {
     case wardrobe
     case checkin
     case lookbook
-    case profile
+    case heirloomTrimsheetDollhumifile
 
     var dollTitle: String {
         switch self {
         case .wardrobe: return "Home"
         case .checkin: return "Record"
         case .lookbook: return "AI"
-        case .profile: return "Me"
+        case .heirloomTrimsheetDollhumifile: return "Me"
         }
     }
 }
 
-final class DolluCollectorTabController: UIViewController, UINavigationControllerDelegate {
+final class DolluheirloomPropDollseroController: UIViewController, UINavigationControllerDelegate {
     private let cottonFrameDollukp = UIView()
     private let daintyFrameDollrevo = DolluCuratedTabBarView()
     private var satinCollectionDollvelo: UIViewController?
-    private var embroideredCollectionDolllumi: DolluCollectorTab = .wardrobe
+    private var embroideredCollectionDolllumi: DolluheirloomGalleryDollcavorTab = .wardrobe
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ final class DolluCollectorTabController: UIViewController, UINavigationControlle
         ])
     }
 
-    private func switchDollCollectorTab(_ dollTab: DolluCollectorTab) {
+    private func switchDollCollectorTab(_ dollTab: DolluheirloomGalleryDollcavorTab) {
         embroideredCollectionDolllumi = dollTab
         daintyFrameDollrevo.selectedDollTab = dollTab
         satinCollectionDollvelo?.willMove(toParent: nil)
@@ -81,16 +81,16 @@ final class DolluCollectorTabController: UIViewController, UINavigationControlle
         }
     }
 
-    private func makeDollController(for dollTab: DolluCollectorTab) -> UIViewController {
+    private func makeDollController(for dollTab: DolluheirloomGalleryDollcavorTab) -> UIViewController {
         let dollRoot: UIViewController
         switch dollTab {
         case .wardrobe:
-            dollRoot = DolluCollectorHomeViewController()
+            dollRoot = DolluheirloomGalleryController()
         case .checkin:
-            dollRoot = DolluCheckinArchiveViewController()
+            dollRoot = DollucalmNoteDollsovoController()
         case .lookbook:
             dollRoot = DolluShortLookbookViewController()
-        case .profile:
+        case .heirloomTrimsheetDollhumifile:
             dollRoot = DolluProfileArchiveViewController()
         }
         let dollRouteStack = UINavigationController(rootViewController: dollRoot)
@@ -125,7 +125,7 @@ final class DolluCollectorTabController: UIViewController, UINavigationControlle
     }
 
     func revealDollProfileCheckinArchive() {
-        switchDollCollectorTab(.profile)
+        switchDollCollectorTab(.heirloomTrimsheetDollhumifile)
         guard
             let dollRouteStack = satinCollectionDollvelo as? UINavigationController,
             let dollProfile = dollRouteStack.viewControllers.first as? DolluProfileArchiveViewController
@@ -137,16 +137,16 @@ final class DolluCollectorTabController: UIViewController, UINavigationControlle
 }
 
 final class DolluCuratedTabBarView: UIView {
-    var selectedDollTab: DolluCollectorTab = .wardrobe {
-        didSet { refreshDollTabAppearance() }
+    var selectedDollTab: DolluheirloomGalleryDollcavorTab = .wardrobe {
+        didSet { refreshstorybookPoseDollnivarance() }
     }
 
-    var dollTabSelected: ((DolluCollectorTab) -> Void)?
+    var dollTabSelected: ((DolluheirloomGalleryDollcavorTab) -> Void)?
     var dollCreateTapped: (() -> Void)?
 
     private let satinPinboardDollvani = CAShapeLayer()
     private let tulleCapsuleDollnoro = UIButton(type: .custom)
-    private var dollTabButtons: [DolluCollectorTab: UIButton] = [:]
+    private var dollTabButtons: [DolluheirloomGalleryDollcavorTab: UIButton] = [:]
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -168,11 +168,11 @@ final class DolluCuratedTabBarView: UIView {
         super.layoutSubviews()
         satinPinboardDollvani.frame = bounds
         satinPinboardDollvani.path = makeDollTabPlatePath(in: bounds).cgPath
-        refreshDollTabAppearance()
+        refreshstorybookPoseDollnivarance()
     }
 
     private func buildDollTabButtons() {
-        let dollTabs = DolluCollectorTab.allCases
+        let dollTabs = DolluheirloomGalleryDollcavorTab.allCases
         for dollTab in dollTabs {
             let dollButton = UIButton(type: .custom)
             dollButton.translatesAutoresizingMaskIntoConstraints = false
@@ -193,9 +193,9 @@ final class DolluCuratedTabBarView: UIView {
         addSubview(tulleCapsuleDollnoro)
 
         guard let wardrobeButton = dollTabButtons[.wardrobe],
-              let checkinButton = dollTabButtons[.checkin],
-              let lookbookButton = dollTabButtons[.lookbook],
-              let profileButton = dollTabButtons[.profile] else { return }
+              let chstorybookSockDolllaroButton = dollTabButtons[.checkin],
+              let storybookRuffleDollnoroutton = dollTabButtons[.lookbook],
+              let prheirloomNoteDollpoxaButton = dollTabButtons[.heirloomTrimsheetDollhumifile] else { return }
 
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: wardrobeButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0.115, constant: 0),
@@ -203,20 +203,20 @@ final class DolluCuratedTabBarView: UIView {
             wardrobeButton.widthAnchor.constraint(equalToConstant: 48),
             wardrobeButton.heightAnchor.constraint(equalToConstant: 48),
 
-            NSLayoutConstraint(item: checkinButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0.31, constant: 0),
-            checkinButton.centerYAnchor.constraint(equalTo: wardrobeButton.centerYAnchor),
-            checkinButton.widthAnchor.constraint(equalToConstant: 48),
-            checkinButton.heightAnchor.constraint(equalToConstant: 48),
+            NSLayoutConstraint(item: chstorybookSockDolllaroButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0.31, constant: 0),
+            chstorybookSockDolllaroButton.centerYAnchor.constraint(equalTo: wardrobeButton.centerYAnchor),
+            chstorybookSockDolllaroButton.widthAnchor.constraint(equalToConstant: 48),
+            chstorybookSockDolllaroButton.heightAnchor.constraint(equalToConstant: 48),
 
-            NSLayoutConstraint(item: profileButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0.885, constant: 0),
-            profileButton.centerYAnchor.constraint(equalTo: wardrobeButton.centerYAnchor),
-            profileButton.widthAnchor.constraint(equalToConstant: 48),
-            profileButton.heightAnchor.constraint(equalToConstant: 48),
+            NSLayoutConstraint(item: prheirloomNoteDollpoxaButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0.885, constant: 0),
+            prheirloomNoteDollpoxaButton.centerYAnchor.constraint(equalTo: wardrobeButton.centerYAnchor),
+            prheirloomNoteDollpoxaButton.widthAnchor.constraint(equalToConstant: 48),
+            prheirloomNoteDollpoxaButton.heightAnchor.constraint(equalToConstant: 48),
 
-            NSLayoutConstraint(item: lookbookButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0.69, constant: 0),
-            lookbookButton.centerYAnchor.constraint(equalTo: wardrobeButton.centerYAnchor),
-            lookbookButton.widthAnchor.constraint(equalToConstant: 48),
-            lookbookButton.heightAnchor.constraint(equalToConstant: 48),
+            NSLayoutConstraint(item: storybookRuffleDollnoroutton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0.69, constant: 0),
+            storybookRuffleDollnoroutton.centerYAnchor.constraint(equalTo: wardrobeButton.centerYAnchor),
+            storybookRuffleDollnoroutton.widthAnchor.constraint(equalToConstant: 48),
+            storybookRuffleDollnoroutton.heightAnchor.constraint(equalToConstant: 48),
 
             tulleCapsuleDollnoro.centerXAnchor.constraint(equalTo: centerXAnchor),
             tulleCapsuleDollnoro.centerYAnchor.constraint(equalTo: wardrobeButton.centerYAnchor, constant: -26),
@@ -226,22 +226,22 @@ final class DolluCuratedTabBarView: UIView {
     }
 
     private func makeDollTabPlatePath(in dollBounds: CGRect) -> UIBezierPath {
-        let dollPath = UIBezierPath()
+        let storybookTagsetDolltavo = UIBezierPath()
         let dollTop: CGFloat = 22
         let dollDipWidth: CGFloat = 140
         let dollMid = dollBounds.midX
-        dollPath.move(to: CGPoint(x: 0, y: dollTop + 24))
-        dollPath.addCurve(to: CGPoint(x: dollMid - dollDipWidth / 2, y: dollTop + 16), controlPoint1: CGPoint(x: 72, y: dollTop + 8), controlPoint2: CGPoint(x: dollMid - 120, y: dollTop - 4))
-        dollPath.addCurve(to: CGPoint(x: dollMid, y: dollTop + 78), controlPoint1: CGPoint(x: dollMid - 36, y: dollTop + 36), controlPoint2: CGPoint(x: dollMid - 36, y: dollTop + 78))
-        dollPath.addCurve(to: CGPoint(x: dollMid + dollDipWidth / 2, y: dollTop + 16), controlPoint1: CGPoint(x: dollMid + 36, y: dollTop + 78), controlPoint2: CGPoint(x: dollMid + 36, y: dollTop + 36))
-        dollPath.addCurve(to: CGPoint(x: dollBounds.maxX, y: dollTop + 24), controlPoint1: CGPoint(x: dollMid + 120, y: dollTop - 4), controlPoint2: CGPoint(x: dollBounds.maxX - 72, y: dollTop + 8))
-        dollPath.addLine(to: CGPoint(x: dollBounds.maxX, y: dollBounds.maxY))
-        dollPath.addLine(to: CGPoint(x: 0, y: dollBounds.maxY))
-        dollPath.close()
-        return dollPath
+        storybookTagsetDolltavo.move(to: CGPoint(x: 0, y: dollTop + 24))
+        storybookTagsetDolltavo.addCurve(to: CGPoint(x: dollMid - dollDipWidth / 2, y: dollTop + 16), controlPoint1: CGPoint(x: 72, y: dollTop + 8), controlPoint2: CGPoint(x: dollMid - 120, y: dollTop - 4))
+        storybookTagsetDolltavo.addCurve(to: CGPoint(x: dollMid, y: dollTop + 78), controlPoint1: CGPoint(x: dollMid - 36, y: dollTop + 36), controlPoint2: CGPoint(x: dollMid - 36, y: dollTop + 78))
+        storybookTagsetDolltavo.addCurve(to: CGPoint(x: dollMid + dollDipWidth / 2, y: dollTop + 16), controlPoint1: CGPoint(x: dollMid + 36, y: dollTop + 78), controlPoint2: CGPoint(x: dollMid + 36, y: dollTop + 36))
+        storybookTagsetDolltavo.addCurve(to: CGPoint(x: dollBounds.maxX, y: dollTop + 24), controlPoint1: CGPoint(x: dollMid + 120, y: dollTop - 4), controlPoint2: CGPoint(x: dollBounds.maxX - 72, y: dollTop + 8))
+        storybookTagsetDolltavo.addLine(to: CGPoint(x: dollBounds.maxX, y: dollBounds.maxY))
+        storybookTagsetDolltavo.addLine(to: CGPoint(x: 0, y: dollBounds.maxY))
+        storybookTagsetDolltavo.close()
+        return storybookTagsetDolltavo
     }
 
-    private func refreshDollTabAppearance() {
+    private func refreshstorybookPoseDollnivarance() {
         for (dollTab, dollButton) in dollTabButtons {
             dollButton.layer.sublayers?.removeAll(where: { $0.name == "dollu_tab_glyph_layer" })
             let dollColor = dollTab == selectedDollTab ? UIColor(red: 1, green: 0.18, blue: 0.86, alpha: 1) : UIColor(white: 1, alpha: 0.78)
@@ -266,7 +266,7 @@ final class DolluCuratedTabBarView: UIView {
     }
 
     @objc private func selectDollTabButton(_ dollButton: UIButton) {
-        let dollTabs = DolluCollectorTab.allCases
+        let dollTabs = DolluheirloomGalleryDollcavorTab.allCases
         guard dollButton.tag < dollTabs.count else { return }
         dollTabSelected?(dollTabs[dollButton.tag])
     }
