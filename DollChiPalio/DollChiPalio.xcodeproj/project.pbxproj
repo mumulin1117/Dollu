@@ -6,15 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		BA4212CCD918BB795DA75E60 /* Pods_DollChiPalio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5101550BAF25B85C36C35213 /* Pods_DollChiPalio.framework */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		049959EC2FE152D800F87202 /* DollChiPalio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DollChiPalio.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5101550BAF25B85C36C35213 /* Pods_DollChiPalio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DollChiPalio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		70B480D1591F7993C5FB56F8 /* Pods-DollChiPalio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DollChiPalio.release.xcconfig"; path = "Target Support Files/Pods-DollChiPalio/Pods-DollChiPalio.release.xcconfig"; sourceTree = "<group>"; };
-		7C2D474EFCCF8823E47AE6D1 /* Pods-DollChiPalio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DollChiPalio.debug.xcconfig"; path = "Target Support Files/Pods-DollChiPalio/Pods-DollChiPalio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -43,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4212CCD918BB795DA75E60 /* Pods_DollChiPalio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +47,6 @@
 			children = (
 				049959EE2FE152D800F87202 /* DollChiPalio */,
 				049959ED2FE152D800F87202 /* Products */,
-				D11ED4CAF544A889D940D62E /* Pods */,
 				86A1957A7362BB2C8635AEF4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -71,18 +62,8 @@
 		86A1957A7362BB2C8635AEF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5101550BAF25B85C36C35213 /* Pods_DollChiPalio.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D11ED4CAF544A889D940D62E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7C2D474EFCCF8823E47AE6D1 /* Pods-DollChiPalio.debug.xcconfig */,
-				70B480D1591F7993C5FB56F8 /* Pods-DollChiPalio.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,11 +73,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 049959FF2FE152DB00F87202 /* Build configuration list for PBXNativeTarget "DollChiPalio" */;
 			buildPhases = (
-				73A5B10F2DA6B5F5AC1CC1F1 /* [CP] Check Pods Manifest.lock */,
 				049959E82FE152D800F87202 /* Sources */,
 				049959E92FE152D800F87202 /* Frameworks */,
 				049959EA2FE152D800F87202 /* Resources */,
-				97A3BC7739859E7D1E783DC4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,52 +133,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		73A5B10F2DA6B5F5AC1CC1F1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DollChiPalio-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		97A3BC7739859E7D1E783DC4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DollChiPalio/Pods-DollChiPalio-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DollChiPalio/Pods-DollChiPalio-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DollChiPalio/Pods-DollChiPalio-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		049959E82FE152D800F87202 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -213,7 +146,6 @@
 /* Begin XCBuildConfiguration section */
 		04995A002FE152DB00F87202 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C2D474EFCCF8823E47AE6D1 /* Pods-DollChiPalio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -259,7 +191,6 @@
 		};
 		04995A012FE152DB00F87202 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70B480D1591F7993C5FB56F8 /* Pods-DollChiPalio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

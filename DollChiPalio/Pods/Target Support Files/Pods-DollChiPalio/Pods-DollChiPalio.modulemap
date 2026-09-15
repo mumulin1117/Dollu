@@ -1,6 +1,0 @@
-framework module Pods_DollChiPalio {
-  umbrella header "Pods-DollChiPalio-umbrella.h"
-
-  export *
-  module * { export * }
-}
