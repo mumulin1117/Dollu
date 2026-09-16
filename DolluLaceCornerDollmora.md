@@ -54,7 +54,7 @@ WebView 四边通过 Auto Layout 连接 SafeArea。键盘出现时缩小 WebView
 ### 路由和资源检查
 
 ```sh
-swiftc DollChiPalio/DollChiPalio/DolluLaceArchiveDollmexa.swift DolluLaceBonnetDollzora.swift -o /tmp/DolluLocalRouteChecks
+swiftc DollChiPalio/DollChiPalio/DolluLaceArchiveDollmexa.swift DollChiPalio/DollChiPalio/DolluLacePromptDollkora.swift DollChiPalio/DollChiPalio/DolluLaceCornerDollmora.swift DolluLaceBonnetDollzora.swift -o /tmp/DolluLocalRouteChecks
 /tmp/DolluLocalRouteChecks DollChiPalio/DollChiPalio/DolluLaceWardrobeDollvex.bundle
 ```
 
@@ -73,3 +73,13 @@ xcodebuild -project DollChiPalio/DollChiPalio.xcodeproj -scheme DollChiPalio -co
 3. 检查编辑资料、通知、AI 入口、钱包及发布页打开正常；真实购买和发布另行使用相应测试环境验证。
 4. 在不依赖已缓存资源的离线条件下打开设置页，确认页面结构可渲染；远端业务内容不可离线获取。
 5. 在 SE 与 Pro Max 尺寸检查 SafeArea、键盘显示/收起和滚动。退出后确认原生欢迎页可登录原有账号。
+
+## Encrypted resource packaging
+
+Run `python3 DolluLacePromptDollkora.py` on macOS with Xcode command-line tools. Plain resources are generated in a temporary folder, serialized as a binary property list, then processed through two independent ZLIB + AES-256-GCM layers. Each layer receives a random 32-byte key (64 hexadecimal characters) and nonce. The script verifies every restored resource byte and rejects a tampered archive before publishing its output.
+
+The app bundle contains only `DolluLaceWardrobeDollvex.bin`. Commit and build this file together with the generated `DollChiPalio/DollChiPalio/DolluLaceCornerDollmora.swift` key file. Never mix outputs from different generator runs. The production decoder lives in `DolluLacePromptDollkora.swift`; the build-time packer is `DolluLaceWardrobeDollvex.swift` at the repository root.
+
+At runtime the layers are authenticated, decrypted and decompressed in reverse order. All WebViews share a process-local resource cache; plaintext is never extracted to disk. Each decompression layer has a 32 MiB size limit. Embedded client keys provide resource protection, not protection against a determined client-side reverse engineer.
+
+Layout clarification: the WebView fills the native view; H5 content uses dynamically injected safe-area insets.

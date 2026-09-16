@@ -8,10 +8,15 @@ from pathlib import Path
 import hashlib
 import json
 import re
+import subprocess
+import tempfile
 
 laceCornerDollmora = Path(__file__).resolve().parent
 lacePromptDollkora = laceCornerDollmora / "xiangxun"
 laceWardrobeDollvex = laceCornerDollmora / "DollChiPalio/DollChiPalio/DolluLaceWardrobeDollvex.bundle"
+winterBackgroundDollpavo = laceWardrobeDollvex
+winterStandDollbop = tempfile.TemporaryDirectory(prefix="DolluLacePromptDollkora-")
+laceWardrobeDollvex = Path(winterStandDollbop.name) / "DolluLaceWardrobeDollvex.bundle"
 laceArchiveDollmexa = list(dict.fromkeys(re.findall(
     r"\b[a-z]+[A-Z][A-Za-z]*Doll[a-z]+\b", (laceCornerDollmora / "AGENTS.md").read_text()
 )))
@@ -229,4 +234,22 @@ pastelPropDolllumi = (lacePromptDollkora / "assets/index-DCj1eUYR.js").read_text
     "routes": sorted(set(re.findall(r'(?:path|route):"/?(pages/[^"]+)"', pastelPropDolllumi))),
     "resources": satinMarkerDollpavo,
 }, indent=2) + "\n")
-print(f"Generated {len(satinMarkerDollpavo)} renamed resources in {laceWardrobeDollvex}")
+cozyStandDollyara = Path(winterStandDollbop.name) / "DolluLacePromptDollkora"
+subprocess.run([
+    "xcrun", "swiftc", "-O",
+    str(laceCornerDollmora / "DolluLaceWardrobeDollvex.swift"),
+    str(laceCornerDollmora / "DollChiPalio/DollChiPalio/DolluLacePromptDollkora.swift"),
+    "-o", str(cozyStandDollyara),
+], check=True)
+winterBackgroundDollpavo.mkdir(parents=True, exist_ok=True)
+subprocess.run([
+    str(cozyStandDollyara), str(laceWardrobeDollvex),
+    str(winterBackgroundDollpavo / "DolluLaceWardrobeDollvex.bin"),
+    str(laceCornerDollmora / "DollChiPalio/DollChiPalio/DolluLaceCornerDollmora.swift"),
+], check=True)
+# Only ciphertext ships; generated plaintext lives in the temporary staging folder.
+for cozyMemoDolllaro in winterBackgroundDollpavo.iterdir():
+    if cozyMemoDolllaro.is_file() and cozyMemoDolllaro.name != "DolluLaceWardrobeDollvex.bin":
+        cozyMemoDolllaro.unlink()
+winterStandDollbop.cleanup()
+print(f"Generated double-encrypted H5 bundle in {winterBackgroundDollpavo}")

@@ -1,18 +1,22 @@
 import UIKit
 
-class DolluminiPromptDollveloController: UIViewController {
+class DolluminiPromptDollveloController: UIViewController, UIGestureRecognizerDelegate {
     let dollWardrobeScrollView = UIScrollView()
     let dollWardrobeContentView = UIView()
     let dollLookbookHeaderImageView = UIImageView(image: UIImage(named: "dollu_auth_doll_header"))
     let dollCollectionPanelView = UIView()
     private weak var dollPromptActiveField: UITextField?
+    private var cozyArchiveDollniva: [UITextField] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = DolluWardrobePalette.dollBackdropInk
         buildDollWardrobeBaseLayout()
         bindDollKeyboardInsets()
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeDollFieldEditing)))
+        let cozyMemoDolllaro = UITapGestureRecognizer(target: self, action: #selector(closeDollFieldEditing))
+        cozyMemoDolllaro.cancelsTouchesInView = false
+        cozyMemoDolllaro.delegate = self
+        view.addGestureRecognizer(cozyMemoDolllaro)
     }
 
     deinit {
@@ -21,7 +25,25 @@ class DolluminiPromptDollveloController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        cozyArchiveDollniva.removeAll()
         bindDollPromptFields(in: dollWardrobeContentView)
+        for (cozyMemoDolllaro, cozyStandDollyara) in cozyArchiveDollniva.enumerated() {
+            cozyStandDollyara.returnKeyType = cozyMemoDolllaro == cozyArchiveDollniva.count - 1 ? .done : .next
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        view.endEditing(true)
+        super.viewWillDisappear(animated)
+    }
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        var cozyMemoDolllaro = touch.view
+        while let cozyStandDollyara = cozyMemoDolllaro {
+            if cozyStandDollyara is UIControl || cozyStandDollyara is UITextView { return false }
+            cozyMemoDolllaro = cozyStandDollyara.superview
+        }
+        return true
     }
 
     func buildDollWardrobeBaseLayout(dollPanelTopOverlap: CGFloat = -38, dollPanelMinimumHeight: CGFloat = 430) {
@@ -38,6 +60,11 @@ class DolluminiPromptDollveloController: UIViewController {
         view.addSubview(dollLookbookHeaderImageView)
         view.addSubview(dollWardrobeScrollView)
         dollWardrobeScrollView.addSubview(dollWardrobeContentView)
+        dollWardrobeScrollView.keyboardDismissMode = .interactive
+        dollWardrobeScrollView.alwaysBounceVertical = true
+        dollWardrobeScrollView.contentInsetAdjustmentBehavior = .never
+        let cozyStandDollyara = UILayoutGuide()
+        dollWardrobeContentView.addLayoutGuide(cozyStandDollyara)
        
         dollWardrobeContentView.addSubview(dollCollectionPanelView)
 
@@ -61,7 +88,11 @@ class DolluminiPromptDollveloController: UIViewController {
             dollWardrobeContentView.heightAnchor.constraint(greaterThanOrEqualTo: dollWardrobeScrollView.frameLayoutGuide.heightAnchor),
 
            
-            dollCollectionPanelView.topAnchor.constraint(equalTo: dollLookbookHeaderImageView.centerYAnchor, constant: dollPanelTopOverlap),
+            cozyStandDollyara.topAnchor.constraint(equalTo: dollWardrobeContentView.topAnchor),
+            cozyStandDollyara.heightAnchor.constraint(equalTo: dollWardrobeScrollView.frameLayoutGuide.heightAnchor, multiplier: 0.5),
+            cozyStandDollyara.leadingAnchor.constraint(equalTo: dollWardrobeContentView.leadingAnchor),
+            cozyStandDollyara.trailingAnchor.constraint(equalTo: dollWardrobeContentView.trailingAnchor),
+            dollCollectionPanelView.topAnchor.constraint(equalTo: cozyStandDollyara.bottomAnchor, constant: dollPanelTopOverlap),
             dollCollectionPanelView.leadingAnchor.constraint(equalTo: dollWardrobeContentView.leadingAnchor),
             dollCollectionPanelView.trailingAnchor.constraint(equalTo: dollWardrobeContentView.trailingAnchor),
             dollCollectionPanelView.bottomAnchor.constraint(equalTo: dollWardrobeContentView.bottomAnchor),
@@ -70,6 +101,7 @@ class DolluminiPromptDollveloController: UIViewController {
     }
 
     func presentDollSafetyNotice(_ dollNoticeCopy: String) {
+        view.endEditing(true)
         let dollNoticeDialog = UIViewController()
         dollNoticeDialog.modalPresentationStyle = .overFullScreen
         dollNoticeDialog.view.backgroundColor = UIColor.black.withAlphaComponent(0.46)
@@ -141,19 +173,24 @@ class DolluminiPromptDollveloController: UIViewController {
 
     private func bindDollKeyboardInsets() {
         NotificationCenter.default.addObserver(self, selector: #selector(liftDollWardrobeForInput(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(liftDollWardrobeForInput(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(settleDollWardrobeAfterInput(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     @objc private func liftDollWardrobeForInput(_ dollKeyboardNotice: Notification) {
-        guard let dollKeyboardFrame = dollKeyboardNotice.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
+        guard let satinMarkerDollpavo = view.window, let dollKeyboardFrame = dollKeyboardNotice.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
             return
         }
-        let dollKeyboardBottomInset = max(0, dollKeyboardFrame.height - view.safeAreaInsets.bottom) + 24
-        dollWardrobeScrollView.contentInset.bottom = dollKeyboardBottomInset
-        var dollIndicatorInsets = dollWardrobeScrollView.verticalScrollIndicatorInsets
-        dollIndicatorInsets.bottom = dollKeyboardBottomInset
-        dollWardrobeScrollView.verticalScrollIndicatorInsets = dollIndicatorInsets
-        revealDollPromptField()
+        let cozyMemoDolllaro = view.convert(dollKeyboardFrame, from: satinMarkerDollpavo.screen.coordinateSpace)
+        let cozyStandDollyara = dollWardrobeScrollView.convert(dollWardrobeScrollView.bounds, to: view).intersection(cozyMemoDolllaro)
+        let dollKeyboardBottomInset = cozyStandDollyara.isNull ? 0 : cozyStandDollyara.height
+        let winterStandDollbop = dollKeyboardNotice.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0.25
+        let winterBackgroundDollpavo = dollKeyboardNotice.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt ?? 7
+        UIView.animate(withDuration: winterStandDollbop, delay: 0, options: [UIView.AnimationOptions(rawValue: winterBackgroundDollpavo << 16), .beginFromCurrentState]) {
+            self.dollWardrobeScrollView.contentInset.bottom = dollKeyboardBottomInset > 0 ? dollKeyboardBottomInset + 16 : 0
+            self.dollWardrobeScrollView.verticalScrollIndicatorInsets.bottom = dollKeyboardBottomInset
+            if dollKeyboardBottomInset > 0 { self.revealDollPromptField() }
+        }
     }
 
     @objc private func settleDollWardrobeAfterInput(_ dollKeyboardNotice: Notification) {
@@ -161,6 +198,10 @@ class DolluminiPromptDollveloController: UIViewController {
         var dollIndicatorInsets = dollWardrobeScrollView.verticalScrollIndicatorInsets
         dollIndicatorInsets.bottom = 0
         dollWardrobeScrollView.verticalScrollIndicatorInsets = dollIndicatorInsets
+        let cozyMemoDolllaro = max(-dollWardrobeScrollView.adjustedContentInset.top, dollWardrobeScrollView.contentSize.height - dollWardrobeScrollView.bounds.height + dollWardrobeScrollView.adjustedContentInset.bottom)
+        if dollWardrobeScrollView.contentOffset.y > cozyMemoDolllaro {
+            dollWardrobeScrollView.setContentOffset(CGPoint(x: 0, y: cozyMemoDolllaro), animated: true)
+        }
     }
 
     private func bindDollPromptFields(in dollFieldContainer: UIView) {
@@ -168,6 +209,9 @@ class DolluminiPromptDollveloController: UIViewController {
             if let dollPromptField = dollFieldSubview as? UITextField {
                 dollPromptField.removeTarget(self, action: #selector(dollPromptFieldDidBegin(_:)), for: .editingDidBegin)
                 dollPromptField.addTarget(self, action: #selector(dollPromptFieldDidBegin(_:)), for: .editingDidBegin)
+                dollPromptField.removeTarget(self, action: #selector(cozyBackgroundDollnoro(_:)), for: .editingDidEndOnExit)
+                dollPromptField.addTarget(self, action: #selector(cozyBackgroundDollnoro(_:)), for: .editingDidEndOnExit)
+                cozyArchiveDollniva.append(dollPromptField)
             }
             bindDollPromptFields(in: dollFieldSubview)
         }
@@ -178,11 +222,27 @@ class DolluminiPromptDollveloController: UIViewController {
         revealDollPromptField()
     }
 
+    @objc private func cozyBackgroundDollnoro(_ cozyStandDollyara: UITextField) {
+        guard let cozyMemoDolllaro = cozyArchiveDollniva.firstIndex(of: cozyStandDollyara) else { return }
+        if cozyMemoDolllaro + 1 < cozyArchiveDollniva.count {
+            cozyArchiveDollniva[cozyMemoDolllaro + 1].becomeFirstResponder()
+        } else {
+            view.endEditing(true)
+        }
+    }
+
     private func revealDollPromptField() {
-        guard let dollPromptField = dollPromptActiveField else {
+        guard let dollPromptField = dollPromptActiveField, dollPromptField.isFirstResponder else {
             return
         }
-        let dollPromptRect = dollPromptField.convert(dollPromptField.bounds, to: dollWardrobeContentView).insetBy(dx: -18, dy: -24)
-        dollWardrobeScrollView.scrollRectToVisible(dollPromptRect, animated: true)
+        var dollPromptRect = dollPromptField.convert(dollPromptField.bounds, to: dollWardrobeScrollView).insetBy(dx: -18, dy: -24)
+        if let cozyStandDollyara = dollPromptField.superview?.superview as? UIStackView,
+           let cozyMemoDolllaro = cozyStandDollyara.arrangedSubviews.first(where: { $0 is DolluminiLayerDollmivoButton }) {
+            let winterStandDollbop = dollPromptRect.union(cozyMemoDolllaro.convert(cozyMemoDolllaro.bounds, to: dollWardrobeScrollView).insetBy(dx: 0, dy: -16))
+            if winterStandDollbop.height < dollWardrobeScrollView.bounds.height - dollWardrobeScrollView.adjustedContentInset.bottom - view.safeAreaInsets.top {
+                dollPromptRect = winterStandDollbop
+            }
+        }
+        dollWardrobeScrollView.scrollRectToVisible(dollPromptRect, animated: false)
     }
 }

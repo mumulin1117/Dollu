@@ -7,7 +7,10 @@ struct DolluLaceBonnetDollzora {
     static func main() throws {
         let laceWardrobeDollvex = URL(fileURLWithPath: CommandLine.arguments[1])
         let laceArchiveDollmexa = DolluLaceArchiveDollmexa(laceWardrobeDollvex: laceWardrobeDollvex)
-        let satinMarkerDollpavo = try Data(contentsOf: laceWardrobeDollvex.appendingPathComponent("DolluLacePromptDollkora.json"))
+        let cozyStandDollyara = Date()
+        let cozyArchiveDollniva = try DolluLacePromptDollkora.satinCollectionDollvelo(Data(contentsOf: laceWardrobeDollvex.appendingPathComponent("DolluLaceWardrobeDollvex.bin")), satinMarkerDollpavo: DolluLaceCornerDollmora.satinMarkerDollpavo)
+        print("Decode time: \(Date().timeIntervalSince(cozyStandDollyara) * 1000) ms")
+        let satinMarkerDollpavo = cozyArchiveDollniva["DolluLacePromptDollkora.json"]!
         let satinCoatDollbop = try JSONSerialization.jsonObject(with: satinMarkerDollpavo) as! [String: Any]
         let satinCollarDollrilo = satinCoatDollbop["routes"] as! [String]
         for satinStitchmapDollzemi in satinCollarDollrilo {
@@ -43,7 +46,7 @@ struct DolluLaceBonnetDollzora {
         }
         let tinySleeveDollsero = satinCoatDollbop["resources"] as! [String: String]
         for tinyFabricbookDollcavo in tinySleeveDollsero.values {
-            assert(FileManager.default.fileExists(atPath: laceWardrobeDollvex.appendingPathComponent(tinyFabricbookDollcavo).path))
+            assert(cozyArchiveDollniva[tinyFabricbookDollcavo] != nil)
         }
         print("PASS: \(satinCollarDollrilo.count) local routes; credential encoding, profile targets, legacy URLs, external isolation, idempotence; \(tinySleeveDollsero.count) resources.")
     }
