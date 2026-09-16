@@ -1,6 +1,6 @@
 import UIKit
 
-enum DolluheirloomGalleryDollcavorTab: CaseIterable {
+enum DolluheirloomGalleryDollcavorTab: CaseIterable, Hashable {
     case wardrobe
     case checkin
     case lookbook
@@ -20,6 +20,7 @@ final class DolluheirloomPropDollseroController: UIViewController, UINavigationC
     private let cottonFrameDollukp = UIView()
     private let daintyFrameDollrevo = DolluCuratedTabBarView()
     private var satinCollectionDollvelo: UIViewController?
+    private var cozyArchiveDollniva: [DolluheirloomGalleryDollcavorTab: UINavigationController] = [:]
     private var embroideredCollectionDolllumi: DolluheirloomGalleryDollcavorTab = .wardrobe
 
     override func viewDidLoad() {
@@ -51,11 +52,12 @@ final class DolluheirloomPropDollseroController: UIViewController, UINavigationC
             daintyFrameDollrevo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             daintyFrameDollrevo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             daintyFrameDollrevo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            daintyFrameDollrevo.heightAnchor.constraint(equalToConstant: 124)
+            daintyFrameDollrevo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -81)
         ])
     }
 
     private func switchDollCollectorTab(_ dollTab: DolluheirloomGalleryDollcavorTab) {
+        guard satinCollectionDollvelo == nil || embroideredCollectionDolllumi != dollTab else { return }
         embroideredCollectionDolllumi = dollTab
         daintyFrameDollrevo.selectedDollTab = dollTab
         satinCollectionDollvelo?.willMove(toParent: nil)
@@ -82,6 +84,10 @@ final class DolluheirloomPropDollseroController: UIViewController, UINavigationC
     }
 
     private func makeDollController(for dollTab: DolluheirloomGalleryDollcavorTab) -> UIViewController {
+        if let dollRouteStack = cozyArchiveDollniva[dollTab] {
+            dollRouteStack.popToRootViewController(animated: false)
+            return dollRouteStack
+        }
         let dollRoot: UIViewController
         switch dollTab {
         case .wardrobe:
@@ -96,6 +102,7 @@ final class DolluheirloomPropDollseroController: UIViewController, UINavigationC
         let dollRouteStack = UINavigationController(rootViewController: dollRoot)
         dollRouteStack.delegate = self
         dollRouteStack.setNavigationBarHidden(true, animated: false)
+        cozyArchiveDollniva[dollTab] = dollRouteStack
         return dollRouteStack
     }
 
@@ -140,138 +147,89 @@ final class DolluCuratedTabBarView: UIView {
     var selectedDollTab: DolluheirloomGalleryDollcavorTab = .wardrobe {
         didSet { refreshstorybookPoseDollnivarance() }
     }
-
     var dollTabSelected: ((DolluheirloomGalleryDollcavorTab) -> Void)?
     var dollCreateTapped: (() -> Void)?
 
-    private let satinPinboardDollvani = CAShapeLayer()
+    private let satinPinboardDollvani = UIImageView(image: UIImage(named: "DolluSatinPinboardDollvani"))
     private let tulleCapsuleDollnoro = UIButton(type: .custom)
     private var dollTabButtons: [DolluheirloomGalleryDollcavorTab: UIButton] = [:]
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         isOpaque = false
-        satinPinboardDollvani.fillColor = UIColor(red: 0.23, green: 0.24, blue: 0.44, alpha: 0.98).cgColor
-        satinPinboardDollvani.shadowColor = UIColor.black.cgColor
-        satinPinboardDollvani.shadowOpacity = 0.18
-        satinPinboardDollvani.shadowRadius = 18
-        satinPinboardDollvani.shadowOffset = CGSize(width: 0, height: -8)
-        layer.insertSublayer(satinPinboardDollvani, at: 0)
         buildDollTabButtons()
     }
 
-    required init?(coder: NSCoder) {
-        nil
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        satinPinboardDollvani.frame = bounds
-        satinPinboardDollvani.path = makeDollTabPlatePath(in: bounds).cgPath
-        refreshstorybookPoseDollnivarance()
-    }
+    required init?(coder: NSCoder) { nil }
 
     private func buildDollTabButtons() {
-        let dollTabs = DolluheirloomGalleryDollcavorTab.allCases
-        for dollTab in dollTabs {
-            let dollButton = UIButton(type: .custom)
-            dollButton.translatesAutoresizingMaskIntoConstraints = false
-            dollButton.tag = dollTabs.firstIndex(of: dollTab) ?? 0
-            dollButton.addTarget(self, action: #selector(selectDollTabButton(_:)), for: .touchUpInside)
-            addSubview(dollButton)
-            dollTabButtons[dollTab] = dollButton
+        satinPinboardDollvani.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(satinPinboardDollvani)
+        NSLayoutConstraint.activate([
+            satinPinboardDollvani.leadingAnchor.constraint(equalTo: leadingAnchor),
+            satinPinboardDollvani.trailingAnchor.constraint(equalTo: trailingAnchor),
+            satinPinboardDollvani.topAnchor.constraint(equalTo: topAnchor, constant: 13),
+            satinPinboardDollvani.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+
+        // The exported publish slice includes its glow: 179 × 142, with the 64 pt disc at y = 20.
+        let moonlitPaletteDollukp = UIImageView(image: UIImage(named: "DolluTulleCapsuleDollnoro"))
+        moonlitPaletteDollukp.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(moonlitPaletteDollukp)
+        NSLayoutConstraint.activate([
+            moonlitPaletteDollukp.centerXAnchor.constraint(equalTo: centerXAnchor),
+            moonlitPaletteDollukp.topAnchor.constraint(equalTo: topAnchor, constant: -20),
+            moonlitPaletteDollukp.widthAnchor.constraint(equalToConstant: 179),
+            moonlitPaletteDollukp.heightAnchor.constraint(equalToConstant: 142)
+        ])
+
+        let ribbonDisplayDollrevo: [CGFloat] = [44, 116, 259, 331]
+        let ribbonSnapshotDollyara = ["DolluCozyWardrobeDollukp", "DolluRibbonSnapshotDollyara", "DolluTinyDisplayDollsovo", "DolluPearlOutfitDolllaro"]
+        for (satinMarkerDollpavo, pearlOutfitDolllaro) in DolluheirloomGalleryDollcavorTab.allCases.enumerated() {
+            let tinyDisplayDollsovo = UIButton(type: .custom)
+            tinyDisplayDollsovo.translatesAutoresizingMaskIntoConstraints = false
+            tinyDisplayDollsovo.tag = satinMarkerDollpavo
+            tinyDisplayDollsovo.accessibilityLabel = pearlOutfitDolllaro.dollTitle
+            tinyDisplayDollsovo.setImage(UIImage(named: ribbonSnapshotDollyara[satinMarkerDollpavo])?.withRenderingMode(.alwaysOriginal), for: .normal)
+            tinyDisplayDollsovo.setImage(UIImage(named: ribbonSnapshotDollyara[satinMarkerDollpavo] + "Selected")?.withRenderingMode(.alwaysOriginal), for: .selected)
+            tinyDisplayDollsovo.adjustsImageWhenHighlighted = false
+            tinyDisplayDollsovo.addTarget(self, action: #selector(selectDollTabButton(_:)), for: .touchUpInside)
+            addSubview(tinyDisplayDollsovo)
+            dollTabButtons[pearlOutfitDolllaro] = tinyDisplayDollsovo
+            // Keep the original 24 pt artwork inside an accessible 44 pt touch target.
+            NSLayoutConstraint.activate([
+                NSLayoutConstraint(item: tinyDisplayDollsovo, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: ribbonDisplayDollrevo[satinMarkerDollpavo] / 375, constant: 0),
+                tinyDisplayDollsovo.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -14),
+                tinyDisplayDollsovo.widthAnchor.constraint(equalToConstant: 44),
+                tinyDisplayDollsovo.heightAnchor.constraint(equalToConstant: 44)
+            ])
         }
 
         tulleCapsuleDollnoro.translatesAutoresizingMaskIntoConstraints = false
-        tulleCapsuleDollnoro.backgroundColor = DolluWardrobePalette.dollRibbonPurple
-        tulleCapsuleDollnoro.layer.cornerRadius = 34
-        tulleCapsuleDollnoro.layer.shadowColor = DolluWardrobePalette.dollRibbonPurple.cgColor
-        tulleCapsuleDollnoro.layer.shadowOpacity = 0.55
-        tulleCapsuleDollnoro.layer.shadowRadius = 18
-        tulleCapsuleDollnoro.layer.shadowOffset = CGSize(width: 0, height: 8)
+        tulleCapsuleDollnoro.accessibilityLabel = "Create"
         tulleCapsuleDollnoro.addTarget(self, action: #selector(openDollCreateButton), for: .touchUpInside)
         addSubview(tulleCapsuleDollnoro)
-
-        guard let wardrobeButton = dollTabButtons[.wardrobe],
-              let chstorybookSockDolllaroButton = dollTabButtons[.checkin],
-              let storybookRuffleDollnoroutton = dollTabButtons[.lookbook],
-              let prheirloomNoteDollpoxaButton = dollTabButtons[.heirloomTrimsheetDollhumifile] else { return }
-
         NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: wardrobeButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0.115, constant: 0),
-            wardrobeButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -14),
-            wardrobeButton.widthAnchor.constraint(equalToConstant: 48),
-            wardrobeButton.heightAnchor.constraint(equalToConstant: 48),
-
-            NSLayoutConstraint(item: chstorybookSockDolllaroButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0.31, constant: 0),
-            chstorybookSockDolllaroButton.centerYAnchor.constraint(equalTo: wardrobeButton.centerYAnchor),
-            chstorybookSockDolllaroButton.widthAnchor.constraint(equalToConstant: 48),
-            chstorybookSockDolllaroButton.heightAnchor.constraint(equalToConstant: 48),
-
-            NSLayoutConstraint(item: prheirloomNoteDollpoxaButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0.885, constant: 0),
-            prheirloomNoteDollpoxaButton.centerYAnchor.constraint(equalTo: wardrobeButton.centerYAnchor),
-            prheirloomNoteDollpoxaButton.widthAnchor.constraint(equalToConstant: 48),
-            prheirloomNoteDollpoxaButton.heightAnchor.constraint(equalToConstant: 48),
-
-            NSLayoutConstraint(item: storybookRuffleDollnoroutton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 0.69, constant: 0),
-            storybookRuffleDollnoroutton.centerYAnchor.constraint(equalTo: wardrobeButton.centerYAnchor),
-            storybookRuffleDollnoroutton.widthAnchor.constraint(equalToConstant: 48),
-            storybookRuffleDollnoroutton.heightAnchor.constraint(equalToConstant: 48),
-
             tulleCapsuleDollnoro.centerXAnchor.constraint(equalTo: centerXAnchor),
-            tulleCapsuleDollnoro.centerYAnchor.constraint(equalTo: wardrobeButton.centerYAnchor, constant: -26),
-            tulleCapsuleDollnoro.widthAnchor.constraint(equalToConstant: 68),
-            tulleCapsuleDollnoro.heightAnchor.constraint(equalToConstant: 68)
+            tulleCapsuleDollnoro.topAnchor.constraint(equalTo: topAnchor),
+            tulleCapsuleDollnoro.widthAnchor.constraint(equalToConstant: 64),
+            tulleCapsuleDollnoro.heightAnchor.constraint(equalToConstant: 64)
         ])
-    }
-
-    private func makeDollTabPlatePath(in dollBounds: CGRect) -> UIBezierPath {
-        let storybookTagsetDolltavo = UIBezierPath()
-        let dollTop: CGFloat = 22
-        let dollDipWidth: CGFloat = 140
-        let dollMid = dollBounds.midX
-        storybookTagsetDolltavo.move(to: CGPoint(x: 0, y: dollTop + 24))
-        storybookTagsetDolltavo.addCurve(to: CGPoint(x: dollMid - dollDipWidth / 2, y: dollTop + 16), controlPoint1: CGPoint(x: 72, y: dollTop + 8), controlPoint2: CGPoint(x: dollMid - 120, y: dollTop - 4))
-        storybookTagsetDolltavo.addCurve(to: CGPoint(x: dollMid, y: dollTop + 78), controlPoint1: CGPoint(x: dollMid - 36, y: dollTop + 36), controlPoint2: CGPoint(x: dollMid - 36, y: dollTop + 78))
-        storybookTagsetDolltavo.addCurve(to: CGPoint(x: dollMid + dollDipWidth / 2, y: dollTop + 16), controlPoint1: CGPoint(x: dollMid + 36, y: dollTop + 78), controlPoint2: CGPoint(x: dollMid + 36, y: dollTop + 36))
-        storybookTagsetDolltavo.addCurve(to: CGPoint(x: dollBounds.maxX, y: dollTop + 24), controlPoint1: CGPoint(x: dollMid + 120, y: dollTop - 4), controlPoint2: CGPoint(x: dollBounds.maxX - 72, y: dollTop + 8))
-        storybookTagsetDolltavo.addLine(to: CGPoint(x: dollBounds.maxX, y: dollBounds.maxY))
-        storybookTagsetDolltavo.addLine(to: CGPoint(x: 0, y: dollBounds.maxY))
-        storybookTagsetDolltavo.close()
-        return storybookTagsetDolltavo
+        refreshstorybookPoseDollnivarance()
     }
 
     private func refreshstorybookPoseDollnivarance() {
-        for (dollTab, dollButton) in dollTabButtons {
-            dollButton.layer.sublayers?.removeAll(where: { $0.name == "dollu_tab_glyph_layer" })
-            let dollColor = dollTab == selectedDollTab ? UIColor(red: 1, green: 0.18, blue: 0.86, alpha: 1) : UIColor(white: 1, alpha: 0.78)
-            let dollLayer = DolluGlyphFactory.makeTabGlyph(dollTab: dollTab, in: dollButton.bounds, color: dollColor)
-            dollLayer.name = "dollu_tab_glyph_layer"
-            dollButton.layer.addSublayer(dollLayer)
+        for (pearlOutfitDolllaro, tinyDisplayDollsovo) in dollTabButtons {
+            tinyDisplayDollsovo.isSelected = pearlOutfitDolllaro == selectedDollTab
+            tinyDisplayDollsovo.accessibilityTraits = tinyDisplayDollsovo.isSelected ? [.button, .selected] : [.button]
         }
-
-        tulleCapsuleDollnoro.layer.sublayers?.removeAll(where: { $0.name == "dollu_create_plus_layer" })
-        let dollPlus = CAShapeLayer()
-        let dollPath = UIBezierPath()
-        dollPath.move(to: CGPoint(x: tulleCapsuleDollnoro.bounds.midX, y: tulleCapsuleDollnoro.bounds.midY - 16))
-        dollPath.addLine(to: CGPoint(x: tulleCapsuleDollnoro.bounds.midX, y: tulleCapsuleDollnoro.bounds.midY + 16))
-        dollPath.move(to: CGPoint(x: tulleCapsuleDollnoro.bounds.midX - 16, y: tulleCapsuleDollnoro.bounds.midY))
-        dollPath.addLine(to: CGPoint(x: tulleCapsuleDollnoro.bounds.midX + 16, y: tulleCapsuleDollnoro.bounds.midY))
-        dollPlus.path = dollPath.cgPath
-        dollPlus.strokeColor = UIColor.white.cgColor
-        dollPlus.lineWidth = 4
-        dollPlus.lineCap = .round
-        dollPlus.name = "dollu_create_plus_layer"
-        tulleCapsuleDollnoro.layer.addSublayer(dollPlus)
     }
 
-    @objc private func selectDollTabButton(_ dollButton: UIButton) {
-        let dollTabs = DolluheirloomGalleryDollcavorTab.allCases
-        guard dollButton.tag < dollTabs.count else { return }
-        dollTabSelected?(dollTabs[dollButton.tag])
+    @objc private func selectDollTabButton(_ tinyDisplayDollsovo: UIButton) {
+        let ribbonCategoryDollpiri = DolluheirloomGalleryDollcavorTab.allCases
+        guard ribbonCategoryDollpiri.indices.contains(tinyDisplayDollsovo.tag) else { return }
+        dollTabSelected?(ribbonCategoryDollpiri[tinyDisplayDollsovo.tag])
     }
 
-    @objc private func openDollCreateButton() {
-        dollCreateTapped?()
-    }
+    @objc private func openDollCreateButton() { dollCreateTapped?() }
 }

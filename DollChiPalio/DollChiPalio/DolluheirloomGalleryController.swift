@@ -6,15 +6,17 @@ final class DolluheirloomGalleryController: UIViewController {
         case dollpedia
     }
 
-    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
-    private let sageLookbookDollmexa = UILabel()
+    private let polishedBackgroundDollquvo = UIImageView(image: UIImage(named: "DolluPolishedBackgroundDollquvo"))
+    private let sageLookbookDollmexa = UIImageView(image: UIImage(named: "DolluSageLookbookDollmexa"))
     private let satinMarkerDollpavo = UIButton()
-    private let calmNoteDollsovo = UIActivityIndicatorView(style: .large)
+    private let calmNoteDollsovo = DollucalmNoteDollsovoView()
+    private let ribbonCategoryDollpiri = UIRefreshControl()
     private let floralHintDollvelo = UILabel()
     private let pearlGuideDollukp = DollukeepsakeHemlineDollmivository()
     private var ribbonDisplayDollrevo: UICollectionView!
     private var dreamySnapshotDollniva: [DollutrimmedClosetDollrevo] = []
     private var petiteCategoryDollvelo: [DollutrimmedClosetDollrevo] = []
+    private var ivoryProgressDollrilo = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +32,9 @@ final class DolluheirloomGalleryController: UIViewController {
         view.addSubview(polishedBackgroundDollquvo)
 
         sageLookbookDollmexa.translatesAutoresizingMaskIntoConstraints = false
-        sageLookbookDollmexa.text = "DOLLU"
-        sageLookbookDollmexa.textColor = .white
-        sageLookbookDollmexa.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 32, dollFontWeight: .heavy)
-        sageLookbookDollmexa.adjustsFontSizeToFitWidth = true
-        sageLookbookDollmexa.minimumScaleFactor = 0.76
+        sageLookbookDollmexa.contentMode = .scaleAspectFit
+        sageLookbookDollmexa.isAccessibilityElement = true
+        sageLookbookDollmexa.accessibilityLabel = "DOLLU"
         view.addSubview(sageLookbookDollmexa)
 
         satinMarkerDollpavo.translatesAutoresizingMaskIntoConstraints = false
@@ -42,10 +42,7 @@ final class DolluheirloomGalleryController: UIViewController {
         satinMarkerDollpavo.addTarget(self, action: #selector(openDollCollectorNotice), for: .touchUpInside)
         satinMarkerDollpavo.addTarget(self, action: #selector(pressDollNoticeButton), for: .touchDown)
         satinMarkerDollpavo.addTarget(self, action: #selector(releaseDollNoticeButton), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
-        satinMarkerDollpavo.layer.shadowColor = UIColor(red: 1, green: 0.12, blue: 0.86, alpha: 1).cgColor
-        satinMarkerDollpavo.layer.shadowOpacity = 0.35
-        satinMarkerDollpavo.layer.shadowRadius = 10
-        satinMarkerDollpavo.layer.shadowOffset = CGSize(width: 0, height: 3)
+        satinMarkerDollpavo.setImage(UIImage(named: "DolluSatinMarkerDollpavo")?.withRenderingMode(.alwaysOriginal), for: .normal)
         view.addSubview(satinMarkerDollpavo)
 
         ribbonDisplayDollrevo = UICollectionView(frame: .zero, collectionViewLayout: makeDollHomeLayout())
@@ -55,14 +52,15 @@ final class DolluheirloomGalleryController: UIViewController {
         ribbonDisplayDollrevo.delegate = self
         ribbonDisplayDollrevo.alwaysBounceVertical = true
         ribbonDisplayDollrevo.contentInset.bottom = 126
+        ribbonCategoryDollpiri.tintColor = UIColor(red: 1, green: 0.18, blue: 0.86, alpha: 1)
+        ribbonCategoryDollpiri.addTarget(self, action: #selector(loadDollCollectorGallery), for: .valueChanged)
+        ribbonDisplayDollrevo.refreshControl = ribbonCategoryDollpiri
         ribbonDisplayDollrevo.register(DollukeepsakeDisplayDollvaniseCell.self, forCellWithReuseIdentifier: DollukeepsakeDisplayDollvaniseCell.dollReuseIdentifier)
         ribbonDisplayDollrevo.register(DolluDollpediaCardCell.self, forCellWithReuseIdentifier: DolluDollpediaCardCell.dollReuseIdentifier)
         ribbonDisplayDollrevo.register(DollukeepsakeCategoryHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DollukeepsakeCategoryHeaderView.dollReuseIdentifier)
         view.addSubview(ribbonDisplayDollrevo)
 
         calmNoteDollsovo.translatesAutoresizingMaskIntoConstraints = false
-        calmNoteDollsovo.color = .white
-        calmNoteDollsovo.hidesWhenStopped = true
         view.addSubview(calmNoteDollsovo)
 
         floralHintDollvelo.translatesAutoresizingMaskIntoConstraints = false
@@ -79,7 +77,9 @@ final class DolluheirloomGalleryController: UIViewController {
             polishedBackgroundDollquvo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             polishedBackgroundDollquvo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            sageLookbookDollmexa.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 25),
+            sageLookbookDollmexa.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 31),
+            sageLookbookDollmexa.widthAnchor.constraint(equalToConstant: 106),
+            sageLookbookDollmexa.heightAnchor.constraint(equalToConstant: 24),
             sageLookbookDollmexa.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             sageLookbookDollmexa.trailingAnchor.constraint(lessThanOrEqualTo: satinMarkerDollpavo.leadingAnchor, constant: -18),
 
@@ -88,27 +88,21 @@ final class DolluheirloomGalleryController: UIViewController {
             satinMarkerDollpavo.widthAnchor.constraint(equalToConstant: 24),
             satinMarkerDollpavo.heightAnchor.constraint(equalToConstant: 24),
 
-            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: sageLookbookDollmexa.bottomAnchor, constant: 23),
+            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: sageLookbookDollmexa.bottomAnchor, constant: 40),
             ribbonDisplayDollrevo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             ribbonDisplayDollrevo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             ribbonDisplayDollrevo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            calmNoteDollsovo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            calmNoteDollsovo.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            calmNoteDollsovo.topAnchor.constraint(equalTo: ribbonDisplayDollrevo.topAnchor),
+            calmNoteDollsovo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            calmNoteDollsovo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            calmNoteDollsovo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             floralHintDollvelo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             floralHintDollvelo.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             floralHintDollvelo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             floralHintDollvelo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        satinMarkerDollpavo.layer.sublayers?.removeAll(where: { $0.name == "dollu_notice_bell_layer" })
-        let glossyIdeaDollsovo = DolluGlyphFactory.makeNoticeGlyph(in: satinMarkerDollpavo.bounds, color: UIColor(red: 1, green: 0.18, blue: 0.86, alpha: 1))
-        glossyIdeaDollsovo.name = "dollu_notice_bell_layer"
-        satinMarkerDollpavo.layer.addSublayer(glossyIdeaDollsovo)
     }
 
     private func makeDollHomeLayout() -> UICollectionViewCompositionalLayout {
@@ -125,39 +119,43 @@ final class DolluheirloomGalleryController: UIViewController {
 
     private func makeShowcaseSection(dollEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let dollWidth = dollEnvironment.container.effectiveContentSize.width
-        let dollItemWidth = min(228, max(154, dollWidth * 0.305))
-        let dollItemSize = NSCollectionLayoutSize(widthDimension: .absolute(dollItemWidth), heightDimension: .absolute(dollItemWidth * 1.28))
+        let dollItemWidth = min(114, dollWidth - 40)
+        let dollItemSize = NSCollectionLayoutSize(widthDimension: .absolute(dollItemWidth), heightDimension: .absolute(146))
         let dollItem = NSCollectionLayoutItem(layoutSize: dollItemSize)
-        let dollGroupSize = NSCollectionLayoutSize(widthDimension: .absolute(dollItemWidth), heightDimension: .absolute(dollItemWidth * 1.28))
+        let dollGroupSize = NSCollectionLayoutSize(widthDimension: .absolute(dollItemWidth), heightDimension: .absolute(146))
         let dollGroup = NSCollectionLayoutGroup.horizontal(layoutSize: dollGroupSize, subitems: [dollItem])
         let dollSection = NSCollectionLayoutSection(group: dollGroup)
         dollSection.orthogonalScrollingBehavior = .continuous
-        dollSection.interGroupSpacing = 36
-        dollSection.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 42, trailing: 20)
+        dollSection.interGroupSpacing = 18
+        dollSection.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 24, trailing: 20)
         dollSection.boundarySupplementaryItems = [makeDollHeaderItem()]
         return dollSection
     }
 
     private func makeDollpediaSection(dollEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        let dollWidth = dollEnvironment.container.effectiveContentSize.width
-        let dollHeight = min(168, max(136, dollWidth * 0.205))
+        let dollHeight: CGFloat = 108
         let dollItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(dollHeight))
         let dollItem = NSCollectionLayoutItem(layoutSize: dollItemSize)
         let dollGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(dollHeight))
         let dollGroup = NSCollectionLayoutGroup.vertical(layoutSize: dollGroupSize, subitems: [dollItem])
         let dollSection = NSCollectionLayoutSection(group: dollGroup)
-        dollSection.interGroupSpacing = 24
+        dollSection.interGroupSpacing = 16
         dollSection.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 140, trailing: 20)
         dollSection.boundarySupplementaryItems = [makeDollHeaderItem()]
         return dollSection
     }
 
     private func makeDollHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
-        let dollHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(34))
+        let dollHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(18))
         return NSCollectionLayoutBoundarySupplementaryItem(layoutSize: dollHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
     }
 
-    private func loadDollCollectorGallery() {
+    @objc private func loadDollCollectorGallery() {
+        guard !ivoryProgressDollrilo else {
+            ribbonCategoryDollpiri.endRefreshing()
+            return
+        }
+        ivoryProgressDollrilo = true
         let dollGroup = DispatchGroup()
         var dollShowcaseResult: Result<[DollutrimmedClosetDollrevo], Error>?
         var dollpediaResult: Result<[DollutrimmedClosetDollrevo], Error>?
@@ -175,19 +173,29 @@ final class DolluheirloomGalleryController: UIViewController {
         }
 
         dollGroup.notify(queue: .main) { [weak self] in
+            self?.ivoryProgressDollrilo = false
             self?.applyDollGalleryResult(dollShowcaseResult: dollShowcaseResult, dollpediaResult: dollpediaResult)
         }
     }
 
     private func applyDollGalleryLoading() {
         floralHintDollvelo.isHidden = true
-        calmNoteDollsovo.startAnimating()
+        calmNoteDollsovo.applyDollLoading()
     }
 
     private func applyDollGalleryResult(dollShowcaseResult: Result<[DollutrimmedClosetDollrevo], Error>?, dollpediaResult: Result<[DollutrimmedClosetDollrevo], Error>?) {
-        calmNoteDollsovo.stopAnimating()
-        dreamySnapshotDollniva = (try? dollShowcaseResult?.get()) ?? DollutrimmedClosetDollrevo.showcaseFallbackItems
-        petiteCategoryDollvelo = (try? dollpediaResult?.get()) ?? DollutrimmedClosetDollrevo.dollpediaFallbackItems
+        calmNoteDollsovo.stopDollLoading()
+        ribbonCategoryDollpiri.endRefreshing()
+        if let pocketCollectionDollruni = try? dollShowcaseResult?.get() {
+            dreamySnapshotDollniva = pocketCollectionDollruni
+        } else if dreamySnapshotDollniva.isEmpty {
+            dreamySnapshotDollniva = DollutrimmedClosetDollrevo.showcaseFallbackItems
+        }
+        if let pocketCollectionDollruni = try? dollpediaResult?.get() {
+            petiteCategoryDollvelo = pocketCollectionDollruni
+        } else if petiteCategoryDollvelo.isEmpty {
+            petiteCategoryDollvelo = DollutrimmedClosetDollrevo.dollpediaFallbackItems
+        }
 
         if dreamySnapshotDollniva.isEmpty && petiteCategoryDollvelo.isEmpty {
             floralHintDollvelo.text = "Doll inspiration is waiting to be collected."

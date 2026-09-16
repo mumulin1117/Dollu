@@ -9,8 +9,8 @@ final class DollupatternedCoatStrip: UIView, UICollectionViewDataSource, UIColle
     override init(frame: CGRect) {
         let wovenDisplayDollnoroLayout = UICollectionViewFlowLayout()
         wovenDisplayDollnoroLayout.scrollDirection = .horizontal
-        wovenDisplayDollnoroLayout.minimumLineSpacing = 10
-        wovenDisplayDollnoroLayout.itemSize = CGSize(width: 62, height: 78)
+        wovenDisplayDollnoroLayout.minimumLineSpacing = 11
+        wovenDisplayDollnoroLayout.itemSize = CGSize(width: 72, height: 88)
         wovenDisplayDollnoroLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
         ribbonDisplayDollrevo = UICollectionView(frame: .zero, collectionViewLayout: wovenDisplayDollnoroLayout)
         super.init(frame: frame)
@@ -24,7 +24,7 @@ final class DollupatternedCoatStrip: UIView, UICollectionViewDataSource, UIColle
         addSubview(ribbonDisplayDollrevo)
 
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 80),
+            heightAnchor.constraint(equalToConstant: 90),
             ribbonDisplayDollrevo.topAnchor.constraint(equalTo: topAnchor),
             ribbonDisplayDollrevo.leadingAnchor.constraint(equalTo: leadingAnchor),
             ribbonDisplayDollrevo.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -71,31 +71,29 @@ final class DolludelicateCornerCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.layer.cornerRadius = 14
-        contentView.clipsToBounds = true
-        contentView.backgroundColor = UIColor(white: 1, alpha: 0.10)
+        contentView.backgroundColor = .clear
 
         tinyCoverDollmexa.translatesAutoresizingMaskIntoConstraints = false
         tinyCoverDollmexa.contentMode = .scaleAspectFill
-        tinyCoverDollmexa.layer.cornerRadius = 13
+        tinyCoverDollmexa.layer.cornerRadius = 24
         tinyCoverDollmexa.clipsToBounds = true
         contentView.addSubview(tinyCoverDollmexa)
 
         layeredCatalogDollquvo.translatesAutoresizingMaskIntoConstraints = false
         layeredCatalogDollquvo.textColor = .white
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 9, dollFontWeight: .heavy)
+        layeredCatalogDollquvo.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(10, gentleGalleryDollvani: true)
         layeredCatalogDollquvo.textAlignment = .center
         layeredCatalogDollquvo.adjustsFontSizeToFitWidth = true
         layeredCatalogDollquvo.minimumScaleFactor = 0.7
         contentView.addSubview(layeredCatalogDollquvo)
 
         NSLayoutConstraint.activate([
-            tinyCoverDollmexa.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
-            tinyCoverDollmexa.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4),
-            tinyCoverDollmexa.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
-            tinyCoverDollmexa.heightAnchor.constraint(equalToConstant: 48),
+            tinyCoverDollmexa.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2),
+            tinyCoverDollmexa.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            tinyCoverDollmexa.widthAnchor.constraint(equalToConstant: 64),
+            tinyCoverDollmexa.heightAnchor.constraint(equalToConstant: 64),
 
-            layeredCatalogDollquvo.topAnchor.constraint(equalTo: tinyCoverDollmexa.bottomAnchor, constant: 4),
+            layeredCatalogDollquvo.topAnchor.constraint(equalTo: tinyCoverDollmexa.bottomAnchor, constant: 5),
             layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4),
             layeredCatalogDollquvo.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
             layeredCatalogDollquvo.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -3)
@@ -115,10 +113,9 @@ final class DolludelicateCornerCell: UICollectionViewCell {
         } else {
             tinyCoverDollmexa.setDollImage(dollURL: nil, fallbackTitle: dollPeer.cozyArchiveDollniva)
         }
-        contentView.layer.borderWidth = dollIsSelected ? 3 : 1
-        contentView.layer.borderColor = (dollIsSelected ? UIColor(red: 1, green: 0.17, blue: 0.82, alpha: 1) : UIColor(white: 1, alpha: 0.18)).cgColor
-        contentView.backgroundColor = dollIsSelected ? UIColor(red: 0.55, green: 0.18, blue: 0.70, alpha: 0.34) : UIColor(white: 1, alpha: 0.10)
-        contentView.transform = dollIsSelected ? CGAffineTransform(scaleX: 1.02, y: 1.02) : .identity
+        tinyCoverDollmexa.layer.borderWidth = dollIsSelected ? 3 : 1
+        tinyCoverDollmexa.layer.borderColor = (dollIsSelected ? UIColor(red: 1, green: 0.17, blue: 0.82, alpha: 1) : UIColor(white: 1, alpha: 0.22)).cgColor
+        tinyCoverDollmexa.transform = dollIsSelected ? CGAffineTransform(scaleX: 1.03, y: 1.03) : .identity
     }
 }
 
@@ -128,21 +125,21 @@ final class DolludelicateBonnetBadgeButton: UIControl {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(red: 0.46, green: 0.22, blue: 0.52, alpha: 0.64)
-        layer.cornerRadius = 20
-        layer.borderWidth = 2
+        layer.cornerRadius = 17.5
+        layer.borderWidth = 1
         layer.borderColor = UIColor(red: 0.84, green: 0.58, blue: 0.26, alpha: 0.62).cgColor
     
         cottonFrameDollukp.translatesAutoresizingMaskIntoConstraints = false
         cottonFrameDollukp.text = "★ "
         cottonFrameDollukp.textColor = UIColor(red: 1, green: 0.77, blue: 0.22, alpha: 1)
-        cottonFrameDollukp.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .heavy)
+        cottonFrameDollukp.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(13, gentleGalleryDollvani: true)
         cottonFrameDollukp.textAlignment = .center
         addSubview(cottonFrameDollukp)
 
         NSLayoutConstraint.activate([
             cottonFrameDollukp.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
             cottonFrameDollukp.centerYAnchor.constraint(equalTo: centerYAnchor),
-            cottonFrameDollukp.widthAnchor.constraint(equalToConstant: 88),
+            cottonFrameDollukp.widthAnchor.constraint(equalToConstant: 60),
             cottonFrameDollukp.heightAnchor.constraint(equalToConstant: 35),
         ])
         addTarget(self, action: #selector(pressDollHonor), for: .touchUpInside)
@@ -185,7 +182,7 @@ final class DolludelicateLayerCard: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius = 24
+        layer.cornerRadius = 20
         clipsToBounds = true
         moonlitPaletteDollukp.colors = [
             UIColor(red: 0.55, green: 0.16, blue: 0.86, alpha: 0.98).cgColor,
@@ -207,13 +204,13 @@ final class DolludelicateLayerCard: UIControl {
 
         layeredCatalogDollquvo.translatesAutoresizingMaskIntoConstraints = false
         layeredCatalogDollquvo.textColor = .white
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 20, dollFontWeight: .heavy)
+        layeredCatalogDollquvo.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(18, gentleGalleryDollvani: true)
         addSubview(layeredCatalogDollquvo)
 
         cozyMemoDolllaro.translatesAutoresizingMaskIntoConstraints = false
         cozyMemoDolllaro.textColor = UIColor(white: 1, alpha: 0.78)
-        cozyMemoDolllaro.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .semibold)
-        cozyMemoDolllaro.numberOfLines = 2
+        cozyMemoDolllaro.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(11.5, gentleGalleryDollvani: false)
+        cozyMemoDolllaro.numberOfLines = 1
         addSubview(cozyMemoDolllaro)
 
         cottonMoodboardDolllaro.translatesAutoresizingMaskIntoConstraints = false
@@ -223,25 +220,25 @@ final class DolludelicateLayerCard: UIControl {
         addSubview(cottonMoodboardDolllaro)
 
         satinMarkerDollpavo.translatesAutoresizingMaskIntoConstraints = false
-        satinMarkerDollpavo.layer.cornerRadius = 19
-        satinMarkerDollpavo.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .heavy)
+        satinMarkerDollpavo.layer.cornerRadius = 21
+        satinMarkerDollpavo.titleLabel?.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(13, gentleGalleryDollvani: true)
         satinMarkerDollpavo.addTarget(self, action: #selector(tapDollPrimary), for: .touchUpInside)
         addSubview(satinMarkerDollpavo)
 
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(greaterThanOrEqualToConstant: 168),
+            heightAnchor.constraint(equalToConstant: 185),
             tinyCoverDollmexa.topAnchor.constraint(equalTo: topAnchor),
             tinyCoverDollmexa.leadingAnchor.constraint(equalTo: leadingAnchor),
             tinyCoverDollmexa.trailingAnchor.constraint(equalTo: trailingAnchor),
             tinyCoverDollmexa.bottomAnchor.constraint(equalTo: bottomAnchor),
 
-            layeredCatalogDollquvo.topAnchor.constraint(equalTo: topAnchor, constant: 18),
+            layeredCatalogDollquvo.topAnchor.constraint(equalTo: topAnchor, constant: 14),
             layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
             layeredCatalogDollquvo.trailingAnchor.constraint(lessThanOrEqualTo: paintedMarkerDollsovo.leadingAnchor, constant: -10),
 
-            cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.bottomAnchor, constant: 5),
+            cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.bottomAnchor, constant: 3),
             cozyMemoDolllaro.leadingAnchor.constraint(equalTo: layeredCatalogDollquvo.leadingAnchor),
-            cozyMemoDolllaro.trailingAnchor.constraint(equalTo: centerXAnchor, constant: 28),
+            cozyMemoDolllaro.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
 
             paintedMarkerDollsovo.topAnchor.constraint(equalTo: topAnchor, constant: 18),
             paintedMarkerDollsovo.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
@@ -250,13 +247,13 @@ final class DolludelicateLayerCard: UIControl {
 
             cottonMoodboardDolllaro.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
             cottonMoodboardDolllaro.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
-            cottonMoodboardDolllaro.topAnchor.constraint(equalTo: cozyMemoDolllaro.bottomAnchor, constant: 18),
-            cottonMoodboardDolllaro.heightAnchor.constraint(equalToConstant: 34),
+            cottonMoodboardDolllaro.topAnchor.constraint(equalTo: cozyMemoDolllaro.bottomAnchor, constant: 14),
+            cottonMoodboardDolllaro.heightAnchor.constraint(equalToConstant: 36),
 
             satinMarkerDollpavo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
-            satinMarkerDollpavo.topAnchor.constraint(equalTo: cottonMoodboardDolllaro.bottomAnchor, constant: 14),
-            satinMarkerDollpavo.widthAnchor.constraint(greaterThanOrEqualToConstant: 132),
-            satinMarkerDollpavo.heightAnchor.constraint(equalToConstant: 38),
+            satinMarkerDollpavo.topAnchor.constraint(equalTo: cottonMoodboardDolllaro.bottomAnchor, constant: 10),
+            satinMarkerDollpavo.widthAnchor.constraint(equalToConstant: 128),
+            satinMarkerDollpavo.heightAnchor.constraint(equalToConstant: 42),
             satinMarkerDollpavo.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
         ])
     }
@@ -274,9 +271,10 @@ final class DolludelicateLayerCard: UIControl {
         layeredCatalogDollquvo.text = "7-Day Streak"
         cozyMemoDolllaro.text = "Day \(max(1, dollCollector.dollStreakCount)) check-in to keep your wardrobe rhythm."
         cottonMoodboardDolllaro.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        dollDays.forEach { dollDay in
+        dollDays.enumerated().forEach { dollIndex, dollDay in
             let dollPill = DolludelicateShelfDollkoraPill()
-            dollPill.configure(dollDay)
+            let dollCurrent = !dollDay.dollIsDone && !dollDays.prefix(dollIndex).contains(where: { !$0.dollIsDone })
+            dollPill.configure(dollDay, dollIsCurrent: dollCurrent)
             cottonMoodboardDolllaro.addArrangedSubview(dollPill)
         }
         satinMarkerDollpavo.setTitle(dollCollector.dollCheckedToday ? "Checked in today" : "Check in", for: .normal)
@@ -296,6 +294,7 @@ final class DolludelicateLayerCard: UIControl {
 
 final class DolludelicateShelfDollkoraPill: UIView {
     private let layeredCatalogDollquvo = UILabel()
+    private let cozyMemoDolllaro = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -304,13 +303,21 @@ final class DolludelicateShelfDollkoraPill: UIView {
         clipsToBounds = true
         layeredCatalogDollquvo.translatesAutoresizingMaskIntoConstraints = false
         layeredCatalogDollquvo.textAlignment = .center
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 10, dollFontWeight: .heavy)
+        layeredCatalogDollquvo.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(9, gentleGalleryDollvani: true)
         addSubview(layeredCatalogDollquvo)
+
+        cozyMemoDolllaro.translatesAutoresizingMaskIntoConstraints = false
+        cozyMemoDolllaro.textAlignment = .center
+        cozyMemoDolllaro.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(8, gentleGalleryDollvani: true)
+        addSubview(cozyMemoDolllaro)
         NSLayoutConstraint.activate([
-            layeredCatalogDollquvo.topAnchor.constraint(equalTo: topAnchor),
+            layeredCatalogDollquvo.topAnchor.constraint(equalTo: topAnchor, constant: 4),
             layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: leadingAnchor),
             layeredCatalogDollquvo.trailingAnchor.constraint(equalTo: trailingAnchor),
-            layeredCatalogDollquvo.bottomAnchor.constraint(equalTo: bottomAnchor)
+            cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.bottomAnchor, constant: -1),
+            cozyMemoDolllaro.leadingAnchor.constraint(equalTo: leadingAnchor),
+            cozyMemoDolllaro.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cozyMemoDolllaro.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -3)
         ])
     }
 
@@ -318,10 +325,15 @@ final class DolludelicateShelfDollkoraPill: UIView {
         nil
     }
 
-    func configure(_ dollDay: DolluCheckinDayArchive) {
-        layeredCatalogDollquvo.text = dollDay.dollIsDone ? "✓" : dollDay.dollDayText
-        layeredCatalogDollquvo.textColor = dollDay.dollIsDone ? DolluWardrobePalette.dollRibbonPurple : UIColor(white: 1, alpha: 0.72)
+    func configure(_ dollDay: DolluCheckinDayArchive, dollIsCurrent: Bool) {
+        layeredCatalogDollquvo.text = dollDay.dollDayText
+        cozyMemoDolllaro.text = dollDay.dollIsDone ? "✓" : (dollDay.dollDayText == "D7" ? "+20" : "+5")
+        let dollTextColor = dollDay.dollIsDone ? DolluWardrobePalette.dollRibbonPurple : UIColor(white: 1, alpha: 0.84)
+        layeredCatalogDollquvo.textColor = dollTextColor
+        cozyMemoDolllaro.textColor = dollIsCurrent ? UIColor(red: 1, green: 0.76, blue: 0.2, alpha: 1) : dollTextColor
         backgroundColor = dollDay.dollIsDone ? .white : UIColor(white: 1, alpha: 0.18)
+        layer.borderWidth = dollIsCurrent ? 1.5 : 0
+        layer.borderColor = UIColor(red: 1, green: 0.72, blue: 0.16, alpha: 0.95).cgColor
     }
 }
 
@@ -351,18 +363,18 @@ final class DolludelicateAccessoryFeatureCard: UIControl {
 
         layeredCatalogDollquvo.text = "Check in with 2 collectors"
         layeredCatalogDollquvo.textColor = .white
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .heavy)
+        layeredCatalogDollquvo.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(14.5, gentleGalleryDollvani: true)
         layeredCatalogDollquvo.numberOfLines = 2
 
         cozyMemoDolllaro.text = "0 of 2 done · top to view"
         cozyMemoDolllaro.textColor = DolluWardrobePalette.dollMemoMuted
-        cozyMemoDolllaro.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .semibold)
+        cozyMemoDolllaro.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(10.5, gentleGalleryDollvani: false)
 
-        satinMarkerDollpavo.setTitle("Challenge", for: .normal)
-        satinMarkerDollpavo.setTitleColor(UIColor(red: 0.84, green: 0.75, blue: 1, alpha: 1), for: .normal)
-        satinMarkerDollpavo.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 11, dollFontWeight: .heavy)
-        satinMarkerDollpavo.backgroundColor = UIColor(red: 0.33, green: 0.18, blue: 0.72, alpha: 0.45)
-        satinMarkerDollpavo.layer.cornerRadius = 12
+        satinMarkerDollpavo.setTitle("★ 6h", for: .normal)
+        satinMarkerDollpavo.setTitleColor(UIColor(red: 1, green: 0.79, blue: 0.25, alpha: 1), for: .normal)
+        satinMarkerDollpavo.titleLabel?.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(11, gentleGalleryDollvani: true)
+        satinMarkerDollpavo.backgroundColor = UIColor(red: 0.40, green: 0.22, blue: 0.62, alpha: 0.70)
+        satinMarkerDollpavo.layer.cornerRadius = 15
         satinMarkerDollpavo.isUserInteractionEnabled = false
 
         glossyIdeaDollsovo.text = "›"
@@ -370,32 +382,32 @@ final class DolludelicateAccessoryFeatureCard: UIControl {
         glossyIdeaDollsovo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 25, dollFontWeight: .bold)
 
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(greaterThanOrEqualToConstant: 86),
+            heightAnchor.constraint(equalToConstant: 112),
             paintedMarkerDollsovo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             paintedMarkerDollsovo.centerYAnchor.constraint(equalTo: centerYAnchor),
             paintedMarkerDollsovo.widthAnchor.constraint(equalToConstant: 56),
             paintedMarkerDollsovo.heightAnchor.constraint(equalToConstant: 48),
 
-            tinyCoverDollmexa.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            tinyCoverDollmexa.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             tinyCoverDollmexa.centerYAnchor.constraint(equalTo: centerYAnchor),
-            tinyCoverDollmexa.widthAnchor.constraint(equalToConstant: 82),
-            tinyCoverDollmexa.heightAnchor.constraint(equalToConstant: 56),
+            tinyCoverDollmexa.widthAnchor.constraint(equalToConstant: 80),
+            tinyCoverDollmexa.heightAnchor.constraint(equalToConstant: 80),
 
-            satinMarkerDollpavo.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            satinMarkerDollpavo.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            satinMarkerDollpavo.widthAnchor.constraint(equalToConstant: 82),
-            satinMarkerDollpavo.heightAnchor.constraint(equalToConstant: 24),
+            satinMarkerDollpavo.centerYAnchor.constraint(equalTo: centerYAnchor),
+            satinMarkerDollpavo.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -42),
+            satinMarkerDollpavo.widthAnchor.constraint(equalToConstant: 55),
+            satinMarkerDollpavo.heightAnchor.constraint(equalToConstant: 30),
 
             glossyIdeaDollsovo.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
-            glossyIdeaDollsovo.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 12),
+            glossyIdeaDollsovo.centerYAnchor.constraint(equalTo: centerYAnchor),
 
-            layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: tinyCoverDollmexa.trailingAnchor, constant: 14),
-            layeredCatalogDollquvo.trailingAnchor.constraint(equalTo: satinMarkerDollpavo.leadingAnchor, constant: -8),
-            layeredCatalogDollquvo.topAnchor.constraint(equalTo: topAnchor, constant: 18),
+            layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: tinyCoverDollmexa.trailingAnchor, constant: 13),
+            layeredCatalogDollquvo.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            layeredCatalogDollquvo.topAnchor.constraint(equalTo: topAnchor, constant: 14),
 
             cozyMemoDolllaro.leadingAnchor.constraint(equalTo: layeredCatalogDollquvo.leadingAnchor),
-            cozyMemoDolllaro.trailingAnchor.constraint(lessThanOrEqualTo: glossyIdeaDollsovo.leadingAnchor, constant: -10),
-            cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.bottomAnchor, constant: 8),
+            cozyMemoDolllaro.trailingAnchor.constraint(lessThanOrEqualTo: satinMarkerDollpavo.leadingAnchor, constant: -6),
+            cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.bottomAnchor, constant: 5),
             cozyMemoDolllaro.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -16)
         ])
     }
@@ -445,19 +457,19 @@ final class DollucuratedApronTaskCard: UIControl {
 
         layeredCatalogDollquvo.translatesAutoresizingMaskIntoConstraints = false
         layeredCatalogDollquvo.textColor = .white
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .heavy)
+        layeredCatalogDollquvo.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(14.5, gentleGalleryDollvani: true)
         layeredCatalogDollquvo.numberOfLines = 1
         layeredCatalogDollquvo.adjustsFontSizeToFitWidth = true
         layeredCatalogDollquvo.minimumScaleFactor = 0.78
 
         cozyMemoDolllaro.translatesAutoresizingMaskIntoConstraints = false
         cozyMemoDolllaro.textColor = DolluWardrobePalette.dollMemoMuted
-        cozyMemoDolllaro.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .semibold)
+        cozyMemoDolllaro.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(10.5, gentleGalleryDollvani: false)
         cozyMemoDolllaro.numberOfLines = 1
 
         satinMarkerDollpavo.translatesAutoresizingMaskIntoConstraints = false
         satinMarkerDollpavo.layer.cornerRadius = 17
-        satinMarkerDollpavo.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .heavy)
+        satinMarkerDollpavo.titleLabel?.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(13, gentleGalleryDollvani: true)
         satinMarkerDollpavo.isUserInteractionEnabled = false
 
         addSubview(cottonFrameDollukp)
@@ -467,25 +479,25 @@ final class DollucuratedApronTaskCard: UIControl {
         addSubview(satinMarkerDollpavo)
 
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(greaterThanOrEqualToConstant: 74),
+            heightAnchor.constraint(equalToConstant: 80),
             cottonFrameDollukp.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
             cottonFrameDollukp.centerYAnchor.constraint(equalTo: centerYAnchor),
             cottonFrameDollukp.widthAnchor.constraint(equalToConstant: 42),
             cottonFrameDollukp.heightAnchor.constraint(equalToConstant: 42),
 
-            tinyCoverDollmexa.centerXAnchor.constraint(equalTo: cottonFrameDollukp.centerXAnchor),
+            tinyCoverDollmexa.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
             tinyCoverDollmexa.centerYAnchor.constraint(equalTo: cottonFrameDollukp.centerYAnchor),
-            tinyCoverDollmexa.widthAnchor.constraint(equalToConstant: 64),
-            tinyCoverDollmexa.heightAnchor.constraint(equalToConstant: 48),
+            tinyCoverDollmexa.widthAnchor.constraint(equalToConstant: 54),
+            tinyCoverDollmexa.heightAnchor.constraint(equalToConstant: 54),
 
-            satinMarkerDollpavo.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            satinMarkerDollpavo.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
             satinMarkerDollpavo.centerYAnchor.constraint(equalTo: centerYAnchor),
             satinMarkerDollpavo.widthAnchor.constraint(equalToConstant: 64),
             satinMarkerDollpavo.heightAnchor.constraint(equalToConstant: 34),
 
-            layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: cottonFrameDollukp.trailingAnchor, constant: 13),
+            layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: tinyCoverDollmexa.trailingAnchor, constant: 13),
             layeredCatalogDollquvo.trailingAnchor.constraint(equalTo: satinMarkerDollpavo.leadingAnchor, constant: -10),
-            layeredCatalogDollquvo.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            layeredCatalogDollquvo.topAnchor.constraint(equalTo: topAnchor, constant: 13),
 
             cozyMemoDolllaro.leadingAnchor.constraint(equalTo: layeredCatalogDollquvo.leadingAnchor),
             cozyMemoDolllaro.trailingAnchor.constraint(equalTo: layeredCatalogDollquvo.trailingAnchor),
@@ -509,7 +521,7 @@ final class DollucuratedApronTaskCard: UIControl {
 
     func configure(_ dollPartner: whimsyCapeDollcavoPartnerArchive) {
         layeredCatalogDollquvo.text = "Check in with \(dollPartner.dollName)"
-        cozyMemoDolllaro.text = dollPartner.pastelGalleryDollmivo ? "Both doll records are ready" : dollPartner.dollGoal
+        cozyMemoDolllaro.text = dollPartner.pastelGalleryDollmivo ? "★ +15   Both doll records are ready" : "★ +15   \(dollPartner.dollGoal)"
         cottonFrameDollukp.text = "pair"
         satinMarkerDollpavo.setTitle(dollPartner.pastelGalleryDollmivo ? "Done" : "Go", for: .normal)
         satinMarkerDollpavo.backgroundColor = dollPartner.pastelGalleryDollmivo ? UIColor(red: 0.15, green: 0.42, blue: 0.42, alpha: 0.92) : DolluWardrobePalette.dollRibbonPurple

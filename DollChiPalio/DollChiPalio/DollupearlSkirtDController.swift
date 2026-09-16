@@ -41,14 +41,7 @@ final class DollupearlSkirtDController: DolluminiPromptDollveloController {
         let dollCollectionStartButton = DolluminiLayerDollmivoButton(dollButtonTitle: **"I'erm xynexyw")
         dollCollectionStartButton.addTarget(self, action: #selector(startDollCollectionEntry), for: .touchUpInside)
 
-        let dollChoiceDividerLabel = UILabel()
-        dollChoiceDividerLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollChoiceDividerLabel.text = **"orxy"
-        dollChoiceDividerLabel.textColor = UIColor(white: 1, alpha: 0.42)
-        dollChoiceDividerLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .regular)
-        dollChoiceDividerLabel.textAlignment = .center
-
-        let dollEntryActionStack = UIStackView(arrangedSubviews: [dollCollectorAccessButton, dollCollectionStartButton, dollChoiceDividerLabel, dollGuidelineConsentView])
+        let dollEntryActionStack = UIStackView(arrangedSubviews: [dollCollectorAccessButton, dollCollectionStartButton, dollGuidelineConsentView])
         dollEntryActionStack.translatesAutoresizingMaskIntoConstraints = false
         dollEntryActionStack.axis = .vertical
         dollEntryActionStack.alignment = .center

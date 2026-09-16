@@ -1,11 +1,12 @@
 import UIKit
 
 final class DolluShortLookbookViewController: UIViewController {
-    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
+    private let polishedBackgroundDollquvo = UIImageView(image: UIImage(named: "DolluPolishedBackgroundDollquvo"))
     private let sageLookbookDollmexa = UILabel()
     private let satinMarkerDollpavo = UIButton(type: .custom)
     private let pearlGuideDollukp = DollukeepsakeHemlineDollmivository()
-    private let calmNoteDollsovo = UIActivityIndicatorView(style: .large)
+    private let calmNoteDollsovo = DollucalmNoteDollsovoView()
+    private let ribbonHemlineDollukp = UIRefreshControl()
     private let floralHintDollvelo = UILabel()
     private let ribbonCategoryDollpiri = UIScrollView()
     private let laceArchiveDollmexa = UIView()
@@ -27,23 +28,24 @@ final class DolluShortLookbookViewController: UIViewController {
         satinPinboardDollvani.setBackgroundImage(UIImage.init(named: "satinPinboardDollvani"), for: .normal)
         buildDollStyleClipStage()
         applyDollStyleClipLoading()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        refreshDollStyleClipGalleryForEntry()
+        loadDollStyleClipGallery()
     }
 
     private func buildDollStyleClipStage() {
         view.backgroundColor = DolluWardrobePalette.dollBackdropInk
 
         polishedBackgroundDollquvo.translatesAutoresizingMaskIntoConstraints = false
+        polishedBackgroundDollquvo.contentMode = .scaleAspectFill
+        polishedBackgroundDollquvo.clipsToBounds = true
         view.addSubview(polishedBackgroundDollquvo)
 
         ribbonCategoryDollpiri.translatesAutoresizingMaskIntoConstraints = false
         ribbonCategoryDollpiri.alwaysBounceVertical = true
         ribbonCategoryDollpiri.showsVerticalScrollIndicator = false
         ribbonCategoryDollpiri.contentInsetAdjustmentBehavior = .never
+        ribbonHemlineDollukp.tintColor = UIColor(red: 1, green: 0.18, blue: 0.86, alpha: 1)
+        ribbonHemlineDollukp.addTarget(self, action: #selector(loadDollStyleClipGallery), for: .valueChanged)
+        ribbonCategoryDollpiri.refreshControl = ribbonHemlineDollukp
         view.addSubview(ribbonCategoryDollpiri)
 
         laceArchiveDollmexa.translatesAutoresizingMaskIntoConstraints = false
@@ -52,26 +54,23 @@ final class DolluShortLookbookViewController: UIViewController {
         sageLookbookDollmexa.translatesAutoresizingMaskIntoConstraints = false
         sageLookbookDollmexa.text = **"STxyYLxyECxyLIxyPSxy"
         sageLookbookDollmexa.textColor = .white
-        sageLookbookDollmexa.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 38, dollFontWeight: .heavy)
+        sageLookbookDollmexa.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 32, dollFontWeight: .heavy)
         sageLookbookDollmexa.adjustsFontSizeToFitWidth = true
         sageLookbookDollmexa.minimumScaleFactor = 0.68
         laceArchiveDollmexa.addSubview(sageLookbookDollmexa)
 
         satinMarkerDollpavo.translatesAutoresizingMaskIntoConstraints = false
+        satinMarkerDollpavo.setImage(UIImage(named: "DolluSatinMarkerDollpavo")?.withRenderingMode(.alwaysOriginal), for: .normal)
         satinMarkerDollpavo.accessibilityLabel = **"Coxyllxyecxytoxyr xynoxytixycexy"
         satinMarkerDollpavo.addTarget(self, action: #selector(openDollCollectorNotice), for: .touchUpInside)
         satinMarkerDollpavo.addTarget(self, action: #selector(pressDollNoticeButton), for: .touchDown)
         satinMarkerDollpavo.addTarget(self, action: #selector(releaseDollNoticeButton), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
-        satinMarkerDollpavo.layer.shadowColor = UIColor(red: 1, green: 0.12, blue: 0.86, alpha: 1).cgColor
-        satinMarkerDollpavo.layer.shadowOpacity = 0.35
-        satinMarkerDollpavo.layer.shadowRadius = 10
-        satinMarkerDollpavo.layer.shadowOffset = CGSize(width: 0, height: 3)
         laceArchiveDollmexa.addSubview(satinMarkerDollpavo)
 
         let wovenDisplayDollnoroLayout = UICollectionViewFlowLayout()
         wovenDisplayDollnoroLayout.scrollDirection = .horizontal
-        wovenDisplayDollnoroLayout.minimumLineSpacing = 34
-        wovenDisplayDollnoroLayout.sectionInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
+        wovenDisplayDollnoroLayout.minimumLineSpacing = 32
+        wovenDisplayDollnoroLayout.sectionInset = UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 32)
         ribbonDisplayDollrevo = UICollectionView(frame: .zero, collectionViewLayout: wovenDisplayDollnoroLayout)
         ribbonDisplayDollrevo.translatesAutoresizingMaskIntoConstraints = false
         ribbonDisplayDollrevo.backgroundColor = .clear
@@ -86,8 +85,6 @@ final class DolluShortLookbookViewController: UIViewController {
         laceArchiveDollmexa.addSubview(satinPinboardDollvani)
 
         calmNoteDollsovo.translatesAutoresizingMaskIntoConstraints = false
-        calmNoteDollsovo.color = .white
-        calmNoteDollsovo.hidesWhenStopped = true
         view.addSubview(calmNoteDollsovo)
 
         floralHintDollvelo.translatesAutoresizingMaskIntoConstraints = false
@@ -115,28 +112,31 @@ final class DolluShortLookbookViewController: UIViewController {
             laceArchiveDollmexa.bottomAnchor.constraint(equalTo: ribbonCategoryDollpiri.contentLayoutGuide.bottomAnchor),
             laceArchiveDollmexa.widthAnchor.constraint(equalTo: ribbonCategoryDollpiri.frameLayoutGuide.widthAnchor),
 
-            sageLookbookDollmexa.topAnchor.constraint(equalTo: laceArchiveDollmexa.topAnchor, constant: 25),
+            sageLookbookDollmexa.topAnchor.constraint(equalTo: laceArchiveDollmexa.topAnchor, constant: 12),
             sageLookbookDollmexa.leadingAnchor.constraint(equalTo: laceArchiveDollmexa.leadingAnchor, constant: 20),
             sageLookbookDollmexa.trailingAnchor.constraint(lessThanOrEqualTo: satinMarkerDollpavo.leadingAnchor, constant: -18),
+            sageLookbookDollmexa.heightAnchor.constraint(equalToConstant: 38),
 
             satinMarkerDollpavo.centerYAnchor.constraint(equalTo: sageLookbookDollmexa.centerYAnchor),
             satinMarkerDollpavo.trailingAnchor.constraint(equalTo: laceArchiveDollmexa.trailingAnchor, constant: -22),
             satinMarkerDollpavo.widthAnchor.constraint(equalToConstant: 24),
             satinMarkerDollpavo.heightAnchor.constraint(equalToConstant: 24),
 
-            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: sageLookbookDollmexa.bottomAnchor, constant: 28),
+            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: sageLookbookDollmexa.bottomAnchor, constant: 30),
             ribbonDisplayDollrevo.leadingAnchor.constraint(equalTo: laceArchiveDollmexa.leadingAnchor),
             ribbonDisplayDollrevo.trailingAnchor.constraint(equalTo: laceArchiveDollmexa.trailingAnchor),
-            ribbonDisplayDollrevo.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.50),
+            ribbonDisplayDollrevo.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 400.0 / 812.0),
 
-            satinPinboardDollvani.topAnchor.constraint(equalTo: ribbonDisplayDollrevo.bottomAnchor, constant: -52),
+            satinPinboardDollvani.topAnchor.constraint(equalTo: ribbonDisplayDollrevo.bottomAnchor, constant: -56),
             satinPinboardDollvani.leadingAnchor.constraint(equalTo: laceArchiveDollmexa.leadingAnchor),
             satinPinboardDollvani.trailingAnchor.constraint(equalTo: laceArchiveDollmexa.trailingAnchor),
             satinPinboardDollvani.heightAnchor.constraint(equalTo: satinPinboardDollvani.widthAnchor, multiplier: 987.0 / 1125.0),
             satinPinboardDollvani.bottomAnchor.constraint(equalTo: laceArchiveDollmexa.bottomAnchor, constant: -156),
 
-            calmNoteDollsovo.centerXAnchor.constraint(equalTo: ribbonDisplayDollrevo.centerXAnchor),
-            calmNoteDollsovo.centerYAnchor.constraint(equalTo: ribbonDisplayDollrevo.centerYAnchor),
+            calmNoteDollsovo.topAnchor.constraint(equalTo: ribbonDisplayDollrevo.topAnchor),
+            calmNoteDollsovo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            calmNoteDollsovo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            calmNoteDollsovo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             floralHintDollvelo.centerXAnchor.constraint(equalTo: ribbonDisplayDollrevo.centerXAnchor),
             floralHintDollvelo.centerYAnchor.constraint(equalTo: ribbonDisplayDollrevo.centerYAnchor),
@@ -147,31 +147,23 @@ final class DolluShortLookbookViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        satinMarkerDollpavo.layer.sublayers?.removeAll(where: { $0.name == "dollu_notice_bell_layer" })
-        let glossyIdeaDollsovo = DolluGlyphFactory.makeNoticeGlyph(in: satinMarkerDollpavo.bounds, color: UIColor(red: 1, green: 0.18, blue: 0.86, alpha: 1))
-        glossyIdeaDollsovo.name = "dollu_notice_bell_layer"
-        satinMarkerDollpavo.layer.addSublayer(glossyIdeaDollsovo)
         if let wovenDisplayDollnoroLayout = ribbonDisplayDollrevo.collectionViewLayout as? UICollectionViewFlowLayout {
             let dollWidth = view.bounds.width
-            let dollCardWidth = min(560, max(302, dollWidth * 0.74))
+            let dollCardWidth = min(560, max(236, dollWidth * (277.0 / 375.0)))
             wovenDisplayDollnoroLayout.itemSize = CGSize(width: dollCardWidth, height: ribbonDisplayDollrevo.bounds.height - 4)
         }
     }
 
     private func applyDollStyleClipLoading() {
         floralHintDollvelo.isHidden = true
-        calmNoteDollsovo.startAnimating()
+        calmNoteDollsovo.applyDollLoading()
     }
 
-    private func refreshDollStyleClipGalleryForEntry() {
-        if dreamySnapshotDollniva.isEmpty {
-            applyDollStyleClipLoading()
+    @objc private func loadDollStyleClipGallery() {
+        guard !ivoryProgressDollrilo else {
+            ribbonHemlineDollukp.endRefreshing()
+            return
         }
-        loadDollStyleClipGallery()
-    }
-
-    private func loadDollStyleClipGallery() {
-        guard !ivoryProgressDollrilo else { return }
         ivoryProgressDollrilo = true
         pearlGuideDollukp.fetchDolluStyleClipItems { [weak self] dollResult in
             self?.ivoryProgressDollrilo = false
@@ -180,8 +172,11 @@ final class DolluShortLookbookViewController: UIViewController {
     }
 
     private func applyDollStyleClipResult(_ dollResult: Result<[DollutrimmedClosetDollrevo], Error>) {
-        calmNoteDollsovo.stopAnimating()
-        dreamySnapshotDollniva = (try? dollResult.get()) ?? []
+        calmNoteDollsovo.stopDollLoading()
+        ribbonHemlineDollukp.endRefreshing()
+        if case .success(let pocketCollectionDollruni) = dollResult {
+            dreamySnapshotDollniva = pocketCollectionDollruni
+        }
         floralHintDollvelo.text = **"Stxyylxye xyclxyipxys xyarxye xywaxyitxyinxyg xyfoxyr xyyoxyurxy nxyexxyt xydoxyllxy lxyooxyk.xy"
         floralHintDollvelo.isHidden = !dreamySnapshotDollniva.isEmpty
         ribbonDisplayDollrevo.reloadData()
@@ -228,7 +223,8 @@ extension DolluShortLookbookViewController: UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let dollItem = dreamySnapshotDollniva[indexPath.item]
         let dollRouteURL = dollItem.trimmedClosetDollrevoURL ?? DolluCollectorRouteBuilder.detailRoute(dollArchiveId: dollItem.dollArchiveId)
-        navigationController?.pushViewController(DolluALoj(dollRouteURL: dollRouteURL), animated: true)
+        let tinySnapshotDollhumi = DolluCollectorRouteBuilder.tinySnapshotDollhumi(dollRouteURL, tinyCoverDollmexa: dollItem.dolltrimmedLaceworkDollyaraL)
+        navigationController?.pushViewController(DolluALoj(dollRouteURL: tinySnapshotDollhumi), animated: true)
     }
 
     private func openDollSafetyRoute(for dollItem: DollutrimmedClosetDollrevo) {
@@ -264,15 +260,7 @@ final class DolluStyleClipCardCell: UICollectionViewCell {
         contentView.addSubview(ivoryCoverDollzemi)
 
         glossyIdeaDollsovo.translatesAutoresizingMaskIntoConstraints = false
-        glossyIdeaDollsovo.backgroundColor = .white
-        glossyIdeaDollsovo.setTitle("!", for: .normal)
-        glossyIdeaDollsovo.setTitleColor(UIColor(red: 0.06, green: 0.05, blue: 0.12, alpha: 1), for: .normal)
-        glossyIdeaDollsovo.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 26, dollFontWeight: .heavy)
-        glossyIdeaDollsovo.layer.cornerRadius = 26
-        glossyIdeaDollsovo.layer.shadowColor = UIColor.black.cgColor
-        glossyIdeaDollsovo.layer.shadowOpacity = 0.22
-        glossyIdeaDollsovo.layer.shadowRadius = 10
-        glossyIdeaDollsovo.layer.shadowOffset = CGSize(width: 0, height: 6)
+        glossyIdeaDollsovo.setImage(UIImage(named: "DolluDelicatePromptDollmora")?.withRenderingMode(.alwaysOriginal), for: .normal)
         glossyIdeaDollsovo.accessibilityLabel = "Collector safety feedback"
         glossyIdeaDollsovo.addTarget(self, action: #selector(openDollSafetyRoute), for: .touchUpInside)
         glossyIdeaDollsovo.addTarget(self, action: #selector(pressDollSafetyButton), for: .touchDown)
@@ -287,7 +275,7 @@ final class DolluStyleClipCardCell: UICollectionViewCell {
 
         layeredCatalogDollquvo.translatesAutoresizingMaskIntoConstraints = false
         layeredCatalogDollquvo.textColor = .white
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .semibold)
+        layeredCatalogDollquvo.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(18, gentleGalleryDollvani: true)
         layeredCatalogDollquvo.adjustsFontSizeToFitWidth = true
         layeredCatalogDollquvo.minimumScaleFactor = 0.72
         satinPinboardDollvani.addSubview(layeredCatalogDollquvo)
@@ -295,7 +283,7 @@ final class DolluStyleClipCardCell: UICollectionViewCell {
         
         cozyMemoDolllaro.translatesAutoresizingMaskIntoConstraints = false
         cozyMemoDolllaro.textColor = UIColor(white: 1, alpha: 0.66)
-        cozyMemoDolllaro.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .regular)
+        cozyMemoDolllaro.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(14, gentleGalleryDollvani: false)
         cozyMemoDolllaro.numberOfLines = 1
         satinPinboardDollvani.addSubview(cozyMemoDolllaro)
         NSLayoutConstraint.activate([
@@ -304,9 +292,9 @@ final class DolluStyleClipCardCell: UICollectionViewCell {
             ivoryCoverDollzemi.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             ivoryCoverDollzemi.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.76),
 
-            glossyIdeaDollsovo.topAnchor.constraint(equalTo: ivoryCoverDollzemi.topAnchor, constant: 18),
-            glossyIdeaDollsovo.trailingAnchor.constraint(equalTo: ivoryCoverDollzemi.trailingAnchor, constant: -18),
-            glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant: 52),
+            glossyIdeaDollsovo.topAnchor.constraint(equalTo: ivoryCoverDollzemi.topAnchor, constant: 10),
+            glossyIdeaDollsovo.trailingAnchor.constraint(equalTo: ivoryCoverDollzemi.trailingAnchor, constant: -10),
+            glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant: 30),
             glossyIdeaDollsovo.heightAnchor.constraint(equalTo: glossyIdeaDollsovo.widthAnchor),
 
             satinPinboardDollvani.topAnchor.constraint(equalTo: ivoryCoverDollzemi.bottomAnchor, constant: -18),
@@ -320,10 +308,10 @@ final class DolluStyleClipCardCell: UICollectionViewCell {
 
             cozyMemoDolllaro.leadingAnchor.constraint(equalTo: layeredCatalogDollquvo.leadingAnchor),
             cozyMemoDolllaro.trailingAnchor.constraint(equalTo: layeredCatalogDollquvo.trailingAnchor),
-            cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.bottomAnchor, constant: 15),
-            plaimger.widthAnchor.constraint(equalToConstant: 50),
-            plaimger.heightAnchor.constraint(equalToConstant: 50),
-            plaimger.trailingAnchor.constraint(equalTo: satinPinboardDollvani.trailingAnchor, constant: -20),
+            cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.bottomAnchor, constant: 8),
+            plaimger.widthAnchor.constraint(equalToConstant: 48),
+            plaimger.heightAnchor.constraint(equalToConstant: 48),
+            plaimger.trailingAnchor.constraint(equalTo: satinPinboardDollvani.trailingAnchor, constant: -16),
             plaimger.centerYAnchor.constraint(equalTo: layeredCatalogDollquvo.centerYAnchor)
         ])
     }

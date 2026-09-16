@@ -8,7 +8,7 @@ final class DollukeepsakeCategoryHeaderView: UICollectionReusableView {
         super.init(frame: frame)
         braidedCatalogDollrilo.translatesAutoresizingMaskIntoConstraints = false
         braidedCatalogDollrilo.textColor = .white
-        braidedCatalogDollrilo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 26, dollFontWeight: .heavy)
+        braidedCatalogDollrilo.font = UIFont.systemFont(ofSize: 15.8, weight: .semibold)
         addSubview(braidedCatalogDollrilo)
         NSLayoutConstraint.activate([
             braidedCatalogDollrilo.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -37,7 +37,7 @@ final class DollukeepsakeDisplayDollvaniseCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.layer.cornerRadius = 22
+        contentView.layer.cornerRadius = 12
         contentView.clipsToBounds = true
         contentView.backgroundColor = DolluWardrobePalette.dollArchivePanelSoft
 
@@ -47,15 +47,7 @@ final class DollukeepsakeDisplayDollvaniseCell: UICollectionViewCell {
         contentView.addSubview(tinyCoverDollmexa)
 
         glossyIdeaDollsovo.translatesAutoresizingMaskIntoConstraints = false
-        glossyIdeaDollsovo.backgroundColor = .white
-        glossyIdeaDollsovo.setTitle("!", for: .normal)
-        glossyIdeaDollsovo.setTitleColor(UIColor(red: 0.06, green: 0.05, blue: 0.12, alpha: 1), for: .normal)
-        glossyIdeaDollsovo.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .heavy)
-        glossyIdeaDollsovo.layer.cornerRadius = 17
-        glossyIdeaDollsovo.layer.shadowColor = UIColor.black.cgColor
-        glossyIdeaDollsovo.layer.shadowOpacity = 0.18
-        glossyIdeaDollsovo.layer.shadowRadius = 7
-        glossyIdeaDollsovo.layer.shadowOffset = CGSize(width: 0, height: 4)
+        glossyIdeaDollsovo.setImage(UIImage(named: "DolluDelicatePromptDollmora")?.withRenderingMode(.alwaysOriginal), for: .normal)
         glossyIdeaDollsovo.accessibilityLabel = "Collector safety feedback"
         glossyIdeaDollsovo.addTarget(self, action: #selector(openDollSafetyRoute), for: .touchUpInside)
         glossyIdeaDollsovo.addTarget(self, action: #selector(pressDollSafetyButton), for: .touchDown)
@@ -69,7 +61,7 @@ final class DollukeepsakeDisplayDollvaniseCell: UICollectionViewCell {
         pearlOutfitDolllaro.translatesAutoresizingMaskIntoConstraints = false
         pearlOutfitDolllaro.textColor = .white
         pearlOutfitDolllaro.textAlignment = .center
-        pearlOutfitDolllaro.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .heavy)
+        pearlOutfitDolllaro.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         pearlOutfitDolllaro.adjustsFontSizeToFitWidth = true
         pearlOutfitDolllaro.minimumScaleFactor = 0.72
         velvetTagsetDollcavo.addSubview(pearlOutfitDolllaro)
@@ -82,13 +74,13 @@ final class DollukeepsakeDisplayDollvaniseCell: UICollectionViewCell {
 
             glossyIdeaDollsovo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             glossyIdeaDollsovo.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant: 34),
+            glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant: 30),
             glossyIdeaDollsovo.heightAnchor.constraint(equalTo: glossyIdeaDollsovo.widthAnchor),
 
             velvetTagsetDollcavo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             velvetTagsetDollcavo.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             velvetTagsetDollcavo.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            velvetTagsetDollcavo.heightAnchor.constraint(equalToConstant: 40),
+            velvetTagsetDollcavo.heightAnchor.constraint(equalToConstant: 21),
 
             pearlOutfitDolllaro.leadingAnchor.constraint(equalTo: velvetTagsetDollcavo.leadingAnchor, constant: 8),
             pearlOutfitDolllaro.trailingAnchor.constraint(equalTo: velvetTagsetDollcavo.trailingAnchor, constant: -8),
@@ -137,6 +129,7 @@ final class DolluDollpediaCardCell: UICollectionViewCell {
     var satinMarkerDollpavo: (() -> Void)?
 
     private let satinPinboardDollvani = UIView()
+    private let satinStitchmapDollzemi = CAShapeLayer()
     private let tinyCoverDollmexa = DolluAsyncImageView()
     private let layeredCatalogDollquvo = UILabel()
     private let cozyMemoDolllaro = UILabel()
@@ -147,27 +140,26 @@ final class DolluDollpediaCardCell: UICollectionViewCell {
         contentView.backgroundColor = .clear
 
         satinPinboardDollvani.translatesAutoresizingMaskIntoConstraints = false
-        satinPinboardDollvani.backgroundColor = UIColor(red: 0.14, green: 0.12, blue: 0.31, alpha: 0.96)
+        satinPinboardDollvani.backgroundColor = UIColor(red: 33/255, green: 30/255, blue: 65/255, alpha: 1)
         satinPinboardDollvani.layer.cornerRadius = 24
         satinPinboardDollvani.clipsToBounds = true
         contentView.addSubview(satinPinboardDollvani)
+        satinStitchmapDollzemi.fillRule = .evenOdd
+        satinStitchmapDollzemi.fillColor = UIColor(red: 54/255, green: 50/255, blue: 90/255, alpha: 1).cgColor
+        satinStitchmapDollzemi.shadowColor = satinStitchmapDollzemi.fillColor
+        satinStitchmapDollzemi.shadowOpacity = 0.75
+        satinStitchmapDollzemi.shadowRadius = 17
+        satinStitchmapDollzemi.shadowOffset = CGSize(width: 0, height: 4)
+        satinPinboardDollvani.layer.addSublayer(satinStitchmapDollzemi)
 
         tinyCoverDollmexa.translatesAutoresizingMaskIntoConstraints = false
         tinyCoverDollmexa.contentMode = .scaleAspectFill
         tinyCoverDollmexa.clipsToBounds = true
-        tinyCoverDollmexa.layer.cornerRadius = 20
+        tinyCoverDollmexa.layer.cornerRadius = 12
         satinPinboardDollvani.addSubview(tinyCoverDollmexa)
 
         glossyIdeaDollsovo.translatesAutoresizingMaskIntoConstraints = false
-        glossyIdeaDollsovo.backgroundColor = .white
-        glossyIdeaDollsovo.setTitle("!", for: .normal)
-        glossyIdeaDollsovo.setTitleColor(UIColor(red: 0.06, green: 0.05, blue: 0.12, alpha: 1), for: .normal)
-        glossyIdeaDollsovo.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 21, dollFontWeight: .heavy)
-        glossyIdeaDollsovo.layer.cornerRadius = 21
-        glossyIdeaDollsovo.layer.shadowColor = UIColor.black.cgColor
-        glossyIdeaDollsovo.layer.shadowOpacity = 0.2
-        glossyIdeaDollsovo.layer.shadowRadius = 8
-        glossyIdeaDollsovo.layer.shadowOffset = CGSize(width: 0, height: 5)
+        glossyIdeaDollsovo.setImage(UIImage(named: "DolluDelicatePromptDollmora")?.withRenderingMode(.alwaysOriginal), for: .normal)
         glossyIdeaDollsovo.accessibilityLabel = "Collector safety feedback"
         glossyIdeaDollsovo.addTarget(self, action: #selector(openDollSafetyRoute), for: .touchUpInside)
         glossyIdeaDollsovo.addTarget(self, action: #selector(pressDollSafetyButton), for: .touchDown)
@@ -176,14 +168,14 @@ final class DolluDollpediaCardCell: UICollectionViewCell {
 
         layeredCatalogDollquvo.translatesAutoresizingMaskIntoConstraints = false
         layeredCatalogDollquvo.textColor = .white
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 25, dollFontWeight: .heavy)
-        layeredCatalogDollquvo.adjustsFontSizeToFitWidth = true
+        layeredCatalogDollquvo.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(16, gentleGalleryDollvani: true)
+        layeredCatalogDollquvo.adjustsFontSizeToFitWidth = false
         layeredCatalogDollquvo.minimumScaleFactor = 0.72
         satinPinboardDollvani.addSubview(layeredCatalogDollquvo)
 
         cozyMemoDolllaro.translatesAutoresizingMaskIntoConstraints = false
-        cozyMemoDolllaro.textColor = UIColor(white: 1, alpha: 0.66)
-        cozyMemoDolllaro.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 20, dollFontWeight: .regular)
+        cozyMemoDolllaro.textColor = UIColor(white: 192/255, alpha: 1)
+        cozyMemoDolllaro.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(14, gentleGalleryDollvani: false)
         cozyMemoDolllaro.numberOfLines = 2
         satinPinboardDollvani.addSubview(cozyMemoDolllaro)
 
@@ -193,28 +185,40 @@ final class DolluDollpediaCardCell: UICollectionViewCell {
             satinPinboardDollvani.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             satinPinboardDollvani.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
-            tinyCoverDollmexa.leadingAnchor.constraint(equalTo: satinPinboardDollvani.leadingAnchor, constant: 40),
+            tinyCoverDollmexa.leadingAnchor.constraint(equalTo: satinPinboardDollvani.leadingAnchor, constant: 20),
             tinyCoverDollmexa.centerYAnchor.constraint(equalTo: satinPinboardDollvani.centerYAnchor),
-            tinyCoverDollmexa.widthAnchor.constraint(equalTo: satinPinboardDollvani.heightAnchor, multiplier: 0.68),
-            tinyCoverDollmexa.heightAnchor.constraint(equalTo: tinyCoverDollmexa.widthAnchor),
+            tinyCoverDollmexa.widthAnchor.constraint(equalToConstant: 80),
+            tinyCoverDollmexa.heightAnchor.constraint(equalToConstant: 76),
 
             glossyIdeaDollsovo.topAnchor.constraint(equalTo: satinPinboardDollvani.topAnchor, constant: 14),
             glossyIdeaDollsovo.trailingAnchor.constraint(equalTo: satinPinboardDollvani.trailingAnchor, constant: -16),
-            glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant: 42),
+            glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant: 30),
             glossyIdeaDollsovo.heightAnchor.constraint(equalTo: glossyIdeaDollsovo.widthAnchor),
 
-            layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: tinyCoverDollmexa.trailingAnchor, constant: 36),
+            layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: tinyCoverDollmexa.trailingAnchor, constant: 25),
             layeredCatalogDollquvo.trailingAnchor.constraint(equalTo: glossyIdeaDollsovo.leadingAnchor, constant: -12),
-            layeredCatalogDollquvo.topAnchor.constraint(equalTo: satinPinboardDollvani.topAnchor, constant: 32),
+            layeredCatalogDollquvo.topAnchor.constraint(equalTo: satinPinboardDollvani.topAnchor, constant: 16),
 
             cozyMemoDolllaro.leadingAnchor.constraint(equalTo: layeredCatalogDollquvo.leadingAnchor),
             cozyMemoDolllaro.trailingAnchor.constraint(equalTo: layeredCatalogDollquvo.trailingAnchor),
-            cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.bottomAnchor, constant: 12)
+            cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.topAnchor, constant: 27)
         ])
     }
 
     required init?(coder: NSCoder) {
         nil
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let satinCoatDollbop = UIBezierPath(rect: satinPinboardDollvani.bounds.insetBy(dx: -100, dy: -100))
+        satinCoatDollbop.append(UIBezierPath(roundedRect: satinPinboardDollvani.bounds, cornerRadius: 24).reversing())
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        satinStitchmapDollzemi.frame = satinPinboardDollvani.bounds
+        satinStitchmapDollzemi.path = satinCoatDollbop.cgPath
+        satinStitchmapDollzemi.shadowPath = satinCoatDollbop.cgPath
+        CATransaction.commit()
     }
 
     func configure(dollItem: DollutrimmedClosetDollrevo) {

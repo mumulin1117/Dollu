@@ -1,0 +1,18 @@
+{
+  "images": [
+    {
+      "filename": "DolluCozyWardrobeDollukp@2x.png",
+      "idiom": "universal",
+      "scale": "2x"
+    },
+    {
+      "filename": "DolluCozyWardrobeDollukp@3x.png",
+      "idiom": "universal",
+      "scale": "3x"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  }
+}

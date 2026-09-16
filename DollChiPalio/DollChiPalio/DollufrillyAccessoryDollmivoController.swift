@@ -48,14 +48,14 @@ struct DollufrillyCapsuleDArchive: Hashable {
 final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var dollInvitePosted: ((DollufrillyCapsuleDArchive) -> Void)?
 
-    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
+    private let polishedBackgroundDollquvo = UIImageView(image: UIImage(named: "DolluPolishedBackgroundDollquvo"))
     private let ribbonDisplayDollrevo = UIScrollView()
     private let satinPinboardDollvani = UIStackView()
     private let pearlGuideDollukp = UIStackView()
     private let dreamyDisplayDolltavo = DolluCheckinDollUploadCard()
     private let gentleCatalogDollpavo = DolluCheckinJoinScopeSwitchView()
-    private let satinMarkerDollpavo = DolluminiLayerDollmivoButton(dollButtonTitle: "Publish Invite")
-    private let floralHintDollvelo = DolluminiLayerDollmivoButton(dollButtonTitle: "Cancel", dollUsesLightStyle: true)
+    private let satinMarkerDollpavo = UIButton(type: .system)
+    private let floralHintDollvelo = UIButton(type: .system)
     private var patternedCollectionDollbop: [DolluCheckinThemePillView] = []
     private var mistyThemeDollfina: DollutulleCapsuleDollnoroTheme = .pastelDay
     private var cozyArchiveDollniva: UIImage?
@@ -72,6 +72,8 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
         navigationController?.setNavigationBarHidden(true, animated: false)
 
         polishedBackgroundDollquvo.translatesAutoresizingMaskIntoConstraints = false
+        polishedBackgroundDollquvo.contentMode = .scaleAspectFill
+        polishedBackgroundDollquvo.clipsToBounds = true
         view.addSubview(polishedBackgroundDollquvo)
 
         let dollBackButton = makeDollBackButton()
@@ -81,44 +83,70 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
         glossyLaceworkDollmora.translatesAutoresizingMaskIntoConstraints = false
         glossyLaceworkDollmora.text = "New Invite"
         glossyLaceworkDollmora.textColor = .white
-        glossyLaceworkDollmora.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 17, dollFontWeight: .heavy)
+        glossyLaceworkDollmora.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(18, gentleGalleryDollvani: true)
         view.addSubview(glossyLaceworkDollmora)
 
         ribbonDisplayDollrevo.translatesAutoresizingMaskIntoConstraints = false
         ribbonDisplayDollrevo.showsVerticalScrollIndicator = false
         ribbonDisplayDollrevo.alwaysBounceVertical = true
+        ribbonDisplayDollrevo.contentInsetAdjustmentBehavior = .never
         view.addSubview(ribbonDisplayDollrevo)
 
         satinPinboardDollvani.translatesAutoresizingMaskIntoConstraints = false
         satinPinboardDollvani.axis = .vertical
-        satinPinboardDollvani.spacing = 16
+        satinPinboardDollvani.spacing = 12
         ribbonDisplayDollrevo.addSubview(satinPinboardDollvani)
 
         let dollIntro = UILabel()
-        dollIntro.text = "Post a partner check-in. Pick a theme and time, then let another collector join with a doll look."
-        dollIntro.textColor = DolluWardrobePalette.dollMemoMuted
-        dollIntro.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .semibold)
+        dollIntro.text = "Post a buddy check-in. Pick a theme and time — others join by uploading their own doll."
+        dollIntro.textColor = UIColor(red: 170/255, green: 184/255, blue: 194/255, alpha: 1)
+        dollIntro.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(12.5, gentleGalleryDollvani: false)
         dollIntro.numberOfLines = 0
         satinPinboardDollvani.addArrangedSubview(dollIntro)
+        satinPinboardDollvani.setCustomSpacing(18, after: dollIntro)
 
-        satinPinboardDollvani.addArrangedSubview(makeDollSmallTitle("Today's theme"))
+        let sageLookbookDollmexa = makeDollSmallTitle("Today's theme")
+        satinPinboardDollvani.addArrangedSubview(sageLookbookDollmexa)
+        satinPinboardDollvani.setCustomSpacing(9, after: sageLookbookDollmexa)
         buildDollThemeRow()
         satinPinboardDollvani.addArrangedSubview(pearlGuideDollukp)
+        satinPinboardDollvani.setCustomSpacing(18, after: pearlGuideDollukp)
 
-        satinPinboardDollvani.addArrangedSubview(makeDollSmallTitle("Your doll"))
+        let dollTitle = makeDollSmallTitle("Your doll")
+        satinPinboardDollvani.addArrangedSubview(dollTitle)
+        satinPinboardDollvani.setCustomSpacing(10, after: dollTitle)
         dreamyDisplayDolltavo.dollUploadTapped = { [weak self] in
             self?.openDollImageSourceOptions()
         }
         satinPinboardDollvani.addArrangedSubview(dreamyDisplayDolltavo)
+        satinPinboardDollvani.setCustomSpacing(18, after: dreamyDisplayDolltavo)
 
-        satinPinboardDollvani.addArrangedSubview(makeDollSmallTitle("Who can join"))
+        let gentlePropDollzemi = makeDollSmallTitle("Who can join")
+        satinPinboardDollvani.addArrangedSubview(gentlePropDollzemi)
+        satinPinboardDollvani.setCustomSpacing(9, after: gentlePropDollzemi)
         gentleCatalogDollpavo.dollScopeChanged = { _ in }
         satinPinboardDollvani.addArrangedSubview(gentleCatalogDollpavo)
+        satinPinboardDollvani.setCustomSpacing(18, after: gentleCatalogDollpavo)
 
-        satinPinboardDollvani.addArrangedSubview(makeDollHonorNote())
+        let amberHintDolllaro = makeDollHonorNote()
+        satinPinboardDollvani.addArrangedSubview(amberHintDolllaro)
+        satinPinboardDollvani.setCustomSpacing(14, after: amberHintDolllaro)
 
+        [satinMarkerDollpavo, floralHintDollvelo].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.titleLabel?.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(15, gentleGalleryDollvani: true)
+            $0.setTitleColor(.white, for: .normal)
+            $0.layer.cornerRadius = 26
+            $0.heightAnchor.constraint(equalToConstant: 52).isActive = true
+        }
+        satinMarkerDollpavo.setTitle("Publish Invite", for: .normal)
+        satinMarkerDollpavo.backgroundColor = DolluWardrobePalette.dollRibbonPurple
+        floralHintDollvelo.setTitle("Cancel", for: .normal)
+        floralHintDollvelo.layer.borderWidth = 1
+        floralHintDollvelo.layer.borderColor = UIColor(white: 1, alpha: 0.18).cgColor
         satinMarkerDollpavo.addTarget(self, action: #selector(publishDollInvite), for: .touchUpInside)
         satinPinboardDollvani.addArrangedSubview(satinMarkerDollpavo)
+        satinPinboardDollvani.setCustomSpacing(10, after: satinMarkerDollpavo)
 
         floralHintDollvelo.setTitleColor(.white, for: .normal)
         floralHintDollvelo.backgroundColor = UIColor(white: 1, alpha: 0.10)
@@ -133,37 +161,44 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
 
             dollBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             dollBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 14),
-            dollBackButton.widthAnchor.constraint(equalToConstant: 34),
-            dollBackButton.heightAnchor.constraint(equalToConstant: 34),
+            dollBackButton.widthAnchor.constraint(equalToConstant: 38),
+            dollBackButton.heightAnchor.constraint(equalToConstant: 38),
 
             glossyLaceworkDollmora.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             glossyLaceworkDollmora.centerYAnchor.constraint(equalTo: dollBackButton.centerYAnchor),
             glossyLaceworkDollmora.leadingAnchor.constraint(greaterThanOrEqualTo: dollBackButton.trailingAnchor, constant: 12),
             glossyLaceworkDollmora.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -20),
 
-            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: dollBackButton.bottomAnchor, constant: 18),
+            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: dollBackButton.bottomAnchor, constant: 14),
             ribbonDisplayDollrevo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             ribbonDisplayDollrevo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            ribbonDisplayDollrevo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            ribbonDisplayDollrevo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 
             satinPinboardDollvani.topAnchor.constraint(equalTo: ribbonDisplayDollrevo.contentLayoutGuide.topAnchor),
-            satinPinboardDollvani.leadingAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.leadingAnchor, constant: 22),
-            satinPinboardDollvani.trailingAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.trailingAnchor, constant: -22),
+            satinPinboardDollvani.leadingAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.leadingAnchor, constant: 20),
+            satinPinboardDollvani.trailingAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.trailingAnchor, constant: -20),
             satinPinboardDollvani.bottomAnchor.constraint(equalTo: ribbonDisplayDollrevo.contentLayoutGuide.bottomAnchor, constant: -26),
-            satinPinboardDollvani.widthAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.widthAnchor, constant: -44)
+            satinPinboardDollvani.widthAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.widthAnchor, constant: -40)
         ])
     }
 
     private func buildDollThemeRow() {
-        pearlGuideDollukp.axis = .horizontal
-        pearlGuideDollukp.spacing = 8
+        pearlGuideDollukp.axis = .vertical
+        pearlGuideDollukp.spacing = 9
         pearlGuideDollukp.alignment = .leading
-        pearlGuideDollukp.distribution = .fillProportionally
+        pearlGuideDollukp.distribution = .fill
 
         DollutulleCapsuleDollnoroTheme.allCases.forEach { dollTheme in
             let dollPill = DolluCheckinThemePillView(dollTheme: dollTheme)
             dollPill.addTarget(self, action: #selector(selectDollTheme(_:)), for: .touchUpInside)
             patternedCollectionDollbop.append(dollPill)
+        }
+        let dollRow = UIStackView(arrangedSubviews: Array(patternedCollectionDollbop.prefix(3)))
+        dollRow.axis = .horizontal
+        dollRow.spacing = 9
+        pearlGuideDollukp.addArrangedSubview(dollRow)
+        dollRow.widthAnchor.constraint(lessThanOrEqualTo: pearlGuideDollukp.widthAnchor).isActive = true
+        if let dollPill = patternedCollectionDollbop.last {
             pearlGuideDollukp.addArrangedSubview(dollPill)
         }
     }
@@ -183,43 +218,21 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
     private func makeDollSmallTitle(_ dollText: String) -> UILabel {
         let dollLabel = UILabel()
         dollLabel.text = dollText
-        dollLabel.textColor = UIColor(white: 1, alpha: 0.92)
-        dollLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .heavy)
+        dollLabel.textColor = UIColor(red: 170/255, green: 184/255, blue: 194/255, alpha: 1)
+        dollLabel.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(12, gentleGalleryDollvani: true)
+        dollLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
         return dollLabel
     }
 
     private func makeDollHonorNote() -> UIView {
-        let dollCard = UIView()
+        let dollCard = UIImageView(image: UIImage(named: "DolluAmberHintDolllaro"))
         dollCard.translatesAutoresizingMaskIntoConstraints = false
-        dollCard.backgroundColor = UIColor(red: 0.12, green: 0.10, blue: 0.28, alpha: 0.92)
-        dollCard.layer.cornerRadius = 18
-        dollCard.layer.borderWidth = 1
-        dollCard.layer.borderColor = UIColor(white: 1, alpha: 0.08).cgColor
-
-        let dollSeal = UILabel()
-        dollSeal.translatesAutoresizingMaskIntoConstraints = false
-        dollSeal.text = "★"
-        dollSeal.textColor = UIColor(red: 1, green: 0.76, blue: 0.28, alpha: 1)
-        dollSeal.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .heavy)
-
-        let dollCopy = UILabel()
-        dollCopy.translatesAutoresizingMaskIntoConstraints = false
-        dollCopy.text = "You both earn +25 honors when you check in together."
-        dollCopy.textColor = DolluWardrobePalette.dollMemoMuted
-        dollCopy.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .semibold)
-        dollCopy.numberOfLines = 0
-
-        dollCard.addSubview(dollSeal)
-        dollCard.addSubview(dollCopy)
-        NSLayoutConstraint.activate([
-            dollCard.heightAnchor.constraint(greaterThanOrEqualToConstant: 58),
-            dollSeal.leadingAnchor.constraint(equalTo: dollCard.leadingAnchor, constant: 16),
-            dollSeal.centerYAnchor.constraint(equalTo: dollCard.centerYAnchor),
-            dollCopy.leadingAnchor.constraint(equalTo: dollSeal.trailingAnchor, constant: 12),
-            dollCopy.trailingAnchor.constraint(equalTo: dollCard.trailingAnchor, constant: -16),
-            dollCopy.topAnchor.constraint(equalTo: dollCard.topAnchor, constant: 12),
-            dollCopy.bottomAnchor.constraint(equalTo: dollCard.bottomAnchor, constant: -12)
-        ])
+        dollCard.contentMode = .scaleAspectFit
+        dollCard.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        dollCard.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        dollCard.heightAnchor.constraint(equalTo: dollCard.widthAnchor, multiplier: 67/333).isActive = true
+        dollCard.isAccessibilityElement = true
+        dollCard.accessibilityLabel = "You both earn +25 Stars when you check in together"
         return dollCard
     }
 
@@ -331,7 +344,9 @@ final class DolluCheckinThemePillView: UIControl {
         layeredCatalogDollquvo.translatesAutoresizingMaskIntoConstraints = false
         layeredCatalogDollquvo.text = dollTheme.dollTitle
         layeredCatalogDollquvo.textAlignment = .center
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 11, dollFontWeight: .heavy)
+        layeredCatalogDollquvo.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(12.5, gentleGalleryDollvani: true)
+        layeredCatalogDollquvo.adjustsFontSizeToFitWidth = true
+        layeredCatalogDollquvo.minimumScaleFactor = 0.75
         addSubview(layeredCatalogDollquvo)
 
         NSLayoutConstraint.activate([
@@ -349,6 +364,7 @@ final class DolluCheckinThemePillView: UIControl {
     }
 
     private func refreshDollPillStyle() {
+        layeredCatalogDollquvo.text = (dollIsChosen ? "✓  " : "") + dollTheme.dollTitle
         backgroundColor = dollIsChosen ? UIColor(red: 0.58, green: 0.18, blue: 0.82, alpha: 0.55) : UIColor(white: 1, alpha: 0.08)
         layer.borderColor = (dollIsChosen ? UIColor(red: 1, green: 0.22, blue: 0.78, alpha: 0.8) : UIColor(white: 1, alpha: 0.10)).cgColor
         layeredCatalogDollquvo.textColor = dollIsChosen ? .white : DolluWardrobePalette.dollMemoMuted
@@ -381,16 +397,16 @@ final class DolluCheckinJoinScopeSwitchView: UIControl {
         [cozyWardrobeDollukp, classicArchiveDollpiri].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.setTitleColor(.white, for: .normal)
-            $0.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .heavy)
+            $0.titleLabel?.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(13, gentleGalleryDollvani: true)
             addSubview($0)
         }
         cozyWardrobeDollukp.setTitle(DolluCglossyBeadworkDteScope.anyone.dollTitle, for: .normal)
-        classicArchiveDollpiri.setTitle(DolluCglossyBeadworkDteScope.collectorsOnly.dollTitle, for: .normal)
+        classicArchiveDollpiri.setTitle("Friends only", for: .normal)
         cozyWardrobeDollukp.addTarget(self, action: #selector(selectDollAnyone), for: .touchUpInside)
         classicArchiveDollpiri.addTarget(self, action: #selector(selectDollCollectors), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 52),
+            heightAnchor.constraint(equalToConstant: 48),
             cozyWardrobeDollukp.topAnchor.constraint(equalTo: topAnchor, constant: 4),
             cozyWardrobeDollukp.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
             cozyWardrobeDollukp.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
@@ -436,7 +452,7 @@ final class DolluCheckinDollUploadCard: UIControl {
     private let moonlitPaletteDollukp = CAGradientLayer()
     private let tinyCoverDollmexa = UIImageView()
     private let layeredCatalogDollquvo = UILabel()
-    private let cottonFrameDollukp = UILabel()
+    private let cottonFrameDollukp = UIImageView(image: UIImage(named: "DolluCottonFrameDollukp"))
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -457,37 +473,43 @@ final class DolluCheckinDollUploadCard: UIControl {
         layeredCatalogDollquvo.translatesAutoresizingMaskIntoConstraints = false
         layeredCatalogDollquvo.text = "You"
         layeredCatalogDollquvo.textColor = .white
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 11, dollFontWeight: .heavy)
+        layeredCatalogDollquvo.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(11, gentleGalleryDollvani: true)
+        layeredCatalogDollquvo.textAlignment = .center
+        layeredCatalogDollquvo.backgroundColor = UIColor(red: 0.09, green: 0.07, blue: 0.20, alpha: 0.80)
+        layeredCatalogDollquvo.layer.cornerRadius = 13
+        layeredCatalogDollquvo.clipsToBounds = true
         addSubview(layeredCatalogDollquvo)
 
         tinyCoverDollmexa.translatesAutoresizingMaskIntoConstraints = false
         tinyCoverDollmexa.contentMode = .scaleAspectFill
+        tinyCoverDollmexa.clipsToBounds = true
+        tinyCoverDollmexa.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        tinyCoverDollmexa.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        tinyCoverDollmexa.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        tinyCoverDollmexa.setContentHuggingPriority(.defaultLow, for: .vertical)
         tinyCoverDollmexa.alpha = 0
         addSubview(tinyCoverDollmexa)
 
         cottonFrameDollukp.translatesAutoresizingMaskIntoConstraints = false
-        cottonFrameDollukp.text = "◎"
-        cottonFrameDollukp.textColor = .white
-        cottonFrameDollukp.textAlignment = .center
-        cottonFrameDollukp.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 25, dollFontWeight: .heavy)
-        cottonFrameDollukp.backgroundColor = UIColor(white: 1, alpha: 0.12)
-        cottonFrameDollukp.layer.cornerRadius = 17
-        cottonFrameDollukp.clipsToBounds = true
+        cottonFrameDollukp.contentMode = .scaleAspectFit
         addSubview(cottonFrameDollukp)
+        bringSubviewToFront(layeredCatalogDollquvo)
 
         addTarget(self, action: #selector(tapDollUpload), for: .touchUpInside)
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(greaterThanOrEqualToConstant: 132),
-            layeredCatalogDollquvo.topAnchor.constraint(equalTo: topAnchor, constant: 14),
-            layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            heightAnchor.constraint(equalToConstant: 150),
+            layeredCatalogDollquvo.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11),
+            layeredCatalogDollquvo.widthAnchor.constraint(equalToConstant: 42),
+            layeredCatalogDollquvo.heightAnchor.constraint(equalToConstant: 26),
             tinyCoverDollmexa.topAnchor.constraint(equalTo: topAnchor),
             tinyCoverDollmexa.leadingAnchor.constraint(equalTo: leadingAnchor),
             tinyCoverDollmexa.trailingAnchor.constraint(equalTo: trailingAnchor),
             tinyCoverDollmexa.bottomAnchor.constraint(equalTo: bottomAnchor),
-            cottonFrameDollukp.topAnchor.constraint(equalTo: topAnchor, constant: 13),
-            cottonFrameDollukp.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -13),
-            cottonFrameDollukp.widthAnchor.constraint(equalToConstant: 34),
-            cottonFrameDollukp.heightAnchor.constraint(equalToConstant: 34)
+            cottonFrameDollukp.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            cottonFrameDollukp.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11),
+            cottonFrameDollukp.widthAnchor.constraint(equalToConstant: 32),
+            cottonFrameDollukp.heightAnchor.constraint(equalToConstant: 32)
         ])
     }
 
@@ -505,7 +527,6 @@ final class DolluCheckinDollUploadCard: UIControl {
         let dollHasPreview = dollPreviewImage != nil
         UIView.animate(withDuration: 0.18) {
             self.tinyCoverDollmexa.alpha = dollHasPreview ? 1 : 0
-            self.cottonFrameDollukp.text = dollHasPreview ? "✓" : "◎"
         }
     }
 

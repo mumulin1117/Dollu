@@ -1,12 +1,13 @@
 import UIKit
 
 final class DollucalmNoteDollsovoController: UIViewController {
-    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
+    private let polishedBackgroundDollquvo = UIImageView(image: UIImage(named: "DolluPolishedBackgroundDollquvo"))
     private let ribbonDisplayDollrevo = UIScrollView()
     private let satinPinboardDollvani = UIStackView()
     private let sageLookbookDollmexa = UILabel()
     private let glossyIdeaDollsovo = DolludelicateBonnetBadgeButton()
-    private let calmNoteDollsovo = UIActivityIndicatorView(style: .large)
+    private let calmNoteDollsovo = DollucalmNoteDollsovoView()
+    private let ribbonCategoryDollpiri = UIRefreshControl()
     private let floralHintDollvelo = UILabel()
     private let satinMarkerDollpavo = DolluminiLayerDollmivoButton(dollButtonTitle: **"Rexytrxyy", dollUsesLightStyle: true)
     private let velvetPoseDollsero = DollupatternedCoatStrip()
@@ -21,22 +22,28 @@ final class DollucalmNoteDollsovoController: UIViewController {
         super.viewDidLoad()
         buildDollCheckinArchive()
         applyDollCheckinLoading()
+        loadDollCheckinArchive()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        refreshDollCheckinArchiveForEntry()
+        refreshDollStarBadge()
+        if pocketCollectionDollruni != nil {
+            applyDollCheckinLoaded(pearlGuideDollukp.localDollCheckinArchive())
+        }
     }
 
     private func buildDollCheckinArchive() {
         view.backgroundColor = DolluWardrobePalette.dollBackdropInk
         polishedBackgroundDollquvo.translatesAutoresizingMaskIntoConstraints = false
+        polishedBackgroundDollquvo.contentMode = .scaleAspectFill
+        polishedBackgroundDollquvo.clipsToBounds = true
         view.addSubview(polishedBackgroundDollquvo)
 
         sageLookbookDollmexa.translatesAutoresizingMaskIntoConstraints = false
         sageLookbookDollmexa.text = **"CHxyECxyK-xyINxy"
         sageLookbookDollmexa.textColor = .white
-        sageLookbookDollmexa.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 32, dollFontWeight: .heavy)
+        sageLookbookDollmexa.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(30, gentleGalleryDollvani: true)
         sageLookbookDollmexa.adjustsFontSizeToFitWidth = true
         sageLookbookDollmexa.minimumScaleFactor = 0.72
         view.addSubview(sageLookbookDollmexa)
@@ -49,15 +56,18 @@ final class DollucalmNoteDollsovoController: UIViewController {
         ribbonDisplayDollrevo.alwaysBounceVertical = true
         ribbonDisplayDollrevo.showsVerticalScrollIndicator = false
         ribbonDisplayDollrevo.contentInset.bottom = 132
+        ribbonCategoryDollpiri.tintColor = UIColor(red: 1, green: 0.18, blue: 0.86, alpha: 1)
+        ribbonCategoryDollpiri.addTarget(self, action: #selector(loadDollCheckinArchive), for: .valueChanged)
+        ribbonDisplayDollrevo.refreshControl = ribbonCategoryDollpiri
         view.addSubview(ribbonDisplayDollrevo)
 
         satinPinboardDollvani.translatesAutoresizingMaskIntoConstraints = false
         satinPinboardDollvani.axis = .vertical
-        satinPinboardDollvani.spacing = 14
+        satinPinboardDollvani.spacing = 16
         ribbonDisplayDollrevo.addSubview(satinPinboardDollvani)
 
         bowChecklistDollmora.axis = .vertical
-        bowChecklistDollmora.spacing = 10
+        bowChecklistDollmora.spacing = 13
 
         cottonFrameDollukp.dollPrimaryTapped = { [weak self] in
             self?.openDollCheckinDraft()
@@ -71,14 +81,12 @@ final class DollucalmNoteDollsovoController: UIViewController {
 
         satinPinboardDollvani.addArrangedSubview(velvetPoseDollsero)
         satinPinboardDollvani.addArrangedSubview(cottonFrameDollukp)
-        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: **"Buxyddxyy xyChxyecxyk-xyinxy", dollTrail: **"Chxyalxylexyngxye"))
+        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: **"Buxyddxyy xyChxyecxyk-xyinxy", dollTrail: **"Chxyalxylexyngxye", dollUsesTag: true))
         satinPinboardDollvani.addArrangedSubview(patternedCollectionDollbop)
-        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: **"Toxydaxyy'xys xyChxyecxyk-xyinxys", dollTrail: **"Paxyrtxynexyr xyinxyvixytexys"))
+        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: **"Toxydaxyy'xys xyChxyecxyk-xyinxys", dollTrail: **"Paxyrtxynexyr xyinxyvixytexys", dollUsesTag: false))
         satinPinboardDollvani.addArrangedSubview(bowChecklistDollmora)
 
         calmNoteDollsovo.translatesAutoresizingMaskIntoConstraints = false
-        calmNoteDollsovo.color = .white
-        calmNoteDollsovo.hidesWhenStopped = true
         view.addSubview(calmNoteDollsovo)
 
         floralHintDollvelo.translatesAutoresizingMaskIntoConstraints = false
@@ -100,16 +108,17 @@ final class DollucalmNoteDollsovoController: UIViewController {
             polishedBackgroundDollquvo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             polishedBackgroundDollquvo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            sageLookbookDollmexa.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            sageLookbookDollmexa.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 4),
             sageLookbookDollmexa.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: dollSideInset),
             sageLookbookDollmexa.trailingAnchor.constraint(lessThanOrEqualTo: glossyIdeaDollsovo.leadingAnchor, constant: -12),
+            sageLookbookDollmexa.heightAnchor.constraint(equalToConstant: 36),
 
             glossyIdeaDollsovo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -dollSideInset),
             glossyIdeaDollsovo.centerYAnchor.constraint(equalTo: sageLookbookDollmexa.centerYAnchor),
-            glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant:120),
-            glossyIdeaDollsovo.heightAnchor.constraint(equalToConstant: 38),
+            glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant: 64),
+            glossyIdeaDollsovo.heightAnchor.constraint(equalToConstant: 35),
 
-            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: sageLookbookDollmexa.bottomAnchor, constant: 12),
+            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: sageLookbookDollmexa.bottomAnchor, constant: 11),
             ribbonDisplayDollrevo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             ribbonDisplayDollrevo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             ribbonDisplayDollrevo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -120,8 +129,10 @@ final class DollucalmNoteDollsovoController: UIViewController {
             satinPinboardDollvani.bottomAnchor.constraint(equalTo: ribbonDisplayDollrevo.contentLayoutGuide.bottomAnchor),
             satinPinboardDollvani.widthAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.widthAnchor, constant: -(dollSideInset * 2)),
 
-            calmNoteDollsovo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            calmNoteDollsovo.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            calmNoteDollsovo.topAnchor.constraint(equalTo: ribbonDisplayDollrevo.topAnchor),
+            calmNoteDollsovo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            calmNoteDollsovo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            calmNoteDollsovo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             floralHintDollvelo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             floralHintDollvelo.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -138,18 +149,14 @@ final class DollucalmNoteDollsovoController: UIViewController {
         ribbonDisplayDollrevo.alpha = 0.35
         floralHintDollvelo.isHidden = true
         satinMarkerDollpavo.isHidden = true
-        calmNoteDollsovo.startAnimating()
+        calmNoteDollsovo.applyDollLoading()
     }
 
-    private func refreshDollCheckinArchiveForEntry() {
-        if pocketCollectionDollruni == nil {
-            applyDollCheckinLoading()
+    @objc private func loadDollCheckinArchive() {
+        guard !ivoryProgressDollrilo else {
+            ribbonCategoryDollpiri.endRefreshing()
+            return
         }
-        loadDollCheckinArchive()
-    }
-
-    private func loadDollCheckinArchive() {
-        guard !ivoryProgressDollrilo else { return }
         ivoryProgressDollrilo = true
         pearlGuideDollukp.fetchDollCheckinArchive { [weak self] dollResult in
             self?.ivoryProgressDollrilo = false
@@ -164,7 +171,8 @@ final class DollucalmNoteDollsovoController: UIViewController {
 
     private func applyDollCheckinLoaded(_ dollArchive: DollutailoredGuideDolltavoState) {
         pocketCollectionDollruni = dollArchive
-        calmNoteDollsovo.stopAnimating()
+        calmNoteDollsovo.stopDollLoading()
+        ribbonCategoryDollpiri.endRefreshing()
         ribbonDisplayDollrevo.alpha = 1
         floralHintDollvelo.isHidden = true
         satinMarkerDollpavo.isHidden = true
@@ -173,8 +181,14 @@ final class DollucalmNoteDollsovoController: UIViewController {
     }
 
     private func applyDollCheckinFailed() {
-        calmNoteDollsovo.stopAnimating()
+        calmNoteDollsovo.stopDollLoading()
+        ribbonCategoryDollpiri.endRefreshing()
         ribbonDisplayDollrevo.alpha = 1
+        guard pocketCollectionDollruni == nil else {
+            floralHintDollvelo.isHidden = true
+            satinMarkerDollpavo.isHidden = true
+            return
+        }
         floralHintDollvelo.text = **"Chxyecxyk-xyinxy axyrcxyhixyvexy cxyouxyldxy nxyotxy bxye xyloxyadxyedxy."
         floralHintDollvelo.isHidden = false
         satinMarkerDollpavo.isHidden = false
@@ -292,19 +306,18 @@ final class DollucalmNoteDollsovoController: UIViewController {
         var dollComponents = URLComponents()
         dollComponents.queryItems = dollPairs
         let dollQuery = dollComponents.percentEncodedQuery ?? ""
-        let dollRouteBase = **"htxytpxy:/xy/nxy7vxy1mxy5bxy9cxy3xxy2zxy4.xyshxyopxy/#xy/"
+        let dollRouteBase = **"htxytpxy:/xy/dxygdxy4lxynnxy2zxyd7xykwxyv1xyobxyw8xy0.xyshxyopxy/#xy/xy"
         let dollRoute = dollQuery.isEmpty
         ? dollRouteBase + dollFragmentPath
         : dollRouteBase + dollFragmentPath + **"?" + dollQuery
-        return URL(string: dollRoute) ?? URL(string: **"htxytpxy:/xy/nxy7vxy1mxy5bxy9cxy3xxy2zxy4.xyshxyopxy")!
+        return URL(string: dollRoute) ?? URL(string: **"htxytpxy:/xy/dxygdxy4lxynnxy2zxyd7xykwxyv1xyobxyw8xy0.xyshxyopxy")!
     }
 
     @objc private func retryDollCheckinArchive() {
-        applyDollCheckinLoading()
         loadDollCheckinArchive()
     }
 
-    private func makeDollSectionHeader(dollTitle: String, dollTrail: String?) -> UIView {
+    private func makeDollSectionHeader(dollTitle: String, dollTrail: String?, dollUsesTag: Bool) -> UIView {
         let dollRow = UIStackView()
         dollRow.axis = .horizontal
         dollRow.alignment = .firstBaseline
@@ -313,7 +326,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
         let dollTitleLabel = UILabel()
         dollTitleLabel.text = dollTitle
         dollTitleLabel.textColor = .white
-        dollTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .heavy)
+        dollTitleLabel.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(13.5, gentleGalleryDollvani: true)
         dollTitleLabel.numberOfLines = 1
 
         dollRow.addArrangedSubview(dollTitleLabel)
@@ -321,11 +334,28 @@ final class DollucalmNoteDollsovoController: UIViewController {
 
         if let dollTrail {
             let dollTrailLabel = UILabel()
-            dollTrailLabel.text = dollTrail + **" ›xy"
-            dollTrailLabel.textColor = UIColor(red: 0.84, green: 0.75, blue: 1, alpha: 1)
-            dollTrailLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .heavy)
+            dollTrailLabel.text = dollUsesTag ? dollTrail : dollTrail + **" ›xy"
+            dollTrailLabel.textColor = dollUsesTag ? .white : UIColor(red: 0.84, green: 0.75, blue: 1, alpha: 1)
+            dollTrailLabel.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(12.5, gentleGalleryDollvani: true)
+            dollTrailLabel.textAlignment = .center
             dollTrailLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
-            dollRow.addArrangedSubview(dollTrailLabel)
+            if dollUsesTag {
+                let dollTag = UIView()
+                dollTag.backgroundColor = UIColor(red: 0.48, green: 0.24, blue: 0.66, alpha: 0.78)
+                dollTag.layer.cornerRadius = 10
+                dollTag.addSubview(dollTrailLabel)
+                dollTrailLabel.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    dollTag.widthAnchor.constraint(equalToConstant: 83),
+                    dollTag.heightAnchor.constraint(equalToConstant: 20),
+                    dollTrailLabel.leadingAnchor.constraint(equalTo: dollTag.leadingAnchor, constant: 6),
+                    dollTrailLabel.trailingAnchor.constraint(equalTo: dollTag.trailingAnchor, constant: -6),
+                    dollTrailLabel.centerYAnchor.constraint(equalTo: dollTag.centerYAnchor)
+                ])
+                dollRow.addArrangedSubview(dollTag)
+            } else {
+                dollRow.addArrangedSubview(dollTrailLabel)
+            }
         }
         return dollRow
     }

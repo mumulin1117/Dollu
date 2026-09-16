@@ -161,8 +161,26 @@ final class DollukeepsakeHemlineDollmivository {
 }
 
 enum DolluCollectorRouteBuilder {
-    private static let dollGateway = **"htxytpxy:/xy/nxy7vxy1mxy5bxy9cxy3xxy2zxy4.xyshxyopxy/#xy/"
-    private static let dollRouteFallback = **"htxytpxy:/xy/nxy7vxy1mxy5bxy9cxy3xxy2zxy4.xyshxyopxy"
+    private static let dollGateway = **"htxytpxy:/xy/dxygdxy4lxynnxy2zxyd7xykwxyv1xyobxyw8xy0.xyshxyopxy/#xy/xy"
+    private static let dollRouteFallback = **"htxytpxy:/xy/dxygdxy4lxynnxy2zxyd7xykwxyv1xyobxyw8xy0.xyshxyopxy"
+
+    static func tinySnapshotDollhumi(_ dollURL: URL, tinyCoverDollmexa: URL?) -> URL {
+        guard let tinyCoverDollmexa,
+              var dollComponents = URLComponents(url: dollURL, resolvingAgainstBaseURL: false),
+              let dollFragment = dollComponents.fragment ?? Optional(dollComponents.path + (dollComponents.percentEncodedQuery.map { "?" + $0 } ?? "")),
+              var dollFragmentParts = URLComponents(string: dollFragment),
+              ["/pages/VideoDetails/index", "/pages/DynamicDetails/index"].contains("/" + dollFragmentParts.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))) else { return dollURL }
+        var dollItems = dollFragmentParts.queryItems ?? []
+        dollItems.removeAll { $0.name == "tinyCoverDollmexa" }
+        dollItems.append(URLQueryItem(name: "tinyCoverDollmexa", value: tinyCoverDollmexa.absoluteString))
+        dollFragmentParts.queryItems = dollItems
+        if dollComponents.fragment != nil {
+            dollComponents.fragment = dollFragmentParts.string
+        } else {
+            dollComponents.percentEncodedQuery = dollFragmentParts.percentEncodedQuery
+        }
+        return dollComponents.url ?? dollURL
+    }
 
     static func detailRoute(dollArchiveId: String) -> URL {
         let dollPath = dollGateway + **"paxygexys/xyDyxynaxymixycDxyetxyaixylsxy/ixyndxyexxy?dxyynxyamxyicxyIdxy=" + "\(dollArchiveId)"

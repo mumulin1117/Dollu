@@ -46,13 +46,13 @@ enum DolluCollectorRouteFailure: Error {
 final class DolluWardrobeRouteClient {
     static let satinCollectionRoute = DolluWardrobeRouteClient()
 
-    private let polishedBackgroundDollquvo = **"htxytpxy:/xy/nxy7vxy1mxy5bxy9cxy3xxy2zxy4.xyshxyopxy"
+    private let polishedBackgroundDollquvo = **"htxytpxy:/xy/dxygdxy4lxynnxy2zxyd7xykwxyv1xyobxyw8xy0.xyshxyopxy"
     private let satinMarkerDollpavo = **"39xy97xy29xy65xy"
 
     private init() {}
 
     func sendDollPost(dollRoutePath: String, dollRequestBody: [String: Any], dollUsesBackPanel: Bool = false, completion: @escaping (Result<[String: Any], Error>) -> Void) {
-        let dollBase = dollUsesBackPanel ? polishedBackgroundDollquvo + **"/bxyacxyktxywoxy" : polishedBackgroundDollquvo
+        let dollBase = dollUsesBackPanel ? polishedBackgroundDollquvo + **"/axypixy" : polishedBackgroundDollquvo
         guard let ribbonSnapshotDollyara = URL(string: dollBase + dollRoutePath) else {
             completion(.failure(DolluCollectorRouteFailure.invalidRoute))
             return
