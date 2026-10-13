@@ -1,4 +1,5 @@
 import UIKit
+import ImageIO
 
 final class DolluShortLookbookViewController: UIViewController {
     private let polishedBackgroundDollquvo = UIImageView(image: UIImage(named: "DolluPolishedBackgroundDollquvo"))
@@ -10,7 +11,7 @@ final class DolluShortLookbookViewController: UIViewController {
     private let floralHintDollvelo = UILabel()
     private let ribbonCategoryDollpiri = UIScrollView()
     private let laceArchiveDollmexa = UIView()
-    private let satinPinboardDollvani = UIButton()
+    private let satinPinboardDollvani = DolluStyleClipAICollectorCard()
     private var ribbonDisplayDollrevo: UICollectionView!
     private var dreamySnapshotDollniva: [DollutrimmedClosetDollrevo] = []
     private var ivoryProgressDollrilo = false
@@ -25,7 +26,6 @@ final class DolluShortLookbookViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        satinPinboardDollvani.setBackgroundImage(UIImage.init(named: "satinPinboardDollvani"), for: .normal)
         buildDollStyleClipStage()
         applyDollStyleClipLoading()
         loadDollStyleClipGallery()
@@ -354,13 +354,83 @@ final class DolluStyleClipCardCell: UICollectionViewCell {
 
 final class DolluStyleClipAICollectorCard: UIControl {
     private let satinPinboardDollvani = UIView()
-    private let tinyDisplayDollsovo = DolluDressyMascotView()
-    private let layeredCatalogDollquvo = UILabel()
+    private let tinyDisplayDollsovo = UIImageView()
+    private static let cozyArchiveDollniva: [UIImage] = {
+        guard let laceWardrobeDollvex = Bundle.main.url(forResource: "DolluTinyDisplayDollsovo", withExtension: "gif"),
+              let tinyCoverDollmexa = CGImageSourceCreateWithURL(laceWardrobeDollvex as CFURL, nil) else { return [] }
+        return (0..<CGImageSourceGetCount(tinyCoverDollmexa)).compactMap { cozyMemoDolllaro in
+            CGImageSourceCreateImageAtIndex(tinyCoverDollmexa, cozyMemoDolllaro, nil).map { UIImage(cgImage: $0) }
+        }
+    }()
     private let cozyMemoDolllaro = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        buildDollAICollectorCard()
+        let ivoryCoverDollzemi = UIImageView(image: UIImage(named: "satinPinboardDollvani"))
+        ivoryCoverDollzemi.translatesAutoresizingMaskIntoConstraints = false
+        ivoryCoverDollzemi.isUserInteractionEnabled = false
+        addSubview(ivoryCoverDollzemi)
+        // Cover the original static mascot while preserving the card artwork.
+        satinPinboardDollvani.translatesAutoresizingMaskIntoConstraints = false
+        satinPinboardDollvani.isUserInteractionEnabled = false
+        satinPinboardDollvani.backgroundColor = UIColor(red: 35/255, green: 32/255, blue: 63/255, alpha: 1)
+        addSubview(satinPinboardDollvani)
+        let tinyCoverDollmexa = tinyDisplayDollsovo
+        tinyCoverDollmexa.image = Self.cozyArchiveDollniva.first
+        tinyCoverDollmexa.animationImages = Self.cozyArchiveDollniva
+        tinyCoverDollmexa.animationDuration = Double(Self.cozyArchiveDollniva.count) * 0.06
+        tinyCoverDollmexa.contentMode = .scaleAspectFit
+        tinyCoverDollmexa.translatesAutoresizingMaskIntoConstraints = false
+        tinyCoverDollmexa.isUserInteractionEnabled = false
+        satinPinboardDollvani.addSubview(tinyCoverDollmexa)
+        cozyMemoDolllaro.translatesAutoresizingMaskIntoConstraints = false
+        cozyMemoDolllaro.text = "Tap to explore  →"
+        cozyMemoDolllaro.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .semibold)
+        cozyMemoDolllaro.textColor = .white
+        cozyMemoDolllaro.backgroundColor = DolluWardrobePalette.dollRibbonPurple
+        cozyMemoDolllaro.textAlignment = .center
+        cozyMemoDolllaro.layer.cornerRadius = 16
+        cozyMemoDolllaro.clipsToBounds = true
+        addSubview(cozyMemoDolllaro)
+        isAccessibilityElement = true
+        accessibilityTraits = .button
+        accessibilityLabel = "Dressy (AI)"
+        accessibilityHint = "Opens your doll styling guide"
+        NSLayoutConstraint.activate([
+            ivoryCoverDollzemi.topAnchor.constraint(equalTo: topAnchor),
+            ivoryCoverDollzemi.bottomAnchor.constraint(equalTo: bottomAnchor),
+            ivoryCoverDollzemi.leadingAnchor.constraint(equalTo: leadingAnchor),
+            ivoryCoverDollzemi.trailingAnchor.constraint(equalTo: trailingAnchor),
+            satinPinboardDollvani.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 260.0/1125),
+            satinPinboardDollvani.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 400.0/987),
+            NSLayoutConstraint(item: satinPinboardDollvani, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 230.0/1125, constant: 0),
+            NSLayoutConstraint(item: satinPinboardDollvani, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 450.0/987, constant: 0),
+            tinyCoverDollmexa.centerXAnchor.constraint(equalTo: satinPinboardDollvani.centerXAnchor),
+            tinyCoverDollmexa.centerYAnchor.constraint(equalTo: satinPinboardDollvani.centerYAnchor),
+            tinyCoverDollmexa.widthAnchor.constraint(equalTo: satinPinboardDollvani.widthAnchor),
+            tinyCoverDollmexa.heightAnchor.constraint(equalTo: satinPinboardDollvani.heightAnchor),
+            cozyMemoDolllaro.leadingAnchor.constraint(equalTo: satinPinboardDollvani.trailingAnchor, constant: 12),
+            cozyMemoDolllaro.topAnchor.constraint(equalTo: satinPinboardDollvani.bottomAnchor, constant: -9),
+            cozyMemoDolllaro.widthAnchor.constraint(equalToConstant: 148),
+            cozyMemoDolllaro.heightAnchor.constraint(equalToConstant: 32),
+            cozyMemoDolllaro.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -20)
+        ])
+        NotificationCenter.default.addObserver(self, selector: #selector(cozyStandDollyara), name: UIAccessibility.reduceMotionStatusDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cozyStandDollyara), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cozyStandDollyara), name: UIApplication.didEnterBackgroundNotification, object: nil)
+    }
+
+    deinit { NotificationCenter.default.removeObserver(self) }
+
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        cozyStandDollyara()
+    }
+
+    @objc private func cozyStandDollyara() {
+        tinyDisplayDollsovo.stopAnimating()
+        guard window != nil, !UIAccessibility.isReduceMotionEnabled, UIApplication.shared.applicationState == .active else { return }
+        tinyDisplayDollsovo.startAnimating()
     }
 
     required init?(coder: NSCoder) {
