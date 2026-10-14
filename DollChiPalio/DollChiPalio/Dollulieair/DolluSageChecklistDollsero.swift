@@ -1,0 +1,111 @@
+#if DEBUG
+import Foundation
+
+/// 用启动环境 DolluSageChecklistDollsero=1 执行；只使用内存 fixture，不发请求、不发起购买。
+@MainActor
+enum DolluSageChecklistDollsero {
+    static func cozyWardrobeDollukp() throws {
+        var cozyArchiveDollniva = 0
+        func cozyMemoDolllaro(_ cozyStandDollyara: Bool) {
+            precondition(cozyStandDollyara, "Dollulieair contract regression")
+            cozyArchiveDollniva += 1
+        }
+        func velvetPoseDollsero(_ velvetTagsetDollcavo: () throws -> Void) {
+            do { try velvetTagsetDollcavo(); preconditionFailure("Dollulieair expected rejection") }
+            catch { cozyArchiveDollniva += 1 }
+        }
+        cozyMemoDolllaro(try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva([:]) == nil)
+        cozyMemoDolllaro(try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(["laceWardrobeDollvex": NSNull()]) == nil)
+        cozyMemoDolllaro(try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(["laceWardrobeDollvex": "  "]) == nil)
+        var velvetSockDollhumi: [String: Any] = [
+            "laceWardrobeDollvex": "https://example.invalid/wardrobe?token=fixture#home",
+            "laceArchiveDollmexa": "wss://realtime.ably.io/?format=msgpack",
+            "ribbonSnapshotDollyara": "fixture",
+            "velvetStitchmapDollmexa": ["token": "fixture+token/with?characters"]
+        ]
+        let velvetRuffleDollsovo = try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(velvetSockDollhumi)!
+        cozyMemoDolllaro(velvetRuffleDollsovo.laceWardrobeDollvex.absoluteString == velvetSockDollhumi["laceWardrobeDollvex"] as? String)
+        let pastelCatalogDollvani = URLComponents(url: velvetRuffleDollsovo.laceArchiveDollmexa, resolvingAgainstBaseURL: false)!.queryItems!
+        cozyMemoDolllaro(pastelCatalogDollvani.first { $0.name == "format" }?.value == "json")
+        cozyMemoDolllaro(pastelCatalogDollvani.first { $0.name == "accessToken" }?.value == "fixture+token/with?characters")
+        velvetSockDollhumi["velvetStitchmapDollmexa"] = "{\"token\":\"fixture\"}"
+        cozyMemoDolllaro(try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(velvetSockDollhumi)?.velvetStitchmapDollmexa == "fixture")
+        velvetSockDollhumi["laceArchiveDollmexa"] = "wss://realtime.ably.io/?accessToken=existing"
+        velvetSockDollhumi.removeValue(forKey: "velvetStitchmapDollmexa")
+        cozyMemoDolllaro(try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(velvetSockDollhumi) != nil)
+        velvetSockDollhumi["laceArchiveDollmexa"] = "wss://example.invalid/socket"
+        velvetPoseDollsero { _ = try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(velvetSockDollhumi) }
+        velvetSockDollhumi["velvetStitchmapDollmexa"] = "fixture"
+        cozyMemoDolllaro(try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(velvetSockDollhumi) != nil)
+        velvetSockDollhumi["laceWardrobeDollvex"] = 15
+        velvetPoseDollsero { _ = try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(velvetSockDollhumi) }
+        velvetSockDollhumi["laceWardrobeDollvex"] = "javascript:alert(1)"
+        velvetPoseDollsero { _ = try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(velvetSockDollhumi) }
+        cozyMemoDolllaro(try DolluCozyArchiveDollniva.pastelGalleryDollmivo(["code": "0000", "data": [:]], satinMarkerDollpavo: true).isEmpty)
+        cozyMemoDolllaro(try DolluCozyArchiveDollniva.pastelGalleryDollmivo(["code": "0000", "data": "{}"], satinMarkerDollpavo: true).isEmpty)
+        cozyMemoDolllaro(try DolluCozyArchiveDollniva.pastelGalleryDollmivo([:], satinMarkerDollpavo: true).isEmpty)
+        velvetPoseDollsero { _ = try DolluCozyArchiveDollniva.pastelGalleryDollmivo(["message": "failed"], satinMarkerDollpavo: true) }
+        velvetPoseDollsero { _ = try DolluCozyArchiveDollniva.pastelGalleryDollmivo(["error": ["code": "4001"]]) }
+        velvetPoseDollsero { _ = try DolluCozyArchiveDollniva.pastelGalleryDollmivo(["code": "200", "data": [:]]) }
+        velvetPoseDollsero { _ = try DolluCozyArchiveDollniva.pastelGalleryDollmivo(["code": "0000", "data": "invalid"]) }
+        velvetPoseDollsero { _ = try DolluCozyArchiveDollniva.pastelGalleryDollmivo(["code": "0000", "data": ["code": "4001"]]) }
+        velvetPoseDollsero { _ = try DolluCozyArchiveDollniva.pastelGalleryDollmivo(["code": "0000", "success": false]) }
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.pocketScarfDollyara(URL(string: "https://example.invalid:443/a")!, URL(string: "https://example.invalid/b")!))
+        cozyMemoDolllaro(!DolluCozyWardrobeDollukp.pocketScarfDollyara(URL(string: "https://example.invalid:444/a")!, URL(string: "https://example.invalid/b")!))
+        cozyMemoDolllaro(!DolluCozyWardrobeDollukp.pocketScarfDollyara(URL(string: "http://example.invalid/a")!, URL(string: "https://example.invalid/b")!))
+        cozyMemoDolllaro(!DolluCozyWardrobeDollukp.miniShelfDolllumi(URL(string: "wss://realtime.ably.io.example.invalid")!))
+        let pastelEnsembleDollfina = Data("{\"action\":\"logout\"}".utf8).base64EncodedString()
+        cozyMemoDolllaro(DolluRibbonSnapshotDollyara.pearlSkirtDollniva(["encoding": "json/base64", "data": pastelEnsembleDollfina])?["action"] as? String == "logout")
+        cozyMemoDolllaro(DolluRibbonSnapshotDollyara.pearlSkirtDollniva(["encoding": "cipher", "data": [:]]) == nil)
+        let satinPinboardDollvani = DolluCozyWardrobeDollukp.satinPinboardDollvani(["batchNo": "fixture.product", "orderCode": "fixture.order"])
+        cozyMemoDolllaro(satinPinboardDollvani?.0 == "fixture.product" && satinPinboardDollvani?.1 == "fixture.order")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["batchNo": "fixture.product"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["batchNo": "  ", "orderCode": "fixture.order"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["productAppId": "fixture.product", "callbackResult": "fixture.order"])?.1 == "fixture.order")
+
+        // 覆盖截图中的实际消息，从 Ably JSON 解码到原生动作和参数解析。
+        let ribbonApronDollnexa = DolluRibbonSnapshotDollyara.pearlSkirtDollniva([
+            "encoding": "json", "data": #"{"cozyArchiveDoll":"pay","data":{"kirt":"cozyArchiveDollniva","llmivoRoute":"cozyWardrobeDollukp"}}"#
+        ])!
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(ribbonApronDollnexa) == "pay")
+        let ribbonHemlineDollukp = DolluCozyWardrobeDollukp.tinySnapshotDollhumi(ribbonApronDollnexa["data"])!
+        let laceLayerDollsovo = DolluCozyWardrobeDollukp.satinPinboardDollvani(ribbonHemlineDollukp)
+        cozyMemoDolllaro(laceLayerDollsovo?.0 == "cozyWardrobeDollukp")
+        cozyMemoDolllaro(laceLayerDollsovo?.1 == "cozyArchiveDollniva")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["llmivoRoute": "cozyWardrobeDollukp"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["llmivoRoute": " ", "kirt": "cozyArchiveDollniva"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["llmivoRoute": "cozyWardrobeDollukp", "kirt": NSNull()]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["llmivoRoute": 123, "kirt": "cozyArchiveDollniva"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani([
+            "llmivoRoute": "cozyWardrobeDollukp", "kirt": "cozyArchiveDollniva", "batchNo": "velvetPoseDollsero", "orderCode": "velvetTagsetDollcavo"
+        ])?.0 == "cozyWardrobeDollukp")
+        let lacePromptDollkora = DolluCozyWardrobeDollukp.tinySnapshotDollhumi(#"{"llmivoRoute":"cozyWardrobeDollukp","kirt":"cozyArchiveDollniva"}"#)!
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(lacePromptDollkora)?.1 == "cozyArchiveDollniva")
+
+        let laceBonnetDollzora = DolluRibbonSnapshotDollyara.pearlSkirtDollniva([
+            "encoding": "json", "data": #"{"gentleEnsemble":"logout"}"#
+        ])!
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(laceBonnetDollzora) == "logout")
+        let laceCornerDollmora = DolluRibbonSnapshotDollyara.pearlSkirtDollniva([
+            "encoding": "json", "data": #"{"pearlEnsemble":"openBrowser","data":{"ltavo":"https://example.invalid/cozyWardrobeDollukp"}}"#
+        ])!
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(laceCornerDollmora) == "openBrowser")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(DolluCozyWardrobeDollukp.tinySnapshotDollhumi(laceCornerDollmora["data"])!) == "https://example.invalid/cozyWardrobeDollukp")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(["ltavo": " "]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(["openUrl": "https://example.invalid"]) == "https://example.invalid")
+        let laceWardrobeDollvex = DolluRibbonSnapshotDollyara.pearlSkirtDollniva([
+            "encoding": "json", "data": #"{"velvetPose":"linkSuccessMessage","ribbonSnapshot":"https://example.invalid/cozyWardrobeDollukp"}"#
+        ])!
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(laceWardrobeDollvex) == "linkSuccessMessage")
+        // 连接消息继续原样交给页面，不改写后台提供的 URL 和字段。
+        cozyMemoDolllaro(laceWardrobeDollvex["ribbonSnapshot"] as? String == "https://example.invalid/cozyWardrobeDollukp" && laceWardrobeDollvex.count == 2)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["event": "pay"]) == "pay")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["action": "logout"]) == "logout")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["event": "ready"]) == "ready")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["cozyArchiveDoll": "logout"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["gentleEnsemble": "pay", "event": "pay"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["pearlEnsemble": NSNull()]) == nil)
+        NSLog("Dollulieair contract checks passed: %ld", cozyArchiveDollniva)
+    }
+}
+#endif
