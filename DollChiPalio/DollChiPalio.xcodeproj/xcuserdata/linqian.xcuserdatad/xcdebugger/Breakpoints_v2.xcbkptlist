@@ -67,52 +67,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "332CF99C-135B-4A43-8AC7-43D3214B052F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DollChiPalio/Dollulieair/DolluCozyArchiveDollniva.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "satinCollectionDollvelo(_:_:_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "332CF99C-135B-4A43-8AC7-43D3214B052F - ad82283ef91c9fb8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for DollChiPalio.DolluCozyArchiveDollniva.satinCollectionDollvelo(Swift.String, Swift.String, Swift.String) async throws -&gt; ()"
-                  moduleName = "DollChiPalio.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/linqian/Documents/Dollu/DollChiPalio/DollChiPalio/Dollulieair/DolluCozyArchiveDollniva.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23">
-               </Location>
-               <Location
-                  uuid = "332CF99C-135B-4A43-8AC7-43D3214B052F - c6c4bf3a429f08f1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for DollChiPalio.DolluCozyArchiveDollniva.satinCollectionDollvelo(Swift.String, Swift.String, Swift.String) async throws -&gt; ()"
-                  moduleName = "DollChiPalio.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/linqian/Documents/Dollu/DollChiPalio/DollChiPalio/Dollulieair/DolluCozyArchiveDollniva.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3E53EC6C-93CA-4113-8CB6-CEC27628BC82"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
