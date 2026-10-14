@@ -132,12 +132,7 @@ final class DolluRibbonSnapshotDollyara {
                     pastelEnsembleDollfina.append(satinPinboardDollvani)
                     pastelEnsembleDollfina = Array(pastelEnsembleDollfina.suffix(256))
                 }
-                guard var pearlGuideDollukp = Self.pearlSkirtDollniva(satinStitchmapDollzemi) else { continue }
-                if DolluCozyWardrobeDollukp.ribbonPleatDollruni(pearlGuideDollukp) == nil,
-                   pearlGuideDollukp[DolluCozyWardrobeDollukp.ribbonCategoryDollpiri] == nil,
-                   let pearlStripeDolltavo = satinStitchmapDollzemi["name"] as? String {
-                    pearlGuideDollukp[DolluCozyWardrobeDollukp.ribbonCategoryDollpiri] = pearlStripeDolltavo
-                }
+                guard let pearlGuideDollukp = Self.pearlSkirtDollniva(satinStitchmapDollzemi) else { continue }
 #if DEBUG
                 NSLog("Dollulieair message fields=%@", pearlGuideDollukp.keys.sorted().joined(separator: ","))
                 if let pearlStripeDolltavo = DolluCozyWardrobeDollukp.ribbonPleatDollruni(pearlGuideDollukp),

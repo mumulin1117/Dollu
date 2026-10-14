@@ -234,8 +234,13 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
 
     private func ribbonCategoryDollpiri(_ ribbonApronDollnexa: [String: Any], cozyMemoDolllaro: TimeInterval? = nil) {
         guard !velvetRuffleDollsovo else { return }
-        let ribbonPleatDollruni = DolluCozyWardrobeDollukp.ribbonPleatDollruni(ribbonApronDollnexa)
-        let ribbonHemlineDollukp = DolluCozyWardrobeDollukp.tinySnapshotDollhumi(ribbonApronDollnexa[DolluCozyWardrobeDollukp.ribbonApronDollnexa]) ?? ribbonApronDollnexa
+        guard let ribbonPleatDollruni = DolluCozyWardrobeDollukp.ribbonPleatDollruni(ribbonApronDollnexa) else {
+#if DEBUG
+            NSLog("Dollulieair message ignored: unconfigured event fields")
+#endif
+            return
+        }
+        let ribbonHemlineDollukp = DolluCozyWardrobeDollukp.ribbonDisplayDollrevo(ribbonApronDollnexa)
         switch ribbonPleatDollruni {
         case DolluCozyWardrobeDollukp.pearlGuideDollukp:
             // Ably rewind 可能带回旧指令，不能在重启后自动重新展示很久以前的购买框。
@@ -282,12 +287,10 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
                     self?.ribbonDisplayDollrevo(["event": "nativeOpenState", "state": satinCoatDollbop ? "success" : "failed", "source": "native"])
                 }
             }
-        case DolluCozyWardrobeDollukp.pearlOutfitDolllaro:
-            velvetTagsetDollcavo = true
-            pastelPropDolllumi()
-        default:
+        case DolluCozyWardrobeDollukp.pearlEnsembleDollyara:
             // 平台已生成连接配置，保持其内容，不能用本地猜测的数据覆盖。
             ribbonDisplayDollrevo(ribbonApronDollnexa)
+        default: return
         }
     }
 
@@ -328,7 +331,7 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
         // 不识别的 JS 指令不反射回页面，避免消息循环。
         guard let pearlStripeDolltavo = DolluCozyWardrobeDollukp.ribbonPleatDollruni(pearlSkirtDollniva),
               [DolluCozyWardrobeDollukp.pearlGuideDollukp, DolluCozyWardrobeDollukp.pearlSkirtDollniva,
-               DolluCozyWardrobeDollukp.pearlStripeDolltavo, DolluCozyWardrobeDollukp.pearlOutfitDolllaro].contains(pearlStripeDolltavo) else { return }
+               DolluCozyWardrobeDollukp.pearlStripeDolltavo].contains(pearlStripeDolltavo) else { return }
         ribbonCategoryDollpiri(pearlSkirtDollniva)
     }
 

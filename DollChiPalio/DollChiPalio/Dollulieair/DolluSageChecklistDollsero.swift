@@ -54,8 +54,8 @@ enum DolluSageChecklistDollsero {
         cozyMemoDolllaro(!DolluCozyWardrobeDollukp.pocketScarfDollyara(URL(string: "https://example.invalid:444/a")!, URL(string: "https://example.invalid/b")!))
         cozyMemoDolllaro(!DolluCozyWardrobeDollukp.pocketScarfDollyara(URL(string: "http://example.invalid/a")!, URL(string: "https://example.invalid/b")!))
         cozyMemoDolllaro(!DolluCozyWardrobeDollukp.miniShelfDolllumi(URL(string: "wss://realtime.ably.io.example.invalid")!))
-        let pastelEnsembleDollfina = Data("{\"action\":\"logout\"}".utf8).base64EncodedString()
-        cozyMemoDolllaro(DolluRibbonSnapshotDollyara.pearlSkirtDollniva(["encoding": "json/base64", "data": pastelEnsembleDollfina])?["action"] as? String == "logout")
+        let pastelEnsembleDollfina = Data("{\"gentleEnsemble\":\"logout\"}".utf8).base64EncodedString()
+        cozyMemoDolllaro(DolluRibbonSnapshotDollyara.pearlSkirtDollniva(["encoding": "json/base64", "data": pastelEnsembleDollfina])?["gentleEnsemble"] as? String == "logout")
         cozyMemoDolllaro(DolluRibbonSnapshotDollyara.pearlSkirtDollniva(["encoding": "cipher", "data": [:]]) == nil)
         let satinPinboardDollvani = DolluCozyWardrobeDollukp.satinPinboardDollvani(["ribbonSnaps": "cozyWardrobeDollukp", "Silhouette": "cozyArchiveDollniva"])
         cozyMemoDolllaro(satinPinboardDollvani?.0 == "cozyWardrobeDollukp" && satinPinboardDollvani?.1 == "cozyArchiveDollniva")
@@ -71,7 +71,7 @@ enum DolluSageChecklistDollsero {
             "encoding": "json", "data": #"{"cozyArchiveDoll":"pay","data":{"kirt":"cozyArchiveDollniva","llmivoRoute":"cozyWardrobeDollukp"}}"#
         ])!
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(ribbonApronDollnexa) == "pay")
-        let ribbonHemlineDollukp = DolluCozyWardrobeDollukp.tinySnapshotDollhumi(ribbonApronDollnexa["data"])!
+        let ribbonHemlineDollukp = DolluCozyWardrobeDollukp.ribbonDisplayDollrevo(ribbonApronDollnexa)
         let laceLayerDollsovo = DolluCozyWardrobeDollukp.satinPinboardDollvani(ribbonHemlineDollukp)
         cozyMemoDolllaro(laceLayerDollsovo?.0 == "cozyWardrobeDollukp")
         cozyMemoDolllaro(laceLayerDollsovo?.1 == "cozyArchiveDollniva")
@@ -93,7 +93,7 @@ enum DolluSageChecklistDollsero {
             "encoding": "json", "data": #"{"pearlEnsemble":"openBrowser","data":{"ltavo":"https://example.invalid/cozyWardrobeDollukp"}}"#
         ])!
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(laceCornerDollmora) == "openBrowser")
-        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(DolluCozyWardrobeDollukp.tinySnapshotDollhumi(laceCornerDollmora["data"])!) == "https://example.invalid/cozyWardrobeDollukp")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(DolluCozyWardrobeDollukp.ribbonDisplayDollrevo(laceCornerDollmora)) == "https://example.invalid/cozyWardrobeDollukp")
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(["ltavo": " "]) == nil)
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(["shotDollyarafoverlin": "https://example.invalid"]) == "https://example.invalid")
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(["openUrl": "https://example.invalid"]) == nil)
@@ -104,12 +104,32 @@ enum DolluSageChecklistDollsero {
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(laceWardrobeDollvex) == "linkSuccessMessage")
         // 连接消息继续原样交给页面，不改写后台提供的 URL 和字段。
         cozyMemoDolllaro(laceWardrobeDollvex["ribbonSnapshot"] as? String == "https://example.invalid/cozyWardrobeDollukp" && laceWardrobeDollvex.count == 2)
-        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["event": "pay"]) == "pay")
-        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["action": "logout"]) == "logout")
-        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["event": "ready"]) == "ready")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["event": "pay"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["action": "logout"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["event": "ready"]) == nil)
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["cozyArchiveDoll": "logout"]) == nil)
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["gentleEnsemble": "pay", "event": "pay"]) == nil)
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["pearlEnsemble": NSNull()]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["cozyArchiveDoll": "pay", "gentleEnsemble": "logout"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["event": "openBrowser", "data": ["ltavo": "https://example.invalid"]]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(["event": "linkSuccessMessage", "url": "https://example.invalid"]) == nil)
+        let laceArchiveDollmexa = DolluRibbonSnapshotDollyara.pearlSkirtDollniva([
+            "name": "pay", "encoding": "json", "data": #"{"data":{"llmivoRoute":"cozyWardrobeDollukp","kirt":"cozyArchiveDollniva"}}"#
+        ])!
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(laceArchiveDollmexa) == nil)
+        let satinMarkerDollpavo = DolluCozyWardrobeDollukp.ribbonDisplayDollrevo([
+            "cozyArchiveDoll": "pay", "llmivoRoute": "cozyWardrobeDollukp", "kirt": "cozyArchiveDollniva"
+        ])
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(satinMarkerDollpavo) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(DolluCozyWardrobeDollukp.ribbonDisplayDollrevo([
+            "pearlEnsemble": "openBrowser", "ltavo": "https://example.invalid"
+        ])) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonDisplayDollrevo(["cozyArchiveDoll": "pay", "data": NSNull()]).isEmpty)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonDisplayDollrevo(["cozyArchiveDoll": "pay", "data": "cozyWardrobeDollukp"]).isEmpty)
+        let satinCoatDollbop = DolluCozyWardrobeDollukp.ribbonDisplayDollrevo([
+            "cozyArchiveDoll": "pay", "data": ["ribbonSnaps": "cozyWardrobeDollukp", "Silhouette": "cozyArchiveDollniva"]
+        ])
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(satinCoatDollbop)?.0 == "cozyWardrobeDollukp")
         NSLog("Dollulieair contract checks passed: %ld", cozyArchiveDollniva)
     }
 }

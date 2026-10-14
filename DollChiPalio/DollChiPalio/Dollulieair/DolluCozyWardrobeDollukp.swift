@@ -23,30 +23,33 @@ enum DolluCozyWardrobeDollukp {
     static let laceLayerDollsovo = "ribbonSnaps"
     static let lacePromptDollkora = "shotDollyarafoverlin"
 
-    // 新消息协议集中配置；旧 H5 的独立 handler 仍由 DolluALoj 处理。
+    // 当前消息协议。原生回传结果使用 event；下发事件只读取配置中的专属字段。
     static let laceArchiveDollmexa = "laceArchiveDollmexa"
     static let ribbonCategoryDollpiri = "event"
     static let ribbonApronDollnexa = "data"
     static let pearlGuideDollukp = "pay"
     static let pearlSkirtDollniva = "logout"
     static let pearlStripeDolltavo = "openBrowser"
-    static let pearlOutfitDolllaro = "ready"
     static let pearlCatalogDollnoro = "payResult"
     static let pearlEnsembleDollyara = "linkSuccessMessage"
 
-    // 平台分别配置每类消息的事件字段；只识别对应事件值，保留旧配置兼容。
+    // 只接受当前四类消息的字段和值，不从旧事件字段或传输层名称推断动作。
     static func ribbonPleatDollruni(_ ribbonApronDollnexa: [String: Any]) -> String? {
-        for (cozyStandDollyara, velvetStitchmapDollmexa) in [
+        let cozyMemoDolllaro = [
             ("cozyArchiveDoll", pearlGuideDollukp),
             ("gentleEnsemble", pearlSkirtDollniva),
             ("pearlEnsemble", pearlStripeDolltavo),
             ("velvetPose", pearlEnsembleDollyara)
-        ] where ribbonApronDollnexa[cozyStandDollyara] != nil {
-            // 已存在的新字段不回退到另一种指令，防止错误配置触发错误动作。
-            guard tinyCoverDollmexa(ribbonApronDollnexa[cozyStandDollyara]) == velvetStitchmapDollmexa else { return nil }
-            return velvetStitchmapDollmexa
-        }
-        return tinyCoverDollmexa(ribbonApronDollnexa[ribbonCategoryDollpiri] ?? ribbonApronDollnexa["action"])
+        ].filter { ribbonApronDollnexa[$0.0] != nil }
+        guard cozyMemoDolllaro.count == 1,
+              let (cozyStandDollyara, velvetStitchmapDollmexa) = cozyMemoDolllaro.first,
+              tinyCoverDollmexa(ribbonApronDollnexa[cozyStandDollyara]) == velvetStitchmapDollmexa else { return nil }
+        return velvetStitchmapDollmexa
+    }
+
+    static func ribbonDisplayDollrevo(_ ribbonApronDollnexa: [String: Any]) -> [String: Any] {
+        // 支付和外链参数必须放在配置指定的 data 中，不能回退到顶层字段。
+        tinySnapshotDollhumi(ribbonApronDollnexa[Self.ribbonApronDollnexa]) ?? [:]
     }
 
     // 消息模板明确指定 llmivoRoute/kirt；也接收平台 H5 映射后的字段。

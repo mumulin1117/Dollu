@@ -65,12 +65,12 @@ open 返回字段：
 {"pearlEnsemble":"openBrowser","data":{"ltavo":"#{openUrl}"}}
 ```
 
-- 四类事件分别读取 `cozyArchiveDoll`、`gentleEnsemble`、`pearlEnsemble`、`velvetPose`，同时兼容旧消息的 `event/action`。WebSocket 和原生 JS 桥使用同一套事件识别。
+- 四类事件仅读取 `cozyArchiveDoll`、`gentleEnsemble`、`pearlEnsemble`、`velvetPose`，字段和值必须对应且一条消息只能指定一种动作。已移除旧业务事件 `event/action`、Ably `name` 补事件和顶层参数兜底。支付和外链参数必须位于 `data` 中。WebSocket 和原生 JS 桥使用同一套事件识别；旧格式、未知事件和冲突事件直接忽略，不再转交页面执行。
 - pay：读取消息模板中明确指定的 `llmivoRoute`（Apple 商品 ID）和 `kirt`（后台订单号）；也支持字段映射中的 `ribbonSnaps` 和 `Silhouette`。原始商品/订单字段已从接收端兜底中移除。实际下发采用模板字段还是 H5 映射字段，仍需当前平台消息联调确认；两种已提供配置均可解析。购买仍调用原 StoreKit 2 实现，验单请求改为 `dollcavo/ribbonDisplayDollrevo/pastelProp`，其中 `pastelProp` 使用解析出的后台订单号。过期 Ably 支付指令不再次自动唤起购买框。
 - logout：复用 `closeDollCollectorSession()`，仅结束当前本地登录态，不删除注册记录；返回需手动点击 Sign In 的入口，避免退出后立即自动登录。
 - openBrowser：从消息模板的 `data.ltavo` 或 H5 字段映射的 `data.shotDollyarafoverlin` 读取 URL，不再接受旧原始外链字段；原本地路由交给原加载器，外部 HTTP(S) 链接交给系统；外部打开结果通过 `nativeOpenState` CustomEvent 返回页面。
-- linkSuccessMessage 的 `velvetPose/ribbonSnapshot` 和其他业务配置保持原内容，通过 message 事件转交 H5；页面未就绪时先排队。不使用该消息改写 open 接口返回的页面地址。
-- 原生支付结果以 payResult message 事件交给当前频道页面；最终权益以后台验单和后台下发结果为准。该反向回传仍沿用现有的 `event/productId/callbackResult` 字段，不能将截图中 HTTP 入参或 H5 下发字段的映射自动套到这个独立方向；H5 是否消费该事件仍待联调。`data`、事件值、JS 桥名称和 Ably 协议字段也没有被这张映射图替换。
+- linkSuccessMessage 的 `velvetPose/ribbonSnapshot` 保持原内容，通过 message 事件转交 H5；页面未就绪时先排队。不使用该消息改写 open 接口返回的页面地址。已删除旧 `ready` 消息入口，页面就绪由当前 WebView 导航的 didFinish 回调确定。
+- 原生支付结果以 payResult message 事件交给当前频道页面；最终权益以后台验单和后台下发结果为准。该反向回传仍沿用现有的 `event/productId/callbackResult` 字段，不能将截图中 HTTP 入参或 H5 下发字段的映射自动套到这个独立方向；H5 是否消费该事件仍待联调。`data`、事件值、JS 桥名称和 Ably 协议字段（包括数值 action）属于当前通信协议，并非旧业务消息兼容。本地 H5 的独立处理器及原有购买逻辑不属于本次清理范围。
 - Debug 日志会记录识别出的事件以及支付是否通过字段检查；过期、页面不可见、缺少商品或订单时记录原因，不打印订单值、URL、token 或票据。
 
 ## 订单和账户数据
@@ -97,8 +97,8 @@ open 返回字段：
 
 ## 验证与待联调项
 
-- 本轮 HTTP/H5 字段映射修改已通过 Debug、Release 模拟器构建。
-- 最新字段适配的实际配置、网络解析和长连接源文件与 `DolluSageChecklistDollsero` 在独立离线入口执行 58 项检查通过，覆盖缺失地址、错误配置、状态码、凭证解析、同源检查、消息解码、消息模板与 H5 映射字段、旧原始字段拒绝以及四类自定义事件。另使用本地 URLProtocol 拦截实际网络层产生的三次请求，验证 open 无推送、open 有推送和验单的请求体、路径、请求头均符合配置，没有真实网络或购买操作。App 中仍可使用 Debug 启动环境 `DolluSageChecklistDollsero=1` 运行同一套协议检查。
+- 本轮移除旧业务消息兼容后，Debug、Release 模拟器构建均通过。
+- 最新配置、网络解析和长连接源文件与 `DolluSageChecklistDollsero` 在独立离线入口执行 67 项检查通过，覆盖缺失地址、错误配置、状态码、凭证解析、同源检查、消息解码、当前消息模板与 H5 映射字段，并确认旧原始字段、旧事件、顶层参数和多动作消息被拒绝。另使用本地 URLProtocol 拦截实际网络层产生的三次请求，验证 open 无推送、open 有推送和验单的请求体、路径、请求头均符合配置，没有真实网络或购买操作。App 中仍可使用 Debug 启动环境 `DolluSageChecklistDollsero=1` 运行同一套协议检查。
 - iPhone 17 Pro 模拟器已实际取得 open HTTP 200、加载远程 H5、连接 Ably、订阅频道并收到 linkSuccessMessage；离线检查分支可回到原生界面。
 - 没有发起真实购买，也未使用虚构订单调用线上验单。尚需在匹配商品配置的沙盒账号下验证支付成功、取消、待批准、验单失败后重启恢复及 H5 权益更新。
 - 推送为可选项，仅在已有通知授权时注册；真机 APNs 需要匹配签名及 Push Notifications entitlement。当前工程 entitlement 尚未配置 APNs。
