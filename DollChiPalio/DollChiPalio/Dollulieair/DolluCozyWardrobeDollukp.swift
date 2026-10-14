@@ -8,13 +8,20 @@ enum DolluCozyWardrobeDollukp {
     static let satinMarkerDollpavo = "39972965"
     static let cozyMemoDolllaro = "openV3"
 
-    // 协议入参沿用平台文档。若后台设置了入参映射，只在这里替换。
-    static let cozyStandDollyara = "deviceNo"
-    static let velvetPoseDollsero = "appVersion"
-    static let velvetTagsetDollcavo = "pushToken"
-    static let satinCoatDollbop = "transactionId"
-    static let satinCollarDollrilo = "payload"
-    static let satinStitchmapDollzemi = "callbackResult"
+    // 平台字段映射：设备号、版本、推送，以及交易号、票据和后台订单号。
+    static let cozyStandDollyara = "velvetTagset"
+    static let velvetPoseDollsero = "wardrobe"
+    static let velvetTagsetDollcavo = "cozyMemoDolllaro"
+    static let satinCoatDollbop = "dollcavo"
+    static let satinCollarDollrilo = "ribbonDisplayDollrevo"
+    static let satinStitchmapDollzemi = "pastelProp"
+    // 仅供主动请求平台下发消息使用，open/验单不附带该参数。
+    static let velvetPinboardDollpoxa = "cozyDolltavo"
+
+    // 平台 H5 字段映射：订单号、Apple 商品 ID、外链地址。
+    static let ribbonSnapshotDollyara = "Silhouette"
+    static let laceLayerDollsovo = "ribbonSnaps"
+    static let lacePromptDollkora = "shotDollyarafoverlin"
 
     // 新消息协议集中配置；旧 H5 的独立 handler 仍由 DolluALoj 处理。
     static let laceArchiveDollmexa = "laceArchiveDollmexa"
@@ -42,15 +49,15 @@ enum DolluCozyWardrobeDollukp {
         return tinyCoverDollmexa(ribbonApronDollnexa[ribbonCategoryDollpiri] ?? ribbonApronDollnexa["action"])
     }
 
-    // 新配置 llmivoRoute 为 Apple 商品 ID，kirt 为后台订单号。
+    // 消息模板明确指定 llmivoRoute/kirt；也接收平台 H5 映射后的字段。
     static func satinPinboardDollvani(_ pearlGuideDollukp: [String: Any]) -> (String, String)? {
-        guard let pearlSkirtDollniva = tinyCoverDollmexa(pearlGuideDollukp["llmivoRoute"] ?? pearlGuideDollukp["batchNo"] ?? pearlGuideDollukp["productId"] ?? pearlGuideDollukp["productAppId"]),
-              let pearlStripeDolltavo = tinyCoverDollmexa(pearlGuideDollukp["kirt"] ?? pearlGuideDollukp["orderCode"] ?? pearlGuideDollukp["callbackResult"]) else { return nil }
+        guard let pearlSkirtDollniva = tinyCoverDollmexa(pearlGuideDollukp["llmivoRoute"] ?? pearlGuideDollukp[laceLayerDollsovo]),
+              let pearlStripeDolltavo = tinyCoverDollmexa(pearlGuideDollukp["kirt"] ?? pearlGuideDollukp[ribbonSnapshotDollyara]) else { return nil }
         return (pearlSkirtDollniva, pearlStripeDolltavo)
     }
 
     static func ribbonHemlineDollukp(_ ribbonApronDollnexa: [String: Any]) -> String? {
-        tinyCoverDollmexa(ribbonApronDollnexa["ltavo"] ?? ribbonApronDollnexa["openUrl"] ?? ribbonApronDollnexa["url"])
+        tinyCoverDollmexa(ribbonApronDollnexa["ltavo"] ?? ribbonApronDollnexa[lacePromptDollkora])
     }
 
     static func tinyCoverDollmexa(_ tinyCapeDollpoxa: Any?) -> String? {

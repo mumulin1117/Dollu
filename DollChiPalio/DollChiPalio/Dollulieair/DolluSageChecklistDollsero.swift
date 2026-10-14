@@ -57,11 +57,14 @@ enum DolluSageChecklistDollsero {
         let pastelEnsembleDollfina = Data("{\"action\":\"logout\"}".utf8).base64EncodedString()
         cozyMemoDolllaro(DolluRibbonSnapshotDollyara.pearlSkirtDollniva(["encoding": "json/base64", "data": pastelEnsembleDollfina])?["action"] as? String == "logout")
         cozyMemoDolllaro(DolluRibbonSnapshotDollyara.pearlSkirtDollniva(["encoding": "cipher", "data": [:]]) == nil)
-        let satinPinboardDollvani = DolluCozyWardrobeDollukp.satinPinboardDollvani(["batchNo": "fixture.product", "orderCode": "fixture.order"])
-        cozyMemoDolllaro(satinPinboardDollvani?.0 == "fixture.product" && satinPinboardDollvani?.1 == "fixture.order")
-        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["batchNo": "fixture.product"]) == nil)
-        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["batchNo": "  ", "orderCode": "fixture.order"]) == nil)
-        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["productAppId": "fixture.product", "callbackResult": "fixture.order"])?.1 == "fixture.order")
+        let satinPinboardDollvani = DolluCozyWardrobeDollukp.satinPinboardDollvani(["ribbonSnaps": "cozyWardrobeDollukp", "Silhouette": "cozyArchiveDollniva"])
+        cozyMemoDolllaro(satinPinboardDollvani?.0 == "cozyWardrobeDollukp" && satinPinboardDollvani?.1 == "cozyArchiveDollniva")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["ribbonSnaps": "cozyWardrobeDollukp"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["ribbonSnaps": "  ", "Silhouette": "cozyArchiveDollniva"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["batchNo": "cozyWardrobeDollukp", "orderCode": "cozyArchiveDollniva"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["productId": "cozyWardrobeDollukp", "callbackResult": "cozyArchiveDollniva"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["productAppId": "cozyWardrobeDollukp", "callbackResult": "cozyArchiveDollniva"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["ribbonSnaps": "cozyWardrobeDollukp", "silhouette": "cozyArchiveDollniva"]) == nil)
 
         // 覆盖截图中的实际消息，从 Ably JSON 解码到原生动作和参数解析。
         let ribbonApronDollnexa = DolluRibbonSnapshotDollyara.pearlSkirtDollniva([
@@ -77,7 +80,7 @@ enum DolluSageChecklistDollsero {
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["llmivoRoute": "cozyWardrobeDollukp", "kirt": NSNull()]) == nil)
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(["llmivoRoute": 123, "kirt": "cozyArchiveDollniva"]) == nil)
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani([
-            "llmivoRoute": "cozyWardrobeDollukp", "kirt": "cozyArchiveDollniva", "batchNo": "velvetPoseDollsero", "orderCode": "velvetTagsetDollcavo"
+            "llmivoRoute": "cozyWardrobeDollukp", "kirt": "cozyArchiveDollniva", "ribbonSnaps": "velvetPoseDollsero", "Silhouette": "velvetTagsetDollcavo"
         ])?.0 == "cozyWardrobeDollukp")
         let lacePromptDollkora = DolluCozyWardrobeDollukp.tinySnapshotDollhumi(#"{"llmivoRoute":"cozyWardrobeDollukp","kirt":"cozyArchiveDollniva"}"#)!
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.satinPinboardDollvani(lacePromptDollkora)?.1 == "cozyArchiveDollniva")
@@ -92,7 +95,9 @@ enum DolluSageChecklistDollsero {
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonPleatDollruni(laceCornerDollmora) == "openBrowser")
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(DolluCozyWardrobeDollukp.tinySnapshotDollhumi(laceCornerDollmora["data"])!) == "https://example.invalid/cozyWardrobeDollukp")
         cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(["ltavo": " "]) == nil)
-        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(["openUrl": "https://example.invalid"]) == "https://example.invalid")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(["shotDollyarafoverlin": "https://example.invalid"]) == "https://example.invalid")
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(["openUrl": "https://example.invalid"]) == nil)
+        cozyMemoDolllaro(DolluCozyWardrobeDollukp.ribbonHemlineDollukp(["url": "https://example.invalid"]) == nil)
         let laceWardrobeDollvex = DolluRibbonSnapshotDollyara.pearlSkirtDollniva([
             "encoding": "json", "data": #"{"velvetPose":"linkSuccessMessage","ribbonSnapshot":"https://example.invalid/cozyWardrobeDollukp"}"#
         ])!
