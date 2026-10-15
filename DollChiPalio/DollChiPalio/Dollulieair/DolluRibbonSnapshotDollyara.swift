@@ -4,7 +4,6 @@ import Foundation
 @MainActor
 final class DolluRibbonSnapshotDollyara {
     var ribbonDisplayDollrevo: (([String: Any], TimeInterval?) -> Void)?
-    var pearlEnsembleDollyara: (() -> Void)?
     var cozyBackgroundDollnoro: (() -> Void)?
     var laceBonnetDollzora: (() -> Void)?
     private var cozyArchiveDollniva: DolluVelvetStitchmapDollmexa
@@ -120,7 +119,6 @@ final class DolluRibbonSnapshotDollyara {
 #if DEBUG
             NSLog("Dollulieair socket channel attached")
 #endif
-            pearlEnsembleDollyara?()
         case 15:
             guard laceLayerDollsovo["channel"] as? String == cozyArchiveDollniva.ribbonSnapshotDollyara,
                   let satinCoatDollbop = laceLayerDollsovo["messages"] as? [[String: Any]] else { return }

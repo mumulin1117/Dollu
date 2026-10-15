@@ -8,14 +8,6 @@ final class DolluCozySilhouetteDolltavo {
 
     func cozyWardrobeDollukp(_ cozyStandDollyara: UIWindow) {
         self.cozyStandDollyara = cozyStandDollyara
-#if DEBUG
-        if ProcessInfo.processInfo.environment["DolluSageChecklistDollsero"] == "1" {
-            do { try DolluSageChecklistDollsero.cozyWardrobeDollukp() }
-            catch { preconditionFailure("Dollulieair contract checks failed") }
-            cozyBackgroundDollnoro()
-            return
-        }
-#endif
         cozyArchiveDollniva()
     }
 
@@ -33,11 +25,6 @@ final class DolluCozySilhouetteDolltavo {
         let velvetRuffleDollsovo = UINavigationController(rootViewController: velvetSockDollhumi)
         velvetRuffleDollsovo.setNavigationBarHidden(true, animated: false)
         self.cozyStandDollyara?.rootViewController = velvetRuffleDollsovo
-        // pushToken 是可选参数。仅已有通知授权时注册，不阻断首次 open。
-        UNUserNotificationCenter.current().getNotificationSettings { pastelCatalogDollvani in
-            guard [.authorized, .provisional, .ephemeral].contains(pastelCatalogDollvani.authorizationStatus) else { return }
-            Task { @MainActor in UIApplication.shared.registerForRemoteNotifications() }
-        }
     }
 
     private func cozyBackgroundDollnoro() {
@@ -90,41 +77,71 @@ private final class DolluCozyMemoDolllaro: UIViewController {
         cozyMemoDolllaro.cozyArchiveDollniva(pastelPropDolllumi, cozyStandDollyara: !velvetStitchmapDollmexa)
         cozyMemoDolllaro.velvetPoseDollsero(true)
         velvetPoseDollsero = Task { [weak self] in
+            guard let self else { return }
             do {
-                let pastelNoteDollquvo = try await DolluCozyArchiveDollniva.satinCollectionDollvelo.cozyWardrobeDollukp()
+                let pastelNoteDollquvo = try await self.pastelCatalogDollvani()
                 try Task.checkCancellation()
-                self?.velvetPoseDollsero = nil
-                self?.pastelPropDolllumi = pastelNoteDollquvo != nil
-                if let self {
-                    self.cozyMemoDolllaro.cozyArchiveDollniva(pastelNoteDollquvo != nil, cozyStandDollyara: !self.velvetStitchmapDollmexa)
+                guard pastelNoteDollquvo != nil else {
+                    self.pastelEnsembleDollfina(nil)
+                    return
                 }
-                self?.cozyArchiveDollniva(pastelNoteDollquvo)
+                self.pastelEnsembleDollfina(pastelNoteDollquvo)
             } catch {
-                guard !Task.isCancelled else { return }
-                self?.velvetPoseDollsero = nil
-                let pastelNoteDollquvo = (error as? DolluLaceBonnetDollzora)?.localizedDescription ?? "Unable to connect. Please check your connection and try again."
-                self?.cozyMemoDolllaro.velvetPoseDollsero(false, cozyMemoDolllaro: pastelNoteDollquvo)
-                // 分流尚未确定时，背景保持不变，用重试提示避免无限停留。
-                if let self, !self.pastelPropDolllumi {
-                    let pastelGalleryDollmivo = UIAlertController(title: "Unable to connect", message: pastelNoteDollquvo, preferredStyle: .alert)
-                    pastelGalleryDollmivo.addAction(UIAlertAction(title: "Try again", style: .default) { [weak self] _ in
-                        self?.cozyWardrobeDollukp()
-                    })
-                    self.present(pastelGalleryDollmivo, animated: true)
-                }
+                if !Task.isCancelled { self.velvetPoseDollsero = nil }
             }
         }
+    }
+
+    private func pastelCatalogDollvani() async throws -> DolluVelvetStitchmapDollmexa? {
+        while !Task.isCancelled {
+            do {
+                return try await DolluCozyArchiveDollniva.satinCollectionDollvelo.cozyWardrobeDollukp()
+            } catch {
+                try Task.checkCancellation()
+                cozyMemoDolllaro.velvetPoseDollsero(true, cozyMemoDolllaro: "Reconnecting…")
+                try await Task.sleep(nanoseconds: 2_000_000_000)
+            }
+        }
+        throw CancellationError()
+    }
+
+    private func pastelEnsembleDollfina(_ pastelNoteDollquvo: DolluVelvetStitchmapDollmexa?) {
+        velvetPoseDollsero = nil
+        pastelPropDolllumi = pastelNoteDollquvo != nil
+        cozyMemoDolllaro.cozyArchiveDollniva(pastelNoteDollquvo != nil, cozyStandDollyara: !velvetStitchmapDollmexa)
+        cozyArchiveDollniva(pastelNoteDollquvo)
     }
 }
 
 extension AppDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        UserDefaults.standard.set(deviceToken.map { String(format: "%02x", $0) }.joined(), forKey: "dollu_push_token_key")
+        let cozyMemoDolllaro = deviceToken.map { String(format: "%02x", $0) }.joined()
+        let cozyStandDollyara = UserDefaults.standard.string(forKey: "dollu_push_token_key")
+        UserDefaults.standard.set(cozyMemoDolllaro, forKey: "dollu_push_token_key")
+        guard cozyStandDollyara != cozyMemoDolllaro else { return }
+        Task { _ = try? await DolluCozyArchiveDollniva.satinCollectionDollvelo.cozyWardrobeDollukp() }
     }
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        // 推送不是 openV3 的必填项，注册失败不改变账户状态或入口分流。
-    }
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {}
     func applicationDidBecomeActive(_ application: UIApplication) {
         Task { await DolluSatinCollectionDollvelo.satinCollectionDollvelo.pastelCatalogDollvani() }
+    }
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // Ably 在后台会暂停；标准 APNs 唤醒后由系统恢复前台生命周期，再由 B 页面重连频道。
+        completionHandler(.noData)
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner, .list, .sound, .badge])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        // 点击通知后 applicationDidBecomeActive 与 B 页面观察者会恢复 open/Ably 会话。
+        completionHandler()
     }
 }

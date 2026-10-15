@@ -132,7 +132,7 @@ class DolluALoj: UIViewController {
         pastelGalleryDollmivoInstallCanvas()
         velvetPoseDollseroInstallLoadingOrb()
         ribbonSnapshotDollyaraLoadInitialRoute()
-        NotificationCenter.default.addObserver(self, selector: #selector(satinCollarDollrilo(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(satinCollarDollrilo(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(satinCollarDollrilo(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
@@ -289,17 +289,18 @@ class DolluALoj: UIViewController {
     }
 
     @objc private func satinCollarDollrilo(_ satinMarkerDollpavo: Notification) {
-        guard let satinCoatDollbop = satinMarkerDollpavo.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
-        let satinCollectionDollvelo = view.convert(satinCoatDollbop, from: nil)
-        let satinPinboardDollvani = satinMarkerDollpavo.name == UIResponder.keyboardWillHideNotification ? 0 : max(0, view.bounds.maxY - satinCollectionDollvelo.minY)
-        laceWardrobeDollvex?.constant = -satinPinboardDollvani
+        guard let satinCoatDollbop = satinMarkerDollpavo.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+              let satinCollectionDollvelo = view.window else { return }
+        let satinPinboardDollvani = satinCollectionDollvelo.convert(satinCoatDollbop, from: satinCollectionDollvelo.screen.coordinateSpace)
+        let pearlGuideDollukp = view.convert(satinPinboardDollvani, from: satinCollectionDollvelo)
+        let pearlSkirtDollniva = satinMarkerDollpavo.name == UIResponder.keyboardWillHideNotification
+            ? 0 : view.bounds.intersection(pearlGuideDollukp).height
+        laceWardrobeDollvex?.constant = 0
         cozyBackgroundDollnoro()
-        // Shrink the actual viewport so H5 fixed-position input bars also move.
-        // No additional keyboard inset is needed after the viewport is resized.
-        pastelGalleryDollmivoRouteCanvas.scrollView.contentInset = .zero
-        pastelGalleryDollmivoRouteCanvas.scrollView.scrollIndicatorInsets = .zero
-        let pearlGuideDollukp = satinMarkerDollpavo.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0.25
-        UIView.animate(withDuration: pearlGuideDollukp) { self.view.layoutIfNeeded() }
+        pastelGalleryDollmivoRouteCanvas.evaluateJavaScript(
+            "document.documentElement.style.setProperty('--tinyCapeDollpoxa','\(pearlSkirtDollniva)px');",
+            completionHandler: nil
+        )
     }
     fileprivate func pearlGuideDollukpHandleStoreSignal(_ pocketMoodboardDollpiri: Any) {
         guard let pearlStripeDolltavo = extractDollStoreIdentifier(from: pocketMoodboardDollpiri) else {
@@ -495,6 +496,7 @@ extension DolluALoj: WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate 
 private extension WKWebView {
     func pastelNoteDollquvoPolishCanvas(owner pastelPropDolllumi: DolluALoj) {
         scrollView.showsVerticalScrollIndicator = false
+        allowsBackForwardNavigationGestures = true
         uiDelegate = pastelPropDolllumi
         navigationDelegate = pastelPropDolllumi
         backgroundColor = .clear

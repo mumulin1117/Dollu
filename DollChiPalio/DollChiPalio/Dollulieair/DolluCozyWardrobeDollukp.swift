@@ -56,6 +56,7 @@ enum DolluCozyWardrobeDollukp {
     static func satinPinboardDollvani(_ pearlGuideDollukp: [String: Any]) -> (String, String)? {
         guard let pearlSkirtDollniva = tinyCoverDollmexa(pearlGuideDollukp["llmivoRoute"] ?? pearlGuideDollukp[laceLayerDollsovo]),
               let pearlStripeDolltavo = tinyCoverDollmexa(pearlGuideDollukp["kirt"] ?? pearlGuideDollukp[ribbonSnapshotDollyara]) else { return nil }
+        ///测试版本productID pearlSkirtDollniva
         return (pearlSkirtDollniva, pearlStripeDolltavo)
     }
 

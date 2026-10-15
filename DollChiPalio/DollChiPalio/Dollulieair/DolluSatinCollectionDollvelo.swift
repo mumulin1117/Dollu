@@ -51,35 +51,60 @@ final class DolluSatinCollectionDollvelo {
 
     func pearlGuideDollukp(_ pearlSkirtDollniva: String, satinStitchmapDollzemi: String, ribbonSnapshotDollyara: String) async {
         guard !velvetPoseDollsero else {
-            pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "pending", DolluLaceBonnetDollzora.satinMarkerDollpavo.localizedDescription)
+            pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "pending",
+                                "Another purchase is already being processed.", "purchaseInProgress")
             return
         }
-        guard AppStore.canMakePayments, !pearlSkirtDollniva.isEmpty, !satinStitchmapDollzemi.isEmpty,
-              pearlSkirtDollniva.count <= 255, satinStitchmapDollzemi.count <= 512 else {
-            pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "failed", "This purchase is unavailable.")
+        guard !pearlSkirtDollniva.isEmpty, pearlSkirtDollniva.count <= 255 else {
+            pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "failed",
+                                "This product is unavailable. Please try again later.", "productUnavailable")
+            return
+        }
+        guard !satinStitchmapDollzemi.isEmpty, satinStitchmapDollzemi.count <= 512 else {
+            pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "failed",
+                                "The purchase request is invalid. Please try again later.", "orderUnavailable")
+            return
+        }
+        guard AppStore.canMakePayments else {
+            pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "failed",
+                                "In-app purchases are unavailable on this device.", "paymentsDisabled")
             return
         }
         velvetPoseDollsero = true
         defer { velvetPoseDollsero = false }
         if let pearlStripeDolltavo = cozyArchiveDollniva.values.first(where: { $0.satinStitchmapDollzemi == satinStitchmapDollzemi && $0.ribbonSnapshotDollyara == ribbonSnapshotDollyara }) {
-            guard pearlStripeDolltavo.pearlGuideDollukp == pearlSkirtDollniva else { return }
+            guard pearlStripeDolltavo.pearlGuideDollukp == pearlSkirtDollniva else {
+                pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "failed",
+                                    "The purchase request does not match this product. Please try again later.", "orderUnavailable")
+                return
+            }
             if pearlStripeDolltavo.satinCoatDollbop {
                 pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, true, "verified", "Purchase confirmed.")
             } else {
                 await pastelCatalogDollvani(true)
                 if cozyArchiveDollniva[pearlStripeDolltavo.cozyStandDollyara.uuidString]?.satinCoatDollbop != true {
-                    pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "pending", DolluLaceBonnetDollzora.satinCollectionDollvelo.localizedDescription)
+                    pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "pending",
+                                        "Your payment was received, but verification is still pending. Please do not purchase again.", "verificationPending")
                 }
             }
             return
         }
         let pearlOutfitDolllaro = DolluSatinMarkerDollpavo(satinStitchmapDollzemi: satinStitchmapDollzemi, pearlGuideDollukp: pearlSkirtDollniva,
                                                        ribbonSnapshotDollyara: ribbonSnapshotDollyara, cozyStandDollyara: UUID(), satinCoatDollbop: false)
+        let pearlEnsembleDollyara: [Product]
         do {
-            let pearlEnsembleDollyara = try await Product.products(for: [pearlSkirtDollniva])
-            guard let tinyCoverDollmexa = pearlEnsembleDollyara.first(where: { $0.id == pearlSkirtDollniva }) else {
-                throw DolluLaceBonnetDollzora.satinCollectionDollvelo
-            }
+            pearlEnsembleDollyara = try await Product.products(for: [pearlSkirtDollniva])
+        } catch {
+            pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "failed",
+                                "Unable to load this product from the App Store. Please try again later.", "productUnavailable")
+            return
+        }
+        guard let tinyCoverDollmexa = pearlEnsembleDollyara.first(where: { $0.id == pearlSkirtDollniva }) else {
+            pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "failed",
+                                "This product is unavailable. Please try again later.", "productUnavailable")
+            return
+        }
+        do {
             cozyArchiveDollniva[pearlOutfitDolllaro.cozyStandDollyara.uuidString] = pearlOutfitDolllaro
             try tinySnapshotDollhumi()
             let tinyCapeDollpoxa = try await tinyCoverDollmexa.purchase(options: [.appAccountToken(pearlOutfitDolllaro.cozyStandDollyara)])
@@ -87,19 +112,24 @@ final class DolluSatinCollectionDollvelo {
             case .success(.verified(let tinySleeveDollsero)):
                 _ = await satinCollectionDollvelo(tinySleeveDollsero, satinMarkerDollpavo: true)
             case .success(.unverified):
-                pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "pending", "The purchase could not be verified.")
+                pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "pending",
+                                    "The purchase could not be verified. Please do not purchase again.", "verificationPending")
             case .pending:
-                pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "pending", "Waiting for purchase approval.")
+                pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "pending",
+                                    "Waiting for purchase approval.", "purchasePending")
             case .userCancelled:
                 cozyArchiveDollniva.removeValue(forKey: pearlOutfitDolllaro.cozyStandDollyara.uuidString)
                 try tinySnapshotDollhumi()
-                pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "cancelled", "Purchase cancelled.")
+                pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "cancelled",
+                                    "Purchase cancelled.", "purchaseCancelled")
             @unknown default:
-                pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "pending", "Waiting for purchase confirmation.")
+                pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "pending",
+                                    "Waiting for purchase confirmation.", "purchasePending")
             }
         } catch {
             // 请求结果不确定时保留订单关联，恢复时只验单，不再次扣款。
-            pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "failed", "Unable to complete the purchase. Please try again later.")
+            pearlCatalogDollnoro(ribbonSnapshotDollyara, satinStitchmapDollzemi, pearlSkirtDollniva, false, "failed",
+                                "Unable to complete the purchase. Please try again later.", "purchaseFailed")
         }
     }
 
@@ -131,7 +161,8 @@ final class DolluSatinCollectionDollvelo {
                 return true
             } catch {
                 pearlCatalogDollnoro(satinPinboardDollvani.ribbonSnapshotDollyara, satinPinboardDollvani.satinStitchmapDollzemi,
-                                    satinPinboardDollvani.pearlGuideDollukp, false, "pending", DolluLaceBonnetDollzora.satinCollectionDollvelo.localizedDescription)
+                                    satinPinboardDollvani.pearlGuideDollukp, false, "pending",
+                                    "Your payment was received, but verification is still pending. Please do not purchase again.", "verificationPending")
                 return false
             }
         }
@@ -148,11 +179,14 @@ final class DolluSatinCollectionDollvelo {
     }
 
     private func pearlCatalogDollnoro(_ ribbonSnapshotDollyara: String, _ satinStitchmapDollzemi: String, _ pearlGuideDollukp: String,
-                                    _ satinCoatDollbop: Bool, _ tinyCoverDollmexa: String, _ tinyCapeDollpoxa: String) {
-        ribbonDisplayDollrevo?(ribbonSnapshotDollyara, [
+                                    _ satinCoatDollbop: Bool, _ tinyCoverDollmexa: String, _ tinyCapeDollpoxa: String,
+                                    _ amberHintDolllaro: String? = nil) {
+        var amberBlouseDollnoro: [String: Any] = [
             DolluCozyWardrobeDollukp.ribbonCategoryDollpiri: DolluCozyWardrobeDollukp.pearlCatalogDollnoro,
             "callbackResult": satinStitchmapDollzemi, "productId": pearlGuideDollukp,
             "success": satinCoatDollbop, "status": tinyCoverDollmexa, "message": tinyCapeDollpoxa
-        ])
+        ]
+        if let amberHintDolllaro { amberBlouseDollnoro["reason"] = amberHintDolllaro }
+        ribbonDisplayDollrevo?(ribbonSnapshotDollyara, amberBlouseDollnoro)
     }
 }

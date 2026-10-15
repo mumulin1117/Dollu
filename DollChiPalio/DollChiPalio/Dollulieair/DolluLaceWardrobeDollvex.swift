@@ -2,6 +2,7 @@ import UIKit
 import WebKit
 import SafariServices
 import UserNotifications
+import AVFoundation
 
 /// 远程 openV3 首页。本地详情继续复用 DolluALoj 和已有的解密 bundle。
 @MainActor
@@ -14,15 +15,18 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
     private let cozyMemoDolllaro = DolluCozyBackgroundDollnoro()
     private var satinCoatDollbop: WKNavigation?
     private var pastelGalleryDollmivo: WKWebView!
-    private var laceWardrobeDollvex: NSLayoutConstraint?
     private let velvetPoseDollsero = UIActivityIndicatorView(style: .large)
-    private let laceCornerDollmora = UIButton(type: .system)
     private var velvetTagsetDollcavo = false
     private var velvetSockDollhumi = false
     private var velvetRuffleDollsovo = false
     private var pastelCatalogDollvani: [[String: Any]] = []
     private var pastelEnsembleDollfina: DispatchWorkItem?
     private var pastelNoteDollquvo: [NSObjectProtocol] = []
+    private var sunnySetupDollsovo: String?
+    private weak var sunnyLayoutDollmora: DolluSunnyLayoutDollmoraNoticeView?
+    private var sunnyBootDollzora: DispatchWorkItem?
+    private var mistyThemeDollfina: Task<Void, Never>?
+    private var mistyBeadworkDollmivo = false
 
     init(cozyArchiveDollniva: DolluVelvetStitchmapDollmexa, cozyStandDollyara: Bool, cozyBackgroundDollnoro: @escaping () -> Void, laceBonnetDollzora: @escaping () -> Void) {
         self.cozyArchiveDollniva = cozyArchiveDollniva
@@ -35,11 +39,13 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let navigation, !velvetRuffleDollsovo, navigation === satinCoatDollbop else { return }
         pastelEnsembleDollfina?.cancel()
+        mistyThemeDollfina?.cancel()
+        mistyThemeDollfina = nil
         velvetTagsetDollcavo = true
         satinPinboardDollvani()
         pastelPropDolllumi()
+        mistyLaceworkDollvelo()
         guard !cozyMemoDolllaro.isHidden else { return }
-        laceCornerDollmora.isHidden = true
         webView.isHidden = false
         UIView.animate(withDuration: UIAccessibility.isReduceMotionEnabled ? 0 : 0.3,
                        delay: 0, options: [.beginFromCurrentState, .curveEaseInOut]) {
@@ -62,13 +68,6 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
         let satinCollectionDollvelo = WKWebViewConfiguration()
         satinCollectionDollvelo.allowsInlineMediaPlayback = true
         satinCollectionDollvelo.mediaTypesRequiringUserActionForPlayback = []
-        satinCollectionDollvelo.userContentController.addUserScript(WKUserScript(source: """
-        document.addEventListener('pointerdown', function(cozyWardrobeDollukp) {
-            if (cozyWardrobeDollukp.target.closest('input,textarea,[contenteditable="true"]')) return;
-            const cozyArchiveDollniva = document.activeElement;
-            if (cozyArchiveDollniva && cozyArchiveDollniva.matches('input,textarea,[contenteditable="true"]')) cozyArchiveDollniva.blur();
-        }, true);
-        """, injectionTime: .atDocumentEnd, forMainFrameOnly: true))
         satinCollectionDollvelo.userContentController.add(DolluSatinPinboardDollvani(satinCollectionDollvelo: self), name: DolluCozyWardrobeDollukp.laceArchiveDollmexa)
         pastelGalleryDollmivo = WKWebView(frame: .zero, configuration: satinCollectionDollvelo)
         pastelGalleryDollmivo.translatesAutoresizingMaskIntoConstraints = false
@@ -79,10 +78,10 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
         pastelGalleryDollmivo.scrollView.backgroundColor = view.backgroundColor
         pastelGalleryDollmivo.scrollView.contentInsetAdjustmentBehavior = .never
         pastelGalleryDollmivo.scrollView.keyboardDismissMode = .interactive
-        
+        pastelGalleryDollmivo.allowsBackForwardNavigationGestures = true
+
         pastelGalleryDollmivo.isHidden = true
         view.addSubview(pastelGalleryDollmivo)
-        laceWardrobeDollvex = pastelGalleryDollmivo.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         cozyMemoDolllaro.translatesAutoresizingMaskIntoConstraints = false
         cozyMemoDolllaro.cozyArchiveDollniva(true, cozyStandDollyara: cozyStandDollyara)
         cozyMemoDolllaro.velvetSockDollhumi.addTarget(self, action: #selector(cozyWardrobeDollukp), for: .touchUpInside)
@@ -91,45 +90,25 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
         velvetPoseDollsero.color = .white
         velvetPoseDollsero.hidesWhenStopped = true
         view.addSubview(velvetPoseDollsero)
-        laceCornerDollmora.translatesAutoresizingMaskIntoConstraints = false
-        laceCornerDollmora.setTitle("Unable to load this page. Tap to retry.", for: .normal)
-        laceCornerDollmora.setTitleColor(.white, for: .normal)
-        laceCornerDollmora.titleLabel?.numberOfLines = 0
-        laceCornerDollmora.titleLabel?.textAlignment = .center
-        laceCornerDollmora.isHidden = true
-        laceCornerDollmora.addTarget(self, action: #selector(cozyWardrobeDollukp), for: .touchUpInside)
-        view.addSubview(laceCornerDollmora)
         NSLayoutConstraint.activate([
             pastelGalleryDollmivo.topAnchor.constraint(equalTo: view.topAnchor),
+            pastelGalleryDollmivo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             pastelGalleryDollmivo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             pastelGalleryDollmivo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            laceWardrobeDollvex!,
             cozyMemoDolllaro.topAnchor.constraint(equalTo: view.topAnchor),
             cozyMemoDolllaro.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             cozyMemoDolllaro.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             cozyMemoDolllaro.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             velvetPoseDollsero.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            velvetPoseDollsero.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            laceCornerDollmora.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            laceCornerDollmora.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
-            laceCornerDollmora.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            laceCornerDollmora.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24)
+            velvetPoseDollsero.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
         ])
         ribbonSnapshotDollyara.ribbonDisplayDollrevo = { [weak self] in self?.ribbonCategoryDollpiri($0, cozyMemoDolllaro: $1) }
-        ribbonSnapshotDollyara.pearlEnsembleDollyara = { [weak self] in
-            // 连接成功的业务内容由后台下发，原生不伪造 url 或初始化数据。
-            self?.pastelPropDolllumi()
-        }
         ribbonSnapshotDollyara.cozyBackgroundDollnoro = { [weak self] in self?.satinMarkerDollpavo(); self?.cozyBackgroundDollnoro() }
         ribbonSnapshotDollyara.laceBonnetDollzora = { [weak self] in self?.satinMarkerDollpavo(); self?.laceBonnetDollzora() }
         DolluSatinCollectionDollvelo.satinCollectionDollvelo.ribbonDisplayDollrevo = { [weak self] satinMarkerDollpavo, satinCoatDollbop in
             guard let self, !self.velvetRuffleDollsovo, satinMarkerDollpavo == self.cozyArchiveDollniva.ribbonSnapshotDollyara else { return }
             self.ribbonDisplayDollrevo(satinCoatDollbop)
-        }
-        for satinCollarDollrilo in [UIResponder.keyboardWillShowNotification, UIResponder.keyboardWillHideNotification] {
-            pastelNoteDollquvo.append(NotificationCenter.default.addObserver(forName: satinCollarDollrilo, object: nil, queue: .main) { [weak self] satinMarkerDollpavo in
-                MainActor.assumeIsolated { self?.satinCollarDollrilo(satinMarkerDollpavo) }
-            })
+            self.sunnyLayoutDollkora(satinCoatDollbop)
         }
         pastelNoteDollquvo.append(NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { [weak self] _ in
             MainActor.assumeIsolated { self?.ribbonSnapshotDollyara.satinMarkerDollpavo() }
@@ -165,23 +144,42 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
         velvetRuffleDollsovo = true
         velvetSockDollhumi = false
         pastelEnsembleDollfina?.cancel()
+        mistyThemeDollfina?.cancel()
+        mistyThemeDollfina = nil
+        sunnyBootDollzora?.cancel()
+        sunnyLayoutDollmora?.removeFromSuperview()
         satinCoatDollbop = nil
         cozyMemoDolllaro.layer.removeAllAnimations()
         pastelGalleryDollmivo?.layer.removeAllAnimations()
         ribbonSnapshotDollyara.satinMarkerDollpavo()
         pastelGalleryDollmivo?.stopLoading()
+        try? AVAudioSession.sharedInstance().setActive(false, options: [.notifyOthersOnDeactivation])
         pastelGalleryDollmivo?.configuration.userContentController.removeScriptMessageHandler(forName: DolluCozyWardrobeDollukp.laceArchiveDollmexa)
         pastelCatalogDollvani.removeAll()
     }
 
+    private func mistyLaceworkDollvelo() {
+        guard !mistyBeadworkDollmivo else { return }
+        mistyBeadworkDollmivo = true
+        Task {
+            let mistyLaceworkDollvelo = UNUserNotificationCenter.current()
+            if await mistyLaceworkDollvelo.notificationSettings().authorizationStatus == .notDetermined {
+                _ = try? await mistyLaceworkDollvelo.requestAuthorization(options: [.alert, .badge, .sound])
+            }
+            UIApplication.shared.registerForRemoteNotifications()
+        }
+    }
+
     @objc private func cozyWardrobeDollukp() {
+        mistyThemeDollfina?.cancel()
+        mistyThemeDollfina = nil
         velvetTagsetDollcavo = false
-        laceCornerDollmora.isHidden = true
         cozyMemoDolllaro.layer.removeAllAnimations()
         pastelGalleryDollmivo.layer.removeAllAnimations()
         cozyMemoDolllaro.alpha = 1
         cozyMemoDolllaro.isHidden = false
         cozyMemoDolllaro.velvetSockDollhumi.setTitle("Log In", for: .normal)
+        cozyMemoDolllaro.velvetSockDollhumi.isHidden = !cozyStandDollyara
         cozyMemoDolllaro.velvetPoseDollsero(true)
         pastelGalleryDollmivo.isHidden = true
         pastelGalleryDollmivo.alpha = 0
@@ -194,19 +192,29 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
     }
 
     private func satinStitchmapDollzemi() {
-        guard !velvetRuffleDollsovo else { return }
+        guard !velvetRuffleDollsovo, mistyThemeDollfina == nil else { return }
         pastelEnsembleDollfina?.cancel()
         satinCoatDollbop = nil
         velvetTagsetDollcavo = false
+        pastelGalleryDollmivo.stopLoading()
         cozyMemoDolllaro.layer.removeAllAnimations()
         pastelGalleryDollmivo.layer.removeAllAnimations()
         cozyMemoDolllaro.alpha = 1
         cozyMemoDolllaro.isHidden = false
-        cozyMemoDolllaro.velvetPoseDollsero(false, cozyMemoDolllaro: cozyStandDollyara ? "Unable to load this page." : nil)
-        cozyMemoDolllaro.velvetSockDollhumi.setTitle("Try again", for: .normal)
+        cozyMemoDolllaro.cozyArchiveDollniva(true, cozyStandDollyara: cozyStandDollyara)
+        cozyMemoDolllaro.velvetSockDollhumi.setTitle("Log In", for: .normal)
+        cozyMemoDolllaro.velvetSockDollhumi.isHidden = !cozyStandDollyara
+        cozyMemoDolllaro.velvetPoseDollsero(true, cozyMemoDolllaro: "Reconnecting…")
         pastelGalleryDollmivo.isHidden = true
         pastelGalleryDollmivo.alpha = 0
-        laceCornerDollmora.isHidden = cozyStandDollyara
+
+        mistyThemeDollfina = Task { [weak self] in
+            try? await Task.sleep(nanoseconds: 2_000_000_000)
+            guard let self else { return }
+            guard !Task.isCancelled else { return }
+            self.mistyThemeDollfina = nil
+            self.cozyWardrobeDollukp()
+        }
     }
 
     override func viewSafeAreaInsetsDidChange() {
@@ -217,19 +225,9 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
     private func satinPinboardDollvani() {
         let pearlGuideDollukp: [String: Any] = [
             "cozyBackgroundDollnoro": view.safeAreaInsets.top,
-            "winterBackgroundDollpavo": (laceWardrobeDollvex?.constant ?? 0) < 0 ? 0 : view.safeAreaInsets.bottom
+            "winterBackgroundDollpavo": view.safeAreaInsets.bottom
         ]
         pastelGalleryDollmivo?.callAsyncJavaScript("document.documentElement.style.setProperty('--cozyBackgroundDollnoro', cozyBackgroundDollnoro + 'px'); document.documentElement.style.setProperty('--winterBackgroundDollpavo', winterBackgroundDollpavo + 'px');", arguments: pearlGuideDollukp, in: nil, in: .page, completionHandler: nil)
-    }
-
-    private func satinCollarDollrilo(_ satinMarkerDollpavo: Notification) {
-        guard let satinCoatDollbop = satinMarkerDollpavo.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
-        let satinStitchmapDollzemi = view.convert(satinCoatDollbop, from: nil)
-        laceWardrobeDollvex?.constant = satinMarkerDollpavo.name == UIResponder.keyboardWillHideNotification ? 0 : -max(0, view.bounds.maxY - satinStitchmapDollzemi.minY)
-        pastelGalleryDollmivo.scrollView.contentInset = .zero
-        pastelGalleryDollmivo.scrollView.scrollIndicatorInsets = .zero
-        satinPinboardDollvani()
-        UIView.animate(withDuration: satinMarkerDollpavo.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0.25) { self.view.layoutIfNeeded() }
     }
 
     private func ribbonCategoryDollpiri(_ ribbonApronDollnexa: [String: Any], cozyMemoDolllaro: TimeInterval? = nil) {
@@ -260,6 +258,20 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
 #if DEBUG
                 NSLog("Dollulieair pay rejected: missing product/order; fields=%@", ribbonHemlineDollukp.keys.sorted().joined(separator: ","))
 #endif
+                let amberTrunkDollniva = DolluCozyWardrobeDollukp.tinyCoverDollmexa(
+                    ribbonHemlineDollukp["llmivoRoute"] ?? ribbonHemlineDollukp[DolluCozyWardrobeDollukp.laceLayerDollsovo]
+                )
+                let amberCapsuleDolltavo = amberTrunkDollniva == nil
+                    ? "This product is unavailable. Please try again later."
+                    : "The purchase request is invalid. Please try again later."
+                let amberHintDolllaro: [String: Any] = [
+                    DolluCozyWardrobeDollukp.ribbonCategoryDollpiri: DolluCozyWardrobeDollukp.pearlCatalogDollnoro,
+                    "callbackResult": "", "productId": amberTrunkDollniva ?? "",
+                    "success": false, "status": "failed", "message": amberCapsuleDolltavo,
+                    "reason": amberTrunkDollniva == nil ? "productUnavailable" : "orderUnavailable"
+                ]
+                ribbonDisplayDollrevo(amberHintDolllaro)
+                sunnyLayoutDollkora(amberHintDolllaro)
                 return
             }
 #if DEBUG
@@ -301,6 +313,87 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
         pastelPropDolllumi()
     }
 
+    private func sunnyLayoutDollkora(_ sunnyBootDollzora: [String: Any]) {
+        guard velvetSockDollhumi,
+              DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora[DolluCozyWardrobeDollukp.ribbonCategoryDollpiri]) == DolluCozyWardrobeDollukp.pearlCatalogDollnoro,
+              let sunnySeamlineDollmora = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora["status"]) else { return }
+        let sunnyRibbonlineDollvex = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora["reason"])
+        let sunnyTrunkDollmexa = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora["message"])
+            ?? "Unable to complete the purchase. Please try again later."
+        let winterMemoDollvelo = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora["callbackResult"])
+            ?? DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora["productId"]) ?? ""
+        let winterBackgroundDollpavo = [winterMemoDollvelo, sunnySeamlineDollmora, sunnyRibbonlineDollvex ?? "", sunnyTrunkDollmexa].joined(separator: "|")
+        guard sunnySetupDollsovo != winterBackgroundDollpavo else { return }
+
+        var winterStandDollbop = "Purchase Failed"
+        var winterLookbookDollzemi = UIColor(red: 1, green: 0.36, blue: 0.47, alpha: 1)
+        if sunnyBootDollzora["success"] as? Bool == true || sunnySeamlineDollmora == "verified" {
+            winterStandDollbop = "Purchase Successful"
+            winterLookbookDollzemi = UIColor(red: 0.25, green: 0.85, blue: 0.59, alpha: 1)
+        } else if sunnyRibbonlineDollvex == "productUnavailable" {
+            winterStandDollbop = "Product Unavailable"
+        } else if sunnyRibbonlineDollvex == "paymentsDisabled" {
+            winterStandDollbop = "Purchases Unavailable"
+        } else if sunnySeamlineDollmora == "cancelled" {
+            winterStandDollbop = "Purchase Cancelled"
+            winterLookbookDollzemi = UIColor(red: 0.67, green: 0.61, blue: 0.82, alpha: 1)
+        }
+        let winterFabricrollDollrilo = sunnyBootDollzora["success"] as? Bool == true || sunnySeamlineDollmora == "verified"
+            ? "checkmark" : "xmark"
+
+        guard viewIfLoaded?.window != nil else { return }
+        sunnySetupDollsovo = winterBackgroundDollpavo
+        self.sunnyBootDollzora?.cancel()
+        sunnyLayoutDollmora?.removeFromSuperview()
+
+        let winterStylingDollvani = DolluSunnyLayoutDollmoraNoticeView(
+            winterMemoDollvelo: winterStandDollbop,
+            winterBackgroundDollpavo: sunnyTrunkDollmexa,
+            winterStandDollbop: winterFabricrollDollrilo,
+            winterFabricrollDollrilo: winterLookbookDollzemi
+        )
+        view.addSubview(winterStylingDollvani)
+        NSLayoutConstraint.activate([
+            winterStylingDollvani.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            winterStylingDollvani.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            winterStylingDollvani.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
+            winterStylingDollvani.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
+            winterStylingDollvani.widthAnchor.constraint(lessThanOrEqualToConstant: 360)
+        ])
+        let springTagsetDollukp = winterStylingDollvani.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -48)
+        springTagsetDollukp.priority = .defaultHigh
+        springTagsetDollukp.isActive = true
+        sunnyLayoutDollmora = winterStylingDollvani
+
+        winterStylingDollvani.alpha = 0
+        winterStylingDollvani.transform = CGAffineTransform(translationX: 0, y: 10).scaledBy(x: 0.94, y: 0.94)
+        UIView.animate(
+            withDuration: UIAccessibility.isReduceMotionEnabled ? 0.16 : 0.36,
+            delay: 0,
+            usingSpringWithDamping: 0.78,
+            initialSpringVelocity: 0.6,
+            options: [.beginFromCurrentState, .curveEaseOut]
+        ) {
+            winterStylingDollvani.alpha = 1
+            winterStylingDollvani.transform = .identity
+        }
+        UIAccessibility.post(notification: .announcement, argument: "\(winterStandDollbop). \(sunnyTrunkDollmexa)")
+
+        let springSockDollniva = DispatchWorkItem { [weak self, weak winterStylingDollvani] in
+            guard let self, let winterStylingDollvani, self.sunnyLayoutDollmora === winterStylingDollvani else { return }
+            self.sunnyLayoutDollmora = nil
+            UIView.animate(withDuration: UIAccessibility.isReduceMotionEnabled ? 0.12 : 0.22,
+                           delay: 0, options: [.beginFromCurrentState, .curveEaseIn]) {
+                winterStylingDollvani.alpha = 0
+                winterStylingDollvani.transform = CGAffineTransform(translationX: 0, y: -8).scaledBy(x: 0.97, y: 0.97)
+            } completion: { _ in
+                winterStylingDollvani.removeFromSuperview()
+            }
+        }
+        self.sunnyBootDollzora = springSockDollniva
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: springSockDollniva)
+    }
+
     private func pastelPropDolllumi() {
         guard velvetTagsetDollcavo, velvetSockDollhumi, !velvetRuffleDollsovo else { return }
         let pastelTrimsheetDollvelo = pastelCatalogDollvani
@@ -318,6 +411,7 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
         guard presentedViewController == nil else { return }
         if DolluLaceArchiveDollmexa.pearlGuideDollukp(pearlOutfitDolllaro) {
             navigationController?.pushViewController(DolluALoj(dollRouteURL: pearlOutfitDolllaro), animated: true)
+            navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         } else if ["https", "http"].contains(pearlOutfitDolllaro.scheme?.lowercased() ?? ""), pearlOutfitDolllaro.host != nil {
             present(SFSafariViewController(url: pearlOutfitDolllaro), animated: true)
         }
@@ -362,6 +456,7 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
             if navigationAction.navigationType == .linkActivated { pearlStripeDolltavo(pearlGuideDollukp) }
             else { satinStitchmapDollzemi() }
         }
+
     }
 
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
@@ -370,8 +465,120 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
     }
 
     func webView(_ webView: WKWebView, requestMediaCapturePermissionFor origin: WKSecurityOrigin, initiatedByFrame frame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: @escaping (WKPermissionDecision) -> Void) {
-        guard frame.isMainFrame, let pearlGuideDollukp = frame.request.url,
-              DolluCozyWardrobeDollukp.pocketScarfDollyara(pearlGuideDollukp, cozyArchiveDollniva.laceWardrobeDollvex) else { decisionHandler(.deny); return }
-        decisionHandler(.prompt)
+        var pearlGuideDollukp = URLComponents()
+        pearlGuideDollukp.scheme = origin.protocol
+        pearlGuideDollukp.host = origin.host
+        pearlGuideDollukp.port = origin.port == 0 ? nil : origin.port
+        guard let pearlSkirtDollniva = webView.url,
+              DolluCozyWardrobeDollukp.pocketScarfDollyara(pearlSkirtDollniva, cozyArchiveDollniva.laceWardrobeDollvex),
+              let pearlStripeDolltavo = pearlGuideDollukp.url,
+              DolluCozyWardrobeDollukp.pocketScarfDollyara(pearlStripeDolltavo, cozyArchiveDollniva.laceWardrobeDollvex) else {
+            decisionHandler(.deny)
+            return
+        }
+        if type != .camera {
+            let opalTrimsheetDollyara = AVAudioSession.sharedInstance()
+            do {
+                try opalTrimsheetDollyara.setCategory(.playAndRecord, mode: .videoChat)
+                try opalTrimsheetDollyara.setActive(true)
+            } catch {
+                decisionHandler(.deny)
+                return
+            }
+        }
+        decisionHandler(.grant)
+    }
+}
+
+@MainActor
+private final class DolluSunnyLayoutDollmoraNoticeView: UIView {
+    private let springRuffleDolltavo = CAGradientLayer()
+
+    init(winterMemoDollvelo: String, winterBackgroundDollpavo: String,
+         winterStandDollbop: String, winterFabricrollDollrilo: UIColor) {
+        super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
+        isUserInteractionEnabled = false
+        isAccessibilityElement = true
+        accessibilityIdentifier = "Dollulieair.payResult.notice"
+        accessibilityLabel = "\(winterMemoDollvelo). \(winterBackgroundDollpavo)"
+        backgroundColor = UIColor(red: 0.08, green: 0.055, blue: 0.16, alpha: 0.97)
+        layer.cornerRadius = 22
+        layer.borderWidth = 1
+        layer.borderColor = winterFabricrollDollrilo.withAlphaComponent(0.48).cgColor
+        layer.shadowColor = winterFabricrollDollrilo.withAlphaComponent(0.55).cgColor
+        layer.shadowOpacity = 0.72
+        layer.shadowRadius = 22
+        layer.shadowOffset = CGSize(width: 0, height: 10)
+
+        springRuffleDolltavo.colors = [
+            winterFabricrollDollrilo.withAlphaComponent(0.22).cgColor,
+            UIColor(red: 0.11, green: 0.07, blue: 0.22, alpha: 0.05).cgColor
+        ]
+        springRuffleDolltavo.startPoint = CGPoint(x: 0, y: 0)
+        springRuffleDolltavo.endPoint = CGPoint(x: 1, y: 1)
+        springRuffleDolltavo.cornerRadius = 22
+        layer.insertSublayer(springRuffleDolltavo, at: 0)
+
+        let springDressformDolllaro = UIView()
+        springDressformDolllaro.translatesAutoresizingMaskIntoConstraints = false
+        springDressformDolllaro.backgroundColor = winterFabricrollDollrilo.withAlphaComponent(0.18)
+        springDressformDolllaro.layer.cornerRadius = 23
+        springDressformDolllaro.layer.borderWidth = 1
+        springDressformDolllaro.layer.borderColor = winterFabricrollDollrilo.withAlphaComponent(0.52).cgColor
+
+        let springCaseDollnoro = UIImageView(image: UIImage(systemName: winterStandDollbop))
+        springCaseDollnoro.translatesAutoresizingMaskIntoConstraints = false
+        springCaseDollnoro.contentMode = .scaleAspectFit
+        springCaseDollnoro.tintColor = winterFabricrollDollrilo
+        springCaseDollnoro.preferredSymbolConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .bold)
+        springDressformDolllaro.addSubview(springCaseDollnoro)
+
+        let springThemeDollyara = UILabel()
+        springThemeDollyara.translatesAutoresizingMaskIntoConstraints = false
+        springThemeDollyara.text = winterMemoDollvelo
+        springThemeDollyara.textColor = .white
+        springThemeDollyara.numberOfLines = 1
+        springThemeDollyara.adjustsFontSizeToFitWidth = true
+        springThemeDollyara.minimumScaleFactor = 0.82
+        springThemeDollyara.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+
+        let autumnPropDollmexa = UILabel()
+        autumnPropDollmexa.translatesAutoresizingMaskIntoConstraints = false
+        autumnPropDollmexa.text = winterBackgroundDollpavo
+        autumnPropDollmexa.textColor = UIColor(white: 1, alpha: 0.76)
+        autumnPropDollmexa.numberOfLines = 3
+        autumnPropDollmexa.font = UIFont.systemFont(ofSize: 13.5, weight: .regular)
+
+        let autumnGalleryDollpoxa = UIStackView(arrangedSubviews: [springThemeDollyara, autumnPropDollmexa])
+        autumnGalleryDollpoxa.translatesAutoresizingMaskIntoConstraints = false
+        autumnGalleryDollpoxa.axis = .vertical
+        autumnGalleryDollpoxa.alignment = .fill
+        autumnGalleryDollpoxa.spacing = 6
+
+        addSubview(springDressformDolllaro)
+        addSubview(autumnGalleryDollpoxa)
+        NSLayoutConstraint.activate([
+            springDressformDolllaro.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
+            springDressformDolllaro.centerYAnchor.constraint(equalTo: centerYAnchor),
+            springDressformDolllaro.widthAnchor.constraint(equalToConstant: 46),
+            springDressformDolllaro.heightAnchor.constraint(equalTo: springDressformDolllaro.widthAnchor),
+            springCaseDollnoro.centerXAnchor.constraint(equalTo: springDressformDolllaro.centerXAnchor),
+            springCaseDollnoro.centerYAnchor.constraint(equalTo: springDressformDolllaro.centerYAnchor),
+            springCaseDollnoro.widthAnchor.constraint(equalToConstant: 24),
+            springCaseDollnoro.heightAnchor.constraint(equalTo: springCaseDollnoro.widthAnchor),
+            autumnGalleryDollpoxa.topAnchor.constraint(equalTo: topAnchor, constant: 18),
+            autumnGalleryDollpoxa.leadingAnchor.constraint(equalTo: springDressformDolllaro.trailingAnchor, constant: 14),
+            autumnGalleryDollpoxa.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
+            autumnGalleryDollpoxa.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -18),
+            heightAnchor.constraint(greaterThanOrEqualToConstant: 88)
+        ])
+    }
+
+    required init?(coder: NSCoder) { nil }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        springRuffleDolltavo.frame = bounds
     }
 }

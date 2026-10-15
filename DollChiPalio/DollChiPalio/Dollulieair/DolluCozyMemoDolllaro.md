@@ -89,16 +89,14 @@ open 返回字段：
 | DolluCozyArchiveDollniva.swift | open 和验单网络请求 |
 | DolluCozySilhouetteDolltavo.swift | 启动分流、原账户回退、可选推送 token |
 | DolluCozyBackgroundDollnoro.swift | 登录入口与 B 面加载的共用背景、Logo、按钮和 loading |
-| DolluLaceWardrobeDollvex.swift | 远程页面、事件路由、安全区域、键盘 |
+| DolluLaceWardrobeDollvex.swift | 远程页面、事件路由、安全区域 |
 | DolluRibbonSnapshotDollyara.swift | 长连接、订阅、去重与重连 |
 | DolluSatinCollectionDollvelo.swift | StoreKit 2、订单关联、后台验单与恢复 |
 | DolluSatinCollarDollrilo.swift | app receipt 读取与刷新 |
-| DolluSageChecklistDollsero.swift | 仅 Debug 的离线协议回归检查 |
 
 ## 验证与待联调项
 
 - 本轮移除旧业务消息兼容后，Debug、Release 模拟器构建均通过。
-- 最新配置、网络解析和长连接源文件与 `DolluSageChecklistDollsero` 在独立离线入口执行 67 项检查通过，覆盖缺失地址、错误配置、状态码、凭证解析、同源检查、消息解码、当前消息模板与 H5 映射字段，并确认旧原始字段、旧事件、顶层参数和多动作消息被拒绝。另使用本地 URLProtocol 拦截实际网络层产生的三次请求，验证 open 无推送、open 有推送和验单的请求体、路径、请求头均符合配置，没有真实网络或购买操作。App 中仍可使用 Debug 启动环境 `DolluSageChecklistDollsero=1` 运行同一套协议检查。
 - iPhone 17 Pro 模拟器已实际取得 open HTTP 200、加载远程 H5、连接 Ably、订阅频道并收到 linkSuccessMessage；离线检查分支可回到原生界面。
 - 没有发起真实购买，也未使用虚构订单调用线上验单。尚需在匹配商品配置的沙盒账号下验证支付成功、取消、待批准、验单失败后重启恢复及 H5 权益更新。
 - 推送为可选项，仅在已有通知授权时注册；真机 APNs 需要匹配签名及 Push Notifications entitlement。当前工程 entitlement 尚未配置 APNs。
