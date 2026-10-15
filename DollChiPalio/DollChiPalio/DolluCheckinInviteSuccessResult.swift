@@ -306,7 +306,7 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { [weak self] in
             guard let self else { return }
             self.dollInvitePosted?(dollInvite)
-            let dollSuccess = DolluCheckinInviteSuccessViewController(dollInvite: dollInvite)
+            let dollSuccess = DolluCheckinInviteSuccessResult(dollInvite: dollInvite)
             self.navigationController?.pushViewController(dollSuccess, animated: true)
         }
     }
@@ -635,7 +635,7 @@ final class DolluCheckinImageSourcePanel: UIControl {
     }
 }
 
-final class DolluCheckinInviteSuccessViewController: UIViewController {
+final class DolluCheckinInviteSuccessResult: UIViewController {
     private let dollInvite: DollufrillyCapsuleDArchive
     private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
     private let ribbonDisplayDollrevo = UIScrollView()

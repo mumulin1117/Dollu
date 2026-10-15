@@ -8,13 +8,39 @@ struct DolluCollectorArchiveRecord: Codable {
     var dollEntryToken: String
     var dollArchiveDate: Date
 
-    private enum CodingKeys: String, CodingKey {
-        case dollCollectorId = "userId"
-        case dollCollectorEmail = "email"
-        case dollAccessSecret = "password"
-        case dollCollectorName = "nickname"
-        case dollEntryToken = "token"
-        case dollArchiveDate = "createdAt"
+    private enum CodingKeys: CodingKey {
+        case dollCollectorId
+        case dollCollectorEmail
+        case dollAccessSecret
+        case dollCollectorName
+        case dollEntryToken
+        case dollArchiveDate
+
+        var stringValue: String {
+            switch self {
+            case .dollCollectorId: return **"usxyerxyIdxy"
+            case .dollCollectorEmail: return **"emxyaixyl"
+            case .dollAccessSecret: return **"paxyssxywoxyrdxy"
+            case .dollCollectorName: return **"nixyckxynaxymexy"
+            case .dollEntryToken: return **"toxykexyn"
+            case .dollArchiveDate: return **"crxyeaxytexydAxyt"
+            }
+        }
+
+        init?(stringValue: String) {
+            switch stringValue {
+            case **"usxyerxyIdxy": self = .dollCollectorId
+            case **"emxyaixyl": self = .dollCollectorEmail
+            case **"paxyssxywoxyrdxy": self = .dollAccessSecret
+            case **"nixyckxynaxymexy": self = .dollCollectorName
+            case **"toxykexyn": self = .dollEntryToken
+            case **"crxyeaxytexydAxyt": self = .dollArchiveDate
+            default: return nil
+            }
+        }
+
+        var intValue: Int? { nil }
+        init?(intValue: Int) { nil }
     }
 }
 
@@ -24,11 +50,33 @@ struct DolluWardrobeArchiveSession: Codable {
     var currentDollCollectorId: String?
     var dollEntryToken: String?
 
-    private enum CodingKeys: String, CodingKey {
-        case dollCollectorIsInside = "isLoggedIn"
-        case currentDollCollectorEmail = "currentEmail"
-        case currentDollCollectorId = "userId"
-        case dollEntryToken = "token"
+    private enum CodingKeys: CodingKey {
+        case dollCollectorIsInside
+        case currentDollCollectorEmail
+        case currentDollCollectorId
+        case dollEntryToken
+
+        var stringValue: String {
+            switch self {
+            case .dollCollectorIsInside: return **"isxyLoxyggxyedxyInxy"
+            case .currentDollCollectorEmail: return **"cuxyrrxyenxytExymaxyilxy"
+            case .currentDollCollectorId: return **"usxyerxyIdxy"
+            case .dollEntryToken: return **"toxykexyn"
+            }
+        }
+
+        init?(stringValue: String) {
+            switch stringValue {
+            case **"isxyLoxyggxyedxyInxy": self = .dollCollectorIsInside
+            case **"cuxyrrxyenxytExymaxyilxy": self = .currentDollCollectorEmail
+            case **"usxyerxyIdxy": self = .currentDollCollectorId
+            case **"toxykexyn": self = .dollEntryToken
+            default: return nil
+            }
+        }
+
+        var intValue: Int? { nil }
+        init?(intValue: Int) { nil }
     }
 }
 

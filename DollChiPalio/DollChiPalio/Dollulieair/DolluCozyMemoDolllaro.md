@@ -4,18 +4,18 @@
 
 ## 配置与调用
 
-配置集中在 `DolluCozyWardrobeDollukp.swift`。
+配置集中在 `DolluCozyWardrobeDollukp.swift`，统一由 `DolluLaunchAtelierSeting.ifdebug` 选择，以配置文件当前值为准。
 
-- App ID：`39972965`；接口版本：后台选择 `openV3`，不额外拼到 URL 中。
-- open：`POST https://doll.n3wp67d4.link/dollu/cozyWardrobeDollukp`
-- 验单：`POST https://doll.n3wp67d4.link/dollu/satinCollectionDollvelo`
-- JSON 请求；请求头 `appid`、`key` 均为 `39972965`。本地账户 token 仍仅用于原业务接口。
-- open 入参：`velvetTagset`（复用已有 Keychain 设备标识）、`wardrobe`（App 版本）、有值才传的 `cozyMemoDolllaro`（推送 Token）。
-- 验单入参：`dollcavo`（Apple 交易号）、`ribbonDisplayDollrevo`（Base64 app receipt）、`pastelProp`（H5 回传的后台订单号）。请求不会同时提交旧的原始字段名。
+| `ifdebug` | 环境 | App ID | 域名 | open | 验单 |
+| --- | --- | --- | --- | --- | --- |
+| `false` | 当前 Dollu 自定义环境 | `39972965` | `https://doll.n3wp67d4.link` | `/dollu/cozyWardrobeDollukp` | `/dollu/satinCollectionDollvelo` |
+| `true` | 平台测试环境 | `44332211` | `https://api.zwwtesttop.top` | `/app/open` | `/app/p` |
 
-平台最新字段映射（大小写与截图一致）：
+两套环境均为 JSON POST，请求头 `appid`、`key` 使用各自 App ID。本地账户 token 仍仅用于原业务接口；设备标识继续复用 Keychain，不因环境切换而重新生成。
 
-| 平台含义 | 实际字段名 |
+### `ifdebug == false`
+
+| 平台含义 | 当前字段名 |
 | --- | --- |
 | appVersion | wardrobe |
 | pushToken | cozyMemoDolllaro |
@@ -28,16 +28,46 @@
 | H5 batchNo | ribbonSnaps |
 | H5 openUrl | shotDollyarafoverlin |
 
-`cozyDolltavo` 仅为主动调用平台下发消息时使用的映射；当前客户端接收长连接消息，不会把它附加到 open 或验单请求。三个可选 Adjust 字段未配置，客户端不发送。
+open 响应内容：
 
-open 返回字段：
+```json
+{
+  "laceWardrobeDollvex": "#{h5Url}",
+  "velvetStitchmapDollmexa": "#{tokenResult}",
+  "ribbonSnapshotDollyara": "#{roomId}",
+  "laceArchiveDollmexa": "#{webSocketUrl}"
+}
+```
 
-| 字段 | 用途 |
+验单成功响应为 `{}`。
+
+### `ifdebug == true`
+
+| 平台含义 | 测试字段名 |
 | --- | --- |
-| laceWardrobeDollvex | 完整 H5 URL，直接使用，不追加本地 token |
-| velvetStitchmapDollmexa | Ably token，兼容字符串、token 对象及该对象的 JSON 字符串 |
-| ribbonSnapshotDollyara | 订阅频道 |
-| laceArchiveDollmexa | WebSocket URL |
+| appVersion | appVersion |
+| pushToken | pushToken |
+| deviceNo | deviceNo |
+| transactionId | transactionId |
+| payload | payload |
+| callbackResult | callbackResult |
+| roomPushMsgType | roomPushMsgType |
+| H5 orderCode | orderCode |
+| H5 batchNo | batchNo |
+| H5 openUrl | openUrl |
+
+open 响应内容：
+
+```json
+{
+  "h5Url": "#{h5Url}",
+  "tokenResult": "#{tokenResult}",
+  "roomId": "#{roomId}",
+  "webSocketUrl": "#{webSocketUrl}"
+}
+```
+
+验单成功响应同样为 `{}`。
 
 支持当前实测的原始 JSON 响应和字典/JSON 字符串形式的 data 信封。存在业务状态码时只接受字符串 `0000`。HTTP 非 2xx、错误状态、错误字段和无效配置均报错。根据当前配置，验单 HTTP 2xx 且响应严格为 `{}` 时视为成功；不能将任意非空 JSON 当成功。
 
@@ -51,12 +81,22 @@ open 返回字段：
 6. 远程 B 面业务指令只通过 Ably 下发，不注册 JS messageHandler；媒体与导航仍执行同源检查。外部链接与本地路由分别处理。
 7. 登录入口和 B 面加载遮罩共用 `DolluCozyBackgroundDollnoro`：点击 Sign In 进入时，按钮在 open 请求及 H5 加载期间保持显示且不可点击；启动自动进入 B 面时不显示登录按钮。两者的 B 面背景均为 `lacePromptDollkora`。
 8. WebView 首次加载期间保持隐藏；当前导航 didFinish 后，页面与加载遮罩做 0.3 秒淡入淡出，完成后隐藏遮罩并停止 loading。开启“减弱动态效果”时直接切换。没有额外固定 1 秒等待；过期导航回调不会结束当前加载状态。
+9. B 面登录状态仅保存在 UserDefaults，键为 `Dollulieair.cozyMemoDolllaro.<appid>`：退出时写入 `false`，进入 B 且当前 H5 加载完成后写入 `true`。退出后冷启动仍请求 open 判断 A/B；若返回 B 且状态为 `false`，则停在登录入口，点击 Log In 后才再次请求 open 并加载页面。加载失败或中途关闭 App 不会提前写入 `true`。首次使用保留原自动进入流程；旧版反向退出标记仅作为尚无新状态时的读取兜底，避免升级后恢复已退出的登录态。
 
 ## 长连接和消息
 
 使用系统 URLSessionWebSocketTask 实现当前所需的 Ably JSON 连接与订阅流程，没有引入第三方 SDK，也不再兼容非 Ably 网关信封。已实现频道检查、JSON/base64 解码、消息 ID 去重、心跳、前后台暂停恢复、指数退避重连和重取 open 配置。频道或页面来源变化时结束旧会话；Ably 断开、关闭和认证错误都会进入同一重连流程。
 
-按用户最新平台配置截图，当前消息字段如下（占位符由平台替换为实际值）：
+### 主动请求平台下发
+
+- 复用当前环境的 open 路径，以 JSON POST 携带原有设备号、版本号、可选 push token，以及固定为整数 `2` 的操作参数。测试字段为 `roomPushMsgType`，正式字段为 `cozyDolltavo`。发送方法 `ribbonPleatDollruni()` 无需传参，仅请求后台配置的连接成功消息。普通 open、推送 token 更新和验单请求不自动携带该参数。
+- 匹配频道的 Ably 订阅成功（action 11）后，单独启动请求发送类型 `2`，让平台下发已配置的“连接成功”消息。每条连接只请求一次；实际重连后重新请求。HTTP 等待不阻塞 Ably 接收，停止页面或连接时取消请求。请求失败只记录 Debug 日志，保留当前连接，下次实际重连时再尝试。
+- HTTP 响应仅用于确认请求成功，不重新分流 A/B、不改登录状态、不重载 H5。实际消息仍从 Ably 接收，按当前后台事件配置处理；不在客户端伪造连接成功消息，也不假设入参映射同时作用于下行消息。
+- Debug 中的 `room message request accepted` 仅表示 HTTP/业务响应已通过校验，不能代替 Ably 消息到达确认。平台联调需确认复用 open 路径时的实际下发及重连行为。
+
+### 接收与处理
+
+`ifdebug == false` 使用当前自定义消息字段（占位符由平台替换为实际值）：
 
 ```json
 {"velvetPose":"linkSuccessMessage","ribbonSnapshot":"#{h5Url}"}
@@ -65,21 +105,42 @@ open 返回字段：
 {"pearlEnsemble":"openBrowser","data":{"ltavo":"#{openUrl}"}}
 ```
 
-- 四类事件仅读取 `cozyArchiveDoll`、`gentleEnsemble`、`pearlEnsemble`、`velvetPose`，字段和值必须对应且一条消息只能指定一种动作。已移除旧业务事件 `event/action`、Ably `name` 补事件、顶层参数兜底和远程 JS 桥。支付和外链参数必须位于 `data` 中；旧格式、未知事件和冲突事件直接忽略。
-- pay：只读取当前消息模板明确指定的 `llmivoRoute`（Apple 商品 ID）和 `kirt`（后台订单号）。平台 H5 字段映射负责生成占位符值，不作为长连接消息的第二套字段继续兼容。购买仍调用原 StoreKit 2 实现，验单请求使用 `dollcavo/ribbonDisplayDollrevo/pastelProp`，其中 `pastelProp` 使用解析出的后台订单号。过期 Ably 支付指令不再次自动唤起购买框。
-- logout：复用 `closeDollCollectorSession()`，仅结束当前本地登录态，不删除注册记录；返回需手动点击 Sign In 的入口，避免退出后立即自动登录。
-- openBrowser：只从当前消息模板的 `data.ltavo` 读取 URL；原本地路由交给原加载器，外部 HTTP(S) 链接交给系统；外部打开结果通过 `nativeOpenState` CustomEvent 返回页面。
-- linkSuccessMessage 的 `velvetPose/ribbonSnapshot` 保持原内容，通过 message 事件转交 H5；页面未就绪时先排队。不使用该消息改写 open 接口返回的页面地址。已删除旧 `ready` 消息入口，页面就绪由当前 WebView 导航的 didFinish 回调确定。
-- 原生支付结果以 payResult message 事件交给当前频道页面；最终权益以后台验单和后台下发结果为准。该反向回传仍沿用现有的 `event/productId/callbackResult` 字段，不能将截图中 HTTP 入参或 H5 下发字段的映射自动套到这个独立方向；H5 是否消费该事件仍待联调。`data`、事件值和 Ably 协议字段（包括数值 action）属于当前通信协议。本地 H5 的独立处理器及原有购买逻辑不属于本次清理范围。
-- Debug 日志会记录识别出的事件以及支付是否通过字段检查；过期、页面不可见、缺少商品或订单时记录原因，不打印订单值、URL、token 或票据。
+`ifdebug == true` 使用测试环境默认消息字段：
+
+```json
+{"event":"linkSuccessMessage","url":"#{h5Url}"}
+{"event":"pay","data":{"orderCode":"#{orderCode}","batchNo":"#{batchNo}"}}
+{"event":"logout"}
+{"event":"openBrowser","data":{"openUrl":"#{openUrl}"}}
+```
+
+- 四类事件严格读取当前环境配置的事件字段和值，一条消息只能指定一种动作。Ably `name`、顶层参数兜底和远程 JS 桥均不参与解析。支付和外链参数必须位于当前环境的 `data` 字段中；未知事件和冲突事件直接忽略。
+- pay：`false` 读取 `llmivoRoute`（Apple 商品 ID）和 `kirt`（后台订单号）；`true` 读取 `batchNo` 和 `orderCode`。购买统一调用 StoreKit 1 实现，并使用当前环境的验单字段。过期 Ably 支付指令不再次自动唤起购买框。
+- logout：先将 UserDefaults 中的 B 面登录状态设为 `false`，再复用 `closeDollCollectorSession()` 结束当前本地登录态。使用 WebKit 原生异步接口删除匹配当前远程 H5 站点的记录（包含 Cookie、LocalStorage、IndexedDB），完成后返回手动登录入口。WebKit 站点记录可能合并同一主域下的子域；保留其他站点、本地注册记录和 Keychain 设备标识。
+- openBrowser：`false` 读取 `data.ltavo`，`true` 读取 `data.openUrl`；原本地路由交给原加载器，外部 HTTP(S) 链接统一校验并使用 `SFSafariViewController` 内置浏览器。仅被该浏览器覆盖时保持 Ably 连接，实际切到后台仍暂停并在回前台后重连。已加载 H5 的 JavaScript 外链跳转复用同一入口；主动取消导航不会触发首页重载。
+- linkSuccessMessage：`false` 使用 `velvetPose/ribbonSnapshot`，`true` 使用 `event/url`，原消息保持完整并通过 message 事件转交 H5。
+- 原生支付结果以 `payResult` message 事件交给当前频道页面；两套环境当前都配置为 `event/productId/callbackResult/success/status/message/reason`。外链打开结果配置为 `event=nativeOpenState`，并携带 `state/source`。这些反向回传字段也集中在环境配置中；平台以后提供不同映射时，只修改对应环境配置。最终权益仍以后台验单和后台下发结果为准，H5 是否消费回传事件仍待联调。`data` 和 Ably 协议字段（包括数值 action）属于传输协议。本地 H5 的独立处理器及原有购买逻辑不属于本次清理范围。
+- Debug 日志记录事件及支付字段检查。验单额外打印接口 URL、交易号、原订单号、HTTP 状态和原始响应体（包括非 2xx 和非 JSON），便于区分平台拒单、空响应与解析失败；不打印请求 receipt、设备号或 open 凭证，Release 不输出这些诊断。过滤 `Dollulieair verify` 查看验单，过滤 `Dollulieair purchase result` 查看提示原因。
 
 ## 订单和账户数据
 
-购买使用 StoreKit 2 的 Product.purchase、Transaction.updates 和 Transaction.unfinished。购买前生成 appAccountToken 并持久化它与订单、商品及频道的关系，防止异步交易错配。对应 UserDefaults 键仅为 `Dollulieair.satinCollectionDollvelo`，不替换原账户存储。
+购买统一使用 StoreKit 1：`SKProductsRequest` 获取商品 → `SKMutablePayment` 加入 `SKPaymentQueue` → `SKPaymentTransactionObserver` 处理结果。B 模块已移除 `Product.purchase`、`Transaction.updates`、`Transaction.unfinished` 及异步交易 finish 分支。原本地 H5 独立购买入口不在本次替换范围。
 
-只有 Apple 验证通过且后台验单成功才 finish 新模块交易；失败保留 unfinished，启动、回前台或用户重试时继续处理。重复订单不重复发起扣款。同一笔交易的恢复和即时购买回调会合并验单。无 appAccountToken 的原有购买仍保留旧监听的完成行为。
+购买前保存订单、商品、频道和 UUID，再把该 UUID 设为 `applicationUsername` 以关联回调。`false` 继续使用原键 `Dollulieair.satinCollectionDollvelo`；`true` 使用独立 `.debug` 键，两套环境不混用订单。新增可选 `miniLayerDollmivo`：商品查询前为 false，提交 Apple 前持久化为 true。只释放明确未提交 Apple 的草稿；历史记录缺省、等待批准或结果不明确时，不能因为队列暂时为空就删除。
 
-后台要求 app receipt，因此使用 SKReceiptRefreshRequest 取得票据；这不是改用 StoreKit 1 购买。后台恢复只读取已有票据，用户主动购买/重试时才刷新，避免应用冷启动时自行触发 Apple ID 登录框。持久化中不保存 receipt、H5 token 或完整带凭证 URL。
+苹果交易字符串 ID 保存在 `tinyDisplayDollsovo`；历史数值字段 `satinCollarDollrilo` 仅用于兼容读取，直接转成字符串补验，不调用旧支付 API。等待原因 `tinyCoverDollmexa` 和到账标记 `satinCoatDollbop` 继续保留。收到 purchased/restored 后先落盘交易号，再把交易号、App Receipt 和原 H5 订单交给当前环境验单接口。后台确认成功、本地保存到账标记后才 `finishTransaction`；验单失败保留原订单与队列交易。
+
+启动、回前台、用户再次点击都会检查 SKPaymentQueue 和本地已保存的待验单记录。按订单 UUID 合并在途验单，避免队列回调与本地补验同时提交。购买前按商品检查待单，新 H5 订单号不能绕过已扣款记录。存在待单时本次点击只补验并回传原订单结果，即使补验成功也不接着扣款；下一次新订单才可购买。成功结果早于 B 页创建时先排队，页面连接就绪后再交付提示与回传事件。
+
+历史已扣款记录若不在 SKPaymentQueue 中，仍使用保存的交易号和 App Receipt 补验，后台成功后保存到账状态；没有 SKPaymentTransaction 对象时不能调用 finishTransaction。若该历史交易尚未包含于 App Receipt，客户端不能仅凭交易号解决平台验单失败，也不会擅自清除待单。需要平台核对原交易，或其后取得包含该交易的票据再补验。
+
+已购买待验单显示 `Purchase Processing`，提示购买已完成、正在确认余额、请勿重复购买；苹果 `.deferred` 显示 `Awaiting Approval`，结果不确定显示 `Purchase Unconfirmed`。连续点击且 Apple 尚未返回结果时使用 `Purchase in Progress`，与验单中的 `Purchase Processing` 区分。状态提示保留现有样式并在两秒后自动消失。商品无效、购买限制、取消和失败均沿用原提示及 H5 回传字段。
+
+后台仍需保证同一苹果交易和原订单重复验单只发币一次，已到账的重试返回成功。客户端不将普通冲突错误当作成功；后台发币成功但响应丢失依赖平台幂等处理。
+
+新购买优先读取系统更新的 App Receipt，只有缺失时才允许刷新；手动补验强制刷新；后台恢复始终只读，避免冷启动触发 Apple ID 登录框。共用刷新任务只等待完成，每个调用随后重新读取文件，不缓存旧票据 Data。持久化不保存 receipt、H5 token 或完整带凭证 URL。
+
+商品查询开始后购买入口持续等待 Apple 返回 purchased、failed 或 deferred，再统一释放购买状态并关闭 loading；重复点击不会另开购买或提前关闭首单 loading。补验任务已经回传结果时，购买入口不再次重复发送 pending。已到账订单仅供幂等判断，不参与同商品待单拦截；明确取消/失败且没有交易号的记录仍会清理。
 
 ## 文件职责
 
@@ -91,15 +152,16 @@ open 返回字段：
 | DolluCozyBackgroundDollnoro.swift | 登录入口与 B 面加载的共用背景、Logo、按钮和 loading |
 | DolluLaceWardrobeDollvex.swift | 远程页面、事件路由、安全区域 |
 | DolluRibbonSnapshotDollyara.swift | 长连接、订阅、去重与重连 |
-| DolluSatinCollectionDollvelo.swift | StoreKit 2、订单关联、后台验单与恢复 |
+| DolluSatinCollectionDollvelo.swift | StoreKit 1、订单关联、后台验单与恢复 |
 | DolluSatinCollarDollrilo.swift | app receipt 读取与刷新 |
 
 ## 验证与待联调项
 
+- 2026-10-15 最新验证：购买协调器 98 项检查、票据读取/刷新 14 项检查、验单响应日志 12 项检查通过（均为源码派生测试，隔离存储/StoreKit/网络替身，无真实扣款）；覆盖连续点击、loading 生命周期、所有 Apple 回调释放路径、已到账单不阻断、原交易补验及非 2xx/非 JSON 响应日志。Debug 真机、Debug/Release 模拟器构建通过，不能用这些结果代替真实沙盒到账验证。
 - 本轮移除旧业务消息兼容后，Debug、Release 模拟器构建均通过。
 - iPhone 17 Pro 模拟器已实际取得 open HTTP 200、加载远程 H5、连接 Ably、订阅频道并收到 linkSuccessMessage；离线检查分支可回到原生界面。
-- 没有发起真实购买，也未使用虚构订单调用线上验单。尚需在匹配商品配置的沙盒账号下验证支付成功、取消、待批准、验单失败后重启恢复及 H5 权益更新。
-- 推送为可选项，在 B 面 H5 首次加载成功后申请授权并注册；真机 APNs 需要匹配签名及 Push Notifications entitlement。当前工程 entitlement 尚未配置 APNs。
+- 真机此前出现过 Apple 沙盒交易号未包含在 App Receipt、平台返回 transaction id not in the transaction list 的问题。本轮纯 StoreKit 1 的新购买、取消、待批准、断网补验和 H5 权益更新仍需沙盒确认；不能将构建或离线测试当成实际到账验证。
+- 推送为可选项，在 B 面 H5 首次加载成功后申请授权并注册；当前 entitlement 为 development，正式发布仍需匹配 Distribution 签名与生产 APNs 配置。
 - 小屏、横屏、远程 H5 的所有表单键盘交互尚未逐页实机验收。
 
 建议联调顺序：正常启动 → 后台关闭 H5 后回原界面 → 网络断开与恢复 → H5 外链和退出 → 沙盒支付与断网恢复。不要通过改变本地用户记录模拟后台身份。

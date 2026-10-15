@@ -38,6 +38,7 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let navigation, !velvetRuffleDollsovo, navigation === satinCoatDollbop else { return }
+        DolluCozySilhouetteDolltavo.gentleEnsembleDollbop = true
         pastelEnsembleDollfina?.cancel()
         mistyThemeDollfina?.cancel()
         mistyThemeDollfina = nil
@@ -105,10 +106,13 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
         ribbonSnapshotDollyara.cozyBackgroundDollnoro = { [weak self] in self?.satinMarkerDollpavo(); self?.cozyBackgroundDollnoro() }
         ribbonSnapshotDollyara.laceBonnetDollzora = { [weak self] in self?.satinMarkerDollpavo(); self?.laceBonnetDollzora() }
         DolluSatinCollectionDollvelo.satinCollectionDollvelo.ribbonDisplayDollrevo = { [weak self] satinMarkerDollpavo, satinCoatDollbop in
-            guard let self, !self.velvetRuffleDollsovo, satinMarkerDollpavo == self.cozyArchiveDollniva.ribbonSnapshotDollyara else { return }
+            guard let self, !self.velvetRuffleDollsovo,
+                  satinMarkerDollpavo == self.cozyArchiveDollniva.ribbonSnapshotDollyara else { return false }
             self.ribbonDisplayDollrevo(satinCoatDollbop)
             self.sunnyLayoutDollkora(satinCoatDollbop)
+            return true
         }
+        DolluSatinCollectionDollvelo.satinCollectionDollvelo.ribbonPleatDollruni(cozyArchiveDollniva.ribbonSnapshotDollyara)
         pastelNoteDollquvo.append(NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { [weak self] _ in
             MainActor.assumeIsolated { self?.ribbonSnapshotDollyara.satinMarkerDollpavo() }
         })
@@ -131,7 +135,7 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         velvetSockDollhumi = false
-        ribbonSnapshotDollyara.satinMarkerDollpavo()
+        if !(presentedViewController is SFSafariViewController) { ribbonSnapshotDollyara.satinMarkerDollpavo() }
     }
 
     deinit {
@@ -256,17 +260,18 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
 #if DEBUG
                 NSLog("Dollulieair pay rejected: missing product/order; fields=%@", ribbonHemlineDollukp.keys.sorted().joined(separator: ","))
 #endif
-                let amberTrunkDollniva = DolluCozyWardrobeDollukp.tinyCoverDollmexa(
-                    ribbonHemlineDollukp["llmivoRoute"]
-                )
+                let amberTrunkDollniva = DolluCozyWardrobeDollukp.pastelGalleryDollmivo(ribbonHemlineDollukp)
                 let amberCapsuleDolltavo = amberTrunkDollniva == nil
                     ? "This product is unavailable. Please try again later."
                     : "The purchase request is invalid. Please try again later."
                 let amberHintDolllaro: [String: Any] = [
                     DolluCozyWardrobeDollukp.ribbonCategoryDollpiri: DolluCozyWardrobeDollukp.pearlCatalogDollnoro,
-                    "callbackResult": "", "productId": amberTrunkDollniva ?? "",
-                    "success": false, "status": "failed", "message": amberCapsuleDolltavo,
-                    "reason": amberTrunkDollniva == nil ? "productUnavailable" : "orderUnavailable"
+                    DolluCozyWardrobeDollukp.tinyCoverDollmexa: "",
+                    DolluCozyWardrobeDollukp.tinyCapeDollpoxa: amberTrunkDollniva ?? "",
+                    DolluCozyWardrobeDollukp.tinySleeveDollsero: false,
+                    DolluCozyWardrobeDollukp.tinyFabricbookDollcavo: "failed",
+                    DolluCozyWardrobeDollukp.tinySnapshotDollhumi: amberCapsuleDolltavo,
+                    DolluCozyWardrobeDollukp.tinyDisplayDollsovo: amberTrunkDollniva == nil ? "productUnavailable" : "orderUnavailable"
                 ]
                 ribbonDisplayDollrevo(amberHintDolllaro)
                 sunnyLayoutDollkora(amberHintDolllaro)
@@ -279,24 +284,30 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
                 guard let self else { return }
                 self.velvetPoseDollsero.startAnimating()
                 await DolluSatinCollectionDollvelo.satinCollectionDollvelo.pearlGuideDollukp(laceLayerDollsovo, satinStitchmapDollzemi: lacePromptDollkora, ribbonSnapshotDollyara: self.cozyArchiveDollniva.ribbonSnapshotDollyara)
-                self.velvetPoseDollsero.stopAnimating()
+                if !DolluSatinCollectionDollvelo.satinCollectionDollvelo.velvetPoseDollsero {
+                    self.velvetPoseDollsero.stopAnimating()
+                }
             }
         case DolluCozyWardrobeDollukp.pearlSkirtDollniva:
+            DolluCozySilhouetteDolltavo.gentleEnsembleDollbop = false
             satinMarkerDollpavo()
-            // 仅复用现有退出状态操作，保留注册资料和本地内容。
             DolluWardrobeArchiveStore.satinCollectionArchive.closeDollCollectorSession()
-            laceBonnetDollzora()
+            Task { [weak self] in
+                guard let self else { return }
+                // 保留 Keychain 设备标识和本地注册资料，只清理当前远程 H5 域名的会话数据。
+                await self.ivoryBodiceDollvelo()
+                self.laceBonnetDollzora()
+            }
         case DolluCozyWardrobeDollukp.pearlStripeDolltavo:
             guard velvetSockDollhumi, let laceLayerDollsovo = DolluCozyWardrobeDollukp.ribbonHemlineDollukp(ribbonHemlineDollukp),
                   let lacePromptDollkora = URL(string: laceLayerDollsovo) else { return }
-            if DolluLaceArchiveDollmexa.pearlGuideDollukp(lacePromptDollkora) {
-                pearlStripeDolltavo(lacePromptDollkora)
-            } else {
-                guard ["https", "http"].contains(lacePromptDollkora.scheme?.lowercased() ?? ""), lacePromptDollkora.host != nil else { return }
-                UIApplication.shared.open(lacePromptDollkora, options: [:]) { [weak self] satinCoatDollbop in
-                    self?.ribbonDisplayDollrevo(["event": "nativeOpenState", "state": satinCoatDollbop ? "success" : "failed", "source": "native"])
-                }
-            }
+            let satinCoatDollbop = pearlStripeDolltavo(lacePromptDollkora)
+            guard !DolluLaceArchiveDollmexa.pearlGuideDollukp(lacePromptDollkora) else { return }
+            ribbonDisplayDollrevo([
+                DolluCozyWardrobeDollukp.ribbonCategoryDollpiri: DolluCozyWardrobeDollukp.miniBlouseDollvani,
+                DolluCozyWardrobeDollukp.miniTextureDollfina: satinCoatDollbop ? "success" : "failed",
+                DolluCozyWardrobeDollukp.miniAccessoryDollquvo: DolluCozyWardrobeDollukp.miniShelfDolllumi
+            ])
         case DolluCozyWardrobeDollukp.pearlEnsembleDollyara:
             // 平台已生成连接配置，保持其内容，不能用本地猜测的数据覆盖。
             ribbonDisplayDollrevo(ribbonApronDollnexa)
@@ -314,21 +325,33 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
     private func sunnyLayoutDollkora(_ sunnyBootDollzora: [String: Any]) {
         guard velvetSockDollhumi,
               DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora[DolluCozyWardrobeDollukp.ribbonCategoryDollpiri]) == DolluCozyWardrobeDollukp.pearlCatalogDollnoro,
-              let sunnySeamlineDollmora = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora["status"]) else { return }
-        let sunnyRibbonlineDollvex = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora["reason"])
-        let sunnyTrunkDollmexa = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora["message"])
+              let sunnySeamlineDollmora = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora[DolluCozyWardrobeDollukp.tinyFabricbookDollcavo]) else { return }
+        let sunnyRibbonlineDollvex = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora[DolluCozyWardrobeDollukp.tinyDisplayDollsovo])
+        let sunnyTrunkDollmexa = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora[DolluCozyWardrobeDollukp.tinySnapshotDollhumi])
             ?? "Unable to complete the purchase. Please try again later."
-        let winterMemoDollvelo = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora["callbackResult"])
-            ?? DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora["productId"]) ?? ""
+        let winterMemoDollvelo = DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora[DolluCozyWardrobeDollukp.tinyCoverDollmexa])
+            ?? DolluCozyWardrobeDollukp.tinyCoverDollmexa(sunnyBootDollzora[DolluCozyWardrobeDollukp.tinyCapeDollpoxa]) ?? ""
         let winterBackgroundDollpavo = [winterMemoDollvelo, sunnySeamlineDollmora, sunnyRibbonlineDollvex ?? "", sunnyTrunkDollmexa].joined(separator: "|")
         guard sunnySetupDollsovo != winterBackgroundDollpavo else { return }
 
         var winterStandDollbop = "Purchase Failed"
         var winterLookbookDollzemi = UIColor(red: 1, green: 0.36, blue: 0.47, alpha: 1)
-        if sunnyBootDollzora["success"] as? Bool == true || sunnySeamlineDollmora == "verified" {
+        var winterFabricrollDollrilo = "xmark"
+        if sunnyBootDollzora[DolluCozyWardrobeDollukp.tinySleeveDollsero] as? Bool == true || sunnySeamlineDollmora == "verified" {
             winterStandDollbop = "Purchase Successful"
             winterLookbookDollzemi = UIColor(red: 0.25, green: 0.85, blue: 0.59, alpha: 1)
-        } else if sunnyRibbonlineDollvex == "productUnavailable" {
+            winterFabricrollDollrilo = "checkmark"
+        } else if ["verificationPending", "purchasePending", "purchaseUnverified", "purchaseUnknown", "purchaseInProgress", "purchaseRetry"].contains(sunnyRibbonlineDollvex ?? "") {
+            switch sunnyRibbonlineDollvex {
+            case "purchasePending": winterStandDollbop = "Awaiting Approval"
+            case "purchaseInProgress": winterStandDollbop = "Purchase in Progress"
+            case "purchaseUnverified", "purchaseUnknown": winterStandDollbop = "Purchase Unconfirmed"
+            case "purchaseRetry": winterStandDollbop = "Ready to Try Again"
+            default: winterStandDollbop = "Purchase Processing"
+            }
+            winterLookbookDollzemi = UIColor(red: 0.50, green: 0.67, blue: 0.94, alpha: 1)
+            winterFabricrollDollrilo = "clock"
+        } else if ["productUnavailable", "productConfiguration"].contains(sunnyRibbonlineDollvex ?? "") {
             winterStandDollbop = "Product Unavailable"
         } else if sunnyRibbonlineDollvex == "paymentsDisabled" {
             winterStandDollbop = "Purchases Unavailable"
@@ -336,9 +359,6 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
             winterStandDollbop = "Purchase Cancelled"
             winterLookbookDollzemi = UIColor(red: 0.67, green: 0.61, blue: 0.82, alpha: 1)
         }
-        let winterFabricrollDollrilo = sunnyBootDollzora["success"] as? Bool == true || sunnySeamlineDollmora == "verified"
-            ? "checkmark" : "xmark"
-
         guard viewIfLoaded?.window != nil else { return }
         sunnySetupDollsovo = winterBackgroundDollpavo
         self.sunnyBootDollzora?.cancel()
@@ -379,13 +399,15 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
 
         let springSockDollniva = DispatchWorkItem { [weak self, weak winterStylingDollvani] in
             guard let self, let winterStylingDollvani, self.sunnyLayoutDollmora === winterStylingDollvani else { return }
-            self.sunnyLayoutDollmora = nil
             UIView.animate(withDuration: UIAccessibility.isReduceMotionEnabled ? 0.12 : 0.22,
                            delay: 0, options: [.beginFromCurrentState, .curveEaseIn]) {
                 winterStylingDollvani.alpha = 0
                 winterStylingDollvani.transform = CGAffineTransform(translationX: 0, y: -8).scaledBy(x: 0.97, y: 0.97)
             } completion: { _ in
                 winterStylingDollvani.removeFromSuperview()
+                guard self.sunnyLayoutDollmora === winterStylingDollvani else { return }
+                self.sunnyLayoutDollmora = nil
+                self.sunnySetupDollsovo = nil
             }
         }
         self.sunnyBootDollzora = springSockDollniva
@@ -397,22 +419,44 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
         let pastelTrimsheetDollvelo = pastelCatalogDollvani
         pastelCatalogDollvani.removeAll()
         for ribbonCategoryDollpiri in pastelTrimsheetDollvelo {
-            if ribbonCategoryDollpiri["event"] as? String == "nativeOpenState" {
-                pastelGalleryDollmivo.callAsyncJavaScript("window.dispatchEvent(new CustomEvent('nativeOpenState', {detail: ribbonCategoryDollpiri}));", arguments: ["ribbonCategoryDollpiri": ribbonCategoryDollpiri], in: nil, in: .page, completionHandler: nil)
+            if ribbonCategoryDollpiri[DolluCozyWardrobeDollukp.ribbonCategoryDollpiri] as? String == DolluCozyWardrobeDollukp.miniBlouseDollvani {
+                pastelGalleryDollmivo.callAsyncJavaScript("window.dispatchEvent(new CustomEvent(miniBlouseDollvani, {detail: ribbonCategoryDollpiri}));", arguments: ["miniBlouseDollvani": DolluCozyWardrobeDollukp.miniBlouseDollvani, "ribbonCategoryDollpiri": ribbonCategoryDollpiri], in: nil, in: .page, completionHandler: nil)
             } else {
                 pastelGalleryDollmivo.callAsyncJavaScript("window.dispatchEvent(new MessageEvent('message', {data: ribbonCategoryDollpiri}));", arguments: ["ribbonCategoryDollpiri": ribbonCategoryDollpiri], in: nil, in: .page, completionHandler: nil)
             }
         }
     }
 
-    private func pearlStripeDolltavo(_ pearlOutfitDolllaro: URL) {
-        guard presentedViewController == nil else { return }
+    @discardableResult
+    private func pearlStripeDolltavo(_ pearlOutfitDolllaro: URL) -> Bool {
+        guard presentedViewController == nil else { return false }
         if DolluLaceArchiveDollmexa.pearlGuideDollukp(pearlOutfitDolllaro) {
             navigationController?.pushViewController(DolluALoj(dollRouteURL: pearlOutfitDolllaro), animated: true)
             navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+            return true
         } else if ["https", "http"].contains(pearlOutfitDolllaro.scheme?.lowercased() ?? ""), pearlOutfitDolllaro.host != nil {
             present(SFSafariViewController(url: pearlOutfitDolllaro), animated: true)
+            return true
         }
+        return false
+    }
+
+    private func ivoryBodiceDollvelo() async {
+        guard let ivoryPaletteDollpavo = cozyArchiveDollniva.laceWardrobeDollvex.host?.lowercased() else { return }
+        let ivoryClipnoteDollbop = pastelGalleryDollmivo.configuration.websiteDataStore
+        // WebKit 的整条站点记录已包含 Cookie，无需再逐个删除。
+        let amberTrunkDollniva = WKWebsiteDataStore.allWebsiteDataTypes()
+        let amberCapsuleDolltavo = await ivoryClipnoteDollbop.dataRecords(ofTypes: amberTrunkDollniva)
+            .filter { ivoryCoverDollzemi(ivoryPaletteDollpavo, $0.displayName) }
+        await ivoryClipnoteDollbop.removeData(ofTypes: amberTrunkDollniva, for: amberCapsuleDolltavo)
+    }
+
+    private func ivoryCoverDollzemi(_ ivoryPaletteDollpavo: String, _ ivoryClipnoteDollbop: String) -> Bool {
+        let ivoryProgressDollrilo = ivoryPaletteDollpavo.lowercased().trimmingCharacters(in: CharacterSet(charactersIn: "."))
+        let ivoryCapeDollvani = ivoryClipnoteDollbop.lowercased().trimmingCharacters(in: CharacterSet(charactersIn: "."))
+        return ivoryProgressDollrilo == ivoryCapeDollvani
+            || ivoryProgressDollrilo.hasSuffix("." + ivoryCapeDollvani)
+            || ivoryCapeDollvani.hasSuffix("." + ivoryProgressDollrilo)
     }
 
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
@@ -426,8 +470,7 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
         if (error as NSError).code != NSURLErrorCancelled { satinStitchmapDollzemi() }
     }
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        guard navigation === satinCoatDollbop else { return }
-        satinStitchmapDollzemi()
+        self.webView(webView, didFailProvisionalNavigation: navigation, withError: error)
     }
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) { satinStitchmapDollzemi() }
 
@@ -439,8 +482,8 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
             decisionHandler(.allow)
         } else {
             decisionHandler(.cancel)
-            if navigationAction.navigationType == .linkActivated { pearlStripeDolltavo(pearlGuideDollukp) }
-            else { satinStitchmapDollzemi() }
+            // 已加载页面的 JS 跳转也可打开外链；取消跳转不等于网络加载失败。
+            if velvetTagsetDollcavo || navigationAction.navigationType == .linkActivated { pearlStripeDolltavo(pearlGuideDollukp) }
         }
 
     }
@@ -533,7 +576,7 @@ private final class DolluSunnyLayoutDollmoraNoticeView: UIView {
         autumnPropDollmexa.translatesAutoresizingMaskIntoConstraints = false
         autumnPropDollmexa.text = winterBackgroundDollpavo
         autumnPropDollmexa.textColor = UIColor(white: 1, alpha: 0.76)
-        autumnPropDollmexa.numberOfLines = 3
+        autumnPropDollmexa.numberOfLines = 0
         autumnPropDollmexa.font = UIFont.systemFont(ofSize: 13.5, weight: .regular)
 
         let autumnGalleryDollpoxa = UIStackView(arrangedSubviews: [springThemeDollyara, autumnPropDollmexa])

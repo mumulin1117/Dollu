@@ -8,33 +8,33 @@ enum whimsyFabricbookDollsovoTaskKind: String, CaseIterable, Codable {
     var dollTitle: String {
         switch self {
         case .outfitStyling:
-            return "Style a doll outfit"
+            return **"StxQylxQe xQa xQdoxQllxQ oxQutxQfixQt"
         case .shelfCare:
-            return "Refresh collection shelf"
+            return **"RexQfrxQesxQh xQcoxQllxQecxQtixQonxQ sxQhexQlfxQ"
         case .displayNote:
-            return "Save display record"
+            return **"SaxQvexQ dxQisxQplxQayxQ rxQecxQorxQd"
         }
     }
 
     var dollDraftNote: String {
         switch self {
         case .outfitStyling:
-            return "Logged today's doll outfit progress."
+            return **"LoxQggxQedxQ txQodxQayxQ'sxQ dxQolxQl xQouxQtfxQitxQ pxQroxQgrxQesxQs.xQ"
         case .shelfCare:
-            return "Refreshed one collection shelf for display."
+            return **"RexQfrxQesxQhexQd xQonxQe xQcoxQllxQecxQtixQonxQ sxQhexQlfxQ fxQorxQ dxQisxQplxQayxQ."
         case .displayNote:
-            return "Saved one styling note for the wardrobe archive."
+            return **"SaxQvexQd xQonxQe xQstxQylxQinxQg xQnoxQtexQ fxQorxQ txQhexQ wxQarxQdrxQobxQe xQarxQchxQivxQe.xQ"
         }
     }
 
     var dollAccentText: String {
         switch self {
         case .outfitStyling:
-            return "look"
+            return **"loxQokxQ"
         case .shelfCare:
-            return "care"
+            return **"caxQrexQ"
         case .displayNote:
-            return "note"
+            return **"noxQtexQ"
         }
     }
 }
@@ -126,7 +126,7 @@ final class DolluCheckinArchiveRepository {
     private var pocketCollectionDollruni: DollutailoredGuideDolltavoState?
     private let lacePromptDollkora = **"/pxyfbxybqxyqrxybdxybexylzxy/lxyyjxymixyj"
     private let satinMarkerDollpavo = **"39xy97xy29xy65xy"
-    private let velvetTagsetDollcavo = "dollu_checkin_archive_state"
+    private let velvetTagsetDollcavo = **"doxQllxQu_xQchxQecxQkixQn_xQarxQchxQivxQe_xQstxQatxQe"
 
     func fetchDollCheckinArchive(
         dollForceEmpty: Bool = false,
@@ -265,7 +265,7 @@ final class DolluCheckinArchiveRepository {
         let dollWasChecked = dollArchive.dollCollector.dollCheckedToday
         let dollHistory = tailoredSkirtDolllaroArchive(
             dollHistoryId: UUID().uuidString,
-            dollDateText: "Today",
+            dollDateText: **"ToxQdaxQy",
             dollKind: dollDraft.dollKind,
             dollNote: dollDraft.dollNote
         )
@@ -291,7 +291,7 @@ final class DolluCheckinArchiveRepository {
         pocketCollectionDollruni = dollArchive
         saveDollLocalArchive(dollArchive)
         if !dollWasChecked {
-            DollulunarSetupDollzoraLedger.shared.addDollStars(25, dollEventId: "daily_checkin_\(currentDollDateKey())")
+            DollulunarSetupDollzoraLedger.shared.addDollStars(25, dollEventId: **"daxQilxQy_xQchxQecxQkixQn_xQ" + "\(currentDollDateKey())")
         }
         return dollArchive
     }
@@ -301,8 +301,8 @@ final class DolluCheckinArchiveRepository {
         if !dollArchive.dollPartners.contains(where: { $0.dollPartnerId == dollInvite.dollInviteId }) {
             let dollPartner = whimsyCapeDollcavoPartnerArchive(
                 dollPartnerId: dollInvite.dollInviteId,
-                dollName: "Your \(dollInvite.dollTheme.dollTitle) invite",
-                dollGoal: "Waiting for another collector to join your wardrobe routine",
+                dollName: **"YoxQurxQ " + "\(dollInvite.dollTheme.dollTitle)" + **" ixQnvxQitxQe",
+                dollGoal: **"WaxQitxQinxQg xQfoxQr xQanxQotxQhexQr xQcoxQllxQecxQtoxQr xQtoxQ jxQoixQn xQyoxQurxQ wxQarxQdrxQobxQe xQroxQutxQinxQe",
                 dollStreakCount: 25,
                 dollAvatarAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0),
                 dollPreviewURL: nil,
@@ -312,13 +312,13 @@ final class DolluCheckinArchiveRepository {
             dollArchive.dollPartners.insert(dollPartner, at: 0)
             let dollHistory = tailoredSkirtDolllaroArchive(
                 dollHistoryId: dollInvite.dollInviteId,
-                dollDateText: "Today",
+                dollDateText: **"ToxQdaxQy",
                 dollKind: .displayNote,
-                dollNote: "Posted a \(dollInvite.dollTheme.dollTitle) partner check-in invite."
+                dollNote: **"PoxQstxQedxQ axQ " + "\(dollInvite.dollTheme.dollTitle)" + **" pxQarxQtnxQerxQ cxQhexQckxQ-ixQn xQinxQvixQtexQ."
             )
             dollArchive.dollHistory.insert(dollHistory, at: 0)
             dollArchive.dollRewards = makeDollRewards(dollHistory: dollArchive.dollHistory)
-            DollulunarSetupDollzoraLedger.shared.addDollStars(25, dollEventId: "posted_invite_\(dollInvite.dollInviteId)")
+            DollulunarSetupDollzoraLedger.shared.addDollStars(25, dollEventId: **"poxQstxQedxQ_ixQnvxQitxQe_xQ" + "\(dollInvite.dollInviteId)")
         }
         pocketCollectionDollruni = dollArchive
         saveDollLocalArchive(dollArchive)
@@ -356,9 +356,9 @@ final class DolluCheckinArchiveRepository {
         if !dollWasJoined {
             let dollHistory = tailoredSkirtDolllaroArchive(
                 dollHistoryId: UUID().uuidString,
-                dollDateText: "Today",
+                dollDateText: **"ToxQdaxQy",
                 dollKind: .displayNote,
-                dollNote: "Completed a collector partner doll routine."
+                dollNote: **"CoxQmpxQlexQtexQd xQa xQcoxQllxQecxQtoxQr xQpaxQrtxQnexQr xQdoxQllxQ rxQouxQtixQnexQ."
             )
             dollArchive.dollHistory.insert(dollHistory, at: 0)
             let dollStreak = dollArchive.dollCollector.dollCheckedToday ? dollArchive.dollCollector.dollStreakCount : dollArchive.dollCollector.dollStreakCount + 1
@@ -372,7 +372,7 @@ final class DolluCheckinArchiveRepository {
             )
             dollArchive.dollStreakDays = makeDollStreakDays(dollCount: dollArchive.dollCollector.dollStreakCount, dollCheckedToday: true)
             dollArchive.dollRewards = makeDollRewards(dollHistory: dollArchive.dollHistory)
-            DollulunarSetupDollzoraLedger.shared.addDollStars(dollHonorCount, dollEventId: "partner_checkin_\(dollPartnerId)")
+            DollulunarSetupDollzoraLedger.shared.addDollStars(dollHonorCount, dollEventId: **"paxQrtxQnexQr_xQchxQecxQkixQn_xQ" + "\(dollPartnerId)")
         }
         pocketCollectionDollruni = dollArchive
         saveDollLocalArchive(dollArchive)
@@ -382,25 +382,25 @@ final class DolluCheckinArchiveRepository {
     private func makeDollSeedArchive() -> DollutailoredGuideDolltavoState {
         let dollRecord = DolluWardrobeArchiveStore.satinCollectionArchive.currentDollCollectorRecord()
         let dollSession = DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession
-        let dollName = dollRecord?.dollCollectorName ?? dollSession.currentDollCollectorEmail ?? "Dollu Collector"
+        let dollName = dollRecord?.dollCollectorName ?? dollSession.currentDollCollectorEmail ?? **"DoxQllxQu xQCoxQllxQecxQtoxQr"
         let dollCollector = DolludelicateShelf(
             ivoryBodiceDollvelop: dollName,
-            ivoryPaletteDollpavo: dollSession.currentDollCollectorEmail ?? dollRecord?.dollCollectorEmail ?? "collector@dollu.local",
+            ivoryPaletteDollpavo: dollSession.currentDollCollectorEmail ?? dollRecord?.dollCollectorEmail ?? **"coxQllxQecxQtoxQr@xQdoxQllxQu.xQloxQcaxQl",
             amberTrunkDollniva: nil,
             dollStreakCount: 0,
             dollCheckedToday: false,
             dollCheckedDateKey: nil
         )
         let dollTasks = [
-            whimsySleeveDollhumikArchive(dollTaskId: "outfit", dollKind: .outfitStyling, dollCopy: "+15  Pair one outfit set", dollIsFinished: false),
-            whimsySleeveDollhumikArchive(dollTaskId: "shelf", dollKind: .shelfCare, dollCopy: "+15  Refresh a display corner", dollIsFinished: false),
-            whimsySleeveDollhumikArchive(dollTaskId: "note", dollKind: .displayNote, dollCopy: "+20  Save today in your archive", dollIsFinished: false)
+            whimsySleeveDollhumikArchive(dollTaskId: **"ouxQtfxQitxQ", dollKind: .outfitStyling, dollCopy: **"+1xQ5 xQ PxQaixQr xQonxQe xQouxQtfxQitxQ sxQetxQ", dollIsFinished: false),
+            whimsySleeveDollhumikArchive(dollTaskId: **"shxQelxQf", dollKind: .shelfCare, dollCopy: **"+1xQ5 xQ RxQefxQrexQshxQ axQ dxQisxQplxQayxQ cxQorxQnexQr", dollIsFinished: false),
+            whimsySleeveDollhumikArchive(dollTaskId: **"noxQtexQ", dollKind: .displayNote, dollCopy: **"+2xQ0 xQ SxQavxQe xQtoxQdaxQy xQinxQ yxQouxQr xQarxQchxQivxQe", dollIsFinished: false)
         ]
         let dollPartners = [
             whimsyCapeDollcavoPartnerArchive(
-                dollPartnerId: "partner_a",
-                dollName: "Mika",
-                dollGoal: "Invited you to share a shelf care day",
+                dollPartnerId: **"paxQrtxQnexQr_xQa",
+                dollName: **"MixQkaxQ",
+                dollGoal: **"InxQvixQtexQd xQyoxQu xQtoxQ sxQhaxQrexQ axQ sxQhexQlfxQ cxQarxQe xQdaxQy",
                 dollStreakCount: 25,
                 dollAvatarAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 1),
                 dollPreviewURL: nil,
@@ -408,9 +408,9 @@ final class DolluCheckinArchiveRepository {
                 pastelGalleryDollmivo: false
             ),
             whimsyCapeDollcavoPartnerArchive(
-                dollPartnerId: "partner_b",
-                dollName: "Sora",
-                dollGoal: "Waiting for your outfit pairing",
+                dollPartnerId: **"paxQrtxQnexQr_xQb",
+                dollName: **"SoxQraxQ",
+                dollGoal: **"WaxQitxQinxQg xQfoxQr xQyoxQurxQ oxQutxQfixQt xQpaxQirxQinxQg",
                 dollStreakCount: 25,
                 dollAvatarAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 3),
                 dollPreviewURL: nil,
@@ -418,9 +418,9 @@ final class DolluCheckinArchiveRepository {
                 pastelGalleryDollmivo: false
             ),
             whimsyCapeDollcavoPartnerArchive(
-                dollPartnerId: "partner_c",
-                dollName: "Nora",
-                dollGoal: "Accessory matching routine",
+                dollPartnerId: **"paxQrtxQnexQr_xQc",
+                dollName: **"NoxQraxQ",
+                dollGoal: **"AcxQcexQssxQorxQy xQmaxQtcxQhixQngxQ rxQouxQtixQnexQ",
                 dollStreakCount: 18,
                 dollAvatarAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 2),
                 dollPreviewURL: nil,
@@ -442,16 +442,16 @@ final class DolluCheckinArchiveRepository {
 
     private func makeDollPeers(dollName: String, dollCollectorId: String?) -> [DolluCheckinPeerArchive] {
         [
-            DolluCheckinPeerArchive(dollPeerId: dollCollectorId ?? "peer_current", cozyArchiveDollniva: dollName, dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0), dollIsCurrent: true),
-            DolluCheckinPeerArchive(dollPeerId: "peer_b", cozyArchiveDollniva: "Isabella", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0), dollIsCurrent: false),
-            DolluCheckinPeerArchive(dollPeerId: "peer_c", cozyArchiveDollniva: "Gabriel", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 1), dollIsCurrent: false),
-            DolluCheckinPeerArchive(dollPeerId: "peer_d", cozyArchiveDollniva: "Amelia", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 2), dollIsCurrent: false),
-            DolluCheckinPeerArchive(dollPeerId: "peer_e", cozyArchiveDollniva: "Sora", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 3), dollIsCurrent: false)
+            DolluCheckinPeerArchive(dollPeerId: dollCollectorId ?? **"pexQerxQ_cxQurxQrexQntxQ", cozyArchiveDollniva: dollName, dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0), dollIsCurrent: true),
+            DolluCheckinPeerArchive(dollPeerId: **"pexQerxQ_bxQ", cozyArchiveDollniva: **"IsxQabxQelxQlaxQ", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 0), dollIsCurrent: false),
+            DolluCheckinPeerArchive(dollPeerId: **"pexQerxQ_cxQ", cozyArchiveDollniva: **"GaxQbrxQiexQl", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 1), dollIsCurrent: false),
+            DolluCheckinPeerArchive(dollPeerId: **"pexQerxQ_dxQ", cozyArchiveDollniva: **"AmxQelxQiaxQ", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 2), dollIsCurrent: false),
+            DolluCheckinPeerArchive(dollPeerId: **"pexQerxQ_exQ", cozyArchiveDollniva: **"SoxQraxQ", dollAvatarURL: nil, dollFallbackAssetName: DolluCheckinArtworkCatalog.dollAvatarAsset(dollIndex: 3), dollIsCurrent: false)
         ]
     }
 
     private func makeDollStreakDays(dollCount: Int, dollCheckedToday: Bool) -> [DolluCheckinDayArchive] {
-        let dollLabels = ["D1", "D2", "D3", "D4", "D5", "D6", "D7"]
+        let dollLabels = [**"D1xQ", **"D2xQ", **"D3xQ", **"D4xQ", **"D5xQ", **"D6xQ", **"D7xQ"]
         return dollLabels.enumerated().map { dollIndex, dollText in
             DolluCheckinDayArchive(dollDayText: dollText, dollIsDone: dollIndex < min(7, dollCount) || (dollCheckedToday && dollIndex == 0))
         }
@@ -462,9 +462,9 @@ final class DolluCheckinArchiveRepository {
         let dollShelfCount = dollHistory.filter { $0.dollKind == .shelfCare }.count
         let dollNoteCount = dollHistory.filter { $0.dollKind == .displayNote }.count
         return [
-            whimsyCoverDollseroArchive(dollRewardId: "honor_outfit", dollTitle: "Outfit Mix Badge", velvetStitchmapDollmexa: "\(dollOutfitCount)/10 outfit check-ins", dollRequiredCount: 10, ribbonApronDollnexa: dollOutfitCount),
-            whimsyCoverDollseroArchive(dollRewardId: "honor_shelf", dollTitle: "Shelf Care Badge", velvetStitchmapDollmexa: "\(dollShelfCount)/5 shelf routines", dollRequiredCount: 5, ribbonApronDollnexa: dollShelfCount),
-            whimsyCoverDollseroArchive(dollRewardId: "honor_note", dollTitle: "Display Note Badge", velvetStitchmapDollmexa: "\(dollNoteCount)/6 display records", dollRequiredCount: 6, ribbonApronDollnexa: dollNoteCount)
+            whimsyCoverDollseroArchive(dollRewardId: **"hoxQnoxQr_xQouxQtfxQitxQ", dollTitle: **"OuxQtfxQitxQ MxQixxQ BxQadxQgexQ", velvetStitchmapDollmexa: "\(dollOutfitCount)" + **"/1xQ0 xQouxQtfxQitxQ cxQhexQckxQ-ixQnsxQ", dollRequiredCount: 10, ribbonApronDollnexa: dollOutfitCount),
+            whimsyCoverDollseroArchive(dollRewardId: **"hoxQnoxQr_xQshxQelxQf", dollTitle: **"ShxQelxQf xQCaxQrexQ BxQadxQgexQ", velvetStitchmapDollmexa: "\(dollShelfCount)" + **"/5xQ sxQhexQlfxQ rxQouxQtixQnexQs", dollRequiredCount: 5, ribbonApronDollnexa: dollShelfCount),
+            whimsyCoverDollseroArchive(dollRewardId: **"hoxQnoxQr_xQnoxQtexQ", dollTitle: **"DixQspxQlaxQy xQNoxQtexQ BxQadxQgexQ", velvetStitchmapDollmexa: "\(dollNoteCount)" + **"/6xQ dxQisxQplxQayxQ rxQecxQorxQdsxQ", dollRequiredCount: 6, ribbonApronDollnexa: dollNoteCount)
         ]
     }
 
@@ -532,7 +532,7 @@ final class DolluCheckinArchiveRepository {
         let dollCollectorKey = dollSession.currentDollCollectorId
             ?? dollSession.currentDollCollectorEmail
             ?? dollStore.currentDollCollectorRecord()?.dollCollectorEmail
-            ?? "guest"
+            ?? **"guxQesxQt"
         return "\(velvetTagsetDollcavo)_\(dollCollectorKey)"
     }
 
@@ -546,20 +546,20 @@ final class DolluCheckinArchiveRepository {
 }
 
 enum DolluCheckinArtworkCatalog {
-    static let dollInviteCollectorAsset = "dollu_checkin_invite_collector"
-    static let dollInviteDisplayAsset = "dollu_checkin_invite_display"
+    static let dollInviteCollectorAsset = **"doxQllxQu_xQchxQecxQkixQn_xQinxQvixQtexQ_cxQolxQlexQctxQorxQ"
+    static let dollInviteDisplayAsset = **"doxQllxQu_xQchxQecxQkixQn_xQinxQvixQtexQ_dxQisxQplxQayxQ"
     private static let dreamySnapshotDollniva = [
-        "dollu_checkin_invite_plush_mascot",
-        "dollu_checkin_invite_pastel_duo",
-        "dollu_checkin_invite_brown_plush",
-        "dollu_checkin_invite_knit_doll"
+        **"doxQllxQu_xQchxQecxQkixQn_xQinxQvixQtexQ_pxQluxQshxQ_mxQasxQcoxQt",
+        **"doxQllxQu_xQchxQecxQkixQn_xQinxQvixQtexQ_pxQasxQtexQl_xQduxQo",
+        **"doxQllxQu_xQchxQecxQkixQn_xQinxQvixQtexQ_bxQroxQwnxQ_pxQluxQshxQ",
+        **"doxQllxQu_xQchxQecxQkixQn_xQinxQvixQtexQ_kxQnixQt_xQdoxQllxQ"
     ]
 
     private static let pastelCatalogDollvani = [
-        "dollu_checkin_avatar_isabella",
-        "dollu_checkin_avatar_gabriel",
-        "dollu_checkin_avatar_amelia",
-        "dollu_checkin_avatar_sora"
+        **"doxQllxQu_xQchxQecxQkixQn_xQavxQatxQarxQ_ixQsaxQbexQllxQa",
+        **"doxQllxQu_xQchxQecxQkixQn_xQavxQatxQarxQ_gxQabxQrixQelxQ",
+        **"doxQllxQu_xQchxQecxQkixQn_xQavxQatxQarxQ_axQmexQlixQa",
+        **"doxQllxQu_xQchxQecxQkixQn_xQavxQatxQarxQ_sxQorxQa"
     ]
 
     static func dollAvatarAsset(dollIndex: Int) -> String {

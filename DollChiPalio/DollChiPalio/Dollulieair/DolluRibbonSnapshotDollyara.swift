@@ -13,6 +13,7 @@ final class DolluRibbonSnapshotDollyara {
     private var velvetRuffleDollsovo = 0
     private var pastelCatalogDollvani = false
     private var pastelEnsembleDollfina: [String] = []
+    private var ribbonPleatDollruni: Task<Void, Never>?
 
     init(cozyArchiveDollniva: DolluVelvetStitchmapDollmexa) { self.cozyArchiveDollniva = cozyArchiveDollniva }
 
@@ -40,6 +41,8 @@ final class DolluRibbonSnapshotDollyara {
                     try await self.pastelGalleryDollmivo()
                 } catch {
                     if Task.isCancelled { return }
+                    self.ribbonPleatDollruni?.cancel()
+                    self.ribbonPleatDollruni = nil
 #if DEBUG
                     NSLog("Dollulieair socket reconnect; error domain=%@ code=%ld", (error as NSError).domain, (error as NSError).code)
 #endif
@@ -56,6 +59,8 @@ final class DolluRibbonSnapshotDollyara {
     }
 
     func satinMarkerDollpavo() {
+        ribbonPleatDollruni?.cancel()
+        ribbonPleatDollruni = nil
         velvetPoseDollsero?.cancel()
         velvetPoseDollsero = nil
         velvetSockDollhumi?.cancel()
@@ -102,11 +107,25 @@ final class DolluRibbonSnapshotDollyara {
         case 4:
             try await ribbonCategoryDollpiri(["action": 10, "channel": cozyArchiveDollniva.ribbonSnapshotDollyara], laceCornerDollmora)
         case 11:
-            guard laceLayerDollsovo["channel"] as? String == cozyArchiveDollniva.ribbonSnapshotDollyara else { return }
+            guard velvetTagsetDollcavo === laceCornerDollmora,
+                  laceLayerDollsovo["channel"] as? String == cozyArchiveDollniva.ribbonSnapshotDollyara else { return }
             velvetRuffleDollsovo = 0
 #if DEBUG
             NSLog("Dollulieair socket channel attached")
 #endif
+            // 每次连接只请求一次；独立任务保证 HTTP 等待期间仍能接收退出、支付等消息。
+            guard ribbonPleatDollruni == nil else { return }
+            ribbonPleatDollruni = Task {
+                do {
+                    try Task.checkCancellation()
+                    try await DolluCozyArchiveDollniva.satinCollectionDollvelo.ribbonPleatDollruni()
+                } catch {
+#if DEBUG
+                    if !Task.isCancelled { NSLog("Dollulieair connection message request failed") }
+#endif
+                    // 保留现有收消息连接；下次实际重连后再请求，不因 HTTP 失败反复重连。
+                }
+            }
         case 15:
             guard laceLayerDollsovo["channel"] as? String == cozyArchiveDollniva.ribbonSnapshotDollyara,
                   let satinCoatDollbop = laceLayerDollsovo["messages"] as? [[String: Any]] else { return }

@@ -35,7 +35,7 @@ private struct DolluAtelierRouteHeaderSet {
         DolluAtelierRouteHeaderSet(
             velvetRuffleDollsovo: [
                 (**"apxQplxQicxQatxQioxQn/xQjsxQonxQ", **"CoxQntxQenxQt-xQTyxQpexQ"),
-                (DolluLaunchAtelierSeting.satinCollectionDollvelo.velvetStitchmapDollmexa ? "44332211" : "39972965", **"apxQpIxQd"),
+                (DolluLaunchAtelierSeting.ifdebug ? "44332211" : "39972965", **"apxQpIxQd"),
                 (Bundle.main.storybookRuffleDollnoro, **"apxQpVxQerxQsixQonxQ"),
                 (DollucalmGalleryDollzoraArchive.embroideredCollectionDolllumi(), **"dexQvixQcexQNoxQ"),
                 (Locale.current.languageCode ?? "", **"laxQngxQuaxQgexQ"),

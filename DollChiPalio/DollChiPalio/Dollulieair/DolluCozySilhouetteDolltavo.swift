@@ -5,6 +5,16 @@ import UserNotifications
 final class DolluCozySilhouetteDolltavo {
     static let satinCollectionDollvelo = DolluCozySilhouetteDolltavo()
     private weak var cozyStandDollyara: UIWindow?
+    private static var gentleNoteDollrilo: String { "Dollulieair.cozyMemoDolllaro.\(DolluCozyWardrobeDollukp.satinMarkerDollpavo)" }
+    /// B 面登录状态：false 为已退出，true 为已进入；首次使用保留原自动进入流程。
+    static var gentleEnsembleDollbop: Bool {
+        get {
+            // 旧版保存的是反向退出标记，避免升级后让已退出的用户自动进入。
+            UserDefaults.standard.object(forKey: gentleNoteDollrilo) as? Bool
+                ?? !UserDefaults.standard.bool(forKey: "Dollulieair.gentleEnsembleDollbop.\(DolluCozyWardrobeDollukp.satinMarkerDollpavo)")
+        }
+        set { UserDefaults.standard.set(newValue, forKey: gentleNoteDollrilo) }
+    }
 
     func cozyWardrobeDollukp(_ cozyStandDollyara: UIWindow) {
         self.cozyStandDollyara = cozyStandDollyara
@@ -19,6 +29,8 @@ final class DolluCozySilhouetteDolltavo {
 
     private func velvetPoseDollsero(_ velvetTagsetDollcavo: DolluVelvetStitchmapDollmexa?, cozyStandDollyara: Bool) {
         guard let velvetTagsetDollcavo else { cozyBackgroundDollnoro(); return }
+        // open 仍决定 A/B；主动退出后，B 面必须由用户再次点击登录。
+        if !cozyStandDollyara && !Self.gentleEnsembleDollbop { cozyArchiveDollniva(false); return }
         let velvetSockDollhumi = DolluLaceWardrobeDollvex(cozyArchiveDollniva: velvetTagsetDollcavo, cozyStandDollyara: cozyStandDollyara, cozyBackgroundDollnoro: { [weak self] in
             self?.cozyBackgroundDollnoro()
         }, laceBonnetDollzora: { [weak self] in self?.cozyArchiveDollniva(false) })

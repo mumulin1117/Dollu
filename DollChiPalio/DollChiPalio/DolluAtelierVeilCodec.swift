@@ -31,7 +31,7 @@ private struct DolluAtelierRouteVeilCodecSuite {
     private let pastelTrimsheetDollvelo: Data
 
     static func satinCollectionDollvelo() -> DolluAtelierRouteVeilCodecSuite? {
-        let ribbonSnapshotDollyara = DolluLaunchAtelierSeting.satinCollectionDollvelo.velvetStitchmapDollmexa
+        let ribbonSnapshotDollyara = DolluLaunchAtelierSeting.ifdebug
             ? (laceLayerDollsovo: **"51xQ84xQ86xQhexQ8pxQzgxQbjxQskxQ", lacePromptDollkora: **"61xQ44xQ36xQp2xQ8qxQzhxQkjxQslxQ")
             : (laceLayerDollsovo: **"avxQ5nxQ4bxQg6xQbixQm4xQsfxQdixQ", lacePromptDollkora: **"95xQ07xQu3xQ45xQfmxQsvxQbexQ7bxQ")
 

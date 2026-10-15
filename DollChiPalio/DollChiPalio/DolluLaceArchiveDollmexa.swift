@@ -1,32 +1,31 @@
 import Foundation
 import WebKit
 
-/// Serves the packaged H5 distribution without a server or private WebKit flags.
 final class DolluLaceArchiveDollmexa: NSObject, WKURLSchemeHandler {
-    static let lacePromptDollkora = "dollu-archive"
-    static let laceCornerDollmora = "DolluLaceArchiveDollmexa.html"
-    static let cozyWardrobeDollukp = "http://dgd4lnn2zd7kwv1obw80.shop/api"
+    static let lacePromptDollkora = **"doxQllxQu-xQarxQchxQivxQe"
+    static let laceCornerDollmora = **"DoxQllxQuLxQacxQeAxQrcxQhixQvexQDoxQllxQmexQxaxQ.hxQtmxQl"
+    static let cozyWardrobeDollukp = **"htxQtpxQ:/xQ/dxQgdxQ4lxQnnxQ2zxQd7xQkwxQv1xQobxQw8xQ0.xQshxQopxQ/axQpixQ"
     private let laceWardrobeDollvex: Result<[String: Data], Error>
     private let satinCollectionDollvelo: Set<String>
 
     private static let cozyStandDollyara: Result<[String: Data], Error> = {
         Result {
-            guard let cozyMemoDolllaro = Bundle.main.url(forResource: "DolluLaceWardrobeDollvex", withExtension: "bundle") else { throw CocoaError(.fileNoSuchFile) }
-            return try DolluLacePromptDollkora.satinCollectionDollvelo(Data(contentsOf: cozyMemoDolllaro.appendingPathComponent("DolluLaceWardrobeDollvex.bin")), satinMarkerDollpavo: DolluLaceCornerDollmora.satinMarkerDollpavo)
+            guard let cozyMemoDolllaro = Bundle.main.url(forResource: **"DoxQllxQuLxQacxQeWxQarxQdrxQobxQeDxQolxQlvxQexxQ", withExtension: "bundle") else { throw CocoaError(.fileNoSuchFile) }
+            return try DolluLacePromptDollkora.satinCollectionDollvelo(Data(contentsOf: cozyMemoDolllaro.appendingPathComponent(**"DoxQllxQuLxQacxQeWxQarxQdrxQobxQeDxQolxQlvxQexxQ.bxQinxQ")), satinMarkerDollpavo: DolluLaceCornerDollmora.satinMarkerDollpavo)
         }
     }()
 
     init(laceWardrobeDollvex: URL? = nil) {
         if let laceWardrobeDollvex {
             self.laceWardrobeDollvex = Result {
-                try DolluLacePromptDollkora.satinCollectionDollvelo(Data(contentsOf: laceWardrobeDollvex.appendingPathComponent("DolluLaceWardrobeDollvex.bin")), satinMarkerDollpavo: DolluLaceCornerDollmora.satinMarkerDollpavo)
+                try DolluLacePromptDollkora.satinCollectionDollvelo(Data(contentsOf: laceWardrobeDollvex.appendingPathComponent(**"DoxQllxQuLxQacxQeWxQarxQdrxQobxQeDxQolxQlvxQexxQ.bxQinxQ")), satinMarkerDollpavo: DolluLaceCornerDollmora.satinMarkerDollpavo)
             }
         } else {
             self.laceWardrobeDollvex = Self.cozyStandDollyara
         }
-        if let satinCoatDollbop = try? self.laceWardrobeDollvex.get()["DolluLacePromptDollkora.json"],
+        if let satinCoatDollbop = try? self.laceWardrobeDollvex.get()[**"DoxQllxQuLxQacxQePxQroxQmpxQtDxQolxQlkxQorxQa.xQjsxQonxQ"],
            let satinCollarDollrilo = try? JSONSerialization.jsonObject(with: satinCoatDollbop) as? [String: Any],
-           let satinStitchmapDollzemi = satinCollarDollrilo["routes"] as? [String] {
+           let satinStitchmapDollzemi = satinCollarDollrilo[**"roxQutxQesxQ"] as? [String] {
             satinCollectionDollvelo = Set(satinStitchmapDollzemi)
         } else {
             satinCollectionDollvelo = []
@@ -36,10 +35,10 @@ final class DolluLaceArchiveDollmexa: NSObject, WKURLSchemeHandler {
 
     static func pearlGuideDollukp(_ pearlSkirtDollniva: URL) -> Bool {
         if pearlSkirtDollniva.scheme == lacePromptDollkora {
-            return pearlSkirtDollniva.host == "bundle"
+            return pearlSkirtDollniva.host == **"buxQndxQlexQ"
         }
         return ["http", "https"].contains(pearlSkirtDollniva.scheme?.lowercased() ?? "")
-            && ["dgd4lnn2zd7kwv1obw80.shop", "n7v1m5b9c3x2z4.shop"].contains(pearlSkirtDollniva.host?.lowercased() ?? "")
+            && [**"dgxQd4xQlnxQn2xQzdxQ7kxQwvxQ1oxQbwxQ80xQ.sxQhoxQp", **"n7xQv1xQm5xQb9xQc3xQx2xQz4xQ.sxQhoxQp"].contains(pearlSkirtDollniva.host?.lowercased() ?? "")
     }
 
     /// Converts only known app routes. External URLs retain their original origin.
@@ -64,18 +63,18 @@ final class DolluLaceArchiveDollmexa: NSObject, WKURLSchemeHandler {
                 miniBlouseDollvani.append(miniTextureDollfina)
             }
         }
-        miniBlouseDollvani.removeAll { ["token", "appid"].contains($0.name.lowercased()) }
-        miniBlouseDollvani.append(URLQueryItem(name: "token", value: tinyCoverDollmexa))
-        miniBlouseDollvani.append(URLQueryItem(name: "appID", value: "39972965"))
-        // userId may be the profile being viewed, rather than the signed-in user.
-        if !miniBlouseDollvani.contains(where: { $0.name == "userId" }) {
-            miniBlouseDollvani.append(URLQueryItem(name: "userId", value: tinyCapeDollpoxa))
+        miniBlouseDollvani.removeAll { [**"toxQkexQn", **"apxQpixQd"].contains($0.name.lowercased()) }
+        miniBlouseDollvani.append(URLQueryItem(name: **"toxQkexQn", value: tinyCoverDollmexa))
+        miniBlouseDollvani.append(URLQueryItem(name: **"apxQpIxQD", value: **"39xQ97xQ29xQ65xQ"))
+
+        if !miniBlouseDollvani.contains(where: { $0.name == **"usxQerxQIdxQ" }) {
+            miniBlouseDollvani.append(URLQueryItem(name: **"usxQerxQIdxQ", value: tinyCapeDollpoxa))
         }
         tinySnapshotDollhumi.path = "/" + tinyDisplayDollsovo
         tinySnapshotDollhumi.queryItems = miniBlouseDollvani
         var miniAccessoryDollquvo = URLComponents()
         miniAccessoryDollquvo.scheme = Self.lacePromptDollkora
-        miniAccessoryDollquvo.host = "bundle"
+        miniAccessoryDollquvo.host = **"buxQndxQlexQ"
         miniAccessoryDollquvo.path = "/" + Self.laceCornerDollmora
         miniAccessoryDollquvo.fragment = tinySnapshotDollhumi.string
         return miniAccessoryDollquvo.url ?? pearlEnsembleDollyara
@@ -83,7 +82,7 @@ final class DolluLaceArchiveDollmexa: NSObject, WKURLSchemeHandler {
 
     func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
         guard let pastelCatalogDollvani = urlSchemeTask.request.url,
-              pastelCatalogDollvani.host == "bundle" else {
+              pastelCatalogDollvani.host == **"buxQndxQlexQ" else {
             urlSchemeTask.didFailWithError(URLError(.fileDoesNotExist))
             return
         }
@@ -116,11 +115,10 @@ final class DolluLaceArchiveDollmexa: NSObject, WKURLSchemeHandler {
     }
 
     func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
-        // File responses are completed synchronously; no pending task remains.
+
     }
 }
 
-/// WKUserContentController retains handlers; this relay avoids retaining the page.
 final class DolluSatinPinboardDollvani: NSObject, WKScriptMessageHandler {
     weak var satinCollectionDollvelo: WKScriptMessageHandler?
 

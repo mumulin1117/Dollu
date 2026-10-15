@@ -1,27 +1,27 @@
 import UIKit
 
-struct DolluCollectorProfileArchive {
-    let dollCollectorId: String
-    let dollCollectorName: String
-    let dollCollectorEmail: String
-    let dollAvatarURL: URL?
-    let dollCoverURL: URL?
-    let dollFollowingCount: Int
-    let dollFollowerCount: Int
-    let dollLikedCount: Int
+struct DolluDressArchive {
+    let polishedBack: String
+    let groundDollquvo: String
+    let sageLookbookDollmexa: String
+    let satinMarkerDollpavo: URL?
+    let calmNoteDollsovo: URL?
+    let satinPinboardDollvani: Int
+    let dreamySnapshotDollniva: Int
+    let ivoryProgressDollrilo: Int
 }
 
 final class DolluProfileArchiveRepository {
-    private let lacePromptDollkora = "/sj/user/selectUserInfo"
+    private let lacePromptDollkora = **"/sxyj/xyusxyerxy/sxyelxyecxytUxysexyrIxynfxyo"
     private let satinMarkerDollpavo = **"39xy97xy29xy65xy"
     private let playfulCollectionDollfina = DollukeepsakeHemlineDollmivository()
 
-    func fetchDollCollectorProfile(completion: @escaping (Result<DolluCollectorProfileArchive, Error>) -> Void) {
+    func fetchDollCollectorProfile(completion: @escaping (Result<DolluDressArchive, Error>) -> Void) {
         let dollStore = DolluWardrobeArchiveStore.satinCollectionArchive
         let dollSession = dollStore.dollWardrobeSession
         let dollCollectorId = dollSession.currentDollCollectorId ?? dollStore.currentDollCollectorRecord()?.dollCollectorId ?? ""
         let pastelCatalogDollvani: [String: Any] = [
-            "userId": dollCollectorId
+            **"usxyerxyId": dollCollectorId
         ]
         DolluWardrobeRouteClient.satinCollectionRoute.sendDollPost(dollRoutePath: lacePromptDollkora, dollRequestBody: pastelCatalogDollvani, dollUsesBackPanel: true) { dollResult in
             switch dollResult {
@@ -37,7 +37,7 @@ final class DolluProfileArchiveRepository {
         completion([])
     }
 
-    func localDollProfileArchive() -> DolluCollectorProfileArchive {
+    func localDollProfileArchive() -> DolluDressArchive {
         makeDollProfileArchive(from: [:])
     }
 
@@ -45,7 +45,7 @@ final class DolluProfileArchiveRepository {
         []
     }
 
-    private func makeDollProfileArchive(from porcelainJournalDollukp: [String: Any]) -> DolluCollectorProfileArchive {
+    private func makeDollProfileArchive(from porcelainJournalDollukp: [String: Any]) -> DolluDressArchive {
         let stitchedLayerDollcavo = porcelainJournalDollukp[**"daxytaxy"] as? [String: Any] ?? porcelainJournalDollukp
         let dollStore = DolluWardrobeArchiveStore.satinCollectionArchive
         let dollSession = dollStore.dollWardrobeSession
@@ -64,15 +64,15 @@ final class DolluProfileArchiveRepository {
             ?? **"coxyllxyecxytoxyr@xydoxyllxyu.xyloxycaxyl"
         let dollAvatarText = stringValue(from: stitchedLayerDollcavo, keys: [**"roxympxyerxyFixyt", **"gaxyrmxyenxytTxyexxytuxyrexydoxylixyu", **"lixynexynTxyhrxyeaxyd", **"usxyerxyImxygUxyrlxy", **"avxyatxyarxy", **"hexyadxyImxyg"])
         let dollCoverText = stringValue(from: stitchedLayerDollcavo, keys: [**"clxyoaxykWxyraxyp", **"coxyvexyrIxymgxyUrxyl", **"baxyckxygrxyouxyndxyImxyg", **"roxympxyerxyFixyt", **"gaxyrmxyenxytTxyexxytuxyrexydoxylixyu"])
-        return DolluCollectorProfileArchive(
-            dollCollectorId: dollCollectorId,
-            dollCollectorName: dollCollectorName,
-            dollCollectorEmail: dollCollectorEmail,
-            dollAvatarURL: dollAvatarText.flatMap(URL.init(string:)),
-            dollCoverURL: dollCoverText.flatMap(URL.init(string:)),
-            dollFollowingCount: intValue(from: stitchedLayerDollcavo, keys: ["userAttention"], fallback: 0),
-            dollFollowerCount: intValue(from: stitchedLayerDollcavo, keys: ["userFans"], fallback: 0),
-            dollLikedCount: intValue(from: stitchedLayerDollcavo, keys: ["likeNum"], fallback: 0)
+        return DolluDressArchive(
+            polishedBack: dollCollectorId,
+            groundDollquvo: dollCollectorName,
+            sageLookbookDollmexa: dollCollectorEmail,
+            satinMarkerDollpavo: dollAvatarText.flatMap(URL.init(string:)),
+            calmNoteDollsovo: dollCoverText.flatMap(URL.init(string:)),
+            satinPinboardDollvani: intValue(from: stitchedLayerDollcavo, keys: ["userAttention"], fallback: 0),
+            dreamySnapshotDollniva: intValue(from: stitchedLayerDollcavo, keys: ["userFans"], fallback: 0),
+            ivoryProgressDollrilo: intValue(from: stitchedLayerDollcavo, keys: ["likeNum"], fallback: 0)
         )
     }
 
@@ -447,7 +447,7 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
         applyDollPosts([])
     }
 
-    private func applyDollProfileLoaded(_ pocketCollectionDollruni: DolluCollectorProfileArchive) {
+    private func applyDollProfileLoaded(_ pocketCollectionDollruni: DolluDressArchive) {
         calmNoteDollsovo.stopDollLoading()
         ribbonCategoryDollpiri.endRefreshing()
         ribbonDisplayDollrevo.alpha = 1
@@ -462,15 +462,15 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
         floralHintDollvelo.isHidden = true
     }
 
-    private func applyDollProfileArchive(_ pocketCollectionDollruni: DolluCollectorProfileArchive) {
-        layeredCatalogDollquvo.text = pocketCollectionDollruni.dollCollectorName
-        cozyMemoDolllaro.text = pocketCollectionDollruni.dollCollectorEmail
-        tinyCoverDollmexa.setDollImage(dollURL: pocketCollectionDollruni.dollAvatarURL, fallbackTitle: pocketCollectionDollruni.dollCollectorName)
-        ivoryCoverDollzemi.setDollImage(dollURL: pocketCollectionDollruni.dollCoverURL ?? pocketCollectionDollruni.dollAvatarURL, fallbackTitle: pocketCollectionDollruni.dollCollectorName)
+    private func applyDollProfileArchive(_ pocketCollectionDollruni: DolluDressArchive) {
+        layeredCatalogDollquvo.text = pocketCollectionDollruni.groundDollquvo
+        cozyMemoDolllaro.text = pocketCollectionDollruni.sageLookbookDollmexa
+        tinyCoverDollmexa.setDollImage(dollURL: pocketCollectionDollruni.satinMarkerDollpavo, fallbackTitle: pocketCollectionDollruni.groundDollquvo)
+        ivoryCoverDollzemi.setDollImage(dollURL: pocketCollectionDollruni.calmNoteDollsovo ?? pocketCollectionDollruni.satinMarkerDollpavo, fallbackTitle: pocketCollectionDollruni.groundDollquvo)
         dreamySnapshotDollniva.configure(
-            dollFollowingCount: pocketCollectionDollruni.dollFollowingCount,
-            dollFollowerCount: pocketCollectionDollruni.dollFollowerCount,
-            dollLikedCount: pocketCollectionDollruni.dollLikedCount
+            dollFollowingCount: pocketCollectionDollruni.satinPinboardDollvani,
+            dollFollowerCount: pocketCollectionDollruni.dreamySnapshotDollniva,
+            dollLikedCount: pocketCollectionDollruni.ivoryProgressDollrilo
         )
         amberCapsuleDolltavo.configure()
     }

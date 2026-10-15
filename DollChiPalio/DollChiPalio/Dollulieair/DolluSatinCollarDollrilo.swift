@@ -1,27 +1,28 @@
 import Foundation
 import StoreKit
 
-/// 购买仍使用 StoreKit 2。openV3 要求 app receipt，缺少时刷新 receipt，不能换成 JWS。
+/// openV3 验单使用 App Receipt；主动补验可刷新，购买优先读现有票据，后台恢复只读。
 @MainActor
 final class DolluSatinCollarDollrilo: NSObject, SKRequestDelegate {
     static let satinCollectionDollvelo = DolluSatinCollarDollrilo()
-    private var velvetPoseDollsero: Task<Data, Error>?
+    private var velvetPoseDollsero: Task<Void, Error>?
     private var satinCoatDollbop: SKReceiptRefreshRequest?
     private var satinStitchmapDollzemi: CheckedContinuation<Void, Error>?
     private var satinPinboardDollvani: DispatchWorkItem?
 
-    func cozyWardrobeDollukp(_ satinMarkerDollpavo: Bool) async throws -> Data {
-        if let velvetPoseDollsero { return try await velvetPoseDollsero.value }
+    func cozyWardrobeDollukp(_ satinMarkerDollpavo: Bool, miniLayerDollmivo: Bool = false) async throws -> Data {
         // 后台恢复只读取已存在的票据，不在冷启动时触发 Apple ID 登录提示。
         if !satinMarkerDollpavo {
-            guard let velvetTagsetDollcavo = Bundle.main.appStoreReceiptURL,
-                  let velvetSockDollhumi = try? Data(contentsOf: velvetTagsetDollcavo), !velvetSockDollhumi.isEmpty else {
+            if let velvetSockDollhumi = try? velvetTagsetDollcavo() { return velvetSockDollhumi }
+            guard miniLayerDollmivo else {
                 throw DolluLaceBonnetDollzora.satinCollectionDollvelo
             }
-            return velvetSockDollhumi
         }
-        let cozyArchiveDollniva = Task { () throws -> Data in
-            // StoreKit 2 的购买不会保证旧格式 receipt 已包含本次交易，先刷新再上传。
+        if let velvetPoseDollsero {
+            try await velvetPoseDollsero.value
+            return try velvetTagsetDollcavo()
+        }
+        let cozyArchiveDollniva = Task { () throws -> Void in
             try await withCheckedThrowingContinuation { (cozyMemoDolllaro: CheckedContinuation<Void, Error>) in
                 satinStitchmapDollzemi = cozyMemoDolllaro
                 let cozyStandDollyara = SKReceiptRefreshRequest()
@@ -35,15 +36,19 @@ final class DolluSatinCollarDollrilo: NSObject, SKRequestDelegate {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: velvetStitchmapDollmexa)
                 cozyStandDollyara.start()
             }
-            guard let velvetTagsetDollcavo = Bundle.main.appStoreReceiptURL,
-                  let velvetSockDollhumi = try? Data(contentsOf: velvetTagsetDollcavo), !velvetSockDollhumi.isEmpty else {
-                throw DolluLaceBonnetDollzora.satinCollectionDollvelo
-            }
-            return velvetSockDollhumi
         }
         velvetPoseDollsero = cozyArchiveDollniva
         defer { velvetPoseDollsero = nil }
-        return try await cozyArchiveDollniva.value
+        try await cozyArchiveDollniva.value
+        return try velvetTagsetDollcavo()
+    }
+
+    private func velvetTagsetDollcavo() throws -> Data {
+        guard let velvetTagsetDollcavo = Bundle.main.appStoreReceiptURL,
+              let velvetSockDollhumi = try? Data(contentsOf: velvetTagsetDollcavo), !velvetSockDollhumi.isEmpty else {
+            throw DolluLaceBonnetDollzora.satinCollectionDollvelo
+        }
+        return velvetSockDollhumi
     }
 
     nonisolated func requestDidFinish(_ request: SKRequest) {
