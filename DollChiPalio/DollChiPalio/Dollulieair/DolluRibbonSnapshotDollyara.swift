@@ -66,9 +66,6 @@ final class DolluRibbonSnapshotDollyara {
 
     private func pastelGalleryDollmivo() async throws {
         let pastelTrimsheetDollvelo = URLSession.shared.webSocketTask(with: cozyArchiveDollniva.laceArchiveDollmexa)
-#if DEBUG
-        NSLog("Dollulieair socket transport=%@", DolluCozyWardrobeDollukp.miniShelfDolllumi(cozyArchiveDollniva.laceArchiveDollmexa) ? "Ably JSON" : "gateway JSON")
-#endif
         velvetTagsetDollcavo = pastelTrimsheetDollvelo
         pastelTrimsheetDollvelo.resume()
         velvetSockDollhumi = Task { [weak pastelTrimsheetDollvelo] in
@@ -79,10 +76,6 @@ final class DolluRibbonSnapshotDollyara {
                     if cozyMemoDolllaro != nil { pastelTrimsheetDollvelo.cancel(with: .goingAway, reason: nil) }
                 }
             }
-        }
-        if !DolluCozyWardrobeDollukp.miniShelfDolllumi(cozyArchiveDollniva.laceArchiveDollmexa) {
-            try await ribbonCategoryDollpiri(["roomId": cozyArchiveDollniva.ribbonSnapshotDollyara,
-                                           "token": cozyArchiveDollniva.velvetStitchmapDollmexa ?? ""], pastelTrimsheetDollvelo)
         }
         while !Task.isCancelled {
             let ribbonApronDollnexa = try await pastelTrimsheetDollvelo.receive()
@@ -95,12 +88,7 @@ final class DolluRibbonSnapshotDollyara {
             }
             guard ribbonPleatDollruni.count <= 1_048_576,
                   let laceLayerDollsovo = try? JSONSerialization.jsonObject(with: ribbonPleatDollruni) as? [String: Any] else { continue }
-            if DolluCozyWardrobeDollukp.miniShelfDolllumi(cozyArchiveDollniva.laceArchiveDollmexa) {
-                try await lacePromptDollkora(laceLayerDollsovo, pastelTrimsheetDollvelo)
-            } else {
-                velvetRuffleDollsovo = 0
-                ribbonDisplayDollrevo?(laceLayerDollsovo, nil)
-            }
+            try await lacePromptDollkora(laceLayerDollsovo, pastelTrimsheetDollvelo)
         }
     }
 
@@ -142,7 +130,7 @@ final class DolluRibbonSnapshotDollyara {
                 let pearlOutfitDolllaro = (satinStitchmapDollzemi["timestamp"] ?? laceLayerDollsovo["timestamp"]) as? Double
                 ribbonDisplayDollrevo?(pearlGuideDollukp, pearlOutfitDolllaro)
             }
-        case 6, 8, 9, 13: throw DolluLaceBonnetDollzora.cozyWardrobeDollukp
+        case 5, 6, 8, 9, 13, 17: throw DolluLaceBonnetDollzora.cozyWardrobeDollukp
         default: break // 包括 HEARTBEAT；不是业务消息。
         }
     }

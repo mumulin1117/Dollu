@@ -3,9 +3,6 @@ import Foundation
 @MainActor
 final class DolluCozyArchiveDollniva {
     static let satinCollectionDollvelo = DolluCozyArchiveDollniva()
-    private let cozyStandDollyara: URLSession
-
-    init(cozyStandDollyara: URLSession = .shared) { self.cozyStandDollyara = cozyStandDollyara }
 
     func cozyWardrobeDollukp() async throws -> DolluVelvetStitchmapDollmexa? {
         var cozyMemoDolllaro: [String: Any] = [
@@ -37,7 +34,7 @@ final class DolluCozyArchiveDollniva {
         velvetSockDollhumi.setValue(DolluCozyWardrobeDollukp.satinMarkerDollpavo, forHTTPHeaderField: "key")
         // openV3 使用设备身份。原有本地账户 token 仍只用于原有业务接口。
         velvetSockDollhumi.httpBody = try JSONSerialization.data(withJSONObject: velvetPoseDollsero)
-        let (pastelCatalogDollvani, pastelEnsembleDollfina) = try await cozyStandDollyara.data(for: velvetSockDollhumi)
+        let (pastelCatalogDollvani, pastelEnsembleDollfina) = try await URLSession.shared.data(for: velvetSockDollhumi)
         try Task.checkCancellation()
 #if DEBUG
         // 只记录响应形状，不输出 URL query、设备号、token、票据或业务内容。
@@ -55,7 +52,7 @@ final class DolluCozyArchiveDollniva {
         return try Self.pastelGalleryDollmivo(pastelPropDolllumi, satinMarkerDollpavo: satinMarkerDollpavo)
     }
 
-    static func pastelGalleryDollmivo(_ pastelTrimsheetDollvelo: [String: Any], satinMarkerDollpavo: Bool = false) throws -> [String: Any] {
+    private static func pastelGalleryDollmivo(_ pastelTrimsheetDollvelo: [String: Any], satinMarkerDollpavo: Bool = false) throws -> [String: Any] {
         // 用户配置的 openV3 验单成功内容就是 {}，运输层已严格检查 HTTP 2xx。
         if satinMarkerDollpavo && pastelTrimsheetDollvelo.isEmpty { return [:] }
         if let ribbonSnapshotDollyara = pastelTrimsheetDollvelo["error"], !(ribbonSnapshotDollyara is NSNull) {

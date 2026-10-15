@@ -6,7 +6,6 @@ enum DolluCozyWardrobeDollukp {
     static let cozyArchiveDollniva = "/dollu/cozyWardrobeDollukp"
     static let satinCollectionDollvelo = "/dollu/satinCollectionDollvelo"
     static let satinMarkerDollpavo = "39972965"
-    static let cozyMemoDolllaro = "openV3"
 
     // 平台字段映射：设备号、版本、推送，以及交易号、票据和后台订单号。
     static let cozyStandDollyara = "velvetTagset"
@@ -15,16 +14,8 @@ enum DolluCozyWardrobeDollukp {
     static let satinCoatDollbop = "dollcavo"
     static let satinCollarDollrilo = "ribbonDisplayDollrevo"
     static let satinStitchmapDollzemi = "pastelProp"
-    // 仅供主动请求平台下发消息使用，open/验单不附带该参数。
-    static let velvetPinboardDollpoxa = "cozyDolltavo"
-
-    // 平台 H5 字段映射：订单号、Apple 商品 ID、外链地址。
-    static let ribbonSnapshotDollyara = "Silhouette"
-    static let laceLayerDollsovo = "ribbonSnaps"
-    static let lacePromptDollkora = "shotDollyarafoverlin"
 
     // 当前消息协议。原生回传结果使用 event；下发事件只读取配置中的专属字段。
-    static let laceArchiveDollmexa = "laceArchiveDollmexa"
     static let ribbonCategoryDollpiri = "event"
     static let ribbonApronDollnexa = "data"
     static let pearlGuideDollukp = "pay"
@@ -52,16 +43,15 @@ enum DolluCozyWardrobeDollukp {
         tinySnapshotDollhumi(ribbonApronDollnexa[Self.ribbonApronDollnexa]) ?? [:]
     }
 
-    // 消息模板明确指定 llmivoRoute/kirt；也接收平台 H5 映射后的字段。
+    // 消息模板明确指定 llmivoRoute/kirt。
     static func satinPinboardDollvani(_ pearlGuideDollukp: [String: Any]) -> (String, String)? {
-        guard let pearlSkirtDollniva = tinyCoverDollmexa(pearlGuideDollukp["llmivoRoute"] ?? pearlGuideDollukp[laceLayerDollsovo]),
-              let pearlStripeDolltavo = tinyCoverDollmexa(pearlGuideDollukp["kirt"] ?? pearlGuideDollukp[ribbonSnapshotDollyara]) else { return nil }
-        ///测试版本productID pearlSkirtDollniva
+        guard let pearlSkirtDollniva = tinyCoverDollmexa(pearlGuideDollukp["llmivoRoute"]),
+              let pearlStripeDolltavo = tinyCoverDollmexa(pearlGuideDollukp["kirt"]) else { return nil }
         return (pearlSkirtDollniva, pearlStripeDolltavo)
     }
 
     static func ribbonHemlineDollukp(_ ribbonApronDollnexa: [String: Any]) -> String? {
-        tinyCoverDollmexa(ribbonApronDollnexa["ltavo"] ?? ribbonApronDollnexa[lacePromptDollkora])
+        tinyCoverDollmexa(ribbonApronDollnexa["ltavo"])
     }
 
     static func tinyCoverDollmexa(_ tinyCapeDollpoxa: Any?) -> String? {
@@ -110,25 +100,22 @@ struct DolluVelvetStitchmapDollmexa {
               let pastelCatalogDollvani = DolluCozyWardrobeDollukp.tinyCoverDollmexa(cozyMemoDolllaro["laceArchiveDollmexa"]),
               var pastelEnsembleDollfina = URLComponents(string: pastelCatalogDollvani),
               ["wss", "ws"].contains(pastelEnsembleDollfina.scheme?.lowercased() ?? ""),
-              let pastelNoteDollquvo = pastelEnsembleDollfina.url, pastelNoteDollquvo.host != nil else {
+              let pastelNoteDollquvo = pastelEnsembleDollfina.url, pastelNoteDollquvo.host != nil,
+              DolluCozyWardrobeDollukp.miniShelfDolllumi(pastelNoteDollquvo) else {
             throw DolluLaceBonnetDollzora.cozyArchiveDollniva
         }
         let pastelPropDolllumi = DolluCozyWardrobeDollukp.tinySnapshotDollhumi(cozyMemoDolllaro["velvetStitchmapDollmexa"])
         let pastelGalleryDollmivo = pastelPropDolllumi == nil
             ? DolluCozyWardrobeDollukp.tinyCoverDollmexa(cozyMemoDolllaro["velvetStitchmapDollmexa"])
             : DolluCozyWardrobeDollukp.tinyCoverDollmexa(pastelPropDolllumi?["token"])
-        if DolluCozyWardrobeDollukp.miniShelfDolllumi(pastelNoteDollquvo) {
-            var pastelTrimsheetDollvelo = pastelEnsembleDollfina.queryItems ?? []
-            if !pastelTrimsheetDollvelo.contains(where: { ["accessToken", "key"].contains($0.name) && !($0.value ?? "").isEmpty }) {
-                guard let pastelGalleryDollmivo else { throw DolluLaceBonnetDollzora.cozyArchiveDollniva }
-                pastelTrimsheetDollvelo.append(URLQueryItem(name: "accessToken", value: pastelGalleryDollmivo))
-            }
-            pastelTrimsheetDollvelo.removeAll { $0.name == "format" }
-            pastelTrimsheetDollvelo.append(URLQueryItem(name: "format", value: "json"))
-            pastelEnsembleDollfina.queryItems = pastelTrimsheetDollvelo
-        } else if pastelGalleryDollmivo == nil {
-            throw DolluLaceBonnetDollzora.cozyArchiveDollniva
+        var pastelTrimsheetDollvelo = pastelEnsembleDollfina.queryItems ?? []
+        if !pastelTrimsheetDollvelo.contains(where: { ["accessToken", "key"].contains($0.name) && !($0.value ?? "").isEmpty }) {
+            guard let pastelGalleryDollmivo else { throw DolluLaceBonnetDollzora.cozyArchiveDollniva }
+            pastelTrimsheetDollvelo.append(URLQueryItem(name: "accessToken", value: pastelGalleryDollmivo))
         }
+        pastelTrimsheetDollvelo.removeAll { $0.name == "format" }
+        pastelTrimsheetDollvelo.append(URLQueryItem(name: "format", value: "json"))
+        pastelEnsembleDollfina.queryItems = pastelTrimsheetDollvelo
         guard let ribbonDisplayDollrevo = pastelEnsembleDollfina.url else { throw DolluLaceBonnetDollzora.cozyArchiveDollniva }
         return Self(laceWardrobeDollvex: velvetSockDollhumi, velvetStitchmapDollmexa: pastelGalleryDollmivo,
                     ribbonSnapshotDollyara: velvetRuffleDollsovo, laceArchiveDollmexa: ribbonDisplayDollrevo)
@@ -136,13 +123,12 @@ struct DolluVelvetStitchmapDollmexa {
 }
 
 enum DolluLaceBonnetDollzora: LocalizedError {
-    case cozyWardrobeDollukp, cozyArchiveDollniva, satinCollectionDollvelo, satinMarkerDollpavo
+    case cozyWardrobeDollukp, cozyArchiveDollniva, satinCollectionDollvelo
     var errorDescription: String? {
         switch self {
         case .cozyWardrobeDollukp: return "Unable to connect. Please try again."
         case .cozyArchiveDollniva: return "The connection details are incomplete. Please try again later."
         case .satinCollectionDollvelo: return "Your purchase is awaiting confirmation. Please try again later."
-        case .satinMarkerDollpavo: return "Another purchase is still pending."
         }
     }
 }

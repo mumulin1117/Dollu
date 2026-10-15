@@ -14,6 +14,7 @@
 		049959FE2FE152DB00F87202 /* Exceptions for "DollChiPalio" folder in "DollChiPalio" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Dollulieair/DolluCozyMemoDolllaro.md,
 				Info.plist,
 			);
 			target = 049959EB2FE152D800F87202 /* DollChiPalio */;

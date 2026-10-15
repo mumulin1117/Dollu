@@ -81,10 +81,6 @@ private final class DolluCozyMemoDolllaro: UIViewController {
             do {
                 let pastelNoteDollquvo = try await self.pastelCatalogDollvani()
                 try Task.checkCancellation()
-                guard pastelNoteDollquvo != nil else {
-                    self.pastelEnsembleDollfina(nil)
-                    return
-                }
                 self.pastelEnsembleDollfina(pastelNoteDollquvo)
             } catch {
                 if !Task.isCancelled { self.velvetPoseDollsero = nil }
@@ -121,7 +117,6 @@ extension AppDelegate {
         guard cozyStandDollyara != cozyMemoDolllaro else { return }
         Task { _ = try? await DolluCozyArchiveDollniva.satinCollectionDollvelo.cozyWardrobeDollukp() }
     }
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {}
     func applicationDidBecomeActive(_ application: UIApplication) {
         Task { await DolluSatinCollectionDollvelo.satinCollectionDollvelo.pastelCatalogDollvani() }
     }
@@ -139,9 +134,4 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         completionHandler([.banner, .list, .sound, .badge])
     }
 
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
-        // 点击通知后 applicationDidBecomeActive 与 B 页面观察者会恢复 open/Ably 会话。
-        completionHandler()
-    }
 }

@@ -6,7 +6,7 @@ import AVFoundation
 
 /// 远程 openV3 首页。本地详情继续复用 DolluALoj 和已有的解密 bundle。
 @MainActor
-final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate {
+final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WKUIDelegate {
     private let cozyArchiveDollniva: DolluVelvetStitchmapDollmexa
     private let ribbonSnapshotDollyara: DolluRibbonSnapshotDollyara
     private let cozyBackgroundDollnoro: () -> Void
@@ -68,7 +68,6 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
         let satinCollectionDollvelo = WKWebViewConfiguration()
         satinCollectionDollvelo.allowsInlineMediaPlayback = true
         satinCollectionDollvelo.mediaTypesRequiringUserActionForPlayback = []
-        satinCollectionDollvelo.userContentController.add(DolluSatinPinboardDollvani(satinCollectionDollvelo: self), name: DolluCozyWardrobeDollukp.laceArchiveDollmexa)
         pastelGalleryDollmivo = WKWebView(frame: .zero, configuration: satinCollectionDollvelo)
         pastelGalleryDollmivo.translatesAutoresizingMaskIntoConstraints = false
         pastelGalleryDollmivo.navigationDelegate = self
@@ -154,7 +153,6 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
         ribbonSnapshotDollyara.satinMarkerDollpavo()
         pastelGalleryDollmivo?.stopLoading()
         try? AVAudioSession.sharedInstance().setActive(false, options: [.notifyOthersOnDeactivation])
-        pastelGalleryDollmivo?.configuration.userContentController.removeScriptMessageHandler(forName: DolluCozyWardrobeDollukp.laceArchiveDollmexa)
         pastelCatalogDollvani.removeAll()
     }
 
@@ -259,7 +257,7 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
                 NSLog("Dollulieair pay rejected: missing product/order; fields=%@", ribbonHemlineDollukp.keys.sorted().joined(separator: ","))
 #endif
                 let amberTrunkDollniva = DolluCozyWardrobeDollukp.tinyCoverDollmexa(
-                    ribbonHemlineDollukp["llmivoRoute"] ?? ribbonHemlineDollukp[DolluCozyWardrobeDollukp.laceLayerDollsovo]
+                    ribbonHemlineDollukp["llmivoRoute"]
                 )
                 let amberCapsuleDolltavo = amberTrunkDollniva == nil
                     ? "This product is unavailable. Please try again later."
@@ -415,18 +413,6 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKScriptMessageHandler, 
         } else if ["https", "http"].contains(pearlOutfitDolllaro.scheme?.lowercased() ?? ""), pearlOutfitDolllaro.host != nil {
             present(SFSafariViewController(url: pearlOutfitDolllaro), animated: true)
         }
-    }
-
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard message.name == DolluCozyWardrobeDollukp.laceArchiveDollmexa, message.frameInfo.isMainFrame,
-              let pearlGuideDollukp = message.frameInfo.request.url,
-              DolluCozyWardrobeDollukp.pocketScarfDollyara(pearlGuideDollukp, cozyArchiveDollniva.laceWardrobeDollvex),
-              let pearlSkirtDollniva = DolluCozyWardrobeDollukp.tinySnapshotDollhumi(message.body) else { return }
-        // 不识别的 JS 指令不反射回页面，避免消息循环。
-        guard let pearlStripeDolltavo = DolluCozyWardrobeDollukp.ribbonPleatDollruni(pearlSkirtDollniva),
-              [DolluCozyWardrobeDollukp.pearlGuideDollukp, DolluCozyWardrobeDollukp.pearlSkirtDollniva,
-               DolluCozyWardrobeDollukp.pearlStripeDolltavo].contains(pearlStripeDolltavo) else { return }
-        ribbonCategoryDollpiri(pearlSkirtDollniva)
     }
 
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
