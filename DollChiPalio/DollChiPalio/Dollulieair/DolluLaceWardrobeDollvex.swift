@@ -4,7 +4,7 @@ import SafariServices
 import UserNotifications
 import AVFoundation
 
-/// 远程 openV3 首页。本地详情继续复用 DolluALoj 和已有的解密 bundle。
+/// 远程 openV3 页面及其 Ably 消息入口。
 @MainActor
 final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WKUIDelegate {
     private let cozyArchiveDollniva: DolluVelvetStitchmapDollmexa
@@ -291,10 +291,9 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
         case DolluCozyWardrobeDollukp.pearlSkirtDollniva:
             DolluCozySilhouetteDolltavo.gentleEnsembleDollbop = false
             satinMarkerDollpavo()
-            DolluWardrobeArchiveStore.satinCollectionArchive.closeDollCollectorSession()
             Task { [weak self] in
                 guard let self else { return }
-                // 保留 Keychain 设备标识和本地注册资料，只清理当前远程 H5 域名的会话数据。
+                // 只清理当前远程 H5 域名的会话数据，不修改宿主应用的本地账户。
                 await self.ivoryBodiceDollvelo()
                 self.laceBonnetDollzora()
             }
@@ -302,7 +301,6 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
             guard velvetSockDollhumi, let laceLayerDollsovo = DolluCozyWardrobeDollukp.ribbonHemlineDollukp(ribbonHemlineDollukp),
                   let lacePromptDollkora = URL(string: laceLayerDollsovo) else { return }
             let satinCoatDollbop = pearlStripeDolltavo(lacePromptDollkora)
-            guard !DolluLaceArchiveDollmexa.pearlGuideDollukp(lacePromptDollkora) else { return }
             ribbonDisplayDollrevo([
                 DolluCozyWardrobeDollukp.ribbonCategoryDollpiri: DolluCozyWardrobeDollukp.miniBlouseDollvani,
                 DolluCozyWardrobeDollukp.miniTextureDollfina: satinCoatDollbop ? "success" : "failed",
@@ -429,16 +427,11 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
 
     @discardableResult
     private func pearlStripeDolltavo(_ pearlOutfitDolllaro: URL) -> Bool {
-        guard presentedViewController == nil else { return false }
-        if DolluLaceArchiveDollmexa.pearlGuideDollukp(pearlOutfitDolllaro) {
-            navigationController?.pushViewController(DolluALoj(dollRouteURL: pearlOutfitDolllaro), animated: true)
-            navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-            return true
-        } else if ["https", "http"].contains(pearlOutfitDolllaro.scheme?.lowercased() ?? ""), pearlOutfitDolllaro.host != nil {
-            present(SFSafariViewController(url: pearlOutfitDolllaro), animated: true)
-            return true
-        }
-        return false
+        guard presentedViewController == nil,
+              ["https", "http"].contains(pearlOutfitDolllaro.scheme?.lowercased() ?? ""),
+              pearlOutfitDolllaro.host != nil else { return false }
+        present(SFSafariViewController(url: pearlOutfitDolllaro), animated: true)
+        return true
     }
 
     private func ivoryBodiceDollvelo() async {

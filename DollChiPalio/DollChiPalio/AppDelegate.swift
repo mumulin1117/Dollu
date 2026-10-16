@@ -20,7 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         let window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window = window
-        DolluCozySilhouetteDolltavo.satinCollectionDollvelo.cozyWardrobeDollukp(window)
+        DolluCozySilhouetteDolltavo.satinCollectionDollvelo.cozyWardrobeDollukp(window) {
+            if DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession.dollCollectorIsInside {
+                return DolluheirloomPropDollseroController()
+            }
+            let pastelCatalogDollvani = UINavigationController(rootViewController: DollupearlSkirtDController())
+            pastelCatalogDollvani.setNavigationBarHidden(true, animated: false)
+            return pastelCatalogDollvani
+        }
         window.makeKeyAndVisible()
         return true
     }

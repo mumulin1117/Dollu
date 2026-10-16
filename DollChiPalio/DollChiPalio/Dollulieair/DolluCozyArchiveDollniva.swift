@@ -44,10 +44,6 @@ final class DolluCozyArchiveDollniva {
         var velvetSockDollhumi = URLRequest(url: velvetTagsetDollcavo, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20)
         velvetSockDollhumi.httpMethod = "POST"
         velvetSockDollhumi.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        velvetSockDollhumi.setValue("application/json", forHTTPHeaderField: "Accept")
-        velvetSockDollhumi.setValue(DolluCozyWardrobeDollukp.satinMarkerDollpavo, forHTTPHeaderField: "appid")
-        velvetSockDollhumi.setValue(DolluCozyWardrobeDollukp.satinMarkerDollpavo, forHTTPHeaderField: "key")
-        // openV3 使用设备身份。原有本地账户 token 仍只用于原有业务接口。
         velvetSockDollhumi.httpBody = try JSONSerialization.data(withJSONObject: velvetPoseDollsero)
 #if DEBUG
         if satinMarkerDollpavo {
@@ -75,31 +71,9 @@ final class DolluCozyArchiveDollniva {
               let pastelPropDolllumi = try JSONSerialization.jsonObject(with: pastelCatalogDollvani) as? [String: Any] else {
             throw DolluLaceBonnetDollzora.cozyWardrobeDollukp
         }
-        return try Self.pastelGalleryDollmivo(pastelPropDolllumi, satinMarkerDollpavo: satinMarkerDollpavo)
-    }
-
-    private static func pastelGalleryDollmivo(_ pastelTrimsheetDollvelo: [String: Any], satinMarkerDollpavo: Bool = false) throws -> [String: Any] {
-        // 用户配置的 openV3 验单成功内容就是 {}，运输层已严格检查 HTTP 2xx。
-        if satinMarkerDollpavo && pastelTrimsheetDollvelo.isEmpty { return [:] }
-        if let ribbonSnapshotDollyara = pastelTrimsheetDollvelo["error"], !(ribbonSnapshotDollyara is NSNull) {
-            throw DolluLaceBonnetDollzora.cozyWardrobeDollukp
-        }
-        if let ribbonSnapshotDollyara = pastelTrimsheetDollvelo["code"] ?? pastelTrimsheetDollvelo["status"] {
-            guard ribbonSnapshotDollyara as? String == "0000" else { throw DolluLaceBonnetDollzora.cozyWardrobeDollukp }
-        } else if satinMarkerDollpavo {
-            // 无业务码时只接受已配置的空对象，不把任意 JSON 都视为验单成功。
+        if satinMarkerDollpavo && !pastelPropDolllumi.isEmpty {
             throw DolluLaceBonnetDollzora.satinCollectionDollvelo
         }
-        if pastelTrimsheetDollvelo["success"] as? Bool == false { throw DolluLaceBonnetDollzora.cozyWardrobeDollukp }
-        for ribbonDisplayDollrevo in ["data", "result", "content"] {
-            if let ribbonCategoryDollpiri = pastelTrimsheetDollvelo[ribbonDisplayDollrevo], !(ribbonCategoryDollpiri is NSNull) {
-                guard let ribbonApronDollnexa = DolluCozyWardrobeDollukp.tinySnapshotDollhumi(ribbonCategoryDollpiri) else {
-                    throw DolluLaceBonnetDollzora.cozyArchiveDollniva
-                }
-                // 外层已确认成功，验单 data 允许 {}。
-                return try pastelGalleryDollmivo(ribbonApronDollnexa)
-            }
-        }
-        return pastelTrimsheetDollvelo
+        return pastelPropDolllumi
     }
 }

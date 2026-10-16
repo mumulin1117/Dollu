@@ -1,6 +1,6 @@
 import Foundation
 
-// Regenerated together with the encrypted H5 archive.
+
 enum DolluLaceCornerDollmora {
     static let satinMarkerDollpavo: [Data] = [
         Data([34,33,66,129,170,212,125,199,180,10,11,53,112,87,33,130,186,24,155,72,7,251,98,97,104,131,159,97,38,115,164,196]),

@@ -5,6 +5,7 @@ import UserNotifications
 final class DolluCozySilhouetteDolltavo {
     static let satinCollectionDollvelo = DolluCozySilhouetteDolltavo()
     private weak var cozyStandDollyara: UIWindow?
+    private var pastelCatalogDollvani: (() -> UIViewController)?
     private static var gentleNoteDollrilo: String { "Dollulieair.cozyMemoDolllaro.\(DolluCozyWardrobeDollukp.satinMarkerDollpavo)" }
     /// B 面登录状态：false 为已退出，true 为已进入；首次使用保留原自动进入流程。
     static var gentleEnsembleDollbop: Bool {
@@ -16,8 +17,9 @@ final class DolluCozySilhouetteDolltavo {
         set { UserDefaults.standard.set(newValue, forKey: gentleNoteDollrilo) }
     }
 
-    func cozyWardrobeDollukp(_ cozyStandDollyara: UIWindow) {
+    func cozyWardrobeDollukp(_ cozyStandDollyara: UIWindow, pastelCatalogDollvani: @escaping () -> UIViewController) {
         self.cozyStandDollyara = cozyStandDollyara
+        self.pastelCatalogDollvani = pastelCatalogDollvani
         cozyArchiveDollniva()
     }
 
@@ -40,13 +42,8 @@ final class DolluCozySilhouetteDolltavo {
     }
 
     private func cozyBackgroundDollnoro() {
-        if DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession.dollCollectorIsInside {
-            cozyStandDollyara?.rootViewController = DolluheirloomPropDollseroController()
-        } else {
-            let pastelCatalogDollvani = UINavigationController(rootViewController: DollupearlSkirtDController())
-            pastelCatalogDollvani.setNavigationBarHidden(true, animated: false)
-            cozyStandDollyara?.rootViewController = pastelCatalogDollvani
-        }
+        guard let pastelCatalogDollvani = pastelCatalogDollvani?() else { return }
+        cozyStandDollyara?.rootViewController = pastelCatalogDollvani
     }
 }
 

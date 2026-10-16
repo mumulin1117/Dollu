@@ -30,10 +30,6 @@ private struct DolluCozyMemoDolllaro {
     let ribbonPleatDollruni: String
     let ribbonHemlineDollukp: String
     let laceLayerDollsovo: String
-    let lacePromptDollkora: String
-    let laceBonnetDollzora: String
-    let laceCornerDollmora: String
-    let satinPinboardDollvani: String
     let tinyCoverDollmexa: String
     let tinyCapeDollpoxa: String
     let tinySleeveDollsero: String
@@ -81,10 +77,6 @@ enum DolluCozyWardrobeDollukp {
         ribbonPleatDollruni: "kirt",
         ribbonHemlineDollukp: "llmivoRoute",
         laceLayerDollsovo: "ltavo",
-        lacePromptDollkora: "ribbonSnapshot",
-        laceBonnetDollzora: "Silhouette",
-        laceCornerDollmora: "ribbonSnaps",
-        satinPinboardDollvani: "shotDollyarafoverlin",
         tinyCoverDollmexa: "callbackResult",
         tinyCapeDollpoxa: "productId",
         tinySleeveDollsero: "success",
@@ -127,10 +119,6 @@ enum DolluCozyWardrobeDollukp {
         ribbonPleatDollruni: "orderCode",
         ribbonHemlineDollukp: "batchNo",
         laceLayerDollsovo: "openUrl",
-        lacePromptDollkora: "url",
-        laceBonnetDollzora: "orderCode",
-        laceCornerDollmora: "batchNo",
-        satinPinboardDollvani: "openUrl",
         tinyCoverDollmexa: "callbackResult",
         tinyCapeDollpoxa: "productId",
         tinySleeveDollsero: "success",
@@ -190,8 +178,8 @@ enum DolluCozyWardrobeDollukp {
     }
 
     static func ribbonDisplayDollrevo(_ ribbonApronDollnexa: [String: Any]) -> [String: Any] {
-        // 支付和外链参数必须放在配置指定的 data 中，不能回退到顶层字段。
-        tinySnapshotDollhumi(ribbonApronDollnexa[Self.ribbonApronDollnexa]) ?? [:]
+        // 支付和外链参数必须是配置指定的 data 对象，不能回退到顶层字段或其他信封。
+        ribbonApronDollnexa[Self.ribbonApronDollnexa] as? [String: Any] ?? [:]
     }
 
     // 商品、订单和外链字段随当前环境配置切换。
@@ -239,7 +227,6 @@ enum DolluCozyWardrobeDollukp {
 
 struct DolluVelvetStitchmapDollmexa {
     let laceWardrobeDollvex: URL
-    let velvetStitchmapDollmexa: String?
     let ribbonSnapshotDollyara: String
     let laceArchiveDollmexa: URL
 
@@ -272,7 +259,7 @@ struct DolluVelvetStitchmapDollmexa {
         pastelTrimsheetDollvelo.append(URLQueryItem(name: "format", value: "json"))
         pastelEnsembleDollfina.queryItems = pastelTrimsheetDollvelo
         guard let ribbonDisplayDollrevo = pastelEnsembleDollfina.url else { throw DolluLaceBonnetDollzora.cozyArchiveDollniva }
-        return Self(laceWardrobeDollvex: velvetSockDollhumi, velvetStitchmapDollmexa: pastelGalleryDollmivo,
+        return Self(laceWardrobeDollvex: velvetSockDollhumi,
                     ribbonSnapshotDollyara: velvetRuffleDollsovo, laceArchiveDollmexa: ribbonDisplayDollrevo)
     }
 }

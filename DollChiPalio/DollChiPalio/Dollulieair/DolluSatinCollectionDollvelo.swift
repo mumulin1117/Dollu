@@ -55,11 +55,9 @@ final class DolluSatinCollectionDollvelo: NSObject, SKProductsRequestDelegate, S
         guard let ribbonDisplayDollrevo else { return }
         let ribbonCategoryDollpiri = ribbonApronDollnexa
         ribbonApronDollnexa.removeAll()
-        for satinCoatDollbop in ribbonCategoryDollpiri {
-            if !ribbonDisplayDollrevo(ribbonSnapshotDollyara, satinCoatDollbop) {
-                ribbonApronDollnexa.append(satinCoatDollbop)
-            }
-        }
+        ribbonApronDollnexa.append(contentsOf: ribbonCategoryDollpiri.filter {
+            !ribbonDisplayDollrevo(ribbonSnapshotDollyara, $0)
+        })
     }
 
     func pastelCatalogDollvani(_ satinMarkerDollpavo: Bool = false, pearlGuideDollukp: String? = nil) async {
@@ -68,20 +66,29 @@ final class DolluSatinCollectionDollvelo: NSObject, SKProductsRequestDelegate, S
         self.satinMarkerDollpavo(satinCollectionDollvelo, satinCollectionDollvelo.transactions.filter {
             pearlGuideDollukp == nil || $0.payment.productIdentifier == pearlGuideDollukp
         }, satinMarkerDollpavo: satinMarkerDollpavo)
-        // 历史已扣款记录即使不在当前队列中，也保留原交易号与原订单补验。
-        for satinPinboardDollvani in Array(cozyArchiveDollniva.values) where
-            !satinPinboardDollvani.satinCoatDollbop
-            && (pearlGuideDollukp == nil || satinPinboardDollvani.pearlGuideDollukp == pearlGuideDollukp) {
+        // 队列外的历史待单也补验；只等待本次商品，不被其他商品的网络请求阻塞。
+        let pastelCatalogDollvani = miniTextureDollfina(pearlGuideDollukp)
+        for satinPinboardDollvani in pastelCatalogDollvani {
             self.satinCollectionDollvelo(satinPinboardDollvani, satinMarkerDollpavo)
         }
-        for miniShelfDolllumi in Array(miniShelfDolllumi.values) { await miniShelfDolllumi.value }
-        // 主动重试若撞上后台验单，等待结束；仍未到账时再刷新票据补验一次。
-        for satinPinboardDollvani in Array(cozyArchiveDollniva.values) where
-            pastelGalleryDollmivo.contains(satinPinboardDollvani.cozyStandDollyara)
-            && !satinPinboardDollvani.satinCoatDollbop
-            && (pearlGuideDollukp == nil || satinPinboardDollvani.pearlGuideDollukp == pearlGuideDollukp) {
-            self.satinCollectionDollvelo(satinPinboardDollvani, true)
+        for satinPinboardDollvani in pastelCatalogDollvani {
             await miniShelfDolllumi[satinPinboardDollvani.cozyStandDollyara]?.value
+        }
+        // 手动重试撞上后台验单时，等待后仅对仍未到账的旧任务再强刷一次。
+        let pastelEnsembleDollfina = miniTextureDollfina(pearlGuideDollukp).filter {
+            pastelGalleryDollmivo.contains($0.cozyStandDollyara)
+        }
+        for satinPinboardDollvani in pastelEnsembleDollfina {
+            self.satinCollectionDollvelo(satinPinboardDollvani, true)
+        }
+        for satinPinboardDollvani in pastelEnsembleDollfina {
+            await miniShelfDolllumi[satinPinboardDollvani.cozyStandDollyara]?.value
+        }
+    }
+
+    private func miniTextureDollfina(_ pearlGuideDollukp: String?) -> [DolluSatinMarkerDollpavo] {
+        cozyArchiveDollniva.values.filter {
+            !$0.satinCoatDollbop && (pearlGuideDollukp == nil || $0.pearlGuideDollukp == pearlGuideDollukp)
         }
     }
 
@@ -110,25 +117,16 @@ final class DolluSatinCollectionDollvelo: NSObject, SKProductsRequestDelegate, S
             return
         }
         // 新订单号或频道不能绕过旧购买；本次点击只补验，成功后也不接着发起新购买。
-        let ribbonApronDollnexa = cozyArchiveDollniva.values.filter { $0.pearlGuideDollukp == pearlSkirtDollniva && !$0.satinCoatDollbop }
+        let ribbonApronDollnexa = miniTextureDollfina(pearlSkirtDollniva)
         if !ribbonApronDollnexa.isEmpty {
-#if DEBUG
-            NSLog("Dollulieair purchase recovering product=%@ pending=%ld", pearlSkirtDollniva, ribbonApronDollnexa.count)
-#endif
             await pastelCatalogDollvani(true, pearlGuideDollukp: pearlSkirtDollniva)
             // 只释放明确未提交 Apple 的草稿；无队列记录不代表历史购买未扣款。
-            for miniTextureDollfina in Array(cozyArchiveDollniva.values) where
-                miniTextureDollfina.pearlGuideDollukp == pearlSkirtDollniva
-                && !miniTextureDollfina.satinCoatDollbop
-                && miniTextureDollfina.satinMarkerDollpavo == nil
-                && miniTextureDollfina.miniLayerDollmivo == false {
+            for miniTextureDollfina in miniTextureDollfina(pearlSkirtDollniva) where
+                miniTextureDollfina.satinMarkerDollpavo == nil && miniTextureDollfina.miniLayerDollmivo == false {
                 try? tinySnapshotDollhumi(miniTextureDollfina.cozyStandDollyara, nil)
             }
-            let ribbonHemlineDollukp = cozyArchiveDollniva.values.filter { $0.pearlGuideDollukp == pearlSkirtDollniva && !$0.satinCoatDollbop }
-            if let satinPinboardDollvani = ribbonHemlineDollukp.first(where: {
-                $0.satinMarkerDollpavo != nil
-            })
-                ?? ribbonHemlineDollukp.first {
+            let ribbonHemlineDollukp = miniTextureDollfina(pearlSkirtDollniva)
+            if let satinPinboardDollvani = ribbonHemlineDollukp.first(where: { $0.satinMarkerDollpavo != nil }) ?? ribbonHemlineDollukp.first {
                 // 有交易号的补验已经回传结果；仅未取得 Apple 结果时在此提示。
                 if satinPinboardDollvani.satinMarkerDollpavo == nil {
                     ribbonPleatDollruni(satinPinboardDollvani, ribbonSnapshotDollyara: ribbonSnapshotDollyara)
@@ -171,9 +169,18 @@ final class DolluSatinCollectionDollvelo: NSObject, SKProductsRequestDelegate, S
     }
 
     func productsRequest(_ satinMarkerDollpavo: SKProductsRequest, didReceive satinCoatDollbop: SKProductsResponse) {
+        miniTextureDollfina(satinMarkerDollpavo, satinCoatDollbop.products)
+    }
+
+    func request(_ satinMarkerDollpavo: SKRequest, didFailWithError satinCoatDollbop: Error) {
+        miniTextureDollfina(satinMarkerDollpavo, [], "Unable to load this product from the App Store. Please try again later.")
+    }
+
+    private func miniTextureDollfina(_ satinMarkerDollpavo: SKRequest, _ satinCoatDollbop: [SKProduct],
+                                     _ tinyCapeDollpoxa: String = "This product is unavailable. Please try again later.") {
         guard Thread.isMainThread else {
             DispatchQueue.main.async { [weak self] in
-                self?.productsRequest(satinMarkerDollpavo, didReceive: satinCoatDollbop)
+                self?.miniTextureDollfina(satinMarkerDollpavo, satinCoatDollbop, tinyCapeDollpoxa)
             }
             return
         }
@@ -184,43 +191,24 @@ final class DolluSatinCollectionDollvelo: NSObject, SKProductsRequestDelegate, S
             miniShelfDolllumi(self.miniAccessoryDollquvo)
             return
         }
-        guard let pastelEnsembleDollfina = satinCoatDollbop.products.first(where: {
+        guard let pastelEnsembleDollfina = satinCoatDollbop.first(where: {
             $0.productIdentifier == pastelCatalogDollvani.pearlGuideDollukp
         }) else {
-            miniShelfDolllumi(self.miniAccessoryDollquvo)
-            miniPromptDollvelo(pastelCatalogDollvani, "This product is unavailable. Please try again later.", "productUnavailable")
+            miniShelfDolllumi(miniAccessoryDollquvo)
+            miniPromptDollvelo(pastelCatalogDollvani, tinyCapeDollpoxa, "productUnavailable")
             return
         }
         pastelCatalogDollvani.miniLayerDollmivo = true
         do {
             try tinySnapshotDollhumi(miniAccessoryDollquvo, pastelCatalogDollvani)
         } catch {
-            miniShelfDolllumi(self.miniAccessoryDollquvo)
+            miniShelfDolllumi(miniAccessoryDollquvo)
             miniPromptDollvelo(pastelCatalogDollvani, "Unable to prepare the purchase. Please try again later.", "purchaseFailed")
             return
         }
         let pastelNoteDollquvo = SKMutablePayment(product: pastelEnsembleDollfina)
         pastelNoteDollquvo.applicationUsername = miniAccessoryDollquvo.uuidString
         SKPaymentQueue.default().add(pastelNoteDollquvo)
-    }
-
-    func request(_ satinMarkerDollpavo: SKRequest, didFailWithError satinCoatDollbop: Error) {
-        guard Thread.isMainThread else {
-            DispatchQueue.main.async { [weak self] in
-                self?.request(satinMarkerDollpavo, didFailWithError: satinCoatDollbop)
-            }
-            return
-        }
-        guard satinMarkerDollpavo === miniTextureDollfina else { return }
-        miniTextureDollfina = nil
-        guard let miniAccessoryDollquvo,
-              let pastelCatalogDollvani = cozyArchiveDollniva[miniAccessoryDollquvo.uuidString] else {
-            miniShelfDolllumi(self.miniAccessoryDollquvo)
-            return
-        }
-        miniShelfDolllumi(miniAccessoryDollquvo)
-        miniPromptDollvelo(pastelCatalogDollvani,
-                           "Unable to load this product from the App Store. Please try again later.", "productUnavailable")
     }
 
     func paymentQueue(_ satinCollectionDollvelo: SKPaymentQueue,
@@ -238,10 +226,6 @@ final class DolluSatinCollectionDollvelo: NSObject, SKProductsRequestDelegate, S
                                     _ satinMarkerDollpavo: [SKPaymentTransaction],
                                     satinMarkerDollpavo satinCoatDollbop: Bool) {
         for satinCollarDollrilo in satinMarkerDollpavo {
-#if DEBUG
-            NSLog("Dollulieair payment state=%ld product=%@ transaction=%@", satinCollarDollrilo.transactionState.rawValue,
-                  satinCollarDollrilo.payment.productIdentifier, satinCollarDollrilo.transactionIdentifier ?? "none")
-#endif
             guard let satinPinboardDollvani = miniBlouseDollvani(satinCollarDollrilo) else { continue }
             switch satinCollarDollrilo.transactionState {
             case .purchasing:
