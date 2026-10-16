@@ -1,7 +1,6 @@
 import Foundation
 import StoreKit
 
-//Dollu 6
 final class DolluSatinCollarDollrilo: NSObject, SKRequestDelegate {
     static let satinCollectionDollvelo = DolluSatinCollarDollrilo()
     private var velvetPoseDollsero: Task<Void, Error>?
