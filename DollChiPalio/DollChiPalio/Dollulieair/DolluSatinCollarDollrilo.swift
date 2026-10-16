@@ -1,8 +1,7 @@
 import Foundation
 import StoreKit
 
-/// openV3 验单使用 App Receipt；主动补验可刷新，购买优先读现有票据，后台恢复只读。
-@MainActor
+//Dollu 6
 final class DolluSatinCollarDollrilo: NSObject, SKRequestDelegate {
     static let satinCollectionDollvelo = DolluSatinCollarDollrilo()
     private var velvetPoseDollsero: Task<Void, Error>?
@@ -11,7 +10,7 @@ final class DolluSatinCollarDollrilo: NSObject, SKRequestDelegate {
     private var satinPinboardDollvani: DispatchWorkItem?
 
     func cozyWardrobeDollukp(_ satinMarkerDollpavo: Bool, miniLayerDollmivo: Bool = false) async throws -> Data {
-        // 后台恢复只读取已存在的票据，不在冷启动时触发 Apple ID 登录提示。
+     
         if !satinMarkerDollpavo {
             if let velvetSockDollhumi = try? velvetTagsetDollcavo() { return velvetSockDollhumi }
             guard miniLayerDollmivo else {

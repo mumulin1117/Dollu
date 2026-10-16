@@ -1,7 +1,6 @@
 import UIKit
 
-/// 登录入口与远程页面共用同一背景和控件布局，衔接时只切换加载状态。
-@MainActor
+//Dollu 1
 final class DolluCozyBackgroundDollnoro: UIView {
     let velvetSockDollhumi = UIButton(type: .system)
     private let cozyBackgroundDollnoro = UIImageView()
@@ -17,7 +16,7 @@ final class DolluCozyBackgroundDollnoro: UIView {
         cozyBackgroundDollnoro.translatesAutoresizingMaskIntoConstraints = false
         addSubview(cozyBackgroundDollnoro)
 
-        let pastelCatalogDollvani = UIImageView(image: UIImage(named: "nordicond"))
+        let pastelCatalogDollvani = UIImageView(image: UIImage(named: **"noxQrdxQicxQonxQd"))
         pastelCatalogDollvani.contentMode = .scaleAspectFit
         velvetTagsetDollcavo.color = .white
         velvetTagsetDollcavo.hidesWhenStopped = true
@@ -25,7 +24,7 @@ final class DolluCozyBackgroundDollnoro: UIView {
         velvetRuffleDollsovo.font = .systemFont(ofSize: 15)
         velvetRuffleDollsovo.textAlignment = .center
         velvetRuffleDollsovo.numberOfLines = 0
-        velvetSockDollhumi.setTitle("Log In", for: .normal)
+        velvetSockDollhumi.setTitle(**"LoxQg xQInxQ", for: .normal)
         velvetSockDollhumi.setTitleColor(.white, for: .normal)
         velvetSockDollhumi.setTitleColor(UIColor.white.withAlphaComponent(0.65), for: .disabled)
         velvetSockDollhumi.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
@@ -60,9 +59,8 @@ final class DolluCozyBackgroundDollnoro: UIView {
 
     required init?(coder: NSCoder) { nil }
 
-    /// 第一个参数表示已确认 B 面，第二个参数表示来自登录按钮。
     func cozyArchiveDollniva(_ pastelPropDolllumi: Bool, cozyStandDollyara: Bool) {
-        cozyBackgroundDollnoro.image = UIImage(named: pastelPropDolllumi ? "lacePromptDollkora" : "dollualungch")
+        cozyBackgroundDollnoro.image = UIImage(named: pastelPropDolllumi ? **"laxQcexQPrxQomxQptxQDoxQllxQkoxQraxQ" : **"doxQllxQuaxQluxQngxQchxQ")
         pastelEnsembleDollfina.isHidden = !pastelPropDolllumi
         velvetSockDollhumi.isHidden = !cozyStandDollyara
     }
@@ -70,7 +68,7 @@ final class DolluCozyBackgroundDollnoro: UIView {
     func velvetPoseDollsero(_ velvetStitchmapDollmexa: Bool, cozyMemoDolllaro: String? = nil) {
         velvetSockDollhumi.isEnabled = !velvetStitchmapDollmexa
         velvetSockDollhumi.alpha = velvetStitchmapDollmexa ? 0.55 : 1
-        velvetRuffleDollsovo.text = cozyMemoDolllaro ?? (velvetStitchmapDollmexa ? "Connecting…" : nil)
+        velvetRuffleDollsovo.text = cozyMemoDolllaro ?? (velvetStitchmapDollmexa ? **"CoxQnnxQecxQtixQngxQ…" : nil)
         if velvetStitchmapDollmexa { velvetTagsetDollcavo.startAnimating() }
         else { velvetTagsetDollcavo.stopAnimating() }
     }

@@ -1,7 +1,6 @@
 import Foundation
 
-/// 单个远程页面持有一个连接；取消页面时同时取消接收、心跳和重连。
-@MainActor
+//Dollu 5
 final class DolluRibbonSnapshotDollyara {
     var ribbonDisplayDollrevo: (([String: Any], TimeInterval?) -> Void)?
     var cozyBackgroundDollnoro: (() -> Void)?
@@ -43,9 +42,7 @@ final class DolluRibbonSnapshotDollyara {
                     if Task.isCancelled { return }
                     self.ribbonPleatDollruni?.cancel()
                     self.ribbonPleatDollruni = nil
-#if DEBUG
-                    NSLog("Dollulieair socket reconnect; error domain=%@ code=%ld", (error as NSError).domain, (error as NSError).code)
-#endif
+
                     self.velvetTagsetDollcavo?.cancel(with: .goingAway, reason: nil)
                     self.velvetTagsetDollcavo = nil
                     self.velvetSockDollhumi?.cancel()
@@ -103,68 +100,59 @@ final class DolluRibbonSnapshotDollyara {
     }
 
     private func lacePromptDollkora(_ laceLayerDollsovo: [String: Any], _ laceCornerDollmora: URLSessionWebSocketTask) async throws {
-        switch laceLayerDollsovo["action"] as? Int {
+        switch laceLayerDollsovo[**"acxQtixQonxQ"] as? Int {
         case 4:
-            try await ribbonCategoryDollpiri(["action": 10, "channel": cozyArchiveDollniva.ribbonSnapshotDollyara], laceCornerDollmora)
+            try await ribbonCategoryDollpiri([**"acxQtixQonxQ": 10, **"chxQanxQnexQl": cozyArchiveDollniva.ribbonSnapshotDollyara], laceCornerDollmora)
         case 11:
             guard velvetTagsetDollcavo === laceCornerDollmora,
-                  laceLayerDollsovo["channel"] as? String == cozyArchiveDollniva.ribbonSnapshotDollyara else { return }
+                  laceLayerDollsovo[**"chxQanxQnexQl"] as? String == cozyArchiveDollniva.ribbonSnapshotDollyara else { return }
             velvetRuffleDollsovo = 0
-#if DEBUG
-            NSLog("Dollulieair socket channel attached")
-#endif
-            // 每次连接只请求一次；独立任务保证 HTTP 等待期间仍能接收退出、支付等消息。
+
+           
             guard ribbonPleatDollruni == nil else { return }
             ribbonPleatDollruni = Task {
                 do {
                     try Task.checkCancellation()
                     try await DolluCozyArchiveDollniva.satinCollectionDollvelo.ribbonPleatDollruni()
                 } catch {
-#if DEBUG
-                    if !Task.isCancelled { NSLog("Dollulieair connection message request failed") }
-#endif
-                    // 保留现有收消息连接；下次实际重连后再请求，不因 HTTP 失败反复重连。
+
+                   
                 }
             }
         case 15:
-            guard laceLayerDollsovo["channel"] as? String == cozyArchiveDollniva.ribbonSnapshotDollyara,
-                  let satinCoatDollbop = laceLayerDollsovo["messages"] as? [[String: Any]] else { return }
+            guard laceLayerDollsovo[**"chxQanxQnexQl"] as? String == cozyArchiveDollniva.ribbonSnapshotDollyara,
+                  let satinCoatDollbop = laceLayerDollsovo[**"mexQssxQagxQesxQ"] as? [[String: Any]] else { return }
             for (satinCollarDollrilo, satinStitchmapDollzemi) in satinCoatDollbop.enumerated() {
-                let satinPinboardDollvani = satinStitchmapDollzemi["id"] as? String
-                    ?? (laceLayerDollsovo["id"] as? String).map { "\($0):\(satinCollarDollrilo)" }
+                let satinPinboardDollvani = satinStitchmapDollzemi[**"idxQ"] as? String
+                    ?? (laceLayerDollsovo[**"idxQ"] as? String).map {
+                        "\($0)" + **":" + "\(satinCollarDollrilo)"
+                    }
                 if let satinPinboardDollvani {
                     if pastelEnsembleDollfina.contains(satinPinboardDollvani) { continue }
                     pastelEnsembleDollfina.append(satinPinboardDollvani)
                     pastelEnsembleDollfina = Array(pastelEnsembleDollfina.suffix(256))
                 }
                 guard let pearlGuideDollukp = Self.pearlSkirtDollniva(satinStitchmapDollzemi) else { continue }
-#if DEBUG
-                NSLog("Dollulieair message fields=%@", pearlGuideDollukp.keys.sorted().joined(separator: ","))
-                if let pearlStripeDolltavo = DolluCozyWardrobeDollukp.ribbonPleatDollruni(pearlGuideDollukp),
-                   pearlStripeDolltavo.count < 80,
-                   pearlStripeDolltavo.range(of: "^[A-Za-z][A-Za-z0-9_-]*$", options: .regularExpression) != nil {
-                    NSLog("Dollulieair message event=%@", pearlStripeDolltavo)
-                }
-#endif
-                let pearlOutfitDolllaro = (satinStitchmapDollzemi["timestamp"] ?? laceLayerDollsovo["timestamp"]) as? Double
+
+                let pearlOutfitDolllaro = (satinStitchmapDollzemi[**"tixQmexQstxQamxQp"] ?? laceLayerDollsovo[**"tixQmexQstxQamxQp"]) as? Double
                 ribbonDisplayDollrevo?(pearlGuideDollukp, pearlOutfitDolllaro)
             }
         case 5, 6, 8, 9, 13, 17: throw DolluLaceBonnetDollzora.cozyWardrobeDollukp
-        default: break // 包括 HEARTBEAT；不是业务消息。
+        default: break 
         }
     }
 
     static func pearlSkirtDollniva(_ pearlStripeDolltavo: [String: Any]) -> [String: Any]? {
-        var pearlOutfitDolllaro: Any = pearlStripeDolltavo["data"] ?? [:]
-        let pearlCatalogDollnoro = (pearlStripeDolltavo["encoding"] as? String ?? "").split(separator: "/")
+        var pearlOutfitDolllaro: Any = pearlStripeDolltavo[**"daxQtaxQ"] ?? [:]
+        let pearlCatalogDollnoro = (pearlStripeDolltavo[**"enxQcoxQdixQngxQ"] as? String ?? "").split(separator: "/")
         for pearlEnsembleDollyara in pearlCatalogDollnoro.reversed() {
-            if pearlEnsembleDollyara == "base64", let tinyCoverDollmexa = pearlOutfitDolllaro as? String,
+            if pearlEnsembleDollyara == **"baxQsexQ64xQ", let tinyCoverDollmexa = pearlOutfitDolllaro as? String,
                let tinyCapeDollpoxa = Data(base64Encoded: tinyCoverDollmexa) {
                 pearlOutfitDolllaro = String(data: tinyCapeDollpoxa, encoding: .utf8) ?? ""
-            } else if pearlEnsembleDollyara == "json" {
+            } else if pearlEnsembleDollyara == **"jsxQonxQ" {
                 guard let tinySleeveDollsero = DolluCozyWardrobeDollukp.tinySnapshotDollhumi(pearlOutfitDolllaro) else { return nil }
                 pearlOutfitDolllaro = tinySleeveDollsero
-            } else if pearlEnsembleDollyara != "utf-8" { return nil }
+            } else if pearlEnsembleDollyara != **"utxQf-xQ8" { return nil }
         }
         return DolluCozyWardrobeDollukp.tinySnapshotDollhumi(pearlOutfitDolllaro)
     }

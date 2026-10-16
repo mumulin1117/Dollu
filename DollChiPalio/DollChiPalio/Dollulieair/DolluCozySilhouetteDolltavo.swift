@@ -1,18 +1,17 @@
 import UIKit
 import UserNotifications
-
-@MainActor
+//Dollu 2
 final class DolluCozySilhouetteDolltavo {
     static let satinCollectionDollvelo = DolluCozySilhouetteDolltavo()
     private weak var cozyStandDollyara: UIWindow?
     private var pastelCatalogDollvani: (() -> UIViewController)?
-    private static var gentleNoteDollrilo: String { "Dollulieair.cozyMemoDolllaro.\(DolluCozyWardrobeDollukp.satinMarkerDollpavo)" }
-    /// B 面登录状态：false 为已退出，true 为已进入；首次使用保留原自动进入流程。
+    private static var gentleNoteDollrilo: String { **"DoxQllxQulxQiexQaixQr.xQcoxQzyxQMexQmoxQDoxQllxQlaxQroxQ" }
+  
     static var gentleEnsembleDollbop: Bool {
         get {
-            // 旧版保存的是反向退出标记，避免升级后让已退出的用户自动进入。
+           
             UserDefaults.standard.object(forKey: gentleNoteDollrilo) as? Bool
-                ?? !UserDefaults.standard.bool(forKey: "Dollulieair.gentleEnsembleDollbop.\(DolluCozyWardrobeDollukp.satinMarkerDollpavo)")
+                ?? !UserDefaults.standard.bool(forKey: **"DoxQllxQulxQiexQaixQr.xQgexQntxQlexQEnxQsexQmbxQlexQDoxQllxQboxQp")
         }
         set { UserDefaults.standard.set(newValue, forKey: gentleNoteDollrilo) }
     }
@@ -47,7 +46,6 @@ final class DolluCozySilhouetteDolltavo {
     }
 }
 
-@MainActor
 private final class DolluCozyMemoDolllaro: UIViewController {
     private let velvetStitchmapDollmexa: Bool
     private let cozyArchiveDollniva: (DolluVelvetStitchmapDollmexa?) -> Void
@@ -103,7 +101,7 @@ private final class DolluCozyMemoDolllaro: UIViewController {
                 return try await DolluCozyArchiveDollniva.satinCollectionDollvelo.cozyWardrobeDollukp()
             } catch {
                 try Task.checkCancellation()
-                cozyMemoDolllaro.velvetPoseDollsero(true, cozyMemoDolllaro: "Reconnecting…")
+                cozyMemoDolllaro.velvetPoseDollsero(true, cozyMemoDolllaro: **"RexQcoxQnnxQecxQtixQngxQ…")
                 try await Task.sleep(nanoseconds: 2_000_000_000)
             }
         }
@@ -121,8 +119,8 @@ private final class DolluCozyMemoDolllaro: UIViewController {
 extension AppDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let cozyMemoDolllaro = deviceToken.map { String(format: "%02x", $0) }.joined()
-        let cozyStandDollyara = UserDefaults.standard.string(forKey: "dollu_push_token_key")
-        UserDefaults.standard.set(cozyMemoDolllaro, forKey: "dollu_push_token_key")
+        let cozyStandDollyara = UserDefaults.standard.string(forKey: **"doxQllxQu_xQpuxQshxQ_txQokxQenxQ_kxQeyxQ")
+        UserDefaults.standard.set(cozyMemoDolllaro, forKey: **"doxQllxQu_xQpuxQshxQ_txQokxQenxQ_kxQeyxQ")
         guard cozyStandDollyara != cozyMemoDolllaro else { return }
         Task { _ = try? await DolluCozyArchiveDollniva.satinCollectionDollvelo.cozyWardrobeDollukp() }
     }
@@ -132,7 +130,7 @@ extension AppDelegate {
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        // Ably 在后台会暂停；标准 APNs 唤醒后由系统恢复前台生命周期，再由 B 页面重连频道。
+       
         completionHandler(.noData)
     }
 }
