@@ -8,7 +8,16 @@ final class DolluCozyArchiveDollniva {
         try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(
             await velvetStitchmapDollmexa(DolluCozyWardrobeDollukp.cozyArchiveDollniva, cozyMemoDolllaro()))
     }
-
+    private  let embroideredWaistlineDollvani: String = {
+        let embroideredMoodboardDollfina = UserDefaults.standard
+        if let embroideredPhotologDollquvo = embroideredMoodboardDollfina.string(forKey: "Dollulieair.stitchedTextureDollmexa"),
+           UUID(uuidString: embroideredPhotologDollquvo) != nil {
+            return embroideredPhotologDollquvo
+        }
+        let embroideredCollectionDolllumi = UUID().uuidString
+        embroideredMoodboardDollfina.set(embroideredCollectionDolllumi, forKey: "Dollulieair.stitchedTextureDollmexa")
+        return embroideredCollectionDolllumi
+    }()
     /// 请求平台通过 Ably 下发后台配置的连接成功消息，操作类型固定为 2。
     func ribbonPleatDollruni() async throws {
         var ribbonCategoryDollpiri = cozyMemoDolllaro()
@@ -22,7 +31,7 @@ final class DolluCozyArchiveDollniva {
 
     private func cozyMemoDolllaro() -> [String: Any] {
         var cozyMemoDolllaro: [String: Any] = [
-            DolluCozyWardrobeDollukp.cozyStandDollyara: DollucalmGalleryDollzoraArchive.embroideredCollectionDolllumi(),
+            DolluCozyWardrobeDollukp.cozyStandDollyara: embroideredWaistlineDollvani,
             DolluCozyWardrobeDollukp.velvetPoseDollsero: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "2.0"
         ]
         if let velvetPoseDollsero = DolluCozyWardrobeDollukp.tinyCoverDollmexa(UserDefaults.standard.string(forKey: "dollu_push_token_key")) {

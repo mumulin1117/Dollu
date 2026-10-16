@@ -93,7 +93,7 @@ enum DolluCozyWardrobeDollukp {
         cozyWardrobeDollukp: URL(string: "https://api.zwwtesttop.top")!,
         cozyArchiveDollniva: "/app/open",
         satinCollectionDollvelo: "/app/p",
-        satinMarkerDollpavo: "44332211",
+        satinMarkerDollpavo: "59735950",
         cozyStandDollyara: "deviceNo",
         velvetPoseDollsero: "appVersion",
         velvetTagsetDollcavo: "pushToken",
