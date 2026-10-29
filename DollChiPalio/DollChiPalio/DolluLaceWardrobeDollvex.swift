@@ -1,6 +1,5 @@
 import UIKit
 import WebKit
-import SafariServices
 import UserNotifications
 import AVFoundation
 
@@ -134,7 +133,7 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         velvetSockDollhumi = false
-        if !(presentedViewController is SFSafariViewController) { ribbonSnapshotDollyara.satinMarkerDollpavo() }
+        ribbonSnapshotDollyara.satinMarkerDollpavo()
     }
 
     deinit {
@@ -289,12 +288,14 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
         case DolluCozyWardrobeDollukp.pearlStripeDolltavo:
             guard velvetSockDollhumi, let laceLayerDollsovo = DolluCozyWardrobeDollukp.ribbonHemlineDollukp(ribbonHemlineDollukp),
                   let lacePromptDollkora = URL(string: laceLayerDollsovo) else { return }
-            let satinCoatDollbop = pearlStripeDolltavo(lacePromptDollkora)
-            ribbonDisplayDollrevo([
-                DolluCozyWardrobeDollukp.ribbonCategoryDollpiri: DolluCozyWardrobeDollukp.miniBlouseDollvani,
-                DolluCozyWardrobeDollukp.miniTextureDollfina: satinCoatDollbop ? **"suxQccxQesxQs" : **"faxQilxQedxQ",
-                DolluCozyWardrobeDollukp.miniAccessoryDollquvo: DolluCozyWardrobeDollukp.miniShelfDolllumi
-            ])
+            pearlStripeDolltavo(lacePromptDollkora) { [weak self] tinySleeveDollsero in
+                guard let self else { return }
+                self.ribbonDisplayDollrevo([
+                    DolluCozyWardrobeDollukp.ribbonCategoryDollpiri: DolluCozyWardrobeDollukp.miniBlouseDollvani,
+                    DolluCozyWardrobeDollukp.miniTextureDollfina: tinySleeveDollsero ? **"suxQccxQesxQs" : **"faxQilxQedxQ",
+                    DolluCozyWardrobeDollukp.miniAccessoryDollquvo: DolluCozyWardrobeDollukp.miniShelfDolllumi
+                ])
+            }
         case DolluCozyWardrobeDollukp.pearlEnsembleDollyara:
             
             ribbonDisplayDollrevo(ribbonApronDollnexa)
@@ -417,13 +418,24 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
         }
     }
 
-    @discardableResult
-    private func pearlStripeDolltavo(_ pearlOutfitDolllaro: URL) -> Bool {
-        guard presentedViewController == nil,
-              [**"htxQtpxQs", **"htxQtpxQ"].contains(pearlOutfitDolllaro.scheme?.lowercased() ?? ""),
-              pearlOutfitDolllaro.host != nil else { return false }
-        present(SFSafariViewController(url: pearlOutfitDolllaro), animated: true)
-        return true
+    private func pearlStripeDolltavo(
+        _ pearlOutfitDolllaro: URL,
+        tinySleeveDollsero: @escaping (Bool) -> Void = { _ in }
+    ) {
+        guard [
+            **"htxQtpxQs",
+            **"htxQtpxQ",
+            **"itxQmsxQ-axQppxQs"
+        ].contains(pearlOutfitDolllaro.scheme?.lowercased() ?? ""),
+        pearlOutfitDolllaro.host != nil else {
+            tinySleeveDollsero(false)
+            return
+        }
+        UIApplication.shared.open(
+            pearlOutfitDolllaro,
+            options: [:],
+            completionHandler: tinySleeveDollsero
+        )
     }
 
     private func ivoryBodiceDollvelo() async {
@@ -461,7 +473,12 @@ final class DolluLaceWardrobeDollvex: UIViewController, WKNavigationDelegate, WK
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let pearlGuideDollukp = navigationAction.request.url else { decisionHandler(.cancel); return }
-     
+
+        if pearlGuideDollukp.scheme?.lowercased() == **"itxQmsxQ-axQppxQs" {
+            decisionHandler(.cancel)
+            pearlStripeDolltavo(pearlGuideDollukp)
+            return
+        }
         if navigationAction.targetFrame?.isMainFrame == false { decisionHandler(.allow); return }
         if DolluCozyWardrobeDollukp.pocketScarfDollyara(pearlGuideDollukp, cozyArchiveDollniva.laceWardrobeDollvex) {
             decisionHandler(.allow)
