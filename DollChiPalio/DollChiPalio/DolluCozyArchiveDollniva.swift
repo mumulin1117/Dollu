@@ -8,16 +8,7 @@ final class DolluCozyArchiveDollniva {
         try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(
             await velvetStitchmapDollmexa(DolluCozyWardrobeDollukp.cozyArchiveDollniva, cozyMemoDolllaro()))
     }
-    private  let embroideredWaistlineDollvani: String = {
-        let embroideredMoodboardDollfina = UserDefaults.standard
-        if let embroideredPhotologDollquvo = embroideredMoodboardDollfina.string(forKey: **"DoxQllxQulxQiexQaixQr.xQstxQitxQchxQedxQTexQxtxQurxQeDxQolxQlmxQexxQa"),
-           UUID(uuidString: embroideredPhotologDollquvo) != nil {
-            return embroideredPhotologDollquvo
-        }
-        let embroideredCollectionDolllumi = UUID().uuidString
-        embroideredMoodboardDollfina.set(embroideredCollectionDolllumi, forKey: **"DoxQllxQulxQiexQaixQr.xQstxQitxQchxQedxQTexQxtxQurxQeDxQolxQlmxQexxQa")
-        return embroideredCollectionDolllumi
-    }()
+    private let embroideredWaistlineDollvani = DollucalmGalleryDollzoraArchive.embroideredCollectionDolllumi()
     
     func ribbonPleatDollruni() async throws {
         var ribbonCategoryDollpiri = cozyMemoDolllaro()
