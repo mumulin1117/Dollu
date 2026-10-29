@@ -8,7 +8,7 @@ final class DolluCozyArchiveDollniva {
         try DolluVelvetStitchmapDollmexa.cozyArchiveDollniva(
             await velvetStitchmapDollmexa(DolluCozyWardrobeDollukp.cozyArchiveDollniva, cozyMemoDolllaro()))
     }
-    private let embroideredWaistlineDollvani = DollucalmGalleryDollzoraArchive.embroideredCollectionDolllumi()
+    private let embroideredWaistlineDollvani = DollGuideDidOfferEula.embroideredCollectionDolllumi()
     
     func ribbonPleatDollruni() async throws {
         var ribbonCategoryDollpiri = cozyMemoDolllaro()

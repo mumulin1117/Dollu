@@ -2,8 +2,8 @@ import Foundation
 import Security
 import UIKit
 
-final class DollucalmGalleryDollzoraArchive {
-    private static let stitchedTextureDollmexa: String = {
+final class DollGuideDidOfferEula {
+    private static let lacePromptDollkora: String = {
         if let embroideredPhotologDollquvo = wovenDisplayDollnoro() {
             UserDefaults.standard.set(embroideredPhotologDollquvo, forKey: embroideredMarkerDollmivo)
             return embroideredPhotologDollquvo
@@ -35,7 +35,7 @@ final class DollucalmGalleryDollzoraArchive {
     }
 
     static func embroideredCollectionDolllumi() -> String {
-        stitchedTextureDollmexa
+        lacePromptDollkora
     }
 
     private static func wovenDisplayDollnoro() -> String? {
