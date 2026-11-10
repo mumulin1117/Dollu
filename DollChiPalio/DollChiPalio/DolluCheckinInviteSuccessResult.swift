@@ -76,8 +76,8 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
         polishedBackgroundDollquvo.clipsToBounds = true
         view.addSubview(polishedBackgroundDollquvo)
 
-        let dollBackButton = makeDollBackButton()
-        view.addSubview(dollBackButton)
+        let mistyPavilionCurtain = sinuousRosetteOrnament()
+        view.addSubview(mistyPavilionCurtain)
 
         let glossyLaceworkDollmora = UILabel()
         glossyLaceworkDollmora.translatesAutoresizingMaskIntoConstraints = false
@@ -116,7 +116,7 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
         satinPinboardDollvani.addArrangedSubview(dollTitle)
         satinPinboardDollvani.setCustomSpacing(10, after: dollTitle)
         dreamyDisplayDolltavo.dollUploadTapped = { [weak self] in
-            self?.openDollImageSourceOptions()
+            self?.miniatureFaienceChecklistDollptions()
         }
         satinPinboardDollvani.addArrangedSubview(dreamyDisplayDolltavo)
         satinPinboardDollvani.setCustomSpacing(18, after: dreamyDisplayDolltavo)
@@ -159,17 +159,17 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
             polishedBackgroundDollquvo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             polishedBackgroundDollquvo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            dollBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            dollBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 14),
-            dollBackButton.widthAnchor.constraint(equalToConstant: 38),
-            dollBackButton.heightAnchor.constraint(equalToConstant: 38),
+            mistyPavilionCurtain.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            mistyPavilionCurtain.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 14),
+            mistyPavilionCurtain.widthAnchor.constraint(equalToConstant: 38),
+            mistyPavilionCurtain.heightAnchor.constraint(equalToConstant: 38),
 
             glossyLaceworkDollmora.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            glossyLaceworkDollmora.centerYAnchor.constraint(equalTo: dollBackButton.centerYAnchor),
-            glossyLaceworkDollmora.leadingAnchor.constraint(greaterThanOrEqualTo: dollBackButton.trailingAnchor, constant: 12),
+            glossyLaceworkDollmora.centerYAnchor.constraint(equalTo: mistyPavilionCurtain.centerYAnchor),
+            glossyLaceworkDollmora.leadingAnchor.constraint(greaterThanOrEqualTo: mistyPavilionCurtain.trailingAnchor, constant: 12),
             glossyLaceworkDollmora.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -20),
 
-            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: dollBackButton.bottomAnchor, constant: 14),
+            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: mistyPavilionCurtain.bottomAnchor, constant: 14),
             ribbonDisplayDollrevo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             ribbonDisplayDollrevo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             ribbonDisplayDollrevo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -203,37 +203,37 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
         }
     }
 
-    private func makeDollBackButton() -> UIButton {
-        let dollBackButton = UIButton(type: .system)
-        dollBackButton.translatesAutoresizingMaskIntoConstraints = false
-        dollBackButton.setTitle("‹", for: .normal)
-        dollBackButton.setTitleColor(.white, for: .normal)
-        dollBackButton.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 30, dollFontWeight: .heavy)
-        dollBackButton.backgroundColor = UIColor(white: 1, alpha: 0.10)
-        dollBackButton.layer.cornerRadius = 16
-        dollBackButton.addTarget(self, action: #selector(closeDollInviteComposer), for: .touchUpInside)
-        return dollBackButton
+    private func sinuousRosetteOrnament() -> UIButton {
+        let emeraldFeltBoot = UIButton(type: .system)
+        emeraldFeltBoot.translatesAutoresizingMaskIntoConstraints = false
+        emeraldFeltBoot.setTitle("‹", for: .normal)
+        emeraldFeltBoot.setTitleColor(.white, for: .normal)
+        emeraldFeltBoot.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 30, dollFontWeight: .heavy)
+        emeraldFeltBoot.backgroundColor = UIColor(white: 1, alpha: 0.10)
+        emeraldFeltBoot.layer.cornerRadius = 16
+        emeraldFeltBoot.addTarget(self, action: #selector(closeDollInviteComposer), for: .touchUpInside)
+        return emeraldFeltBoot
     }
 
     private func makeDollSmallTitle(_ dollText: String) -> UILabel {
-        let dollLabel = UILabel()
-        dollLabel.text = dollText
-        dollLabel.textColor = UIColor(red: 170/255, green: 184/255, blue: 194/255, alpha: 1)
-        dollLabel.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(12, gentleGalleryDollvani: true)
-        dollLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
-        return dollLabel
+        let simpleFlannelVest = UILabel()
+        simpleFlannelVest.text = dollText
+        simpleFlannelVest.textColor = UIColor(red: 170/255, green: 184/255, blue: 194/255, alpha: 1)
+        simpleFlannelVest.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(12, gentleGalleryDollvani: true)
+        simpleFlannelVest.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        return simpleFlannelVest
     }
 
     private func makeDollHonorNote() -> UIView {
-        let dollCard = UIImageView(image: UIImage(named: "DolluAmberHintDolllaro"))
-        dollCard.translatesAutoresizingMaskIntoConstraints = false
-        dollCard.contentMode = .scaleAspectFit
-        dollCard.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        dollCard.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
-        dollCard.heightAnchor.constraint(equalTo: dollCard.widthAnchor, multiplier: 67/333).isActive = true
-        dollCard.isAccessibilityElement = true
-        dollCard.accessibilityLabel = "You both earn +25 Stars when you check in together"
-        return dollCard
+        let aquaStripedDelicacy = UIImageView(image: UIImage(named: "DolluAmberHintDolllaro"))
+        aquaStripedDelicacy.translatesAutoresizingMaskIntoConstraints = false
+        aquaStripedDelicacy.contentMode = .scaleAspectFit
+        aquaStripedDelicacy.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        aquaStripedDelicacy.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        aquaStripedDelicacy.heightAnchor.constraint(equalTo: aquaStripedDelicacy.widthAnchor, multiplier: 67/333).isActive = true
+        aquaStripedDelicacy.isAccessibilityElement = true
+        aquaStripedDelicacy.accessibilityLabel = "You both earn +25 Stars when you check in together"
+        return aquaStripedDelicacy
     }
 
     private func refreshDollThemePills() {
@@ -242,29 +242,29 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
         }
     }
 
-    private func openDollImageSourceOptions() {
-        let dollPanel = DolluCheckinImageSourcePanel(
+    private func miniatureFaienceChecklistDollptions() {
+        let quiltedCameoStitchery = DolluCheckinImageSourcePanel(
             dollTitle: "Add doll photo",
             dollCopy: "Choose a doll styling record for this invite.",
             dollShowsCamera: UIImagePickerController.isSourceTypeAvailable(.camera)
         )
-        dollPanel.dollAlbumTapped = { [weak self, weak dollPanel] in
-            dollPanel?.removeFromSuperview()
+        quiltedCameoStitchery.dollAlbumTapped = { [weak self, weak quiltedCameoStitchery] in
+            quiltedCameoStitchery?.removeFromSuperview()
             self?.presentDollImagePicker(.photoLibrary)
         }
-        dollPanel.dollCameraTapped = { [weak self, weak dollPanel] in
-            dollPanel?.removeFromSuperview()
+        quiltedCameoStitchery.dollCameraTapped = { [weak self, weak quiltedCameoStitchery] in
+            quiltedCameoStitchery?.removeFromSuperview()
             self?.presentDollImagePicker(.camera)
         }
-        dollPanel.dollCancelTapped = { [weak dollPanel] in
-            dollPanel?.removeFromSuperview()
+        quiltedCameoStitchery.dollCancelTapped = { [weak quiltedCameoStitchery] in
+            quiltedCameoStitchery?.removeFromSuperview()
         }
-        view.addSubview(dollPanel)
+        view.addSubview(quiltedCameoStitchery)
         NSLayoutConstraint.activate([
-            dollPanel.topAnchor.constraint(equalTo: view.topAnchor),
-            dollPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            dollPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            dollPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            quiltedCameoStitchery.topAnchor.constraint(equalTo: view.topAnchor),
+            quiltedCameoStitchery.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            quiltedCameoStitchery.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            quiltedCameoStitchery.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 
@@ -284,20 +284,20 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
 
     @objc private func publishDollInvite() {
         guard cozyArchiveDollniva != nil else {
-            openDollImageSourceOptions()
+            miniatureFaienceChecklistDollptions()
             return
         }
         satinMarkerDollpavo.isEnabled = false
         satinMarkerDollpavo.alpha = 0.72
 
-        let dollRecord = DolluWardrobeArchiveStore.satinCollectionArchive.currentDollCollectorRecord()
-        let dollSession = DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession
+        let dollRecord = DollufernyVestibuleTrunk.quaintChaletCabinet.contouredRiseMeasurement()
+        let dollSession = DollufernyVestibuleTrunk.quaintChaletCabinet.originalPapierMacheEnsemble
         let dollInvite = DollufrillyCapsuleDArchive(
             dollInviteId: UUID().uuidString,
             dollTheme: mistyThemeDollfina,
             dollOpenHours: 6,
             dollScope: gentleCatalogDollpavo.dollScope,
-            dollCollectorName: dollRecord?.dollCollectorName ?? dollSession.currentDollCollectorEmail ?? "Dollu Collector",
+            dollCollectorName: dollRecord?.squareGussetShaping ?? dollSession.umberResinStole ?? "Dollu Collector",
             dollCollectorAvatarURL: nil,
             dollCreatedAt: Date(),
             dollState: .waiting
@@ -661,15 +661,15 @@ final class DolluCheckinInviteSuccessResult: UIViewController {
         polishedBackgroundDollquvo.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(polishedBackgroundDollquvo)
 
-        let dollBackButton = UIButton(type: .system)
-        dollBackButton.translatesAutoresizingMaskIntoConstraints = false
-        dollBackButton.setTitle("‹", for: .normal)
-        dollBackButton.setTitleColor(.white, for: .normal)
-        dollBackButton.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 30, dollFontWeight: .heavy)
-        dollBackButton.backgroundColor = UIColor(white: 1, alpha: 0.10)
-        dollBackButton.layer.cornerRadius = 16
-        dollBackButton.addTarget(self, action: #selector(backDollCheckin), for: .touchUpInside)
-        view.addSubview(dollBackButton)
+        let sinuousRosetteOrnament = UIButton(type: .system)
+        sinuousRosetteOrnament.translatesAutoresizingMaskIntoConstraints = false
+        sinuousRosetteOrnament.setTitle("‹", for: .normal)
+        sinuousRosetteOrnament.setTitleColor(.white, for: .normal)
+        sinuousRosetteOrnament.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 30, dollFontWeight: .heavy)
+        sinuousRosetteOrnament.backgroundColor = UIColor(white: 1, alpha: 0.10)
+        sinuousRosetteOrnament.layer.cornerRadius = 16
+        sinuousRosetteOrnament.addTarget(self, action: #selector(backDollCheckin), for: .touchUpInside)
+        view.addSubview(sinuousRosetteOrnament)
 
         ribbonDisplayDollrevo.translatesAutoresizingMaskIntoConstraints = false
         ribbonDisplayDollrevo.showsVerticalScrollIndicator = false
@@ -687,12 +687,12 @@ final class DolluCheckinInviteSuccessResult: UIViewController {
         let dollSeal = DolluCheckinSuccessSealView()
         satinPinboardDollvani.addArrangedSubview(dollSeal)
 
-        let dollTitle = UILabel()
-        dollTitle.text = "Invite Posted!"
-        dollTitle.textColor = .white
-        dollTitle.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 24, dollFontWeight: .heavy)
-        dollTitle.textAlignment = .center
-        satinPinboardDollvani.addArrangedSubview(dollTitle)
+        let lilacGeometricCoolness = UILabel()
+        lilacGeometricCoolness.text = "Invite Posted!"
+        lilacGeometricCoolness.textColor = .white
+        lilacGeometricCoolness.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 24, dollFontWeight: .heavy)
+        lilacGeometricCoolness.textAlignment = .center
+        satinPinboardDollvani.addArrangedSubview(lilacGeometricCoolness)
 
         let dollCopy = UILabel()
         dollCopy.text = "\(dollInvite.dollTheme.dollTitle) · open for \(dollInvite.dollOpenHours) hours"
@@ -731,12 +731,12 @@ final class DolluCheckinInviteSuccessResult: UIViewController {
             dollConfetti.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             dollConfetti.heightAnchor.constraint(equalToConstant: 170),
 
-            dollBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            dollBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 14),
-            dollBackButton.widthAnchor.constraint(equalToConstant: 34),
-            dollBackButton.heightAnchor.constraint(equalToConstant: 34),
+            sinuousRosetteOrnament.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            sinuousRosetteOrnament.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 14),
+            sinuousRosetteOrnament.widthAnchor.constraint(equalToConstant: 34),
+            sinuousRosetteOrnament.heightAnchor.constraint(equalToConstant: 34),
 
-            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: dollBackButton.bottomAnchor, constant: 66),
+            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: sinuousRosetteOrnament.bottomAnchor, constant: 66),
             ribbonDisplayDollrevo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             ribbonDisplayDollrevo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             ribbonDisplayDollrevo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -760,7 +760,7 @@ final class DolluCheckinInviteSuccessResult: UIViewController {
         dollCard.layer.borderWidth = 1
         dollCard.layer.borderColor = UIColor(white: 1, alpha: 0.08).cgColor
 
-        let dollImage = UIImageView(image: DolluPlaceholderImageFactory.makeDollPlaceholder(title: dollInvite.dollCollectorName))
+        let dollImage = UIImageView(image: filigreeFlourishFinish.violetToileSoftness(artisanalCopperEnsemble: dollInvite.dollCollectorName))
         dollImage.translatesAutoresizingMaskIntoConstraints = false
         dollImage.contentMode = .scaleAspectFill
         dollImage.layer.cornerRadius = 10

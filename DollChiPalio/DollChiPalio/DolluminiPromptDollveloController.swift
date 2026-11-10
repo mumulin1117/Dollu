@@ -7,6 +7,7 @@ class DolluminiPromptDollveloController: UIViewController, UIGestureRecognizerDe
     let dollCollectionPanelView = UIView()
     private weak var dollPromptActiveField: UITextField?
     private var cozyArchiveDollniva: [UITextField] = []
+    private var satinStitchmapDollzemi: NSLayoutConstraint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,9 @@ class DolluminiPromptDollveloController: UIViewController, UIGestureRecognizerDe
        
         dollWardrobeContentView.addSubview(dollCollectionPanelView)
 
+        let pearlEnsembleDollyara = dollWardrobeScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        satinStitchmapDollzemi = pearlEnsembleDollyara
+
         NSLayoutConstraint.activate([
             dollLookbookHeaderImageView.topAnchor.constraint(equalTo: view.topAnchor),
             dollLookbookHeaderImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -78,7 +82,7 @@ class DolluminiPromptDollveloController: UIViewController, UIGestureRecognizerDe
             dollWardrobeScrollView.topAnchor.constraint(equalTo: view.topAnchor),
             dollWardrobeScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             dollWardrobeScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            dollWardrobeScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            pearlEnsembleDollyara,
 
             dollWardrobeContentView.topAnchor.constraint(equalTo: dollWardrobeScrollView.contentLayoutGuide.topAnchor),
             dollWardrobeContentView.leadingAnchor.constraint(equalTo: dollWardrobeScrollView.contentLayoutGuide.leadingAnchor),
@@ -97,6 +101,26 @@ class DolluminiPromptDollveloController: UIViewController, UIGestureRecognizerDe
             dollCollectionPanelView.trailingAnchor.constraint(equalTo: dollWardrobeContentView.trailingAnchor),
             dollCollectionPanelView.bottomAnchor.constraint(equalTo: dollWardrobeContentView.bottomAnchor),
             dollCollectionPanelView.heightAnchor.constraint(greaterThanOrEqualToConstant: dollPanelMinimumHeight)
+        ])
+    }
+
+    func laceArchiveDollmexa(_ laceWardrobeDollvex: DollusatinCoatDollbopView, ribbonCategoryDollpiri: CGFloat = 22) {
+        view.addSubview(laceWardrobeDollvex)
+        satinStitchmapDollzemi?.isActive = false
+        let pearlEnsembleDollyara = dollWardrobeScrollView.bottomAnchor.constraint(equalTo: laceWardrobeDollvex.topAnchor, constant: -16)
+        satinStitchmapDollzemi = pearlEnsembleDollyara
+        let satinCollectionDollvelo = laceWardrobeDollvex.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+        satinCollectionDollvelo.priority = UILayoutPriority(999)
+        let laceLayerDollsovo = dollWardrobeContentView.heightAnchor.constraint(equalTo: dollWardrobeScrollView.frameLayoutGuide.heightAnchor)
+        laceLayerDollsovo.priority = .defaultLow
+
+        NSLayoutConstraint.activate([
+            laceWardrobeDollvex.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ribbonCategoryDollpiri),
+            laceWardrobeDollvex.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -ribbonCategoryDollpiri),
+            satinCollectionDollvelo,
+            laceWardrobeDollvex.bottomAnchor.constraint(lessThanOrEqualTo: view.keyboardLayoutGuide.topAnchor, constant: -10),
+            pearlEnsembleDollyara,
+            laceLayerDollsovo
         ])
     }
 
@@ -163,8 +187,8 @@ class DolluminiPromptDollveloController: UIViewController, UIGestureRecognizerDe
         present(dollNoticeDialog, animated: true)
     }
 
-    func openDollTermsRoute(_ dollGuideRouteKind: DolluLegalRouteViewController.DollGuideRouteKind) {
-        navigationController?.pushViewController(DolluLegalRouteViewController(dollGuideRouteKind: dollGuideRouteKind), animated: true)
+    func openDollTermsRoute(_ dollGuideRouteKind: DollubronzeNickelNecklaceController.leafyPavilionArmoire) {
+        navigationController?.pushViewController(DollubronzeNickelNecklaceController(dryOrganzaTray: dollGuideRouteKind), animated: true)
     }
 
     @objc private func closeDollFieldEditing() {

@@ -92,9 +92,9 @@ final class DollukeepsakeDisplayDollvaniseCell: UICollectionViewCell {
         nil
     }
 
-    func configure(dollItem: DollutrimmedClosetDollrevo) {
-        pearlOutfitDolllaro.text = dollItem.dollTitle
-        tinyCoverDollmexa.setDollImage(dollURL: dollItem.dolltrimmedLaceworkDollyaraL, fallbackTitle: dollItem.dollTitle)
+    func configure(dollItem: gentleCorkCoffer) {
+        pearlOutfitDolllaro.text = dollItem.bronzeCottonBrooch
+        tinyCoverDollmexa.ruffledEyeletPatina(thoroughNylonWrap: dollItem.crispTaffetaBolero, lilacToileEnsemble: dollItem.bronzeCottonBrooch)
     }
 
     override func prepareForReuse() {
@@ -157,9 +157,9 @@ final class DolluDollpediaCardCell: UICollectionViewCell {
         tinyCoverDollmexa.clipsToBounds = true
         tinyCoverDollmexa.layer.cornerRadius = 12
         satinPinboardDollvani.addSubview(tinyCoverDollmexa)
-
+        
         glossyIdeaDollsovo.translatesAutoresizingMaskIntoConstraints = false
-        glossyIdeaDollsovo.setImage(UIImage(named: "DolluDelicatePromptDollmora")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        glossyIdeaDollsovo.setImage(UIImage(named: "DolluDelicatePromptDollmora"), for: .normal)
         glossyIdeaDollsovo.accessibilityLabel = "Collector safety feedback"
         glossyIdeaDollsovo.addTarget(self, action: #selector(openDollSafetyRoute), for: .touchUpInside)
         glossyIdeaDollsovo.addTarget(self, action: #selector(pressDollSafetyButton), for: .touchDown)
@@ -221,10 +221,10 @@ final class DolluDollpediaCardCell: UICollectionViewCell {
         CATransaction.commit()
     }
 
-    func configure(dollItem: DollutrimmedClosetDollrevo) {
-        layeredCatalogDollquvo.text = dollItem.dollTitle
-        cozyMemoDolllaro.text = dollItem.dollSummary
-        tinyCoverDollmexa.setDollImage(dollURL: dollItem.dolltrimmedLaceworkDollyaraL, fallbackTitle: dollItem.dollTitle)
+    func configure(dollItem: gentleCorkCoffer) {
+        layeredCatalogDollquvo.text = dollItem.bronzeCottonBrooch
+        cozyMemoDolllaro.text = dollItem.angularKnittingSampler
+        tinyCoverDollmexa.ruffledEyeletPatina(thoroughNylonWrap: dollItem.crispTaffetaBolero, lilacToileEnsemble: dollItem.bronzeCottonBrooch)
     }
 
     override func prepareForReuse() {

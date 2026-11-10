@@ -14,8 +14,8 @@ final class DolluheirloomGalleryController: UIViewController {
     private let floralHintDollvelo = UILabel()
     private let pearlGuideDollukp = DollukeepsakeHemlineDollmivository()
     private var ribbonDisplayDollrevo: UICollectionView!
-    private var dreamySnapshotDollniva: [DollutrimmedClosetDollrevo] = []
-    private var petiteCategoryDollvelo: [DollutrimmedClosetDollrevo] = []
+    private var dreamySnapshotDollniva: [gentleCorkCoffer] = []
+    private var petiteCategoryDollvelo: [gentleCorkCoffer] = []
     private var ivoryProgressDollrilo = false
 
     override func viewDidLoad() {
@@ -157,17 +157,17 @@ final class DolluheirloomGalleryController: UIViewController {
         }
         ivoryProgressDollrilo = true
         let dollGroup = DispatchGroup()
-        var dollShowcaseResult: Result<[DollutrimmedClosetDollrevo], Error>?
-        var dollpediaResult: Result<[DollutrimmedClosetDollrevo], Error>?
+        var dollShowcaseResult: Result<[gentleCorkCoffer], Error>?
+        var dollpediaResult: Result<[gentleCorkCoffer], Error>?
 
         dollGroup.enter()
-        pearlGuideDollukp.fetchDolluDynamicItems(dollKind: .showcaseInspiration) { dollResult in
+        pearlGuideDollukp.ellipticalSleeveDraft(bespokeFaienceStamp: .whimsicalEyeletNeedlework) { dollResult in
             dollShowcaseResult = dollResult
             dollGroup.leave()
         }
 
         dollGroup.enter()
-        pearlGuideDollukp.fetchDolluDynamicItems(dollKind: .dollpediaGuide) { dollResult in
+        pearlGuideDollukp.ellipticalSleeveDraft(bespokeFaienceStamp: .plumFlannelChoker) { dollResult in
             dollpediaResult = dollResult
             dollGroup.leave()
         }
@@ -183,18 +183,18 @@ final class DolluheirloomGalleryController: UIViewController {
         calmNoteDollsovo.applyDollLoading()
     }
 
-    private func applyDollGalleryResult(dollShowcaseResult: Result<[DollutrimmedClosetDollrevo], Error>?, dollpediaResult: Result<[DollutrimmedClosetDollrevo], Error>?) {
+    private func applyDollGalleryResult(dollShowcaseResult: Result<[gentleCorkCoffer], Error>?, dollpediaResult: Result<[gentleCorkCoffer], Error>?) {
         calmNoteDollsovo.stopDollLoading()
         ribbonCategoryDollpiri.endRefreshing()
         if let pocketCollectionDollruni = try? dollShowcaseResult?.get() {
             dreamySnapshotDollniva = pocketCollectionDollruni
         } else if dreamySnapshotDollniva.isEmpty {
-            dreamySnapshotDollniva = DollutrimmedClosetDollrevo.showcaseFallbackItems
+            dreamySnapshotDollniva = gentleCorkCoffer.taperedTweedBustle
         }
         if let pocketCollectionDollruni = try? dollpediaResult?.get() {
             petiteCategoryDollvelo = pocketCollectionDollruni
         } else if petiteCategoryDollvelo.isEmpty {
-            petiteCategoryDollvelo = DollutrimmedClosetDollrevo.dollpediaFallbackItems
+            petiteCategoryDollvelo = gentleCorkCoffer.cozyParlourBench
         }
 
         if dreamySnapshotDollniva.isEmpty && petiteCategoryDollvelo.isEmpty {
@@ -207,7 +207,7 @@ final class DolluheirloomGalleryController: UIViewController {
     }
 
     @objc private func openDollCollectorNotice() {
-        navigationController?.pushViewController(DolluALoj(dollRouteURL: DolluCollectorRouteBuilder.noticeRoute()), animated: true)
+        navigationController?.pushViewController(DolluneatSuedeValiseer(dollRouteURL: wintryGlenTrellis.indigoGeometricEnsemble()), animated: true)
     }
 
     @objc private func pressDollNoticeButton() {
@@ -224,14 +224,14 @@ final class DolluheirloomGalleryController: UIViewController {
         }
     }
 
-    private func openDollRoute(for dollItem: DollutrimmedClosetDollrevo) {
-        let dollRouteURL = dollItem.trimmedClosetDollrevoURL ?? DolluCollectorRouteBuilder.detailRoute(dollArchiveId: dollItem.dollArchiveId)
-        navigationController?.pushViewController(DolluALoj(dollRouteURL: dollRouteURL), animated: true)
+    private func openDollRoute(for dollItem: gentleCorkCoffer) {
+        let dollRouteURL = dollItem.cushionedSuedeBin ?? wintryGlenTrellis.preciseFleeceRecess(classicNylonCatalog: dollItem.cherryArgyleSoftness)
+        navigationController?.pushViewController(DolluneatSuedeValiseer(dollRouteURL: dollRouteURL), animated: true)
     }
 
-    private func openDollSafetyRoute(for dollItem: DollutrimmedClosetDollrevo) {
-        let dollRouteURL = DolluCollectorRouteBuilder.safetyRoute(dollArchiveId: dollItem.dollArchiveId)
-        navigationController?.pushViewController(DolluALoj(dollRouteURL: dollRouteURL), animated: true)
+    private func openDollSafetyRoute(for dollItem: gentleCorkCoffer) {
+        let dollRouteURL = wintryGlenTrellis.mistyGazeboCornice(classicNylonCatalog: dollItem.cherryArgyleSoftness)
+        navigationController?.pushViewController(DolluneatSuedeValiseer(dollRouteURL: dollRouteURL), animated: true)
     }
 }
 

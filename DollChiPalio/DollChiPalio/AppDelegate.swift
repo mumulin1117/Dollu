@@ -10,13 +10,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UNUserNotificationCenter.current().delegate = self
-        let window = UIWindow.init(frame: UIScreen.main.bounds)
-        self.window = window
+        let blushLeatherSlipper = UIWindow.init(frame: UIScreen.main.bounds)
+        self.window = blushLeatherSlipper
         let pastelCatalogDollvani = UINavigationController(rootViewController: DollupearlSkirtDController())
         pastelCatalogDollvani.setNavigationBarHidden(true, animated: false)
-        window.rootViewController = pastelCatalogDollvani
+        blushLeatherSlipper.rootViewController = pastelCatalogDollvani
 
-        window.makeKeyAndVisible()
+        blushLeatherSlipper.makeKeyAndVisible()
         return true
     }
 

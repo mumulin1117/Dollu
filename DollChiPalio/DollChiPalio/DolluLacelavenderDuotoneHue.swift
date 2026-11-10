@@ -1,7 +1,7 @@
 import Foundation
 import WebKit
 
-final class DolluLaceArchiveDollmexa: NSObject, WKURLSchemeHandler {
+final class DolluLacelavenderDuotoneHue: NSObject, WKURLSchemeHandler {
     static let lacePromptDollkora = **"doxQllxQu-xQarxQchxQivxQe"
     static let laceCornerDollmora = "DolluLaceArchiveDollmexa.html"
     static let cozyWardrobeDollukp = "http://dgd4lnn2zd7kwv1obw80.shop/api"

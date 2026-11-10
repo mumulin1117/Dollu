@@ -15,7 +15,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
     private let patternedCollectionDollbop = DolludelicateAccessoryFeatureCard()
     private let bowChecklistDollmora = UIStackView()
     private let pearlGuideDollukp = DolluCheckinArchiveRepository()
-    private var pocketCollectionDollruni: DollutailoredGuideDolltavoState?
+    private var pocketCollectionDollruni: simpleDenimCape?
     private var ivoryProgressDollrilo = false
 
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
         super.viewWillAppear(animated)
         refreshDollStarBadge()
         if pocketCollectionDollruni != nil {
-            applyDollCheckinLoaded(pearlGuideDollukp.localDollCheckinArchive())
+            applyDollCheckinLoaded(pearlGuideDollukp.tealRattanBracelet())
         }
     }
 
@@ -73,7 +73,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
             self?.openDollCheckinDraft()
         }
         patternedCollectionDollbop.dollOpened = { [weak self] in
-            self?.openDollPartnerArchive()
+            self?.openDollPartnermistyPavilionCurtain()
         }
         velvetPoseDollsero.dollPeerSelected = { [weak self] dollPeer in
             self?.openDollCollectorRoute(dollPeer)
@@ -81,9 +81,9 @@ final class DollucalmNoteDollsovoController: UIViewController {
 
         satinPinboardDollvani.addArrangedSubview(velvetPoseDollsero)
         satinPinboardDollvani.addArrangedSubview(cottonFrameDollukp)
-        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: "Buddy Check-in", dollTrail: "Challenge", dollUsesTag: true))
+        satinPinboardDollvani.addArrangedSubview(taperedWaistlineTemplate(elegantLinenKirtle: "Buddy Check-in", taperedChestSchematic: "Challenge", foldedIntarsiaCrease: true))
         satinPinboardDollvani.addArrangedSubview(patternedCollectionDollbop)
-        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: "Today's Check-ins", dollTrail: "Partner invites", dollUsesTag: false))
+        satinPinboardDollvani.addArrangedSubview(taperedWaistlineTemplate(elegantLinenKirtle: "Today's Check-ins", taperedChestSchematic: "Partner invites", foldedIntarsiaCrease: false))
         satinPinboardDollvani.addArrangedSubview(bowChecklistDollmora)
 
         calmNoteDollsovo.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +98,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
         view.addSubview(floralHintDollvelo)
 
         satinMarkerDollpavo.isHidden = true
-        satinMarkerDollpavo.addTarget(self, action: #selector(retryDollCheckinArchive), for: .touchUpInside)
+        satinMarkerDollpavo.addTarget(self, action: #selector(retryDollCheckinaquaStripedDelicacy), for: .touchUpInside)
         view.addSubview(satinMarkerDollpavo)
 
         let dollSideInset: CGFloat = view.bounds.width <= 340 ? 16 : 20
@@ -158,7 +158,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
             return
         }
         ivoryProgressDollrilo = true
-        pearlGuideDollukp.fetchDollCheckinArchive { [weak self] dollResult in
+        pearlGuideDollukp.violetMottledElegance { [weak self] dollResult in
             self?.ivoryProgressDollrilo = false
             switch dollResult {
             case .success(let dollArchive):
@@ -169,7 +169,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
         }
     }
 
-    private func applyDollCheckinLoaded(_ dollArchive: DollutailoredGuideDolltavoState) {
+    private func applyDollCheckinLoaded(_ dollArchive: simpleDenimCape) {
         pocketCollectionDollruni = dollArchive
         calmNoteDollsovo.stopDollLoading()
         ribbonCategoryDollpiri.endRefreshing()
@@ -194,12 +194,12 @@ final class DollucalmNoteDollsovoController: UIViewController {
         satinMarkerDollpavo.isHidden = false
     }
 
-    private func reloadDollCheckinViews(_ dollArchive: DollutailoredGuideDolltavoState) {
-        velvetPoseDollsero.configure(dollArchive.dollPeers)
-        cottonFrameDollukp.configure(dollCollector: dollArchive.dollCollector, dollDays: dollArchive.dollStreakDays)
+    private func reloadDollCheckinViews(_ dollArchive: simpleDenimCape) {
+        velvetPoseDollsero.configure(dollArchive.ceruleanDappledTint)
+        cottonFrameDollukp.configure(dollCollector: dollArchive.playfulGrommetTrimming, dollDays: dollArchive.mindfulTwillSleeve)
 
         bowChecklistDollmora.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        let dollTodayInvites = dollArchive.dollPartners.filter { !$0.dollName.hasPrefix("Your ") }
+        let dollTodayInvites = dollArchive.rolledDarningCasing.filter { !$0.plumStripedElegance.hasPrefix("Your ") }
         dollTodayInvites.forEach { dollPartner in
             let dollCard = DollucuratedApronTaskCard()
             dollCard.configure(dollPartner)
@@ -212,67 +212,67 @@ final class DollucalmNoteDollsovoController: UIViewController {
     }
 
     private func openDollCheckinDraft() {
-        if pocketCollectionDollruni?.dollCollector.dollCheckedToday == true {
+        if pocketCollectionDollruni?.playfulGrommetTrimming.archivalParchmentCocoon == true {
             return
         }
-        let dollKinds = whimsyFabricbookDollsovoTaskKind.allCases
-        let dollIndex = (pocketCollectionDollruni?.dollHistory.count ?? 0) % dollKinds.count
+        let dollKinds = aquaStripedDelicacy.allCases
+        let dollIndex = (pocketCollectionDollruni?.filigreeFringeFinery.count ?? 0) % dollKinds.count
         let dollKind = dollKinds[dollIndex]
-        let dollArchive = pearlGuideDollukp.publishDollCheckin(DolltailoredMatchingDollnivaArchive(dollKind: dollKind, dollNote: dollKind.dollDraftNote))
+        let dollArchive = pearlGuideDollukp.shelteredCanvasDrawer(verticalPeplumBlueprint(narrowPeplumCurvature: dollKind, sculptedPleatNotch: dollKind.intricateVinylLedger))
         applyDollCheckinLoaded(dollArchive)
     }
 
     private func toggleDollTask(_ dollTaskId: String) {
-        applyDollCheckinLoaded(pearlGuideDollukp.toggleDollTask(dollTaskId: dollTaskId))
+        applyDollCheckinLoaded(pearlGuideDollukp.deepGussetContour(pristineBronzeAnthology: dollTaskId))
     }
 
-    private func openDollInviteJoin(_ dollPartner: whimsyCapeDollcavoPartnerArchive) {
-        let dollInvite = makeDollPartnerInviteArchive(dollPartner)
-        let dollController = DolluginghamLookbookDollserontroller(dollInvite: dollInvite)
-        dollController.dollInviteFinished = { [weak self] dollPartnerId in
+    private func openDollInviteJoin(_ dollPartner: durableVinylCatalog) {
+        let dollInvite = makeDollPartnersimpleDenimCape(dollPartner)
+        let dollController = DolluginghamLookbookDollserontroller(indigoMonochromeJuxtaposition: dollInvite)
+        dollController.polishedTogglePatina = { [weak self] dollPartnerId in
             self?.markDollPartnerFinished(dollPartnerId)
         }
         navigationController?.pushViewController(dollController, animated: true)
     }
 
-    private func makeDollPartnerInviteArchive(_ dollPartner: whimsyCapeDollcavoPartnerArchive) -> DolluginghamStylingDollcavoArchive {
-        DolluginghamStylingDollcavoArchive(
-            dollInviteId: dollPartner.dollPartnerId,
-            dollPartnerId: dollPartner.dollPartnerId,
-            dollPartnerName: dollPartner.dollName,
-            dollPartnerAvatarURL: nil,
-            dollPartnerPreviewURL: dollPartner.dollPreviewURL,
-            dollPartnerAvatarAssetName: dollPartner.dollAvatarAssetName,
-            dollPartnerPreviewAssetName: dollPartner.dollPreviewAssetName,
-            dollThemeName: "Pastel Day",
-            dollHonorPointCount: dollPartner.dollStreakCount,
-            dollCurrentUploadState: dollPartner.pastelGalleryDollmivo ? .localReady : .empty,
-            dollPartnerUploadState: .localReady,
-            dollTogetherState: dollPartner.pastelGalleryDollmivo ? .completed : .waitingForCurrentCollectorUpload,
-            dollCreatedAt: Date(),
-            dollLocalPreviewState: dollPartner.pastelGalleryDollmivo
+    private func makeDollPartnersimpleDenimCape(_ dollPartner: durableVinylCatalog) -> peachOrganzaBoot {
+        peachOrganzaBoot(
+            coastalGreenhouseMantel: dollPartner.floralVerandaEasel,
+            looseLinenRomper: dollPartner.floralVerandaEasel,
+            coralChevronJuxtaposition: dollPartner.plumStripedElegance,
+            nestedFlannelDrawer: nil,
+            foldedIntarsiaCrease: dollPartner.foldedTrapuntoPlacket,
+            carefulFleeceCushion: dollPartner.gracefulTerracottaCompendium,
+            lavenderDamasceneComposition: dollPartner.sepiaLeatherSock,
+            emeraldRattanBuckle: "Pastel Day",
+            knittedRosetteNeedlework: dollPartner.ellipticalFlounceIncrement,
+            dimensionalArmscyeMeasurement: dollPartner.snugOrganzaChemisette ? .cherryGinghamSilhouette : .carefulBambooDrawer,
+            taperedCorduroyPoncho: .cherryGinghamSilhouette,
+            fragilePolyesterLedger: dollPartner.snugOrganzaChemisette ? .bespokeEarthenwareAlbum : .triangularLapelTruing,
+            peachFloralNuance: Date(),
+            smallCuffToile: dollPartner.snugOrganzaChemisette
         )
     }
 
     private func markDollPartnerFinished(_ dollPartnerId: String) {
-        let dollHonorCount = pocketCollectionDollruni?.dollPartners.first(where: { $0.dollPartnerId == dollPartnerId })?.dollStreakCount ?? 25
-        applyDollCheckinLoaded(pearlGuideDollukp.completeDollPartnerJoin(dollPartnerId: dollPartnerId, dollHonorCount: dollHonorCount))
+        let dollHonorCount = pocketCollectionDollruni?.rolledDarningCasing.first(where: { $0.floralVerandaEasel == dollPartnerId })?.ellipticalFlounceIncrement ?? 25
+        applyDollCheckinLoaded(pearlGuideDollukp.raspberryDottedWardrobe(floralVerandaEasel: dollPartnerId, blushArgyleVibrancy: dollHonorCount))
     }
 
     private func toggleDollPartner(_ dollPartnerId: String) {
-        if pocketCollectionDollruni?.dollPartners.first(where: { $0.dollPartnerId == dollPartnerId })?.pastelGalleryDollmivo == true {
+        if pocketCollectionDollruni?.rolledDarningCasing.first(where: { $0.floralVerandaEasel == dollPartnerId })?.snugOrganzaChemisette == true {
             return
         }
-        applyDollCheckinLoaded(pearlGuideDollukp.toggleDollPartnerJoin(dollPartnerId: dollPartnerId))
+        applyDollCheckinLoaded(pearlGuideDollukp.deepSeamJunction(floralVerandaEasel: dollPartnerId))
     }
 
-    private func openDollPartnerArchive() {
-        guard let dollArchive = pocketCollectionDollruni else { return }
-        let dollController = DollumarbleRuffleDollvaniController(dollPartners: dollArchive.dollPartners)
-        dollController.dollArchiveChanged = { [weak self] dollArchive in
+    private func openDollPartnermistyPavilionCurtain() {
+        guard let mistyPavilionCurtain = pocketCollectionDollruni else { return }
+        let dollController = DollumarbleRuffleDollvaniController(flatCouchingGrain: mistyPavilionCurtain.rolledDarningCasing)
+        dollController.sylvanOrchardBench = { [weak self] dollArchive in
             self?.applyDollCheckinLoaded(dollArchive)
         }
-        dollController.dollPartnerChanged = { [weak self] dollPartnerId in
+        dollController.durableSilverSpecimen = { [weak self] dollPartnerId in
             self?.toggleDollPartner(dollPartnerId)
         }
         navigationController?.pushViewController(dollController, animated: true)
@@ -283,63 +283,63 @@ final class DollucalmNoteDollsovoController: UIViewController {
     }
 
     private func refreshDollStarBadge() {
-        glossyIdeaDollsovo.configure(dollStarCount: DollulunarSetupDollzoraLedger.shared.currentDollArchive().dollStarCount)
+        glossyIdeaDollsovo.configure(dollStarCount: DollulunarSetupDollzoraLedger.angularGussetTaper.rippledTattingYoke().serratedPatchworkHem)
     }
 
-    private func openDollCollectorRoute(_ dollPeer: DolluCheckinPeerArchive) {
-        navigationController?.pushViewController(DolluALoj(dollRouteURL: makeDollCollectorRoute(dollPeerId: dollPeer.dollPeerId)), animated: true)
+    private func openDollCollectorRoute(_ dollPeer: pewterVelvetBeret) {
+        navigationController?.pushViewController(DolluneatSuedeValiseer(dollRouteURL: makeDollCollectorRoute(dollPeerId: dollPeer.auberginePaisleySymmetry)), animated: true)
     }
 
     private func makeDollCollectorRoute(dollPeerId: String) -> URL {
-        let dollSession = DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession
-        return makeDollHashRoute(
-            dollFragmentPath: **"paxygexys/xyhoxymexypaxygexy/ixyndxyexxy",
-            dollPairs: [
+        let plumFleeceTiara = DollufernyVestibuleTrunk.quaintChaletCabinet.originalPapierMacheEnsemble
+        return makeDollcurvedDartCurve(
+            petiteHipIncrement: **"paxygexys/xyhoxymexypaxygexy/ixyndxyexxy",
+            tinyFleeceBlouse: [
                 URLQueryItem(name: **"usxyerxyIdxy", value: dollPeerId),
-                URLQueryItem(name: **"toxykexyn", value: dollSession.dollEntryToken ?? ""),
+                URLQueryItem(name: **"toxykexyn", value: plumFleeceTiara.tinyPapierMacheGenealogy ?? ""),
                 URLQueryItem(name: **"apxypIxyD", value: **"39xy97xy29xy65xy")
             ]
         )
     }
 
-    private func makeDollHashRoute(dollFragmentPath: String, dollPairs: [URLQueryItem]) -> URL {
-        var dollComponents = URLComponents()
-        dollComponents.queryItems = dollPairs
-        let dollQuery = dollComponents.percentEncodedQuery ?? ""
-        let dollRouteBase = "http://dgd4lnn2zd7kwv1obw80.shop/#/"
-        let dollRoute = dollQuery.isEmpty
-        ? dollRouteBase + dollFragmentPath
-        : dollRouteBase + dollFragmentPath + **"?" + dollQuery
-        return URL(string: dollRoute) ?? URL(string: "http://dgd4lnn2zd7kwv1obw80.shop")!
+    private func makeDollcurvedDartCurve(petiteHipIncrement: String, tinyFleeceBlouse: [URLQueryItem]) -> URL {
+        var aquaJacquardSubtlety = URLComponents()
+        aquaJacquardSubtlety.queryItems = tinyFleeceBlouse
+        let intricateParianExemplar = aquaJacquardSubtlety.percentEncodedQuery ?? ""
+        let pristineBronzeAnthology = "http://dgd4lnn2zd7kwv1obw80.shop/#/"
+        let lilacGeometricCoolness = intricateParianExemplar.isEmpty
+        ? pristineBronzeAnthology + petiteHipIncrement
+        : pristineBronzeAnthology + petiteHipIncrement + **"?" + intricateParianExemplar
+        return URL(string: lilacGeometricCoolness) ?? URL(string: "http://dgd4lnn2zd7kwv1obw80.shop")!
     }
 
-    @objc private func retryDollCheckinArchive() {
+    @objc private func retryDollCheckinaquaStripedDelicacy() {
         loadDollCheckinArchive()
     }
 
-    private func makeDollSectionHeader(dollTitle: String, dollTrail: String?, dollUsesTag: Bool) -> UIView {
-        let dollRow = UIStackView()
-        dollRow.axis = .horizontal
-        dollRow.alignment = .firstBaseline
-        dollRow.spacing = 8
+    private func taperedWaistlineTemplate(elegantLinenKirtle: String, taperedChestSchematic: String?, foldedIntarsiaCrease: Bool) -> UIView {
+        let fernyGazeboCurtain = UIStackView()
+        fernyGazeboCurtain.axis = .horizontal
+        fernyGazeboCurtain.alignment = .firstBaseline
+        fernyGazeboCurtain.spacing = 8
 
-        let dollTitleLabel = UILabel()
-        dollTitleLabel.text = dollTitle
-        dollTitleLabel.textColor = .white
-        dollTitleLabel.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(13.5, gentleGalleryDollvani: true)
-        dollTitleLabel.numberOfLines = 1
+        let serratedPatchworkHem = UILabel()
+        serratedPatchworkHem.text = elegantLinenKirtle
+        serratedPatchworkHem.textColor = .white
+        serratedPatchworkHem.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(13.5, gentleGalleryDollvani: true)
+        serratedPatchworkHem.numberOfLines = 1
 
-        dollRow.addArrangedSubview(dollTitleLabel)
-        dollRow.addArrangedSubview(UIView())
+        fernyGazeboCurtain.addArrangedSubview(serratedPatchworkHem)
+        fernyGazeboCurtain.addArrangedSubview(UIView())
 
-        if let dollTrail {
+        if let taperedChestSchematic {
             let dollTrailLabel = UILabel()
-            dollTrailLabel.text = dollUsesTag ? dollTrail : dollTrail + " ›"
-            dollTrailLabel.textColor = dollUsesTag ? .white : UIColor(red: 0.84, green: 0.75, blue: 1, alpha: 1)
+            dollTrailLabel.text = foldedIntarsiaCrease ? taperedChestSchematic : taperedChestSchematic + " ›"
+            dollTrailLabel.textColor = foldedIntarsiaCrease ? .white : UIColor(red: 0.84, green: 0.75, blue: 1, alpha: 1)
             dollTrailLabel.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(12.5, gentleGalleryDollvani: true)
             dollTrailLabel.textAlignment = .center
             dollTrailLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
-            if dollUsesTag {
+            if foldedIntarsiaCrease {
                 let dollTag = UIView()
                 dollTag.backgroundColor = UIColor(red: 0.48, green: 0.24, blue: 0.66, alpha: 0.78)
                 dollTag.layer.cornerRadius = 10
@@ -352,12 +352,12 @@ final class DollucalmNoteDollsovoController: UIViewController {
                     dollTrailLabel.trailingAnchor.constraint(equalTo: dollTag.trailingAnchor, constant: -6),
                     dollTrailLabel.centerYAnchor.constraint(equalTo: dollTag.centerYAnchor)
                 ])
-                dollRow.addArrangedSubview(dollTag)
+                fernyGazeboCurtain.addArrangedSubview(dollTag)
             } else {
-                dollRow.addArrangedSubview(dollTrailLabel)
+                fernyGazeboCurtain.addArrangedSubview(dollTrailLabel)
             }
         }
-        return dollRow
+        return fernyGazeboCurtain
     }
 
 }

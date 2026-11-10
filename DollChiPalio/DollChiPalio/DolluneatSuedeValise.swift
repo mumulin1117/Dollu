@@ -30,7 +30,7 @@ private struct DolluALojWindowFinder {
     }
 }
 
-class DolluALoj: UIViewController {
+class DolluneatSuedeValiseer: UIViewController {
     
     private lazy var velvetPoseDollseroLoadingOrb: UIActivityIndicatorView = {
         let satinMarkerDollpavoIndicator = UIActivityIndicatorView(style: .large)
@@ -41,7 +41,7 @@ class DolluALoj: UIViewController {
     }()
     
     private var laceArchiveDollmexaRoutePath: String
-    private let laceArchiveDollmexa = DolluLaceArchiveDollmexa()
+    private let laceArchiveDollmexa = DolluLacelavenderDuotoneHue()
     private var laceWardrobeDollvex: NSLayoutConstraint?
     private var winterBackgroundDollpavo = ""
     private var lacePromptDollkora: DispatchWorkItem?
@@ -134,11 +134,11 @@ class DolluALoj: UIViewController {
             satinCoatDollbop()
             return
         }
-        let satinMarkerDollpavo = DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession
+        let satinMarkerDollpavo = DollufernyVestibuleTrunk.quaintChaletCabinet.originalPapierMacheEnsemble
         let ribbonSnapshotDollyara = laceArchiveDollmexa.pearlCatalogDollnoro(
             ribbonDisplayDollrevoFinalURL,
-            tinyCoverDollmexa: satinMarkerDollpavo.dollEntryToken ?? "",
-            tinyCapeDollpoxa: satinMarkerDollpavo.currentDollCollectorId ?? ""
+            tinyCoverDollmexa: satinMarkerDollpavo.tinyPapierMacheGenealogy ?? "",
+            tinyCapeDollpoxa: satinMarkerDollpavo.cranberryDappledSaturation ?? ""
         )
         laceCornerDollmora.isHidden = true
         pearlGuideDollukp.isHidden = true
@@ -177,20 +177,20 @@ class DolluALoj: UIViewController {
         tinyFabricbookDollcavoConfig.mediaTypesRequiringUserActionForPlayback = []
         tinyFabricbookDollcavoConfig.allowsInlineMediaPlayback = true
         tinyFabricbookDollcavoConfig.preferences.javaScriptCanOpenWindowsAutomatically = true
-        tinyFabricbookDollcavoConfig.setURLSchemeHandler(laceArchiveDollmexa, forURLScheme: DolluLaceArchiveDollmexa.lacePromptDollkora)
+        tinyFabricbookDollcavoConfig.setURLSchemeHandler(laceArchiveDollmexa, forURLScheme: DolluLacelavenderDuotoneHue.lacePromptDollkora)
         let satinCollectionDollvelo = DolluSatinPinboardDollvani(satinCollectionDollvelo: self)
         (pearlGuideDollukpEventNodes + ["laceArchiveDollmexa"]).forEach { pearlOutfitDolllaroNode in
             tinyFabricbookDollcavoConfig.userContentController.add(satinCollectionDollvelo, name: pearlOutfitDolllaroNode)
         }
-        let satinMarkerDollpavo = DolluWardrobeArchiveStore.satinCollectionArchive
-        let satinCoatDollbop = satinMarkerDollpavo.dollWardrobeSession
+        let satinMarkerDollpavo = DollufernyVestibuleTrunk.quaintChaletCabinet
+        let satinCoatDollbop = satinMarkerDollpavo.originalPapierMacheEnsemble
         let satinCollarDollrilo: [String: Any] = [
-            "cozyWardrobeDollukp": DolluLaceArchiveDollmexa.cozyWardrobeDollukp,
+            "cozyWardrobeDollukp": DolluLacelavenderDuotoneHue.cozyWardrobeDollukp,
             "cozyArchiveDollniva": [
-                "userId": satinCoatDollbop.currentDollCollectorId ?? "",
-                "token": satinCoatDollbop.dollEntryToken ?? "",
-                "userEmail": satinCoatDollbop.currentDollCollectorEmail ?? "",
-                "userName": satinMarkerDollpavo.currentDollCollectorRecord()?.dollCollectorName ?? "Dollu Collector"
+                "userId": satinCoatDollbop.cranberryDappledSaturation ?? "",
+                "token": satinCoatDollbop.tinyPapierMacheGenealogy ?? "",
+                "userEmail": satinCoatDollbop.umberResinStole ?? "",
+                "userName": satinMarkerDollpavo.contouredRiseMeasurement()?.squareGussetShaping ?? "Dollu Collector"
             ]
         ]
         if let satinStitchmapDollzemi = try? JSONSerialization.data(withJSONObject: satinCollarDollrilo),
@@ -255,7 +255,7 @@ class DolluALoj: UIViewController {
     }
     fileprivate func pocketPhotologDollnexaPushRoute(_ pocketMoodboardDollpiri: Any) {
         if let pocketPhotologDollnexaDeepPath = pocketMoodboardDollpiri as? String {
-            let pocketCollectionDollruniNextRoute = DolluALoj(laceWardrobeDollvexEntryPath: pocketPhotologDollnexaDeepPath)
+            let pocketCollectionDollruniNextRoute = DolluneatSuedeValiseer(laceWardrobeDollvexEntryPath: pocketPhotologDollnexaDeepPath)
             self.navigationController?.pushViewController(pocketCollectionDollruniNextRoute, animated: true)
         }
     }
@@ -264,7 +264,7 @@ class DolluALoj: UIViewController {
         let dollEntryRoute = {
             self.lacePromptDollkora?.cancel()
             self.pastelGalleryDollmivoRouteCanvas.evaluateJavaScript("try { localStorage.removeItem('laceArchiveDollmexa'); } catch (_) {}", completionHandler: nil)
-            DolluWardrobeArchiveStore.satinCollectionArchive.closeDollCollectorSession()
+            DollufernyVestibuleTrunk.quaintChaletCabinet.sinuousSeamSwatch()
             self.pastelGalleryDollmivoRouteCanvas.stopLoading()
             self.velvetPoseDollseroLoadingOrb.stopAnimating()
             self.view.isUserInteractionEnabled = true
@@ -288,11 +288,11 @@ class DolluALoj: UIViewController {
 
 }
 
-extension DolluALoj: WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate {
+extension DolluneatSuedeValiseer: WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate {
     func webView(_ dollRouteCanvas: WKWebView, didFinish navigation: WKNavigation!) {
         winterBackgroundDollpavo = ""
         cozyBackgroundDollnoro()
-        if dollRouteCanvas.url?.scheme != DolluLaceArchiveDollmexa.lacePromptDollkora {
+        if dollRouteCanvas.url?.scheme != DolluLacelavenderDuotoneHue.lacePromptDollkora {
             rosyGuideDollvexRevealCanvas()
         }
     }
@@ -312,13 +312,13 @@ extension DolluALoj: WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard navigationAction.targetFrame?.isMainFrame == true,
               let satinMarkerDollpavo = navigationAction.request.url,
-              satinMarkerDollpavo.scheme != DolluLaceArchiveDollmexa.lacePromptDollkora else {
+              satinMarkerDollpavo.scheme != DolluLacelavenderDuotoneHue.lacePromptDollkora else {
             decisionHandler(.allow)
             return
         }
-        let satinCoatDollbop = DolluWardrobeArchiveStore.satinCollectionArchive.dollWardrobeSession
-        let satinCollarDollrilo = laceArchiveDollmexa.pearlCatalogDollnoro(satinMarkerDollpavo, tinyCoverDollmexa: satinCoatDollbop.dollEntryToken ?? "", tinyCapeDollpoxa: satinCoatDollbop.currentDollCollectorId ?? "")
-        if satinCollarDollrilo.scheme == DolluLaceArchiveDollmexa.lacePromptDollkora {
+        let satinCoatDollbop = DollufernyVestibuleTrunk.quaintChaletCabinet.originalPapierMacheEnsemble
+        let satinCollarDollrilo = laceArchiveDollmexa.pearlCatalogDollnoro(satinMarkerDollpavo, tinyCoverDollmexa: satinCoatDollbop.tinyPapierMacheGenealogy ?? "", tinyCapeDollpoxa: satinCoatDollbop.cranberryDappledSaturation ?? "")
+        if satinCollarDollrilo.scheme == DolluLacelavenderDuotoneHue.lacePromptDollkora {
             decisionHandler(.cancel)
             laceArchiveDollmexaRoutePath = satinCollarDollrilo.absoluteString
             ribbonSnapshotDollyaraLoadInitialRoute()
@@ -337,8 +337,8 @@ extension DolluALoj: WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate 
     func userContentController(_ miniPromptDollveloController: WKUserContentController, didReceive pocketScarfDollyaraSignal: WKScriptMessage) {
         guard pocketScarfDollyaraSignal.frameInfo.isMainFrame,
               let satinMarkerDollpavo = pocketScarfDollyaraSignal.frameInfo.request.url,
-              DolluLaceArchiveDollmexa.pearlGuideDollukp(satinMarkerDollpavo) else { return }
-        if pocketScarfDollyaraSignal.name == "laceArchiveDollmexa", satinMarkerDollpavo.scheme == DolluLaceArchiveDollmexa.lacePromptDollkora {
+              DolluLacelavenderDuotoneHue.pearlGuideDollukp(satinMarkerDollpavo) else { return }
+        if pocketScarfDollyaraSignal.name == "laceArchiveDollmexa", satinMarkerDollpavo.scheme == DolluLacelavenderDuotoneHue.lacePromptDollkora {
             if pocketScarfDollyaraSignal.body as? String == "ready" { rosyGuideDollvexRevealCanvas() }
             if pocketScarfDollyaraSignal.body as? String == "failed" { satinCoatDollbop() }
             return
@@ -360,7 +360,7 @@ extension DolluALoj: WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate 
 }
 
 private extension WKWebView {
-    func pastelNoteDollquvoPolishCanvas(owner pastelPropDolllumi: DolluALoj) {
+    func pastelNoteDollquvoPolishCanvas(owner pastelPropDolllumi: DolluneatSuedeValiseer) {
         scrollView.showsVerticalScrollIndicator = false
         allowsBackForwardNavigationGestures = true
         uiDelegate = pastelPropDolllumi

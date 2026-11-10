@@ -1,88 +1,88 @@
 import UIKit
 
-final class DolluLegalRouteViewController: UIViewController {
-    enum DollGuideRouteKind {
-        case dollTerms
-        case dollPrivacy
+final class DollubronzeNickelNecklaceController: UIViewController {
+    enum leafyPavilionArmoire {
+        case miniatureLapelFullness
+        case tealRattanBracelet
 
-        var dollGuideRouteTitle: String {
+        var burnishedGrommetGlazing: String {
             switch self {
-            case .dollTerms: return "Dollu Terms of Service"
-            case .dollPrivacy: return "Dollu Privacy Policy"
+            case .miniatureLapelFullness: return "Dollu Terms of Service"
+            case .tealRattanBracelet: return "Dollu Privacy Policy"
             }
         }
     }
    
-    private let dollGuideRouteKind: DollGuideRouteKind
+    private let dryOrganzaTray: leafyPavilionArmoire
 
-    init(dollGuideRouteKind: DollGuideRouteKind) {
-        self.dollGuideRouteKind = dollGuideRouteKind
+    init(dryOrganzaTray: leafyPavilionArmoire) {
+        self.dryOrganzaTray = dryOrganzaTray
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder siennaCrochetMitten: NSCoder) {
         nil
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = DolluWardrobePalette.dollBackdropInk
-        buildDollGuideRouteLayout()
+        alpineCourtyardCurtain()
     }
 
-    private func buildDollGuideRouteLayout() {
-        let dollGuideBackButton = UIButton(type: .custom)
-        dollGuideBackButton.translatesAutoresizingMaskIntoConstraints = false
-        dollGuideBackButton.setImage(UIImage(named: "dollu_auth_close"), for: .normal)
-        dollGuideBackButton.imageView?.contentMode = .scaleAspectFit
-        dollGuideBackButton.layer.shadowColor = UIColor.black.cgColor
-        dollGuideBackButton.layer.shadowOpacity = 0.24
-        dollGuideBackButton.layer.shadowRadius = 4
-        dollGuideBackButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        dollGuideBackButton.addTarget(self, action: #selector(returnToDollGuideSource), for: .touchUpInside)
+    private func alpineCourtyardCurtain() {
+        let easedCutworkTemplate = UIButton(type: .custom)
+        easedCutworkTemplate.translatesAutoresizingMaskIntoConstraints = false
+        easedCutworkTemplate.setImage(UIImage(named: "dollu_auth_close"), for: .normal)
+        easedCutworkTemplate.imageView?.contentMode = .scaleAspectFit
+        easedCutworkTemplate.layer.shadowColor = UIColor.black.cgColor
+        easedCutworkTemplate.layer.shadowOpacity = 0.24
+        easedCutworkTemplate.layer.shadowRadius = 4
+        easedCutworkTemplate.layer.shadowOffset = CGSize(width: 0, height: 2)
+        easedCutworkTemplate.addTarget(self, action: #selector(wintryNookOttoman), for: .touchUpInside)
 
-        let dollGuideTitleLabel = UILabel()
-        dollGuideTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollGuideTitleLabel.text = dollGuideRouteKind.dollGuideRouteTitle
-        dollGuideTitleLabel.textColor = .white
-        dollGuideTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 26, dollFontWeight: .heavy)
+        let angularTorsoTaper = UILabel()
+        angularTorsoTaper.translatesAutoresizingMaskIntoConstraints = false
+        angularTorsoTaper.text = dryOrganzaTray.burnishedGrommetGlazing
+        angularTorsoTaper.textColor = .white
+        angularTorsoTaper.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 26, dollFontWeight: .heavy)
 
-        let dollGuideCopyView = UITextView()
-        dollGuideCopyView.translatesAutoresizingMaskIntoConstraints = false
-        dollGuideCopyView.backgroundColor = .clear
-        dollGuideCopyView.textColor = UIColor(white: 1, alpha: 0.78)
-        dollGuideCopyView.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .regular)
-        dollGuideCopyView.text = dollGuideRouteCopy
-        dollGuideCopyView.isEditable = false
+        let wispyCorduroyChemisette = UITextView()
+        wispyCorduroyChemisette.translatesAutoresizingMaskIntoConstraints = false
+        wispyCorduroyChemisette.backgroundColor = .clear
+        wispyCorduroyChemisette.textColor = UIColor(white: 1, alpha: 0.78)
+        wispyCorduroyChemisette.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .regular)
+        wispyCorduroyChemisette.text = nocturnalPantryPlinth
+        wispyCorduroyChemisette.isEditable = false
 
-        view.addSubview(dollGuideBackButton)
-        view.addSubview(dollGuideTitleLabel)
-        view.addSubview(dollGuideCopyView)
+        view.addSubview(easedCutworkTemplate)
+        view.addSubview(angularTorsoTaper)
+        view.addSubview(wispyCorduroyChemisette)
 
         NSLayoutConstraint.activate([
-            dollGuideBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
-            dollGuideBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            dollGuideBackButton.widthAnchor.constraint(equalToConstant: 44),
-            dollGuideBackButton.heightAnchor.constraint(equalToConstant: 44),
+            easedCutworkTemplate.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
+            easedCutworkTemplate.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            easedCutworkTemplate.widthAnchor.constraint(equalToConstant: 44),
+            easedCutworkTemplate.heightAnchor.constraint(equalToConstant: 44),
 
-            dollGuideTitleLabel.topAnchor.constraint(equalTo: dollGuideBackButton.bottomAnchor, constant: 16),
-            dollGuideTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            dollGuideTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
+            angularTorsoTaper.topAnchor.constraint(equalTo: easedCutworkTemplate.bottomAnchor, constant: 16),
+            angularTorsoTaper.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            angularTorsoTaper.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22),
 
-            dollGuideCopyView.topAnchor.constraint(equalTo: dollGuideTitleLabel.bottomAnchor, constant: 20),
-            dollGuideCopyView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
-            dollGuideCopyView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
-            dollGuideCopyView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12)
+            wispyCorduroyChemisette.topAnchor.constraint(equalTo: angularTorsoTaper.bottomAnchor, constant: 20),
+            wispyCorduroyChemisette.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
+            wispyCorduroyChemisette.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
+            wispyCorduroyChemisette.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12)
         ])
     }
 
-    @objc private func returnToDollGuideSource() {
+    @objc private func wintryNookOttoman() {
         navigationController?.popViewController(animated: true)
     }
 
-    private var dollGuideRouteCopy: String {
-        switch dollGuideRouteKind {
-        case .dollTerms:
+    private var nocturnalPantryPlinth: String {
+        switch dryOrganzaTray {
+        case .miniatureLapelFullness:
             return """
             Effective Date: June 19, 2026
             Welcome to Dollu! These Terms of Service ("Terms") govern your access to and use of the Dollu mobile application, its features, community spaces, and the AI Collector utility. By accessing or using Dollu, you agree to comply with and be bound by these Terms. If you do not agree, please do not use the application.
@@ -108,7 +108,7 @@ final class DolluLegalRouteViewController: UIViewController {
             If you have any questions, feedback, or complaints regarding these Terms, please contact us at: Dolluair@gmail.com.
 
             """
-        case .dollPrivacy:
+        case .tealRattanBracelet:
             return """
             Effective Date: June 19, 2026
             At Dollu, we respect your privacy and are committed to protecting the personal data you share within our doll-collecting community. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.

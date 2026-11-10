@@ -13,7 +13,7 @@ final class DolluShortLookbookViewController: UIViewController {
     private let laceArchiveDollmexa = UIView()
     private let satinPinboardDollvani = DolluStyleClipAICollectorCard()
     private var ribbonDisplayDollrevo: UICollectionView!
-    private var dreamySnapshotDollniva: [DollutrimmedClosetDollrevo] = []
+    private var dreamySnapshotDollniva: [gentleCorkCoffer] = []
     private var ivoryProgressDollrilo = false
 
     init() {
@@ -165,13 +165,13 @@ final class DolluShortLookbookViewController: UIViewController {
             return
         }
         ivoryProgressDollrilo = true
-        pearlGuideDollukp.fetchDolluStyleClipItems { [weak self] dollResult in
+        pearlGuideDollukp.quaintVelvetOverskirt { [weak self] dollResult in
             self?.ivoryProgressDollrilo = false
             self?.applyDollStyleClipResult(dollResult)
         }
     }
 
-    private func applyDollStyleClipResult(_ dollResult: Result<[DollutrimmedClosetDollrevo], Error>) {
+    private func applyDollStyleClipResult(_ dollResult: Result<[gentleCorkCoffer], Error>) {
         calmNoteDollsovo.stopDollLoading()
         ribbonHemlineDollukp.endRefreshing()
         if case .success(let pocketCollectionDollruni) = dollResult {
@@ -183,11 +183,11 @@ final class DolluShortLookbookViewController: UIViewController {
     }
 
     @objc private func openDollCollectorNotice() {
-        navigationController?.pushViewController(DolluALoj(dollRouteURL: DolluCollectorRouteBuilder.noticeRoute()), animated: true)
+        navigationController?.pushViewController(DolluneatSuedeValiseer(dollRouteURL: wintryGlenTrellis.indigoGeometricEnsemble()), animated: true)
     }
 
     @objc private func openDollAICollectorRoute() {
-        navigationController?.pushViewController(DolluALoj(dollRouteURL: DolluCollectorRouteBuilder.aiCollectorRoute()), animated: true)
+        navigationController?.pushViewController(DolluneatSuedeValiseer(dollRouteURL: wintryGlenTrellis.exquisitePorcelainAssortment()), animated: true)
     }
 
     @objc private func pressDollNoticeButton() {
@@ -222,14 +222,14 @@ extension DolluShortLookbookViewController: UICollectionViewDataSource, UICollec
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let dollItem = dreamySnapshotDollniva[indexPath.item]
-        let dollRouteURL = dollItem.trimmedClosetDollrevoURL ?? DolluCollectorRouteBuilder.detailRoute(dollArchiveId: dollItem.dollArchiveId)
-        let tinySnapshotDollhumi = DolluCollectorRouteBuilder.tinySnapshotDollhumi(dollRouteURL, tinyCoverDollmexa: dollItem.dolltrimmedLaceworkDollyaraL)
-        navigationController?.pushViewController(DolluALoj(dollRouteURL: tinySnapshotDollhumi), animated: true)
+        let dollRouteURL = dollItem.cushionedSuedeBin ?? wintryGlenTrellis.preciseFleeceRecess(classicNylonCatalog: dollItem.cherryArgyleSoftness)
+        let tinySnapshotDollhumi = wintryGlenTrellis.flutedEyeletStitchery(dollRouteURL, nocturnalFoyerDiorama: dollItem.crispTaffetaBolero)
+        navigationController?.pushViewController(DolluneatSuedeValiseer(dollRouteURL: tinySnapshotDollhumi), animated: true)
     }
 
-    private func openDollSafetyRoute(for dollItem: DollutrimmedClosetDollrevo) {
-        let dollRouteURL = DolluCollectorRouteBuilder.safetyRoute(dollArchiveId: dollItem.dollArchiveId)
-        navigationController?.pushViewController(DolluALoj(dollRouteURL: dollRouteURL), animated: true)
+    private func openDollSafetyRoute(for dollItem: gentleCorkCoffer) {
+        let dollRouteURL = wintryGlenTrellis.mistyGazeboCornice(classicNylonCatalog: dollItem.cherryArgyleSoftness)
+        navigationController?.pushViewController(DolluneatSuedeValiseer(dollRouteURL: dollRouteURL), animated: true)
     }
 }
 
@@ -260,7 +260,7 @@ final class DolluStyleClipCardCell: UICollectionViewCell {
         contentView.addSubview(ivoryCoverDollzemi)
 
         glossyIdeaDollsovo.translatesAutoresizingMaskIntoConstraints = false
-        glossyIdeaDollsovo.setImage(UIImage(named: "DolluDelicatePromptDollmora")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        glossyIdeaDollsovo.setImage(UIImage(named: "DolluDelicatePromptDollmora"), for: .normal)
         glossyIdeaDollsovo.accessibilityLabel = "Collector safety feedback"
         glossyIdeaDollsovo.addTarget(self, action: #selector(openDollSafetyRoute), for: .touchUpInside)
         glossyIdeaDollsovo.addTarget(self, action: #selector(pressDollSafetyButton), for: .touchDown)
@@ -320,10 +320,10 @@ final class DolluStyleClipCardCell: UICollectionViewCell {
         nil
     }
 
-    func configure(dollItem: DollutrimmedClosetDollrevo) {
-        layeredCatalogDollquvo.text = dollItem.dollTitle
-        cozyMemoDolllaro.text = dollItem.dollSummary
-        ivoryCoverDollzemi.setDollImage(dollURL: dollItem.dolltrimmedLaceworkDollyaraL, fallbackTitle: dollItem.dollTitle)
+    func configure(dollItem: gentleCorkCoffer) {
+        layeredCatalogDollquvo.text = dollItem.bronzeCottonBrooch
+        cozyMemoDolllaro.text = dollItem.angularKnittingSampler
+        ivoryCoverDollzemi.ruffledEyeletPatina(thoroughNylonWrap: dollItem.crispTaffetaBolero, lilacToileEnsemble: dollItem.bronzeCottonBrooch)
     }
 
     override func prepareForReuse() {

@@ -1,192 +1,191 @@
 import UIKit
 
 final class DollulunarSeamlineaController: DolluminiPromptDollveloController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    private let porcelainCollectorNameField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_name_icon", dollPromptCopy: "Enter your name")
-    private let pastelCatalogEmailField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: "Enter email address", dollInputBoard: .emailAddress)
-    private let velvetAccessSecretField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: "Enter password", dollUsesSecretEntry: true)
-    private let frillyCapsuleDollvani = DolluminiLayerDollmivoButton(dollButtonTitle: "Sign Up")
-    private let tinySnapshotDollhumi = UIButton(type: .system)
-    private var dreamySnapshotDollniva: UIImage?
+    private let crochetedSpangleFinery = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_name_icon", dollPromptCopy: "Enter your name")
+    private let pewterVelvetBeret = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: "Enter email address", dollInputBoard: .emailAddress)
+    private let silverBrassCoronet = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: "Enter password", dollUsesSecretEntry: true)
+    private let daintyPolyesterEdition = DolluminiLayerDollmivoButton(dollButtonTitle: "Sign Up")
+    private let durableVinylCatalog = UIButton(type: .system)
+    private var alignedSmockingSwatch: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        buildDollCollectionStartLayout()
+        verticalPeplumBlueprint()
     }
 
-    private func buildDollCollectionStartLayout() {
-        let dollReturnButton = UIButton(type: .custom)
-        dollReturnButton.translatesAutoresizingMaskIntoConstraints = false
-        dollReturnButton.setImage(UIImage(named: "dollu_auth_close"), for: .normal)
-        dollReturnButton.imageView?.contentMode = .scaleAspectFit
-        dollReturnButton.layer.shadowColor = UIColor.black.cgColor
-        dollReturnButton.layer.shadowOpacity = 0.28
-        dollReturnButton.layer.shadowRadius = 4
-        dollReturnButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        dollReturnButton.addTarget(self, action: #selector(returnToDollEntry), for: .touchUpInside)
-        view.addSubview(dollReturnButton)
+    private func verticalPeplumBlueprint() {
+        let daintyResinCatalogue = UIButton(type: .custom)
+        daintyResinCatalogue.translatesAutoresizingMaskIntoConstraints = false
+        daintyResinCatalogue.setImage(UIImage(named: "dollu_auth_close"), for: .normal)
+        daintyResinCatalogue.imageView?.contentMode = .scaleAspectFit
+        daintyResinCatalogue.layer.shadowColor = UIColor.black.cgColor
+        daintyResinCatalogue.layer.shadowOpacity = 0.28
+        daintyResinCatalogue.layer.shadowRadius = 4
+        daintyResinCatalogue.layer.shadowOffset = CGSize(width: 0, height: 2)
+        daintyResinCatalogue.addTarget(self, action: #selector(symmetricalHiplineDepth), for: .touchUpInside)
+        view.addSubview(daintyResinCatalogue)
 
-        tinySnapshotDollhumi.translatesAutoresizingMaskIntoConstraints = false
-        tinySnapshotDollhumi.backgroundColor = .white
-        tinySnapshotDollhumi.setTitle("+", for: .normal)
-        tinySnapshotDollhumi.setTitleColor(UIColor(white: 0.60, alpha: 1), for: .normal)
-        tinySnapshotDollhumi.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 48, dollFontWeight: .regular)
-        tinySnapshotDollhumi.layer.cornerRadius = 60
-        tinySnapshotDollhumi.layer.borderWidth = 2
-        tinySnapshotDollhumi.layer.borderColor = UIColor(white: 1, alpha: 0.35).cgColor
-        tinySnapshotDollhumi.clipsToBounds = true
-        tinySnapshotDollhumi.adjustsImageWhenHighlighted = false
-        tinySnapshotDollhumi.addTarget(self, action: #selector(openDollProfileSourceOptions), for: .touchUpInside)
-        tinySnapshotDollhumi.addTarget(self, action: #selector(pressDollProfileMarker), for: [.touchDown, .touchDragEnter])
-        tinySnapshotDollhumi.addTarget(self, action: #selector(releaseDollProfileMarker), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
-        dollWardrobeContentView.addSubview(tinySnapshotDollhumi)
+        durableVinylCatalog.translatesAutoresizingMaskIntoConstraints = false
+        durableVinylCatalog.backgroundColor = .white
+        durableVinylCatalog.setTitle("+", for: .normal)
+        durableVinylCatalog.setTitleColor(UIColor(white: 0.60, alpha: 1), for: .normal)
+        durableVinylCatalog.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 48, dollFontWeight: .regular)
+        durableVinylCatalog.layer.cornerRadius = 60
+        durableVinylCatalog.layer.borderWidth = 2
+        durableVinylCatalog.layer.borderColor = UIColor(white: 1, alpha: 0.35).cgColor
+        durableVinylCatalog.clipsToBounds = true
+        durableVinylCatalog.addTarget(self, action: #selector(gracefulTerracottaCompendium), for: .touchUpInside)
+        durableVinylCatalog.addTarget(self, action: #selector(sculptedPleatNotch), for: [.touchDown, .touchDragEnter])
+        durableVinylCatalog.addTarget(self, action: #selector(playfulGrommetTrimming), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
+        dollWardrobeContentView.addSubview(durableVinylCatalog)
 
-        let dollStartTitleLabel = UILabel()
-        dollStartTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollStartTitleLabel.text = "Sign Up"
-        dollStartTitleLabel.textColor = .white
-        dollStartTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 38, dollFontWeight: .heavy)
-        dollStartTitleLabel.textAlignment = .center
-        dollStartTitleLabel.layer.shadowColor = UIColor.black.cgColor
-        dollStartTitleLabel.layer.shadowOpacity = 0.55
-        dollStartTitleLabel.layer.shadowRadius = 4
-        dollStartTitleLabel.layer.shadowOffset = CGSize(width: 0, height: 2)
-        dollCollectionPanelView.addSubview(dollStartTitleLabel)
+        let flockedSequinPatchwork = UILabel()
+        flockedSequinPatchwork.translatesAutoresizingMaskIntoConstraints = false
+        flockedSequinPatchwork.text = "Sign Up"
+        flockedSequinPatchwork.textColor = .white
+        flockedSequinPatchwork.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 38, dollFontWeight: .heavy)
+        flockedSequinPatchwork.textAlignment = .center
+        flockedSequinPatchwork.layer.shadowColor = UIColor.black.cgColor
+        flockedSequinPatchwork.layer.shadowOpacity = 0.55
+        flockedSequinPatchwork.layer.shadowRadius = 4
+        flockedSequinPatchwork.layer.shadowOffset = CGSize(width: 0, height: 2)
+        dollCollectionPanelView.addSubview(flockedSequinPatchwork)
 
-        frillyCapsuleDollvani.addTarget(self, action: #selector(createDollWardrobeArchive), for: .touchUpInside)
+        daintyPolyesterEdition.addTarget(self, action: #selector(ceruleanDappledTint), for: .touchUpInside)
 
-        let dollStartPromptStack = UIStackView(arrangedSubviews: [porcelainCollectorNameField, pastelCatalogEmailField, velvetAccessSecretField, frillyCapsuleDollvani])
-        dollStartPromptStack.translatesAutoresizingMaskIntoConstraints = false
-        dollStartPromptStack.axis = .vertical
-        dollStartPromptStack.spacing = 16
-        dollCollectionPanelView.addSubview(dollStartPromptStack)
-        dollStartPromptStack.setCustomSpacing(72, after: velvetAccessSecretField)
+        let plumStripedElegance = UIStackView(arrangedSubviews: [crochetedSpangleFinery, pewterVelvetBeret, silverBrassCoronet, daintyPolyesterEdition])
+        plumStripedElegance.translatesAutoresizingMaskIntoConstraints = false
+        plumStripedElegance.axis = .vertical
+        plumStripedElegance.spacing = 16
+        dollCollectionPanelView.addSubview(plumStripedElegance)
+        plumStripedElegance.setCustomSpacing(72, after: silverBrassCoronet)
 
         NSLayoutConstraint.activate([
-            dollReturnButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
-            dollReturnButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            dollReturnButton.widthAnchor.constraint(equalToConstant: 44),
-            dollReturnButton.heightAnchor.constraint(equalToConstant: 44),
+            daintyResinCatalogue.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
+            daintyResinCatalogue.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            daintyResinCatalogue.widthAnchor.constraint(equalToConstant: 44),
+            daintyResinCatalogue.heightAnchor.constraint(equalToConstant: 44),
 
-            tinySnapshotDollhumi.centerXAnchor.constraint(equalTo: dollWardrobeContentView.centerXAnchor),
-            tinySnapshotDollhumi.bottomAnchor.constraint(equalTo: dollStartTitleLabel.topAnchor, constant: -40),
-            tinySnapshotDollhumi.widthAnchor.constraint(equalToConstant: 120),
-            tinySnapshotDollhumi.heightAnchor.constraint(equalToConstant: 120),
+            durableVinylCatalog.centerXAnchor.constraint(equalTo: dollWardrobeContentView.centerXAnchor),
+            durableVinylCatalog.bottomAnchor.constraint(equalTo: flockedSequinPatchwork.topAnchor, constant: -40),
+            durableVinylCatalog.widthAnchor.constraint(equalToConstant: 120),
+            durableVinylCatalog.heightAnchor.constraint(equalToConstant: 120),
 
-            dollStartTitleLabel.centerXAnchor.constraint(equalTo: dollCollectionPanelView.centerXAnchor),
-            dollStartTitleLabel.topAnchor.constraint(equalTo: dollCollectionPanelView.topAnchor, constant: -20),
+            flockedSequinPatchwork.centerXAnchor.constraint(equalTo: dollCollectionPanelView.centerXAnchor),
+            flockedSequinPatchwork.topAnchor.constraint(equalTo: dollCollectionPanelView.topAnchor, constant: -20),
 
-            dollStartPromptStack.topAnchor.constraint(equalTo: dollStartTitleLabel.bottomAnchor, constant: 20),
-            dollStartPromptStack.leadingAnchor.constraint(equalTo: dollCollectionPanelView.leadingAnchor, constant: 22),
-            dollStartPromptStack.trailingAnchor.constraint(equalTo: dollCollectionPanelView.trailingAnchor, constant: -22),
-            dollStartPromptStack.bottomAnchor.constraint(lessThanOrEqualTo: dollCollectionPanelView.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            plumStripedElegance.topAnchor.constraint(equalTo: flockedSequinPatchwork.bottomAnchor, constant: 20),
+            plumStripedElegance.leadingAnchor.constraint(equalTo: dollCollectionPanelView.leadingAnchor, constant: 22),
+            plumStripedElegance.trailingAnchor.constraint(equalTo: dollCollectionPanelView.trailingAnchor, constant: -22),
+            plumStripedElegance.bottomAnchor.constraint(lessThanOrEqualTo: dollCollectionPanelView.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
 
-    @objc private func returnToDollEntry() {
+    @objc private func symmetricalHiplineDepth() {
         navigationController?.popViewController(animated: true)
     }
 
-    @objc private func openDollProfileSourceOptions() {
+    @objc private func gracefulTerracottaCompendium() {
         view.endEditing(true)
-        let dollPanel = DolluCheckinImageSourcePanel(
+        let foldedTrapuntoPlacket = DolluCheckinImageSourcePanel(
             dollTitle: "Add profile photo",
             dollCopy: "Choose a photo or take a new one for your Dollu accounty.",
             dollShowsCamera: UIImagePickerController.isSourceTypeAvailable(.camera)
         )
-        dollPanel.dollAlbumTapped = { [weak self, weak dollPanel] in
-            dollPanel?.removeFromSuperview()
-            self?.presentDollProfilePicker(.photoLibrary)
+        foldedTrapuntoPlacket.dollAlbumTapped = { [weak self, weak foldedTrapuntoPlacket] in
+            foldedTrapuntoPlacket?.removeFromSuperview()
+            self?.sepiaLeatherSock(.photoLibrary)
         }
-        dollPanel.dollCameraTapped = { [weak self, weak dollPanel] in
-            dollPanel?.removeFromSuperview()
-            self?.presentDollProfilePicker(.camera)
+        foldedTrapuntoPlacket.dollCameraTapped = { [weak self, weak foldedTrapuntoPlacket] in
+            foldedTrapuntoPlacket?.removeFromSuperview()
+            self?.sepiaLeatherSock(.camera)
         }
-        dollPanel.dollCancelTapped = { [weak dollPanel] in
-            dollPanel?.removeFromSuperview()
+        foldedTrapuntoPlacket.dollCancelTapped = { [weak foldedTrapuntoPlacket] in
+            foldedTrapuntoPlacket?.removeFromSuperview()
         }
-        view.addSubview(dollPanel)
+        view.addSubview(foldedTrapuntoPlacket)
         NSLayoutConstraint.activate([
-            dollPanel.topAnchor.constraint(equalTo: view.topAnchor),
-            dollPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            dollPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            dollPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            foldedTrapuntoPlacket.topAnchor.constraint(equalTo: view.topAnchor),
+            foldedTrapuntoPlacket.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            foldedTrapuntoPlacket.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            foldedTrapuntoPlacket.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 
-    private func presentDollProfilePicker(_ dollSourceType: UIImagePickerController.SourceType) {
-        guard UIImagePickerController.isSourceTypeAvailable(dollSourceType) else { return }
-        let dollPicker = UIImagePickerController()
-        dollPicker.sourceType = dollSourceType
-        dollPicker.allowsEditing = true
-        dollPicker.delegate = self
-        present(dollPicker, animated: true)
+    private func sepiaLeatherSock(_ snugOrganzaChemisette: UIImagePickerController.SourceType) {
+        guard UIImagePickerController.isSourceTypeAvailable(snugOrganzaChemisette) else { return }
+        let wovenFilletIntarsia = UIImagePickerController()
+        wovenFilletIntarsia.sourceType = snugOrganzaChemisette
+        wovenFilletIntarsia.allowsEditing = true
+        wovenFilletIntarsia.delegate = self
+        present(wovenFilletIntarsia, animated: true)
     }
 
-    @objc private func pressDollProfileMarker() {
+    @objc private func sculptedPleatNotch() {
         UIView.animate(withDuration: 0.12) {
-            self.tinySnapshotDollhumi.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
-            self.tinySnapshotDollhumi.alpha = 0.86
+            self.durableVinylCatalog.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
+            self.durableVinylCatalog.alpha = 0.86
         }
     }
 
-    @objc private func releaseDollProfileMarker() {
+    @objc private func playfulGrommetTrimming() {
         UIView.animate(withDuration: 0.18) {
-            self.tinySnapshotDollhumi.transform = .identity
-            self.tinySnapshotDollhumi.alpha = 1
+            self.durableVinylCatalog.transform = .identity
+            self.durableVinylCatalog.alpha = 1
         }
     }
 
-    @objc private func createDollWardrobeArchive() {
-        let dollCollectorName = porcelainCollectorNameField.dollPromptTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let dollCollectorEmail = pastelCatalogEmailField.dollPromptTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let dollAccessSecret = velvetAccessSecretField.dollPromptTextField.text ?? ""
+    @objc private func ceruleanDappledTint() {
+        let mindfulTwillSleeve = crochetedSpangleFinery.dollPromptTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let slantedBargelloPlacket = pewterVelvetBeret.dollPromptTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let rolledDarningCasing = silverBrassCoronet.dollPromptTextField.text ?? ""
 
-        guard !dollCollectorName.isEmpty else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy yxyouxyr xynaxymexy."); return }
-        guard !dollCollectorEmail.isEmpty else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy exymaxyilxy axyddxyrexyssxy."); return }
-        guard isDollCollectorEmail(dollCollectorEmail) else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy axy vxyalxyidxy exymaxyilxy axyddxyrexyssxy."); return }
-        guard dollAccessSecret.count >= 6 else { presentDollSafetyNotice(**"Paxyssxywoxyrdxy mxyusxyt xybexy axyt xylexyasxyt xy6 xychxyarxyacxytexyrsxy."); return }
-        guard DolluWardrobeArchiveStore.satinCollectionArchive.dollGuideAccepted else { presentDollSafetyNotice(**"Plxyeaxysexy axygrxyeexy txyo xyDoxyllxyu xyEUxyLAxy bxyefxyorxye xycoxyntxyinxyuixyngxy."); return }
-        setDollStartLoading(true)
-        DolluCollectorAccessRoute.velvetStitchmapDollmexa.sendDollCollectorAccess(dollCollectorEmail: dollCollectorEmail, dollAccessSecret: dollAccessSecret) { [weak self] dollResult in
+        guard !mindfulTwillSleeve.isEmpty else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy yxyouxyr xynaxymexy."); return }
+        guard !slantedBargelloPlacket.isEmpty else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy exymaxyilxy axyddxyrexyssxy."); return }
+        guard burnishedRivetTapestry(slantedBargelloPlacket) else { presentDollSafetyNotice(**"Plxyeaxysexy exyntxyerxy axy vxyalxyidxy exymaxyilxy axyddxyrexyssxy."); return }
+        guard rolledDarningCasing.count >= 6 else { presentDollSafetyNotice(**"Paxyssxywoxyrdxy mxyusxyt xybexy axyt xylexyasxyt xy6 xychxyarxyacxytexyrsxy."); return }
+        guard DollufernyVestibuleTrunk.quaintChaletCabinet.roundedHiplineSloper else { presentDollSafetyNotice(**"Plxyeaxysexy axygrxyeexy txyo xyDoxyllxyu xyEUxyLAxy bxyefxyorxye xycoxyntxyinxyuixyngxy."); return }
+        preciseCottonWrap(true)
+        DolluCollectorAccessRoute.asymmetricalAnkleCurvature.levelTissueCase(woodlandFoyerMantel: slantedBargelloPlacket, filigreeFlourishFinish: rolledDarningCasing) { [weak self] filigreeFringeFinery in
             guard let self else { return }
-            self.setDollStartLoading(false)
-            switch dollResult {
-            case .success(let dollCollectorCredential):
-                DolluWardrobeArchiveStore.satinCollectionArchive.syncDollCollectorAfterRoute(dollCollectorEmail: dollCollectorEmail, dollAccessSecret: dollAccessSecret, dollCollectorName: dollCollectorName, dollCollectorCredential: dollCollectorCredential)
-                self.revealDollCollectorGallery()
+            self.preciseCottonWrap(false)
+            switch filigreeFringeFinery {
+            case .success(let crochetedPetalMosaic):
+                DollufernyVestibuleTrunk.quaintChaletCabinet.mossCheckeredLuminosity(woodlandFoyerMantel: slantedBargelloPlacket, filigreeFlourishFinish: rolledDarningCasing, squareGussetShaping: mindfulTwillSleeve, copperRibbonToque: crochetedPetalMosaic)
+                self.violetMottledElegance()
             case .failure:
                 self.presentDollSafetyNotice(**"Doxyllxyu xycoxyllxyecxytixyonxy cxyouxyldxy nxyotxy bxye xycrxyeaxytexyd.xy Pxylexyasxye xytrxyy xyagxyaixyn.xy")
             }
         }
     }
 
-    private func setDollStartLoading(_ dollIsLoading: Bool) {
-        frillyCapsuleDollvani.isEnabled = !dollIsLoading
-        frillyCapsuleDollvani.alpha = dollIsLoading ? 0.62 : 1
-        frillyCapsuleDollvani.setTitle(dollIsLoading ? "Creating..." : "Sign Up", for: .normal)
+    private func preciseCottonWrap(_ frostyParlourCornice: Bool) {
+        daintyPolyesterEdition.isEnabled = !frostyParlourCornice
+        daintyPolyesterEdition.alpha = frostyParlourCornice ? 0.62 : 1
+        daintyPolyesterEdition.setTitle(frostyParlourCornice ? "Creating..." : "Sign Up", for: .normal)
     }
 
-    private func revealDollCollectorGallery() {
+    private func violetMottledElegance() {
         view.window?.rootViewController = DolluheirloomPropDollseroController()
         view.window?.makeKeyAndVisible()
     }
 
-    private func isDollCollectorEmail(_ dollEmailCandidate: String) -> Bool {
-        dollEmailCandidate.range(of: #"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"#, options: .regularExpression) != nil
+    private func burnishedRivetTapestry(_ silverGauzeSlipper: String) -> Bool {
+        silverGauzeSlipper.range(of: #"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"#, options: .regularExpression) != nil
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        let dollImage = (info[.editedImage] ?? info[.originalImage]) as? UIImage
-        dreamySnapshotDollniva = dollImage
-        if let dollImage {
-            tinySnapshotDollhumi.setTitle(nil, for: .normal)
-            tinySnapshotDollhumi.setBackgroundImage(dollImage, for: .normal)
-            tinySnapshotDollhumi.layer.borderColor = DolluWardrobePalette.dollRibbonPurple.cgColor
+    func imagePickerController(_ mindfulVelvetSachet: UIImagePickerController, didFinishPickingMediaWithInfo cleanFoamCocoon: [UIImagePickerController.InfoKey: Any]) {
+        let artisanalPapierMacheSeal = (cleanFoamCocoon[.editedImage] ?? cleanFoamCocoon[.originalImage]) as? UIImage
+        alignedSmockingSwatch = artisanalPapierMacheSeal
+        if let artisanalPapierMacheSeal {
+            durableVinylCatalog.setTitle(nil, for: .normal)
+            durableVinylCatalog.setBackgroundImage(artisanalPapierMacheSeal, for: .normal)
+            durableVinylCatalog.layer.borderColor = DolluWardrobePalette.dollRibbonPurple.cgColor
         }
-        picker.dismiss(animated: true)
+        mindfulVelvetSachet.dismiss(animated: true)
     }
 
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true)
+    func imagePickerControllerDidCancel(_ mindfulVelvetSachet: UIImagePickerController) {
+        mindfulVelvetSachet.dismiss(animated: true)
     }
 }

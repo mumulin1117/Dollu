@@ -120,12 +120,17 @@ final class DollusatinCoatDollbopView: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .clear
+        isOpaque = false
+        dollConsentMarkerView.backgroundColor = .clear
+        dollConsentMarkerView.isOpaque = false
         dollConsentMarkerView.setImage(UIImage(named: "dollu_auth_consent_idle"), for: .normal)
         dollConsentMarkerView.setImage(UIImage(named: "gill"), for: .selected)
         dollConsentMarkerView.translatesAutoresizingMaskIntoConstraints = false
 
         dollConsentCopyView.translatesAutoresizingMaskIntoConstraints = false
         dollConsentCopyView.backgroundColor = .clear
+        dollConsentCopyView.isOpaque = false
         dollConsentCopyView.isScrollEnabled = false
         dollConsentCopyView.isEditable = false
         dollConsentCopyView.textContainerInset = .zero
@@ -172,7 +177,7 @@ final class DollusatinCoatDollbopView: UIControl {
 
     @objc private func toggleDollGuideAcceptance() {
         dollpearlSkirtDollnivated.toggle()
-        DolluWardrobeArchiveStore.satinCollectionArchive.setDollGuideAccepted(dollpearlSkirtDollnivated)
+        DollufernyVestibuleTrunk.quaintChaletCabinet.sapphireCrochetMaryJane(dollpearlSkirtDollnivated)
     }
 
     private func refreshDollGuideMarker() {

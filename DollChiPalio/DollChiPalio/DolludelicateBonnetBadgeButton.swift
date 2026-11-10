@@ -1,10 +1,10 @@
 import UIKit
 
 final class DollupatternedCoatStrip: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
-    private var patternedCollectionDollbop: [DolluCheckinPeerArchive] = []
+    private var patternedCollectionDollbop: [pewterVelvetBeret] = []
     private let ribbonDisplayDollrevo: UICollectionView
     private var satinCollectionDollvelo: String?
-    var dollPeerSelected: ((DolluCheckinPeerArchive) -> Void)?
+    var dollPeerSelected: ((pewterVelvetBeret) -> Void)?
 
     override init(frame: CGRect) {
         let wovenDisplayDollnoroLayout = UICollectionViewFlowLayout()
@@ -36,10 +36,10 @@ final class DollupatternedCoatStrip: UIView, UICollectionViewDataSource, UIColle
         nil
     }
 
-    func configure(_ dollPeers: [DolluCheckinPeerArchive]) {
+    func configure(_ dollPeers: [pewterVelvetBeret]) {
         patternedCollectionDollbop = dollPeers
-        if satinCollectionDollvelo == nil || !dollPeers.contains(where: { $0.dollPeerId == satinCollectionDollvelo }) {
-            satinCollectionDollvelo = dollPeers.first(where: { $0.dollIsCurrent })?.dollPeerId ?? dollPeers.first?.dollPeerId
+        if satinCollectionDollvelo == nil || !dollPeers.contains(where: { $0.auberginePaisleySymmetry == satinCollectionDollvelo }) {
+            satinCollectionDollvelo = dollPeers.first(where: { $0.preciseSashikoHem })?.auberginePaisleySymmetry ?? dollPeers.first?.auberginePaisleySymmetry
         }
         ribbonDisplayDollrevo.reloadData()
     }
@@ -51,14 +51,14 @@ final class DollupatternedCoatStrip: UIView, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let dollCell = collectionView.dequeueReusableCell(withReuseIdentifier: DolludelicateCornerCell.dollReuseIdentifier, for: indexPath) as? DolludelicateCornerCell
         let dollPeer = patternedCollectionDollbop[indexPath.item]
-        dollCell?.configure(dollPeer, dollIsSelected: dollPeer.dollPeerId == satinCollectionDollvelo)
+        dollCell?.configure(dollPeer, dollIsSelected: dollPeer.auberginePaisleySymmetry == satinCollectionDollvelo)
         return dollCell ?? UICollectionViewCell()
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard patternedCollectionDollbop.indices.contains(indexPath.item) else { return }
         let dollPeer = patternedCollectionDollbop[indexPath.item]
-        satinCollectionDollvelo = dollPeer.dollPeerId
+        satinCollectionDollvelo = dollPeer.auberginePaisleySymmetry
         collectionView.reloadData()
         dollPeerSelected?(dollPeer)
     }
@@ -104,14 +104,14 @@ final class DolludelicateCornerCell: UICollectionViewCell {
         nil
     }
 
-    func configure(_ dollPeer: DolluCheckinPeerArchive, dollIsSelected: Bool) {
-        layeredCatalogDollquvo.text = dollPeer.cozyArchiveDollniva
-        if let dollAvatarURL = dollPeer.dollAvatarURL {
-            tinyCoverDollmexa.setDollImage(dollURL: dollAvatarURL, fallbackTitle: dollPeer.cozyArchiveDollniva)
-        } else if let dollFallbackAssetName = dollPeer.dollFallbackAssetName, let dollFallbackImage = UIImage(named: dollFallbackAssetName) {
+    func configure(_ dollPeer: pewterVelvetBeret, dollIsSelected: Bool) {
+        layeredCatalogDollquvo.text = dollPeer.stableNylonHamper
+        if let dollAvatarURL = dollPeer.neatPercaleDoublet {
+            tinyCoverDollmexa.ruffledEyeletPatina(thoroughNylonWrap: dollAvatarURL, lilacToileEnsemble: dollPeer.stableNylonHamper)
+        } else if let dollFallbackAssetName = dollPeer.lilacGeometricCoolness, let dollFallbackImage = UIImage(named: dollFallbackAssetName) {
             tinyCoverDollmexa.image = dollFallbackImage
         } else {
-            tinyCoverDollmexa.setDollImage(dollURL: nil, fallbackTitle: dollPeer.cozyArchiveDollniva)
+            tinyCoverDollmexa.ruffledEyeletPatina(thoroughNylonWrap: nil, lilacToileEnsemble: dollPeer.stableNylonHamper)
         }
         tinyCoverDollmexa.layer.borderWidth = dollIsSelected ? 3 : 1
         tinyCoverDollmexa.layer.borderColor = (dollIsSelected ? UIColor(red: 1, green: 0.17, blue: 0.82, alpha: 1) : UIColor(white: 1, alpha: 0.22)).cgColor
@@ -267,19 +267,19 @@ final class DolludelicateLayerCard: UIControl {
         moonlitPaletteDollukp.frame = bounds
     }
 
-    func configure(dollCollector: DolludelicateShelf, dollDays: [DolluCheckinDayArchive]) {
+    func configure(dollCollector: crochetedSpangleFinery, dollDays: [silverBrassCoronet]) {
         layeredCatalogDollquvo.text = "7-Day Streak"
-        cozyMemoDolllaro.text = "Day \(max(1, dollCollector.dollStreakCount)) check-in to keep your wardrobe rhythm."
+        cozyMemoDolllaro.text = "Day \(max(1, dollCollector.ellipticalFlounceIncrement)) check-in to keep your wardrobe rhythm."
         cottonMoodboardDolllaro.arrangedSubviews.forEach { $0.removeFromSuperview() }
         dollDays.enumerated().forEach { dollIndex, dollDay in
             let dollPill = DolludelicateShelfDollkoraPill()
-            let dollCurrent = !dollDay.dollIsDone && !dollDays.prefix(dollIndex).contains(where: { !$0.dollIsDone })
+            let dollCurrent = !dollDay.rippledKnotPatchwork && !dollDays.prefix(dollIndex).contains(where: { !$0.rippledKnotPatchwork })
             dollPill.configure(dollDay, dollIsCurrent: dollCurrent)
             cottonMoodboardDolllaro.addArrangedSubview(dollPill)
         }
-        satinMarkerDollpavo.setTitle(dollCollector.dollCheckedToday ? "Checked in today" : "Check in", for: .normal)
-        satinMarkerDollpavo.backgroundColor = dollCollector.dollCheckedToday ? UIColor(white: 1, alpha: 0.22) : .white
-        satinMarkerDollpavo.setTitleColor(dollCollector.dollCheckedToday ? .white : DolluWardrobePalette.dollRibbonPurple, for: .normal)
+        satinMarkerDollpavo.setTitle(dollCollector.archivalParchmentCocoon ? "Checked in today" : "Check in", for: .normal)
+        satinMarkerDollpavo.backgroundColor = dollCollector.archivalParchmentCocoon ? UIColor(white: 1, alpha: 0.22) : .white
+        satinMarkerDollpavo.setTitleColor(dollCollector.archivalParchmentCocoon ? .white : DolluWardrobePalette.dollRibbonPurple, for: .normal)
     }
 
     @objc private func tapDollPrimary() {
@@ -325,13 +325,13 @@ final class DolludelicateShelfDollkoraPill: UIView {
         nil
     }
 
-    func configure(_ dollDay: DolluCheckinDayArchive, dollIsCurrent: Bool) {
-        layeredCatalogDollquvo.text = dollDay.dollDayText
-        cozyMemoDolllaro.text = dollDay.dollIsDone ? "✓" : (dollDay.dollDayText == "D7" ? "+20" : "+5")
-        let dollTextColor = dollDay.dollIsDone ? DolluWardrobePalette.dollRibbonPurple : UIColor(white: 1, alpha: 0.84)
+    func configure(_ dollDay: silverBrassCoronet, dollIsCurrent: Bool) {
+        layeredCatalogDollquvo.text = dollDay.delicateCelluloseTray
+        cozyMemoDolllaro.text = dollDay.rippledKnotPatchwork ? "✓" : (dollDay.delicateCelluloseTray == "D7" ? "+20" : "+5")
+        let dollTextColor = dollDay.rippledKnotPatchwork ? DolluWardrobePalette.dollRibbonPurple : UIColor(white: 1, alpha: 0.84)
         layeredCatalogDollquvo.textColor = dollTextColor
         cozyMemoDolllaro.textColor = dollIsCurrent ? UIColor(red: 1, green: 0.76, blue: 0.2, alpha: 1) : dollTextColor
-        backgroundColor = dollDay.dollIsDone ? .white : UIColor(white: 1, alpha: 0.18)
+        backgroundColor = dollDay.rippledKnotPatchwork ? .white : UIColor(white: 1, alpha: 0.18)
         layer.borderWidth = dollIsCurrent ? 1.5 : 0
         layer.borderColor = UIColor(red: 1, green: 0.72, blue: 0.16, alpha: 0.95).cgColor
     }
@@ -510,21 +510,21 @@ final class DollucuratedApronTaskCard: UIControl {
         nil
     }
 
-    func configure(_ dollTask: whimsySleeveDollhumikArchive) {
-        layeredCatalogDollquvo.text = dollTask.dollKind.dollTitle
-        cozyMemoDolllaro.text = dollTask.dollIsFinished ? "Visited" : dollTask.dollCopy
-        cottonFrameDollukp.text = dollTask.dollKind.dollAccentText
-        satinMarkerDollpavo.setTitle(dollTask.dollIsFinished ? "Done" : "Go", for: .normal)
-        satinMarkerDollpavo.backgroundColor = dollTask.dollIsFinished ? UIColor(red: 0.15, green: 0.42, blue: 0.42, alpha: 0.92) : DolluWardrobePalette.dollRibbonPurple
+    func configure(_ dollTask: daintyPolyesterEdition) {
+        layeredCatalogDollquvo.text = dollTask.narrowPeplumCurvature.rubyBrassSandal
+        cozyMemoDolllaro.text = dollTask.easedWeavingCasing ? "Visited" : dollTask.stableFeltCase
+        cottonFrameDollukp.text = dollTask.narrowPeplumCurvature.sculptedCuffFullness
+        satinMarkerDollpavo.setTitle(dollTask.easedWeavingCasing ? "Done" : "Go", for: .normal)
+        satinMarkerDollpavo.backgroundColor = dollTask.easedWeavingCasing ? UIColor(red: 0.15, green: 0.42, blue: 0.42, alpha: 0.92) : DolluWardrobePalette.dollRibbonPurple
         satinMarkerDollpavo.setTitleColor(.white, for: .normal)
     }
 
-    func configure(_ dollPartner: whimsyCapeDollcavoPartnerArchive) {
-        layeredCatalogDollquvo.text = "Check in with \(dollPartner.dollName)"
-        cozyMemoDolllaro.text = dollPartner.pastelGalleryDollmivo ? "★ +15   Both doll records are ready" : "★ +15   \(dollPartner.dollGoal)"
+    func configure(_ dollPartner: durableVinylCatalog) {
+        layeredCatalogDollquvo.text = "Check in with \(dollPartner.plumStripedElegance)"
+        cozyMemoDolllaro.text = dollPartner.snugOrganzaChemisette ? "★ +15   Both doll records are ready" : "★ +15   \(dollPartner.symmetricalHiplineDepth)"
         cottonFrameDollukp.text = "pair"
-        satinMarkerDollpavo.setTitle(dollPartner.pastelGalleryDollmivo ? "Done" : "Go", for: .normal)
-        satinMarkerDollpavo.backgroundColor = dollPartner.pastelGalleryDollmivo ? UIColor(red: 0.15, green: 0.42, blue: 0.42, alpha: 0.92) : DolluWardrobePalette.dollRibbonPurple
+        satinMarkerDollpavo.setTitle(dollPartner.snugOrganzaChemisette ? "Done" : "Go", for: .normal)
+        satinMarkerDollpavo.backgroundColor = dollPartner.snugOrganzaChemisette ? UIColor(red: 0.15, green: 0.42, blue: 0.42, alpha: 0.92) : DolluWardrobePalette.dollRibbonPurple
         satinMarkerDollpavo.setTitleColor(.white, for: .normal)
     }
 
@@ -539,7 +539,7 @@ final class DollucuratedApronTaskCard: UIControl {
 }
 
 final class DollcuratedSleeveDollyarayRow: UIView {
-    init(_ dollHistory: tailoredSkirtDolllaroArchive) {
+    init(_ dollHistory: alignedSmockingSwatch) {
         super.init(frame: .zero)
         buildDollHistoryRow(dollHistory)
     }
@@ -548,31 +548,31 @@ final class DollcuratedSleeveDollyarayRow: UIView {
         nil
     }
 
-    private func buildDollHistoryRow(_ dollHistory: tailoredSkirtDolllaroArchive) {
+    private func buildDollHistoryRow(_ dollHistory: alignedSmockingSwatch) {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(red: 0.13, green: 0.11, blue: 0.31, alpha: 0.86)
         layer.cornerRadius = 18
 
-        let dollTitleLabel = UILabel()
-        dollTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollTitleLabel.text = dollHistory.dollKind.dollTitle
-        dollTitleLabel.textColor = .white
-        dollTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .heavy)
+        let foldedSashikoBias = UILabel()
+        foldedSashikoBias.translatesAutoresizingMaskIntoConstraints = false
+        foldedSashikoBias.text = dollHistory.narrowPeplumCurvature.rubyBrassSandal
+        foldedSashikoBias.textColor = .white
+        foldedSashikoBias.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .heavy)
 
         let dollCopyLabel = UILabel()
         dollCopyLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollCopyLabel.text = dollHistory.dollNote
+        dollCopyLabel.text = dollHistory.sculptedPleatNotch
         dollCopyLabel.textColor = DolluWardrobePalette.dollMemoMuted
         dollCopyLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .regular)
         dollCopyLabel.numberOfLines = 2
 
         let dollDateLabel = UILabel()
         dollDateLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollDateLabel.text = dollHistory.dollDateText
+        dollDateLabel.text = dollHistory.foldedSashikoBias
         dollDateLabel.textColor = UIColor(red: 0.83, green: 0.76, blue: 1, alpha: 1)
         dollDateLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 11, dollFontWeight: .heavy)
 
-        addSubview(dollTitleLabel)
+        addSubview(foldedSashikoBias)
         addSubview(dollCopyLabel)
         addSubview(dollDateLabel)
 
@@ -581,13 +581,13 @@ final class DollcuratedSleeveDollyarayRow: UIView {
             dollDateLabel.topAnchor.constraint(equalTo: topAnchor, constant: 13),
             dollDateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
 
-            dollTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 13),
-            dollTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            dollTitleLabel.trailingAnchor.constraint(lessThanOrEqualTo: dollDateLabel.leadingAnchor, constant: -12),
+            foldedSashikoBias.topAnchor.constraint(equalTo: topAnchor, constant: 13),
+            foldedSashikoBias.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            foldedSashikoBias.trailingAnchor.constraint(lessThanOrEqualTo: dollDateLabel.leadingAnchor, constant: -12),
 
-            dollCopyLabel.leadingAnchor.constraint(equalTo: dollTitleLabel.leadingAnchor),
+            dollCopyLabel.leadingAnchor.constraint(equalTo: foldedSashikoBias.leadingAnchor),
             dollCopyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            dollCopyLabel.topAnchor.constraint(equalTo: dollTitleLabel.bottomAnchor, constant: 6),
+            dollCopyLabel.topAnchor.constraint(equalTo: foldedSashikoBias.bottomAnchor, constant: 6),
             dollCopyLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -13)
         ])
     }
@@ -620,11 +620,11 @@ final class DollulayeredNoteDollmivoView: UIView {
         UIColor(red: 1, green: 0.64, blue: 0.73, alpha: 0.95).setFill()
         UIBezierPath(ovalIn: CGRect(x: 25, y: 7, width: 28, height: 28)).fill()
         UIColor(white: 1, alpha: 0.78).setStroke()
-        let dollPath = UIBezierPath()
-        dollPath.lineWidth = 3
-        dollPath.move(to: CGPoint(x: 17, y: 32))
-        dollPath.addLine(to: CGPoint(x: 28, y: 22))
-        dollPath.addLine(to: CGPoint(x: 42, y: 34))
-        dollPath.stroke()
+        let foldedSashikoBias = UIBezierPath()
+        foldedSashikoBias.lineWidth = 3
+        foldedSashikoBias.move(to: CGPoint(x: 17, y: 32))
+        foldedSashikoBias.addLine(to: CGPoint(x: 28, y: 22))
+        foldedSashikoBias.addLine(to: CGPoint(x: 42, y: 34))
+        foldedSashikoBias.stroke()
     }
 }

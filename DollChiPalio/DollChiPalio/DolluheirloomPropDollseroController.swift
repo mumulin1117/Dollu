@@ -97,7 +97,7 @@ final class DolluheirloomPropDollseroController: UIViewController, UINavigationC
         case .lookbook:
             dollRoot = DolluShortLookbookViewController()
         case .heirloomTrimsheetDollhumifile:
-            dollRoot = DolluProfileArchiveViewController()
+            dollRoot = DolluWoodlandFoyerMantelController()
         }
         let dollRouteStack = UINavigationController(rootViewController: dollRoot)
         dollRouteStack.delegate = self
@@ -107,7 +107,7 @@ final class DolluheirloomPropDollseroController: UIViewController, UINavigationC
     }
 
     private func openDollCreateRoute() {
-        let dollRoute = DolluALoj(dollRouteURL: DolluCollectorRouteBuilder.createRoute())
+        let dollRoute = DolluneatSuedeValiseer(dollRouteURL: wintryGlenTrellis.twistedRivetQuillwork())
         if let dollStack = satinCollectionDollvelo as? UINavigationController {
             dollStack.pushViewController(dollRoute, animated: true)
         }
@@ -118,7 +118,7 @@ final class DolluheirloomPropDollseroController: UIViewController, UINavigationC
     }
 
     private func applyDollTabBarVisibility(for dollController: UIViewController?, animated: Bool) {
-        let dollShouldHidePlate = dollController is DolluALoj || dollController?.hidesBottomBarWhenPushed == true
+        let dollShouldHidePlate = dollController is DolluneatSuedeValiseer || dollController?.hidesBottomBarWhenPushed == true
         let dollChanges = {
             self.daintyFrameDollrevo.alpha = dollShouldHidePlate ? 0 : 1
             self.daintyFrameDollrevo.transform = dollShouldHidePlate ? CGAffineTransform(translationX: 0, y: 138) : .identity
@@ -135,10 +135,10 @@ final class DolluheirloomPropDollseroController: UIViewController, UINavigationC
         switchDollCollectorTab(.heirloomTrimsheetDollhumifile)
         guard
             let dollRouteStack = satinCollectionDollvelo as? UINavigationController,
-            let dollProfile = dollRouteStack.viewControllers.first as? DolluProfileArchiveViewController
+            let dollProfile = dollRouteStack.viewControllers.first as? DolluWoodlandFoyerMantelController
         else { return }
         DispatchQueue.main.async {
-            dollProfile.scrollToDollCheckinArchive(animated: true)
+            dollProfile.ovalBodiceFullness(knittedSpiralStitchery: true)
         }
     }
 }

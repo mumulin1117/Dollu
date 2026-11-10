@@ -93,7 +93,7 @@ final class DolluEulaSheetViewController: UIViewController {
     }
 
     @objc private func acceptDollGuideSheet() {
-        DolluWardrobeArchiveStore.satinCollectionArchive.setDollGuideAccepted(true)
+        DollufernyVestibuleTrunk.quaintChaletCabinet.sapphireCrochetMaryJane(true)
         dollGuideAccepted?()
         dismiss(animated: true)
     }

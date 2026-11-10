@@ -11,7 +11,7 @@ final class DollupearlSkirtDController: DolluminiPromptDollveloController {
 
     override func viewDidAppear(_ dollEntryAnimated: Bool) {
         super.viewDidAppear(dollEntryAnimated)
-        guard !dollGuideDidOfferEula, !DolluWardrobeArchiveStore.satinCollectionArchive.dollGuideAccepted else {
+        guard !dollGuideDidOfferEula, !DollufernyVestibuleTrunk.quaintChaletCabinet.roundedHiplineSloper else {
             return
         }
         dollGuideDidOfferEula = true
@@ -41,16 +41,17 @@ final class DollupearlSkirtDController: DolluminiPromptDollveloController {
         let dollCollectionStartButton = DolluminiLayerDollmivoButton(dollButtonTitle: "I'm new")
         dollCollectionStartButton.addTarget(self, action: #selector(startDollCollectionEntry), for: .touchUpInside)
 
-        let dollEntryActionStack = UIStackView(arrangedSubviews: [dollCollectorAccessButton, dollCollectionStartButton, dollGuidelineConsentView])
+        let dollEntryActionStack = UIStackView(arrangedSubviews: [dollCollectorAccessButton, dollCollectionStartButton])
         dollEntryActionStack.translatesAutoresizingMaskIntoConstraints = false
         dollEntryActionStack.axis = .vertical
         dollEntryActionStack.alignment = .center
         dollEntryActionStack.spacing = 12
         dollCollectionPanelView.addSubview(dollEntryActionStack)
+        laceArchiveDollmexa(dollGuidelineConsentView, ribbonCategoryDollpiri: 28)
 
-        dollGuidelineConsentView.dollpearlSkirtDollnivated = DolluWardrobeArchiveStore.satinCollectionArchive.dollGuideAccepted
-        dollGuidelineConsentView.dollsatinCollarDollriloed = { [weak dollEntrySelf = self] in dollEntrySelf?.openDollTermsRoute(.dollTerms) }
-        dollGuidelineConsentView.dollpearlGuideDollukpned = { [weak dollEntrySelf = self] in dollEntrySelf?.openDollTermsRoute(.dollPrivacy) }
+        dollGuidelineConsentView.dollpearlSkirtDollnivated = DollufernyVestibuleTrunk.quaintChaletCabinet.roundedHiplineSloper
+        dollGuidelineConsentView.dollsatinCollarDollriloed = { [weak dollEntrySelf = self] in dollEntrySelf?.openDollTermsRoute(.miniatureLapelFullness) }
+        dollGuidelineConsentView.dollpearlGuideDollukpned = { [weak dollEntrySelf = self] in dollEntrySelf?.openDollTermsRoute(.tealRattanBracelet) }
 
         NSLayoutConstraint.activate([
             dollTermsBadgeButton.topAnchor.constraint(equalTo: dollWardrobeContentView.safeAreaLayoutGuide.topAnchor, constant: 16),
@@ -71,9 +72,7 @@ final class DollupearlSkirtDController: DolluminiPromptDollveloController {
             dollCollectorAccessButton.leadingAnchor.constraint(equalTo: dollEntryActionStack.leadingAnchor),
             dollCollectorAccessButton.trailingAnchor.constraint(equalTo: dollEntryActionStack.trailingAnchor),
             dollCollectionStartButton.leadingAnchor.constraint(equalTo: dollEntryActionStack.leadingAnchor),
-            dollCollectionStartButton.trailingAnchor.constraint(equalTo: dollEntryActionStack.trailingAnchor),
-            dollGuidelineConsentView.leadingAnchor.constraint(equalTo: dollEntryActionStack.leadingAnchor, constant: 6),
-            dollGuidelineConsentView.trailingAnchor.constraint(equalTo: dollEntryActionStack.trailingAnchor, constant: -6)
+            dollCollectionStartButton.trailingAnchor.constraint(equalTo: dollEntryActionStack.trailingAnchor)
         ])
     }
 

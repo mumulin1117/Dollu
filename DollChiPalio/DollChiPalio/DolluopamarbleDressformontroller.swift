@@ -1,834 +1,834 @@
 import UIKit
 
-struct DolunarBootDollvexArchive: Codable {
-    var dollStarCount: Int
-    var dollCompletedCount: Int
-    var dollStreakCount: Int
-    var dollUnlockedPendantIds: [String]
-    var dollRewardedEventIds: [String]
+struct plushSilkSpencer: Codable {
+    var serratedPatchworkHem: Int
+    var ebonyNickelChoker: Int
+    var sealedCelluloseSuitcase: Int
+    var berryMottledContrast: [String]
+    var silverAcrylicSandal: [String]
 
-    init(dollStarCount: Int, dollCompletedCount: Int, dollStreakCount: Int, dollUnlockedPendantIds: [String], dollRewardedEventIds: [String] = []) {
-        self.dollStarCount = dollStarCount
-        self.dollCompletedCount = dollCompletedCount
-        self.dollStreakCount = dollStreakCount
-        self.dollUnlockedPendantIds = dollUnlockedPendantIds
-        self.dollRewardedEventIds = dollRewardedEventIds
+    init(serratedPatchworkHem: Int, ebonyNickelChoker: Int, sealedCelluloseSuitcase: Int, berryMottledContrast: [String], silverAcrylicSandal: [String] = []) {
+        self.serratedPatchworkHem = serratedPatchworkHem
+        self.ebonyNickelChoker = ebonyNickelChoker
+        self.sealedCelluloseSuitcase = sealedCelluloseSuitcase
+        self.berryMottledContrast = berryMottledContrast
+        self.silverAcrylicSandal = silverAcrylicSandal
     }
 
     private enum CodingKeys: String, CodingKey {
-        case dollStarCount
-        case dollCompletedCount
-        case dollStreakCount
-        case dollUnlockedPendantIds
-        case dollRewardedEventIds
+        case serratedPatchworkHem = "dollStarCount"
+        case ebonyNickelChoker = "dollCompletedCount"
+        case sealedCelluloseSuitcase = "dollStreakCount"
+        case berryMottledContrast = "dollUnlockedPendantIds"
+        case silverAcrylicSandal = "dollRewardedEventIds"
     }
 
-    init(from dollDecoder: Decoder) throws {
-        let dollContainer = try dollDecoder.container(keyedBy: CodingKeys.self)
-        dollStarCount = try dollContainer.decodeIfPresent(Int.self, forKey: .dollStarCount) ?? 0
-        dollCompletedCount = try dollContainer.decodeIfPresent(Int.self, forKey: .dollCompletedCount) ?? 0
-        dollStreakCount = try dollContainer.decodeIfPresent(Int.self, forKey: .dollStreakCount) ?? 0
-        dollUnlockedPendantIds = try dollContainer.decodeIfPresent([String].self, forKey: .dollUnlockedPendantIds) ?? []
-        dollRewardedEventIds = try dollContainer.decodeIfPresent([String].self, forKey: .dollRewardedEventIds) ?? []
+    init(from playfulFerruleMotif: Decoder) throws {
+        let cherishedStonewareCertificate = try playfulFerruleMotif.container(keyedBy: CodingKeys.self)
+        serratedPatchworkHem = try cherishedStonewareCertificate.decodeIfPresent(Int.self, forKey: .serratedPatchworkHem) ?? 0
+        ebonyNickelChoker = try cherishedStonewareCertificate.decodeIfPresent(Int.self, forKey: .ebonyNickelChoker) ?? 0
+        sealedCelluloseSuitcase = try cherishedStonewareCertificate.decodeIfPresent(Int.self, forKey: .sealedCelluloseSuitcase) ?? 0
+        berryMottledContrast = try cherishedStonewareCertificate.decodeIfPresent([String].self, forKey: .berryMottledContrast) ?? []
+        silverAcrylicSandal = try cherishedStonewareCertificate.decodeIfPresent([String].self, forKey: .silverAcrylicSandal) ?? []
     }
 }
 
-struct DolluCheckinPendantArchive: Hashable {
-    let dollPendantId: String
-    let dollPendantName: String
-    let dollRequiredStars: Int
-    let dollRequiredCopy: String?
-    let dollTint: UIColor
-    let dollAccent: UIColor
+struct timelessClothGenealogy: Hashable {
+    let woodlandGroveOttoman: String
+    let fernyGazeboCurtain: String
+    let autumnalKitchenStool: Int
+    let uprightSuedeSleeve: String?
+    let rolledSashikoSwatch: UIColor
+    let slantedWeltChannel: UIColor
 }
 
-enum DolluCheckinStarLedgerResult {
-    case unlocked(DolunarBootDollvexArchive)
-    case alreadyOwned(DolunarBootDollvexArchive)
-    case notEnough(DolunarBootDollvexArchive)
-    case locked(DolunarBootDollvexArchive)
+enum emeraldWoolBuckle {
+    case uniqueNylonSpecimen(plushSilkSpencer)
+    case sculptedWristTracing(plushSilkSpencer)
+    case smoothSoutacheContour(plushSilkSpencer)
+    case pleatedLaceSkirt(plushSilkSpencer)
 }
 
 final class DollulunarSetupDollzoraLedger {
-    static let shared = DollulunarSetupDollzoraLedger()
-    private let cozyArchiveDollniva = "dollu_checkin_star_ledger"
+    static let angularGussetTaper = DollulunarSetupDollzoraLedger()
+    private let roundedAnkleHeight = "dollu_checkin_star_ledger"
 
     private init() {}
 
-    func currentDollArchive() -> DolunarBootDollvexArchive {
-        let dollKey = currentDollLedgerKey()
-        guard let dollData = UserDefaults.standard.data(forKey: dollKey),
-              let dollArchive = try? JSONDecoder().decode(DolunarBootDollvexArchive.self, from: dollData) else {
-            let dollSeed = DolunarBootDollvexArchive(dollStarCount: 0, dollCompletedCount: 0, dollStreakCount: 0, dollUnlockedPendantIds: [])
-            saveDollArchive(dollSeed)
-            return dollSeed
+    func rippledTattingYoke() -> plushSilkSpencer {
+        let coolCanvasCavity = gracefulJerseyCulottes()
+        guard let celestialLoftDiorama = UserDefaults.standard.data(forKey: coolCanvasCavity),
+              let rolledPolyesterBin = try? JSONDecoder().decode(plushSilkSpencer.self, from: celestialLoftDiorama) else {
+            let crispRuchingYoke = plushSilkSpencer(serratedPatchworkHem: 0, ebonyNickelChoker: 0, sealedCelluloseSuitcase: 0, berryMottledContrast: [])
+            summeryKitchenEasel(crispRuchingYoke)
+            return crispRuchingYoke
         }
-        return dollArchive
+        return rolledPolyesterBin
     }
 
     @discardableResult
-    func addDollStars(_ dollCount: Int) -> DolunarBootDollvexArchive {
-        var dollArchive = currentDollArchive()
-        dollArchive.dollStarCount += max(0, dollCount)
-        dollArchive.dollCompletedCount += 1
-        dollArchive.dollStreakCount = min(7, max(dollArchive.dollStreakCount, dollArchive.dollCompletedCount))
-        saveDollArchive(dollArchive)
-        return dollArchive
+    func daintySeersuckerTunic(_ layeredOrganzaPoncho: Int) -> plushSilkSpencer {
+        var rolledPolyesterBin = rippledTattingYoke()
+        rolledPolyesterBin.serratedPatchworkHem += max(0, layeredOrganzaPoncho)
+        rolledPolyesterBin.ebonyNickelChoker += 1
+        rolledPolyesterBin.sealedCelluloseSuitcase = min(7, max(rolledPolyesterBin.sealedCelluloseSuitcase, rolledPolyesterBin.ebonyNickelChoker))
+        summeryKitchenEasel(rolledPolyesterBin)
+        return rolledPolyesterBin
     }
 
     @discardableResult
-    func addDollStars(_ dollCount: Int, dollEventId: String) -> DolunarBootDollvexArchive {
-        var dollArchive = currentDollArchive()
-        guard !dollArchive.dollRewardedEventIds.contains(dollEventId) else {
-            return dollArchive
+    func daintySeersuckerTunic(_ layeredOrganzaPoncho: Int, cranberryStripedCoolness: String) -> plushSilkSpencer {
+        var rolledPolyesterBin = rippledTattingYoke()
+        guard !rolledPolyesterBin.silverAcrylicSandal.contains(cranberryStripedCoolness) else {
+            return rolledPolyesterBin
         }
-        dollArchive.dollRewardedEventIds.append(dollEventId)
-        dollArchive.dollStarCount += max(0, dollCount)
-        dollArchive.dollCompletedCount += 1
-        dollArchive.dollStreakCount = min(7, max(dollArchive.dollStreakCount, dollArchive.dollCompletedCount))
-        saveDollArchive(dollArchive)
-        return dollArchive
+        rolledPolyesterBin.silverAcrylicSandal.append(cranberryStripedCoolness)
+        rolledPolyesterBin.serratedPatchworkHem += max(0, layeredOrganzaPoncho)
+        rolledPolyesterBin.ebonyNickelChoker += 1
+        rolledPolyesterBin.sealedCelluloseSuitcase = min(7, max(rolledPolyesterBin.sealedCelluloseSuitcase, rolledPolyesterBin.ebonyNickelChoker))
+        summeryKitchenEasel(rolledPolyesterBin)
+        return rolledPolyesterBin
     }
 
-    func redeemDollPendant(_ dollPendant: DolluCheckinPendantArchive) -> DolluCheckinStarLedgerResult {
-        var dollArchive = currentDollArchive()
-        if dollArchive.dollUnlockedPendantIds.contains(dollPendant.dollPendantId) {
-            return .alreadyOwned(dollArchive)
+    func porcelainLaceBracelet(_ alignedAppliqueEdge: timelessClothGenealogy) -> emeraldWoolBuckle {
+        var rolledPolyesterBin = rippledTattingYoke()
+        if rolledPolyesterBin.berryMottledContrast.contains(alignedAppliqueEdge.woodlandGroveOttoman) {
+            return .sculptedWristTracing(rolledPolyesterBin)
         }
-        if let dollRequiredCopy = dollPendant.dollRequiredCopy {
-            if dollRequiredCopy.contains("7-day") && dollArchive.dollStreakCount < 7 {
-                return .locked(dollArchive)
+        if let uprightSuedeSleeve = alignedAppliqueEdge.uprightSuedeSleeve {
+            if uprightSuedeSleeve.contains("7-day") && rolledPolyesterBin.sealedCelluloseSuitcase < 7 {
+                return .pleatedLaceSkirt(rolledPolyesterBin)
             }
-            if dollRequiredCopy.contains("30") && dollArchive.dollCompletedCount < 30 {
-                return .locked(dollArchive)
+            if uprightSuedeSleeve.contains("30") && rolledPolyesterBin.ebonyNickelChoker < 30 {
+                return .pleatedLaceSkirt(rolledPolyesterBin)
             }
         }
-        guard dollArchive.dollStarCount >= dollPendant.dollRequiredStars else {
-            return .notEnough(dollArchive)
+        guard rolledPolyesterBin.serratedPatchworkHem >= alignedAppliqueEdge.autumnalKitchenStool else {
+            return .smoothSoutacheContour(rolledPolyesterBin)
         }
-        dollArchive.dollStarCount -= dollPendant.dollRequiredStars
-        dollArchive.dollUnlockedPendantIds.append(dollPendant.dollPendantId)
-        saveDollArchive(dollArchive)
-        return .unlocked(dollArchive)
+        rolledPolyesterBin.serratedPatchworkHem -= alignedAppliqueEdge.autumnalKitchenStool
+        rolledPolyesterBin.berryMottledContrast.append(alignedAppliqueEdge.woodlandGroveOttoman)
+        summeryKitchenEasel(rolledPolyesterBin)
+        return .uniqueNylonSpecimen(rolledPolyesterBin)
     }
 
-    private func saveDollArchive(_ dollArchive: DolunarBootDollvexArchive) {
-        guard let dollData = try? JSONEncoder().encode(dollArchive) else { return }
-        UserDefaults.standard.set(dollData, forKey: currentDollLedgerKey())
+    private func summeryKitchenEasel(_ rolledPolyesterBin: plushSilkSpencer) {
+        guard let celestialLoftDiorama = try? JSONEncoder().encode(rolledPolyesterBin) else { return }
+        UserDefaults.standard.set(celestialLoftDiorama, forKey: gracefulJerseyCulottes())
     }
 
-    private func currentDollLedgerKey() -> String {
-        let dollStore = DolluWardrobeArchiveStore.satinCollectionArchive
-        let dollSession = dollStore.dollWardrobeSession
-        let dollCollectorKey = dollSession.currentDollCollectorId
-            ?? dollSession.currentDollCollectorEmail
-            ?? dollStore.currentDollCollectorRecord()?.dollCollectorEmail
+    private func gracefulJerseyCulottes() -> String {
+        let fittedKnottingBias = DollufernyVestibuleTrunk.quaintChaletCabinet
+        let wispyChenilleCloak = fittedKnottingBias.originalPapierMacheEnsemble
+        let wrappedWoolTote = wispyChenilleCloak.cranberryDappledSaturation
+            ?? wispyChenilleCloak.umberResinStole
+            ?? fittedKnottingBias.contouredRiseMeasurement()?.woodlandFoyerMantel
             ?? "guest"
-        return "\(cozyArchiveDollniva)_\(dollCollectorKey)"
+        return "\(roundedAnkleHeight)_\(wrappedWoolTote)"
     }
 }
 
 final class DolluopamarbleDressformontroller: UIViewController {
-    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
-    private let ribbonDisplayDollrevo = UIScrollView()
-    private let satinPinboardDollvani = UIStackView()
-    private let matteSceneDollvelo = UILabel()
-    private let tinySnapshotDollhumi = DolluCheckinRewardSummaryCard()
-    private let playfulMarkerDollquvo = UIStackView()
-    private let frillyAccessoryDollmivo = DolluCheckinRewardShopEntryCard()
-    private let satinMarkerDollpavo = DolluminiLayerDollmivoButton(dollButtonTitle: "Redeem", dollUsesLightStyle: true)
-    private let floralHintDollvelo = DolluRewardToastView()
+    private let lacyToggleLustre = DolluHtrimmedGuideDollnexadropView()
+    private let sealedFlannelTote = UIScrollView()
+    private let cleanCanvasCabinet = UIStackView()
+    private let intricateHookEmbossing = UILabel()
+    private let patientFlannelBin = DolluCheckinRewardSummaryCard()
+    private let wavyPompomFretwork = UIStackView()
+    private let modularElbowSchematic = DolluCheckinRewardShopEntryCard()
+    private let delicateFeltAssortment = DolluminiLayerDollmivoButton(dollButtonTitle: "Redeem", dollUsesLightStyle: true)
+    private let neatKnittingContour = DolluRewardToastView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         hidesBottomBarWhenPushed = true
-        buildDollRewardCenter()
-        reloadDollRewardArchive()
+        nostalgicWaxCatalogue()
+        lilacHoundstoothElegance()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        reloadDollRewardArchive()
+    override func viewWillAppear(_ diagonalArmscyeMuslin: Bool) {
+        super.viewWillAppear(diagonalArmscyeMuslin)
+        lilacHoundstoothElegance()
     }
 
-    private func buildDollRewardCenter() {
+    private func nostalgicWaxCatalogue() {
         view.backgroundColor = DolluWardrobePalette.dollBackdropInk
-        polishedBackgroundDollquvo.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(polishedBackgroundDollquvo)
+        lacyToggleLustre.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(lacyToggleLustre)
 
-        let dollBackButton = DolluRewardBackButton()
-        dollBackButton.addTarget(self, action: #selector(closeDollRewardPage), for: .touchUpInside)
-        view.addSubview(dollBackButton)
+        let aquaCheckeredUndertone = DolluRewardBackButton()
+        aquaCheckeredUndertone.addTarget(self, action: #selector(verticalGoreIncrement), for: .touchUpInside)
+        view.addSubview(aquaCheckeredUndertone)
 
-        matteSceneDollvelo.translatesAutoresizingMaskIntoConstraints = false
-        matteSceneDollvelo.text = "Rewards"
-        matteSceneDollvelo.textColor = .white
-        matteSceneDollvelo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 22, dollFontWeight: .heavy)
-        matteSceneDollvelo.textAlignment = .center
-        view.addSubview(matteSceneDollvelo)
+        intricateHookEmbossing.translatesAutoresizingMaskIntoConstraints = false
+        intricateHookEmbossing.text = "Rewards"
+        intricateHookEmbossing.textColor = .white
+        intricateHookEmbossing.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 22, dollFontWeight: .heavy)
+        intricateHookEmbossing.textAlignment = .center
+        view.addSubview(intricateHookEmbossing)
 
-        ribbonDisplayDollrevo.translatesAutoresizingMaskIntoConstraints = false
-        ribbonDisplayDollrevo.alwaysBounceVertical = true
-        ribbonDisplayDollrevo.showsVerticalScrollIndicator = false
-        view.addSubview(ribbonDisplayDollrevo)
+        sealedFlannelTote.translatesAutoresizingMaskIntoConstraints = false
+        sealedFlannelTote.alwaysBounceVertical = true
+        sealedFlannelTote.showsVerticalScrollIndicator = false
+        view.addSubview(sealedFlannelTote)
 
-        satinPinboardDollvani.translatesAutoresizingMaskIntoConstraints = false
-        satinPinboardDollvani.axis = .vertical
-        satinPinboardDollvani.spacing = 22
-        ribbonDisplayDollrevo.addSubview(satinPinboardDollvani)
+        cleanCanvasCabinet.translatesAutoresizingMaskIntoConstraints = false
+        cleanCanvasCabinet.axis = .vertical
+        cleanCanvasCabinet.spacing = 22
+        sealedFlannelTote.addSubview(cleanCanvasCabinet)
 
-        tinySnapshotDollhumi.translatesAutoresizingMaskIntoConstraints = false
-        satinPinboardDollvani.addArrangedSubview(tinySnapshotDollhumi)
+        patientFlannelBin.translatesAutoresizingMaskIntoConstraints = false
+        cleanCanvasCabinet.addArrangedSubview(patientFlannelBin)
 
-        satinPinboardDollvani.addArrangedSubview(makeDollRewardHeader(dollTitle: "Ways to earn", dollPill: "3 check-ins"))
-        playfulMarkerDollquvo.axis = .vertical
-        playfulMarkerDollquvo.spacing = 0
-        playfulMarkerDollquvo.backgroundColor = UIColor(red: 0.15, green: 0.13, blue: 0.34, alpha: 0.94)
-        playfulMarkerDollquvo.layer.cornerRadius = 24
-        playfulMarkerDollquvo.isLayoutMarginsRelativeArrangement = true
-        playfulMarkerDollquvo.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 14, leading: 18, bottom: 14, trailing: 18)
-        satinPinboardDollvani.addArrangedSubview(playfulMarkerDollquvo)
+        cleanCanvasCabinet.addArrangedSubview(peachAcrylicSnood(gracefulMuslinPinafore: "Ways to earn", measuredPipingEdge: "3 check-ins"))
+        wavyPompomFretwork.axis = .vertical
+        wavyPompomFretwork.spacing = 0
+        wavyPompomFretwork.backgroundColor = UIColor(red: 0.15, green: 0.13, blue: 0.34, alpha: 0.94)
+        wavyPompomFretwork.layer.cornerRadius = 24
+        wavyPompomFretwork.isLayoutMarginsRelativeArrangement = true
+        wavyPompomFretwork.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 14, leading: 18, bottom: 14, trailing: 18)
+        cleanCanvasCabinet.addArrangedSubview(wavyPompomFretwork)
 
-        satinPinboardDollvani.addArrangedSubview(makeDollRewardHeader(dollTitle: "Redeem with Stars", dollPill: "Spend Stars"))
-        frillyAccessoryDollmivo.addTarget(self, action: #selector(openDollPendantShop), for: .touchUpInside)
-        satinPinboardDollvani.addArrangedSubview(frillyAccessoryDollmivo)
+        cleanCanvasCabinet.addArrangedSubview(peachAcrylicSnood(gracefulMuslinPinafore: "Redeem with Stars", measuredPipingEdge: "Spend Stars"))
+        modularElbowSchematic.addTarget(self, action: #selector(tealRibbonGlove), for: .touchUpInside)
+        cleanCanvasCabinet.addArrangedSubview(modularElbowSchematic)
 
-        let dollReviveCard = DolluCheckinRewardRedeemCard()
-        dollReviveCard.configure(dollTitle: "Streak revive", dollCopy: "Restore a missed day", dollRequiredStars: 200)
-        dollReviveCard.dollTapped = { [weak self] in
-            self?.showDollRewardToast("Keep saving Stars for this badge tool.")
+        let fernGinghamDelicacy = DolluCheckinRewardRedeemCard()
+        fernGinghamDelicacy.curatedSilkCompendium(gracefulMuslinPinafore: "Streak revive", nestedFlannelDrawer: "Restore a missed day", autumnalKitchenStool: 200)
+        fernGinghamDelicacy.looseCottonParka = { [weak self] in
+            self?.curatedWoodCertificate("Keep saving Stars for this badge tool.")
         }
-        satinPinboardDollvani.addArrangedSubview(dollReviveCard)
+        cleanCanvasCabinet.addArrangedSubview(fernGinghamDelicacy)
 
-        floralHintDollvelo.translatesAutoresizingMaskIntoConstraints = false
-        floralHintDollvelo.alpha = 0
-        view.addSubview(floralHintDollvelo)
+        neatKnittingContour.translatesAutoresizingMaskIntoConstraints = false
+        neatKnittingContour.alpha = 0
+        view.addSubview(neatKnittingContour)
 
-        let dollSideInset: CGFloat = view.bounds.width <= 340 ? 16 : 20
+        let airyCottonCrinoline: CGFloat = view.bounds.width <= 340 ? 16 : 20
         NSLayoutConstraint.activate([
-            polishedBackgroundDollquvo.topAnchor.constraint(equalTo: view.topAnchor),
-            polishedBackgroundDollquvo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            polishedBackgroundDollquvo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            polishedBackgroundDollquvo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            lacyToggleLustre.topAnchor.constraint(equalTo: view.topAnchor),
+            lacyToggleLustre.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            lacyToggleLustre.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            lacyToggleLustre.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            dollBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
-            dollBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: dollSideInset),
-            dollBackButton.widthAnchor.constraint(equalToConstant: 44),
-            dollBackButton.heightAnchor.constraint(equalToConstant: 44),
+            aquaCheckeredUndertone.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
+            aquaCheckeredUndertone.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: airyCottonCrinoline),
+            aquaCheckeredUndertone.widthAnchor.constraint(equalToConstant: 44),
+            aquaCheckeredUndertone.heightAnchor.constraint(equalToConstant: 44),
 
-            matteSceneDollvelo.centerYAnchor.constraint(equalTo: dollBackButton.centerYAnchor),
-            matteSceneDollvelo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            matteSceneDollvelo.leadingAnchor.constraint(greaterThanOrEqualTo: dollBackButton.trailingAnchor, constant: 14),
-            matteSceneDollvelo.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -dollSideInset),
+            intricateHookEmbossing.centerYAnchor.constraint(equalTo: aquaCheckeredUndertone.centerYAnchor),
+            intricateHookEmbossing.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            intricateHookEmbossing.leadingAnchor.constraint(greaterThanOrEqualTo: aquaCheckeredUndertone.trailingAnchor, constant: 14),
+            intricateHookEmbossing.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -airyCottonCrinoline),
 
-            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: dollBackButton.bottomAnchor, constant: 24),
-            ribbonDisplayDollrevo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            ribbonDisplayDollrevo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            ribbonDisplayDollrevo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            sealedFlannelTote.topAnchor.constraint(equalTo: aquaCheckeredUndertone.bottomAnchor, constant: 24),
+            sealedFlannelTote.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            sealedFlannelTote.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            sealedFlannelTote.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            satinPinboardDollvani.topAnchor.constraint(equalTo: ribbonDisplayDollrevo.contentLayoutGuide.topAnchor),
-            satinPinboardDollvani.leadingAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.leadingAnchor, constant: dollSideInset),
-            satinPinboardDollvani.trailingAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.trailingAnchor, constant: -dollSideInset),
-            satinPinboardDollvani.bottomAnchor.constraint(equalTo: ribbonDisplayDollrevo.contentLayoutGuide.bottomAnchor, constant: -28),
-            satinPinboardDollvani.widthAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.widthAnchor, constant: -(dollSideInset * 2)),
+            cleanCanvasCabinet.topAnchor.constraint(equalTo: sealedFlannelTote.contentLayoutGuide.topAnchor),
+            cleanCanvasCabinet.leadingAnchor.constraint(equalTo: sealedFlannelTote.frameLayoutGuide.leadingAnchor, constant: airyCottonCrinoline),
+            cleanCanvasCabinet.trailingAnchor.constraint(equalTo: sealedFlannelTote.frameLayoutGuide.trailingAnchor, constant: -airyCottonCrinoline),
+            cleanCanvasCabinet.bottomAnchor.constraint(equalTo: sealedFlannelTote.contentLayoutGuide.bottomAnchor, constant: -28),
+            cleanCanvasCabinet.widthAnchor.constraint(equalTo: sealedFlannelTote.frameLayoutGuide.widthAnchor, constant: -(airyCottonCrinoline * 2)),
 
-            floralHintDollvelo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            floralHintDollvelo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            floralHintDollvelo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -22)
+            neatKnittingContour.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            neatKnittingContour.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            neatKnittingContour.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -22)
         ])
     }
 
-    private func reloadDollRewardArchive() {
-        let dollArchive = DollulunarSetupDollzoraLedger.shared.currentDollArchive()
-        tinySnapshotDollhumi.configure(dollStarCount: dollArchive.dollStarCount)
-        playfulMarkerDollquvo.arrangedSubviews.forEach { $0.removeFromSuperview() }
+    private func lilacHoundstoothElegance() {
+        let rolledPolyesterBin = DollulunarSetupDollzoraLedger.angularGussetTaper.rippledTattingYoke()
+        patientFlannelBin.curatedSilkCompendium(serratedPatchworkHem: rolledPolyesterBin.serratedPatchworkHem)
+        wavyPompomFretwork.arrangedSubviews.forEach { russetChiffonShawl in russetChiffonShawl.removeFromSuperview() }
         [
-            DolluRewardWayArchive(dollTitle: "Browse style ideas", dollCopy: "Open the Dollu inspiration page today", dollStars: 15, dollTint: UIColor(red: 1, green: 0.52, blue: 0.45, alpha: 1)),
-            DolluRewardWayArchive(dollTitle: "Record a doll look", dollCopy: "Save one outfit note to your archive", dollStars: 20, dollTint: UIColor(red: 0.96, green: 0.34, blue: 0.78, alpha: 1)),
-            DolluRewardWayArchive(dollTitle: "Buddy check-in", dollCopy: "Finish a collector routine together", dollStars: 25, dollTint: UIColor(red: 0.47, green: 0.83, blue: 0.77, alpha: 1))
-        ].enumerated().forEach { dollIndex, dollWay in
-            let dollRow = DolluRewardWayRow()
-            dollRow.configure(dollWay)
-            playfulMarkerDollquvo.addArrangedSubview(dollRow)
-            if dollIndex < 2 {
-                playfulMarkerDollquvo.addArrangedSubview(DolluRewardDivider())
+            triangularGoreDiagram(gracefulMuslinPinafore: "Browse style ideas", nestedFlannelDrawer: "Open the Dollu inspiration page today", smallCuffToile: 15, rolledSashikoSwatch: UIColor(red: 1, green: 0.52, blue: 0.45, alpha: 1)),
+            triangularGoreDiagram(gracefulMuslinPinafore: "Record a doll look", nestedFlannelDrawer: "Save one outfit note to your archive", smallCuffToile: 20, rolledSashikoSwatch: UIColor(red: 0.96, green: 0.34, blue: 0.78, alpha: 1)),
+            triangularGoreDiagram(gracefulMuslinPinafore: "Buddy check-in", nestedFlannelDrawer: "Finish a collector routine together", smallCuffToile: 25, rolledSashikoSwatch: UIColor(red: 0.47, green: 0.83, blue: 0.77, alpha: 1))
+        ].enumerated().forEach { linearSleeveContour, squareYokeToile in
+            let feltedFilletTapestry = DolluRewardWayRow()
+            feltedFilletTapestry.curatedSilkCompendium(squareYokeToile)
+            wavyPompomFretwork.addArrangedSubview(feltedFilletTapestry)
+            if linearSleeveContour < 2 {
+                wavyPompomFretwork.addArrangedSubview(DolluRewardDivider())
             }
         }
     }
 
-    private func makeDollRewardHeader(dollTitle: String, dollPill: String) -> UIView {
-        let dollRow = UIStackView()
-        dollRow.axis = .horizontal
-        dollRow.alignment = .center
-        dollRow.spacing = 12
+    private func peachAcrylicSnood(gracefulMuslinPinafore: String, measuredPipingEdge: String) -> UIView {
+        let feltedFilletTapestry = UIStackView()
+        feltedFilletTapestry.axis = .horizontal
+        feltedFilletTapestry.alignment = .center
+        feltedFilletTapestry.spacing = 12
 
-        let dollTitleLabel = UILabel()
-        dollTitleLabel.text = dollTitle
-        dollTitleLabel.textColor = .white
-        dollTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 17, dollFontWeight: .heavy)
-        dollTitleLabel.adjustsFontSizeToFitWidth = true
-        dollTitleLabel.minimumScaleFactor = 0.8
-        dollRow.addArrangedSubview(dollTitleLabel)
+        let flaredNecklineGeometry = UILabel()
+        flaredNecklineGeometry.text = gracefulMuslinPinafore
+        flaredNecklineGeometry.textColor = .white
+        flaredNecklineGeometry.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 17, dollFontWeight: .heavy)
+        flaredNecklineGeometry.adjustsFontSizeToFitWidth = true
+        flaredNecklineGeometry.minimumScaleFactor = 0.8
+        feltedFilletTapestry.addArrangedSubview(flaredNecklineGeometry)
 
-        let dollPillLabel = PaddingLabel()
-        dollPillLabel.text = dollPill
-        dollPillLabel.textColor = UIColor(red: 0.42, green: 0.93, blue: 0.78, alpha: 1)
-        dollPillLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .heavy)
-        dollPillLabel.backgroundColor = UIColor(red: 0.14, green: 0.34, blue: 0.31, alpha: 0.82)
-        dollPillLabel.layer.cornerRadius = 14
-        dollPillLabel.clipsToBounds = true
-        dollPillLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
-        dollRow.addArrangedSubview(dollPillLabel)
-        dollRow.addArrangedSubview(UIView())
-        return dollRow
+        let coralMonochromeComposition = PaddingLabel()
+        coralMonochromeComposition.text = measuredPipingEdge
+        coralMonochromeComposition.textColor = UIColor(red: 0.42, green: 0.93, blue: 0.78, alpha: 1)
+        coralMonochromeComposition.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .heavy)
+        coralMonochromeComposition.backgroundColor = UIColor(red: 0.14, green: 0.34, blue: 0.31, alpha: 0.82)
+        coralMonochromeComposition.layer.cornerRadius = 14
+        coralMonochromeComposition.clipsToBounds = true
+        coralMonochromeComposition.setContentCompressionResistancePriority(.required, for: .horizontal)
+        feltedFilletTapestry.addArrangedSubview(coralMonochromeComposition)
+        feltedFilletTapestry.addArrangedSubview(UIView())
+        return feltedFilletTapestry
     }
 
-    private func showDollRewardToast(_ dollText: String) {
-        floralHintDollvelo.configure(dollText)
+    private func curatedWoodCertificate(_ ochreFlannelScarf: String) {
+        neatKnittingContour.curatedSilkCompendium(ochreFlannelScarf)
         UIView.animate(withDuration: 0.18, animations: {
-            self.floralHintDollvelo.alpha = 1
+            self.neatKnittingContour.alpha = 1
         }, completion: { _ in
             UIView.animate(withDuration: 0.22, delay: 1.5, options: [.curveEaseInOut]) {
-                self.floralHintDollvelo.alpha = 0
+                self.neatKnittingContour.alpha = 0
             }
         })
     }
 
-    @objc private func openDollPendantShop() {
+    @objc private func tealRibbonGlove() {
         navigationController?.pushViewController(DolluCheckinStarsShopViewController(), animated: true)
     }
 
-    @objc private func closeDollRewardPage() {
+    @objc private func verticalGoreIncrement() {
         navigationController?.popViewController(animated: true)
     }
 }
 
 final class DolluCheckinStarsShopViewController: UIViewController {
-    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
-    private let ribbonDisplayDollrevo = UIScrollView()
-    private let satinPinboardDollvani = UIStackView()
-    private let matteSceneDollvelo = UILabel()
-    private let floralHintDollvelo = DolluRewardToastView()
-    private let dollPendants: [DolluCheckinPendantArchive] = [
-        DolluCheckinPendantArchive(dollPendantId: "pink_lavender", dollPendantName: "Pink Lavender", dollRequiredStars: 350, dollRequiredCopy: nil, dollTint: UIColor(red: 1, green: 0.62, blue: 0.78, alpha: 1), dollAccent: UIColor(red: 0.90, green: 0.44, blue: 0.98, alpha: 1)),
-        DolluCheckinPendantArchive(dollPendantId: "lavender_moon_bunny", dollPendantName: "Lavender Moon Bunny", dollRequiredStars: 500, dollRequiredCopy: nil, dollTint: UIColor(red: 0.74, green: 0.62, blue: 1, alpha: 1), dollAccent: UIColor(red: 1, green: 0.87, blue: 0.53, alpha: 1)),
-        DolluCheckinPendantArchive(dollPendantId: "mint_bear", dollPendantName: "Mint Bear", dollRequiredStars: 0, dollRequiredCopy: "Reach a 7-day streak", dollTint: UIColor(red: 0.53, green: 0.91, blue: 0.78, alpha: 1), dollAccent: UIColor(red: 0.78, green: 0.90, blue: 1, alpha: 1)),
-        DolluCheckinPendantArchive(dollPendantId: "peach_dress", dollPendantName: "Peach Dress", dollRequiredStars: 0, dollRequiredCopy: "Finish 30 check-ins", dollTint: UIColor(red: 1, green: 0.66, blue: 0.47, alpha: 1), dollAccent: UIColor(red: 1, green: 0.85, blue: 0.61, alpha: 1))
+    private let lacyToggleLustre = DolluHtrimmedGuideDollnexadropView()
+    private let sealedFlannelTote = UIScrollView()
+    private let cleanCanvasCabinet = UIStackView()
+    private let intricateHookEmbossing = UILabel()
+    private let neatKnittingContour = DolluRewardToastView()
+    private let shallowTuckBias: [timelessClothGenealogy] = [
+        timelessClothGenealogy(woodlandGroveOttoman: "pink_lavender", fernyGazeboCurtain: "Pink Lavender", autumnalKitchenStool: 350, uprightSuedeSleeve: nil, rolledSashikoSwatch: UIColor(red: 1, green: 0.62, blue: 0.78, alpha: 1), slantedWeltChannel: UIColor(red: 0.90, green: 0.44, blue: 0.98, alpha: 1)),
+        timelessClothGenealogy(woodlandGroveOttoman: "lavender_moon_bunny", fernyGazeboCurtain: "Lavender Moon Bunny", autumnalKitchenStool: 500, uprightSuedeSleeve: nil, rolledSashikoSwatch: UIColor(red: 0.74, green: 0.62, blue: 1, alpha: 1), slantedWeltChannel: UIColor(red: 1, green: 0.87, blue: 0.53, alpha: 1)),
+        timelessClothGenealogy(woodlandGroveOttoman: "mint_bear", fernyGazeboCurtain: "Mint Bear", autumnalKitchenStool: 0, uprightSuedeSleeve: "Reach a 7-day streak", rolledSashikoSwatch: UIColor(red: 0.53, green: 0.91, blue: 0.78, alpha: 1), slantedWeltChannel: UIColor(red: 0.78, green: 0.90, blue: 1, alpha: 1)),
+        timelessClothGenealogy(woodlandGroveOttoman: "peach_dress", fernyGazeboCurtain: "Peach Dress", autumnalKitchenStool: 0, uprightSuedeSleeve: "Finish 30 check-ins", rolledSashikoSwatch: UIColor(red: 1, green: 0.66, blue: 0.47, alpha: 1), slantedWeltChannel: UIColor(red: 1, green: 0.85, blue: 0.61, alpha: 1))
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         hidesBottomBarWhenPushed = true
-        buildDollShop()
+        notchedWeltContour()
     }
 
-    private func buildDollShop() {
+    private func notchedWeltContour() {
         view.backgroundColor = DolluWardrobePalette.dollBackdropInk
-        polishedBackgroundDollquvo.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(polishedBackgroundDollquvo)
+        lacyToggleLustre.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(lacyToggleLustre)
 
-        let dollBackButton = DolluRewardBackButton()
-        dollBackButton.addTarget(self, action: #selector(closeDollShop), for: .touchUpInside)
-        view.addSubview(dollBackButton)
+        let aquaCheckeredUndertone = DolluRewardBackButton()
+        aquaCheckeredUndertone.addTarget(self, action: #selector(bespokeEarthenwareAlbum), for: .touchUpInside)
+        view.addSubview(aquaCheckeredUndertone)
 
-        matteSceneDollvelo.translatesAutoresizingMaskIntoConstraints = false
-        matteSceneDollvelo.text = "Stars Shop"
-        matteSceneDollvelo.textColor = .white
-        matteSceneDollvelo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 22, dollFontWeight: .heavy)
-        matteSceneDollvelo.textAlignment = .center
-        view.addSubview(matteSceneDollvelo)
+        intricateHookEmbossing.translatesAutoresizingMaskIntoConstraints = false
+        intricateHookEmbossing.text = "Stars Shop"
+        intricateHookEmbossing.textColor = .white
+        intricateHookEmbossing.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 22, dollFontWeight: .heavy)
+        intricateHookEmbossing.textAlignment = .center
+        view.addSubview(intricateHookEmbossing)
 
-        ribbonDisplayDollrevo.translatesAutoresizingMaskIntoConstraints = false
-        ribbonDisplayDollrevo.alwaysBounceVertical = true
-        ribbonDisplayDollrevo.showsVerticalScrollIndicator = false
-        view.addSubview(ribbonDisplayDollrevo)
+        sealedFlannelTote.translatesAutoresizingMaskIntoConstraints = false
+        sealedFlannelTote.alwaysBounceVertical = true
+        sealedFlannelTote.showsVerticalScrollIndicator = false
+        view.addSubview(sealedFlannelTote)
 
-        satinPinboardDollvani.translatesAutoresizingMaskIntoConstraints = false
-        satinPinboardDollvani.axis = .vertical
-        satinPinboardDollvani.spacing = 22
-        ribbonDisplayDollrevo.addSubview(satinPinboardDollvani)
+        cleanCanvasCabinet.translatesAutoresizingMaskIntoConstraints = false
+        cleanCanvasCabinet.axis = .vertical
+        cleanCanvasCabinet.spacing = 22
+        sealedFlannelTote.addSubview(cleanCanvasCabinet)
 
-        let dollHeader = DolluPendantShopHeaderCard()
-        satinPinboardDollvani.addArrangedSubview(dollHeader)
-        satinPinboardDollvani.addArrangedSubview(makeDollShopHeader())
-        let dollGrid = makeDollPendantGrid()
-        satinPinboardDollvani.addArrangedSubview(dollGrid)
+        let sunnyAtticCornice = DolluPendantShopHeaderCard()
+        cleanCanvasCabinet.addArrangedSubview(sunnyAtticCornice)
+        cleanCanvasCabinet.addArrangedSubview(lapisWoolGlove())
+        let rolledRuchingChannel = cherryGinghamSilhouette()
+        cleanCanvasCabinet.addArrangedSubview(rolledRuchingChannel)
 
-        floralHintDollvelo.translatesAutoresizingMaskIntoConstraints = false
-        floralHintDollvelo.alpha = 0
-        view.addSubview(floralHintDollvelo)
+        neatKnittingContour.translatesAutoresizingMaskIntoConstraints = false
+        neatKnittingContour.alpha = 0
+        view.addSubview(neatKnittingContour)
 
-        let dollSideInset: CGFloat = view.bounds.width <= 340 ? 16 : 20
+        let airyCottonCrinoline: CGFloat = view.bounds.width <= 340 ? 16 : 20
         NSLayoutConstraint.activate([
-            polishedBackgroundDollquvo.topAnchor.constraint(equalTo: view.topAnchor),
-            polishedBackgroundDollquvo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            polishedBackgroundDollquvo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            polishedBackgroundDollquvo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            lacyToggleLustre.topAnchor.constraint(equalTo: view.topAnchor),
+            lacyToggleLustre.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            lacyToggleLustre.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            lacyToggleLustre.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            dollBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
-            dollBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: dollSideInset),
-            dollBackButton.widthAnchor.constraint(equalToConstant: 44),
-            dollBackButton.heightAnchor.constraint(equalToConstant: 44),
+            aquaCheckeredUndertone.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
+            aquaCheckeredUndertone.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: airyCottonCrinoline),
+            aquaCheckeredUndertone.widthAnchor.constraint(equalToConstant: 44),
+            aquaCheckeredUndertone.heightAnchor.constraint(equalToConstant: 44),
 
-            matteSceneDollvelo.centerYAnchor.constraint(equalTo: dollBackButton.centerYAnchor),
-            matteSceneDollvelo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            matteSceneDollvelo.leadingAnchor.constraint(greaterThanOrEqualTo: dollBackButton.trailingAnchor, constant: 14),
-            matteSceneDollvelo.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -dollSideInset),
+            intricateHookEmbossing.centerYAnchor.constraint(equalTo: aquaCheckeredUndertone.centerYAnchor),
+            intricateHookEmbossing.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            intricateHookEmbossing.leadingAnchor.constraint(greaterThanOrEqualTo: aquaCheckeredUndertone.trailingAnchor, constant: 14),
+            intricateHookEmbossing.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -airyCottonCrinoline),
 
-            ribbonDisplayDollrevo.topAnchor.constraint(equalTo: dollBackButton.bottomAnchor, constant: 24),
-            ribbonDisplayDollrevo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            ribbonDisplayDollrevo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            ribbonDisplayDollrevo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            sealedFlannelTote.topAnchor.constraint(equalTo: aquaCheckeredUndertone.bottomAnchor, constant: 24),
+            sealedFlannelTote.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            sealedFlannelTote.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            sealedFlannelTote.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            satinPinboardDollvani.topAnchor.constraint(equalTo: ribbonDisplayDollrevo.contentLayoutGuide.topAnchor),
-            satinPinboardDollvani.leadingAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.leadingAnchor, constant: dollSideInset),
-            satinPinboardDollvani.trailingAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.trailingAnchor, constant: -dollSideInset),
-            satinPinboardDollvani.bottomAnchor.constraint(equalTo: ribbonDisplayDollrevo.contentLayoutGuide.bottomAnchor, constant: -28),
-            satinPinboardDollvani.widthAnchor.constraint(equalTo: ribbonDisplayDollrevo.frameLayoutGuide.widthAnchor, constant: -(dollSideInset * 2)),
+            cleanCanvasCabinet.topAnchor.constraint(equalTo: sealedFlannelTote.contentLayoutGuide.topAnchor),
+            cleanCanvasCabinet.leadingAnchor.constraint(equalTo: sealedFlannelTote.frameLayoutGuide.leadingAnchor, constant: airyCottonCrinoline),
+            cleanCanvasCabinet.trailingAnchor.constraint(equalTo: sealedFlannelTote.frameLayoutGuide.trailingAnchor, constant: -airyCottonCrinoline),
+            cleanCanvasCabinet.bottomAnchor.constraint(equalTo: sealedFlannelTote.contentLayoutGuide.bottomAnchor, constant: -28),
+            cleanCanvasCabinet.widthAnchor.constraint(equalTo: sealedFlannelTote.frameLayoutGuide.widthAnchor, constant: -(airyCottonCrinoline * 2)),
 
-            floralHintDollvelo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            floralHintDollvelo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            floralHintDollvelo.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -22)
+            neatKnittingContour.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            neatKnittingContour.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            neatKnittingContour.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -22)
         ])
     }
 
-    private func makeDollShopHeader() -> UIView {
-        let dollStack = UIStackView()
-        dollStack.axis = .vertical
-        dollStack.spacing = 12
+    private func lapisWoolGlove() -> UIView {
+        let ornateVelvetBloomers = UIStackView()
+        ornateVelvetBloomers.axis = .vertical
+        ornateVelvetBloomers.spacing = 12
 
-        let dollTopRow = UIStackView()
-        dollTopRow.axis = .horizontal
-        dollTopRow.alignment = .center
-        dollTopRow.spacing = 12
+        let peachOrganzaBoot = UIStackView()
+        peachOrganzaBoot.axis = .horizontal
+        peachOrganzaBoot.alignment = .center
+        peachOrganzaBoot.spacing = 12
 
-        let dollTitle = UILabel()
-        dollTitle.text = "Pendants"
-        dollTitle.textColor = .white
-        dollTitle.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .heavy)
-        dollTopRow.addArrangedSubview(dollTitle)
+        let gracefulMuslinPinafore = UILabel()
+        gracefulMuslinPinafore.text = "Pendants"
+        gracefulMuslinPinafore.textColor = .white
+        gracefulMuslinPinafore.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .heavy)
+        peachOrganzaBoot.addArrangedSubview(gracefulMuslinPinafore)
 
-        let dollPill = PaddingLabel()
-        dollPill.text = "Reward & redeem"
-        dollPill.textColor = UIColor(red: 0.84, green: 0.68, blue: 1, alpha: 1)
-        dollPill.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .heavy)
-        dollPill.backgroundColor = UIColor(red: 0.18, green: 0.10, blue: 0.38, alpha: 0.9)
-        dollPill.layer.cornerRadius = 15
-        dollPill.layer.borderWidth = 1.4
-        dollPill.layer.borderColor = UIColor(red: 0.48, green: 0.24, blue: 0.92, alpha: 1).cgColor
-        dollPill.clipsToBounds = true
-        dollTopRow.addArrangedSubview(dollPill)
-        dollTopRow.addArrangedSubview(UIView())
-        dollStack.addArrangedSubview(dollTopRow)
+        let measuredPipingEdge = PaddingLabel()
+        measuredPipingEdge.text = "Reward & redeem"
+        measuredPipingEdge.textColor = UIColor(red: 0.84, green: 0.68, blue: 1, alpha: 1)
+        measuredPipingEdge.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .heavy)
+        measuredPipingEdge.backgroundColor = UIColor(red: 0.18, green: 0.10, blue: 0.38, alpha: 0.9)
+        measuredPipingEdge.layer.cornerRadius = 15
+        measuredPipingEdge.layer.borderWidth = 1.4
+        measuredPipingEdge.layer.borderColor = UIColor(red: 0.48, green: 0.24, blue: 0.92, alpha: 1).cgColor
+        measuredPipingEdge.clipsToBounds = true
+        peachOrganzaBoot.addArrangedSubview(measuredPipingEdge)
+        peachOrganzaBoot.addArrangedSubview(UIView())
+        ornateVelvetBloomers.addArrangedSubview(peachOrganzaBoot)
 
-        let dollValidity = UILabel()
-        dollValidity.text = "Valid for 48 hours"
-        dollValidity.textColor = UIColor(red: 1, green: 0.54, blue: 0.58, alpha: 1)
-        dollValidity.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .medium)
-        dollStack.addArrangedSubview(dollValidity)
-        return dollStack
+        let carefulBambooDrawer = UILabel()
+        carefulBambooDrawer.text = "Valid for 48 hours"
+        carefulBambooDrawer.textColor = UIColor(red: 1, green: 0.54, blue: 0.58, alpha: 1)
+        carefulBambooDrawer.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .medium)
+        ornateVelvetBloomers.addArrangedSubview(carefulBambooDrawer)
+        return ornateVelvetBloomers
     }
 
-    private func makeDollPendantGrid() -> UIView {
-        let dollGrid = UIStackView()
-        dollGrid.axis = .vertical
-        dollGrid.spacing = 16
-        let dollRows = stride(from: 0, to: dollPendants.count, by: 2).map { dollIndex -> [DolluCheckinPendantArchive] in
-            Array(dollPendants[dollIndex..<min(dollIndex + 2, dollPendants.count)])
+    private func cherryGinghamSilhouette() -> UIView {
+        let rolledRuchingChannel = UIStackView()
+        rolledRuchingChannel.axis = .vertical
+        rolledRuchingChannel.spacing = 16
+        let triangularLapelTruing = stride(from: 0, to: shallowTuckBias.count, by: 2).map { linearSleeveContour -> [timelessClothGenealogy] in
+            Array(shallowTuckBias[linearSleeveContour..<min(linearSleeveContour + 2, shallowTuckBias.count)])
         }
-        dollRows.forEach { dollPair in
-            let dollRow = UIStackView()
-            dollRow.axis = .horizontal
-            dollRow.spacing = 14
-            dollRow.distribution = .fillEqually
-            dollPair.forEach { dollPendant in
-                let dollCard = DolluPendantRewardCard()
-                dollCard.configure(dollPendant, dollArchive: DollulunarSetupDollzoraLedger.shared.currentDollArchive())
-                dollCard.dollTapped = { [weak self] in
-                    self?.redeemDollPendant(dollPendant)
+        triangularLapelTruing.forEach { originalSilverSpecimen in
+            let feltedFilletTapestry = UIStackView()
+            feltedFilletTapestry.axis = .horizontal
+            feltedFilletTapestry.spacing = 14
+            feltedFilletTapestry.distribution = .fillEqually
+            originalSilverSpecimen.forEach { alignedAppliqueEdge in
+                let autumnalVestibuleScenery = DolluPendantRewardCard()
+                autumnalVestibuleScenery.curatedSilkCompendium(alignedAppliqueEdge, rolledPolyesterBin: DollulunarSetupDollzoraLedger.angularGussetTaper.rippledTattingYoke())
+                autumnalVestibuleScenery.looseCottonParka = { [weak self] in
+                    self?.porcelainLaceBracelet(alignedAppliqueEdge)
                 }
-                dollRow.addArrangedSubview(dollCard)
+                feltedFilletTapestry.addArrangedSubview(autumnalVestibuleScenery)
             }
-            if dollPair.count == 1 {
-                dollRow.addArrangedSubview(UIView())
+            if originalSilverSpecimen.count == 1 {
+                feltedFilletTapestry.addArrangedSubview(UIView())
             }
-            dollGrid.addArrangedSubview(dollRow)
+            rolledRuchingChannel.addArrangedSubview(feltedFilletTapestry)
         }
-        return dollGrid
+        return rolledRuchingChannel
     }
 
-    private func redeemDollPendant(_ dollPendant: DolluCheckinPendantArchive) {
-        switch DollulunarSetupDollzoraLedger.shared.redeemDollPendant(dollPendant) {
-        case .unlocked(let dollArchive):
-            let dollController = DolluCheckinPendantUnlockedViewController(dollPendant: dollPendant, dollArchive: dollArchive)
-            navigationController?.pushViewController(dollController, animated: true)
-        case .alreadyOwned:
-            showDollRewardToast("This pendant is already in your profile set.")
-        case .notEnough:
-            showDollRewardToast("Not enough Stars. Finish more check-ins to earn them.")
-        case .locked:
-            showDollRewardToast(dollPendant.dollRequiredCopy ?? "Keep growing your Dollu routine first.")
+    private func porcelainLaceBracelet(_ alignedAppliqueEdge: timelessClothGenealogy) {
+        switch DollulunarSetupDollzoraLedger.angularGussetTaper.porcelainLaceBracelet(alignedAppliqueEdge) {
+        case .uniqueNylonSpecimen(let rolledPolyesterBin):
+            let amberWickerShoe = DolluCheckinPendantUnlockedViewController(alignedAppliqueEdge: alignedAppliqueEdge, rolledPolyesterBin: rolledPolyesterBin)
+            navigationController?.pushViewController(amberWickerShoe, animated: true)
+        case .sculptedWristTracing:
+            curatedWoodCertificate("This pendant is already in your profile set.")
+        case .smoothSoutacheContour:
+            curatedWoodCertificate("Not enough Stars. Finish more check-ins to earn them.")
+        case .pleatedLaceSkirt:
+            curatedWoodCertificate(alignedAppliqueEdge.uprightSuedeSleeve ?? "Keep growing your Dollu routine first.")
         }
     }
 
-    private func showDollRewardToast(_ dollText: String) {
-        floralHintDollvelo.configure(dollText)
+    private func curatedWoodCertificate(_ ochreFlannelScarf: String) {
+        neatKnittingContour.curatedSilkCompendium(ochreFlannelScarf)
         UIView.animate(withDuration: 0.18, animations: {
-            self.floralHintDollvelo.alpha = 1
+            self.neatKnittingContour.alpha = 1
         }, completion: { _ in
             UIView.animate(withDuration: 0.22, delay: 1.6, options: [.curveEaseInOut]) {
-                self.floralHintDollvelo.alpha = 0
+                self.neatKnittingContour.alpha = 0
             }
         })
     }
 
-    @objc private func closeDollShop() {
+    @objc private func bespokeEarthenwareAlbum() {
         navigationController?.popViewController(animated: true)
     }
 }
 
 final class DolluCheckinPendantUnlockedViewController: UIViewController {
-    private let polishedBackgroundDollquvo = DolluHtrimmedGuideDollnexadropView()
-    private let satinPinboardDollvani = UIStackView()
-    private let dollPendant: DolluCheckinPendantArchive
-    private let dollArchive: DolunarBootDollvexArchive
+    private let lacyToggleLustre = DolluHtrimmedGuideDollnexadropView()
+    private let cleanCanvasCabinet = UIStackView()
+    private let alignedAppliqueEdge: timelessClothGenealogy
+    private let rolledPolyesterBin: plushSilkSpencer
 
-    init(dollPendant: DolluCheckinPendantArchive, dollArchive: DolunarBootDollvexArchive) {
-        self.dollPendant = dollPendant
-        self.dollArchive = dollArchive
+    init(alignedAppliqueEdge: timelessClothGenealogy, rolledPolyesterBin: plushSilkSpencer) {
+        self.alignedAppliqueEdge = alignedAppliqueEdge
+        self.rolledPolyesterBin = rolledPolyesterBin
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder blushLeatherSlipper: NSCoder) {
         nil
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        buildDollUnlockedPage()
+        coastalGreenhouseMantel()
     }
 
-    private func buildDollUnlockedPage() {
+    private func coastalGreenhouseMantel() {
         view.backgroundColor = DolluWardrobePalette.dollBackdropInk
-        polishedBackgroundDollquvo.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(polishedBackgroundDollquvo)
+        lacyToggleLustre.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(lacyToggleLustre)
 
-        let dollBackButton = DolluRewardBackButton()
-        dollBackButton.addTarget(self, action: #selector(closeDollUnlocked), for: .touchUpInside)
-        view.addSubview(dollBackButton)
+        let aquaCheckeredUndertone = DolluRewardBackButton()
+        aquaCheckeredUndertone.addTarget(self, action: #selector(knittedRosetteNeedlework), for: .touchUpInside)
+        view.addSubview(aquaCheckeredUndertone)
 
-        satinPinboardDollvani.translatesAutoresizingMaskIntoConstraints = false
-        satinPinboardDollvani.axis = .vertical
-        satinPinboardDollvani.alignment = .center
-        satinPinboardDollvani.spacing = 20
-        view.addSubview(satinPinboardDollvani)
+        cleanCanvasCabinet.translatesAutoresizingMaskIntoConstraints = false
+        cleanCanvasCabinet.axis = .vertical
+        cleanCanvasCabinet.alignment = .center
+        cleanCanvasCabinet.spacing = 20
+        view.addSubview(cleanCanvasCabinet)
 
-        let dollConfetti = DolluCheckinConfettiView()
-        dollConfetti.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(dollConfetti)
+        let looseLinenRomper = DolluCheckinConfettiView()
+        looseLinenRomper.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(looseLinenRomper)
 
-        let dollPreview = DolluUnlockedPendantPreview(dollPendant: dollPendant)
-        satinPinboardDollvani.addArrangedSubview(dollPreview)
+        let coralChevronJuxtaposition = DolluUnlockedPendantPreview(alignedAppliqueEdge: alignedAppliqueEdge)
+        cleanCanvasCabinet.addArrangedSubview(coralChevronJuxtaposition)
 
-        let dollTitle = UILabel()
-        dollTitle.text = "Pendant Unlocked!"
-        dollTitle.textColor = .white
-        dollTitle.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 29, dollFontWeight: .heavy)
-        dollTitle.adjustsFontSizeToFitWidth = true
-        dollTitle.minimumScaleFactor = 0.75
-        dollTitle.textAlignment = .center
-        satinPinboardDollvani.addArrangedSubview(dollTitle)
+        let gracefulMuslinPinafore = UILabel()
+        gracefulMuslinPinafore.text = "Pendant Unlocked!"
+        gracefulMuslinPinafore.textColor = .white
+        gracefulMuslinPinafore.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 29, dollFontWeight: .heavy)
+        gracefulMuslinPinafore.adjustsFontSizeToFitWidth = true
+        gracefulMuslinPinafore.minimumScaleFactor = 0.75
+        gracefulMuslinPinafore.textAlignment = .center
+        cleanCanvasCabinet.addArrangedSubview(gracefulMuslinPinafore)
 
-        let dollCopy = UILabel()
-        dollCopy.text = "\(dollPendant.dollPendantName) is now on your profile"
-        dollCopy.textColor = DolluWardrobePalette.dollMemoMuted
-        dollCopy.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 17, dollFontWeight: .medium)
-        dollCopy.textAlignment = .center
-        dollCopy.numberOfLines = 2
-        satinPinboardDollvani.addArrangedSubview(dollCopy)
+        let nestedFlannelDrawer = UILabel()
+        nestedFlannelDrawer.text = "\(alignedAppliqueEdge.fernyGazeboCurtain) is now on your profile"
+        nestedFlannelDrawer.textColor = DolluWardrobePalette.dollMemoMuted
+        nestedFlannelDrawer.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 17, dollFontWeight: .medium)
+        nestedFlannelDrawer.textAlignment = .center
+        nestedFlannelDrawer.numberOfLines = 2
+        cleanCanvasCabinet.addArrangedSubview(nestedFlannelDrawer)
 
-        let dollStats = DolluPendantUnlockStatsView()
-        dollStats.configure(dollSpent: dollPendant.dollRequiredStars, dollLeft: dollArchive.dollStarCount)
-        satinPinboardDollvani.addArrangedSubview(dollStats)
+        let foldedIntarsiaCrease = DolluPendantUnlockStatsView()
+        foldedIntarsiaCrease.curatedSilkCompendium(porcelainRaffiaSock: alignedAppliqueEdge.autumnalKitchenStool, nocturnalConservatoryValance: rolledPolyesterBin.serratedPatchworkHem)
+        cleanCanvasCabinet.addArrangedSubview(foldedIntarsiaCrease)
 
-        let dollValidity = UILabel()
-        dollValidity.text = "Valid for 48 hours"
-        dollValidity.textColor = UIColor(red: 1, green: 0.54, blue: 0.58, alpha: 1)
-        dollValidity.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .medium)
-        dollValidity.textAlignment = .center
-        satinPinboardDollvani.addArrangedSubview(dollValidity)
+        let carefulBambooDrawer = UILabel()
+        carefulBambooDrawer.text = "Valid for 48 hours"
+        carefulBambooDrawer.textColor = UIColor(red: 1, green: 0.54, blue: 0.58, alpha: 1)
+        carefulBambooDrawer.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .medium)
+        carefulBambooDrawer.textAlignment = .center
+        cleanCanvasCabinet.addArrangedSubview(carefulBambooDrawer)
 
-        let dollSpacer = UIView()
-        satinPinboardDollvani.addArrangedSubview(dollSpacer)
+        let carefulFleeceCushion = UIView()
+        cleanCanvasCabinet.addArrangedSubview(carefulFleeceCushion)
 
-        let dollShopButton = DolluminiLayerDollmivoButton(dollButtonTitle: "Back to Shop", dollUsesLightStyle: true)
-        dollShopButton.addTarget(self, action: #selector(backToDollShop), for: .touchUpInside)
-        satinPinboardDollvani.addArrangedSubview(dollShopButton)
+        let lavenderDamasceneComposition = DolluminiLayerDollmivoButton(dollButtonTitle: "Back to Shop", dollUsesLightStyle: true)
+        lavenderDamasceneComposition.addTarget(self, action: #selector(dimensionalArmscyeMeasurement), for: .touchUpInside)
+        cleanCanvasCabinet.addArrangedSubview(lavenderDamasceneComposition)
 
-        let dollCheckinButton = DolluminiLayerDollmivoButton(dollButtonTitle: "Back to Check-in", dollUsesLightStyle: false)
-        dollCheckinButton.addTarget(self, action: #selector(backToDollCheckin), for: .touchUpInside)
-        satinPinboardDollvani.addArrangedSubview(dollCheckinButton)
+        let emeraldRattanBuckle = DolluminiLayerDollmivoButton(dollButtonTitle: "Back to Check-in", dollUsesLightStyle: false)
+        emeraldRattanBuckle.addTarget(self, action: #selector(taperedCorduroyPoncho), for: .touchUpInside)
+        cleanCanvasCabinet.addArrangedSubview(emeraldRattanBuckle)
 
-        let dollSideInset: CGFloat = view.bounds.width <= 340 ? 16 : 20
+        let airyCottonCrinoline: CGFloat = view.bounds.width <= 340 ? 16 : 20
         NSLayoutConstraint.activate([
-            polishedBackgroundDollquvo.topAnchor.constraint(equalTo: view.topAnchor),
-            polishedBackgroundDollquvo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            polishedBackgroundDollquvo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            polishedBackgroundDollquvo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            lacyToggleLustre.topAnchor.constraint(equalTo: view.topAnchor),
+            lacyToggleLustre.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            lacyToggleLustre.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            lacyToggleLustre.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            dollBackButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
-            dollBackButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: dollSideInset),
-            dollBackButton.widthAnchor.constraint(equalToConstant: 44),
-            dollBackButton.heightAnchor.constraint(equalToConstant: 44),
+            aquaCheckeredUndertone.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
+            aquaCheckeredUndertone.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: airyCottonCrinoline),
+            aquaCheckeredUndertone.widthAnchor.constraint(equalToConstant: 44),
+            aquaCheckeredUndertone.heightAnchor.constraint(equalToConstant: 44),
 
-            dollConfetti.topAnchor.constraint(equalTo: dollBackButton.bottomAnchor, constant: 18),
-            dollConfetti.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            dollConfetti.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            dollConfetti.heightAnchor.constraint(equalToConstant: 260),
+            looseLinenRomper.topAnchor.constraint(equalTo: aquaCheckeredUndertone.bottomAnchor, constant: 18),
+            looseLinenRomper.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            looseLinenRomper.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            looseLinenRomper.heightAnchor.constraint(equalToConstant: 260),
 
-            satinPinboardDollvani.topAnchor.constraint(equalTo: dollBackButton.bottomAnchor, constant: 120),
-            satinPinboardDollvani.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: dollSideInset),
-            satinPinboardDollvani.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -dollSideInset),
-            satinPinboardDollvani.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -18),
+            cleanCanvasCabinet.topAnchor.constraint(equalTo: aquaCheckeredUndertone.bottomAnchor, constant: 120),
+            cleanCanvasCabinet.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: airyCottonCrinoline),
+            cleanCanvasCabinet.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -airyCottonCrinoline),
+            cleanCanvasCabinet.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -18),
 
-            dollPreview.widthAnchor.constraint(equalToConstant: 190),
-            dollPreview.heightAnchor.constraint(equalToConstant: 190),
-            dollStats.widthAnchor.constraint(equalTo: satinPinboardDollvani.widthAnchor, constant: -24),
-            dollStats.heightAnchor.constraint(equalToConstant: 90),
-            dollSpacer.heightAnchor.constraint(greaterThanOrEqualToConstant: 32),
-            dollShopButton.widthAnchor.constraint(equalTo: satinPinboardDollvani.widthAnchor),
-            dollShopButton.heightAnchor.constraint(equalToConstant: 52),
-            dollCheckinButton.widthAnchor.constraint(equalTo: satinPinboardDollvani.widthAnchor),
-            dollCheckinButton.heightAnchor.constraint(equalToConstant: 52)
+            coralChevronJuxtaposition.widthAnchor.constraint(equalToConstant: 190),
+            coralChevronJuxtaposition.heightAnchor.constraint(equalToConstant: 190),
+            foldedIntarsiaCrease.widthAnchor.constraint(equalTo: cleanCanvasCabinet.widthAnchor, constant: -24),
+            foldedIntarsiaCrease.heightAnchor.constraint(equalToConstant: 90),
+            carefulFleeceCushion.heightAnchor.constraint(greaterThanOrEqualToConstant: 32),
+            lavenderDamasceneComposition.widthAnchor.constraint(equalTo: cleanCanvasCabinet.widthAnchor),
+            lavenderDamasceneComposition.heightAnchor.constraint(equalToConstant: 52),
+            emeraldRattanBuckle.widthAnchor.constraint(equalTo: cleanCanvasCabinet.widthAnchor),
+            emeraldRattanBuckle.heightAnchor.constraint(equalToConstant: 52)
         ])
     }
 
-    @objc private func closeDollUnlocked() {
+    @objc private func knittedRosetteNeedlework() {
         navigationController?.popViewController(animated: true)
     }
 
-    @objc private func backToDollShop() {
+    @objc private func dimensionalArmscyeMeasurement() {
         navigationController?.popViewController(animated: true)
     }
 
-    @objc private func backToDollCheckin() {
-        guard let dollControllers = navigationController?.viewControllers else { return }
-        if let dollTarget = dollControllers.first(where: { $0 is DollucalmNoteDollsovoController }) {
-            navigationController?.popToViewController(dollTarget, animated: true)
+    @objc private func taperedCorduroyPoncho() {
+        guard let fragilePolyesterLedger = navigationController?.viewControllers else { return }
+        if let peachFloralNuance = fragilePolyesterLedger.first(where: { fineAppliqueRuffle in fineAppliqueRuffle is DollucalmNoteDollsovoController }) {
+            navigationController?.popToViewController(peachFloralNuance, animated: true)
         }
     }
 }
 
-private struct DolluRewardWayArchive {
-    let dollTitle: String
-    let dollCopy: String
-    let dollStars: Int
-    let dollTint: UIColor
+private struct triangularGoreDiagram {
+    let gracefulMuslinPinafore: String
+    let nestedFlannelDrawer: String
+    let smallCuffToile: Int
+    let rolledSashikoSwatch: UIColor
 }
 
 private final class DolluCheckinRewardSummaryCard: UIView {
-    private let cottonFrameDollukp = UILabel()
+    private let polishedTogglePatina = UILabel()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame croppedSatinSurcoat: CGRect) {
+        super.init(frame: croppedSatinSurcoat)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(red: 0.13, green: 0.10, blue: 0.18, alpha: 0.72)
         layer.cornerRadius = 24
         layer.borderWidth = 1
         layer.borderColor = UIColor(red: 0.88, green: 0.62, blue: 0.29, alpha: 0.58).cgColor
 
-        let dollStar = UILabel()
-        dollStar.translatesAutoresizingMaskIntoConstraints = false
-        dollStar.text = "★"
-        dollStar.textColor = UIColor(red: 1, green: 0.70, blue: 0.23, alpha: 1)
-        dollStar.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 36, dollFontWeight: .heavy)
-        addSubview(dollStar)
+        let daintyJacquardKnickers = UILabel()
+        daintyJacquardKnickers.translatesAutoresizingMaskIntoConstraints = false
+        daintyJacquardKnickers.text = "★"
+        daintyJacquardKnickers.textColor = UIColor(red: 1, green: 0.70, blue: 0.23, alpha: 1)
+        daintyJacquardKnickers.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 36, dollFontWeight: .heavy)
+        addSubview(daintyJacquardKnickers)
 
-        cottonFrameDollukp.translatesAutoresizingMaskIntoConstraints = false
-        cottonFrameDollukp.textColor = .white
-        cottonFrameDollukp.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 38, dollFontWeight: .heavy)
-        addSubview(cottonFrameDollukp)
+        polishedTogglePatina.translatesAutoresizingMaskIntoConstraints = false
+        polishedTogglePatina.textColor = .white
+        polishedTogglePatina.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 38, dollFontWeight: .heavy)
+        addSubview(polishedTogglePatina)
 
-        let dollTitle = UILabel()
-        dollTitle.translatesAutoresizingMaskIntoConstraints = false
-        dollTitle.text = "Stars"
-        dollTitle.textColor = .white
-        dollTitle.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 17, dollFontWeight: .heavy)
-        addSubview(dollTitle)
+        let gracefulMuslinPinafore = UILabel()
+        gracefulMuslinPinafore.translatesAutoresizingMaskIntoConstraints = false
+        gracefulMuslinPinafore.text = "Stars"
+        gracefulMuslinPinafore.textColor = .white
+        gracefulMuslinPinafore.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 17, dollFontWeight: .heavy)
+        addSubview(gracefulMuslinPinafore)
 
-        let dollCopy = UILabel()
-        dollCopy.translatesAutoresizingMaskIntoConstraints = false
-        dollCopy.text = "✓  Earned from check-ins only"
-        dollCopy.textColor = UIColor(red: 1, green: 0.82, blue: 0.48, alpha: 1)
-        dollCopy.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .heavy)
-        dollCopy.numberOfLines = 2
-        addSubview(dollCopy)
+        let nestedFlannelDrawer = UILabel()
+        nestedFlannelDrawer.translatesAutoresizingMaskIntoConstraints = false
+        nestedFlannelDrawer.text = "✓  Earned from check-ins only"
+        nestedFlannelDrawer.textColor = UIColor(red: 1, green: 0.82, blue: 0.48, alpha: 1)
+        nestedFlannelDrawer.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .heavy)
+        nestedFlannelDrawer.numberOfLines = 2
+        addSubview(nestedFlannelDrawer)
 
         NSLayoutConstraint.activate([
             heightAnchor.constraint(greaterThanOrEqualToConstant: 120),
-            dollStar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 26),
-            dollStar.centerYAnchor.constraint(equalTo: centerYAnchor),
-            dollStar.widthAnchor.constraint(equalToConstant: 42),
+            daintyJacquardKnickers.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 26),
+            daintyJacquardKnickers.centerYAnchor.constraint(equalTo: centerYAnchor),
+            daintyJacquardKnickers.widthAnchor.constraint(equalToConstant: 42),
 
-            cottonFrameDollukp.leadingAnchor.constraint(equalTo: dollStar.trailingAnchor, constant: 10),
-            cottonFrameDollukp.centerYAnchor.constraint(equalTo: centerYAnchor),
-            cottonFrameDollukp.widthAnchor.constraint(greaterThanOrEqualToConstant: 92),
+            polishedTogglePatina.leadingAnchor.constraint(equalTo: daintyJacquardKnickers.trailingAnchor, constant: 10),
+            polishedTogglePatina.centerYAnchor.constraint(equalTo: centerYAnchor),
+            polishedTogglePatina.widthAnchor.constraint(greaterThanOrEqualToConstant: 92),
 
-            dollTitle.leadingAnchor.constraint(equalTo: cottonFrameDollukp.trailingAnchor, constant: 14),
-            dollTitle.topAnchor.constraint(equalTo: topAnchor, constant: 38),
-            dollTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            gracefulMuslinPinafore.leadingAnchor.constraint(equalTo: polishedTogglePatina.trailingAnchor, constant: 14),
+            gracefulMuslinPinafore.topAnchor.constraint(equalTo: topAnchor, constant: 38),
+            gracefulMuslinPinafore.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 
-            dollCopy.leadingAnchor.constraint(equalTo: dollTitle.leadingAnchor),
-            dollCopy.topAnchor.constraint(equalTo: dollTitle.bottomAnchor, constant: 8),
-            dollCopy.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            dollCopy.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -22)
+            nestedFlannelDrawer.leadingAnchor.constraint(equalTo: gracefulMuslinPinafore.leadingAnchor),
+            nestedFlannelDrawer.topAnchor.constraint(equalTo: gracefulMuslinPinafore.bottomAnchor, constant: 8),
+            nestedFlannelDrawer.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            nestedFlannelDrawer.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -22)
         ])
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder blushLeatherSlipper: NSCoder) {
         nil
     }
 
-    func configure(dollStarCount: Int) {
-        cottonFrameDollukp.text = "\(dollStarCount)"
+    func curatedSilkCompendium(serratedPatchworkHem: Int) {
+        polishedTogglePatina.text = "\(serratedPatchworkHem)"
     }
 }
 
 private final class DolluRewardWayRow: UIView {
-    func configure(_ dollWay: DolluRewardWayArchive) {
-        subviews.forEach { $0.removeFromSuperview() }
-        let dollIcon = DolluRewardRoundIcon(dollTint: dollWay.dollTint)
-        addSubview(dollIcon)
+    func curatedSilkCompendium(_ squareYokeToile: triangularGoreDiagram) {
+        subviews.forEach { plumFleeceTiara in plumFleeceTiara.removeFromSuperview() }
+        let tailoredRiseLength = DolluRewardRoundIcon(rolledSashikoSwatch: squareYokeToile.rolledSashikoSwatch)
+        addSubview(tailoredRiseLength)
 
-        let dollTitle = UILabel()
-        dollTitle.translatesAutoresizingMaskIntoConstraints = false
-        dollTitle.text = dollWay.dollTitle
-        dollTitle.textColor = .white
-        dollTitle.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .heavy)
-        dollTitle.adjustsFontSizeToFitWidth = true
-        dollTitle.minimumScaleFactor = 0.78
-        addSubview(dollTitle)
+        let gracefulMuslinPinafore = UILabel()
+        gracefulMuslinPinafore.translatesAutoresizingMaskIntoConstraints = false
+        gracefulMuslinPinafore.text = squareYokeToile.gracefulMuslinPinafore
+        gracefulMuslinPinafore.textColor = .white
+        gracefulMuslinPinafore.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .heavy)
+        gracefulMuslinPinafore.adjustsFontSizeToFitWidth = true
+        gracefulMuslinPinafore.minimumScaleFactor = 0.78
+        addSubview(gracefulMuslinPinafore)
 
-        let dollCopy = UILabel()
-        dollCopy.translatesAutoresizingMaskIntoConstraints = false
-        dollCopy.text = dollWay.dollCopy
-        dollCopy.textColor = DolluWardrobePalette.dollMemoMuted
-        dollCopy.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .medium)
-        dollCopy.numberOfLines = 2
-        addSubview(dollCopy)
+        let nestedFlannelDrawer = UILabel()
+        nestedFlannelDrawer.translatesAutoresizingMaskIntoConstraints = false
+        nestedFlannelDrawer.text = squareYokeToile.nestedFlannelDrawer
+        nestedFlannelDrawer.textColor = DolluWardrobePalette.dollMemoMuted
+        nestedFlannelDrawer.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .medium)
+        nestedFlannelDrawer.numberOfLines = 2
+        addSubview(nestedFlannelDrawer)
 
-        let dollStars = UILabel()
-        dollStars.translatesAutoresizingMaskIntoConstraints = false
-        dollStars.text = "★ +\(dollWay.dollStars)"
-        dollStars.textColor = UIColor(red: 0.42, green: 0.93, blue: 0.78, alpha: 1)
-        dollStars.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 17, dollFontWeight: .heavy)
-        dollStars.setContentCompressionResistancePriority(.required, for: .horizontal)
-        addSubview(dollStars)
+        let smallCuffToile = UILabel()
+        smallCuffToile.translatesAutoresizingMaskIntoConstraints = false
+        smallCuffToile.text = "★ +\(squareYokeToile.smallCuffToile)"
+        smallCuffToile.textColor = UIColor(red: 0.42, green: 0.93, blue: 0.78, alpha: 1)
+        smallCuffToile.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 17, dollFontWeight: .heavy)
+        smallCuffToile.setContentCompressionResistancePriority(.required, for: .horizontal)
+        addSubview(smallCuffToile)
 
         NSLayoutConstraint.activate([
             heightAnchor.constraint(greaterThanOrEqualToConstant: 72),
-            dollIcon.leadingAnchor.constraint(equalTo: leadingAnchor),
-            dollIcon.centerYAnchor.constraint(equalTo: centerYAnchor),
-            dollIcon.widthAnchor.constraint(equalToConstant: 44),
-            dollIcon.heightAnchor.constraint(equalToConstant: 44),
+            tailoredRiseLength.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tailoredRiseLength.centerYAnchor.constraint(equalTo: centerYAnchor),
+            tailoredRiseLength.widthAnchor.constraint(equalToConstant: 44),
+            tailoredRiseLength.heightAnchor.constraint(equalToConstant: 44),
 
-            dollTitle.leadingAnchor.constraint(equalTo: dollIcon.trailingAnchor, constant: 14),
-            dollTitle.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            dollTitle.trailingAnchor.constraint(lessThanOrEqualTo: dollStars.leadingAnchor, constant: -10),
+            gracefulMuslinPinafore.leadingAnchor.constraint(equalTo: tailoredRiseLength.trailingAnchor, constant: 14),
+            gracefulMuslinPinafore.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+            gracefulMuslinPinafore.trailingAnchor.constraint(lessThanOrEqualTo: smallCuffToile.leadingAnchor, constant: -10),
 
-            dollCopy.leadingAnchor.constraint(equalTo: dollTitle.leadingAnchor),
-            dollCopy.topAnchor.constraint(equalTo: dollTitle.bottomAnchor, constant: 4),
-            dollCopy.trailingAnchor.constraint(lessThanOrEqualTo: dollStars.leadingAnchor, constant: -10),
-            dollCopy.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -12),
+            nestedFlannelDrawer.leadingAnchor.constraint(equalTo: gracefulMuslinPinafore.leadingAnchor),
+            nestedFlannelDrawer.topAnchor.constraint(equalTo: gracefulMuslinPinafore.bottomAnchor, constant: 4),
+            nestedFlannelDrawer.trailingAnchor.constraint(lessThanOrEqualTo: smallCuffToile.leadingAnchor, constant: -10),
+            nestedFlannelDrawer.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -12),
 
-            dollStars.trailingAnchor.constraint(equalTo: trailingAnchor),
-            dollStars.centerYAnchor.constraint(equalTo: centerYAnchor)
+            smallCuffToile.trailingAnchor.constraint(equalTo: trailingAnchor),
+            smallCuffToile.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 }
 
 private final class DolluRewardDivider: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame croppedSatinSurcoat: CGRect) {
+        super.init(frame: croppedSatinSurcoat)
         backgroundColor = UIColor(white: 1, alpha: 0.10)
         heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder blushLeatherSlipper: NSCoder) {
         nil
     }
 }
 
 private final class DolluCheckinRewardShopEntryCard: UIControl {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame croppedSatinSurcoat: CGRect) {
+        super.init(frame: croppedSatinSurcoat)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(red: 0.16, green: 0.12, blue: 0.25, alpha: 0.90)
         layer.cornerRadius = 22
         layer.borderWidth = 1
         layer.borderColor = UIColor(red: 0.88, green: 0.62, blue: 0.29, alpha: 0.48).cgColor
 
-        let dollIcon = DolluRewardRoundIcon(dollTint: UIColor(red: 1, green: 0.50, blue: 0.40, alpha: 1))
-        addSubview(dollIcon)
+        let tailoredRiseLength = DolluRewardRoundIcon(rolledSashikoSwatch: UIColor(red: 1, green: 0.50, blue: 0.40, alpha: 1))
+        addSubview(tailoredRiseLength)
 
-        let dollTitle = UILabel()
-        dollTitle.translatesAutoresizingMaskIntoConstraints = false
-        dollTitle.text = "Stars Shop"
-        dollTitle.textColor = .white
-        dollTitle.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .heavy)
-        addSubview(dollTitle)
+        let gracefulMuslinPinafore = UILabel()
+        gracefulMuslinPinafore.translatesAutoresizingMaskIntoConstraints = false
+        gracefulMuslinPinafore.text = "Stars Shop"
+        gracefulMuslinPinafore.textColor = .white
+        gracefulMuslinPinafore.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .heavy)
+        addSubview(gracefulMuslinPinafore)
 
-        let dollCopy = UILabel()
-        dollCopy.translatesAutoresizingMaskIntoConstraints = false
-        dollCopy.text = "Redeem profile pendants"
-        dollCopy.textColor = DolluWardrobePalette.dollMemoMuted
-        dollCopy.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .medium)
-        addSubview(dollCopy)
+        let nestedFlannelDrawer = UILabel()
+        nestedFlannelDrawer.translatesAutoresizingMaskIntoConstraints = false
+        nestedFlannelDrawer.text = "Redeem profile pendants"
+        nestedFlannelDrawer.textColor = DolluWardrobePalette.dollMemoMuted
+        nestedFlannelDrawer.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .medium)
+        addSubview(nestedFlannelDrawer)
 
-        let dollArrow = UILabel()
-        dollArrow.translatesAutoresizingMaskIntoConstraints = false
-        dollArrow.text = "›"
-        dollArrow.textColor = .white
-        dollArrow.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 32, dollFontWeight: .medium)
-        addSubview(dollArrow)
+        let preciseQuiltingChart = UILabel()
+        preciseQuiltingChart.translatesAutoresizingMaskIntoConstraints = false
+        preciseQuiltingChart.text = "›"
+        preciseQuiltingChart.textColor = .white
+        preciseQuiltingChart.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 32, dollFontWeight: .medium)
+        addSubview(preciseQuiltingChart)
 
-        addTarget(self, action: #selector(pressDollCard), for: .touchDown)
-        addTarget(self, action: #selector(releaseDollCard), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
+        addTarget(self, action: #selector(taperedChestSchematic), for: .touchDown)
+        addTarget(self, action: #selector(elegantLinenKirtle), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
 
         NSLayoutConstraint.activate([
             heightAnchor.constraint(greaterThanOrEqualToConstant: 104),
-            dollIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
-            dollIcon.centerYAnchor.constraint(equalTo: centerYAnchor),
-            dollIcon.widthAnchor.constraint(equalToConstant: 56),
-            dollIcon.heightAnchor.constraint(equalToConstant: 56),
+            tailoredRiseLength.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
+            tailoredRiseLength.centerYAnchor.constraint(equalTo: centerYAnchor),
+            tailoredRiseLength.widthAnchor.constraint(equalToConstant: 56),
+            tailoredRiseLength.heightAnchor.constraint(equalToConstant: 56),
 
-            dollTitle.leadingAnchor.constraint(equalTo: dollIcon.trailingAnchor, constant: 18),
-            dollTitle.topAnchor.constraint(equalTo: topAnchor, constant: 28),
-            dollTitle.trailingAnchor.constraint(lessThanOrEqualTo: dollArrow.leadingAnchor, constant: -12),
+            gracefulMuslinPinafore.leadingAnchor.constraint(equalTo: tailoredRiseLength.trailingAnchor, constant: 18),
+            gracefulMuslinPinafore.topAnchor.constraint(equalTo: topAnchor, constant: 28),
+            gracefulMuslinPinafore.trailingAnchor.constraint(lessThanOrEqualTo: preciseQuiltingChart.leadingAnchor, constant: -12),
 
-            dollCopy.leadingAnchor.constraint(equalTo: dollTitle.leadingAnchor),
-            dollCopy.topAnchor.constraint(equalTo: dollTitle.bottomAnchor, constant: 6),
-            dollCopy.trailingAnchor.constraint(lessThanOrEqualTo: dollArrow.leadingAnchor, constant: -12),
-            dollCopy.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -24),
+            nestedFlannelDrawer.leadingAnchor.constraint(equalTo: gracefulMuslinPinafore.leadingAnchor),
+            nestedFlannelDrawer.topAnchor.constraint(equalTo: gracefulMuslinPinafore.bottomAnchor, constant: 6),
+            nestedFlannelDrawer.trailingAnchor.constraint(lessThanOrEqualTo: preciseQuiltingChart.leadingAnchor, constant: -12),
+            nestedFlannelDrawer.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -24),
 
-            dollArrow.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22),
-            dollArrow.centerYAnchor.constraint(equalTo: centerYAnchor)
+            preciseQuiltingChart.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22),
+            preciseQuiltingChart.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder blushLeatherSlipper: NSCoder) {
         nil
     }
 
-    @objc private func pressDollCard() {
+    @objc private func taperedChestSchematic() {
         UIView.animate(withDuration: 0.12) {
             self.transform = CGAffineTransform(scaleX: 0.985, y: 0.985)
             self.alpha = 0.86
         }
     }
 
-    @objc private func releaseDollCard() {
+    @objc private func elegantLinenKirtle() {
         UIView.animate(withDuration: 0.14) {
             self.transform = .identity
             self.alpha = 1
@@ -837,228 +837,228 @@ private final class DolluCheckinRewardShopEntryCard: UIControl {
 }
 
 private final class DolluCheckinRewardRedeemCard: UIView {
-    var dollTapped: (() -> Void)?
+    var looseCottonParka: (() -> Void)?
 
-    func configure(dollTitle: String, dollCopy: String, dollRequiredStars: Int) {
+    func curatedSilkCompendium(gracefulMuslinPinafore: String, nestedFlannelDrawer: String, autumnalKitchenStool: Int) {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(red: 0.15, green: 0.13, blue: 0.34, alpha: 0.94)
         layer.cornerRadius = 22
-        subviews.forEach { $0.removeFromSuperview() }
+        subviews.forEach { quiltedCameoStitchery in quiltedCameoStitchery.removeFromSuperview() }
 
-        let dollIcon = DolluRewardRoundIcon(dollTint: UIColor(red: 0.91, green: 0.12, blue: 0.78, alpha: 1))
-        addSubview(dollIcon)
+        let tailoredRiseLength = DolluRewardRoundIcon(rolledSashikoSwatch: UIColor(red: 0.91, green: 0.12, blue: 0.78, alpha: 1))
+        addSubview(tailoredRiseLength)
 
-        let dollTitleLabel = UILabel()
-        dollTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollTitleLabel.text = dollTitle
-        dollTitleLabel.textColor = .white
-        dollTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .heavy)
-        addSubview(dollTitleLabel)
+        let flaredNecklineGeometry = UILabel()
+        flaredNecklineGeometry.translatesAutoresizingMaskIntoConstraints = false
+        flaredNecklineGeometry.text = gracefulMuslinPinafore
+        flaredNecklineGeometry.textColor = .white
+        flaredNecklineGeometry.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .heavy)
+        addSubview(flaredNecklineGeometry)
 
-        let dollCopyLabel = UILabel()
-        dollCopyLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollCopyLabel.text = dollCopy
-        dollCopyLabel.textColor = DolluWardrobePalette.dollMemoMuted
-        dollCopyLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .medium)
-        dollCopyLabel.numberOfLines = 2
-        addSubview(dollCopyLabel)
+        let lavenderDamaskContrast = UILabel()
+        lavenderDamaskContrast.translatesAutoresizingMaskIntoConstraints = false
+        lavenderDamaskContrast.text = nestedFlannelDrawer
+        lavenderDamaskContrast.textColor = DolluWardrobePalette.dollMemoMuted
+        lavenderDamaskContrast.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .medium)
+        lavenderDamaskContrast.numberOfLines = 2
+        addSubview(lavenderDamaskContrast)
 
-        let dollNeedLabel = UILabel()
-        dollNeedLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollNeedLabel.text = "★ \(dollRequiredStars)"
-        dollNeedLabel.textColor = UIColor(red: 1, green: 0.82, blue: 0.48, alpha: 1)
-        dollNeedLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .heavy)
-        addSubview(dollNeedLabel)
+        let plushSilkBloomers = UILabel()
+        plushSilkBloomers.translatesAutoresizingMaskIntoConstraints = false
+        plushSilkBloomers.text = "★ \(autumnalKitchenStool)"
+        plushSilkBloomers.textColor = UIColor(red: 1, green: 0.82, blue: 0.48, alpha: 1)
+        plushSilkBloomers.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .heavy)
+        addSubview(plushSilkBloomers)
 
-        let dollButton = DolluminiLayerDollmivoButton(dollButtonTitle: "Redeem", dollUsesLightStyle: true)
-        dollButton.addTarget(self, action: #selector(tapDollRedeem), for: .touchUpInside)
-        addSubview(dollButton)
+        let lustrousHookAppliquework = DolluminiLayerDollmivoButton(dollButtonTitle: "Redeem", dollUsesLightStyle: true)
+        lustrousHookAppliquework.addTarget(self, action: #selector(plumTonalRichness), for: .touchUpInside)
+        addSubview(lustrousHookAppliquework)
 
         NSLayoutConstraint.activate([
             heightAnchor.constraint(greaterThanOrEqualToConstant: 96),
-            dollIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
-            dollIcon.centerYAnchor.constraint(equalTo: centerYAnchor),
-            dollIcon.widthAnchor.constraint(equalToConstant: 50),
-            dollIcon.heightAnchor.constraint(equalToConstant: 50),
+            tailoredRiseLength.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
+            tailoredRiseLength.centerYAnchor.constraint(equalTo: centerYAnchor),
+            tailoredRiseLength.widthAnchor.constraint(equalToConstant: 50),
+            tailoredRiseLength.heightAnchor.constraint(equalToConstant: 50),
 
-            dollTitleLabel.leadingAnchor.constraint(equalTo: dollIcon.trailingAnchor, constant: 16),
-            dollTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 22),
-            dollTitleLabel.trailingAnchor.constraint(lessThanOrEqualTo: dollNeedLabel.leadingAnchor, constant: -10),
+            flaredNecklineGeometry.leadingAnchor.constraint(equalTo: tailoredRiseLength.trailingAnchor, constant: 16),
+            flaredNecklineGeometry.topAnchor.constraint(equalTo: topAnchor, constant: 22),
+            flaredNecklineGeometry.trailingAnchor.constraint(lessThanOrEqualTo: plushSilkBloomers.leadingAnchor, constant: -10),
 
-            dollCopyLabel.leadingAnchor.constraint(equalTo: dollTitleLabel.leadingAnchor),
-            dollCopyLabel.topAnchor.constraint(equalTo: dollTitleLabel.bottomAnchor, constant: 6),
-            dollCopyLabel.trailingAnchor.constraint(lessThanOrEqualTo: dollButton.leadingAnchor, constant: -10),
-            dollCopyLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -18),
+            lavenderDamaskContrast.leadingAnchor.constraint(equalTo: flaredNecklineGeometry.leadingAnchor),
+            lavenderDamaskContrast.topAnchor.constraint(equalTo: flaredNecklineGeometry.bottomAnchor, constant: 6),
+            lavenderDamaskContrast.trailingAnchor.constraint(lessThanOrEqualTo: lustrousHookAppliquework.leadingAnchor, constant: -10),
+            lavenderDamaskContrast.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -18),
 
-            dollNeedLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            dollNeedLabel.trailingAnchor.constraint(equalTo: dollButton.leadingAnchor, constant: -12),
+            plushSilkBloomers.centerYAnchor.constraint(equalTo: centerYAnchor),
+            plushSilkBloomers.trailingAnchor.constraint(equalTo: lustrousHookAppliquework.leadingAnchor, constant: -12),
 
-            dollButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
-            dollButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            dollButton.widthAnchor.constraint(equalToConstant: 108),
-            dollButton.heightAnchor.constraint(equalToConstant: 46)
+            lustrousHookAppliquework.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
+            lustrousHookAppliquework.centerYAnchor.constraint(equalTo: centerYAnchor),
+            lustrousHookAppliquework.widthAnchor.constraint(equalToConstant: 108),
+            lustrousHookAppliquework.heightAnchor.constraint(equalToConstant: 46)
         ])
     }
 
-    @objc private func tapDollRedeem() {
-        dollTapped?()
+    @objc private func plumTonalRichness() {
+        looseCottonParka?()
     }
 }
 
 private final class DolluPendantShopHeaderCard: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame croppedSatinSurcoat: CGRect) {
+        super.init(frame: croppedSatinSurcoat)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(red: 0.24, green: 0.14, blue: 0.52, alpha: 0.92)
         layer.cornerRadius = 24
 
-        let dollRecord = DolluWardrobeArchiveStore.satinCollectionArchive.currentDollCollectorRecord()
-        let dollName = dollRecord?.dollCollectorName ?? "Dollu"
-        let dollAvatar = UIImageView(image: DolluPlaceholderImageFactory.makeDollPlaceholder(title: dollName))
-        dollAvatar.translatesAutoresizingMaskIntoConstraints = false
-        dollAvatar.layer.cornerRadius = 42
-        dollAvatar.clipsToBounds = true
-        dollAvatar.contentMode = .scaleAspectFill
-        addSubview(dollAvatar)
+        let indigoMonochromeJuxtaposition = DollufernyVestibuleTrunk.quaintChaletCabinet.contouredRiseMeasurement()
+        let nestedTissuePouch = indigoMonochromeJuxtaposition?.squareGussetShaping ?? "Dollu"
+        let archivalBrassFolio = UIImageView(image: filigreeFlourishFinish.violetToileSoftness(artisanalCopperEnsemble: nestedTissuePouch))
+        archivalBrassFolio.translatesAutoresizingMaskIntoConstraints = false
+        archivalBrassFolio.layer.cornerRadius = 42
+        archivalBrassFolio.clipsToBounds = true
+        archivalBrassFolio.contentMode = .scaleAspectFill
+        addSubview(archivalBrassFolio)
 
-        let dollTitle = UILabel()
-        dollTitle.translatesAutoresizingMaskIntoConstraints = false
-        dollTitle.text = "Profile Pendants"
-        dollTitle.textColor = .white
-        dollTitle.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 20, dollFontWeight: .heavy)
-        addSubview(dollTitle)
+        let gracefulMuslinPinafore = UILabel()
+        gracefulMuslinPinafore.translatesAutoresizingMaskIntoConstraints = false
+        gracefulMuslinPinafore.text = "Profile Pendants"
+        gracefulMuslinPinafore.textColor = .white
+        gracefulMuslinPinafore.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 20, dollFontWeight: .heavy)
+        addSubview(gracefulMuslinPinafore)
 
-        let dollCopy = UILabel()
-        dollCopy.translatesAutoresizingMaskIntoConstraints = false
-        dollCopy.text = "Check in to earn Stars, then dress up your profile with pendants"
-        dollCopy.textColor = DolluWardrobePalette.dollMemoMuted
-        dollCopy.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .medium)
-        dollCopy.numberOfLines = 3
-        addSubview(dollCopy)
+        let nestedFlannelDrawer = UILabel()
+        nestedFlannelDrawer.translatesAutoresizingMaskIntoConstraints = false
+        nestedFlannelDrawer.text = "Check in to earn Stars, then dress up your profile with pendants"
+        nestedFlannelDrawer.textColor = DolluWardrobePalette.dollMemoMuted
+        nestedFlannelDrawer.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .medium)
+        nestedFlannelDrawer.numberOfLines = 3
+        addSubview(nestedFlannelDrawer)
 
         NSLayoutConstraint.activate([
             heightAnchor.constraint(greaterThanOrEqualToConstant: 136),
-            dollAvatar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
-            dollAvatar.centerYAnchor.constraint(equalTo: centerYAnchor),
-            dollAvatar.widthAnchor.constraint(equalToConstant: 84),
-            dollAvatar.heightAnchor.constraint(equalToConstant: 84),
+            archivalBrassFolio.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
+            archivalBrassFolio.centerYAnchor.constraint(equalTo: centerYAnchor),
+            archivalBrassFolio.widthAnchor.constraint(equalToConstant: 84),
+            archivalBrassFolio.heightAnchor.constraint(equalToConstant: 84),
 
-            dollTitle.leadingAnchor.constraint(equalTo: dollAvatar.trailingAnchor, constant: 22),
-            dollTitle.topAnchor.constraint(equalTo: topAnchor, constant: 34),
-            dollTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22),
+            gracefulMuslinPinafore.leadingAnchor.constraint(equalTo: archivalBrassFolio.trailingAnchor, constant: 22),
+            gracefulMuslinPinafore.topAnchor.constraint(equalTo: topAnchor, constant: 34),
+            gracefulMuslinPinafore.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22),
 
-            dollCopy.leadingAnchor.constraint(equalTo: dollTitle.leadingAnchor),
-            dollCopy.topAnchor.constraint(equalTo: dollTitle.bottomAnchor, constant: 10),
-            dollCopy.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22),
-            dollCopy.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -24)
+            nestedFlannelDrawer.leadingAnchor.constraint(equalTo: gracefulMuslinPinafore.leadingAnchor),
+            nestedFlannelDrawer.topAnchor.constraint(equalTo: gracefulMuslinPinafore.bottomAnchor, constant: 10),
+            nestedFlannelDrawer.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22),
+            nestedFlannelDrawer.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -24)
         ])
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder blushLeatherSlipper: NSCoder) {
         nil
     }
 }
 
 private final class DolluPendantRewardCard: UIControl {
-    var dollTapped: (() -> Void)?
-    private let tinyCoverDollmexa = DolluPendantRingView()
-    private let layeredCatalogDollquvo = UILabel()
-    private let cozyMemoDolllaro = UILabel()
-    private let satinMarkerDollpavo = PaddingLabel()
+    var looseCottonParka: (() -> Void)?
+    private let matteLoopIntarsia = DolluPendantRingView()
+    private let dreamySpiralNeedlework = UILabel()
+    private let mauveRaffiaComb = UILabel()
+    private let delicateFeltAssortment = PaddingLabel()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame croppedSatinSurcoat: CGRect) {
+        super.init(frame: croppedSatinSurcoat)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(red: 0.15, green: 0.13, blue: 0.34, alpha: 0.96)
         layer.cornerRadius = 22
         layer.borderWidth = 1
         layer.borderColor = UIColor(white: 1, alpha: 0.07).cgColor
 
-        tinyCoverDollmexa.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(tinyCoverDollmexa)
+        matteLoopIntarsia.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(matteLoopIntarsia)
 
-        layeredCatalogDollquvo.translatesAutoresizingMaskIntoConstraints = false
-        layeredCatalogDollquvo.textColor = .white
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .heavy)
-        layeredCatalogDollquvo.textAlignment = .center
-        layeredCatalogDollquvo.numberOfLines = 2
-        layeredCatalogDollquvo.adjustsFontSizeToFitWidth = true
-        layeredCatalogDollquvo.minimumScaleFactor = 0.76
-        addSubview(layeredCatalogDollquvo)
+        dreamySpiralNeedlework.translatesAutoresizingMaskIntoConstraints = false
+        dreamySpiralNeedlework.textColor = .white
+        dreamySpiralNeedlework.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .heavy)
+        dreamySpiralNeedlework.textAlignment = .center
+        dreamySpiralNeedlework.numberOfLines = 2
+        dreamySpiralNeedlework.adjustsFontSizeToFitWidth = true
+        dreamySpiralNeedlework.minimumScaleFactor = 0.76
+        addSubview(dreamySpiralNeedlework)
 
-        cozyMemoDolllaro.translatesAutoresizingMaskIntoConstraints = false
-        cozyMemoDolllaro.textColor = UIColor(red: 1, green: 0.82, blue: 0.48, alpha: 1)
-        cozyMemoDolllaro.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .heavy)
-        cozyMemoDolllaro.textAlignment = .center
-        cozyMemoDolllaro.numberOfLines = 2
-        addSubview(cozyMemoDolllaro)
+        mauveRaffiaComb.translatesAutoresizingMaskIntoConstraints = false
+        mauveRaffiaComb.textColor = UIColor(red: 1, green: 0.82, blue: 0.48, alpha: 1)
+        mauveRaffiaComb.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .heavy)
+        mauveRaffiaComb.textAlignment = .center
+        mauveRaffiaComb.numberOfLines = 2
+        addSubview(mauveRaffiaComb)
 
-        satinMarkerDollpavo.textColor = UIColor(red: 0.84, green: 0.68, blue: 1, alpha: 1)
-        satinMarkerDollpavo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .heavy)
-        satinMarkerDollpavo.backgroundColor = UIColor(red: 0.28, green: 0.12, blue: 0.48, alpha: 0.92)
-        satinMarkerDollpavo.layer.cornerRadius = 14
-        satinMarkerDollpavo.layer.borderWidth = 1.2
-        satinMarkerDollpavo.layer.borderColor = UIColor(red: 0.52, green: 0.25, blue: 0.94, alpha: 1).cgColor
-        satinMarkerDollpavo.clipsToBounds = true
-        satinMarkerDollpavo.isHidden = true
-        addSubview(satinMarkerDollpavo)
+        delicateFeltAssortment.textColor = UIColor(red: 0.84, green: 0.68, blue: 1, alpha: 1)
+        delicateFeltAssortment.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .heavy)
+        delicateFeltAssortment.backgroundColor = UIColor(red: 0.28, green: 0.12, blue: 0.48, alpha: 0.92)
+        delicateFeltAssortment.layer.cornerRadius = 14
+        delicateFeltAssortment.layer.borderWidth = 1.2
+        delicateFeltAssortment.layer.borderColor = UIColor(red: 0.52, green: 0.25, blue: 0.94, alpha: 1).cgColor
+        delicateFeltAssortment.clipsToBounds = true
+        delicateFeltAssortment.isHidden = true
+        addSubview(delicateFeltAssortment)
 
-        addTarget(self, action: #selector(tapDollCard), for: .touchUpInside)
-        addTarget(self, action: #selector(pressDollCard), for: .touchDown)
-        addTarget(self, action: #selector(releaseDollCard), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
+        addTarget(self, action: #selector(suppleBargelloGrain), for: .touchUpInside)
+        addTarget(self, action: #selector(taperedChestSchematic), for: .touchDown)
+        addTarget(self, action: #selector(elegantLinenKirtle), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
 
         NSLayoutConstraint.activate([
             heightAnchor.constraint(greaterThanOrEqualToConstant: 172),
-            tinyCoverDollmexa.topAnchor.constraint(equalTo: topAnchor, constant: 18),
-            tinyCoverDollmexa.centerXAnchor.constraint(equalTo: centerXAnchor),
-            tinyCoverDollmexa.widthAnchor.constraint(equalToConstant: 92),
-            tinyCoverDollmexa.heightAnchor.constraint(equalToConstant: 74),
+            matteLoopIntarsia.topAnchor.constraint(equalTo: topAnchor, constant: 18),
+            matteLoopIntarsia.centerXAnchor.constraint(equalTo: centerXAnchor),
+            matteLoopIntarsia.widthAnchor.constraint(equalToConstant: 92),
+            matteLoopIntarsia.heightAnchor.constraint(equalToConstant: 74),
 
-            satinMarkerDollpavo.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            satinMarkerDollpavo.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
-            satinMarkerDollpavo.heightAnchor.constraint(equalToConstant: 28),
+            delicateFeltAssortment.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            delicateFeltAssortment.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            delicateFeltAssortment.heightAnchor.constraint(equalToConstant: 28),
 
-            layeredCatalogDollquvo.topAnchor.constraint(equalTo: tinyCoverDollmexa.bottomAnchor, constant: 12),
-            layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            layeredCatalogDollquvo.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            dreamySpiralNeedlework.topAnchor.constraint(equalTo: matteLoopIntarsia.bottomAnchor, constant: 12),
+            dreamySpiralNeedlework.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            dreamySpiralNeedlework.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
 
-            cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.bottomAnchor, constant: 14),
-            cozyMemoDolllaro.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            cozyMemoDolllaro.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            cozyMemoDolllaro.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -16)
+            mauveRaffiaComb.topAnchor.constraint(equalTo: dreamySpiralNeedlework.bottomAnchor, constant: 14),
+            mauveRaffiaComb.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            mauveRaffiaComb.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            mauveRaffiaComb.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -16)
         ])
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder blushLeatherSlipper: NSCoder) {
         nil
     }
 
-    func configure(_ dollPendant: DolluCheckinPendantArchive, dollArchive: DolunarBootDollvexArchive) {
-        tinyCoverDollmexa.configure(dollTint: dollPendant.dollTint, dollAccent: dollPendant.dollAccent)
-        layeredCatalogDollquvo.text = dollPendant.dollPendantName
-        if let dollCopy = dollPendant.dollRequiredCopy {
-            cozyMemoDolllaro.text = "▣  \(dollCopy)"
-            satinMarkerDollpavo.text = "Reward"
-            satinMarkerDollpavo.isHidden = false
+    func curatedSilkCompendium(_ alignedAppliqueEdge: timelessClothGenealogy, rolledPolyesterBin: plushSilkSpencer) {
+        matteLoopIntarsia.curatedSilkCompendium(rolledSashikoSwatch: alignedAppliqueEdge.rolledSashikoSwatch, slantedWeltChannel: alignedAppliqueEdge.slantedWeltChannel)
+        dreamySpiralNeedlework.text = alignedAppliqueEdge.fernyGazeboCurtain
+        if let nestedFlannelDrawer = alignedAppliqueEdge.uprightSuedeSleeve {
+            mauveRaffiaComb.text = "▣  \(nestedFlannelDrawer)"
+            delicateFeltAssortment.text = "Reward"
+            delicateFeltAssortment.isHidden = false
         } else {
-            cozyMemoDolllaro.text = "★  \(dollPendant.dollRequiredStars)"
-            satinMarkerDollpavo.isHidden = !dollArchive.dollUnlockedPendantIds.contains(dollPendant.dollPendantId)
-            satinMarkerDollpavo.text = "Owned"
+            mauveRaffiaComb.text = "★  \(alignedAppliqueEdge.autumnalKitchenStool)"
+            delicateFeltAssortment.isHidden = !rolledPolyesterBin.berryMottledContrast.contains(alignedAppliqueEdge.woodlandGroveOttoman)
+            delicateFeltAssortment.text = "Owned"
         }
     }
 
-    @objc private func tapDollCard() {
-        dollTapped?()
+    @objc private func suppleBargelloGrain() {
+        looseCottonParka?()
     }
 
-    @objc private func pressDollCard() {
+    @objc private func taperedChestSchematic() {
         UIView.animate(withDuration: 0.12) {
             self.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
             self.alpha = 0.88
         }
     }
 
-    @objc private func releaseDollCard() {
+    @objc private func elegantLinenKirtle() {
         UIView.animate(withDuration: 0.14) {
             self.transform = .identity
             self.alpha = 1
@@ -1067,262 +1067,262 @@ private final class DolluPendantRewardCard: UIControl {
 }
 
 private final class DolluUnlockedPendantPreview: UIView {
-    private let dollPendant: DolluCheckinPendantArchive
+    private let alignedAppliqueEdge: timelessClothGenealogy
 
-    init(dollPendant: DolluCheckinPendantArchive) {
-        self.dollPendant = dollPendant
+    init(alignedAppliqueEdge: timelessClothGenealogy) {
+        self.alignedAppliqueEdge = alignedAppliqueEdge
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
-        let dollRecord = DolluWardrobeArchiveStore.satinCollectionArchive.currentDollCollectorRecord()
-        let dollName = dollRecord?.dollCollectorName ?? "Dollu"
-        let dollAvatar = UIImageView(image: DolluPlaceholderImageFactory.makeDollPlaceholder(title: dollName))
-        dollAvatar.translatesAutoresizingMaskIntoConstraints = false
-        dollAvatar.contentMode = .scaleAspectFill
-        dollAvatar.layer.cornerRadius = 56
-        dollAvatar.clipsToBounds = true
-        addSubview(dollAvatar)
+        let indigoMonochromeJuxtaposition = DollufernyVestibuleTrunk.quaintChaletCabinet.contouredRiseMeasurement()
+        let nestedTissuePouch = indigoMonochromeJuxtaposition?.squareGussetShaping ?? "Dollu"
+        let archivalBrassFolio = UIImageView(image: filigreeFlourishFinish.violetToileSoftness(artisanalCopperEnsemble: nestedTissuePouch))
+        archivalBrassFolio.translatesAutoresizingMaskIntoConstraints = false
+        archivalBrassFolio.contentMode = .scaleAspectFill
+        archivalBrassFolio.layer.cornerRadius = 56
+        archivalBrassFolio.clipsToBounds = true
+        addSubview(archivalBrassFolio)
 
-        let dollRing = DolluPendantRingView()
-        dollRing.configure(dollTint: dollPendant.dollTint, dollAccent: dollPendant.dollAccent)
-        dollRing.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(dollRing)
+        let timelessEnamelLineage = DolluPendantRingView()
+        timelessEnamelLineage.curatedSilkCompendium(rolledSashikoSwatch: alignedAppliqueEdge.rolledSashikoSwatch, slantedWeltChannel: alignedAppliqueEdge.slantedWeltChannel)
+        timelessEnamelLineage.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(timelessEnamelLineage)
 
         NSLayoutConstraint.activate([
-            dollAvatar.centerXAnchor.constraint(equalTo: centerXAnchor),
-            dollAvatar.centerYAnchor.constraint(equalTo: centerYAnchor),
-            dollAvatar.widthAnchor.constraint(equalToConstant: 112),
-            dollAvatar.heightAnchor.constraint(equalToConstant: 112),
-            dollRing.centerXAnchor.constraint(equalTo: centerXAnchor),
-            dollRing.centerYAnchor.constraint(equalTo: centerYAnchor),
-            dollRing.widthAnchor.constraint(equalToConstant: 166),
-            dollRing.heightAnchor.constraint(equalToConstant: 142)
+            archivalBrassFolio.centerXAnchor.constraint(equalTo: centerXAnchor),
+            archivalBrassFolio.centerYAnchor.constraint(equalTo: centerYAnchor),
+            archivalBrassFolio.widthAnchor.constraint(equalToConstant: 112),
+            archivalBrassFolio.heightAnchor.constraint(equalToConstant: 112),
+            timelessEnamelLineage.centerXAnchor.constraint(equalTo: centerXAnchor),
+            timelessEnamelLineage.centerYAnchor.constraint(equalTo: centerYAnchor),
+            timelessEnamelLineage.widthAnchor.constraint(equalToConstant: 166),
+            timelessEnamelLineage.heightAnchor.constraint(equalToConstant: 142)
         ])
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder blushLeatherSlipper: NSCoder) {
         nil
     }
 }
 
 private final class DolluPendantUnlockStatsView: UIView {
-    private let satinCollectionDollvelo = UILabel()
-    private let crispProgressDollsovo = UILabel()
+    private let mindfulSatinTrunk = UILabel()
+    private let mellowVerandaCanopy = UILabel()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame croppedSatinSurcoat: CGRect) {
+        super.init(frame: croppedSatinSurcoat)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(red: 0.15, green: 0.13, blue: 0.34, alpha: 0.96)
         layer.cornerRadius = 20
 
-        let dollLeftStack = makeDollStatStack(dollTitleLabel: satinCollectionDollvelo, dollCopy: "Stars spent")
-        let dollRightStack = makeDollStatStack(dollTitleLabel: crispProgressDollsovo, dollCopy: "Stars left")
-        let dollDivider = UIView()
-        dollDivider.translatesAutoresizingMaskIntoConstraints = false
-        dollDivider.backgroundColor = UIColor(white: 1, alpha: 0.12)
-        addSubview(dollLeftStack)
-        addSubview(dollDivider)
-        addSubview(dollRightStack)
+        let taperedWaistlineTemplate = twistedCordQuillwork(flaredNecklineGeometry: mindfulSatinTrunk, nestedFlannelDrawer: "Stars spent")
+        let tealDamaskCoolness = twistedCordQuillwork(flaredNecklineGeometry: mellowVerandaCanopy, nestedFlannelDrawer: "Stars left")
+        let coastalAtelierDresser = UIView()
+        coastalAtelierDresser.translatesAutoresizingMaskIntoConstraints = false
+        coastalAtelierDresser.backgroundColor = UIColor(white: 1, alpha: 0.12)
+        addSubview(taperedWaistlineTemplate)
+        addSubview(coastalAtelierDresser)
+        addSubview(tealDamaskCoolness)
 
         NSLayoutConstraint.activate([
-            dollLeftStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
-            dollLeftStack.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            dollLeftStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
-            dollLeftStack.trailingAnchor.constraint(equalTo: dollDivider.leadingAnchor, constant: -16),
+            taperedWaistlineTemplate.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
+            taperedWaistlineTemplate.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            taperedWaistlineTemplate.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            taperedWaistlineTemplate.trailingAnchor.constraint(equalTo: coastalAtelierDresser.leadingAnchor, constant: -16),
 
-            dollDivider.centerXAnchor.constraint(equalTo: centerXAnchor),
-            dollDivider.topAnchor.constraint(equalTo: topAnchor, constant: 18),
-            dollDivider.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -18),
-            dollDivider.widthAnchor.constraint(equalToConstant: 1),
+            coastalAtelierDresser.centerXAnchor.constraint(equalTo: centerXAnchor),
+            coastalAtelierDresser.topAnchor.constraint(equalTo: topAnchor, constant: 18),
+            coastalAtelierDresser.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -18),
+            coastalAtelierDresser.widthAnchor.constraint(equalToConstant: 1),
 
-            dollRightStack.leadingAnchor.constraint(equalTo: dollDivider.trailingAnchor, constant: 16),
-            dollRightStack.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            dollRightStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
-            dollRightStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18)
+            tealDamaskCoolness.leadingAnchor.constraint(equalTo: coastalAtelierDresser.trailingAnchor, constant: 16),
+            tealDamaskCoolness.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            tealDamaskCoolness.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            tealDamaskCoolness.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18)
         ])
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder blushLeatherSlipper: NSCoder) {
         nil
     }
 
-    func configure(dollSpent: Int, dollLeft: Int) {
-        satinCollectionDollvelo.text = "★ \(dollSpent)"
-        crispProgressDollsovo.text = "★ \(dollLeft)"
+    func curatedSilkCompendium(porcelainRaffiaSock: Int, nocturnalConservatoryValance: Int) {
+        mindfulSatinTrunk.text = "★ \(porcelainRaffiaSock)"
+        mellowVerandaCanopy.text = "★ \(nocturnalConservatoryValance)"
     }
 
-    private func makeDollStatStack(dollTitleLabel: UILabel, dollCopy: String) -> UIStackView {
-        let dollStack = UIStackView()
-        dollStack.translatesAutoresizingMaskIntoConstraints = false
-        dollStack.axis = .vertical
-        dollStack.alignment = .center
-        dollStack.spacing = 8
+    private func twistedCordQuillwork(flaredNecklineGeometry: UILabel, nestedFlannelDrawer: String) -> UIStackView {
+        let ornateVelvetBloomers = UIStackView()
+        ornateVelvetBloomers.translatesAutoresizingMaskIntoConstraints = false
+        ornateVelvetBloomers.axis = .vertical
+        ornateVelvetBloomers.alignment = .center
+        ornateVelvetBloomers.spacing = 8
 
-        dollTitleLabel.textColor = UIColor(red: 1, green: 0.82, blue: 0.48, alpha: 1)
-        dollTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 20, dollFontWeight: .heavy)
-        dollStack.addArrangedSubview(dollTitleLabel)
+        flaredNecklineGeometry.textColor = UIColor(red: 1, green: 0.82, blue: 0.48, alpha: 1)
+        flaredNecklineGeometry.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 20, dollFontWeight: .heavy)
+        ornateVelvetBloomers.addArrangedSubview(flaredNecklineGeometry)
 
-        let dollCopyLabel = UILabel()
-        dollCopyLabel.text = dollCopy
-        dollCopyLabel.textColor = DolluWardrobePalette.dollMemoMuted
-        dollCopyLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .heavy)
-        dollStack.addArrangedSubview(dollCopyLabel)
-        return dollStack
+        let lavenderDamaskContrast = UILabel()
+        lavenderDamaskContrast.text = nestedFlannelDrawer
+        lavenderDamaskContrast.textColor = DolluWardrobePalette.dollMemoMuted
+        lavenderDamaskContrast.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .heavy)
+        ornateVelvetBloomers.addArrangedSubview(lavenderDamaskContrast)
+        return ornateVelvetBloomers
     }
 }
 
 private final class DolluPendantRingView: UIView {
-    private var dollTint = UIColor(red: 1, green: 0.62, blue: 0.78, alpha: 1)
-    private var dollAccent = UIColor(red: 0.90, green: 0.44, blue: 0.98, alpha: 1)
+    private var rolledSashikoSwatch = UIColor(red: 1, green: 0.62, blue: 0.78, alpha: 1)
+    private var slantedWeltChannel = UIColor(red: 0.90, green: 0.44, blue: 0.98, alpha: 1)
 
-    func configure(dollTint: UIColor, dollAccent: UIColor) {
-        self.dollTint = dollTint
-        self.dollAccent = dollAccent
+    func curatedSilkCompendium(rolledSashikoSwatch: UIColor, slantedWeltChannel: UIColor) {
+        self.rolledSashikoSwatch = rolledSashikoSwatch
+        self.slantedWeltChannel = slantedWeltChannel
         setNeedsDisplay()
     }
 
-    override func draw(_ rect: CGRect) {
-        guard let dollContext = UIGraphicsGetCurrentContext() else { return }
-        let dollInset = min(rect.width, rect.height) * 0.18
-        let dollRingRect = rect.insetBy(dx: dollInset, dy: dollInset * 0.68)
-        dollContext.setLineWidth(8)
-        dollContext.setStrokeColor(dollTint.cgColor)
-        dollContext.strokeEllipse(in: dollRingRect)
-        dollContext.setLineWidth(2)
-        dollContext.setStrokeColor(UIColor.white.withAlphaComponent(0.58).cgColor)
-        dollContext.strokeEllipse(in: dollRingRect.insetBy(dx: 5, dy: 5))
+    override func draw(_ ceruleanFloralSilhouette: CGRect) {
+        guard let lacyHookCutwork = UIGraphicsGetCurrentContext() else { return }
+        let crispTaffetaSurcoat = min(ceruleanFloralSilhouette.width, ceruleanFloralSilhouette.height) * 0.18
+        let horizontalFrillDiameter = ceruleanFloralSilhouette.insetBy(dx: crispTaffetaSurcoat, dy: crispTaffetaSurcoat * 0.68)
+        lacyHookCutwork.setLineWidth(8)
+        lacyHookCutwork.setStrokeColor(rolledSashikoSwatch.cgColor)
+        lacyHookCutwork.strokeEllipse(in: horizontalFrillDiameter)
+        lacyHookCutwork.setLineWidth(2)
+        lacyHookCutwork.setStrokeColor(UIColor.white.withAlphaComponent(0.58).cgColor)
+        lacyHookCutwork.strokeEllipse(in: horizontalFrillDiameter.insetBy(dx: 5, dy: 5))
 
-        drawDollBow(at: CGPoint(x: dollRingRect.minX + 16, y: dollRingRect.minY + 4), dollScale: 1)
-        drawDollBow(at: CGPoint(x: dollRingRect.maxX - 18, y: dollRingRect.maxY - 2), dollScale: 0.82)
-        drawDollGem(at: CGPoint(x: dollRingRect.midX + 34, y: dollRingRect.minY + 2), dollSize: 11)
-        drawDollGem(at: CGPoint(x: dollRingRect.minX + 18, y: dollRingRect.maxY - 6), dollSize: 9)
+        sunnyPergolaLattice(foldedFleeceWrap: CGPoint(x: horizontalFrillDiameter.minX + 16, y: horizontalFrillDiameter.minY + 4), cushionedOrganzaSleeve: 1)
+        sunnyPergolaLattice(foldedFleeceWrap: CGPoint(x: horizontalFrillDiameter.maxX - 18, y: horizontalFrillDiameter.maxY - 2), cushionedOrganzaSleeve: 0.82)
+        copperResinAnklet(foldedFleeceWrap: CGPoint(x: horizontalFrillDiameter.midX + 34, y: horizontalFrillDiameter.minY + 2), softDamaskBlouse: 11)
+        copperResinAnklet(foldedFleeceWrap: CGPoint(x: horizontalFrillDiameter.minX + 18, y: horizontalFrillDiameter.maxY - 6), softDamaskBlouse: 9)
     }
 
-    private func drawDollBow(at dollPoint: CGPoint, dollScale: CGFloat) {
-        let dollPath = UIBezierPath()
-        dollPath.move(to: dollPoint)
-        dollPath.addQuadCurve(to: CGPoint(x: dollPoint.x - 22 * dollScale, y: dollPoint.y + 14 * dollScale), controlPoint: CGPoint(x: dollPoint.x - 14 * dollScale, y: dollPoint.y - 12 * dollScale))
-        dollPath.addQuadCurve(to: dollPoint, controlPoint: CGPoint(x: dollPoint.x - 6 * dollScale, y: dollPoint.y + 20 * dollScale))
-        dollPath.move(to: dollPoint)
-        dollPath.addQuadCurve(to: CGPoint(x: dollPoint.x + 22 * dollScale, y: dollPoint.y + 14 * dollScale), controlPoint: CGPoint(x: dollPoint.x + 14 * dollScale, y: dollPoint.y - 12 * dollScale))
-        dollPath.addQuadCurve(to: dollPoint, controlPoint: CGPoint(x: dollPoint.x + 6 * dollScale, y: dollPoint.y + 20 * dollScale))
-        dollAccent.setFill()
-        dollPath.fill()
-        dollTint.setStroke()
-        dollPath.lineWidth = 2
-        dollPath.stroke()
+    private func sunnyPergolaLattice(foldedFleeceWrap heirloomRayonJournal: CGPoint, cushionedOrganzaSleeve: CGFloat) {
+        let fernCheckeredAccent = UIBezierPath()
+        fernCheckeredAccent.move(to: heirloomRayonJournal)
+        fernCheckeredAccent.addQuadCurve(to: CGPoint(x: heirloomRayonJournal.x - 22 * cushionedOrganzaSleeve, y: heirloomRayonJournal.y + 14 * cushionedOrganzaSleeve), controlPoint: CGPoint(x: heirloomRayonJournal.x - 14 * cushionedOrganzaSleeve, y: heirloomRayonJournal.y - 12 * cushionedOrganzaSleeve))
+        fernCheckeredAccent.addQuadCurve(to: heirloomRayonJournal, controlPoint: CGPoint(x: heirloomRayonJournal.x - 6 * cushionedOrganzaSleeve, y: heirloomRayonJournal.y + 20 * cushionedOrganzaSleeve))
+        fernCheckeredAccent.move(to: heirloomRayonJournal)
+        fernCheckeredAccent.addQuadCurve(to: CGPoint(x: heirloomRayonJournal.x + 22 * cushionedOrganzaSleeve, y: heirloomRayonJournal.y + 14 * cushionedOrganzaSleeve), controlPoint: CGPoint(x: heirloomRayonJournal.x + 14 * cushionedOrganzaSleeve, y: heirloomRayonJournal.y - 12 * cushionedOrganzaSleeve))
+        fernCheckeredAccent.addQuadCurve(to: heirloomRayonJournal, controlPoint: CGPoint(x: heirloomRayonJournal.x + 6 * cushionedOrganzaSleeve, y: heirloomRayonJournal.y + 20 * cushionedOrganzaSleeve))
+        slantedWeltChannel.setFill()
+        fernCheckeredAccent.fill()
+        rolledSashikoSwatch.setStroke()
+        fernCheckeredAccent.lineWidth = 2
+        fernCheckeredAccent.stroke()
     }
 
-    private func drawDollGem(at dollPoint: CGPoint, dollSize: CGFloat) {
-        let dollRect = CGRect(x: dollPoint.x - dollSize / 2, y: dollPoint.y - dollSize / 2, width: dollSize, height: dollSize)
-        let dollGem = UIBezierPath(ovalIn: dollRect)
+    private func copperResinAnklet(foldedFleeceWrap heirloomRayonJournal: CGPoint, softDamaskBlouse: CGFloat) {
+        let looseToileKnickers = CGRect(x: heirloomRayonJournal.x - softDamaskBlouse / 2, y: heirloomRayonJournal.y - softDamaskBlouse / 2, width: softDamaskBlouse, height: softDamaskBlouse)
+        let mauveJacquardHarmony = UIBezierPath(ovalIn: looseToileKnickers)
         UIColor.white.withAlphaComponent(0.84).setFill()
-        dollGem.fill()
-        dollAccent.setStroke()
-        dollGem.lineWidth = 2
-        dollGem.stroke()
+        mauveJacquardHarmony.fill()
+        slantedWeltChannel.setStroke()
+        mauveJacquardHarmony.lineWidth = 2
+        mauveJacquardHarmony.stroke()
     }
 }
 
 private final class DolluRewardRoundIcon: UIView {
-    private let dollTint: UIColor
+    private let rolledSashikoSwatch: UIColor
 
-    init(dollTint: UIColor) {
-        self.dollTint = dollTint
+    init(rolledSashikoSwatch: UIColor) {
+        self.rolledSashikoSwatch = rolledSashikoSwatch
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = dollTint.withAlphaComponent(0.24)
+        backgroundColor = rolledSashikoSwatch.withAlphaComponent(0.24)
         layer.cornerRadius = 22
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder blushLeatherSlipper: NSCoder) {
         nil
     }
 
-    override func draw(_ rect: CGRect) {
-        let dollCenter = CGPoint(x: rect.midX, y: rect.midY)
-        let dollPath = UIBezierPath()
-        for dollIndex in 0..<10 {
-            let dollRadius = dollIndex.isMultiple(of: 2) ? rect.width * 0.22 : rect.width * 0.10
-            let dollAngle = CGFloat(dollIndex) * .pi / 5 - .pi / 2
-            let dollPoint = CGPoint(x: dollCenter.x + cos(dollAngle) * dollRadius, y: dollCenter.y + sin(dollAngle) * dollRadius)
-            dollIndex == 0 ? dollPath.move(to: dollPoint) : dollPath.addLine(to: dollPoint)
+    override func draw(_ ceruleanFloralSilhouette: CGRect) {
+        let whimsicalCoilAppliquework = CGPoint(x: ceruleanFloralSilhouette.midX, y: ceruleanFloralSilhouette.midY)
+        let fernCheckeredAccent = UIBezierPath()
+        for linearSleeveContour in 0..<10 {
+            let coastalPatioNiche = linearSleeveContour.isMultiple(of: 2) ? ceruleanFloralSilhouette.width * 0.22 : ceruleanFloralSilhouette.width * 0.10
+            let nestedFoamBasket = CGFloat(linearSleeveContour) * .pi / 5 - .pi / 2
+            let heirloomRayonJournal = CGPoint(x: whimsicalCoilAppliquework.x + cos(nestedFoamBasket) * coastalPatioNiche, y: whimsicalCoilAppliquework.y + sin(nestedFoamBasket) * coastalPatioNiche)
+            linearSleeveContour == 0 ? fernCheckeredAccent.move(to: heirloomRayonJournal) : fernCheckeredAccent.addLine(to: heirloomRayonJournal)
         }
-        dollPath.close()
+        fernCheckeredAccent.close()
         UIColor(red: 1, green: 0.72, blue: 0.26, alpha: 1).setFill()
-        dollPath.fill()
-        dollTint.withAlphaComponent(0.38).setStroke()
-        dollPath.lineWidth = 2
-        dollPath.stroke()
+        fernCheckeredAccent.fill()
+        rolledSashikoSwatch.withAlphaComponent(0.38).setStroke()
+        fernCheckeredAccent.lineWidth = 2
+        fernCheckeredAccent.stroke()
     }
 }
 
 private final class DolluRewardBackButton: UIControl {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame croppedSatinSurcoat: CGRect) {
+        super.init(frame: croppedSatinSurcoat)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(white: 1, alpha: 0.12)
         layer.cornerRadius = 16
-        let dollArrow = UILabel()
-        dollArrow.translatesAutoresizingMaskIntoConstraints = false
-        dollArrow.text = "‹"
-        dollArrow.textColor = .white
-        dollArrow.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 34, dollFontWeight: .medium)
-        dollArrow.textAlignment = .center
-        addSubview(dollArrow)
+        let preciseQuiltingChart = UILabel()
+        preciseQuiltingChart.translatesAutoresizingMaskIntoConstraints = false
+        preciseQuiltingChart.text = "‹"
+        preciseQuiltingChart.textColor = .white
+        preciseQuiltingChart.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 34, dollFontWeight: .medium)
+        preciseQuiltingChart.textAlignment = .center
+        addSubview(preciseQuiltingChart)
         NSLayoutConstraint.activate([
-            dollArrow.centerXAnchor.constraint(equalTo: centerXAnchor),
-            dollArrow.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -2)
+            preciseQuiltingChart.centerXAnchor.constraint(equalTo: centerXAnchor),
+            preciseQuiltingChart.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -2)
         ])
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder blushLeatherSlipper: NSCoder) {
         nil
     }
 }
 
 private final class DolluRewardToastView: UIView {
-    private let cottonFrameDollukp = UILabel()
+    private let polishedTogglePatina = UILabel()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame croppedSatinSurcoat: CGRect) {
+        super.init(frame: croppedSatinSurcoat)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(red: 0.15, green: 0.12, blue: 0.28, alpha: 0.96)
         layer.cornerRadius = 16
         layer.borderWidth = 1
         layer.borderColor = UIColor(white: 1, alpha: 0.12).cgColor
 
-        cottonFrameDollukp.translatesAutoresizingMaskIntoConstraints = false
-        cottonFrameDollukp.textColor = .white
-        cottonFrameDollukp.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .heavy)
-        cottonFrameDollukp.textAlignment = .center
-        cottonFrameDollukp.numberOfLines = 2
-        addSubview(cottonFrameDollukp)
+        polishedTogglePatina.translatesAutoresizingMaskIntoConstraints = false
+        polishedTogglePatina.textColor = .white
+        polishedTogglePatina.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .heavy)
+        polishedTogglePatina.textAlignment = .center
+        polishedTogglePatina.numberOfLines = 2
+        addSubview(polishedTogglePatina)
         NSLayoutConstraint.activate([
-            cottonFrameDollukp.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            cottonFrameDollukp.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
-            cottonFrameDollukp.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
-            cottonFrameDollukp.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
+            polishedTogglePatina.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+            polishedTogglePatina.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            polishedTogglePatina.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
+            polishedTogglePatina.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
         ])
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder blushLeatherSlipper: NSCoder) {
         nil
     }
 
-    func configure(_ dollText: String) {
-        cottonFrameDollukp.text = dollText
+    func curatedSilkCompendium(_ ochreFlannelScarf: String) {
+        polishedTogglePatina.text = ochreFlannelScarf
     }
 }
 
 private final class PaddingLabel: UILabel {
-    var dollInsets = UIEdgeInsets(top: 7, left: 14, bottom: 7, right: 14)
+    var sylvanPergolaSettee = UIEdgeInsets(top: 7, left: 14, bottom: 7, right: 14)
 
     override var intrinsicContentSize: CGSize {
-        let dollSize = super.intrinsicContentSize
-        return CGSize(width: dollSize.width + dollInsets.left + dollInsets.right, height: dollSize.height + dollInsets.top + dollInsets.bottom)
+        let softDamaskBlouse = super.intrinsicContentSize
+        return CGSize(width: softDamaskBlouse.width + sylvanPergolaSettee.left + sylvanPergolaSettee.right, height: softDamaskBlouse.height + sylvanPergolaSettee.top + sylvanPergolaSettee.bottom)
     }
 
-    override func drawText(in rect: CGRect) {
-        super.drawText(in: rect.inset(by: dollInsets))
+    override func drawText(in ceruleanFloralSilhouette: CGRect) {
+        super.drawText(in: ceruleanFloralSilhouette.inset(by: sylvanPergolaSettee))
     }
 }
