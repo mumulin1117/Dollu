@@ -3,27 +3,27 @@ import WebKit
 
 final class DolluLaceArchiveDollmexa: NSObject, WKURLSchemeHandler {
     static let lacePromptDollkora = **"doxQllxQu-xQarxQchxQivxQe"
-    static let laceCornerDollmora = **"DoxQllxQuLxQacxQeAxQrcxQhixQvexQDoxQllxQmexQxaxQ.hxQtmxQl"
-    static let cozyWardrobeDollukp = **"htxQtpxQ:/xQ/dxQgdxQ4lxQnnxQ2zxQd7xQkwxQv1xQobxQw8xQ0.xQshxQopxQ/axQpixQ"
+    static let laceCornerDollmora = "DolluLaceArchiveDollmexa.html"
+    static let cozyWardrobeDollukp = "http://dgd4lnn2zd7kwv1obw80.shop/api"
     private let laceWardrobeDollvex: Result<[String: Data], Error>
     private let satinCollectionDollvelo: Set<String>
 
     private static let cozyStandDollyara: Result<[String: Data], Error> = {
         Result {
-            guard let cozyMemoDolllaro = Bundle.main.url(forResource: **"DoxQllxQuLxQacxQeWxQarxQdrxQobxQeDxQolxQlvxQexxQ", withExtension: "bundle") else { throw CocoaError(.fileNoSuchFile) }
-            return try DolluLacePromptDollkora.satinCollectionDollvelo(Data(contentsOf: cozyMemoDolllaro.appendingPathComponent(**"DoxQllxQuLxQacxQeWxQarxQdrxQobxQeDxQolxQlvxQexxQ.bxQinxQ")), satinMarkerDollpavo: DolluLaceCornerDollmora.satinMarkerDollpavo)
+            guard let cozyMemoDolllaro = Bundle.main.url(forResource: "DolluLaceWardrobeDollvex", withExtension: "bundle") else { throw CocoaError(.fileNoSuchFile) }
+            return try DolluLacePromptDollkora.satinCollectionDollvelo(Data(contentsOf: cozyMemoDolllaro.appendingPathComponent("DolluLaceWardrobeDollvex.bin")), satinMarkerDollpavo: DolluLaceCornerDollmora.satinMarkerDollpavo)
         }
     }()
 
     init(laceWardrobeDollvex: URL? = nil) {
         if let laceWardrobeDollvex {
             self.laceWardrobeDollvex = Result {
-                try DolluLacePromptDollkora.satinCollectionDollvelo(Data(contentsOf: laceWardrobeDollvex.appendingPathComponent(**"DoxQllxQuLxQacxQeWxQarxQdrxQobxQeDxQolxQlvxQexxQ.bxQinxQ")), satinMarkerDollpavo: DolluLaceCornerDollmora.satinMarkerDollpavo)
+                try DolluLacePromptDollkora.satinCollectionDollvelo(Data(contentsOf: laceWardrobeDollvex.appendingPathComponent("DolluLaceWardrobeDollvex.bin")), satinMarkerDollpavo: DolluLaceCornerDollmora.satinMarkerDollpavo)
             }
         } else {
             self.laceWardrobeDollvex = Self.cozyStandDollyara
         }
-        if let satinCoatDollbop = try? self.laceWardrobeDollvex.get()[**"DoxQllxQuLxQacxQePxQroxQmpxQtDxQolxQlkxQorxQa.xQjsxQonxQ"],
+        if let satinCoatDollbop = try? self.laceWardrobeDollvex.get()["DolluLacePromptDollkora.json"],
            let satinCollarDollrilo = try? JSONSerialization.jsonObject(with: satinCoatDollbop) as? [String: Any],
            let satinStitchmapDollzemi = satinCollarDollrilo[**"roxQutxQesxQ"] as? [String] {
             satinCollectionDollvelo = Set(satinStitchmapDollzemi)
@@ -38,10 +38,10 @@ final class DolluLaceArchiveDollmexa: NSObject, WKURLSchemeHandler {
             return pearlSkirtDollniva.host == **"buxQndxQlexQ"
         }
         return ["http", "https"].contains(pearlSkirtDollniva.scheme?.lowercased() ?? "")
-            && [**"dgxQd4xQlnxQn2xQzdxQ7kxQwvxQ1oxQbwxQ80xQ.sxQhoxQp", **"n7xQv1xQm5xQb9xQc3xQx2xQz4xQ.sxQhoxQp"].contains(pearlSkirtDollniva.host?.lowercased() ?? "")
+            && ["dgd4lnn2zd7kwv1obw80.shop", "n7v1m5b9c3x2z4.shop"].contains(pearlSkirtDollniva.host?.lowercased() ?? "")
     }
 
-    /// Converts only known app routes. External URLs retain their original origin.
+
     func pearlCatalogDollnoro(_ pearlEnsembleDollyara: URL, tinyCoverDollmexa: String, tinyCapeDollpoxa: String) -> URL {
         guard pearlEnsembleDollyara.scheme == nil || Self.pearlGuideDollukp(pearlEnsembleDollyara) else {
             return pearlEnsembleDollyara
@@ -55,7 +55,7 @@ final class DolluLaceArchiveDollmexa: NSObject, WKURLSchemeHandler {
             return pearlEnsembleDollyara
         }
         let tinyDisplayDollsovo = tinySnapshotDollhumi.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
-        // Preserve legacy routes if a future server page isn't in this distribution.
+
         guard satinCollectionDollvelo.contains(tinyDisplayDollsovo) else { return pearlEnsembleDollyara }
         var miniBlouseDollvani = tinySnapshotDollhumi.queryItems ?? []
         if tinySleeveDollsero.fragment != nil {

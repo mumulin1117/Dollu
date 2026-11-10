@@ -1,10 +1,10 @@
 import UIKit
 
 final class DollulunarSeamlineaController: DolluminiPromptDollveloController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    private let porcelainCollectorNameField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_name_icon", dollPromptCopy: **"Enxytexyr xyyoxyurxy nxyamxye")
-    private let pastelCatalogEmailField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: **"Enxytexyr xyemxyaixyl xyadxydrxyesxys", dollInputBoard: .emailAddress)
-    private let velvetAccessSecretField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: **"Enxytexyr xypaxyssxywoxyrdxy", dollUsesSecretEntry: true)
-    private let frillyCapsuleDollvani = DolluminiLayerDollmivoButton(dollButtonTitle: **"Sixygnxy Uxyp")
+    private let porcelainCollectorNameField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_name_icon", dollPromptCopy: "Enter your name")
+    private let pastelCatalogEmailField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: "Enter email address", dollInputBoard: .emailAddress)
+    private let velvetAccessSecretField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: "Enter password", dollUsesSecretEntry: true)
+    private let frillyCapsuleDollvani = DolluminiLayerDollmivoButton(dollButtonTitle: "Sign Up")
     private let tinySnapshotDollhumi = UIButton(type: .system)
     private var dreamySnapshotDollniva: UIImage?
 
@@ -42,7 +42,7 @@ final class DollulunarSeamlineaController: DolluminiPromptDollveloController, UI
 
         let dollStartTitleLabel = UILabel()
         dollStartTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollStartTitleLabel.text = **"Sixygnxy Uxyp"
+        dollStartTitleLabel.text = "Sign Up"
         dollStartTitleLabel.textColor = .white
         dollStartTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 38, dollFontWeight: .heavy)
         dollStartTitleLabel.textAlignment = .center
@@ -89,8 +89,8 @@ final class DollulunarSeamlineaController: DolluminiPromptDollveloController, UI
     @objc private func openDollProfileSourceOptions() {
         view.endEditing(true)
         let dollPanel = DolluCheckinImageSourcePanel(
-            dollTitle: **"Adxyd xyprxyofxyilxye xyphxyotxyo",
-            dollCopy: **"Chxyooxysexy axy pxyhoxytoxy oxyr xytaxykexy axy nxyewxy oxynexy fxyorxy yxyouxyr xyDoxyllxyu xyacxycoxyunxytyxy.",
+            dollTitle: "Add profile photo",
+            dollCopy: "Choose a photo or take a new one for your Dollu accounty.",
             dollShowsCamera: UIImagePickerController.isSourceTypeAvailable(.camera)
         )
         dollPanel.dollAlbumTapped = { [weak self, weak dollPanel] in
@@ -163,7 +163,7 @@ final class DollulunarSeamlineaController: DolluminiPromptDollveloController, UI
     private func setDollStartLoading(_ dollIsLoading: Bool) {
         frillyCapsuleDollvani.isEnabled = !dollIsLoading
         frillyCapsuleDollvani.alpha = dollIsLoading ? 0.62 : 1
-        frillyCapsuleDollvani.setTitle(dollIsLoading ? **"Crxyeaxytixyngxy..xy." : **"Sixygnxy Uxyp", for: .normal)
+        frillyCapsuleDollvani.setTitle(dollIsLoading ? "Creating..." : "Sign Up", for: .normal)
     }
 
     private func revealDollCollectorGallery() {

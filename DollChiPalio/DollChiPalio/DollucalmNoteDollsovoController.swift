@@ -9,7 +9,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
     private let calmNoteDollsovo = DollucalmNoteDollsovoView()
     private let ribbonCategoryDollpiri = UIRefreshControl()
     private let floralHintDollvelo = UILabel()
-    private let satinMarkerDollpavo = DolluminiLayerDollmivoButton(dollButtonTitle: **"Rexytrxyy", dollUsesLightStyle: true)
+    private let satinMarkerDollpavo = DolluminiLayerDollmivoButton(dollButtonTitle: "Retry", dollUsesLightStyle: true)
     private let velvetPoseDollsero = DollupatternedCoatStrip()
     private let cottonFrameDollukp = DolludelicateLayerCard()
     private let patternedCollectionDollbop = DolludelicateAccessoryFeatureCard()
@@ -41,7 +41,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
         view.addSubview(polishedBackgroundDollquvo)
 
         sageLookbookDollmexa.translatesAutoresizingMaskIntoConstraints = false
-        sageLookbookDollmexa.text = **"CHxyECxyK-xyINxy"
+        sageLookbookDollmexa.text = "CHECK-IN"
         sageLookbookDollmexa.textColor = .white
         sageLookbookDollmexa.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(30, gentleGalleryDollvani: true)
         sageLookbookDollmexa.adjustsFontSizeToFitWidth = true
@@ -81,9 +81,9 @@ final class DollucalmNoteDollsovoController: UIViewController {
 
         satinPinboardDollvani.addArrangedSubview(velvetPoseDollsero)
         satinPinboardDollvani.addArrangedSubview(cottonFrameDollukp)
-        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: **"Buxyddxyy xyChxyecxyk-xyinxy", dollTrail: **"Chxyalxylexyngxye", dollUsesTag: true))
+        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: "Buddy Check-in", dollTrail: "Challenge", dollUsesTag: true))
         satinPinboardDollvani.addArrangedSubview(patternedCollectionDollbop)
-        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: **"Toxydaxyy'xys xyChxyecxyk-xyinxys", dollTrail: **"Paxyrtxynexyr xyinxyvixytexys", dollUsesTag: false))
+        satinPinboardDollvani.addArrangedSubview(makeDollSectionHeader(dollTitle: "Today's Check-ins", dollTrail: "Partner invites", dollUsesTag: false))
         satinPinboardDollvani.addArrangedSubview(bowChecklistDollmora)
 
         calmNoteDollsovo.translatesAutoresizingMaskIntoConstraints = false
@@ -189,7 +189,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
             satinMarkerDollpavo.isHidden = true
             return
         }
-        floralHintDollvelo.text = **"Chxyecxyk-xyinxy axyrcxyhixyvexy cxyouxyldxy nxyotxy bxye xyloxyadxyedxy."
+        floralHintDollvelo.text = "Check-in archive could not be loaded."
         floralHintDollvelo.isHidden = false
         satinMarkerDollpavo.isHidden = false
     }
@@ -199,7 +199,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
         cottonFrameDollukp.configure(dollCollector: dollArchive.dollCollector, dollDays: dollArchive.dollStreakDays)
 
         bowChecklistDollmora.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        let dollTodayInvites = dollArchive.dollPartners.filter { !$0.dollName.hasPrefix(**"Yoxyurxy ") }
+        let dollTodayInvites = dollArchive.dollPartners.filter { !$0.dollName.hasPrefix("Your ") }
         dollTodayInvites.forEach { dollPartner in
             let dollCard = DollucuratedApronTaskCard()
             dollCard.configure(dollPartner)
@@ -244,7 +244,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
             dollPartnerPreviewURL: dollPartner.dollPreviewURL,
             dollPartnerAvatarAssetName: dollPartner.dollAvatarAssetName,
             dollPartnerPreviewAssetName: dollPartner.dollPreviewAssetName,
-            dollThemeName: **"Paxystxyelxy Dxyayxy",
+            dollThemeName: "Pastel Day",
             dollHonorPointCount: dollPartner.dollStreakCount,
             dollCurrentUploadState: dollPartner.pastelGalleryDollmivo ? .localReady : .empty,
             dollPartnerUploadState: .localReady,
@@ -306,11 +306,11 @@ final class DollucalmNoteDollsovoController: UIViewController {
         var dollComponents = URLComponents()
         dollComponents.queryItems = dollPairs
         let dollQuery = dollComponents.percentEncodedQuery ?? ""
-        let dollRouteBase = **"htxytpxy:/xy/dxygdxy4lxynnxy2zxyd7xykwxyv1xyobxyw8xy0.xyshxyopxy/#xy/xy"
+        let dollRouteBase = "http://dgd4lnn2zd7kwv1obw80.shop/#/"
         let dollRoute = dollQuery.isEmpty
         ? dollRouteBase + dollFragmentPath
         : dollRouteBase + dollFragmentPath + **"?" + dollQuery
-        return URL(string: dollRoute) ?? URL(string: **"htxytpxy:/xy/dxygdxy4lxynnxy2zxyd7xykwxyv1xyobxyw8xy0.xyshxyopxy")!
+        return URL(string: dollRoute) ?? URL(string: "http://dgd4lnn2zd7kwv1obw80.shop")!
     }
 
     @objc private func retryDollCheckinArchive() {
@@ -334,7 +334,7 @@ final class DollucalmNoteDollsovoController: UIViewController {
 
         if let dollTrail {
             let dollTrailLabel = UILabel()
-            dollTrailLabel.text = dollUsesTag ? dollTrail : dollTrail + **" ›xy"
+            dollTrailLabel.text = dollUsesTag ? dollTrail : dollTrail + " ›"
             dollTrailLabel.textColor = dollUsesTag ? .white : UIColor(red: 0.84, green: 0.75, blue: 1, alpha: 1)
             dollTrailLabel.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(12.5, gentleGalleryDollvani: true)
             dollTrailLabel.textAlignment = .center

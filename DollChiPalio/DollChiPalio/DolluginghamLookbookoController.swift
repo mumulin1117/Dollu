@@ -2,9 +2,9 @@ import UIKit
 
 final class DolluginghamLookbookoController: DolluminiPromptDollveloController {
     private let dollGuidelineConsentView = DollusatinCoatDollbopView()
-    private let satinCollectionEmailField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: **"Enxytexyr xyemxyaixyl xyadxydrxyesxys", dollInputBoard: .emailAddress)
-    private let ribbonSecretPromptField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: **"Enxytexyr xypaxyssxywoxyrdxy", dollUsesSecretEntry: true)
-    private let glossyClosetDollvex = DolluminiLayerDollmivoButton(dollButtonTitle: **"Sixygnxy ixyn xynoxyw")
+    private let satinCollectionEmailField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_email_icon", dollPromptCopy: "Enter email address", dollInputBoard: .emailAddress)
+    private let ribbonSecretPromptField = DolluWardrobePromptField(dollIconAssetName: "dollu_auth_password_icon", dollPromptCopy: "Enter password", dollUsesSecretEntry: true)
+    private let glossyClosetDollvex = DolluminiLayerDollmivoButton(dollButtonTitle: "Sign in now")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ final class DolluginghamLookbookoController: DolluminiPromptDollveloController {
 
         let dollAccessTitleLabel = UILabel()
         dollAccessTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        dollAccessTitleLabel.text = **"Loxygixyn"
+        dollAccessTitleLabel.text = "Login"
         dollAccessTitleLabel.textColor = .white
         dollAccessTitleLabel.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 38, dollFontWeight: .heavy)
         dollAccessTitleLabel.textAlignment = .center
@@ -95,7 +95,7 @@ final class DolluginghamLookbookoController: DolluminiPromptDollveloController {
     private func setDollAccessLoading(_ dollIsLoading: Bool) {
         glossyClosetDollvex.isEnabled = !dollIsLoading
         glossyClosetDollvex.alpha = dollIsLoading ? 0.62 : 1
-        glossyClosetDollvex.setTitle(dollIsLoading ? **"Sixygnxyinxyg xyinxy..xy." : **"Sixygnxy ixyn xynoxyw", for: .normal)
+        glossyClosetDollvex.setTitle(dollIsLoading ? "Signing in..." : "Sign in now", for: .normal)
     }
 
     private func revealDollCollectorGallery() {

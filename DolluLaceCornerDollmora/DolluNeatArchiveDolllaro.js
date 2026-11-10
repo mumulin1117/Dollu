@@ -1,4 +1,3 @@
-// Local presentation for the existing account confirmation callback.
 export function neatArchiveDolllaro(cozyArchiveDollniva) {
   if (document.querySelector('dialog.neatArchiveDolllaro')) return;
   const neatMemoDollyara = document.activeElement;

@@ -22,17 +22,17 @@ enum DolluHomeDynamicKind {
     var dollpaintedMarkerDollsovoBody: [String: Any] {
         switch self {
         case .showcaseInspiration:
-            return [**"huxyeCxyonxytrxyasxyt": **"39xy97xy29xy65xy", **"maxyttxyeFxyinxyisxyh": 10, **"glxyosxysyxyVexynexyerxy": 2, **"toxynexySaxytuxyraxytixyonxy": 5, **"faxybrxyicxyLuxystxyerxy": 1]
+            return ["hueContrast": "39972965", "matteFinish": 10, "glossyVeneer": 2, "toneSaturation": 5, "fabricLuster": 1]
         case .dollpediaGuide:
-            return [**"toxynexySaxytuxyraxytixyonxy": 4, **"maxyttxyeFxyinxyisxyh": 10, **"faxybrxyicxyLuxystxyerxy": 1]
+            return ["toneSaturation": 4, "matteFinish": 10, "fabricLuster": 1]
         case .styleClipGallery:
-            return [**"huxyeCxyonxytrxyasxyt": **"39xy97xy29xy65xy", **"maxyttxyeFxyinxyisxyh": 10, **"glxyosxysyxyVexynexyerxy": 2, **"toxynexySaxytuxyraxytixyonxy": 1, **"faxybrxyicxyLuxystxyerxy": 1]
+            return ["hueContrast": "39972965", "matteFinish": 10, "glossyVeneer": 2, "toneSaturation": 1, "fabricLuster": 1]
         }
     }
 }
 
 final class DollukeepsakeHemlineDollmivository {
-    private let dollDynamicPath = **"/mxytfxylgxygpxymwxyz/xyhexycwxypfxysoxyynxyw"
+    private let dollDynamicPath = "/mtflggpmwz/hecwpfsoynw"
 
     func fetchDolluDynamicItems(dollKind: DolluHomeDynamicKind, completion: @escaping (Result<[DollutrimmedClosetDollrevo], Error>) -> Void) {
         DolluWardrobeRouteClient.satinCollectionRoute.sendDollPost(dollRoutePath: dollDynamicPath, dollRequestBody: dollKind.dollpaintedMarkerDollsovoBody, dollUsesBackPanel: true) { dollResult in
@@ -61,8 +61,8 @@ final class DollukeepsakeHemlineDollmivository {
     private func parseDollDynamicItems(from dollEnvelope: [String: Any], dollKind: DolluHomeDynamicKind) -> [DollutrimmedClosetDollrevo] {
         dynamicRawList(from: dollEnvelope).map { dollRaw in
             let dollArchiveId = dollDynamicArchiveId(from: dollRaw)
-            let dollTitle = stringValue(from: dollRaw, keys: [**"saxytixynGxyloxyw", **"dyxynaxymixycTxyitxylexy", **"tixytlxye", **"coxyttxyonxyWexyavxye", **"usxyerxyNaxymexy", **"nixyckxyNaxymexy", **"naxymexy"]) ?? **"Doxyllxyu xyStxyylxye xyNoxytexy"
-            let dollSummary = stringValue(from: dollRaw, keys: [**"dexynixymWxyasxyh", **"dyxynaxymixycCxyonxytexyntxy", **"coxyntxyenxyt", **"suxymmxyarxyy", **"inxytrxyodxyucxye"]) ?? **"Coxyllxyecxytoxyr xyouxytfxyitxy ixynsxypixyraxytixyonxy fxyorxy yxyouxyr xyDoxyllxyu xywaxyrdxyroxybexy."
+            let dollTitle = stringValue(from: dollRaw, keys: ["satinGlow", "dynamicTitle", "title", "cottonWeave", "userName", "nickName", "name"]) ?? "Dollu Style Note"
+            let dollSummary = stringValue(from: dollRaw, keys: ["denimWash", "dynamicContent", "content", "summary", "introduce"]) ?? "Collector outfit inspiration for your Dollu wardrobe."
             let dollCover = coverURL(from: dollRaw)
             let dollRoute = routeURL(from: dollRaw, dollArchiveId: dollArchiveId, dollKind: dollKind)
             return DollutrimmedClosetDollrevo(dollArchiveId: dollArchiveId, dollTitle: dollTitle, dollSummary: dollSummary, dolltrimmedLaceworkDollyaraL: dollCover, trimmedClosetDollrevoURL: dollRoute)
@@ -71,32 +71,32 @@ final class DollukeepsakeHemlineDollmivository {
 
     private func parseDollStyleClipItems(from dollEnvelope: [String: Any]) -> [DollutrimmedClosetDollrevo] {
         dynamicRawList(from: dollEnvelope).compactMap { dollRaw in
-            guard let dollCoverText = stringValue(from: dollRaw, keys: [**"rexylexyasxyeYxyeaxyr"]),
+            guard let dollCoverText = stringValue(from: dollRaw, keys: ["releaseYear"]),
                   let dollCoverValue = firstDollImageURLText(from: dollCoverText),
                   let dollCoverURL = URL(string: dollCoverValue) else {
                 return nil
             }
             let dollArchiveId = dollDynamicArchiveId(from: dollRaw)
-            let dollTitle = stringValue(from: dollRaw, keys: [**"saxytixynGxyloxyw", **"dyxynaxymixycTxyitxylexy", **"tixytlxye", **"coxyttxyonxyWexyavxye", **"usxyerxyNaxymexy", **"nixyckxyNaxymexy", **"naxymexy"]) ?? **"Doxyllxyu xyStxyylxye xyClxyipxy"
-            let dollSummary = stringValue(from: dollRaw, keys: [**"dexynixymWxyasxyh", **"dyxynaxymixycCxyonxytexyntxy", **"coxyntxyenxyt", **"suxymmxyarxyy", **"inxytrxyodxyucxye"]) ?? **"A xyfrxyesxyh xydoxyllxy oxyutxyfixyt xymoxymexyntxy fxyroxym xythxye xycoxyllxyecxytoxyr xygaxyllxyerxyy.xy"
+            let dollTitle = stringValue(from: dollRaw, keys: ["satinGlow", "dynamicTitle", "title", "cottonWeave", "userName", "nickName", "name"]) ?? "Dollu Style Clip"
+            let dollSummary = stringValue(from: dollRaw, keys: ["denimWash", "dynamicContent", "content", "summary", "introduce"]) ?? "A fresh doll outfit moment from the collector gallery."
             let dollRoute = routeURL(from: dollRaw, dollArchiveId: dollArchiveId, dollKind: .styleClipGallery)
             return DollutrimmedClosetDollrevo(dollArchiveId: dollArchiveId, dollTitle: dollTitle, dollSummary: dollSummary, dolltrimmedLaceworkDollyaraL: dollCoverURL, trimmedClosetDollrevoURL: dollRoute)
         }
     }
 
     private func dollDynamicArchiveId(from dollRaw: [String: Any]) -> String {
-        stringValue(from: dollRaw, keys: [**"sixylkxyShxyeexyndxyolxyiuxy"]) ?? UUID().uuidString
+        stringValue(from: dollRaw, keys: ["silkSheendoliu"]) ?? UUID().uuidString
     }
 
     private func dynamicRawList(from dollEnvelope: [String: Any]) -> [[String: Any]] {
-        let dollData = dollEnvelope[**"daxytaxy"]
+        let dollData = dollEnvelope["data"]
         if let dollArray = dollData as? [[String: Any]] {
             return dollArray
         }
-        if let dollMap = dollData as? [String: Any], let dollRows = dollMap[**"lixystxy"] as? [[String: Any]] {
+        if let dollMap = dollData as? [String: Any], let dollRows = dollMap["list"] as? [[String: Any]] {
             return dollRows
         }
-        if let dollMap = dollData as? [String: Any], let dollRows = dollMap[**"rexycoxyrdxys"] as? [[String: Any]] {
+        if let dollMap = dollData as? [String: Any], let dollRows = dollMap["records"] as? [[String: Any]] {
             return dollRows
         }
         return []
@@ -115,10 +115,10 @@ final class DollukeepsakeHemlineDollmivository {
     }
 
     private func coverURL(from dollRaw: [String: Any]) -> URL? {
-        if let dollCover = stringValue(from: dollRaw, keys: [**"rexylexyasxyeYxyeaxyr", **"coxyvexyrIxymgxyUrxyl", **"coxyvexyrUxyrlxy", **"imxygUxyrlxy", **"lixynexynTxyhrxyeaxyd", **"usxyerxyImxygUxyrlxy", **"roxympxyerxyFixyt"]), let dollURL = URL(string: dollCover) {
+        if let dollCover = stringValue(from: dollRaw, keys: ["releaseYear", "coverImgUrl", "coverUrl", "imgUrl", "linenThread", "userImgUrl", "romperFit"]), let dollURL = URL(string: dollCover) {
             return dollURL
         }
-        for dollImageKey in [**"emxybrxyoixydexyryxyStxyitxychxy", **"sexyquxyinxySpxyarxyklxye", **"dyxynaxymixycIxymgxyLixystxy"] {
+        for dollImageKey in ["embroideryStitch", "sequinSparkle", "dynamicImgList"] {
             if let dollImageText = dollRaw[dollImageKey] as? String,
                let dollFirst = firstDollImageURLText(from: dollImageText) {
                 return URL(string: dollFirst)
@@ -127,7 +127,7 @@ final class DollukeepsakeHemlineDollmivository {
                 return URL(string: dollFirst)
             }
             if let dollImages = dollRaw[dollImageKey] as? [[String: Any]] {
-                let dollFirst = dollImages.compactMap { stringValue(from: $0, keys: [**"urxyl", **"imxygUxyrlxy", **"rexylexyasxyeYxyeaxyr"]) }.first
+                let dollFirst = dollImages.compactMap { stringValue(from: $0, keys: ["url", "imgUrl", "releaseYear"]) }.first
                 return dollFirst.flatMap(URL.init(string:))
             }
         }
@@ -136,18 +136,18 @@ final class DollukeepsakeHemlineDollmivository {
 
     private func firstDollImageURLText(from dollImageText: String) -> String? {
         let dollTrimmedText = dollImageText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !dollTrimmedText.isEmpty, dollTrimmedText != **"<nxyulxyl>xy" else {
+        guard !dollTrimmedText.isEmpty, dollTrimmedText != "<null>" else {
             return nil
         }
         let dollSeparators = CharacterSet(charactersIn: ",;|")
         return dollTrimmedText
             .components(separatedBy: dollSeparators)
             .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-            .first { !$0.isEmpty && $0 != **"<nxyulxyl>xy" }
+            .first { !$0.isEmpty && $0 != "<null>" }
     }
 
     private func routeURL(from dollRaw: [String: Any], dollArchiveId: String, dollKind: DolluHomeDynamicKind) -> URL? {
-        if let dollRoute = stringValue(from: dollRaw, keys: [**"juxympxyUrxyl", **"lixynkxyUrxyl", **"urxyl"]), let dollURL = URL(string: dollRoute) {
+        if let dollRoute = stringValue(from: dollRaw, keys: ["jumpUrl", "linkUrl", "url"]), let dollURL = URL(string: dollRoute) {
             return DolluCollectorRouteBuilder.routeWithDollCredential(dollURL)
         }
         if dollKind == .showcaseInspiration {
@@ -161,8 +161,8 @@ final class DollukeepsakeHemlineDollmivository {
 }
 
 enum DolluCollectorRouteBuilder {
-    private static let dollGateway = **"htxytpxy:/xy/dxygdxy4lxynnxy2zxyd7xykwxyv1xyobxyw8xy0.xyshxyopxy/#xy/xy"
-    private static let dollRouteFallback = **"htxytpxy:/xy/dxygdxy4lxynnxy2zxyd7xykwxyv1xyobxyw8xy0.xyshxyopxy"
+    private static let dollGateway = "http://dgd4lnn2zd7kwv1obw80.shop/#/"
+    private static let dollRouteFallback = "http://dgd4lnn2zd7kwv1obw80.shop"
 
     static func tinySnapshotDollhumi(_ dollURL: URL, tinyCoverDollmexa: URL?) -> URL {
         guard let tinyCoverDollmexa,

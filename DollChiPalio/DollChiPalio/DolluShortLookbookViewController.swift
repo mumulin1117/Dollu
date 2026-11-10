@@ -52,7 +52,7 @@ final class DolluShortLookbookViewController: UIViewController {
         ribbonCategoryDollpiri.addSubview(laceArchiveDollmexa)
 
         sageLookbookDollmexa.translatesAutoresizingMaskIntoConstraints = false
-        sageLookbookDollmexa.text = **"STxyYLxyECxyLIxyPSxy"
+        sageLookbookDollmexa.text = "STYLECLIPS"
         sageLookbookDollmexa.textColor = .white
         sageLookbookDollmexa.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 32, dollFontWeight: .heavy)
         sageLookbookDollmexa.adjustsFontSizeToFitWidth = true
@@ -61,7 +61,7 @@ final class DolluShortLookbookViewController: UIViewController {
 
         satinMarkerDollpavo.translatesAutoresizingMaskIntoConstraints = false
         satinMarkerDollpavo.setImage(UIImage(named: "DolluSatinMarkerDollpavo")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        satinMarkerDollpavo.accessibilityLabel = **"Coxyllxyecxytoxyr xynoxytixycexy"
+        satinMarkerDollpavo.accessibilityLabel = "Collector notice"
         satinMarkerDollpavo.addTarget(self, action: #selector(openDollCollectorNotice), for: .touchUpInside)
         satinMarkerDollpavo.addTarget(self, action: #selector(pressDollNoticeButton), for: .touchDown)
         satinMarkerDollpavo.addTarget(self, action: #selector(releaseDollNoticeButton), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
@@ -177,7 +177,7 @@ final class DolluShortLookbookViewController: UIViewController {
         if case .success(let pocketCollectionDollruni) = dollResult {
             dreamySnapshotDollniva = pocketCollectionDollruni
         }
-        floralHintDollvelo.text = **"Stxyylxye xyclxyipxys xyarxye xywaxyitxyinxyg xyfoxyr xyyoxyurxy nxyexxyt xydoxyllxy lxyooxyk.xy"
+        floralHintDollvelo.text = "Style clips are waiting for your next doll look."
         floralHintDollvelo.isHidden = !dreamySnapshotDollniva.isEmpty
         ribbonDisplayDollrevo.reloadData()
     }
@@ -295,7 +295,7 @@ final class DolluStyleClipCardCell: UICollectionViewCell {
             glossyIdeaDollsovo.topAnchor.constraint(equalTo: ivoryCoverDollzemi.topAnchor, constant: 10),
             glossyIdeaDollsovo.trailingAnchor.constraint(equalTo: ivoryCoverDollzemi.trailingAnchor, constant: -10),
             glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant: 30),
-            glossyIdeaDollsovo.heightAnchor.constraint(equalTo: glossyIdeaDollsovo.widthAnchor),
+            glossyIdeaDollsovo.heightAnchor.constraint(equalToConstant: 30),
 
             satinPinboardDollvani.topAnchor.constraint(equalTo: ivoryCoverDollzemi.bottomAnchor, constant: -18),
             satinPinboardDollvani.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -370,7 +370,6 @@ final class DolluStyleClipAICollectorCard: UIControl {
         ivoryCoverDollzemi.translatesAutoresizingMaskIntoConstraints = false
         ivoryCoverDollzemi.isUserInteractionEnabled = false
         addSubview(ivoryCoverDollzemi)
-        // Cover the original static mascot while preserving the card artwork.
         satinPinboardDollvani.translatesAutoresizingMaskIntoConstraints = false
         satinPinboardDollvani.isUserInteractionEnabled = false
         satinPinboardDollvani.backgroundColor = UIColor(red: 35/255, green: 32/255, blue: 63/255, alpha: 1)

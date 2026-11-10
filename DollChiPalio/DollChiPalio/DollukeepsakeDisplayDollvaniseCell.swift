@@ -75,7 +75,7 @@ final class DollukeepsakeDisplayDollvaniseCell: UICollectionViewCell {
             glossyIdeaDollsovo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             glossyIdeaDollsovo.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant: 30),
-            glossyIdeaDollsovo.heightAnchor.constraint(equalTo: glossyIdeaDollsovo.widthAnchor),
+            glossyIdeaDollsovo.heightAnchor.constraint(equalToConstant: 30),
 
             velvetTagsetDollcavo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             velvetTagsetDollcavo.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
@@ -193,7 +193,7 @@ final class DolluDollpediaCardCell: UICollectionViewCell {
             glossyIdeaDollsovo.topAnchor.constraint(equalTo: satinPinboardDollvani.topAnchor, constant: 14),
             glossyIdeaDollsovo.trailingAnchor.constraint(equalTo: satinPinboardDollvani.trailingAnchor, constant: -16),
             glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant: 30),
-            glossyIdeaDollsovo.heightAnchor.constraint(equalTo: glossyIdeaDollsovo.widthAnchor),
+            glossyIdeaDollsovo.heightAnchor.constraint(equalToConstant: 30),
 
             layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: tinyCoverDollmexa.trailingAnchor, constant: 25),
             layeredCatalogDollquvo.trailingAnchor.constraint(equalTo: glossyIdeaDollsovo.leadingAnchor, constant: -12),

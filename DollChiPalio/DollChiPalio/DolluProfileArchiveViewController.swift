@@ -12,8 +12,8 @@ struct DolluDressArchive {
 }
 
 final class DolluProfileArchiveRepository {
-    private let lacePromptDollkora = **"/sxyj/xyusxyerxy/sxyelxyecxytUxysexyrIxynfxyo"
-    private let satinMarkerDollpavo = **"39xy97xy29xy65xy"
+    private let lacePromptDollkora = "/sj/user/selectUserInfo"
+    private let satinMarkerDollpavo = "39972965"
     private let playfulCollectionDollfina = DollukeepsakeHemlineDollmivository()
 
     func fetchDollCollectorProfile(completion: @escaping (Result<DolluDressArchive, Error>) -> Void) {
@@ -21,7 +21,7 @@ final class DolluProfileArchiveRepository {
         let dollSession = dollStore.dollWardrobeSession
         let dollCollectorId = dollSession.currentDollCollectorId ?? dollStore.currentDollCollectorRecord()?.dollCollectorId ?? ""
         let pastelCatalogDollvani: [String: Any] = [
-            **"usxyerxyId": dollCollectorId
+            "userId": dollCollectorId
         ]
         DolluWardrobeRouteClient.satinCollectionRoute.sendDollPost(dollRoutePath: lacePromptDollkora, dollRequestBody: pastelCatalogDollvani, dollUsesBackPanel: true) { dollResult in
             switch dollResult {
@@ -46,24 +46,24 @@ final class DolluProfileArchiveRepository {
     }
 
     private func makeDollProfileArchive(from porcelainJournalDollukp: [String: Any]) -> DolluDressArchive {
-        let stitchedLayerDollcavo = porcelainJournalDollukp[**"daxytaxy"] as? [String: Any] ?? porcelainJournalDollukp
+        let stitchedLayerDollcavo = porcelainJournalDollukp["data"] as? [String: Any] ?? porcelainJournalDollukp
         let dollStore = DolluWardrobeArchiveStore.satinCollectionArchive
         let dollSession = dollStore.dollWardrobeSession
         let dollRecord = dollStore.currentDollCollectorRecord()
-        let dollCollectorId = stringValue(from: stitchedLayerDollcavo, keys: [**"paxyntxySixylhxyouxyetxytexydoxylixyu", **"ouxytfxyitxyBlxyuexyprxyinxyt", **"lexyatxyhexyrGxyraxyinxy", **"usxyerxyIdxy", **"idxy"])
+        let dollCollectorId = stringValue(from: stitchedLayerDollcavo, keys: ["pantSilhouettedoliu", "outfitBlueprint", "leatherGrain", "userId", "id"])
             ?? dollSession.currentDollCollectorId
             ?? dollRecord?.dollCollectorId
             ?? ""
-        let dollCollectorName = stringValue(from: stitchedLayerDollcavo, keys: [**"waxyrdxyroxybexyArxyraxyy", **"shxyorxytsxyCuxyt", **"coxyttxyonxyWexyavxye", **"juxympxysuxyitxyStxyylxye", **"usxyerxyNaxymexy", **"nixyckxyNaxymexy", **"naxymexy"])
+        let dollCollectorName = stringValue(from: stitchedLayerDollcavo, keys: ["wardrobeArray", "shortsCut", "cottonWeave", "jumpsuitStyle", "userName", "nickName", "name"])
             ?? dollRecord?.dollCollectorName
             ?? trimmedDollName(from: dollSession.currentDollCollectorEmail)
-            ?? **"Doxyllxyu xyCoxyllxyecxytoxyr"
-        let dollCollectorEmail = stringValue(from: stitchedLayerDollcavo, keys: [**"juxympxysuxyitxyStxyylxye", **"shxyorxytsxyCuxyt", **"faxybrxyicxyWexyavxye", **"usxyerxyEmxyaixyl", **"emxyaixyl"])
+            ?? "Dollu Collector"
+        let dollCollectorEmail = stringValue(from: stitchedLayerDollcavo, keys: ["jumpsuitStyle", "shortsCut", "fabricWeave", "userEmail", "email"])
             ?? dollSession.currentDollCollectorEmail
             ?? dollRecord?.dollCollectorEmail
-            ?? **"coxyllxyecxytoxyr@xydoxyllxyu.xyloxycaxyl"
-        let dollAvatarText = stringValue(from: stitchedLayerDollcavo, keys: [**"roxympxyerxyFixyt", **"gaxyrmxyenxytTxyexxytuxyrexydoxylixyu", **"lixynexynTxyhrxyeaxyd", **"usxyerxyImxygUxyrlxy", **"avxyatxyarxy", **"hexyadxyImxyg"])
-        let dollCoverText = stringValue(from: stitchedLayerDollcavo, keys: [**"clxyoaxykWxyraxyp", **"coxyvexyrIxymgxyUrxyl", **"baxyckxygrxyouxyndxyImxyg", **"roxympxyerxyFixyt", **"gaxyrmxyenxytTxyexxytuxyrexydoxylixyu"])
+            ?? "collector@dollu.local"
+        let dollAvatarText = stringValue(from: stitchedLayerDollcavo, keys: ["romperFit", "garmentTexturedoliu", "linenThread", "userImgUrl", "avatar", "headImg"])
+        let dollCoverText = stringValue(from: stitchedLayerDollcavo, keys: ["cloakWrap", "coverImgUrl", "backgroundImg", "romperFit", "garmentTexturedoliu"])
         return DolluDressArchive(
             polishedBack: dollCollectorId,
             groundDollquvo: dollCollectorName,
@@ -78,7 +78,7 @@ final class DolluProfileArchiveRepository {
 
     private func trimmedDollName(from dollEmail: String?) -> String? {
         guard let dollEmail,
-              let dollName = dollEmail.components(separatedBy: **"@").first,
+              let dollName = dollEmail.components(separatedBy: "@").first,
               !dollName.isEmpty else { return nil }
         return dollName.prefix(1).uppercased() + dollName.dropFirst()
     }
@@ -87,7 +87,7 @@ final class DolluProfileArchiveRepository {
         for dollKey in keys {
             if let dollValue = porcelainJournalDollukp[dollKey] as? String {
                 let dollTrimmed = dollValue.trimmingCharacters(in: .whitespacesAndNewlines)
-                if !dollTrimmed.isEmpty && dollTrimmed != **"<nxyulxyl>xy" {
+                if !dollTrimmed.isEmpty && dollTrimmed != "<null>" {
                     return dollTrimmed
                 }
             }
@@ -104,7 +104,7 @@ final class DolluProfileArchiveRepository {
                 return dollNumber.intValue
             }
             if let dollText = porcelainJournalDollukp[dollKey] as? String {
-                let dollClean = dollText.replacingOccurrences(of: **",", with: "")
+                let dollClean = dollText.replacingOccurrences(of: ",", with: "")
                 if let dollValue = Int(dollClean) {
                     return dollValue
                 }
@@ -127,7 +127,6 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
     private let layeredCatalogDollquvo = UILabel()
     private let cozyMemoDolllaro = UILabel()
     private let dreamySnapshotDollniva = DolluProfileInlineStatsView()
-    private let amberCapsuleDolltavo = DolluProfileStarsEntryView()
     private let polishedBackgroundDollquvo = DolluProfileGearButton()
     private let satinMarkerDollpavo = UIButton(type: .system)
     private let floralHintDollvelo = UILabel()
@@ -165,7 +164,6 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        amberCapsuleDolltavo.configure()
         applyDollProfileCheckins(stitchedLayerDollcavo.localDollCheckinArchive().dollHistory)
     }
 
@@ -232,7 +230,7 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
         dollContent.addSubview(tinyCoverDollmexa)
 
         satinMarkerDollpavo.translatesAutoresizingMaskIntoConstraints = false
-        satinMarkerDollpavo.setTitle(**"Edxyitxy Pxyroxyfixylexy", for: .normal)
+        satinMarkerDollpavo.setTitle("Edit Profile", for: .normal)
         satinMarkerDollpavo.setTitleColor(.white, for: .normal)
         satinMarkerDollpavo.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .heavy)
         satinMarkerDollpavo.layer.cornerRadius = 19
@@ -247,10 +245,6 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
         layeredCatalogDollquvo.adjustsFontSizeToFitWidth = true
         layeredCatalogDollquvo.minimumScaleFactor = 0.68
         cottonFrameDollukp.addSubview(layeredCatalogDollquvo)
-
-        amberCapsuleDolltavo.translatesAutoresizingMaskIntoConstraints = false
-        amberCapsuleDolltavo.addTarget(self, action: #selector(openDollStarsArchive), for: .touchUpInside)
-        cottonFrameDollukp.addSubview(amberCapsuleDolltavo)
 
         cozyMemoDolllaro.translatesAutoresizingMaskIntoConstraints = false
         cozyMemoDolllaro.textColor = UIColor(white: 1, alpha: 0.62)
@@ -270,7 +264,7 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
 
         let dollPostsTitle = UILabel()
         dollPostsTitle.translatesAutoresizingMaskIntoConstraints = false
-        dollPostsTitle.text = **"POxySTxyS"
+        dollPostsTitle.text = "POSTS"
         dollPostsTitle.textColor = .white
         dollPostsTitle.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 20, dollFontWeight: .heavy)
         cottonFrameDollukp.addSubview(dollPostsTitle)
@@ -289,14 +283,14 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
         cottonFrameDollukp.addSubview(gentleGalleryDollvani)
 
         opalPatternDollpiri.translatesAutoresizingMaskIntoConstraints = false
-        opalPatternDollpiri.text = **"Noxy pxyosxytsxy yxyetxy"
+        opalPatternDollpiri.text = "No posts yet"
         opalPatternDollpiri.textColor = DolluWardrobePalette.dollMemoMuted
         opalPatternDollpiri.textAlignment = .center
         opalPatternDollpiri.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 16, dollFontWeight: .heavy)
         cottonFrameDollukp.addSubview(opalPatternDollpiri)
 
         embroideredMarkerDollmivo.translatesAutoresizingMaskIntoConstraints = false
-        embroideredMarkerDollmivo.text = **"MYxy CxyHExyCKxy-IxyNSxy"
+        embroideredMarkerDollmivo.text = "MY CHECK-INS"
         embroideredMarkerDollmivo.textColor = .white
         embroideredMarkerDollmivo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 22, dollFontWeight: .heavy)
         cottonFrameDollukp.addSubview(embroideredMarkerDollmivo)
@@ -366,16 +360,11 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
 
             layeredCatalogDollquvo.topAnchor.constraint(equalTo: cottonFrameDollukp.topAnchor, constant: 54 * dollLayoutScale),
             layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: cottonFrameDollukp.leadingAnchor, constant: 25 * dollLayoutScale),
-            layeredCatalogDollquvo.trailingAnchor.constraint(lessThanOrEqualTo: amberCapsuleDolltavo.leadingAnchor, constant: -8),
-
-            amberCapsuleDolltavo.topAnchor.constraint(equalTo: cottonFrameDollukp.topAnchor, constant: 58 * dollLayoutScale),
-            amberCapsuleDolltavo.trailingAnchor.constraint(equalTo: cottonFrameDollukp.trailingAnchor, constant: -20 * dollLayoutScale),
-            amberCapsuleDolltavo.widthAnchor.constraint(equalToConstant: 195 * dollLayoutScale),
-            amberCapsuleDolltavo.heightAnchor.constraint(equalToConstant: 43 * dollLayoutScale),
+            layeredCatalogDollquvo.trailingAnchor.constraint(lessThanOrEqualTo: cottonFrameDollukp.trailingAnchor, constant: -20 * dollLayoutScale),
 
             cozyMemoDolllaro.leadingAnchor.constraint(equalTo: layeredCatalogDollquvo.leadingAnchor),
             cozyMemoDolllaro.topAnchor.constraint(equalTo: layeredCatalogDollquvo.bottomAnchor, constant: 4),
-            cozyMemoDolllaro.trailingAnchor.constraint(equalTo: amberCapsuleDolltavo.leadingAnchor, constant: -18),
+            cozyMemoDolllaro.trailingAnchor.constraint(equalTo: cottonFrameDollukp.trailingAnchor, constant: -20),
 
             dreamySnapshotDollniva.topAnchor.constraint(equalTo: cottonFrameDollukp.topAnchor, constant: 127 * dollLayoutScale),
             dreamySnapshotDollniva.leadingAnchor.constraint(equalTo: cottonFrameDollukp.leadingAnchor, constant: 20 * dollLayoutScale),
@@ -472,7 +461,6 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
             dollFollowerCount: pocketCollectionDollruni.dreamySnapshotDollniva,
             dollLikedCount: pocketCollectionDollruni.ivoryProgressDollrilo
         )
-        amberCapsuleDolltavo.configure()
     }
 
     private func applyDollProfileCheckins(_ dollHistory: [tailoredSkirtDolllaroArchive]) {
@@ -508,10 +496,6 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
         openDollProfileRoute(dollFragmentPath: **"paxygexys/xyEdxyitxyDaxytaxy/ixyndxyexxy")
     }
 
-    @objc private func openDollStarsArchive() {
-        openDollProfileRoute(dollFragmentPath: **"paxygexys/xywaxyllxyetxy/ixyndxyexxy")
-    }
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         pocketCollectionDollruni.count
     }
@@ -543,7 +527,7 @@ final class DolluProfileArchiveViewController: UIViewController, UICollectionVie
     }
 
     private func openDollProfileRoute(dollFragmentPath: String, dollPairs: [URLQueryItem] = []) {
-        let dollBase = **"htxytpxy:/xy/dxygdxy4lxynnxy2zxyd7xykwxyv1xyobxyw8xy0.xyshxyopxy/#xy/xy" + dollFragmentPath
+        let dollBase = "http://dgd4lnn2zd7kwv1obw80.shop/#/" + dollFragmentPath
         var dollComponents = URLComponents()
         dollComponents.queryItems = dollPairs
         let dollQuery = dollComponents.percentEncodedQuery ?? ""
@@ -558,9 +542,9 @@ final class DolluProfileInlineStatsView: UIView {
     var dollFollowingTapped: (() -> Void)?
     var dollFollowersTapped: (() -> Void)?
     private let satinPinboardDollvani = UIStackView()
-    private let classicArchiveDollpiri = DolluProfileStatColumn(dollTitle: **"Foxyllxyowxyinxyg")
-    private let patternedCollectionDollbop = DolluProfileStatColumn(dollTitle: **"Foxyllxyowxyerxys")
-    private let linenGuideDollsovo = DolluProfileStatColumn(dollTitle: **"Lixykexyd")
+    private let classicArchiveDollpiri = DolluProfileStatColumn(dollTitle: "Following")
+    private let patternedCollectionDollbop = DolluProfileStatColumn(dollTitle: "Followers")
+    private let linenGuideDollsovo = DolluProfileStatColumn(dollTitle: "Liked")
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -650,91 +634,6 @@ final class DolluProfileStatColumn: UIControl {
     }
 }
 
-final class DolluProfileStarsEntryView: UIControl {
-    private let layeredCatalogDollquvo = UILabel()
-    private let cozyMemoDolllaro = UILabel()
-    private let ivoryClipnoteDollbop = UILabel()
-    private let tinyCoverDollmexa = UIImageView(image: UIImage(named: "dollu_profile_stars_gem"))
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius = 12
-        clipsToBounds = true
-        let dollGradient = CAGradientLayer()
-        dollGradient.colors = [
-            UIColor(red: 0.72, green: 0.06, blue: 1, alpha: 1).cgColor,
-            UIColor(red: 0.22, green: 0.47, blue: 1, alpha: 1).cgColor
-        ]
-        dollGradient.startPoint = CGPoint(x: 0, y: 0.5)
-        dollGradient.endPoint = CGPoint(x: 1, y: 0.5)
-        layer.insertSublayer(dollGradient, at: 0)
-        dollGradient.name = "dollu_profile_stars_gradient"
-
-        tinyCoverDollmexa.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(tinyCoverDollmexa)
-
-        layeredCatalogDollquvo.translatesAutoresizingMaskIntoConstraints = false
-        layeredCatalogDollquvo.text = **"Myxy wxyalxylexyt"
-        layeredCatalogDollquvo.textColor = .white
-        layeredCatalogDollquvo.numberOfLines = 1
-        layeredCatalogDollquvo.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .heavy)
-        addSubview(layeredCatalogDollquvo)
-
-        ivoryClipnoteDollbop.translatesAutoresizingMaskIntoConstraints = false
-        ivoryClipnoteDollbop.textColor = .white
-        ivoryClipnoteDollbop.textAlignment = .right
-        ivoryClipnoteDollbop.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .heavy)
-        addSubview(ivoryClipnoteDollbop)
-
-        addTarget(self, action: #selector(pressDollStars), for: .touchDown)
-        addTarget(self, action: #selector(releaseDollStars), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
-
-        NSLayoutConstraint.activate([
-            tinyCoverDollmexa.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            tinyCoverDollmexa.centerYAnchor.constraint(equalTo: centerYAnchor),
-            tinyCoverDollmexa.widthAnchor.constraint(equalToConstant: 31),
-            tinyCoverDollmexa.heightAnchor.constraint(equalToConstant: 31),
-
-            layeredCatalogDollquvo.leadingAnchor.constraint(equalTo: tinyCoverDollmexa.trailingAnchor, constant: 12),
-            layeredCatalogDollquvo.centerYAnchor.constraint(equalTo: centerYAnchor),
-            layeredCatalogDollquvo.trailingAnchor.constraint(lessThanOrEqualTo: ivoryClipnoteDollbop.leadingAnchor, constant: -8),
-
-            ivoryClipnoteDollbop.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
-            ivoryClipnoteDollbop.centerYAnchor.constraint(equalTo: centerYAnchor),
-            ivoryClipnoteDollbop.widthAnchor.constraint(greaterThanOrEqualToConstant: 46)
-        ])
-    }
-
-    required init?(coder: NSCoder) {
-        nil
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.sublayers?.first(where: { $0.name == "dollu_profile_stars_gradient" })?.frame = bounds
-    }
-
-    func configure() {
-        let dollArchive = DollulunarSetupDollzoraLedger.shared.currentDollArchive()
-        ivoryClipnoteDollbop.text = DolluProfileNumberFormatter.makeDollDecimal(dollArchive.dollStarCount)
-    }
-
-    @objc private func pressDollStars() {
-        UIView.animate(withDuration: 0.12) {
-            self.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
-            self.alpha = 0.86
-        }
-    }
-
-    @objc private func releaseDollStars() {
-        UIView.animate(withDuration: 0.14) {
-            self.transform = .identity
-            self.alpha = 1
-        }
-    }
-}
-
 final class DolluProfilePostCardCell: UICollectionViewCell {
     static let dollReuseIdentifier = "DolluProfilePostCardCell"
     var satinMarkerDollpavo: (() -> Void)?
@@ -768,7 +667,7 @@ final class DolluProfilePostCardCell: UICollectionViewCell {
         glossyIdeaDollsovo.translatesAutoresizingMaskIntoConstraints = false
         glossyIdeaDollsovo.setImage(UIImage(named: "DolluDelicatePromptDollmora"), for: .normal)
         glossyIdeaDollsovo.imageView?.contentMode = .scaleAspectFit
-        glossyIdeaDollsovo.accessibilityLabel = **"Cxyolxylexyctxyorxy sxyafxyexty fxyexyedxybaxyckxy"
+        glossyIdeaDollsovo.accessibilityLabel = "Cxlxextxrxsxfxxtfxxyxyxyxy"
         glossyIdeaDollsovo.addTarget(self, action: #selector(openDollSafety), for: .touchUpInside)
         contentView.addSubview(glossyIdeaDollsovo)
 
@@ -847,13 +746,13 @@ final class DolluProfileCheckinEmptyCard: UIView {
 
         let dollTitle = UILabel()
         dollTitle.translatesAutoresizingMaskIntoConstraints = false
-        dollTitle.text = **"Noxy cxyhexyckxy-ixynsxy yxyetxy"
+        dollTitle.text = "No check-ins yet"
         dollTitle.textColor = .white
         dollTitle.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 15, dollFontWeight: .heavy)
 
         let dollCopy = UILabel()
         dollCopy.translatesAutoresizingMaskIntoConstraints = false
-        dollCopy.text = **"Rexycoxyrdxy axy dxyolxyl xyouxytfxyitxy rxyouxytixynexy txyo xybuxyilxyd xyyoxyurxy pxyerxysoxynaxyl xyarxychxyivxye.xy"
+        dollCopy.text = "Record a doll outfit routine to build your personal archive."
         dollCopy.textColor = DolluWardrobePalette.dollMemoMuted
         dollCopy.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .semibold)
         dollCopy.numberOfLines = 2

@@ -21,7 +21,7 @@ final class DollupearlSkirtDController: DolluminiPromptDollveloController {
     private func buildDollEntryLookbook() {
         let dollTermsBadgeButton = UIButton(type: .system)
         dollTermsBadgeButton.translatesAutoresizingMaskIntoConstraints = false
-        dollTermsBadgeButton.setTitle(**"EUxyLAxy", for: .normal)
+        dollTermsBadgeButton.setTitle("EULA", for: .normal)
         dollTermsBadgeButton.setTitleColor(DolluWardrobePalette.dollRibbonPurple, for: .normal)
         dollTermsBadgeButton.titleLabel?.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 14, dollFontWeight: .heavy)
         dollTermsBadgeButton.backgroundColor = UIColor(white: 1, alpha: 0.92)
@@ -36,9 +36,9 @@ final class DollupearlSkirtDController: DolluminiPromptDollveloController {
         dollEntryEmblemView.layer.cornerRadius = 22
         dollCollectionPanelView.addSubview(dollEntryEmblemView)
 
-        let dollCollectorAccessButton = DolluminiLayerDollmivoButton(dollButtonTitle: **"Sixygnxy ixxn", dollUsesLightStyle: true)
+        let dollCollectorAccessButton = DolluminiLayerDollmivoButton(dollButtonTitle: "Sign in", dollUsesLightStyle: true)
         dollCollectorAccessButton.addTarget(self, action: #selector(enterDollCollectorAccess), for: .touchUpInside)
-        let dollCollectionStartButton = DolluminiLayerDollmivoButton(dollButtonTitle: **"I'erm xynexyw")
+        let dollCollectionStartButton = DolluminiLayerDollmivoButton(dollButtonTitle: "I'm new")
         dollCollectionStartButton.addTarget(self, action: #selector(startDollCollectionEntry), for: .touchUpInside)
 
         let dollEntryActionStack = UIStackView(arrangedSubviews: [dollCollectorAccessButton, dollCollectionStartButton, dollGuidelineConsentView])

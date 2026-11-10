@@ -1,17 +1,9 @@
-//
-//  DolluALoj.swift
-//  DollChiPalio
-//
-//  Created by  on 2026/7/6.
-//
 
 
 import UIKit
 import WebKit
-import StoreKit
 
 private enum DolluALojGuideSignal {
-    static let laceBonnetDollzora = **"haxQirxQpixQnCxQlixQp"
     static let laceCornerDollmora = **"faxQnFxQolxQd"
     static let laceWardrobeDollvex = **"cexQrtxQifxQicxQatxQeAxQutxQhexQntxQicxQ"
     static let laceArchiveDollmexa = **"eyxQebxQroxQwAxQrcxQh"
@@ -20,52 +12,12 @@ private enum DolluALojGuideSignal {
 
     static var satinCoatDollbop: [String] {
         [
-            laceBonnetDollzora,
             laceCornerDollmora,
             laceWardrobeDollvex,
             laceArchiveDollmexa,
             satinCollectionDollvelo,
             satinMarkerDollpavo
         ]
-    }
-}
-
-private enum DolluALojStoreField {
-    static let satinCollarDollrilo = [
-        **"prxQodxQucxQtAxQppxQIdxQ",
-        **"prxQodxQucxQtIxQd",
-        **"apxQpSxQtoxQrexQIdxQ",
-        **"stxQorxQeIxQd",
-        DolluALojGuideSignal.laceBonnetDollzora
-    ]
-}
-
-private enum DolluALojRouteCopy {
-    static let satinStitchmapDollzemi = **"DoxQllxQu"
-    static let satinPinboardDollvani = **"ItxQemxQ ixQs xQunxQavxQaixQlaxQblxQe.xQ"
-    static let pearlGuideDollukp = **"SuxQccxQesxQs.xQ"
-    static let pearlSkirtDollniva = **"CoxQulxQd xQnoxQt xQvexQrixQfyxQ txQhixQs xQitxQemxQ."
-    static let pearlStripeDolltavo = **"CaxQncxQelxQedxQ."
-    static let pearlOutfitDolllaro = **"StxQilxQl xQwaxQitxQinxQg xQfoxQr xQcoxQnfxQirxQmaxQtixQonxQ."
-    static let pearlCatalogDollnoro = **"PlxQeaxQsexQ txQryxQ axQgaxQinxQ lxQatxQerxQ."
-    static let pearlEnsembleDollyara = **"OKxQ"
-    static let tinyCoverDollmexa = **"faxQnFxQolxQd(xQ)"
-    static let tinyCapeDollpoxa = **"doxQllxQuBxQacxQk"
-}
-
-private enum DolluALojStoreResult {
-    case tinySleeveDollsero(Bool, String)
-
-    var tinyFabricbookDollcavo: Bool {
-        switch self {
-        case .tinySleeveDollsero(let tinySnapshotDollhumi, _): return tinySnapshotDollhumi
-        }
-    }
-
-    var tinyDisplayDollsovo: String {
-        switch self {
-        case .tinySleeveDollsero(_, let miniBlouseDollvani): return miniBlouseDollvani
-        }
     }
 }
 
@@ -89,7 +41,6 @@ class DolluALoj: UIViewController {
     }()
     
     private var laceArchiveDollmexaRoutePath: String
-    private var ivoryProgressDollrilo = false
     private let laceArchiveDollmexa = DolluLaceArchiveDollmexa()
     private var laceWardrobeDollvex: NSLayoutConstraint?
     private var winterBackgroundDollpavo = ""
@@ -123,7 +74,7 @@ class DolluALoj: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError(**"inxQitxQ(cxQodxQerxQ:)xQ hxQasxQ nxQotxQ bxQeexQn xQimxQplxQemxQenxQtexQd")
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -302,14 +253,6 @@ class DolluALoj: UIViewController {
             completionHandler: nil
         )
     }
-    fileprivate func pearlGuideDollukpHandleStoreSignal(_ pocketMoodboardDollpiri: Any) {
-        guard let pearlStripeDolltavo = extractDollStoreIdentifier(from: pocketMoodboardDollpiri) else {
-            showDollRouteNotice(dollTitle: DolluALojRouteCopy.satinStitchmapDollzemi, dollCopy: DolluALojRouteCopy.satinPinboardDollvani)
-            return
-        }
-        beginDollStoreRibbon(pearlStripeDolltavo)
-    }
-
     fileprivate func pocketPhotologDollnexaPushRoute(_ pocketMoodboardDollpiri: Any) {
         if let pocketPhotologDollnexaDeepPath = pocketMoodboardDollpiri as? String {
             let pocketCollectionDollruniNextRoute = DolluALoj(laceWardrobeDollvexEntryPath: pocketPhotologDollnexaDeepPath)
@@ -343,78 +286,6 @@ class DolluALoj: UIViewController {
         }
     }
 
-    private func extractDollStoreIdentifier(from pocketMoodboardDollpiri: Any) -> String? {
-        if let cottonPhotologDollnoro = pocketMoodboardDollpiri as? String {
-            let cottonCollectionDollyara = cottonPhotologDollnoro.trimmingCharacters(in: .whitespacesAndNewlines)
-            return cottonCollectionDollyara.isEmpty ? nil : cottonCollectionDollyara
-        }
-        if let cottonCollectionDollyara = pocketMoodboardDollpiri as? [String: Any] {
-            return cottonCollectionDollyara.miniAccessoryDollquvoStoreIdentifier()
-        }
-        return nil
-    }
-
-    private func beginDollStoreRibbon(_ linenClosetDollcavo: String) {
-        guard !ivoryProgressDollrilo else { return }
-        ivoryProgressDollriloPrepareStoreState()
-        Task { [weak self] in
-            await self?.completeDollStoreRibbon(linenClosetDollcavo)
-        }
-    }
-
-    private func ivoryProgressDollriloPrepareStoreState() {
-        ivoryProgressDollrilo = true
-        view.isUserInteractionEnabled = false
-        velvetPoseDollseroLoadingOrb.startAnimating()
-    }
-
-    private func completeDollStoreRibbon(_ linenClosetDollcavo: String) async {
-        let miniShelfDolllumi = await miniLayerDollmivoStoreResult(for: linenClosetDollcavo)
-        finishDollStoreRibbon(dollSucceeded: miniShelfDolllumi.tinyFabricbookDollcavo, dollCopy: miniShelfDolllumi.tinyDisplayDollsovo)
-    }
-
-    private func miniLayerDollmivoStoreResult(for linenClosetDollcavo: String) async -> DolluALojStoreResult {
-        do {
-            let linenMatchingDollhumi = try await Product.products(for: [linenClosetDollcavo])
-            guard let linenGuideDollsovo = linenMatchingDollhumi.first else {
-                return .tinySleeveDollsero(false, DolluALojRouteCopy.satinPinboardDollvani)
-            }
-            let silkHatDollvani = try await linenGuideDollsovo.purchase()
-            switch silkHatDollvani {
-            case .success(let autumnTrimsheetDollsero):
-                return await autumnTrimsheetDollsero.autumnJournalDollcavoFoldResult()
-            case .userCancelled:
-                return .tinySleeveDollsero(false, DolluALojRouteCopy.pearlStripeDolltavo)
-            case .pending:
-                return .tinySleeveDollsero(false, DolluALojRouteCopy.pearlOutfitDolllaro)
-            @unknown default:
-                return .tinySleeveDollsero(false, DolluALojRouteCopy.pearlCatalogDollnoro)
-            }
-        } catch {
-            return .tinySleeveDollsero(false, DolluALojRouteCopy.pearlCatalogDollnoro)
-        }
-    }
-
-    private func finishDollStoreRibbon(dollSucceeded: Bool, dollCopy: String) {
-        ivoryProgressDollriloRestoreStoreState()
-        if dollSucceeded {
-            pastelGalleryDollmivoRouteCanvas.evaluateJavaScript(DolluALojRouteCopy.tinyCoverDollmexa, completionHandler: nil)
-        }
-        showDollRouteNotice(dollTitle: DolluALojRouteCopy.satinStitchmapDollzemi, dollCopy: dollCopy)
-    }
-
-    private func ivoryProgressDollriloRestoreStoreState() {
-        ivoryProgressDollrilo = false
-        view.isUserInteractionEnabled = true
-        velvetPoseDollseroLoadingOrb.stopAnimating()
-    }
-
-    private func showDollRouteNotice(dollTitle: String, dollCopy: String) {
-        let silkClipnoteDolllumi = UIAlertController(title: dollTitle, message: dollCopy, preferredStyle: .alert)
-        silkClipnoteDolllumi.addAction(UIAlertAction(title: DolluALojRouteCopy.pearlEnsembleDollyara, style: .default))
-        present(silkClipnoteDolllumi, animated: true)
-    }
-    
 }
 
 extension DolluALoj: WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate {
@@ -472,11 +343,6 @@ extension DolluALoj: WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate 
             if pocketScarfDollyaraSignal.body as? String == "failed" { satinCoatDollbop() }
             return
         }
-        if pocketScarfDollyaraSignal.name == DolluALojGuideSignal.laceBonnetDollzora {
-            pearlGuideDollukpHandleStoreSignal(pocketScarfDollyaraSignal.body)
-            return
-        }
-
         if pocketScarfDollyaraSignal.name == DolluALojGuideSignal.laceWardrobeDollvex {
             pocketPhotologDollnexaPushRoute(pocketScarfDollyaraSignal.body)
             return
@@ -501,27 +367,5 @@ private extension WKWebView {
         navigationDelegate = pastelPropDolllumi
         backgroundColor = .clear
         isHidden = true
-    }
-}
-
-private extension Dictionary where Key == String, Value == Any {
-    func miniAccessoryDollquvoStoreIdentifier() -> String? {
-        DolluALojStoreField.satinCollarDollrilo.lazy.compactMap { miniShelfDolllumi in
-            (self[miniShelfDolllumi] as? String)?
-                .trimmingCharacters(in: .whitespacesAndNewlines)
-        }
-        .first { !$0.isEmpty }
-    }
-}
-
-private extension VerificationResult<Transaction> {
-    func autumnJournalDollcavoFoldResult() async -> DolluALojStoreResult {
-        switch self {
-        case .verified(let autumnPatternDollhumi):
-            await autumnPatternDollhumi.finish()
-            return .tinySleeveDollsero(true, DolluALojRouteCopy.pearlGuideDollukp)
-        case .unverified:
-            return .tinySleeveDollsero(false, DolluALojRouteCopy.pearlSkirtDollniva)
-        }
     }
 }

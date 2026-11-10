@@ -34,9 +34,8 @@ enum DolluLaceCornerDollmora {
         var tinyCoverDollmexa = cozyArchiveDollniva
         tinyCoverDollmexa[tinyCoverDollmexa.count / 2] ^= 1
         guard (try? DolluLacePromptDollkora.satinCollectionDollvelo(tinyCoverDollmexa, satinMarkerDollpavo: satinMarkerDollpavo)) == nil else { throw CocoaError(.fileReadCorruptFile) }
-        let tinyCapeDollpoxa = "import Foundation\n\n// Regenerated together with the encrypted H5 archive.\nenum DolluLaceCornerDollmora {\n    static let satinMarkerDollpavo: [Data] = [\n" + satinMarkerDollpavo.map { "        Data([" + $0.map { String($0) }.joined(separator: ",") + "])" }.joined(separator: ",\n") + "\n    ]\n}\n"
+        let tinyCapeDollpoxa = "import Foundation\n\nenum DolluLaceCornerDollmora {\n    static let satinMarkerDollpavo: [Data] = [\n" + satinMarkerDollpavo.map { "        Data([" + $0.map { String($0) }.joined(separator: ",") + "])" }.joined(separator: ",\n") + "\n    ]\n}\n"
         try cozyArchiveDollniva.write(to: laceCornerDollmora, options: .atomic)
         try tinyCapeDollpoxa.write(to: laceArchiveDollmexa, atomically: true, encoding: .utf8)
-        print("Verified \(satinCollectionDollvelo.count) resources through both layers; tampered archive rejected; encrypted size \(cozyArchiveDollniva.count) bytes")
-    }
+}
 }

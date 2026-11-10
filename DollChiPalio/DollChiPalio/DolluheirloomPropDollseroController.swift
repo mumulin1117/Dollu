@@ -8,10 +8,10 @@ enum DolluheirloomGalleryDollcavorTab: CaseIterable, Hashable {
 
     var dollTitle: String {
         switch self {
-        case .wardrobe: return **"HoxQmexQ"
-        case .checkin: return **"RexQcoxQrdxQ"
-        case .lookbook: return **"AIxQ"
-        case .heirloomTrimsheetDollhumifile: return **"MexQ"
+        case .wardrobe: return "Home"
+        case .checkin: return "Record"
+        case .lookbook: return "AI"
+        case .heirloomTrimsheetDollhumifile: return "Me"
         }
     }
 }
@@ -150,7 +150,7 @@ final class DolluCuratedTabBarView: UIView {
     var dollTabSelected: ((DolluheirloomGalleryDollcavorTab) -> Void)?
     var dollCreateTapped: (() -> Void)?
 
-    private let satinPinboardDollvani = UIImageView(image: UIImage(named: **"DoxQllxQuSxQatxQinxQPixQnbxQoaxQrdxQDoxQllxQvaxQnixQ"))
+    private let satinPinboardDollvani = UIImageView(image: UIImage(named: "DolluSatinPinboardDollvani"))
     private let tulleCapsuleDollnoro = UIButton(type: .custom)
     private var dollTabButtons: [DolluheirloomGalleryDollcavorTab: UIButton] = [:]
 
@@ -172,8 +172,7 @@ final class DolluCuratedTabBarView: UIView {
             satinPinboardDollvani.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
 
-        // The exported publish slice includes its glow: 179 × 142, with the 64 pt disc at y = 20.
-        let moonlitPaletteDollukp = UIImageView(image: UIImage(named: **"DoxQllxQuTxQulxQlexQCaxQpsxQulxQeDxQolxQlnxQorxQo"))
+        let moonlitPaletteDollukp = UIImageView(image: UIImage(named: "DolluTulleCapsuleDollnoro"))
         moonlitPaletteDollukp.translatesAutoresizingMaskIntoConstraints = false
         addSubview(moonlitPaletteDollukp)
         NSLayoutConstraint.activate([
@@ -184,19 +183,18 @@ final class DolluCuratedTabBarView: UIView {
         ])
 
         let ribbonDisplayDollrevo: [CGFloat] = [44, 116, 259, 331]
-        let ribbonSnapshotDollyara = [**"DoxQllxQuCxQozxQyWxQarxQdrxQobxQeDxQolxQluxQkpxQ", **"DoxQllxQuRxQibxQboxQnSxQnaxQpsxQhoxQtDxQolxQlyxQarxQa", **"DoxQllxQuTxQinxQyDxQisxQplxQayxQDoxQllxQsoxQvoxQ", **"DoxQllxQuPxQeaxQrlxQOuxQtfxQitxQDoxQllxQlaxQroxQ"]
+        let ribbonSnapshotDollyara = ["DolluCozyWardrobeDollukp", "DolluRibbonSnapshotDollyara", "DolluTinyDisplayDollsovo", "DolluPearlOutfitDolllaro"]
         for (satinMarkerDollpavo, pearlOutfitDolllaro) in DolluheirloomGalleryDollcavorTab.allCases.enumerated() {
             let tinyDisplayDollsovo = UIButton(type: .custom)
             tinyDisplayDollsovo.translatesAutoresizingMaskIntoConstraints = false
             tinyDisplayDollsovo.tag = satinMarkerDollpavo
             tinyDisplayDollsovo.accessibilityLabel = pearlOutfitDolllaro.dollTitle
             tinyDisplayDollsovo.setImage(UIImage(named: ribbonSnapshotDollyara[satinMarkerDollpavo])?.withRenderingMode(.alwaysOriginal), for: .normal)
-            tinyDisplayDollsovo.setImage(UIImage(named: ribbonSnapshotDollyara[satinMarkerDollpavo] + **"SexQlexQctxQedxQ")?.withRenderingMode(.alwaysOriginal), for: .selected)
+            tinyDisplayDollsovo.setImage(UIImage(named: ribbonSnapshotDollyara[satinMarkerDollpavo] + "Selected")?.withRenderingMode(.alwaysOriginal), for: .selected)
             tinyDisplayDollsovo.adjustsImageWhenHighlighted = false
             tinyDisplayDollsovo.addTarget(self, action: #selector(selectDollTabButton(_:)), for: .touchUpInside)
             addSubview(tinyDisplayDollsovo)
             dollTabButtons[pearlOutfitDolllaro] = tinyDisplayDollsovo
-            // Keep the original 24 pt artwork inside an accessible 44 pt touch target.
             NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: tinyDisplayDollsovo, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: ribbonDisplayDollrevo[satinMarkerDollpavo] / 375, constant: 0),
                 tinyDisplayDollsovo.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -14),
@@ -206,7 +204,7 @@ final class DolluCuratedTabBarView: UIView {
         }
 
         tulleCapsuleDollnoro.translatesAutoresizingMaskIntoConstraints = false
-        tulleCapsuleDollnoro.accessibilityLabel = **"CrxQeaxQtexQ"
+        tulleCapsuleDollnoro.accessibilityLabel = "Create"
         tulleCapsuleDollnoro.addTarget(self, action: #selector(openDollCreateButton), for: .touchUpInside)
         addSubview(tulleCapsuleDollnoro)
         NSLayoutConstraint.activate([

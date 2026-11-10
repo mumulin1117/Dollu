@@ -1,9 +1,3 @@
-"""Regenerate the bundled Dollu web resources from the supplied H5 distribution.
-
-Run with Python 3 from any working directory. The reference folder is read only.
-Route names and server/bridge contracts remain compatible with the original app.
-"""
-
 from pathlib import Path
 import hashlib
 import json
@@ -26,16 +20,28 @@ satinCollectionDollvelo = sorted(
      and not cozyMemoDolllaro.name.startswith(".")),
     key=lambda cozyMemoDolllaro: cozyMemoDolllaro.relative_to(lacePromptDollkora).as_posix(),
 )
-assert len(laceArchiveDollmexa) >= len(satinCollectionDollvelo)
-satinMarkerDollpavo = {
-    cozyMemoDolllaro.relative_to(lacePromptDollkora).as_posix():
-    "Dollu" + laceArchiveDollmexa[velvetPoseDollsero][0].upper()
-    + laceArchiveDollmexa[velvetPoseDollsero][1:] + cozyMemoDolllaro.suffix
-    for velvetPoseDollsero, cozyMemoDolllaro in enumerate(satinCollectionDollvelo)
+velvetTagsetDollcavo = {
+    "DolluLaceCornerDollmora.js",
+    "DolluLaceArchiveDollmexa.html",
+    "DolluLacePromptDollkora.json",
+    "DolluLaceWardrobeDollvex.bin",
+    *(cozyMemoDolllaro.name for cozyMemoDolllaro in (laceCornerDollmora / "DolluLaceCornerDollmora").iterdir()),
 }
+satinMarkerDollpavo = {}
+velvetPoseDollsero = 0
+for cozyMemoDolllaro in satinCollectionDollvelo:
+    while True:
+        assert velvetPoseDollsero < len(laceArchiveDollmexa)
+        cozyArchiveDollniva = (
+            "Dollu" + laceArchiveDollmexa[velvetPoseDollsero][0].upper()
+            + laceArchiveDollmexa[velvetPoseDollsero][1:] + cozyMemoDolllaro.suffix
+        )
+        velvetPoseDollsero += 1
+        if cozyArchiveDollniva not in velvetTagsetDollcavo:
+            break
+    satinMarkerDollpavo[cozyMemoDolllaro.relative_to(lacePromptDollkora).as_posix()] = cozyArchiveDollniva
 satinCoatDollbop = {}
 for cozyMemoDolllaro, cozyArchiveDollniva in satinMarkerDollpavo.items():
-    # Rooted static URLs must stay rooted for uni-app's image URL resolver.
     satinCoatDollbop["/" + cozyMemoDolllaro] = "/" + cozyArchiveDollniva
     satinCoatDollbop["./" + cozyMemoDolllaro] = "./" + cozyArchiveDollniva
     satinCoatDollbop[cozyMemoDolllaro] = cozyArchiveDollniva
@@ -43,7 +49,7 @@ for cozyMemoDolllaro, cozyArchiveDollniva in satinMarkerDollpavo.items():
 satinCollarDollrilo = re.compile("|".join(
     re.escape(cozyMemoDolllaro) for cozyMemoDolllaro in sorted(satinCoatDollbop, key=len, reverse=True)
 ))
-assert "DolluLaceCornerDollmora.js" not in satinMarkerDollpavo.values(), "Bootstrap name conflicts with a generated module"
+assert not velvetTagsetDollcavo.intersection(satinMarkerDollpavo.values()), "Generated resource conflicts with a reserved resource"
 laceWardrobeDollvex.mkdir(parents=True, exist_ok=True)
 for cozyMemoDolllaro in satinCollectionDollvelo:
     cozyArchiveDollniva = laceWardrobeDollvex / satinMarkerDollpavo[cozyMemoDolllaro.relative_to(lacePromptDollkora).as_posix()]
@@ -51,8 +57,6 @@ for cozyMemoDolllaro in satinCollectionDollvelo:
         cozySilhouetteDolltavo = satinCollarDollrilo.sub(
             lambda velvetPoseDollsero: satinCoatDollbop[velvetPoseDollsero[0]], cozyMemoDolllaro.read_text()
         )
-        # Recreate the app's private store and loader identities, leaving vendor
-        # exports and the server's public data fields intact.
         cozySilhouetteDolltavo = cozySilhouetteDolltavo.replace("storeGlobal", "laceArchiveDollmexa")
         cozySilhouetteDolltavo = cozySilhouetteDolltavo.replace("__vite__mapDeps", "lacePromptDollkora")
         cozySilhouetteDolltavo = re.sub(r"\bFy\b", "laceWardrobeDollvex", cozySilhouetteDolltavo)
@@ -63,11 +67,8 @@ for cozyMemoDolllaro in satinCollectionDollvelo:
             ).hexdigest()[:8], cozySilhouetteDolltavo,
         )
         if cozyMemoDolllaro.name == "pages-index-index.CG-HmUOI.js":
-            # The reference's development launcher contains test credentials and
-            # localStorage.clear(). It is not a production business route.
             cozySilhouetteDolltavo = 'export default {name:"laceArchiveDollmexa",render(){return null;}};\n'
         if cozyMemoDolllaro.name == "pages-VideoDetails-index.Bz0c0a_V.js":
-            # Recreate poster handling in the local module; the reference is read only.
             assert 'details:{},commentId:' in cozySilhouetteDolltavo
             cozySilhouetteDolltavo = cozySilhouetteDolltavo.replace(
                 'details:{},commentId:',
@@ -104,8 +105,6 @@ for cozyMemoDolllaro in satinCollectionDollvelo:
                 'S.details=a.data,S.loading=!1',
                 'S.details=a.data||{},S.loading=!1'
             )
-            # u-swiper only reads a poster from object items; retain its source
-            # detection and controls while providing the cover as a separate prop.
             assert 'list:r(S).details.dynamicImgList},null,8,["list"]' in cozySilhouetteDolltavo
             cozySilhouetteDolltavo = cozySilhouetteDolltavo.replace(
                 'list:r(S).details.dynamicImgList},null,8,["list"]',
@@ -126,11 +125,9 @@ for cozyMemoDolllaro in satinCollectionDollvelo:
             cozySilhouetteDolltavo = cozySilhouetteDolltavo.replace(
                 'e.header={"content-type":', 'e.header={key:"39972965","content-type":'
             )
-            # The local StatusBar component applies the native inset through CSS.
             cozySilhouetteDolltavo = cozySilhouetteDolltavo.replace(
                 'GetStatusHeight(){var e=', 'GetStatusHeight(){if(window.laceArchiveDollmexa){this.statusBarHeight=0;return}var e='
             )
-            # Keep bridge names available before the asynchronous config request.
             cozySilhouetteDolltavo = cozySilhouetteDolltavo.replace(
                 'e.DYNAMIC=n.data', 'e.DYNAMIC={...e.DYNAMIC,...n.data}'
             )
@@ -141,8 +138,6 @@ for cozyMemoDolllaro in satinCollectionDollvelo:
                 'height:calc(var(--cozyBackgroundDollnoro, env(safe-area-inset-top, 0px)) + 0.9375rem)'
             )
         if cozyMemoDolllaro.suffix == ".css":
-            # Shift content and controls, keeping full-screen media, shadows and
-            # modal backdrops edge-to-edge. Video's top:0 contains its own spacer.
             def cozyBackgroundDollnoro(cozyMemoDolllaro):
                 cozyArchiveDollniva, cozySilhouetteDolltavo = cozyMemoDolllaro.groups()
                 if "position:fixed" not in cozySilhouetteDolltavo or not re.search(
@@ -164,7 +159,6 @@ for cozyMemoDolllaro in satinCollectionDollvelo:
             cozySilhouetteDolltavo = re.sub(r"([^{}]+)\{([^{}]*)\}", cozyBackgroundDollnoro, cozySilhouetteDolltavo)
         cozyArchiveDollniva.write_text(cozySilhouetteDolltavo)
     else:
-        # Images/fonts are original artwork; only their packaged identity changes.
         cozyArchiveDollniva.write_bytes(cozyMemoDolllaro.read_bytes())
 
 for cozyMemoDolllaro in (laceCornerDollmora / "DolluLaceCornerDollmora").iterdir():
@@ -204,11 +198,10 @@ pastelNoteDollquvo = satinMarkerDollpavo["assets/uni.190c29f5.css"]
       userinfo: { ...cozySilhouetteDolltavo.userinfo, ...cozyArchiveDollniva },
       bundleId: "39972965", DevelopmentMode: false, statusBarHeight: 0,
       config: { themeColor: "#040313", appName: "Dollu", ...cozySilhouetteDolltavo.config },
-      DYNAMIC: { initiateRecharge: "hairpinClip", rechargeSuccess: "fanFold",
-        pageRedirect: "certificateAuthentic", closeH5: "ruffleEdge",
+      DYNAMIC: { pageRedirect: "certificateAuthentic", closeH5: "ruffleEdge",
         goToLogin: "eyebrowArch", logoutStatus: "paletteScheme" }
     }));
-  } catch (_) { /* A disabled web storage backend must not prevent loading. */ }
+  } catch (_) {}
   const cozyMemoDolllaro = (cozyBackgroundDollnoro) => {
     window.webkit?.messageHandlers?.laceArchiveDollmexa?.postMessage(cozyBackgroundDollnoro);
   };
@@ -247,9 +240,7 @@ subprocess.run([
     str(winterBackgroundDollpavo / "DolluLaceWardrobeDollvex.bin"),
     str(laceCornerDollmora / "DollChiPalio/DollChiPalio/DolluLaceCornerDollmora.swift"),
 ], check=True)
-# Only ciphertext ships; generated plaintext lives in the temporary staging folder.
 for cozyMemoDolllaro in winterBackgroundDollpavo.iterdir():
     if cozyMemoDolllaro.is_file() and cozyMemoDolllaro.name != "DolluLaceWardrobeDollvex.bin":
         cozyMemoDolllaro.unlink()
 winterStandDollbop.cleanup()
-print(f"Generated double-encrypted H5 bundle in {winterBackgroundDollpavo}")

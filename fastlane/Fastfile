@@ -162,7 +162,6 @@ platform :ios do
     pgyer(api_key: pgy_api_key) if export_method == "ad-hoc"
   end
 
-  # Usage: bundle exec fastlane ios create_app name:"Pacel"
   desc "Create the app on Apple Developer and App Store Connect"
   lane :create_app do |options|
     name = options[:name].to_s.strip
@@ -170,7 +169,7 @@ platform :ios do
     sku = options[:sku].to_s.strip
     sku = bundle_id if sku.empty?
     language = options[:language].to_s.strip
-    language = ENV.fetch("APP_LANGUAGE", "ja").to_s.strip if language.empty? # ja, en-US, ko, fr-FR, de-DE
+    language = ENV.fetch("APP_LANGUAGE", "ja").to_s.strip if language.empty?
 
     UI.user_error!("FASTLANE_USER is required") if username.empty?
     UI.user_error!("BUNDLE_ID is required") if bundle_id.empty?
@@ -179,9 +178,6 @@ platform :ios do
     produce(
       username: username,
       app_identifier: bundle_id,
-      # app_name: name,
-      # sku: sku,
-      # language: language,
       skip_itc: true,
       skip_devcenter: false,
       enable_services: {
@@ -191,10 +187,6 @@ platform :ios do
     )
   end
 
-  # Usage: bundle exec fastlane ios add_devices devices_file:/path/to/devices.txt
-  # DEVICES_FILE uses tab-separated columns:
-  # Device ID<TAB>Device Name<TAB>Device Platform
-  # Device Platform is optional and accepts ios or mac.
   desc "Register multiple devices from an Apple device file"
   lane :add_devices do |options|
     devices_file = options[:devices_file].to_s.strip
