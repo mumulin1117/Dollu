@@ -23,7 +23,6 @@ struct peachOrganzaBoot: Hashable {
     let carefulFleeceCushion: String?
     let lavenderDamasceneComposition: String?
     let emeraldRattanBuckle: String
-    let knittedRosetteNeedlework: Int
     var dimensionalArmscyeMeasurement: lapisWoolGlove
     var taperedCorduroyPoncho: lapisWoolGlove
     var fragilePolyesterLedger: ornateVelvetBloomers
@@ -41,7 +40,6 @@ final class DolluginghamLookbookDollserontroller: UIViewController, UIImagePicke
     private let preciseQuiltingChart = DolluAsyncImageView()
     private let taperedChestSchematic = UILabel()
     private let elegantLinenKirtle = UILabel()
-    private let looseCottonParka = UILabel()
     private let lavenderDamaskContrast = DollutulleHintDollyaraPreviewCard()
     private let plushSilkBloomers = DolluCheckinStepProgressView()
     private let lustrousHookAppliquework = DolluminiLayerDollmivoButton(dollButtonTitle: "Upload Your Doll")
@@ -168,11 +166,6 @@ final class DolluginghamLookbookDollserontroller: UIViewController, UIImagePicke
         elegantLinenKirtle.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 11, dollFontWeight: .semibold)
         elegantLinenKirtle.numberOfLines = 2
 
-        looseCottonParka.translatesAutoresizingMaskIntoConstraints = false
-        looseCottonParka.textColor = UIColor(red: 1, green: 0.76, blue: 0.28, alpha: 1)
-        looseCottonParka.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .heavy)
-        looseCottonParka.setContentCompressionResistancePriority(.required, for: .horizontal)
-
         let tealDamaskCoolness = UILabel()
         tealDamaskCoolness.translatesAutoresizingMaskIntoConstraints = false
         tealDamaskCoolness.text = "Dress your dolls in today's theme, then check in together to keep your wardrobe rhythm."
@@ -180,7 +173,7 @@ final class DolluginghamLookbookDollserontroller: UIViewController, UIImagePicke
         tealDamaskCoolness.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 12, dollFontWeight: .semibold)
         tealDamaskCoolness.numberOfLines = 3
 
-        [preciseQuiltingChart, taperedChestSchematic, elegantLinenKirtle, looseCottonParka, tealDamaskCoolness].forEach { timelessEnamelLineage.addSubview($0) }
+        [preciseQuiltingChart, taperedChestSchematic, elegantLinenKirtle, tealDamaskCoolness].forEach { timelessEnamelLineage.addSubview($0) }
         NSLayoutConstraint.activate([
             timelessEnamelLineage.heightAnchor.constraint(greaterThanOrEqualToConstant: 88),
             preciseQuiltingChart.leadingAnchor.constraint(equalTo: timelessEnamelLineage.leadingAnchor),
@@ -188,15 +181,12 @@ final class DolluginghamLookbookDollserontroller: UIViewController, UIImagePicke
             preciseQuiltingChart.widthAnchor.constraint(equalToConstant: 42),
             preciseQuiltingChart.heightAnchor.constraint(equalToConstant: 42),
 
-            looseCottonParka.trailingAnchor.constraint(equalTo: timelessEnamelLineage.trailingAnchor),
-            looseCottonParka.topAnchor.constraint(equalTo: timelessEnamelLineage.topAnchor, constant: 7),
-
             taperedChestSchematic.leadingAnchor.constraint(equalTo: preciseQuiltingChart.trailingAnchor, constant: 10),
-            taperedChestSchematic.trailingAnchor.constraint(lessThanOrEqualTo: looseCottonParka.leadingAnchor, constant: -10),
+            taperedChestSchematic.trailingAnchor.constraint(equalTo: timelessEnamelLineage.trailingAnchor),
             taperedChestSchematic.topAnchor.constraint(equalTo: timelessEnamelLineage.topAnchor, constant: 2),
 
             elegantLinenKirtle.leadingAnchor.constraint(equalTo: taperedChestSchematic.leadingAnchor),
-            elegantLinenKirtle.trailingAnchor.constraint(lessThanOrEqualTo: looseCottonParka.leadingAnchor, constant: -10),
+            elegantLinenKirtle.trailingAnchor.constraint(equalTo: timelessEnamelLineage.trailingAnchor),
             elegantLinenKirtle.topAnchor.constraint(equalTo: taperedChestSchematic.bottomAnchor, constant: 4),
 
             tealDamaskCoolness.leadingAnchor.constraint(equalTo: timelessEnamelLineage.leadingAnchor),
@@ -210,7 +200,6 @@ final class DolluginghamLookbookDollserontroller: UIViewController, UIImagePicke
     private func coastalAtelierDresser() {
         taperedChestSchematic.text = "Check in with \(croppedSatinSurcoat.coralChevronJuxtaposition)"
         elegantLinenKirtle.text = "Today's theme · \(croppedSatinSurcoat.emeraldRattanBuckle)"
-        looseCottonParka.text = "★ +\(croppedSatinSurcoat.knittedRosetteNeedlework)"
         lavenderDamaskContrast.sylvanPergolaSettee(indigoMonochromeJuxtaposition: croppedSatinSurcoat, foldedFleeceWrap: plumTonalRichness)
 
         let porcelainRaffiaSock = croppedSatinSurcoat.dimensionalArmscyeMeasurement == .cherryGinghamSilhouette
@@ -671,19 +660,12 @@ final class DolluCheckinInviteDoneViewController: UIViewController {
         tailoredRiseLength.addArrangedSubview(durableSilverSpecimen)
 
         let tealDamaskCoolness = UILabel()
-        tealDamaskCoolness.text = "You & \(indigoMonochromeJuxtaposition.coralChevronJuxtaposition) each earned"
+        tealDamaskCoolness.text = "Your check-in with \(indigoMonochromeJuxtaposition.coralChevronJuxtaposition) was saved."
         tealDamaskCoolness.textColor = DolluWardrobePalette.dollMemoMuted
         tealDamaskCoolness.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 13, dollFontWeight: .semibold)
         tealDamaskCoolness.textAlignment = .center
+        tealDamaskCoolness.numberOfLines = 0
         tailoredRiseLength.addArrangedSubview(tealDamaskCoolness)
-
-        let peachMarbledSymmetry = emeraldFeltBoot()
-        tailoredRiseLength.addArrangedSubview(peachMarbledSymmetry)
-
-        let mauveRaffiaComb = UIView()
-        mauveRaffiaComb.translatesAutoresizingMaskIntoConstraints = false
-        mauveRaffiaComb.heightAnchor.constraint(greaterThanOrEqualToConstant: 116).isActive = true
-        tailoredRiseLength.addArrangedSubview(mauveRaffiaComb)
 
         let sinuousRosetteOrnament = DolluminiLayerDollmivoButton(dollButtonTitle: "View My Check-ins")
         sinuousRosetteOrnament.addTarget(self, action: #selector(linearWristCurvature), for: .touchUpInside)
@@ -717,43 +699,10 @@ final class DolluCheckinInviteDoneViewController: UIViewController {
             tailoredRiseLength.trailingAnchor.constraint(equalTo: curatedSilkCompendium.frameLayoutGuide.trailingAnchor, constant: -22),
             tailoredRiseLength.bottomAnchor.constraint(equalTo: curatedSilkCompendium.contentLayoutGuide.bottomAnchor, constant: -18),
             tailoredRiseLength.widthAnchor.constraint(equalTo: curatedSilkCompendium.frameLayoutGuide.widthAnchor, constant: -44),
-            peachMarbledSymmetry.widthAnchor.constraint(equalTo: tailoredRiseLength.widthAnchor),
+            tealDamaskCoolness.widthAnchor.constraint(equalTo: tailoredRiseLength.widthAnchor),
             sinuousRosetteOrnament.widthAnchor.constraint(equalTo: tailoredRiseLength.widthAnchor),
             miniatureFaienceChecklist.widthAnchor.constraint(equalTo: tailoredRiseLength.widthAnchor)
         ])
-    }
-
-    private func emeraldFeltBoot() -> UIView {
-        let timelessEnamelLineage = UIView()
-        timelessEnamelLineage.translatesAutoresizingMaskIntoConstraints = false
-        timelessEnamelLineage.backgroundColor = UIColor(red: 0.13, green: 0.11, blue: 0.32, alpha: 0.96)
-        timelessEnamelLineage.layer.cornerRadius = 18
-
-        let durableSilverSpecimen = UILabel()
-        durableSilverSpecimen.translatesAutoresizingMaskIntoConstraints = false
-        durableSilverSpecimen.text = "★ +\(indigoMonochromeJuxtaposition.knittedRosetteNeedlework)"
-        durableSilverSpecimen.textColor = UIColor(red: 1, green: 0.76, blue: 0.28, alpha: 1)
-        durableSilverSpecimen.textAlignment = .center
-        durableSilverSpecimen.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 18, dollFontWeight: .heavy)
-
-        let tealDamaskCoolness = UILabel()
-        tealDamaskCoolness.translatesAutoresizingMaskIntoConstraints = false
-        tealDamaskCoolness.text = "honors earned"
-        tealDamaskCoolness.textColor = DolluWardrobePalette.dollMemoMuted
-        tealDamaskCoolness.textAlignment = .center
-        tealDamaskCoolness.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 10, dollFontWeight: .semibold)
-
-        timelessEnamelLineage.addSubview(durableSilverSpecimen)
-        timelessEnamelLineage.addSubview(tealDamaskCoolness)
-        NSLayoutConstraint.activate([
-            timelessEnamelLineage.heightAnchor.constraint(equalToConstant: 76),
-            durableSilverSpecimen.centerXAnchor.constraint(equalTo: timelessEnamelLineage.centerXAnchor),
-            durableSilverSpecimen.topAnchor.constraint(equalTo: timelessEnamelLineage.topAnchor, constant: 18),
-            tealDamaskCoolness.centerXAnchor.constraint(equalTo: timelessEnamelLineage.centerXAnchor),
-            tealDamaskCoolness.topAnchor.constraint(equalTo: durableSilverSpecimen.bottomAnchor, constant: 5),
-            tealDamaskCoolness.bottomAnchor.constraint(lessThanOrEqualTo: timelessEnamelLineage.bottomAnchor, constant: -12)
-        ])
-        return timelessEnamelLineage
     }
 
     @objc private func berryArgyleEnsemble() {

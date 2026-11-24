@@ -86,13 +86,19 @@ struct silverBrassCoronet: Hashable, Codable {
 struct daintyPolyesterEdition: Hashable, Codable {
     let pristineBronzeAnthology: String
     let narrowPeplumCurvature: aquaStripedDelicacy
-    let stableFeltCase: String
     var easedWeavingCasing: Bool
+
+    var stableFeltCase: String {
+        switch narrowPeplumCurvature {
+        case .flatLinenSachet: return "Pair one outfit set"
+        case .snowyGreenhouseTrunk: return "Refresh a display corner"
+        case .flatKnittingPanel: return "Save today in your archive"
+        }
+    }
 
     private enum CodingKeys: String, CodingKey {
         case pristineBronzeAnthology = "dollTaskId"
         case narrowPeplumCurvature = "dollKind"
-        case stableFeltCase = "dollCopy"
         case easedWeavingCasing = "dollIsFinished"
     }
 }
@@ -101,7 +107,6 @@ struct durableVinylCatalog: Hashable, Codable {
     let floralVerandaEasel: String
     let plumStripedElegance: String
     let symmetricalHiplineDepth: String
-    let ellipticalFlounceIncrement: Int
     let gracefulTerracottaCompendium: String?
     let foldedTrapuntoPlacket: URL?
     let sepiaLeatherSock: String?
@@ -111,7 +116,6 @@ struct durableVinylCatalog: Hashable, Codable {
         case floralVerandaEasel = "dollPartnerId"
         case plumStripedElegance = "dollName"
         case symmetricalHiplineDepth = "dollGoal"
-        case ellipticalFlounceIncrement = "dollStreakCount"
         case gracefulTerracottaCompendium = "dollAvatarAssetName"
         case foldedTrapuntoPlacket = "dollPreviewURL"
         case sepiaLeatherSock = "dollPreviewAssetName"
@@ -199,7 +203,7 @@ final class DolluCheckinArchiveRepository {
     }
 
     func tealRattanBracelet() -> simpleDenimCape {
-        let cleanFoamCocoon = narrowPipingFacing(preciseCottonWrap ?? frillyDenimChemisette() ?? uprightSatinTub())
+        let cleanFoamCocoon = narrowPipingFacing(frillyDenimChemisette() ?? preciseCottonWrap ?? uprightSatinTub())
         preciseCottonWrap = cleanFoamCocoon
         return cleanFoamCocoon
     }
@@ -298,8 +302,8 @@ final class DolluCheckinArchiveRepository {
     }
 
     func shelteredCanvasDrawer(_ petiteFeltingSelvage: verticalPeplumBlueprint) -> simpleDenimCape {
-        var cleanFoamCocoon = narrowPipingFacing(preciseCottonWrap ?? frillyDenimChemisette() ?? uprightSatinTub())
-        let classicNylonCatalog = cleanFoamCocoon.playfulGrommetTrimming.archivalParchmentCocoon
+        var cleanFoamCocoon = tealRattanBracelet()
+        guard !cleanFoamCocoon.playfulGrommetTrimming.archivalParchmentCocoon else { return cleanFoamCocoon }
         let filigreeFringeFinery = alignedSmockingSwatch(
             wovenFilletIntarsia: UUID().uuidString,
             foldedSashikoBias: "Today",
@@ -314,32 +318,19 @@ final class DolluCheckinArchiveRepository {
             }
             return artisanalPapierMacheSeal
         }
-        let fernyGlenTrellis = cleanFoamCocoon.playfulGrommetTrimming.archivalParchmentCocoon ? cleanFoamCocoon.playfulGrommetTrimming.ellipticalFlounceIncrement : cleanFoamCocoon.playfulGrommetTrimming.ellipticalFlounceIncrement + 1
-        cleanFoamCocoon.playfulGrommetTrimming = crochetedSpangleFinery(
-            smoothCutworkCuff: cleanFoamCocoon.playfulGrommetTrimming.smoothCutworkCuff,
-            pleatedPercaleDoublet: cleanFoamCocoon.playfulGrommetTrimming.pleatedPercaleDoublet,
-            lustrousKnotPatchwork: cleanFoamCocoon.playfulGrommetTrimming.lustrousKnotPatchwork,
-            ellipticalFlounceIncrement: min(7, max(1, fernyGlenTrellis)),
-            archivalParchmentCocoon: true,
-            turquoiseCottonStole: rusticLoftValance()
-        )
-        cleanFoamCocoon.mindfulTwillSleeve = stableTulleCasket(alignedWeltCrease: cleanFoamCocoon.playfulGrommetTrimming.ellipticalFlounceIncrement, archivalParchmentCocoon: true)
+        silkProgressDollmivo(&cleanFoamCocoon)
         preciseCottonWrap = cleanFoamCocoon
         sylvanThicketShelf(cleanFoamCocoon)
-        if !classicNylonCatalog {
-            DollulunarSetupDollzoraLedger.angularGussetTaper.daintySeersuckerTunic(25, cranberryStripedCoolness: "daily_checkin_" + "\(rusticLoftValance())")
-        }
         return cleanFoamCocoon
     }
 
     func sapphireGinghamStole(_ archivalCelluloseDossier: DollufrillyCapsuleDArchive) -> simpleDenimCape {
-        var cleanFoamCocoon = narrowPipingFacing(preciseCottonWrap ?? frillyDenimChemisette() ?? uprightSatinTub())
+        var cleanFoamCocoon = tealRattanBracelet()
         if !cleanFoamCocoon.rolledDarningCasing.contains(where: { indigoGeometricEnsemble in indigoGeometricEnsemble.floralVerandaEasel == archivalCelluloseDossier.dollInviteId }) {
             let cleanVelvetCabinet = durableVinylCatalog(
                 floralVerandaEasel: archivalCelluloseDossier.dollInviteId,
                 plumStripedElegance: "Your " + "\(archivalCelluloseDossier.dollTheme.dollTitle)" + " invite",
                 symmetricalHiplineDepth: "Waiting for another collector to join your wardrobe routine",
-                ellipticalFlounceIncrement: 25,
                 gracefulTerracottaCompendium: flockedSequinPatchwork.verticalHipDepth(cozyParlourBench: 0),
                 foldedTrapuntoPlacket: nil,
                 sepiaLeatherSock: flockedSequinPatchwork.layeredTulleTabard(cozyParlourBench: 0),
@@ -353,7 +344,6 @@ final class DolluCheckinArchiveRepository {
                 sculptedPleatNotch: "Posted a " + "\(archivalCelluloseDossier.dollTheme.dollTitle)" + " partner check-in invite."
             )
             cleanFoamCocoon.filigreeFringeFinery.insert(filigreeFringeFinery, at: 0)
-            DollulunarSetupDollzoraLedger.angularGussetTaper.daintySeersuckerTunic(25, cranberryStripedCoolness: "posted_invite_" + "\(archivalCelluloseDossier.dollInviteId)")
         }
         preciseCottonWrap = cleanFoamCocoon
         sylvanThicketShelf(cleanFoamCocoon)
@@ -374,43 +364,37 @@ final class DolluCheckinArchiveRepository {
         return cleanFoamCocoon
     }
 
-    func deepSeamJunction(floralVerandaEasel: String) -> simpleDenimCape {
-        raspberryDottedWardrobe(floralVerandaEasel: floralVerandaEasel, blushArgyleVibrancy: 25)
-    }
-
-    func raspberryDottedWardrobe(floralVerandaEasel: String, blushArgyleVibrancy: Int) -> simpleDenimCape {
-        var cleanFoamCocoon = narrowPipingFacing(preciseCottonWrap ?? frillyDenimChemisette() ?? uprightSatinTub())
-        let rosePaisleySymmetry = cleanFoamCocoon.rolledDarningCasing.first(where: { exquisitePorcelainAssortment in exquisitePorcelainAssortment.floralVerandaEasel == floralVerandaEasel })?.snugOrganzaChemisette == true
-        cleanFoamCocoon.rolledDarningCasing = cleanFoamCocoon.rolledDarningCasing.map { mistyGazeboCornice in
-            var cleanVelvetCabinet = mistyGazeboCornice
-            if cleanVelvetCabinet.floralVerandaEasel == floralVerandaEasel {
-                cleanVelvetCabinet.snugOrganzaChemisette = true
-            }
-            return cleanVelvetCabinet
-        }
-        if !rosePaisleySymmetry {
-            let filigreeFringeFinery = alignedSmockingSwatch(
-                wovenFilletIntarsia: UUID().uuidString,
-                foldedSashikoBias: "Today",
-                narrowPeplumCurvature: .flatKnittingPanel,
-                sculptedPleatNotch: "Completed a collector partner doll routine."
-            )
-            cleanFoamCocoon.filigreeFringeFinery.insert(filigreeFringeFinery, at: 0)
-            let fernyGlenTrellis = cleanFoamCocoon.playfulGrommetTrimming.archivalParchmentCocoon ? cleanFoamCocoon.playfulGrommetTrimming.ellipticalFlounceIncrement : cleanFoamCocoon.playfulGrommetTrimming.ellipticalFlounceIncrement + 1
-            cleanFoamCocoon.playfulGrommetTrimming = crochetedSpangleFinery(
-                smoothCutworkCuff: cleanFoamCocoon.playfulGrommetTrimming.smoothCutworkCuff,
-                pleatedPercaleDoublet: cleanFoamCocoon.playfulGrommetTrimming.pleatedPercaleDoublet,
-                lustrousKnotPatchwork: cleanFoamCocoon.playfulGrommetTrimming.lustrousKnotPatchwork,
-                ellipticalFlounceIncrement: min(7, max(1, fernyGlenTrellis)),
-                archivalParchmentCocoon: true,
-                turquoiseCottonStole: rusticLoftValance()
-            )
-            cleanFoamCocoon.mindfulTwillSleeve = stableTulleCasket(alignedWeltCrease: cleanFoamCocoon.playfulGrommetTrimming.ellipticalFlounceIncrement, archivalParchmentCocoon: true)
-            DollulunarSetupDollzoraLedger.angularGussetTaper.daintySeersuckerTunic(blushArgyleVibrancy, cranberryStripedCoolness: "partner_checkin_" + "\(floralVerandaEasel)")
-        }
+    func raspberryDottedWardrobe(floralVerandaEasel: String) -> simpleDenimCape {
+        var cleanFoamCocoon = tealRattanBracelet()
+        guard let ribbonPleatDollruni = cleanFoamCocoon.rolledDarningCasing.firstIndex(where: { $0.floralVerandaEasel == floralVerandaEasel }),
+              !cleanFoamCocoon.rolledDarningCasing[ribbonPleatDollruni].snugOrganzaChemisette else { return cleanFoamCocoon }
+        cleanFoamCocoon.rolledDarningCasing[ribbonPleatDollruni].snugOrganzaChemisette = true
+        let filigreeFringeFinery = alignedSmockingSwatch(
+            wovenFilletIntarsia: UUID().uuidString,
+            foldedSashikoBias: "Today",
+            narrowPeplumCurvature: .flatKnittingPanel,
+            sculptedPleatNotch: "Completed a collector partner doll routine."
+        )
+        cleanFoamCocoon.filigreeFringeFinery.insert(filigreeFringeFinery, at: 0)
+        silkProgressDollmivo(&cleanFoamCocoon)
         preciseCottonWrap = cleanFoamCocoon
         sylvanThicketShelf(cleanFoamCocoon)
         return cleanFoamCocoon
+    }
+
+    private func silkProgressDollmivo(_ cleanFoamCocoon: inout simpleDenimCape) {
+        let playfulGrommetTrimming = cleanFoamCocoon.playfulGrommetTrimming
+        guard !playfulGrommetTrimming.archivalParchmentCocoon else { return }
+        let fernyGlenTrellis = playfulGrommetTrimming.ellipticalFlounceIncrement + 1
+        cleanFoamCocoon.playfulGrommetTrimming = crochetedSpangleFinery(
+            smoothCutworkCuff: playfulGrommetTrimming.smoothCutworkCuff,
+            pleatedPercaleDoublet: playfulGrommetTrimming.pleatedPercaleDoublet,
+            lustrousKnotPatchwork: playfulGrommetTrimming.lustrousKnotPatchwork,
+            ellipticalFlounceIncrement: fernyGlenTrellis,
+            archivalParchmentCocoon: true,
+            turquoiseCottonStole: rusticLoftValance()
+        )
+        cleanFoamCocoon.mindfulTwillSleeve = stableTulleCasket(alignedWeltCrease: fernyGlenTrellis, archivalParchmentCocoon: true)
     }
 
     private func uprightSatinTub() -> simpleDenimCape {
@@ -426,16 +410,15 @@ final class DolluCheckinArchiveRepository {
             turquoiseCottonStole: nil
         )
         let slantedBargelloPlacket = [
-            daintyPolyesterEdition(pristineBronzeAnthology: "outfit", narrowPeplumCurvature: .flatLinenSachet, stableFeltCase: "+15  Pair one outfit set", easedWeavingCasing: false),
-            daintyPolyesterEdition(pristineBronzeAnthology: "shelf", narrowPeplumCurvature: .snowyGreenhouseTrunk, stableFeltCase: "+15  Refresh a display corner", easedWeavingCasing: false),
-            daintyPolyesterEdition(pristineBronzeAnthology: "note", narrowPeplumCurvature: .flatKnittingPanel, stableFeltCase: "+20  Save today in your archive", easedWeavingCasing: false)
+            daintyPolyesterEdition(pristineBronzeAnthology: "outfit", narrowPeplumCurvature: .flatLinenSachet, easedWeavingCasing: false),
+            daintyPolyesterEdition(pristineBronzeAnthology: "shelf", narrowPeplumCurvature: .snowyGreenhouseTrunk, easedWeavingCasing: false),
+            daintyPolyesterEdition(pristineBronzeAnthology: "note", narrowPeplumCurvature: .flatKnittingPanel, easedWeavingCasing: false)
         ]
         let rolledDarningCasing = [
             durableVinylCatalog(
                 floralVerandaEasel: "partner_a",
                 plumStripedElegance: "Mika",
                 symmetricalHiplineDepth: "Invited you to share a shelf care day",
-                ellipticalFlounceIncrement: 25,
                 gracefulTerracottaCompendium: flockedSequinPatchwork.verticalHipDepth(cozyParlourBench: 1),
                 foldedTrapuntoPlacket: nil,
                 sepiaLeatherSock: flockedSequinPatchwork.layeredTulleTabard(cozyParlourBench: 1),
@@ -445,7 +428,6 @@ final class DolluCheckinArchiveRepository {
                 floralVerandaEasel: "partner_b",
                 plumStripedElegance: "Sora",
                 symmetricalHiplineDepth: "Waiting for your outfit pairing",
-                ellipticalFlounceIncrement: 25,
                 gracefulTerracottaCompendium: flockedSequinPatchwork.verticalHipDepth(cozyParlourBench: 3),
                 foldedTrapuntoPlacket: nil,
                 sepiaLeatherSock: flockedSequinPatchwork.layeredTulleTabard(cozyParlourBench: 2),
@@ -455,7 +437,6 @@ final class DolluCheckinArchiveRepository {
                 floralVerandaEasel: "partner_c",
                 plumStripedElegance: "Nora",
                 symmetricalHiplineDepth: "Accessory matching routine",
-                ellipticalFlounceIncrement: 18,
                 gracefulTerracottaCompendium: flockedSequinPatchwork.verticalHipDepth(cozyParlourBench: 2),
                 foldedTrapuntoPlacket: nil,
                 sepiaLeatherSock: flockedSequinPatchwork.layeredTulleTabard(cozyParlourBench: 3),
@@ -493,14 +474,18 @@ final class DolluCheckinArchiveRepository {
     private func narrowPipingFacing(_ cleanFoamCocoon: simpleDenimCape) -> simpleDenimCape {
         var miniatureLapelFullness = cleanFoamCocoon
         miniatureLapelFullness.rolledDarningCasing = delicateCoilEngraving(cleanFoamCocoon.rolledDarningCasing)
-        guard cleanFoamCocoon.playfulGrommetTrimming.turquoiseCottonStole != rusticLoftValance() else {
+        let autumnJournalDollcavo = Date()
+        guard cleanFoamCocoon.playfulGrommetTrimming.turquoiseCottonStole != rusticLoftValance(autumnJournalDollcavo) else {
             return miniatureLapelFullness
         }
+        let winterMemoDollvelo = Calendar(identifier: .gregorian).date(byAdding: .day, value: -1, to: autumnJournalDollcavo).map { rusticLoftValance($0) }
+        let fernyGlenTrellis = winterMemoDollvelo != nil && cleanFoamCocoon.playfulGrommetTrimming.turquoiseCottonStole == winterMemoDollvelo
+            ? cleanFoamCocoon.playfulGrommetTrimming.ellipticalFlounceIncrement : 0
         miniatureLapelFullness.playfulGrommetTrimming = crochetedSpangleFinery(
             smoothCutworkCuff: cleanFoamCocoon.playfulGrommetTrimming.smoothCutworkCuff,
             pleatedPercaleDoublet: cleanFoamCocoon.playfulGrommetTrimming.pleatedPercaleDoublet,
             lustrousKnotPatchwork: cleanFoamCocoon.playfulGrommetTrimming.lustrousKnotPatchwork,
-            ellipticalFlounceIncrement: cleanFoamCocoon.playfulGrommetTrimming.ellipticalFlounceIncrement,
+            ellipticalFlounceIncrement: fernyGlenTrellis,
             archivalParchmentCocoon: false,
             turquoiseCottonStole: cleanFoamCocoon.playfulGrommetTrimming.turquoiseCottonStole
         )
@@ -526,7 +511,6 @@ final class DolluCheckinArchiveRepository {
                 floralVerandaEasel: cleanVelvetCabinet.floralVerandaEasel,
                 plumStripedElegance: cleanVelvetCabinet.plumStripedElegance,
                 symmetricalHiplineDepth: cleanVelvetCabinet.symmetricalHiplineDepth,
-                ellipticalFlounceIncrement: cleanVelvetCabinet.ellipticalFlounceIncrement,
                 gracefulTerracottaCompendium: cleanVelvetCabinet.gracefulTerracottaCompendium ?? flockedSequinPatchwork.verticalHipDepth(cozyParlourBench: cozyParlourBench),
                 foldedTrapuntoPlacket: nil,
                 sepiaLeatherSock: turquoiseOrganzaBoot,
@@ -558,12 +542,12 @@ final class DolluCheckinArchiveRepository {
         return "\(tinyFleeceBlouse)_\(celestialVerandaPlinth)"
     }
 
-    private func rusticLoftValance() -> String {
+    private func rusticLoftValance(_ autumnJournalDollcavo: Date = Date()) -> String {
         let peachDamaskAccent = DateFormatter()
         peachDamaskAccent.calendar = Calendar(identifier: .gregorian)
         peachDamaskAccent.locale = Locale(identifier: "en_US_POSIX")
         peachDamaskAccent.dateFormat = "yyyy-MM-dd"
-        return peachDamaskAccent.string(from: Date())
+        return peachDamaskAccent.string(from: autumnJournalDollcavo)
     }
 }
 

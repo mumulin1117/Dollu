@@ -5,7 +5,6 @@ final class DollucalmNoteDollsovoController: UIViewController {
     private let ribbonDisplayDollrevo = UIScrollView()
     private let satinPinboardDollvani = UIStackView()
     private let sageLookbookDollmexa = UILabel()
-    private let glossyIdeaDollsovo = DolludelicateBonnetBadgeButton()
     private let calmNoteDollsovo = DollucalmNoteDollsovoView()
     private let ribbonCategoryDollpiri = UIRefreshControl()
     private let floralHintDollvelo = UILabel()
@@ -27,7 +26,6 @@ final class DollucalmNoteDollsovoController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        refreshDollStarBadge()
         if pocketCollectionDollruni != nil {
             applyDollCheckinLoaded(pearlGuideDollukp.tealRattanBracelet())
         }
@@ -47,10 +45,6 @@ final class DollucalmNoteDollsovoController: UIViewController {
         sageLookbookDollmexa.adjustsFontSizeToFitWidth = true
         sageLookbookDollmexa.minimumScaleFactor = 0.72
         view.addSubview(sageLookbookDollmexa)
-
-        glossyIdeaDollsovo.translatesAutoresizingMaskIntoConstraints = false
-        glossyIdeaDollsovo.addTarget(self, action: #selector(openDollHonorProgress), for: .touchUpInside)
-        view.addSubview(glossyIdeaDollsovo)
 
         ribbonDisplayDollrevo.translatesAutoresizingMaskIntoConstraints = false
         ribbonDisplayDollrevo.alwaysBounceVertical = true
@@ -110,13 +104,8 @@ final class DollucalmNoteDollsovoController: UIViewController {
 
             sageLookbookDollmexa.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 4),
             sageLookbookDollmexa.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: dollSideInset),
-            sageLookbookDollmexa.trailingAnchor.constraint(lessThanOrEqualTo: glossyIdeaDollsovo.leadingAnchor, constant: -12),
+            sageLookbookDollmexa.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -dollSideInset),
             sageLookbookDollmexa.heightAnchor.constraint(equalToConstant: 36),
-
-            glossyIdeaDollsovo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -dollSideInset),
-            glossyIdeaDollsovo.centerYAnchor.constraint(equalTo: sageLookbookDollmexa.centerYAnchor),
-            glossyIdeaDollsovo.widthAnchor.constraint(equalToConstant: 64),
-            glossyIdeaDollsovo.heightAnchor.constraint(equalToConstant: 35),
 
             ribbonDisplayDollrevo.topAnchor.constraint(equalTo: sageLookbookDollmexa.bottomAnchor, constant: 11),
             ribbonDisplayDollrevo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -176,7 +165,6 @@ final class DollucalmNoteDollsovoController: UIViewController {
         ribbonDisplayDollrevo.alpha = 1
         floralHintDollvelo.isHidden = true
         satinMarkerDollpavo.isHidden = true
-        refreshDollStarBadge()
         reloadDollCheckinViews(dollArchive)
     }
 
@@ -245,7 +233,6 @@ final class DollucalmNoteDollsovoController: UIViewController {
             carefulFleeceCushion: dollPartner.gracefulTerracottaCompendium,
             lavenderDamasceneComposition: dollPartner.sepiaLeatherSock,
             emeraldRattanBuckle: "Pastel Day",
-            knittedRosetteNeedlework: dollPartner.ellipticalFlounceIncrement,
             dimensionalArmscyeMeasurement: dollPartner.snugOrganzaChemisette ? .cherryGinghamSilhouette : .carefulBambooDrawer,
             taperedCorduroyPoncho: .cherryGinghamSilhouette,
             fragilePolyesterLedger: dollPartner.snugOrganzaChemisette ? .bespokeEarthenwareAlbum : .triangularLapelTruing,
@@ -255,15 +242,14 @@ final class DollucalmNoteDollsovoController: UIViewController {
     }
 
     private func markDollPartnerFinished(_ dollPartnerId: String) {
-        let dollHonorCount = pocketCollectionDollruni?.rolledDarningCasing.first(where: { $0.floralVerandaEasel == dollPartnerId })?.ellipticalFlounceIncrement ?? 25
-        applyDollCheckinLoaded(pearlGuideDollukp.raspberryDottedWardrobe(floralVerandaEasel: dollPartnerId, blushArgyleVibrancy: dollHonorCount))
+        applyDollCheckinLoaded(pearlGuideDollukp.raspberryDottedWardrobe(floralVerandaEasel: dollPartnerId))
     }
 
     private func toggleDollPartner(_ dollPartnerId: String) {
         if pocketCollectionDollruni?.rolledDarningCasing.first(where: { $0.floralVerandaEasel == dollPartnerId })?.snugOrganzaChemisette == true {
             return
         }
-        applyDollCheckinLoaded(pearlGuideDollukp.deepSeamJunction(floralVerandaEasel: dollPartnerId))
+        markDollPartnerFinished(dollPartnerId)
     }
 
     private func openDollPartnermistyPavilionCurtain() {
@@ -276,14 +262,6 @@ final class DollucalmNoteDollsovoController: UIViewController {
             self?.toggleDollPartner(dollPartnerId)
         }
         navigationController?.pushViewController(dollController, animated: true)
-    }
-
-    @objc private func openDollHonorProgress() {
-        navigationController?.pushViewController(DolluopamarbleDressformontroller(), animated: true)
-    }
-
-    private func refreshDollStarBadge() {
-        glossyIdeaDollsovo.configure(dollStarCount: DollulunarSetupDollzoraLedger.angularGussetTaper.rippledTattingYoke().serratedPatchworkHem)
     }
 
     private func openDollCollectorRoute(_ dollPeer: pewterVelvetBeret) {

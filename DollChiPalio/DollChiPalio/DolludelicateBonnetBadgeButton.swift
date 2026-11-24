@@ -119,56 +119,6 @@ final class DolludelicateCornerCell: UICollectionViewCell {
     }
 }
 
-final class DolludelicateBonnetBadgeButton: UIControl {
-    private let cottonFrameDollukp = UILabel()
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor(red: 0.46, green: 0.22, blue: 0.52, alpha: 0.64)
-        layer.cornerRadius = 17.5
-        layer.borderWidth = 1
-        layer.borderColor = UIColor(red: 0.84, green: 0.58, blue: 0.26, alpha: 0.62).cgColor
-    
-        cottonFrameDollukp.translatesAutoresizingMaskIntoConstraints = false
-        cottonFrameDollukp.text = "★ "
-        cottonFrameDollukp.textColor = UIColor(red: 1, green: 0.77, blue: 0.22, alpha: 1)
-        cottonFrameDollukp.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(13, gentleGalleryDollvani: true)
-        cottonFrameDollukp.textAlignment = .center
-        addSubview(cottonFrameDollukp)
-
-        NSLayoutConstraint.activate([
-            cottonFrameDollukp.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
-            cottonFrameDollukp.centerYAnchor.constraint(equalTo: centerYAnchor),
-            cottonFrameDollukp.widthAnchor.constraint(equalToConstant: 60),
-            cottonFrameDollukp.heightAnchor.constraint(equalToConstant: 35),
-        ])
-        addTarget(self, action: #selector(pressDollHonor), for: .touchUpInside)
-        addTarget(self, action: #selector(releaseDollHonor), for: [.touchCancel, .touchDragExit, .touchUpInside, .touchUpOutside])
-    }
-
-    required init?(coder: NSCoder) {
-        nil
-    }
-
-    func configure(dollStarCount: Int) {
-        cottonFrameDollukp.text = "★ \(dollStarCount)"
-    }
-
-    @objc private func pressDollHonor() {
-        UIView.animate(withDuration: 0.12) {
-            self.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
-            self.alpha = 0.82
-        }
-    }
-
-    @objc private func releaseDollHonor() {
-        UIView.animate(withDuration: 0.16) {
-            self.transform = .identity
-            self.alpha = 1
-        }
-    }
-}
-
 final class DolludelicateLayerCard: UIControl {
     var dollPrimaryTapped: (() -> Void)?
     private let moonlitPaletteDollukp = CAGradientLayer()
@@ -269,7 +219,7 @@ final class DolludelicateLayerCard: UIControl {
 
     func configure(dollCollector: crochetedSpangleFinery, dollDays: [silverBrassCoronet]) {
         layeredCatalogDollquvo.text = "7-Day Streak"
-        cozyMemoDolllaro.text = "Day \(max(1, dollCollector.ellipticalFlounceIncrement)) check-in to keep your wardrobe rhythm."
+        cozyMemoDolllaro.text = "Consecutive days: \(dollCollector.ellipticalFlounceIncrement)"
         cottonMoodboardDolllaro.arrangedSubviews.forEach { $0.removeFromSuperview() }
         dollDays.enumerated().forEach { dollIndex, dollDay in
             let dollPill = DolludelicateShelfDollkoraPill()
@@ -327,7 +277,7 @@ final class DolludelicateShelfDollkoraPill: UIView {
 
     func configure(_ dollDay: silverBrassCoronet, dollIsCurrent: Bool) {
         layeredCatalogDollquvo.text = dollDay.delicateCelluloseTray
-        cozyMemoDolllaro.text = dollDay.rippledKnotPatchwork ? "✓" : (dollDay.delicateCelluloseTray == "D7" ? "+20" : "+5")
+        cozyMemoDolllaro.text = dollDay.rippledKnotPatchwork ? "✓" : "–"
         let dollTextColor = dollDay.rippledKnotPatchwork ? DolluWardrobePalette.dollRibbonPurple : UIColor(white: 1, alpha: 0.84)
         layeredCatalogDollquvo.textColor = dollTextColor
         cozyMemoDolllaro.textColor = dollIsCurrent ? UIColor(red: 1, green: 0.76, blue: 0.2, alpha: 1) : dollTextColor
@@ -370,7 +320,7 @@ final class DolludelicateAccessoryFeatureCard: UIControl {
         cozyMemoDolllaro.textColor = DolluWardrobePalette.dollMemoMuted
         cozyMemoDolllaro.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(10.5, gentleGalleryDollvani: false)
 
-        satinMarkerDollpavo.setTitle("★ 6h", for: .normal)
+        satinMarkerDollpavo.setTitle("6h", for: .normal)
         satinMarkerDollpavo.setTitleColor(UIColor(red: 1, green: 0.79, blue: 0.25, alpha: 1), for: .normal)
         satinMarkerDollpavo.titleLabel?.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(11, gentleGalleryDollvani: true)
         satinMarkerDollpavo.backgroundColor = UIColor(red: 0.40, green: 0.22, blue: 0.62, alpha: 0.70)
@@ -521,7 +471,7 @@ final class DollucuratedApronTaskCard: UIControl {
 
     func configure(_ dollPartner: durableVinylCatalog) {
         layeredCatalogDollquvo.text = "Check in with \(dollPartner.plumStripedElegance)"
-        cozyMemoDolllaro.text = dollPartner.snugOrganzaChemisette ? "★ +15   Both doll records are ready" : "★ +15   \(dollPartner.symmetricalHiplineDepth)"
+        cozyMemoDolllaro.text = dollPartner.snugOrganzaChemisette ? "Both doll records are ready" : dollPartner.symmetricalHiplineDepth
         cottonFrameDollukp.text = "pair"
         satinMarkerDollpavo.setTitle(dollPartner.snugOrganzaChemisette ? "Done" : "Go", for: .normal)
         satinMarkerDollpavo.backgroundColor = dollPartner.snugOrganzaChemisette ? UIColor(red: 0.15, green: 0.42, blue: 0.42, alpha: 0.92) : DolluWardrobePalette.dollRibbonPurple

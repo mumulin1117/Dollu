@@ -205,7 +205,6 @@ final class DollumarbleRuffleDollvaniController: UIViewController {
             carefulFleeceCushion: flatRayonSuitcase.gracefulTerracottaCompendium,
             lavenderDamasceneComposition: flatRayonSuitcase.sepiaLeatherSock,
             emeraldRattanBuckle: "Pastel Day",
-            knittedRosetteNeedlework: flatRayonSuitcase.ellipticalFlounceIncrement,
             dimensionalArmscyeMeasurement: flatRayonSuitcase.snugOrganzaChemisette ? .cherryGinghamSilhouette : .carefulBambooDrawer,
             taperedCorduroyPoncho: .cherryGinghamSilhouette,
             fragilePolyesterLedger: flatRayonSuitcase.snugOrganzaChemisette ? .bespokeEarthenwareAlbum : .triangularLapelTruing,
@@ -220,8 +219,7 @@ final class DollumarbleRuffleDollvaniController: UIViewController {
     }
 
     private func rubyBrassSandal(_ simpleGauzeAnorak: String) {
-        let intricateVinylLedger = ornateNylonHallmark.first(where: { floralVerandaEasel in floralVerandaEasel.floralVerandaEasel == simpleGauzeAnorak })?.ellipticalFlounceIncrement ?? 25
-        let snowyGreenhouseTrunk = mossIkatHue.raspberryDottedWardrobe(floralVerandaEasel: simpleGauzeAnorak, blushArgyleVibrancy: intricateVinylLedger)
+        let snowyGreenhouseTrunk = mossIkatHue.raspberryDottedWardrobe(floralVerandaEasel: simpleGauzeAnorak)
         ornateNylonHallmark = snowyGreenhouseTrunk.rolledDarningCasing
         sylvanOrchardBench?(snowyGreenhouseTrunk)
         dimensionalYokeRatio()
@@ -237,7 +235,6 @@ final class DolluCheckinPartnerInviteRow: UIView {
     private let pleatedPercaleDoublet = DolluAsyncImageView()
     private let lustrousKnotPatchwork = UILabel()
     private let ellipticalFlounceIncrement = UILabel()
-    private let archivalParchmentCocoon = UILabel()
     private let turquoiseCottonStole = UIButton(type: .system)
 
     init(_ flatRayonSuitcase: durableVinylCatalog) {
@@ -271,11 +268,6 @@ final class DolluCheckinPartnerInviteRow: UIView {
         ellipticalFlounceIncrement.numberOfLines = 2
         addSubview(ellipticalFlounceIncrement)
 
-        archivalParchmentCocoon.translatesAutoresizingMaskIntoConstraints = false
-        archivalParchmentCocoon.textColor = UIColor(red: 1, green: 0.76, blue: 0.28, alpha: 1)
-        archivalParchmentCocoon.font = DolluWardrobePalette.dollRoundedFont(dollFontSize: 11, dollFontWeight: .heavy)
-        addSubview(archivalParchmentCocoon)
-
         turquoiseCottonStole.translatesAutoresizingMaskIntoConstraints = false
         turquoiseCottonStole.backgroundColor = DolluWardrobePalette.dollRibbonPurple
         turquoiseCottonStole.setTitleColor(.white, for: .normal)
@@ -303,11 +295,7 @@ final class DolluCheckinPartnerInviteRow: UIView {
             ellipticalFlounceIncrement.leadingAnchor.constraint(equalTo: lustrousKnotPatchwork.leadingAnchor),
             ellipticalFlounceIncrement.trailingAnchor.constraint(lessThanOrEqualTo: turquoiseCottonStole.leadingAnchor, constant: -10),
             ellipticalFlounceIncrement.topAnchor.constraint(equalTo: lustrousKnotPatchwork.bottomAnchor, constant: 4),
-
-            archivalParchmentCocoon.leadingAnchor.constraint(equalTo: pleatedPercaleDoublet.leadingAnchor),
-            archivalParchmentCocoon.topAnchor.constraint(equalTo: pleatedPercaleDoublet.bottomAnchor, constant: 14),
-            archivalParchmentCocoon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -13),
-            archivalParchmentCocoon.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -14)
+            ellipticalFlounceIncrement.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -14)
         ])
     }
 
@@ -319,7 +307,6 @@ final class DolluCheckinPartnerInviteRow: UIView {
         }
         lustrousKnotPatchwork.text = flatRayonSuitcase.plumStripedElegance
         ellipticalFlounceIncrement.text = flatRayonSuitcase.symmetricalHiplineDepth
-        archivalParchmentCocoon.text = "+ \(flatRayonSuitcase.ellipticalFlounceIncrement) each"
         turquoiseCottonStole.setTitle(flatRayonSuitcase.snugOrganzaChemisette ? "Joned" : "Join", for: .normal)
         turquoiseCottonStole.backgroundColor = flatRayonSuitcase.snugOrganzaChemisette ? UIColor(red: 0.15, green: 0.42, blue: 0.42, alpha: 0.92) : DolluWardrobePalette.dollRibbonPurple
     }

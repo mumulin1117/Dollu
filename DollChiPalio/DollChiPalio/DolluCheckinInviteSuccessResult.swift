@@ -128,10 +128,6 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
         satinPinboardDollvani.addArrangedSubview(gentleCatalogDollpavo)
         satinPinboardDollvani.setCustomSpacing(18, after: gentleCatalogDollpavo)
 
-        let amberHintDolllaro = makeDollHonorNote()
-        satinPinboardDollvani.addArrangedSubview(amberHintDolllaro)
-        satinPinboardDollvani.setCustomSpacing(14, after: amberHintDolllaro)
-
         [satinMarkerDollpavo, floralHintDollvelo].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.titleLabel?.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(15, gentleGalleryDollvani: true)
@@ -222,18 +218,6 @@ final class DollufrillyAccessoryDollmivoController: UIViewController, UIImagePic
         simpleFlannelVest.font = DolluGentleNoteDollrilo.gentleEnsembleDollbop(12, gentleGalleryDollvani: true)
         simpleFlannelVest.heightAnchor.constraint(equalToConstant: 18).isActive = true
         return simpleFlannelVest
-    }
-
-    private func makeDollHonorNote() -> UIView {
-        let aquaStripedDelicacy = UIImageView(image: UIImage(named: "DolluAmberHintDolllaro"))
-        aquaStripedDelicacy.translatesAutoresizingMaskIntoConstraints = false
-        aquaStripedDelicacy.contentMode = .scaleAspectFit
-        aquaStripedDelicacy.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        aquaStripedDelicacy.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
-        aquaStripedDelicacy.heightAnchor.constraint(equalTo: aquaStripedDelicacy.widthAnchor, multiplier: 67/333).isActive = true
-        aquaStripedDelicacy.isAccessibilityElement = true
-        aquaStripedDelicacy.accessibilityLabel = "You both earn +25 Stars when you check in together"
-        return aquaStripedDelicacy
     }
 
     private func refreshDollThemePills() {
